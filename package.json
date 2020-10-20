@@ -6,5 +6,24 @@
   "repository": "git@github.com:compassion-gds/compassion-gds.git",
   "author": "Kendrick Arnett <kmarnett@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": true,
+  "workspaces": [
+    "packages/components/*",
+    "packages/elements",
+    "packages/themes/*",
+    "packages/site"
+  ],
+  "scripts": {
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
+    "lerna": "^3.22.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "disableSubjectLowerCase": true
+    }
+  }
 }
