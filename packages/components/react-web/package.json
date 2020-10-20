@@ -41,10 +41,5 @@
     "babel-loader": "^8.1.0",
     "react-is": "^16.13.1"
   },
-  "config": {
-    // "commitizen": {
-    //   "path": "./node_modules/cz-conventional-changelog",
-    //   "disableSubjectLowerCase": true
-    // }
-  }
+  "config": {}
 }
