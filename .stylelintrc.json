@@ -1,8 +1,7 @@
 {
   "plugins": ["stylelint-order"],
-  "extends": ["stylelint-prettier", "stylelint-config-prettier"],
+  "extends": ["stylelint-config-prettier"],
   "rules": {
-    "prettier/prettier": true,
     "order/order": ["custom-properties", "declarations"],
     "order/properties-order": [
       [

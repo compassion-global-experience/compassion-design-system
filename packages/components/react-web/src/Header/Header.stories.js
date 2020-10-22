@@ -1,4 +1,5 @@
 import React from 'react';
+import '../global.css';
 
 import { Header } from './Header';
 
