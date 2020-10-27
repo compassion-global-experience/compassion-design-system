@@ -4,7 +4,7 @@ import '../global.css';
 import { Button } from './Button';
 
 export default {
-  title: 'Example/Button',
+  title: 'Global Design System/Button',
   component: Button,
   argTypes: {
   },

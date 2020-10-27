@@ -4,7 +4,7 @@ import '../global.css';
 import { Header } from './Header';
 
 export default {
-  title: 'Example/Header',
+  title: 'Global Design System/Header',
   component: Header,
 };
 
