@@ -4,7 +4,7 @@ import '../global.css';
 import { Logo } from './Logo';
 
 export default {
-  title: 'Example/Logo',
+  title: 'Global Design System/Logo',
   component: Logo,
   argTypes: {
   },
