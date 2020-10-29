@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-export const buttonStyles = css`
+export const selectStyles = css`
   padding-right: 1rem;
   padding-left: 1rem;
   min-height: 44px;

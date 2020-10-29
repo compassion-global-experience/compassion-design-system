@@ -4,24 +4,29 @@ import PropTypes from 'prop-types';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import * as buttonStyles from './Select.styles';
+import * as selectStyles from './Select.styles';
 
 /**
  * Primary UI component for user interaction
  */
 export const Select = ({ primary, size, label, ...props }) => {
   return (
-    <button
-      type="button"
-      css={buttonStyles.buttonStyles}
-      className={cx(
-        { 'button--primary': primary },
-        { [`button--${size}`]: size }
-      )}
-      {...props}
-    >
-      {label}
-    </button>
+    <form>
+      <select
+        placeholder={label}
+        css={selectStyles.selectStyles}
+        className={cx(
+          { 'button--primary': primary },
+          { [`button--${size}`]: size }
+        )}
+        {...props}
+      >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </form>
   );
 };
 
