@@ -1,14 +1,16 @@
 import React from 'react';
-import '../../global.css';
+import '../global.css';
 
-import { Select } from './Select';
+import { Button } from './Button';
 
 export default {
-  title: 'Global Design System/Select',
-  argTypes: {},
+  title: 'Global Design System/Button',
+  component: Button,
+  argTypes: {
+  },
 };
 
-const Template = (args) => <Select {...args} />;
+const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
