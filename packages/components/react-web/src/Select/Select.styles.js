@@ -10,16 +10,16 @@ export const selectStyles = css`
   font-family: unset;
   cursor: pointer;
 
-  &.button--primary {
+  &.select--primary {
     background: #0948aa;
     color: #fff;
   }
 
-  &.button--large {
+  &.select--large {
     min-height: 64px;
   }
 
-  &.button--small {
+  &.select--small {
     min-height: 36px;
   }
 `;

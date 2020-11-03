@@ -10,16 +10,16 @@ export const checkboxStyles = css`
   font-family: unset;
   cursor: pointer;
 
-  &.button--primary {
+  &.checkbox--primary {
     background: #0948aa;
     color: #fff;
   }
 
-  &.button--large {
+  &.checkbox--large {
     min-height: 64px;
   }
 
-  &.button--small {
+  &.checkbox--small {
     min-height: 36px;
   }
 `;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 /** @jsx jsx */
@@ -10,16 +10,25 @@ import * as selectStyles from './Select.styles';
  * Primary UI component for user interaction
  */
 export const Select = ({ primary, size, label, ...props }) => {
+  const [value, setValue] = useState('');
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+    if (props.onChange) props.onChange();
+  };
+
   return (
     <form>
       <select
         placeholder={label}
         css={selectStyles.selectStyles}
         className={cx(
-          { 'button--primary': primary },
-          { [`button--${size}`]: size }
+          { 'select--primary': primary },
+          { [`select--${size}`]: size }
         )}
         {...props}
+        value={value}
+        onChange={handleChange}
       >
         <option value="1">1</option>
         <option value="2">2</option>
@@ -36,11 +45,11 @@ Select.propTypes = {
    */
   primary: PropTypes.bool,
   /**
-   * How large should the button be?
+   * How large should the select be?
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
-   * Button contents
+   * Select contents
    */
   label: PropTypes.string.isRequired,
   /**
