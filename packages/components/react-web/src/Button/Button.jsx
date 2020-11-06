@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
@@ -15,9 +15,9 @@ export const Button = ({ primary, size, label, ...props }) => {
       type="button"
       css={buttonStyles.buttonStyles}
       className={cx(
-        {'button--primary': primary},
-        {[`button--${size}`]: size})
-      }
+        { 'button--primary': primary },
+        { [`button--${size}`]: size }
+      )}
       {...props}
     >
       {label}
@@ -33,7 +33,7 @@ Button.propTypes = {
   /**
    * How large should the button be?
    */
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
    * Button contents
    */
@@ -46,6 +46,6 @@ Button.propTypes = {
 
 Button.defaultProps = {
   primary: false,
-  size: "medium",
+  size: 'medium',
   onClick: undefined,
 };
