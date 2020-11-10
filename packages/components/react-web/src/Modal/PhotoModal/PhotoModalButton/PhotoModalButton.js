@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import PhotoModal from '../PhotoModal';
 import useToggleDisplay from '../../hooks/useToggleDisplay';
 
-export const PhotoModalButton = ({ photo, children, ...props }) => {
+export const PhotoModalButton = ({
+  photo,
+  closeLabel = 'Close',
+  children,
+  ...props
+}) => {
   const [isDisplayed, setIsDisplayed] = useToggleDisplay();
 
   return (
@@ -20,6 +25,7 @@ export const PhotoModalButton = ({ photo, children, ...props }) => {
 
       <PhotoModal
         photo={photo}
+        closeLabel={closeLabel}
         isDisplayed={isDisplayed}
         close={setIsDisplayed}
       />

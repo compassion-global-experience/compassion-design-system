@@ -43,5 +43,5 @@ Confirm.args = {
 
 export const Content = ContentTemplate.bind({});
 Confirm.args = {
-  content: 'Content Modal',
+  content: 'Content Modal' ,
 };
