@@ -6,7 +6,7 @@ import Modal from '../Modal';
 import styles from './ContentModal.module.css';
 import globalStyles from '../Modal.module.css';
 
-const ContentModal = ({ close, content, isDisplayed, title }) => {
+const ContentModal = ({ close, closeLabel, content, isDisplayed, title }) => {
   return (
     <Modal close={close} isDisplayed={isDisplayed}>
       <div className={globalStyles['modal-content']}>
@@ -16,10 +16,11 @@ const ContentModal = ({ close, content, isDisplayed, title }) => {
             {...(title ? { 'data-title': title } : {})}
           >
             <h1>{title}</h1>
-            <button onClick={close} aria-label="Close" type="button" />
+            <div className={styles.content}>{content}</div>
+            <button onClick={close} aria-label="Close" type="button">
+              {closeLabel}
+            </button>
           </div>
-
-          <div className={styles.content}>{content}</div>
         </div>
       </div>
     </Modal>

@@ -37,11 +37,11 @@ Confirm.args = {
 };
 
 export const Photo = PhotoTemplate.bind({});
-Confirm.args = {
+Photo.args = {
   content: 'Photo Modal',
 };
 
 export const Content = ContentTemplate.bind({});
-Confirm.args = {
-  content: 'Content Modal' ,
+Content.args = {
+  content: 'Content Modal',
 };

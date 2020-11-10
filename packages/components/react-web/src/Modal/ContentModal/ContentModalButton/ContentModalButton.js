@@ -5,6 +5,7 @@ import ContentModal from '../ContentModal';
 import useToggleDisplay from '../../hooks/useToggleDisplay';
 
 export const ContentModalButton = ({
+  closeLabel = 'Close',
   content,
   children,
   onClose,
@@ -36,6 +37,7 @@ export const ContentModalButton = ({
       </button>
 
       <ContentModal
+        closeLabel={closeLabel}
         content={content}
         close={handleClose}
         isDisplayed={isDisplayed}
