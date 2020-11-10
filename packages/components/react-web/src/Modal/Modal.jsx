@@ -2,26 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-// import { cx } from 'emotion';
-import { KEYCODES } from '../utils/constants';
-// import * as modalStyles from './Modal.styles';
+import { KEYCODES } from './constants';
 
-/**
- * Primary UI component for user interaction
- */
-export const Modal = ({
-  primary,
-  size,
-  label,
-  children,
-  close,
-  isDisplayed,
-  title,
-  content,
-  ...props
-}) => {
+import styles from './Modal.module.css';
+
+const Modal = ({ children, close, isDisplayed }) => {
   const ref = useRef(null);
 
   const handleKeyDown = ({ key }) => {
@@ -55,43 +40,20 @@ export const Modal = ({
     <div
       aria-modal
       aria-hidden
-      // className={styles.modal}
+      className={styles.modal}
       ref={ref}
       role="dialog"
       tabIndex={-1}
     >
-      {label}
+      {children}
     </div>,
     document.body
   );
 };
 
 Modal.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  type: PropTypes.oneOf(['content', 'alert', 'confirm', 'photo']),
-  /**
-   * Click handler
-   */
-  // close: PropTypes.func,
-  /**
-   * Is the modal displayed?
-   */
-  isDisplayed: PropTypes.bool,
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
+  close: PropTypes.func.isRequired,
+  isDisplayed: PropTypes.bool.isRequired,
 };
 
-Modal.defaultProps = {
-  type: 'content',
-  // close: false,
-  // isDisplayed: false,
-  size: 'medium',
-};
+export default Modal;

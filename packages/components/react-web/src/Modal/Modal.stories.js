@@ -1,46 +1,47 @@
 import React from 'react';
 import '../global.css';
 
-import { Modal } from './Modal';
-import { AlertModal } from './AlertModal';
+import { AlertModalButton } from './AlertModal/AlertModalButton/AlertModalButton.js';
+import { ConfirmModalButton } from './ConfirmModal/ConfirmModalButton/ConfirmModalButton.js';
+import { PhotoModalButton } from './PhotoModal/PhotoModalButton/PhotoModalButton.js';
+import { ContentModalButton } from './ContentModal/ContentModalButton/ContentModalButton.js';
 
 export default {
   title: 'Global Design System/Modal',
-  component: Modal,
+  component: 'Modal',
   argTypes: {},
 };
 
-const Template = (args) => <Modal {...args} />;
+const AlertTemplate = (args) => (
+  <AlertModalButton {...args}> Click Me! </AlertModalButton>
+);
 
-export const Content = Template.bind({});
-Content.args = {
-  // close: false,
-  // isDisplayed: false,
-  label: 'Content Modal',
-  type: 'content',
-  title: 'this is the title',
-  content: 'this is the content',
+const ConfirmTemplate = (args) => (
+  <ConfirmModalButton {...args}> Click Me! </ConfirmModalButton>
+);
+const PhotoTemplate = (args) => (
+  <PhotoModalButton {...args}> Click Me! </PhotoModalButton>
+);
+const ContentTemplate = (args) => (
+  <ContentModalButton {...args}> Click Me! </ContentModalButton>
+);
+
+export const Alert = AlertTemplate.bind({});
+Alert.args = {
+  content: 'Alert Message!',
 };
 
-// export const Alert = Template.bind({});
-// Alert.args = {
-//   label: 'Alert Modal',
-//   children: 'Content Modal - children',
-//   type: 'alert',
-// };
+export const Confirm = ConfirmTemplate.bind({});
+Confirm.args = {
+  content: 'Confirmation Message...',
+};
 
-// export const Confirm = Template.bind({});
-// Confirm.args = {
-//   size: 'large',
-//   label: 'Confirm Modal',
-//   children: 'Content Modal - children'',
-//   type: 'confirm',
-// };
+export const Photo = PhotoTemplate.bind({});
+Confirm.args = {
+  content: 'Photo Modal',
+};
 
-// export const Photo = Template.bind({});
-// Photo.args = {
-//   size: 'small',
-//   label: 'Photo Modal',
-//   children: 'Content Modal - children'',
-//   type: 'photo',
-// };
+export const Content = ContentTemplate.bind({});
+Confirm.args = {
+  content: 'Content Modal',
+};

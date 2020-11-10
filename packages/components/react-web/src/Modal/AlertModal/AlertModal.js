@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Modal from '../Modal';
+import Modal from '../Modal.jsx';
 
 import styles from './AlertModal.module.css';
-// import globalStyles from '../Modal.module.css';
+import globalStyles from '../Modal.module.css';
 
 export const AlertModal = ({ close, closeLabel, content, isDisplayed }) => {
   return (
     <Modal close={close} isDisplayed={isDisplayed}>
-      <div>
+      <div className={globalStyles['modal-content']}>
         <div className={styles['alert-modal']}>
           <div>{content}</div>
 

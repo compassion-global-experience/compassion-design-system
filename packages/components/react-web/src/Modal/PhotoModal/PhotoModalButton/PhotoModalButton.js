@@ -1,21 +1,16 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import AlertModal from '../AlertModal.js';
+import PhotoModal from '../PhotoModal';
 import useToggleDisplay from '../../hooks/useToggleDisplay';
 
-export const AlertModalButton = ({
-  closeLabel = 'Close',
-  content,
-  children,
-  ...props
-}) => {
+export const PhotoModalButton = ({ photo, children, ...props }) => {
   const [isDisplayed, setIsDisplayed] = useToggleDisplay();
 
   return (
     <Fragment>
       <button
-        aria-label={closeLabel}
+        aria-label="View Photo"
         onClick={setIsDisplayed}
         type="button"
         {...props}
@@ -23,19 +18,17 @@ export const AlertModalButton = ({
         {children}
       </button>
 
-      <AlertModal
-        closeLabel={closeLabel}
-        close={setIsDisplayed}
-        content={content}
+      <PhotoModal
+        photo={photo}
         isDisplayed={isDisplayed}
+        close={setIsDisplayed}
       />
     </Fragment>
   );
 };
 
-AlertModalButton.propTypes = {
-  closeLabel: PropTypes.string,
-  content: PropTypes.any.isRequired,
+PhotoModalButton.propTypes = {
+  photo: PropTypes.string.isRequired,
 };
 
-export default AlertModalButton;
+export default PhotoModalButton;
