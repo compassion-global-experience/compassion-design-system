@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Modal from '../Modal.jsx';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import * as modalStyles from '../Modal.styles';
+import * as alertModalStyles from './AlertModal.styles';
 
-import styles from './AlertModal.module.css';
-import globalStyles from '../Modal.module.css';
+import Modal from '../Modal';
 
 export const AlertModal = ({ close, closeLabel, content, isDisplayed }) => {
   return (
     <Modal close={close} isDisplayed={isDisplayed}>
-      <div className={globalStyles['modal-content']}>
-        <div className={styles['alert-modal']}>
+      <div css={modalStyles.modalContentStyles}>
+        <div css={alertModalStyles.alertModal}>
           <div>{content}</div>
 
-          <div className={styles.close}>
+          <div css={alertModalStyles.close}>
             <button onClick={close} type="button">
               {closeLabel}
             </button>

@@ -3,24 +3,25 @@ import PropTypes from 'prop-types';
 
 import Modal from '../Modal';
 
-import styles from './ContentModal.module.css';
-import globalStyles from '../Modal.module.css';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import * as modalStyles from '../Modal.styles';
+import * as contentModalStyles from './ContentModal.styles';
 
-const ContentModal = ({ close, closeLabel, content, isDisplayed, title }) => {
+const ContentModal = ({ close, content, isDisplayed, title }) => {
   return (
     <Modal close={close} isDisplayed={isDisplayed}>
-      <div className={globalStyles['modal-content']}>
-        <div className={styles['content-modal']}>
+      <div css={modalStyles.modalContentStyles}>
+        <div css={contentModalStyles.contentModal}>
           <div
-            className={styles['title-bar']}
+            css={contentModalStyles.titleBar}
             {...(title ? { 'data-title': title } : {})}
           >
             <h1>{title}</h1>
-            <div className={styles.content}>{content}</div>
-            <button onClick={close} aria-label="Close" type="button">
-              {closeLabel}
-            </button>
+            <button onClick={close} aria-label="Close" type="button" />
           </div>
+
+          <div css={contentModalStyles.content}>{content}</div>
         </div>
       </div>
     </Modal>

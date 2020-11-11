@@ -6,6 +6,8 @@ import { ConfirmModalButton } from './ConfirmModal/ConfirmModalButton/ConfirmMod
 import { PhotoModalButton } from './PhotoModal/PhotoModalButton/PhotoModalButton.js';
 import { ContentModalButton } from './ContentModal/ContentModalButton/ContentModalButton.js';
 
+import image from './assets/photo.jpg';
+
 export default {
   title: 'Global Design System/Modal',
   component: 'Modal',
@@ -19,9 +21,11 @@ const AlertTemplate = (args) => (
 const ConfirmTemplate = (args) => (
   <ConfirmModalButton {...args}> Click Me! </ConfirmModalButton>
 );
+
 const PhotoTemplate = (args) => (
   <PhotoModalButton {...args}> Click Me! </PhotoModalButton>
 );
+
 const ContentTemplate = (args) => (
   <ContentModalButton {...args}> Click Me! </ContentModalButton>
 );
@@ -34,14 +38,18 @@ Alert.args = {
 export const Confirm = ConfirmTemplate.bind({});
 Confirm.args = {
   content: 'Confirmation Message...',
+  confirmType: 'proceed',
+  confirmAction: () => console.log('hey'),
 };
 
 export const Photo = PhotoTemplate.bind({});
 Photo.args = {
   content: 'Photo Modal',
+  photo: image,
 };
 
 export const Content = ContentTemplate.bind({});
 Content.args = {
   content: 'Content Modal',
+  title: 'title',
 };

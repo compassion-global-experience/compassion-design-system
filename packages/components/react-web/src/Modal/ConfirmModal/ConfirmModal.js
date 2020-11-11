@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 import Modal from '../Modal.jsx';
 
-import styles from './ConfirmModal.module.css';
-import globalStyles from '../Modal.module.css';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import * as modalStyles from '../Modal.styles';
+import * as confirmModalStyles from './ConfirmModal.styles';
 
 export const ConfirmModal = ({
   cancelLabel,
@@ -22,19 +24,15 @@ export const ConfirmModal = ({
 
   return (
     <Modal close={close} isDisplayed={isDisplayed}>
-      <div className={globalStyles['modal-content']}>
-        <div className={styles['confirm-modal']} data-type={confirmType}>
+      <div css={modalStyles.modalContentStyles}>
+        <div css={confirmModalStyles.confirmModal} data-type={confirmType}>
           <p>{content}</p>
 
-          <div className={styles.actions}>
-            <button type="button" onClick={close} className={styles.cancel}>
+          <div css={confirmModalStyles.actions}>
+            <button type="button" onClick={close}>
               {cancelLabel}
             </button>
-            <button
-              type="button"
-              onClick={handleConfirm}
-              className={styles.submit}
-            >
+            <button type="button" onClick={handleConfirm}>
               {confirmLabel}
             </button>
           </div>

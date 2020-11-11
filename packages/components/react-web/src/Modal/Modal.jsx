@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 
 import { KEYCODES } from './constants';
 
-import styles from './Modal.module.css';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { cx } from 'emotion';
+import * as modalStyles from './Modal.styles';
 
 const Modal = ({ children, close, isDisplayed }) => {
   const ref = useRef(null);
@@ -40,7 +43,7 @@ const Modal = ({ children, close, isDisplayed }) => {
     <div
       aria-modal
       aria-hidden
-      className={styles.modal}
+      css={modalStyles.modalStyles}
       ref={ref}
       role="dialog"
       tabIndex={-1}
