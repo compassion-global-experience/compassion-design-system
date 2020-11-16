@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import * as modalStyles from '../Modal.styles';
+import * as modalStyles from '../BaseModal/Modal.styles';
 import * as alertModalStyles from './AlertModal.styles';
 
-import Modal from '../Modal';
+import Modal from '../BaseModal/Modal';
 
 export const AlertModal = ({ close, closeLabel, content, isDisplayed }) => {
   return (
@@ -29,7 +29,7 @@ export const AlertModal = ({ close, closeLabel, content, isDisplayed }) => {
 AlertModal.propTypes = {
   close: PropTypes.func.isRequired,
   closeLabel: PropTypes.string.isRequired,
-  content: PropTypes.any.isRequired,
+  content: PropTypes.string.isRequired,
   isDisplayed: PropTypes.bool.isRequired,
 };
 

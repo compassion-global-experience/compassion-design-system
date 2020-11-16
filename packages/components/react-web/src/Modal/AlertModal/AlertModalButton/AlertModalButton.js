@@ -35,7 +35,7 @@ export const AlertModalButton = ({
 
 AlertModalButton.propTypes = {
   closeLabel: PropTypes.string,
-  content: PropTypes.any.isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default AlertModalButton;

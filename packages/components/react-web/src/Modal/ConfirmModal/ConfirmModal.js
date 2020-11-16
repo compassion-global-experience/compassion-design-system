@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Modal from '../Modal.jsx';
+import Modal from '../BaseModal/Modal';
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import * as modalStyles from '../Modal.styles';
+import * as modalStyles from '../BaseModal/Modal.styles';
 import * as confirmModalStyles from './ConfirmModal.styles';
 
 export const ConfirmModal = ({

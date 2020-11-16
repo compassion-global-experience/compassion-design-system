@@ -1,36 +1,25 @@
-import { css, keyframes } from '@emotion/core';
+import { css } from '@emotion/core';
 
-const fadein = keyframes`
-  from {
-    opacity: 0;
+export const buttonStyles = css`
+  padding-right: 1rem;
+  padding-left: 1rem;
+  min-height: 44px;
+  border: 1px solid #0948aa;
+  background: #fff;
+  color: #0948aa;
+  font-family: unset;
+  cursor: pointer;
+
+  &.button--primary {
+    background: #0948aa;
+    color: #fff;
   }
-  to {
-    opacity: 1;
+
+  &.button--large {
+    min-height: 64px;
   }
-`;
 
-export const modalStyles = css`
-  animation: ${fadein} 0.25s;
-  background: rgba(50, 50, 50, 0.95);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-export const modalContentStyles = css`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-height: 900px;
-  max-width: 900px;
-  height: 80%;
-  width: 80%;
+  &.button--small {
+    min-height: 36px;
+  }
 `;

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Modal from '../Modal';
+import Modal from '../BaseModal/Modal';
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import * as modalStyles from '../Modal.styles';
+import * as modalStyles from '../BaseModal/Modal.styles';
 import * as photoModalStyles from './PhotoModal.styles';
 
 const PhotoModal = ({ close, isDisplayed, photo }) => {
