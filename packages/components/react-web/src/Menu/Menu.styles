@@ -1,0 +1,25 @@
+import { css } from '@emotion/core';
+
+export const menuStyles = css`
+  padding-right: 1rem;
+  padding-left: 1rem;
+  min-height: 44px;
+  border: 1px solid #0948aa;
+  background: #fff;
+  color: #0948aa;
+  font-family: unset;
+  cursor: pointer;
+
+  &.menu--primary {
+    background: #0948aa;
+    color: #fff;
+  }
+
+  &.menu--large {
+    min-height: 64px;
+  }
+
+  &.menu--small {
+    min-height: 36px;
+  }
+`;
