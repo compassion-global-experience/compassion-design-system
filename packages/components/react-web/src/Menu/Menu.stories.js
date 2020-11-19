@@ -16,20 +16,3 @@ Primary.args = {
   primary: true,
   label: 'Menu',
 };
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Menu',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Menu',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Menu',
-};

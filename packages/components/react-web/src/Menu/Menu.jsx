@@ -1,72 +1,52 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import * as menuStyles from './Menu.stories.js';
+import * as menuStyles from './Menu.module.css';
+import { useDetectOutsideClick } from './useDetectOutsideClick';
 
 /**
  * Primary UI component for user interaction
  */
 export const Menu = ({ primary, size, label, ...props }) => {
+  const dropdownRef = useRef(null);
+  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
+  const onClick = () => setIsActive(!isActive);
+
   return (
-    <div class="listbox-area">
-      <div class="left-area">
-        <span id="exp_elem">Choose an element:</span>
-        <div id="exp_wrapper">
-          <button
-            aria-haspopup="listbox"
-            aria-labelledby="exp_elem exp_button"
-            id="exp_button"
-          >
-            Neptunium
-          </button>
-          <ul
-            id="exp_elem_list"
-            tabindex="-1"
-            role="listbox"
-            aria-labelledby="exp_elem"
-            class="hidden"
-          >
-            <li id="exp_elem_Np" role="option">
-              Neptunium
+    <div className="container">
+      <div className="menu-container">
+        <button onClick={onClick} className="menu-trigger">
+          <span>Menu</span>
+          <img
+            src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
+            alt="User avatar"
+          />
+        </button>
+        <nav
+          ref={dropdownRef}
+          className={`menu ${isActive ? 'active' : 'inactive'}`}
+        >
+          <ul>
+            <li>
+              <a href="#">Messages</a>
             </li>
-            <li id="exp_elem_Pu" role="option">
-              Plutonium
+            <li>
+              <a href="#">Saved</a>
             </li>
-            <li id="exp_elem_Am" role="option">
-              Americium
+            <li>
+              <a href="#">About</a>
             </li>
-            <li id="exp_elem_Cm" role="option">
-              Curium
+            <li>
+              <a href="#">Languages</a>
             </li>
-            <li id="exp_elem_Bk" role="option">
-              Berkelium
-            </li>
-            <li id="exp_elem_Cf" role="option">
-              Californium
-            </li>
-            <li id="exp_elem_Es" role="option">
-              Einsteinium
-            </li>
-            <li id="exp_elem_Fm" role="option">
-              Fermium
-            </li>
-            <li id="exp_elem_Md" role="option">
-              Mendelevium
-            </li>
-            <li id="exp_elem_No" role="option">
-              Nobelium
-            </li>
-            <li id="exp_elem_Lr" role="option">
-              Lawrencium
-            </li>
-            <li id="exp_elem_Rf" role="option">
-              Rutherfordium
+            <li>
+              <a href="#">Settings</a>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
     </div>
   );
@@ -77,10 +57,6 @@ Menu.propTypes = {
    * Is this the principal call to action on the page?
    */
   primary: PropTypes.bool,
-  /**
-   * How large should the Menu be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
    * Menu contents
    */
