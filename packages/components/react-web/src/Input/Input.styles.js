@@ -7,6 +7,19 @@ export const inputStyles = css`
   flex-direction: column;
   align-items: flex-start;
 
+  &.error {
+    color: ${color.error};
+
+    & > span {
+      font-size: ${fontSizes.minus3};
+      padding-top: 4px;
+    }
+
+    & > input {
+      border-color: ${color.error};
+    }
+  }
+
   &.inline {
     flex-direction: row-reverse;
     align-items: center;
