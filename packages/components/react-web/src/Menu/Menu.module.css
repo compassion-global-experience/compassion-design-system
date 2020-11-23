@@ -25,7 +25,7 @@ body {
   border: none;
   vertical-align: middle;
   transition: box-shadow 0.4s ease;
-  margin-left: auto; /* Strictly for positioning */
+  margin-left: auto;
 }
 
 .menu-trigger:hover {
@@ -53,8 +53,8 @@ body {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20px);
-  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  /* transform: translateY(-20px); */
+  /* transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s; */
 }
 
 .menu li::before {
