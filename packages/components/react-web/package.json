@@ -1,9 +1,13 @@
 {
   "name": "@compassion-gds/react-web",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
+  "main": "./src/index.js",
+  "files": [
+    "./src"
+  ],
   "dependencies": {
-    "@compassion-gds/elements": "^0.0.0",
+    "@compassion-gds/elements": "^0.1.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "@testing-library/jest-dom": "^4.2.4",
@@ -14,6 +18,11 @@
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
     "sanitize.css": "^12.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/compassion-gds/compassion-gds.git",
+    "directory": "packages/components/react-web"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public",
@@ -62,5 +71,5 @@
     "sass-loader": "^10.0.3",
     "style-loader": "^2.0.0"
   },
-  "config": {}
+  "private": false
 }
