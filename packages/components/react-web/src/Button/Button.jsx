@@ -18,7 +18,7 @@ export const Button = ({ primary, size, label, ...props }) => {
         { 'button--primary': primary },
         { [`button--${size}`]: size }
       )}
-      {...props}
+    {...props}  
     >
       {label}
     </button>
