@@ -16,5 +16,6 @@
   },
   "devDependencies": {
     "modularscale-js": "^3.0.1"
-  }
+  },
+  "private": false
 }
