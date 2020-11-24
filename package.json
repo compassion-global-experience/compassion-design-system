@@ -14,7 +14,8 @@
     "packages/site"
   ],
   "scripts": {
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "prep-release": "lerna version --conventional-commits --yes"
   },
   "devDependencies": {
     "commitizen": "^4.2.2",

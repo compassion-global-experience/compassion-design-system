@@ -1,22 +1,20 @@
 {
   "name": "@compassion-gds/elements",
   "version": "0.1.0",
-  "main": "dist/index.js",
+  "main": "index.js",
   "license": "MIT",
-  "source": "index.js",
-  "module": "dist/index.module.js",
-  "unpkg": "dist/index.umd.js",
+  "files": [
+    "./src",
+    "./index.js"
+  ],
   "scripts": {
-    "test": "echo Hello from elements",
-    "build": "microbundle",
-    "develop": "microbundle watch"
+    "test": "echo Hello from elements"
   },
   "dependencies": {
     "chroma-js": "^2.1.0",
     "modularscale-js": "^3.0.1"
   },
   "devDependencies": {
-    "microbundle": "^0.12.4",
     "modularscale-js": "^3.0.1"
   }
 }

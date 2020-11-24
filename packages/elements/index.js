@@ -1,7 +1,7 @@
 import b from './src/breakpoints';
 import c from './src/color';
-import m from './src/motion';
-import s from './src/space';
+import * as m from './src/motion';
+import * as s from './src/space';
 import * as t from './src/typography';
 
 export const breakpoints = b;
