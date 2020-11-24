@@ -2,6 +2,10 @@
   "name": "@compassion-gds/react-web",
   "version": "0.1.0",
   "license": "MIT",
+  "main": "./src/index.js",
+  "files": [
+    "./src"
+  ],
   "dependencies": {
     "@compassion-gds/elements": "^0.1.0",
     "@emotion/core": "^10.0.35",
@@ -67,5 +71,5 @@
     "sass-loader": "^10.0.3",
     "style-loader": "^2.0.0"
   },
-  "config": {}
+  "private": false
 }
