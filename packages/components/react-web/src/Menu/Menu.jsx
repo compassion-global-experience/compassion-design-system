@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import * as menuStyles from './Menu.module.css';
+import * as menuStyles from './Menu.styles';
 import { useDetectOutsideClick } from './useDetectOutsideClick';
 
 export const Menu = ({ primary, size, label, ...props }) => {
@@ -14,14 +14,11 @@ export const Menu = ({ primary, size, label, ...props }) => {
 
   return (
     <div className="container">
-      <div className="menu-container">
-        <button onClick={onClick} className="menu-trigger">
-          <span>Menu</span>
+      <div css={menuStyles.menuContainer}>
+        <button onClick={onClick} css={menuStyles.menuTrigger}>
+          <span css={menuStyles.label}>Menu</span>
         </button>
-        <nav
-          ref={dropdownRef}
-          className={`menu ${isActive ? 'active' : 'inactive'}`}
-        >
+        <nav ref={dropdownRef} css={menuStyles.menu({ isActive })}>
           <ul>
             <li>
               <a href="#">Messages</a>
