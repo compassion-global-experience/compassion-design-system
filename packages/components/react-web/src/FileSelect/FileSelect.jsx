@@ -27,8 +27,8 @@ export const FileSelect = ({ label }) => {
         type="file"
         ref={inputEl}
         onChange={updateFiles}
-        name="fileUpload"
-        id="fileUpload"
+        name="fileSelect"
+        id="fileSelect"
         multiple
         accept="image/*, video/*"
       />
