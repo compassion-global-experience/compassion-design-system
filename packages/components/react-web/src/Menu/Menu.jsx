@@ -15,24 +15,35 @@ export const Menu = ({ primary, size, label, ...props }) => {
   return (
     <div className="container">
       <div css={menuStyles.menuContainer}>
-        <button onClick={onClick} css={menuStyles.menuTrigger}>
+        <button
+          onClick={onClick}
+          css={menuStyles.menuTrigger}
+          aria-haspopup="listbox"
+          aria-labelledby="exp_elem exp_button"
+          id="exp_button"
+        >
           <span css={menuStyles.label}>Menu</span>
         </button>
         <nav ref={dropdownRef} css={menuStyles.menu({ isActive })}>
-          <ul>
-            <li>
+          <ul
+            id="exp_elem_list"
+            tabindex="-1"
+            role="listbox"
+            aria-labelledby="exp_elem"
+          >
+            <li id="exp_elem_Mg" role="option">
               <a href="#">Messages</a>
             </li>
-            <li>
+            <li id="exp_elem_Sv" role="option">
               <a href="#">Saved</a>
             </li>
-            <li>
+            <li id="exp_elem_Ab" role="option">
               <a href="#">About</a>
             </li>
-            <li>
+            <li id="exp_elem_Lg" role="option">
               <a href="#">Languages</a>
             </li>
-            <li>
+            <li id="exp_elem_St" role="option">
               <a href="#">Settings</a>
             </li>
           </ul>
