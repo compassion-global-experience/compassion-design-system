@@ -1,5 +1,14 @@
 import { css } from '@emotion/core';
 
+export const label = css`
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-left: 16px;
+  }
+`;
+
 export const checkboxStyles = css`
   padding-right: 1rem;
   padding-left: 1rem;

@@ -4,7 +4,7 @@ import '../global.css';
 import { ProgressBar } from './ProgressBar';
 
 export default {
-  title: 'Global Design System/Menu',
+  title: 'Global Design System/Progress Bar',
   component: ProgressBar,
   argTypes: {},
 };

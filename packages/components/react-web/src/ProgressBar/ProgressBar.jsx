@@ -5,18 +5,14 @@ import PropTypes from 'prop-types';
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
 import * as progressBarStyles from './ProgressBar.styles';
-import { useDetectOutsideClick } from './useDetectOutsideClick';
 
 export const ProgressBar = ({ primary, size, label, ...props }) => {
   const dropdownRef = useRef(null);
-  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
-  const onClick = () => setIsActive(!isActive);
 
   return (
     <div className="container">
       <div css={progressBarStyles.progressBarContainer}>
         <button
-          onClick={onClick}
           css={progressBarStyles.progressBarTrigger}
           aria-haspopup="listbox"
           aria-labelledby="exp_elem exp_button"
@@ -24,10 +20,7 @@ export const ProgressBar = ({ primary, size, label, ...props }) => {
         >
           <span css={progressBarStyles.label}>Progress Bar</span>
         </button>
-        <nav
-          ref={dropdownRef}
-          css={progressBarStyles.progressBar({ isActive })}
-        >
+        <nav ref={dropdownRef}>
           <ul
             id="exp_elem_list"
             tabindex="-1"

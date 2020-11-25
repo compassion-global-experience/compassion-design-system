@@ -19,7 +19,7 @@ export const Checkbox = ({ primary, size, label, ...props }) => {
 
   return (
     <form>
-      <label>
+      <label css={checkboxStyles.label}>
         Placeholder for checkbox:
         <input
           type="checkbox"
