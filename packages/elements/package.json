@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/elements",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -26,8 +26,8 @@
     "modularscale-js": "^3.0.1"
   },
   "devDependencies": {
-    "modularscale-js": "^3.0.1",
-    "microbundle-crl": "^0.13.10"
+    "microbundle-crl": "^0.13.10",
+    "modularscale-js": "^3.0.1"
   },
   "private": false
 }

@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/react-web",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -12,7 +12,7 @@
     "dist/"
   ],
   "dependencies": {
-    "@compassion-gds/elements": "^0.2.0",
+    "@compassion-gds/elements": "^0.2.1",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "emotion": "^10.0.27"
