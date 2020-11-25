@@ -25,6 +25,7 @@ module.exports = {
       },
     ],
     'object-curly-spacing': [1, 'always'],
+    'react/jsx-uses-react': 1,
     'space-in-parens': [1, 'never'],
   },
 };

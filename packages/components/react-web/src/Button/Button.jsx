@@ -1,6 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
@@ -18,7 +18,7 @@ export const Button = ({ primary, size, label, ...props }) => {
         { 'button--primary': primary },
         { [`button--${size}`]: size }
       )}
-    {...props}  
+      {...props}
     >
       {label}
     </button>
