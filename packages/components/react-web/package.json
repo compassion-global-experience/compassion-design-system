@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/react-web",
-  "version": "0.2.2-beta.0",
+  "version": "0.2.2",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
