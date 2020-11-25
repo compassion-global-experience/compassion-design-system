@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-// import { color, typography } from '@compassion-gds/elements';
+import { color, typography } from '@compassion-gds/elements';
 const { fontSizes } = typography;
 
 export const inputStyles = css`
@@ -11,8 +11,8 @@ export const inputStyles = css`
     color: ${color.error};
 
     & > span {
-      font-size: ${fontSizes.minus3};
       padding-top: 4px;
+      font-size: ${fontSizes.minus3};
     }
 
     & > input {
@@ -26,14 +26,14 @@ export const inputStyles = css`
     justify-content: flex-end;
 
     & > label {
-      color: ${color.black};
       padding-left: 8px;
+      color: ${color.black};
     }
   }
 
   & > label {
-    font-size: ${fontSizes.minus2};
     color: ${color.primary};
+    font-size: ${fontSizes.minus2};
   }
 
   & > input {
