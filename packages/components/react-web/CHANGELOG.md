@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2-beta.0](https://github.com/compassion-gds/compassion-gds/compare/v0.2.1...v0.2.2-beta.0) (2020-11-25)
+
+
+### Bug Fixes
+
+* **react-web:** Input: Add missing variable definition ([f068b74](https://github.com/compassion-gds/compassion-gds/commit/f068b744219df1bc4c327b08ddd3630fd3bc7341))
+
+
+
+
+
 ## [0.2.1](https://github.com/compassion-gds/compassion-gds/compare/v0.2.0...v0.2.1) (2020-11-25)
 
 **Note:** Version bump only for package @compassion-gds/react-web
