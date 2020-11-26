@@ -2,11 +2,12 @@
   "packages": [
     "packages/components/*",
     "packages/elements",
-    "packages/themes/*"
+    "packages/themes/*",
+    "packages/site"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "0.2.2-beta.0",
+  "version": "independent",
   "command": {
     "publish": {
       "conventionalCommits": true,
