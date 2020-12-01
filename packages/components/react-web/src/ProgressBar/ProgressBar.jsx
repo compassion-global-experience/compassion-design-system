@@ -1,29 +1,28 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
 import * as progressBarStyles from './ProgressBar.styles';
 
 export const ProgressBar = ({ primary, size, label, ...props }) => {
-  const dropdownRef = useRef(null);
-
   return (
     <div className="container">
-      <div css={progressBarStyles.progressBarContainer}>
+      <div css={progressBarStyles.menuContainer}>
         <button
-          css={progressBarStyles.progressBarTrigger}
+          css={progressBarStyles.menuTrigger}
           aria-haspopup="listbox"
           aria-labelledby="exp_elem exp_button"
           id="exp_button"
         >
-          <span css={progressBarStyles.label}>Progress Bar</span>
+          <span css={progressBarStyles.label}>Menu</span>
         </button>
-        <nav ref={dropdownRef}>
+        <nav css={progressBarStyles.menu}>
           <ul
             id="exp_elem_list"
-            tabindex="-1"
+            tabIndex="-1"
             role="listbox"
             aria-labelledby="exp_elem"
           >
@@ -55,7 +54,7 @@ ProgressBar.propTypes = {
    */
   primary: PropTypes.bool,
   /**
-   * Progress Bar contents
+   * Menu contents
    */
   label: PropTypes.string.isRequired,
   /**
