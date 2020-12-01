@@ -6,8 +6,7 @@ import { Button } from './Button';
 export default {
   title: 'Global Design System/Button',
   component: Button,
-  argTypes: {
-  },
+  argTypes: {},
 };
 
 const Template = (args) => <Button {...args} />;

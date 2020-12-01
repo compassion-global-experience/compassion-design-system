@@ -1,11 +1,15 @@
 {
   "name": "@compassion-gds/elements",
-  "version": "0.1.0",
-  "main": "index.js",
+  "version": "0.2.1",
   "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "index.js",
+  "engines": {
+    "node": ">=10"
+  },
   "files": [
-    "./src",
-    "./index.js"
+    "dist/"
   ],
   "repository": {
     "type": "git",
@@ -13,6 +17,8 @@
     "directory": "packages/elements"
   },
   "scripts": {
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "test": "echo Hello from elements"
   },
   "dependencies": {
@@ -20,6 +26,7 @@
     "modularscale-js": "^3.0.1"
   },
   "devDependencies": {
+    "microbundle-crl": "^0.13.10",
     "modularscale-js": "^3.0.1"
   },
   "private": false
