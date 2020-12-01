@@ -1,48 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import * as progressBarStyles from './ProgressBar.styles';
+import * as styles from './ProgressBar.module.css';
+
+const Range = (props) => {
+  return (
+    // render current the filled range of progress bar along its width
+    <div className="range" style={{ width: `${props.percentRange}%` }} />
+  );
+};
+
+const PB = (props) => {
+  return (
+    <div className="progress-bar">
+      {/* render available progress bar’s limit */}
+      <Range percentRange={props.percentRange} />
+    </div>
+  );
+};
+
+function EffectedFn() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000 * 10);
+  });
+
+  return (
+    <div>
+      {loading && <span>Loading...</span>}
+      {!loading && <span>All Done!</span>}
+    </div>
+  );
+}
 
 export const ProgressBar = ({ primary, size, label, ...props }) => {
+  const [percentRange, setProgress] = useState(0);
+
   return (
     <div className="container">
-      <div css={progressBarStyles.menuContainer}>
+      <PB percentRange={percentRange} />
+      <div className="toggle-buttons">
         <button
-          css={progressBarStyles.menuTrigger}
-          aria-haspopup="listbox"
-          aria-labelledby="exp_elem exp_button"
-          id="exp_button"
+          onClick={() => setProgress(percentRange > 0 ? percentRange - 20 : 0)}
         >
-          <span css={progressBarStyles.label}>Menu</span>
+          Back
         </button>
-        <nav css={progressBarStyles.menu}>
-          <ul
-            id="exp_elem_list"
-            tabIndex="-1"
-            role="listbox"
-            aria-labelledby="exp_elem"
-          >
-            <li id="exp_elem_Mg" role="option">
-              <a href="#">Messages</a>
-            </li>
-            <li id="exp_elem_Sv" role="option">
-              <a href="#">Saved</a>
-            </li>
-            <li id="exp_elem_Ab" role="option">
-              <a href="#">About</a>
-            </li>
-            <li id="exp_elem_Lg" role="option">
-              <a href="#">Languages</a>
-            </li>
-            <li id="exp_elem_St" role="option">
-              <a href="#">Settings</a>
-            </li>
-          </ul>
-        </nav>
+        <button
+          onClick={() =>
+            setProgress(percentRange < 100 ? percentRange + 20 : 100)
+          }
+        >
+          Next
+        </button>
+        <button onClick={() => setProgress(0)}>Start Over</button>
       </div>
     </div>
   );
