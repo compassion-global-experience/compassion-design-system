@@ -2,7 +2,7 @@
   width: 350px;
   height: 20px;
   border-radius: 50px;
-  border: 2px solid #ccc;
+  border: 1px solid #bbb;
   margin-bottom: 20px;
 }
 
@@ -17,7 +17,7 @@
   margin: 0 10px;
   padding: 7px 20px;
   border-radius: 5px;
-  border: 1px solid #000;
+  border: 1px solid #bbb;
   outline: 0;
   cursor: pointer;
 }

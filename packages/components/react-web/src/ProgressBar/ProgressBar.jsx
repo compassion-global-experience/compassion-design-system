@@ -23,23 +23,6 @@ const PB = (props) => {
   );
 };
 
-function EffectedFn() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000 * 10);
-  });
-
-  return (
-    <div>
-      {loading && <span>Loading...</span>}
-      {!loading && <span>All Done!</span>}
-    </div>
-  );
-}
-
 export const ProgressBar = ({ primary, size, label, ...props }) => {
   const [percentRange, setProgress] = useState(0);
 

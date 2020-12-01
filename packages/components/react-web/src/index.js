@@ -1,5 +1,4 @@
 export * from './Button';
-export * from './Checkbox';
 export * from './FileSelect';
 export * from './Input';
 export * from './Logo';
