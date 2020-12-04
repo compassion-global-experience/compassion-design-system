@@ -17,7 +17,7 @@
   "scripts": {
     "build": "style-dictionary build --config ./config.js",
     "postbuild": "echo Postbuild!",
-    "watch": "yarn build && chokidar \"components/**/*.js(on)?\" -c \"yarn build\""
+    "start": "yarn build && chokidar \"components/**/*.js(on)?\" -c \"yarn build\""
   },
   "devDependencies": {
     "chokidar-cli": "^2.1.0"

@@ -15,10 +15,15 @@
   ],
   "scripts": {
     "test": "lerna run test",
-    "prep-release": "lerna version --conventional-commits --yes"
+    "prep-release": "lerna version --conventional-commits --yes",
+    "start": "concurrently --kill-others --names \"storybook,elements,tokens\" -c \"bgCyan,bgMagenta,bgYellow\" \"yarn start:react\" \"yarn start:elements\" \"yarn start:tokens\"",
+    "start:react": "cd packages/components/react-web && yarn start",
+    "start:elements": "cd packages/elements && yarn start",
+    "start:tokens": "cd packages/components/tokens && yarn start"
   },
   "devDependencies": {
     "commitizen": "^4.2.2",
+    "concurrently": "^5.3.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.0",
