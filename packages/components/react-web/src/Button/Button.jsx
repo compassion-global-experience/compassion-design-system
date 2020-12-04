@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 import { cx } from 'emotion';
 import buttonStyles from './Button.styles';
 
@@ -10,6 +11,8 @@ import buttonStyles from './Button.styles';
  * Primary UI component for user interaction
  */
 export const Button = ({ primary, size, label, ...props }) => {
+  const theme = useTheme();
+
   return (
     <button
       type="button"
