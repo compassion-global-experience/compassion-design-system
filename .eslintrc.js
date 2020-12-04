@@ -8,15 +8,15 @@ module.exports = {
     node: true,
   },
   rules: {
+    'import/prefer-default-export': ['off'],
     'jsx-a11y/href-no-hash': ['off'],
-    'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
     'max-len': [
       'warn',
       {
         code: 80,
         tabWidth: 2,
         comments: 80,
-        ignoreComments: false,
+        ignoreComments: true,
         ignoreTrailingComments: true,
         ignoreUrls: true,
         ignoreStrings: true,
@@ -25,6 +25,7 @@ module.exports = {
       },
     ],
     'object-curly-spacing': [1, 'always'],
+    'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
     'react/jsx-props-no-spreading': 0,
     'react/jsx-uses-react': 1,
     'space-in-parens': [1, 'never'],
