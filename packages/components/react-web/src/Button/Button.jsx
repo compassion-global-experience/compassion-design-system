@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import * as buttonStyles from './Button.styles';
+import buttonStyles from './Button.styles';
 
 /**
  * Primary UI component for user interaction
@@ -13,7 +13,7 @@ export const Button = ({ primary, size, label, ...props }) => {
   return (
     <button
       type="button"
-      css={buttonStyles.buttonStyles}
+      css={buttonStyles}
       className={cx(
         { 'button--primary': primary },
         { [`button--${size}`]: size }
