@@ -6,7 +6,7 @@ export const parameters = {
   backgrounds: { grid: { cellSize: 16, opacity: 0.25 } },
 };
 
-const theme = {};
+const theme = require('@compassion-gds/tokens');
 
 export const decorators = [
   (Story) => (
