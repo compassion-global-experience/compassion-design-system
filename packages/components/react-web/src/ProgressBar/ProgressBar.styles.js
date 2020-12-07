@@ -8,25 +8,9 @@ export const progressBar = css`
   margin-bottom: 20px;
 `;
 
-export const range = css`
-  background: limegreen;
+export const range = (color) => css`
+  background: ${color};
   height: 100%;
   border-radius: inherit;
   transition: width 0.3s ease-in;
-`;
-
-export const toggleButtons = css`
-  & > button {
-    margin: 0 10px;
-    padding: 7px 20px;
-    border-radius: 5px;
-    border: 1px solid #bbb;
-    outline: 0;
-    cursor: pointer;
-  }
-
-  & > button:hover {
-    color: white;
-    background: #ccc;
-  }
 `;

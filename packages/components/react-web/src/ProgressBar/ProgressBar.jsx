@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 /** @jsxRuntime classic */
@@ -6,40 +6,34 @@ import PropTypes from 'prop-types';
 import { jsx } from '@emotion/core';
 import * as progressBarStyles from './ProgressBar.styles';
 
-export const ProgressBar = () => {
-  const [percentRange, setProgress] = useState(0);
+export const ProgressBar = ({ value, color }) => {
+  let progress = value;
+  if (value < 0) progress = 0;
+  else if (value > 100) progress = 100;
 
   return (
     <div className="container">
       <div css={progressBarStyles.progressBar}>
         <div
-          css={progressBarStyles.range}
-          style={{ width: `${percentRange}%` }}
+          css={progressBarStyles.range(color)}
+          style={{ width: `${progress}%` }}
         />
-      </div>
-      <div css={progressBarStyles.toggleButtons}>
-        <button
-          type="button"
-          onClick={() => setProgress(percentRange > 0 ? percentRange - 20 : 0)}
-        >
-          Back
-        </button>
-        <button
-          type="button"
-          onClick={() =>
-            setProgress(percentRange < 100 ? percentRange + 20 : 100)
-          }
-        >
-          Next
-        </button>
-        <button type="button" onClick={() => setProgress(0)}>
-          Start Over
-        </button>
       </div>
     </div>
   );
 };
 
-ProgressBar.propTypes = {};
+ProgressBar.propTypes = {
+  /**
+   * Percentage of progress
+   */
+  value: PropTypes.number.isRequired,
+  /**
+   * Fill color
+   */
+  color: PropTypes.string,
+};
 
-ProgressBar.defaultProps = {};
+ProgressBar.defaultProps = {
+  color: '#0948aa',
+};
