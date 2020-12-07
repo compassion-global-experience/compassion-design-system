@@ -12,7 +12,4 @@ export default {
 const Template = (args) => <ProgressBar {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'ProgressBar',
-};
+Primary.args = {};
