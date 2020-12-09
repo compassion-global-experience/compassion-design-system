@@ -10,7 +10,14 @@ import buttonStyles from './Button.styles';
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, size, label, ...props }) => {
+export const Button = ({
+  primary,
+  size,
+  label,
+  disabled,
+  onClick,
+  ...props
+}) => {
   const theme = useTheme();
 
   return (
@@ -21,6 +28,8 @@ export const Button = ({ primary, size, label, ...props }) => {
         { 'button--primary': primary },
         { [`button--${size}`]: size }
       )}
+      disabled={disabled}
+      onClick={onClick}
       {...props}
     >
       {label}
@@ -41,6 +50,7 @@ Button.propTypes = {
    * Button contents
    */
   label: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
   /**
    * Optional click handler
    */
@@ -50,5 +60,6 @@ Button.propTypes = {
 Button.defaultProps = {
   primary: false,
   size: 'medium',
+  disabled: false,
   onClick: undefined,
 };
