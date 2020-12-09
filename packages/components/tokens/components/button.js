@@ -11,6 +11,8 @@ module.exports = {
     color: { value: `${elements.color.primary}` },
     border: { value: `1px solid ${elements.color.primary}` },
     cursor: { value: `pointer` },
+    boxShadow: { value: `${elements.depth.plus0}` },
+    easing: { value: `${elements.motion.easing()}` },
 
     disabled: {
       color: { value: `${elements.color.primary}` },
@@ -38,6 +40,7 @@ module.exports = {
           .hex()
           .toLowerCase()}`,
       },
+      boxShadow: { value: `${elements.depth.plus2}` },
     },
 
     active: {
@@ -54,6 +57,7 @@ module.exports = {
           .hex()
           .toLowerCase()}`,
       },
+      boxShadow: { value: `${elements.depth.plus1}` },
     },
 
     large: {
@@ -63,6 +67,7 @@ module.exports = {
 
     small: {
       minHeight: { value: `${elements.size.plus2}` },
+      fontSize: { value: `${elements.typography.fontSizes.minus2}` },
     },
   },
 
