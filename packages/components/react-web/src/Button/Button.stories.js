@@ -15,11 +15,20 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'Button',
+  disabled: false,
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Button',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  primary: true,
+  disabled: true,
+  label: 'Button',
+  onClick: undefined,
 };
 
 export const Large = Template.bind({});
