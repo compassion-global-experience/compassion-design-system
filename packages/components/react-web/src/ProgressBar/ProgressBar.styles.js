@@ -5,12 +5,24 @@ export const progressBar = css`
   height: 20px;
   border-radius: 50px;
   border: 1px solid #bbb;
-  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px #ccc inset;
+
+  &.progress--small {
+    height: 10px;
+  }
+
+  &.progress--medium {
+    height: 15px;
+  }
+
+  &.progress--large {
+    height: 20px;
+  }
 `;
 
 export const range = (color) => css`
   background: ${color};
   height: 100%;
-  border-radius: inherit;
-  transition: width 0.3s ease-in;
+  border-radius: 0 50px 50px 0;
 `;
