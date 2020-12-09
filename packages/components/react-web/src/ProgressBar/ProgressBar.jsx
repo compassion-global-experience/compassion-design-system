@@ -17,6 +17,11 @@ export const ProgressBar = ({ value, color }) => {
         <div
           css={progressBarStyles.range(color)}
           style={{ width: `${progress}%` }}
+          role="progressbar"
+          aria-label={`${progress}%`}
+          aria-valuenow={progress}
+          aria-valuemin="0"
+          aria-valuemax="100"
         />
       </div>
     </div>
