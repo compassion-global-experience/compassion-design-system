@@ -1,31 +1,23 @@
 import { css } from '@emotion/core';
-import { color, typography } from '@compassion-gds/elements';
-const { fonts, fontSizes } = typography;
 
-export const fileSelectStyles = css`
-  display: inline-flex;
-  align-items: center;
-  font-size: ${fontSizes.minus2};
+export const fileSelectStyles = (theme) => {
+  return css`
+    display: inline-flex;
+    font-size: ${theme.base.fontSize};
+    align-items: center;
 
-  & > input {
-    display: none;
-  }
+    input {
+      display: none;
+      visibility: hidden;
+    }
 
-  & > button {
-    background: ${color.primary};
-    border: none;
-    outline: none;
-    padding: 8px;
-    margin-right: 15px;
-    color: ${color.white};
-    font-family: ${fonts.sans};
-    cursor: pointer;
-  }
-
-  & > span {
-    max-width: 250px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-`;
+    .file-select__summary {
+      overflow: hidden;
+      margin-right: 1em;
+      margin-left: 1em;
+      max-width: 250px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  `;
+};
