@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { Button } from '../Button';
+import { helpers } from '@compassion-gds/elements';
 
 /** @jsxRuntime classic */
 /** @jsx jsx */
@@ -24,6 +25,7 @@ export const FileSelect = ({ label, emptyStateLabel, ...props }) => {
   };
 
   const theme = useTheme().component.fileSelect;
+  const id = props.id || helpers.id();
 
   return (
     <div css={fileSelectStyles(theme)}>
@@ -32,7 +34,7 @@ export const FileSelect = ({ label, emptyStateLabel, ...props }) => {
         ref={inputEl}
         onChange={updateFiles}
         name="fileSelect"
-        id="fileSelect"
+        id={`gds-${id}`}
         multiple
         accept="image/*, video/*"
       />
@@ -53,6 +55,10 @@ FileSelect.propTypes = {
    * Text displayed when no files have been selected.
    */
   emptyStateLabel: PropTypes.string,
+  /**
+   * Optional. An id will be generated if not supplied.
+   */
+  id: PropTypes.string,
 };
 
 FileSelect.defaultProps = {
