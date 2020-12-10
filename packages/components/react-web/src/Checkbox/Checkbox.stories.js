@@ -10,26 +10,15 @@ export default {
 };
 
 const Template = (args) => <Checkbox {...args} />;
+const DisabledTemplate = (args) => (
+  <>
+    <Checkbox disabled checked {...args} />
+    <Checkbox disabled {...args} />
+  </>
+);
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Select',
-};
+export const Check = Template.bind({});
+Check.args = { label: 'Click Me!' };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Select',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Select',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Select',
-};
+export const Disabled = DisabledTemplate.bind({});
+Disabled.args = { label: 'Disabled Label', disabled: true };

@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { helpers } from '@compassion-gds/elements';
 
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import * as checkboxStyles from './Checkbox.styles';
+import { useTheme } from 'emotion-theming';
+import checkboxStyles from './Checkbox.styles';
 
 /**
- * Primary UI component for user interaction
+ * Checkbox form input
  */
-export const Checkbox = ({ primary, size, label, ...props }) => {
+export const Checkbox = ({ label, onChange, disabled, ...props }) => {
   const [value, setValue] = useState('');
 
   const handleChange = (e) => {
@@ -18,48 +20,46 @@ export const Checkbox = ({ primary, size, label, ...props }) => {
     if (props.onChange) props.onChange();
   };
 
+  const id = props.id || `gds-${helpers.id()}`;
+  const theme = useTheme().component.checkbox;
+
   return (
-    <form>
-      <label>
-        Placeholder for checkbox:
+    <React.Fragment>
+      <div className="checkbox__wrapper" css={checkboxStyles(theme)}>
         <input
+          id={id}
           type="checkbox"
-          placeholder={label}
-          css={checkboxStyles.checkboxStyles}
-          className={cx(
-            { 'checkbox--primary': primary },
-            { [`checkbox--${size}`]: size }
-          )}
           {...props}
           value={value}
           onChange={handleChange}
-        ></input>
-      </label>
-    </form>
+          disabled={disabled}
+        />
+        <label htmlFor={id}>{label}</label>
+      </div>
+    </React.Fragment>
   );
 };
 
 Checkbox.propTypes = {
   /**
-   * Is this the principal call to action on the page?
+   * Optional; if not supplied, one will be generated to link the label and input.
    */
-  primary: PropTypes.bool,
+  id: PropTypes.string,
   /**
-   * How large should the checkbox be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Checkbox contents
+   * Label describing the Checkbox.
    */
   label: PropTypes.string.isRequired,
   /**
-   * Optional click handler
+   * Is the Checkbox disabled?
    */
-  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
+  /**
+   * Function to execute when Checkbox is checked/unchecked.
+   */
+  onChange: PropTypes.func,
 };
 
 Checkbox.defaultProps = {
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
+  onChange: undefined,
+  disabled: false,
 };
