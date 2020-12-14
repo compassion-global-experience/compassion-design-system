@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
 import { color, typography } from '@compassion-gds/elements';
+
 const { fonts, fontSizes } = typography;
 
 export const fileSelectStyles = css`
