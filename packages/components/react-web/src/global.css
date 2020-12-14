@@ -8,3 +8,8 @@ body {
   font-size: 100%;
   font-family: Montserrat;
 }
+
+:focus {
+  outline: 1px dotted;
+  outline-offset: 2px;
+}

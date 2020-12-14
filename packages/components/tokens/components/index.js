@@ -3,5 +3,6 @@ module.exports = {
     button: require('./button'),
     checkbox: require('./checkbox'),
     fileSelect: require('./fileSelect'),
+    input: require('./input'),
   },
 };

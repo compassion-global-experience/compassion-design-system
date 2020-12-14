@@ -1,61 +1,205 @@
 import { css } from '@emotion/core';
-import { color, typography } from '@compassion-gds/elements';
-const { fontSizes } = typography;
 
-export const inputStyles = css`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+export const inputStyles = (theme) => {
+  return css`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-  &.error {
-    color: ${color.error};
-
-    & > span {
-      padding-top: 4px;
-      font-size: ${fontSizes.minus3};
+    label {
+      cursor: pointer;
     }
 
-    & > input {
-      border-color: ${color.error};
+    input {
+      padding: ${theme.base.padding};
+      min-height: ${theme.base.minHeight};
+      outline: ${theme.base.outline};
+      border: ${theme.base.border};
+      border-color: ${theme.base.borderColor};
+      border-radius: ${theme.base.borderRadius};
+      font-size: ${theme.base.fontSize};
+      font-family: unset;
+      cursor: pointer;
+      transition: border-color 60ms ${theme.base.easing},
+        outline 60ms ${theme.base.easing};
+
+      &:not([type='radio']):not([type='checkbox']) {
+        cursor: text;
+
+        :focus {
+          outline: ${theme.base.focus.outline};
+          outline-offset: 0;
+          border-color: ${theme.base.focus.borderColor};
+        }
+
+        + label {
+          font-size: ${theme.base.label.fontSize};
+          order: -1;
+        }
+
+        &[disabled] {
+          border-color: ${theme.base.disabled.borderColor};
+          background: ${theme.base.disabled.background};
+          color: ${theme.base.disabled.color};
+          cursor: default;
+
+          + label {
+            cursor: default;
+          }
+        }
+      }
+
+      &[type='checkbox'],
+      &[type='radio'] {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        border: 0;
+        white-space: nowrap;
+        clip-path: inset(50%);
+
+        cursor: pointer;
+
+        + label {
+          position: relative;
+          padding-left: 1.33em;
+          cursor: pointer;
+        }
+
+        &:focus + label {
+          outline: ${theme.checkbox.focus.outline};
+        }
+
+        + label::before {
+          position: absolute;
+          top: 0.2em;
+          left: 0;
+          width: 1em;
+          height: 1em;
+          border: ${theme.base.border};
+          border-color: ${theme.base.borderColor};
+          background-image: none;
+          background-position: 50%;
+          content: '';
+          transition: background 100ms ${theme.base.easing},
+            background-image 100ms ${theme.base.easing},
+            border 100ms ${theme.base.easing};
+        }
+
+        &:hover + label::before {
+          border-color: ${theme.base.hover.borderColor};
+          background: ${theme.base.hover.background};
+        }
+
+        &:checked + label::before {
+          border-color: ${theme.checkbox.checked.borderColor};
+          background: ${theme.checkbox.checked.background};
+        }
+
+        &[disabled]:not(:checked) + label::before,
+        &[disabled]:not(:checked):hover + label::before {
+          border-color: ${theme.base.disabled.borderColor};
+          background: ${theme.base.disabled.background};
+        }
+
+        &[disabled]:checked + label::before,
+        &[disabled]:checked:hover + label::before {
+          border-color: ${theme.checkbox.disabled.checked.borderColor};
+          background: ${theme.checkbox.disabled.checked.background};
+        }
+
+        &[disabled] + label {
+          color: ${theme.base.disabled.color};
+          cursor: default;
+        }
+      }
+
+      &[type='radio'] {
+        + label::before {
+          border-radius: ${theme.radio.borderRadius};
+          background-color: ${theme.radio.disabled.backgroundColor};
+        }
+
+        &:hover + label::before {
+          border-width: ${theme.radio.borderWidth};
+          background: #fff;
+        }
+
+        &:checked + label::before {
+          border-width: ${theme.radio.borderWidth};
+          background: #fff;
+        }
+
+        &[disabled]:not(:checked) + label::before,
+        &[disabled]:checked + label::before,
+        &[disabled]:hover:not(:checked) + label::before,
+        &[disabled]:hover:checked + label::before {
+          background: #fff;
+        }
+      }
+
+      &[type='checkbox'] {
+        + label::before {
+          background: ${theme.base.background};
+        }
+
+        &:hover + label::before {
+          background-image: ${theme.base.hover.backgroundImage};
+        }
+
+        &:checked + label::before {
+          background-image: ${theme.checkbox.checked.backgroundImage};
+        }
+
+        &[disabled]:not(:checked) + label::before,
+        &[disabled]:not(:checked):hover + label::before {
+          background-image: ${theme.checkbox.disabled.backgroundImage};
+        }
+
+        &[disabled]:checked + label::before,
+        &[disabled]:checked:hover + label::before {
+          background-image: ${theme.checkbox.disabled.checked.backgroundImage};
+        }
+      }
     }
-  }
 
-  &.inline {
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: flex-end;
+    &.input-group--error {
+      .input-group__error-message {
+        padding-top: 4px;
+        color: ${theme.base.error.color};
+        font-size: ${theme.base.error.fontSize};
+      }
 
-    & > label {
-      padding-left: 8px;
-      color: ${color.black};
+      input:not([type='radio']):not([type='checkbox']) {
+        border-color: ${theme.base.error.color};
+
+        &:focus {
+          outline: ${theme.base.error.outline};
+        }
+      }
     }
-  }
 
-  & > label {
-    color: ${color.primary};
-    font-size: ${fontSizes.minus2};
-  }
+    &.input-group--inline {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
 
-  & > input {
-    padding-right: 1rem;
-    padding-left: 1rem;
-    min-height: 44px;
-    border: 1px solid ${color.primary};
-    background: ${color.white};
-    color: ${color.primary};
-    font-family: unset;
-    cursor: pointer;
-  }
+      label {
+        padding-left: 8px;
+        color: black;
+      }
 
-  & > input.input--small {
-    min-height: 32px;
-  }
+      input.input--small {
+        min-height: 32px;
+      }
 
-  & > input.input--medium {
-    min-height: 36px;
-  }
-
-  & > input.input--large {
-    min-height: 40px;
-  }
-`;
+      input.input--large {
+        min-height: 56px;
+      }
+    }
+  `;
+};
