@@ -13,10 +13,13 @@
   ],
   "dependencies": {
     "@compassion-gds/elements": "^0.2.1",
+    "@compassion-gds/tokens": "^0.0.1-beta.1",
     "@emotion/core": "^10.0.35",
+    "@emotion/react": "^11.1.1",
     "@emotion/styled": "^10.0.27",
     "emotion": "^10.0.27",
     "prop-types": "^15.7.2"
+    "emotion-theming": "^11.0.0"
   },
   "repository": {
     "type": "git",
@@ -25,7 +28,7 @@
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "start": "run-s storybook",
     "prepublishOnly": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",

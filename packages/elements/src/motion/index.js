@@ -21,6 +21,6 @@ export const easings = {
  *    substantial or that carries meaning.
  * @returns {string}
  */
-export const easing = (direction, style) => {
+export const easing = (direction = 'standard', style = 'functional') => {
   return easings[style][direction];
 };
