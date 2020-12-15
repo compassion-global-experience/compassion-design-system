@@ -1,28 +1,29 @@
 import { css } from '@emotion/core';
 
-export const progressBar = css`
-  width: 350px;
-  height: 20px;
-  border-radius: 50px;
-  border: 1px solid #bbb;
-  overflow: hidden;
-  box-shadow: 0 1px 2px #ccc inset;
-
-  &.progress--small {
-    height: 10px;
-  }
-
-  &.progress--medium {
-    height: 15px;
-  }
-
-  &.progress--large {
+export const progressBar = (theme) => {
+  return css`
+    overflow: hidden;
+    width: 350px;
     height: 20px;
-  }
-`;
+    height: ${theme.base.height};
+    border: ${theme.base.border};
+    border-radius: ${theme.base.borderRadius};
+    box-shadow: ${theme.base.boxShadow};
 
-export const range = (color) => css`
-  background: ${color};
-  height: 100%;
-  border-radius: 0 50px 50px 0;
-`;
+    &.progress-bar--small {
+      height: ${theme.small.height};
+    }
+
+    &.progress-bar--large {
+      height: ${theme.large.height};
+    }
+  `;
+};
+
+export const range = (theme) => {
+  return css`
+    height: 100%;
+    border-radius: ${theme.range.borderRadius};
+    background: ${theme.range.background};
+  `;
+};

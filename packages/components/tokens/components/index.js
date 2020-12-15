@@ -4,6 +4,7 @@ module.exports = {
     checkbox: require('./checkbox'),
     fileSelect: require('./fileSelect'),
     input: require('./input'),
+    progressBar: require('./progressBar'),
     select: require('./select'),
   },
 };

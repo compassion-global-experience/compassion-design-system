@@ -5,20 +5,26 @@ import PropTypes from 'prop-types';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
+import { useTheme } from 'emotion-theming';
+
 import * as progressBarStyles from './ProgressBar.styles';
 
-export const ProgressBar = ({ value, color, size }) => {
+export const ProgressBar = ({ value, size }) => {
+  const theme = useTheme().component.progressBar;
+
   let progress = value;
   if (value < 0) progress = 0;
   else if (value > 100) progress = 100;
 
   return (
     <div
-      css={progressBarStyles.progressBar}
-      className={cx({ [`progress--${size}`]: size })}
+      css={progressBarStyles.progressBar(theme)}
+      className={cx({
+        [`progress-bar--${size}`]: size !== 'medium',
+      })}
     >
       <div
-        css={progressBarStyles.range(color)}
+        css={progressBarStyles.range(theme)}
         style={{ width: `${progress}%` }}
         role="progressbar"
         aria-label={`${progress}%`}
@@ -36,16 +42,11 @@ ProgressBar.propTypes = {
    */
   value: PropTypes.number.isRequired,
   /**
-   * Fill color
-   */
-  color: PropTypes.string,
-  /**
    * How large should the bar be?
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 ProgressBar.defaultProps = {
-  color: '#0948aa',
   size: 'medium',
 };
