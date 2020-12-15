@@ -20,7 +20,7 @@ export const Password = Template.bind({});
 Password.args = {
   label: 'Password',
   type: 'password',
-  validator: function (password) {
+  validator(password) {
     return password.length <= 5 ? 'Must be at least 6 characters' : null;
   },
 };

@@ -23,7 +23,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      css={buttonStyles}
+      css={buttonStyles(theme.component.button)}
       className={cx(
         { 'button--primary': primary },
         { [`button--${size}`]: size }
