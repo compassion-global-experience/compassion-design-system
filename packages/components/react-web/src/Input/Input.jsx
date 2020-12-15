@@ -102,6 +102,7 @@ Input.propTypes = {
   // Disabling require-default-props because a default name is assigned within the component if one isn't provided
   // eslint-disable-next-line react/require-default-props
   name: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 Input.defaultProps = {
@@ -110,4 +111,5 @@ Input.defaultProps = {
   validator: undefined,
   required: false,
   disabled: false,
+  onChange: undefined,
 };

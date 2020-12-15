@@ -6,13 +6,13 @@ import { Logo } from './Logo';
 export default {
   title: 'Global Design System/Logo',
   component: Logo,
-  argTypes: {
-  },
+  argTypes: {},
 };
 
 const Template = (args) => <Logo {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-};
+Default.args = {};
 
+export const ViewportBasedSizing = Template.bind({});
+ViewportBasedSizing.args = { color: `dark`, width: `10vw` };
