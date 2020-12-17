@@ -20,9 +20,16 @@ export const Password = Template.bind({});
 Password.args = {
   label: 'Password',
   type: 'password',
-  validator: function (password) {
+  validator(password) {
     return password.length <= 5 ? 'Must be at least 6 characters' : null;
   },
+};
+
+export const Edit = Template.bind({});
+Edit.args = {
+  label: 'Option',
+  disabled: false,
+  type: 'edit',
 };
 
 export const Radio = Template.bind({});
