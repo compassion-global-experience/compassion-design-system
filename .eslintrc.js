@@ -25,6 +25,7 @@ module.exports = {
       },
     ],
     'object-curly-spacing': [1, 'always'],
+    'react/destructuring-assignment': 0,
     'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
     'react/jsx-props-no-spreading': 0,
     'react/jsx-uses-react': 1,

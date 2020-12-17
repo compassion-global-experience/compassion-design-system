@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
+import { useTheme } from 'emotion-theming';
 import { inputStyles } from './Input.styles';
 import edit from '../assets/edit.svg';
 
@@ -17,6 +18,8 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [inputId] = useState(helpers.gdsId());
+  const [errorId] = useState(helpers.gdsId());
   const inline = type === 'radio' || type === 'checkbox';
   const [disable, setDisable] = useState(disabled);
 
@@ -27,6 +30,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
     if (props.onChange) props.onChange();
   };
 
+<<<<<<< HEAD
   const changeInputToDisabled = () => {
     setDisable(!disable);
   };
@@ -38,23 +42,50 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   return (
     <div css={inputStyles} className={cx({ inline, error: errorMessage })}>
       <label htmlFor={props.id || label}>{label}</label>
+=======
+  const theme = useTheme().component.input;
+
+  return (
+    <div
+      css={inputStyles(theme)}
+      className={cx({
+        [`input-group`]: true,
+        [`input-group--inline`]: inline,
+        [`input-group--error`]: errorMessage,
+      })}
+    >
+>>>>>>> 9195e46c581179c26d484be2519d4ebce941c275
       <input
-        {...props}
+        id={props.id || inputId}
         type={type || 'text'}
         value={value}
         checked={checked}
+<<<<<<< HEAD
         disabled={disable}
         className={cx({ [`input--${size}`]: size })}
+=======
+>>>>>>> 9195e46c581179c26d484be2519d4ebce941c275
         name={props.name || label}
-        id={props.id || label}
-        aria-label={label}
+        disabled={props.disabled}
+        {...props}
+        className={cx({ [`input--${size}`]: size !== 'medium' ? size : null })}
+        aria-describedby={errorMessage ? errorId : null}
         onChange={handleChange}
         onBlur={changeInputToDisabled}
       />
+<<<<<<< HEAD
       {errorMessage && !inline && <span>{errorMessage}</span>}
       {type === 'edit' ? (
         <img src={edit} onClick={changeInputToEnabled} />
       ) : null}
+=======
+      <label htmlFor={props.id || inputId}>{label}</label>
+      {errorMessage && !inline && (
+        <small className="input-group__error-message" id={errorId}>
+          {errorMessage}
+        </small>
+      )}
+>>>>>>> 9195e46c581179c26d484be2519d4ebce941c275
     </div>
   );
 };
@@ -85,6 +116,24 @@ Input.propTypes = {
    * Optional validation function.
    */
   validator: PropTypes.func,
+  /**
+   * Optional; if not supplied, one will be generated to link the label and input.
+   */
+  // Disabling require-default-props because a default is generated within the component.
+  // eslint-disable-next-line react/require-default-props
+  id: PropTypes.string,
+  required: PropTypes.bool,
+  /**
+   * Is the Input disabled?
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Optional; if not supplied, the `name` attribute will be set to the same value as the label.
+   */
+  // Disabling require-default-props because a default name is assigned within the component if one isn't provided
+  // eslint-disable-next-line react/require-default-props
+  name: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 Input.defaultProps = {
@@ -92,4 +141,7 @@ Input.defaultProps = {
   size: 'medium',
   disabled: false,
   validator: undefined,
+  required: false,
+  disabled: false,
+  onChange: undefined,
 };
