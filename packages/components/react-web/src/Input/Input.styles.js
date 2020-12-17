@@ -1,10 +1,4 @@
 import { css } from '@emotion/core';
-<<<<<<< HEAD
-import { color, typography } from '@compassion-gds/elements';
-
-const { fontSizes } = typography;
-=======
->>>>>>> 9195e46c581179c26d484be2519d4ebce941c275
 
 export const inputStyles = (theme) => {
   return css`

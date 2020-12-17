@@ -30,7 +30,6 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
     if (props.onChange) props.onChange();
   };
 
-<<<<<<< HEAD
   const changeInputToDisabled = () => {
     setDisable(!disable);
   };
@@ -39,10 +38,6 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
     setDisable(!disable);
   };
 
-  return (
-    <div css={inputStyles} className={cx({ inline, error: errorMessage })}>
-      <label htmlFor={props.id || label}>{label}</label>
-=======
   const theme = useTheme().component.input;
 
   return (
@@ -54,38 +49,29 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
->>>>>>> 9195e46c581179c26d484be2519d4ebce941c275
       <input
         id={props.id || inputId}
         type={type || 'text'}
         value={value}
         checked={checked}
-<<<<<<< HEAD
         disabled={disable}
-        className={cx({ [`input--${size}`]: size })}
-=======
->>>>>>> 9195e46c581179c26d484be2519d4ebce941c275
         name={props.name || label}
-        disabled={props.disabled}
         {...props}
         className={cx({ [`input--${size}`]: size !== 'medium' ? size : null })}
         aria-describedby={errorMessage ? errorId : null}
         onChange={handleChange}
         onBlur={changeInputToDisabled}
       />
-<<<<<<< HEAD
-      {errorMessage && !inline && <span>{errorMessage}</span>}
+
+      <label htmlFor={props.id || inputId}>{label}</label>
       {type === 'edit' ? (
         <img src={edit} onClick={changeInputToEnabled} />
       ) : null}
-=======
-      <label htmlFor={props.id || inputId}>{label}</label>
       {errorMessage && !inline && (
         <small className="input-group__error-message" id={errorId}>
           {errorMessage}
         </small>
       )}
->>>>>>> 9195e46c581179c26d484be2519d4ebce941c275
     </div>
   );
 };
