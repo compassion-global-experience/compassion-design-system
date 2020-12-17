@@ -27,7 +27,7 @@ Password.args = {
 
 export const Edit = Template.bind({});
 Edit.args = {
-  label: 'Option',
+  label: 'Edit',
   disabled: false,
   type: 'edit',
 };
