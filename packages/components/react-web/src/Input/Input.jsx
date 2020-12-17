@@ -31,11 +31,15 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   };
 
   const changeInputToDisabled = () => {
-    setDisable(!disable);
+    if (type !== 'edit') {
+      setDisable(!disable);
+    }
   };
 
   const changeInputToEnabled = () => {
+    if (type==='edit') {
     setDisable(!disable);
+    }
   };
 
   const theme = useTheme().component.input;
