@@ -31,13 +31,13 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   };
 
   const changeInputToDisabled = () => {
-    if (type !== 'edit') {
+    if (type === 'edit') {
       setDisable(!disable);
     }
   };
 
   const changeInputToEnabled = () => {
-    if (type==='edit') {
+    if (type === 'edit') {
     setDisable(!disable);
     }
   };
