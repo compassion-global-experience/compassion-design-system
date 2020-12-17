@@ -61,7 +61,6 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         aria-describedby={errorMessage ? errorId : null}
         onChange={handleChange}
         onBlur={changeInputToDisabled}
-        onFocus={changeInputToEnabled}
       />
 
       <label htmlFor={props.id || inputId}>{label}</label>
