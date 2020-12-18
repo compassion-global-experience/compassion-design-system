@@ -1,7 +1,3 @@
-const size = (step) => {
-  return `${sizes[step] * multiplier}rem`;
-};
-
 const multiplier = 1;
 const sizes = {
   minus4: 0.125,
@@ -22,22 +18,26 @@ const sizes = {
   plus11: 10,
 };
 
+const size = (step) => {
+  return `${sizes[step] * multiplier}rem`;
+};
+
 export default {
   touchable: '44px',
-  minus4: sizes.minus4 + 'rem',
-  minus3: sizes.minus3 + 'rem',
-  minus2: sizes.minus2 + 'rem',
-  minus1: sizes.minus1 + 'rem',
-  base: sizes.base + 'rem',
-  plus1: sizes.plus1 + 'rem',
-  plus2: sizes.plus2 + 'rem',
-  plus3: sizes.plus3 + 'rem',
-  plus4: sizes.plus4 + 'rem',
-  plus5: sizes.plus5 + 'rem',
-  plus6: sizes.plus6 + 'rem',
-  plus7: sizes.plus7 + 'rem',
-  plus8: sizes.plus8 + 'rem',
-  plus9: sizes.plus9 + 'rem',
-  plus10: sizes.plus10 + 'rem',
-  plus11: sizes.plus11 + 'rem',
+  minus4: `${sizes.minus4}rem`,
+  minus3: `${sizes.minus3}rem`,
+  minus2: `${sizes.minus2}rem`,
+  minus1: `${sizes.minus1}rem`,
+  base: `${sizes.base}rem`,
+  plus1: `${sizes.plus1}rem`,
+  plus2: `${sizes.plus2}rem`,
+  plus3: `${sizes.plus3}rem`,
+  plus4: `${sizes.plus4}rem`,
+  plus5: `${sizes.plus5}rem`,
+  plus6: `${sizes.plus6}rem`,
+  plus7: `${sizes.plus7}rem`,
+  plus8: `${sizes.plus8}rem`,
+  plus9: `${sizes.plus9}rem`,
+  plus10: `${sizes.plus10}rem`,
+  plus11: `${sizes.plus11}rem`,
 };
