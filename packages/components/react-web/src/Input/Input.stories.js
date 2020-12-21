@@ -36,3 +36,14 @@ Checkbox.args = {
   label: 'Option',
   type: 'checkbox',
 };
+
+export const Currency = Template.bind({});
+Currency.args = {
+  label: 'Currency',
+  min: 0,
+  max: 100,
+  validator(currency) {
+    const letters = /[a-zA-Z]/g;
+    return currency.match(letters) ? 'Must be a number' : null;
+  },
+};

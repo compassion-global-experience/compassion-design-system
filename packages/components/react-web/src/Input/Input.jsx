@@ -72,6 +72,7 @@ Input.propTypes = {
     'radio',
     'tel',
     'text',
+    'currency'
   ]),
   /**
    * How large should the input be?
