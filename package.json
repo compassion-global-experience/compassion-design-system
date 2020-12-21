@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "test": "lerna run test",
+    "postinstall": "cd packages/elements && yarn build && cd ../components/tokens && yarn build",
     "prep-release": "lerna version --conventional-commits --yes",
     "start": "concurrently --kill-others --names \"storybook,elements,tokens\" -c \"bgCyan,bgMagenta,bgYellow\" \"yarn start:react\" \"yarn start:elements\" \"yarn start:tokens\"",
     "start:react": "cd packages/components/react-web && yarn start",
