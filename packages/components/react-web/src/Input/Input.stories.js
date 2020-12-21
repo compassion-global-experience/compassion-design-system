@@ -42,8 +42,9 @@ Currency.args = {
   label: 'Currency',
   min: 0,
   max: 100,
+  placeholder: '$100',
   validator(currency) {
-    const letters = /[a-zA-Z]/g;
-    return currency.match(letters) ? 'Must be a number' : null;
+    const notNum = /[^0-9]/g;
+    return currency.match(notNum) ? 'Must be a number' : null;
   },
 };
