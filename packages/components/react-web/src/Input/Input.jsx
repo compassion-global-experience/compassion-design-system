@@ -69,7 +69,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
 
       <label htmlFor={props.id || inputId}>{label}</label>
       {type === 'edit' ? (
-        <img src={edit} onClick={changeInputToEnabled} />
+        <button type="button" aria-controls={props.id || inputId} onClick={changeInputToEnabled}><img src={edit} alt="Edit input" /></button>
       ) : null}
       {errorMessage && !inline && (
         <small className="input-group__error-message" id={errorId}>
@@ -101,7 +101,6 @@ Input.propTypes = {
    * Descriptive label
    */
   label: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
   /**
    * Optional validation function.
    */
@@ -132,6 +131,5 @@ Input.defaultProps = {
   disabled: false,
   validator: undefined,
   required: false,
-  disabled: false,
   onChange: undefined,
 };
