@@ -72,8 +72,8 @@ export const Input = ({ type, size, label, validator, ...props }) => {
             <option value="€" data-placeholder="0.00">
               EUR
             </option>
-            <option value="$" data-placeholder="0.00">
-              CAD
+            <option value="¥" data-placeholder="0.00">
+              JPY
             </option>
           </select>
         </>
