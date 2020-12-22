@@ -40,6 +40,7 @@ Checkbox.args = {
 export const Currency = Template.bind({});
 Currency.args = {
   label: 'Currency',
+  type: 'currency',
   min: 0,
   max: 100,
   placeholder: '$100',

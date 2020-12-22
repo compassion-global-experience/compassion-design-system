@@ -16,6 +16,7 @@ export const Input = ({ type, size, label, validator, ...props }) => {
   const [value, setValue] = useState('');
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
+  const [symbol, setSymbol] = useState('$');
   const [errorMessage, setErrorMessage] = useState('');
   const [inputId] = useState(helpers.gdsId());
   const [errorId] = useState(helpers.gdsId());
@@ -26,6 +27,10 @@ export const Input = ({ type, size, label, validator, ...props }) => {
     setChecked(e.target.checked);
     if (validator) setErrorMessage(validator(e.target.value));
     if (props.onChange) props.onChange();
+  };
+
+  const updateSymbol = (e) => {
+    setSymbol(e.target.value);
   };
 
   const theme = useTheme().component.input;
@@ -57,6 +62,22 @@ export const Input = ({ type, size, label, validator, ...props }) => {
           {errorMessage}
         </small>
       )}
+      {type === 'currency' && (
+        <>
+          <div>{symbol}</div>
+          <select onChange={updateSymbol}>
+            <option value="$" data-placeholder="0.00" selected>
+              USD
+            </option>
+            <option value="€" data-placeholder="0.00">
+              EUR
+            </option>
+            <option value="$" data-placeholder="0.00">
+              CAD
+            </option>
+          </select>
+        </>
+      )}
     </div>
   );
 };
@@ -72,7 +93,7 @@ Input.propTypes = {
     'radio',
     'tel',
     'text',
-    'currency'
+    'currency',
   ]),
   /**
    * How large should the input be?

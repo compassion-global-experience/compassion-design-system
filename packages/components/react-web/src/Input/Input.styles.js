@@ -201,5 +201,22 @@ export const inputStyles = (theme) => {
         min-height: 56px;
       }
     }
+
+    select {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      padding-left: 0.5rem;
+      border: 0;
+      background: transparent;
+    }
   `;
 };
+
+export const currencyAddon = css`
+  width: 6em;
+  text-align: left;
+  position: relative;
+`;
