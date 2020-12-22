@@ -5,7 +5,7 @@ export default create({
   base: 'light',
 
   colorPrimary: elements.color.primary,
-  colorSecondary: '#d9e2e8',
+  colorSecondary: '#e7eeee',
 
   // UI
   appBg: '#fff',
@@ -24,7 +24,7 @@ export default create({
   // Toolbar default and active colors
   barTextColor: '#585a51',
   barSelectedColor: '#3b3c36',
-  barBg: '#d9e2e8',
+  barBg: '#e7eeee',
 
   // Form colors
   inputBg: 'white',
