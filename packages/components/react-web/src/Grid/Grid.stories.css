@@ -1,0 +1,12 @@
+.gds-grid__cell {
+  display: flex;
+  padding: 1rem;
+  border-radius: 2px;
+  background: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.87rem;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
