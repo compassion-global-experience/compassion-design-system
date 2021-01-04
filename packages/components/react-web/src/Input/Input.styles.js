@@ -19,7 +19,7 @@ export const inputStyles = (theme) => {
       div {
         font-size: 20px;
         border: 1px solid #aaa;
-        padding: 4px;
+        padding: 4px 8px;
       }
 
       span {
