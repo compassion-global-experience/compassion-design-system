@@ -16,6 +16,10 @@ export const inputStyles = (theme) => {
       display: grid;
       grid-row: auto;
       grid-auto-rows: 50px;
+
+      select {
+        width: 55px;
+      }
     }
 
     input {
