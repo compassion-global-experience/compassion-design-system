@@ -58,25 +58,55 @@ export const Input = ({ type, size, label, validator, ...props }) => {
               JPY
             </option>
           </select>
+          <span>
+            <input
+              id={props.id || inputId}
+              type={type || 'text'}
+              value={value}
+              checked={checked}
+              name={props.name || label}
+              disabled={props.disabled}
+              {...props}
+              className={cx({
+                [`input--${size}`]: size !== 'medium' ? size : null,
+              })}
+              aria-describedby={errorMessage ? errorId : null}
+              onChange={handleChange}
+            />
+            {errorMessage && !inline && (
+              <small className="input-group__error-message" id={errorId}>
+                {errorMessage}
+              </small>
+            )}
+          </span>
         </div>
       )}
-      <input
-        id={props.id || inputId}
-        type={type || 'text'}
-        value={value}
-        checked={checked}
-        name={props.name || label}
-        disabled={props.disabled}
-        {...props}
-        className={cx({ [`input--${size}`]: size !== 'medium' ? size : null })}
-        aria-describedby={errorMessage ? errorId : null}
-        onChange={handleChange}
-      />
-      <label htmlFor={props.id || inputId}>{label}</label>
-      {errorMessage && !inline && (
-        <small className="input-group__error-message" id={errorId}>
-          {errorMessage}
-        </small>
+
+      {type === 'currency' ? (
+        ''
+      ) : (
+        <>
+          <input
+            id={props.id || inputId}
+            type={type || 'text'}
+            value={value}
+            checked={checked}
+            name={props.name || label}
+            disabled={props.disabled}
+            {...props}
+            className={cx({
+              [`input--${size}`]: size !== 'medium' ? size : null,
+            })}
+            aria-describedby={errorMessage ? errorId : null}
+            onChange={handleChange}
+          />
+          <label htmlFor={props.id || inputId}>{label}</label>
+          {errorMessage && !inline && (
+            <small className="input-group__error-message" id={errorId}>
+              {errorMessage}
+            </small>
+          )}
+        </>
       )}
     </div>
   );

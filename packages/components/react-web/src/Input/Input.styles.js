@@ -13,12 +13,28 @@ export const inputStyles = (theme) => {
     div {
       font-size: 32px;
       padding: 100px;
-      display: grid;
-      grid-row: auto;
-      grid-auto-rows: 50px;
+      display: flex;
+      align-items: center;
+
+      div {
+        font-size: 20px;
+        border: 1px solid #aaa;
+        padding: 4px;
+      }
+
+      span {
+        display: flex;
+        flex-direction: column;
+
+        small {
+          position: relative;
+        }
+      }
 
       select {
-        width: 55px;
+        width: auto;
+        min-height: 40px;
+        order: 3;
       }
     }
 
