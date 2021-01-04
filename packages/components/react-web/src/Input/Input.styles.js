@@ -11,8 +11,11 @@ export const inputStyles = (theme) => {
     }
 
     div {
-      font-size: 100px;
+      font-size: 32px;
       padding: 100px;
+      display: grid;
+      grid-row: auto;
+      grid-auto-rows: 50px;
     }
 
     input {

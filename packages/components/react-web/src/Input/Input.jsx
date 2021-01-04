@@ -44,6 +44,22 @@ export const Input = ({ type, size, label, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
+      {type === 'currency' && (
+        <div>
+          <div>{symbol}</div>
+          <select onChange={updateSymbol}>
+            <option value="$" data-placeholder="0.00" selected>
+              USD
+            </option>
+            <option value="€" data-placeholder="0.00">
+              EUR
+            </option>
+            <option value="¥" data-placeholder="0.00">
+              JPY
+            </option>
+          </select>
+        </div>
+      )}
       <input
         id={props.id || inputId}
         type={type || 'text'}
@@ -61,22 +77,6 @@ export const Input = ({ type, size, label, validator, ...props }) => {
         <small className="input-group__error-message" id={errorId}>
           {errorMessage}
         </small>
-      )}
-      {type === 'currency' && (
-        <div>
-          <div>{symbol}</div>
-          <select onChange={updateSymbol}>
-            <option value="$" data-placeholder="0.00" selected>
-              USD
-            </option>
-            <option value="€" data-placeholder="0.00">
-              EUR
-            </option>
-            <option value="¥" data-placeholder="0.00">
-              JPY
-            </option>
-          </select>
-        </div>
       )}
     </div>
   );
