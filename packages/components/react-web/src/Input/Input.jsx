@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
@@ -46,7 +47,6 @@ export const Input = ({ type, size, label, validator, ...props }) => {
     >
       {type === 'currency' && (
         <div>
-          <div>{symbol}</div>
           <select onChange={updateSymbol}>
             <option value="$" data-placeholder="0.00" selected>
               USD
@@ -59,25 +59,7 @@ export const Input = ({ type, size, label, validator, ...props }) => {
             </option>
           </select>
           <span>
-            <input
-              id={props.id || inputId}
-              type={type || 'text'}
-              value={value}
-              checked={checked}
-              name={props.name || label}
-              disabled={props.disabled}
-              {...props}
-              className={cx({
-                [`input--${size}`]: size !== 'medium' ? size : null,
-              })}
-              aria-describedby={errorMessage ? errorId : null}
-              onChange={handleChange}
-            />
-            {errorMessage && !inline && (
-              <small className="input-group__error-message" id={errorId}>
-                {errorMessage}
-              </small>
-            )}
+            <NumberFormat thousandSeparator prefix={symbol} />
           </span>
         </div>
       )}
