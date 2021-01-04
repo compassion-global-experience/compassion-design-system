@@ -63,7 +63,7 @@ export const Input = ({ type, size, label, validator, ...props }) => {
         </small>
       )}
       {type === 'currency' && (
-        <>
+        <div>
           <div>{symbol}</div>
           <select onChange={updateSymbol}>
             <option value="$" data-placeholder="0.00" selected>
@@ -76,7 +76,7 @@ export const Input = ({ type, size, label, validator, ...props }) => {
               JPY
             </option>
           </select>
-        </>
+        </div>
       )}
     </div>
   );

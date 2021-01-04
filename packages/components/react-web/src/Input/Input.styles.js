@@ -10,6 +10,11 @@ export const inputStyles = (theme) => {
       cursor: pointer;
     }
 
+    div {
+      font-size: 100px;
+      padding: 100px;
+    }
+
     input {
       padding: ${theme.base.padding};
       min-height: ${theme.base.minHeight};
@@ -47,6 +52,10 @@ export const inputStyles = (theme) => {
             cursor: default;
           }
         }
+      }
+
+      &[type='currency'] {
+        background-color: transparent;
       }
 
       &[type='checkbox'],
@@ -201,16 +210,5 @@ export const inputStyles = (theme) => {
         min-height: 56px;
       }
     }
-
-    // select {
-    //   position: absolute;
-    //   left: 0;
-    //   top: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   padding-left: 0.5rem;
-    //   border: 0;
-    //   background: transparent;
-    // }
   `;
 };
