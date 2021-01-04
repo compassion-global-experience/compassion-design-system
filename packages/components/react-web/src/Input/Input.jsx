@@ -54,9 +54,7 @@ export const Input = ({ type, size, label, validator, ...props }) => {
             <option value="€">EUR</option>
             <option value="¥">JPY</option>
           </select>
-          <span>
-            <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
-          </span>
+          <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
         </div>
       )}
 

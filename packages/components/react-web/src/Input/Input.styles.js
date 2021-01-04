@@ -15,26 +15,11 @@ export const inputStyles = (theme) => {
       padding: 100px;
       display: flex;
       align-items: center;
-
-      div {
-        font-size: 20px;
-        border: 1px solid #aaa;
-        padding: 4px 8px;
-      }
-
-      span {
-        display: flex;
-        flex-direction: column;
-
-        small {
-          position: relative;
-        }
-      }
+    }
 
       select {
         width: auto;
         min-height: 40px;
-        order: 3;
       }
     }
 
