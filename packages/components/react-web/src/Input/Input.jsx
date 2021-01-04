@@ -48,18 +48,14 @@ export const Input = ({ type, size, label, validator, ...props }) => {
       {type === 'currency' && (
         <div>
           <select onChange={updateSymbol}>
-            <option value="$" data-placeholder="0.00" selected>
+            <option value="$" selected>
               USD
             </option>
-            <option value="€" data-placeholder="0.00">
-              EUR
-            </option>
-            <option value="¥" data-placeholder="0.00">
-              JPY
-            </option>
+            <option value="€">EUR</option>
+            <option value="¥">JPY</option>
           </select>
           <span>
-            <NumberFormat thousandSeparator prefix={symbol} />
+            <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
           </span>
         </div>
       )}
