@@ -42,3 +42,9 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+export const ReadMore = Template.bind({});
+ReadMore.args = {
+  label: 'Read More',
+  type: 'readmore',
+};
