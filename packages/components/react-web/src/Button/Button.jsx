@@ -41,7 +41,7 @@ export const Button = ({
             style={{ color: 'blue', cursor: 'pointer' }}
             onClick={() => setShowLess(!showLess)}
           >
-            View {showLess ? 'More' : 'Less'}
+            Read {showLess ? 'More' : 'Less'}
           </a>
         </React.Fragment>
       )}
