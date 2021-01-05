@@ -37,10 +37,7 @@ export const Button = ({
       {type === 'readmore' && (
         <React.Fragment>
           <p>{showLess ? `${text.slice(0, length)}...` : text} </p>
-          <button
-            style={{ color: 'blue', cursor: 'pointer' }}
-            onClick={() => setShowLess(!showLess)}
-          >
+          <button onClick={() => setShowLess(!showLess)}>
             Read {showLess ? 'More' : 'Less'}
           </button>
         </React.Fragment>
