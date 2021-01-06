@@ -36,3 +36,9 @@ Checkbox.args = {
   label: 'Option',
   type: 'checkbox',
 };
+
+export const CreditCard = Template.bind({});
+CreditCard.args = {
+  label: 'Credit Card',
+  type: 'creditcard',
+};

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
@@ -39,23 +40,32 @@ export const Input = ({ type, size, label, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
-      <input
-        id={props.id || inputId}
-        type={type || 'text'}
-        value={value}
-        checked={checked}
-        name={props.name || label}
-        disabled={props.disabled}
-        {...props}
-        className={cx({ [`input--${size}`]: size !== 'medium' ? size : null })}
-        aria-describedby={errorMessage ? errorId : null}
-        onChange={handleChange}
-      />
-      <label htmlFor={props.id || inputId}>{label}</label>
-      {errorMessage && !inline && (
-        <small className="input-group__error-message" id={errorId}>
-          {errorMessage}
-        </small>
+      {type === 'creditcard' && (
+        <NumberFormat format="#### #### #### ####" mask="_" />
+      )}
+      {type === 'creditcard' ? null : (
+        <React.Fragment>
+          <input
+            id={props.id || inputId}
+            type={type || 'text'}
+            value={value}
+            checked={checked}
+            name={props.name || label}
+            disabled={props.disabled}
+            {...props}
+            className={cx({
+              [`input--${size}`]: size !== 'medium' ? size : null,
+            })}
+            aria-describedby={errorMessage ? errorId : null}
+            onChange={handleChange}
+          />
+          <label htmlFor={props.id || inputId}>{label}</label>
+          {errorMessage && !inline && (
+            <small className="input-group__error-message" id={errorId}>
+              {errorMessage}
+            </small>
+          )}
+        </React.Fragment>
       )}
     </div>
   );
@@ -72,6 +82,7 @@ Input.propTypes = {
     'radio',
     'tel',
     'text',
+    'creditcard',
   ]),
   /**
    * How large should the input be?
