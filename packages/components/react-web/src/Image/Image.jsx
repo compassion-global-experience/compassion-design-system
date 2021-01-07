@@ -17,29 +17,65 @@ import image5 from './assets/image5.jpg';
  * Primary UI component for user Image
  */
 export const Image = ({ type, size, label, validator, ...props }) => {
-  const theme = useTheme().component.input;
-  const [value, setValue] = useState('');
+  const [selected, setSelected] = useState(image1);
+  const [value, setValue] = useState(image1);
 
-  const changePreview = (e) => {
-    setValue(e.target.value);
-  };
+  const theme = useTheme().component.input;
+  const data = [
+    {
+      id: '1',
+      key: '1',
+      title: 'Title1',
+      text: 'Text1.',
+      img: image1,
+    },
+    {
+      id: '2',
+      key: '2',
+      title: 'Title2',
+      text: 'Text2.',
+      img: image2,
+    },
+    {
+      id: '3',
+      key: '3',
+      title: 'Title3',
+      text: 'Text3.',
+      img: image3,
+    },
+    {
+      id: '4',
+      key: '4',
+      title: 'Title4',
+      text: 'Text4',
+      img: image4,
+    },
+    {
+      id: '5',
+      key: '5',
+      title: 'Title5',
+      text: 'Text5',
+      img: image5,
+    },
+  ];
 
   return (
     <div css={imageStyles(theme)}>
-      <button onClick={changePreview}>
-        <img src={image1} alt="Image 1" value={value} />
+      <img src={selected} alt="Selected Image" />
+      <button onClick={() => setSelected(image1)}>
+        <img src={image1} value={value} />
       </button>
-      <button onClick={changePreview}>
-        <img src={image2} alt="Image 2" value={value} />
+      <button onClick={() => setSelected(image2)}>
+        <img src={image2} />
       </button>
-      <button onClick={changePreview}>
-        <img src={image3} alt="Image 3" value={value} />
+      <button onClick={() => setSelected(image3)}>
+        <img src={image3} />
       </button>
-      <button onClick={changePreview}>
-        <img src={image4} alt="Image 4" value={value} />
+      <button onClick={() => setSelected(image4)}>
+        <img src={image4} />
       </button>
-      <button onClick={changePreview}>
-        <img src={image5} alt="Image 5" value={value} />
+      <button onClick={() => setSelected(image5)}>
+        <img src={image5} />
       </button>
     </div>
   );
