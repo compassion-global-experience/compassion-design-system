@@ -25,6 +25,13 @@ Password.args = {
   },
 };
 
+export const Edit = Template.bind({});
+Edit.args = {
+  label: 'Edit',
+  disabled: false,
+  type: 'edit',
+};
+
 export const Radio = Template.bind({});
 Radio.args = {
   label: 'Option',
@@ -48,4 +55,10 @@ Currency.args = {
     const notNum = /[^0-9]/g;
     return currency.match(notNum) ? 'Must be a number' : null;
   },
+};
+
+export const Date = Template.bind({});
+Date.args = {
+  label: 'Date',
+  type: 'date',
 };
