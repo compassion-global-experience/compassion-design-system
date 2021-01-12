@@ -92,6 +92,7 @@ Input.propTypes = {
     'tel',
     'text',
     'edit',
+    'date'
   ]),
   /**
    * How large should the input be?

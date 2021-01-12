@@ -388,7 +388,7 @@
         "orientation"
       ]
     ],
-
+    "color-hex-case": "lower",
     "comment-whitespace-inside": "always",
     "declaration-no-important": true,
     "font-family-name-quotes": "always-where-recommended",
