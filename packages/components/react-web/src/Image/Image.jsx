@@ -61,12 +61,12 @@ export const Image = ({ type, size, label, validator, ...props }) => {
 
   return (
     <div css={imageStyles(theme)}>
-      {selected ? <img src={selected} alt="Selected Image" /> : null}
+      {selected ? <img src={selected} alt={selected.title} /> : null}
       {data.map((obj) =>
         selected === obj.img ? null : (
           <div key={obj.id}>
-            <button value={obj.img} onClick={() => setSelected(obj.img)}>
-              <img src={obj.img} />
+            <button onClick={() => setSelected(obj.img)}>
+              <img src={obj.img} alt={obj.title} />
             </button>
           </div>
         )
