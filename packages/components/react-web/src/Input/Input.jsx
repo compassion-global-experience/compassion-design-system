@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
@@ -16,6 +17,7 @@ export const Input = ({ type, size, label, validator, ...props }) => {
   const [value, setValue] = useState('');
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
+  const [symbol, setSymbol] = useState('$');
   const [errorMessage, setErrorMessage] = useState('');
   const [inputId] = useState(helpers.gdsId());
   const [errorId] = useState(helpers.gdsId());
@@ -26,6 +28,10 @@ export const Input = ({ type, size, label, validator, ...props }) => {
     setChecked(e.target.checked);
     if (validator) setErrorMessage(validator(e.target.value));
     if (props.onChange) props.onChange();
+  };
+
+  const updateSymbol = (e) => {
+    setSymbol(e.target.value);
   };
 
   const theme = useTheme().component.input;
@@ -39,23 +45,46 @@ export const Input = ({ type, size, label, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
-      <input
-        id={props.id || inputId}
-        type={type || 'text'}
-        value={value}
-        checked={checked}
-        name={props.name || label}
-        disabled={props.disabled}
-        {...props}
-        className={cx({ [`input--${size}`]: size !== 'medium' ? size : null })}
-        aria-describedby={errorMessage ? errorId : null}
-        onChange={handleChange}
-      />
-      <label htmlFor={props.id || inputId}>{label}</label>
-      {errorMessage && !inline && (
-        <small className="input-group__error-message" id={errorId}>
-          {errorMessage}
-        </small>
+      {type === 'currency' && (
+        <div>
+          <select onChange={updateSymbol}>
+            <option label="USD" value="$" selected>
+              USD
+            </option>
+            <option label="EUR" value="€">
+              EUR
+            </option>
+            <option label="JPY" value="¥">
+              JPY
+            </option>
+          </select>
+          <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
+        </div>
+      )}
+
+      {type === 'currency' ? null : (
+        <React.Fragment>
+          <input
+            id={props.id || inputId}
+            type={type || 'text'}
+            value={value}
+            checked={checked}
+            name={props.name || label}
+            disabled={props.disabled}
+            {...props}
+            className={cx({
+              [`input--${size}`]: size !== 'medium' ? size : null,
+            })}
+            aria-describedby={errorMessage ? errorId : null}
+            onChange={handleChange}
+          />
+          <label htmlFor={props.id || inputId}>{label}</label>
+          {errorMessage && !inline && (
+            <small className="input-group__error-message" id={errorId}>
+              {errorMessage}
+            </small>
+          )}
+        </React.Fragment>
       )}
     </div>
   );
@@ -72,6 +101,7 @@ Input.propTypes = {
     'radio',
     'tel',
     'text',
+    'currency',
   ]),
   /**
    * How large should the input be?
