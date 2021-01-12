@@ -18,6 +18,7 @@ import image5 from './assets/image5.jpg';
  */
 export const Image = ({ type, size, label, validator, ...props }) => {
   const [selected, setSelected] = useState(image1);
+  console.log('selected =', selected);
 
   const theme = useTheme().component.input;
   const data = [
@@ -61,13 +62,15 @@ export const Image = ({ type, size, label, validator, ...props }) => {
   return (
     <div css={imageStyles(theme)}>
       {selected ? <img src={selected} alt="Selected Image" /> : null}
-      {data.map((obj) => (
-        <div key={obj.id}>
-          <button onClick={() => setSelected(obj.img)}>
-            <img src={obj.img} />
-          </button>
-        </div>
-      ))}
+      {data.map((obj) =>
+        selected === obj.img ? null : (
+          <div key={obj.id}>
+            <button value={obj.img} onClick={() => setSelected(obj.img)}>
+              <img src={obj.img} />
+            </button>
+          </div>
+        )
+      )}
     </div>
   );
 };
