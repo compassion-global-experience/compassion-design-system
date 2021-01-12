@@ -25,6 +25,13 @@ Password.args = {
   },
 };
 
+export const Edit = Template.bind({});
+Edit.args = {
+  label: 'Edit',
+  disabled: false,
+  type: 'edit',
+};
+
 export const Radio = Template.bind({});
 Radio.args = {
   label: 'Option',
