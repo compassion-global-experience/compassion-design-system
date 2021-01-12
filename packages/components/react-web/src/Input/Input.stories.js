@@ -36,3 +36,9 @@ Checkbox.args = {
   label: 'Option',
   type: 'checkbox',
 };
+
+export const Date = Template.bind({});
+Date.args = {
+  label: 'Date',
+  type: 'date',
+};
