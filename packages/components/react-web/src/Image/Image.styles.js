@@ -7,6 +7,10 @@ export const imageStyles = (theme) => {
     img {
       width: 400px;
       height: auto;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   `;
 };
