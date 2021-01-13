@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
@@ -13,6 +13,7 @@ import edit from '../assets/edit.svg';
  * Primary UI component for user input
  */
 export const Input = ({ type, size, label, disabled, validator, ...props }) => {
+  const [isEditing, setEditing] = useState(false);
   // State used for text input fields
   const [value, setValue] = useState('');
   // State used for radio buttons and checkboxes
@@ -22,6 +23,8 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   const [errorId] = useState(helpers.gdsId());
   const inline = type === 'radio' || type === 'checkbox';
   const [disable, setDisable] = useState(disabled);
+
+  const inputRef = useRef(null);
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -38,9 +41,19 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
 
   const changeInputToEnabled = () => {
     if (type === 'edit') {
-    setDisable(!disable);
+      setDisable(!disable);
+      setEditing(true);
+    }
+    if (isEditing) {
+      inputRef.current.focus();
     }
   };
+
+  useEffect(() => {
+    if (isEditing) {
+      inputRef.current.focus();
+    }
+  }, [isEditing]);
 
   const theme = useTheme().component.input;
 
@@ -65,11 +78,18 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         aria-describedby={errorMessage ? errorId : null}
         onChange={handleChange}
         onBlur={changeInputToDisabled}
+        ref={inputRef}
       />
 
       <label htmlFor={props.id || inputId}>{label}</label>
       {type === 'edit' ? (
-        <button type="button" aria-controls={props.id || inputId} onClick={changeInputToEnabled}><img src={edit} alt="Edit input" /></button>
+        <button
+          type="button"
+          aria-controls={props.id || inputId}
+          onClick={changeInputToEnabled}
+        >
+          <img src={edit} alt="Edit input" />
+        </button>
       ) : null}
       {errorMessage && !inline && (
         <small className="input-group__error-message" id={errorId}>

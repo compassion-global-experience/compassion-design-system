@@ -59,6 +59,10 @@ export const inputStyles = (theme) => {
         }
       }
 
+      &[type='edit'] {
+        width: 200px;
+      }
+
       &[type='checkbox'],
       &[type='radio'] {
         position: absolute;
