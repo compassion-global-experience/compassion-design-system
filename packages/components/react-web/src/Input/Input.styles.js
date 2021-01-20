@@ -2,12 +2,10 @@ import { css } from '@emotion/core';
 
 export const inputStyles = (theme) => {
   return css`
-    display: inline-grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-auto-flow: column;
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    position: relative;
 
     label {
       cursor: pointer;
@@ -16,7 +14,9 @@ export const inputStyles = (theme) => {
     button {
       border: none;
       background: none;
-      grid-row: 2;
+      position: absolute;
+      top: 44%;
+      left: 208px;
     }
 
     input {
@@ -47,11 +47,10 @@ export const inputStyles = (theme) => {
         }
 
         &[disabled] {
-          border-color: transparent;
-          background: transparent;
+          border-color: ${theme.base.disabled.borderColor};
+          background: ${theme.base.disabled.background};
           color: ${theme.base.disabled.color};
           cursor: default;
-          padding: 0;
 
           + label {
             cursor: default;

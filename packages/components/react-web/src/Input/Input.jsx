@@ -15,31 +15,28 @@ import edit from '../assets/edit.svg';
 export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   // State used for text input fields
   const [value, setValue] = useState('');
+  const [disable, setDisable] = useState(disabled);
+  const [touched, setTouched] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+
   const [inputId] = useState(helpers.gdsId());
   const [errorId] = useState(helpers.gdsId());
   const inline = type === 'radio' || type === 'checkbox';
-  const [disable, setDisable] = useState(disabled);
 
   const handleChange = (e) => {
     setValue(e.target.value);
     setChecked(e.target.checked);
-    if (validator) setErrorMessage(validator(e.target.value));
+    if (validator && touched) setErrorMessage(validator(e.target.value));
     if (props.onChange) props.onChange();
   };
 
-  const changeInputToDisabled = () => {
-    if (type === 'edit') {
-      setDisable(!disable);
-    }
-  };
-
-  const changeInputToEnabled = () => {
-    if (type === 'edit') {
-    setDisable(!disable);
-    }
+  const handleBlur = (e) => {
+    if (type === 'edit') setDisable(!disable);
+    setTouched(true);
+    if (validator) setErrorMessage(validator(e.target.value));
   };
 
   const theme = useTheme().component.input;
@@ -64,13 +61,21 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         className={cx({ [`input--${size}`]: size !== 'medium' ? size : null })}
         aria-describedby={errorMessage ? errorId : null}
         onChange={handleChange}
-        onBlur={changeInputToDisabled}
+        onBlur={handleBlur}
       />
 
       <label htmlFor={props.id || inputId}>{label}</label>
-      {type === 'edit' ? (
-        <button type="button" aria-controls={props.id || inputId} onClick={changeInputToEnabled}><img src={edit} alt="Edit input" /></button>
-      ) : null}
+
+      {type === 'edit' && (
+        <button
+          type="button"
+          aria-controls={props.id || inputId}
+          onClick={handleBlur}
+        >
+          <img src={edit} alt="Edit input" />
+        </button>
+      )}
+
       {errorMessage && !inline && (
         <small className="input-group__error-message" id={errorId}>
           {errorMessage}
@@ -92,7 +97,7 @@ Input.propTypes = {
     'tel',
     'text',
     'edit',
-    'date'
+    'date',
   ]),
   /**
    * How large should the input be?
