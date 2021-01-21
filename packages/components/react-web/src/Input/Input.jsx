@@ -15,7 +15,6 @@ import clear from '../assets/clear.svg';
  * Primary UI component for user input
  */
 export const Input = ({ type, size, label, disabled, validator, ...props }) => {
-  const [isEditing, setEditing] = useState(false);
   // State used for text input fields
   const [value, setValue] = useState('');
   // State used for radio buttons and checkboxes
@@ -44,18 +43,15 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   const changeInputToEnabled = () => {
     if (type === 'edit') {
       setDisable(!disable);
-      setEditing(true);
-    }
-    if (isEditing) {
       inputRef.current.focus();
     }
   };
 
   useEffect(() => {
-    if (isEditing) {
+    if (disable || !disable) {
       inputRef.current.focus();
     }
-  }, [isEditing]);
+  }, [disable]);
 
   const theme = useTheme().component.input;
 
