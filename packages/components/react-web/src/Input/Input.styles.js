@@ -17,6 +17,10 @@ export const inputStyles = (theme) => {
       border: none;
       background: none;
       grid-row: 2;
+
+      &.clear {
+        visibility: hidden;
+      }
     }
 
     input {

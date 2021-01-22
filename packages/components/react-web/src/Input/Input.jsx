@@ -95,7 +95,12 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
               <img src={edit} alt="Edit Input Change" />
             </button>
           )}
-          <button type="button" aria-controls={props.id || inputId}>
+          <button
+            type="button"
+            aria-controls={props.id || inputId}
+            aria-hidden="true"
+            className="clear"
+          >
             <img src={clear} alt="Reject Input Change" />
           </button>
         </React.Fragment>
