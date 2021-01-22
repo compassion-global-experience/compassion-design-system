@@ -36,19 +36,18 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
 
   const changeInputToDisabled = () => {
     if (type === 'edit') {
-      setDisable(!disable);
+      setDisable(true);
     }
   };
 
   const changeInputToEnabled = () => {
     if (type === 'edit') {
-      setDisable(!disable);
-      inputRef.current.focus();
+      setDisable(false);
     }
   };
 
   useEffect(() => {
-    if (disable || !disable) {
+    if (disable === false) {
       inputRef.current.focus();
     }
   }, [disable]);
@@ -81,13 +80,25 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
 
       <label htmlFor={props.id || inputId}>{label}</label>
       {type === 'edit' ? (
-        <button
-          type="button"
-          aria-controls={props.id || inputId}
-          onClick={changeInputToEnabled}
-        >
-          <img src={edit} alt="Edit input" />
-        </button>
+        <React.Fragment>
+          {!disable && (
+            <button type="button" aria-controls={props.id || inputId}>
+              <img src={check} alt="Reject Input Change" />
+            </button>
+          )}
+          {disable && (
+            <button
+              type="button"
+              aria-controls={props.id || inputId}
+              onClick={changeInputToEnabled}
+            >
+              <img src={edit} alt="Edit Input Change" />
+            </button>
+          )}
+          <button type="button" aria-controls={props.id || inputId}>
+            <img src={clear} alt="Reject Input Change" />
+          </button>
+        </React.Fragment>
       ) : null}
       {errorMessage && !inline && (
         <small className="input-group__error-message" id={errorId}>
