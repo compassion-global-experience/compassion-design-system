@@ -2,12 +2,43 @@ import { css } from '@emotion/core';
 
 export const inputStyles = (theme) => {
   return css`
-    display: flex;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
     label {
       cursor: pointer;
+    }
+
+    button {
+      border: none;
+      background: none;
+      grid-row: 2;
+
+      &.clear {
+        visibility: hidden;
+      }
+    }
+
+    div {
+      display: flex;
+      padding: 100px;
+      font-size: 32px;
+      align-items: center;
+    }
+
+    select {
+      min-height: 40px;
+      width: auto;
+    }
+
+    button {
+      border: none;
+      background: none;
+      grid-row: 2;
     }
 
     input {
@@ -38,8 +69,9 @@ export const inputStyles = (theme) => {
         }
 
         &[disabled] {
-          border-color: ${theme.base.disabled.borderColor};
-          background: ${theme.base.disabled.background};
+          padding: 0;
+          border-color: transparent;
+          background: transparent;
           color: ${theme.base.disabled.color};
           cursor: default;
 
@@ -47,6 +79,14 @@ export const inputStyles = (theme) => {
             cursor: default;
           }
         }
+      }
+
+      &[type='edit'] {
+        width: 200px;
+      }
+
+      &[type='currency'] {
+        background-color: transparent;
       }
 
       &[type='checkbox'],

@@ -25,6 +25,13 @@ Password.args = {
   },
 };
 
+export const Edit = Template.bind({});
+Edit.args = {
+  label: 'Edit',
+  disabled: false,
+  type: 'edit',
+};
+
 export const Radio = Template.bind({});
 Radio.args = {
   label: 'Option',
@@ -41,4 +48,23 @@ export const CreditCard = Template.bind({});
 CreditCard.args = {
   label: 'Credit Card',
   type: 'creditcard',
+};
+
+export const Date = Template.bind({});
+Date.args = {
+  label: 'Date',
+  type: 'date',
+};
+
+export const Currency = Template.bind({});
+Currency.args = {
+  label: 'Currency',
+  type: 'currency',
+  min: 0,
+  max: 100,
+  placeholder: '100',
+  validator(currency) {
+    const notNum = /[^0-9]/g;
+    return currency.match(notNum) ? 'Must be a number' : null;
+  },
 };
