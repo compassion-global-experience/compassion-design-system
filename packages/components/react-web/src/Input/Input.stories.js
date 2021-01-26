@@ -44,12 +44,15 @@ Checkbox.args = {
   type: 'checkbox',
 };
 
+<<<<<<< HEAD
 export const Date = Template.bind({});
 Date.args = {
   label: 'Date',
   type: 'date',
 };
 
+=======
+>>>>>>> development
 export const Currency = Template.bind({});
 Currency.args = {
   label: 'Currency',
@@ -61,4 +64,13 @@ Currency.args = {
     const notNum = /[^0-9]/g;
     return currency.match(notNum) ? 'Must be a number' : null;
   },
+<<<<<<< HEAD
+=======
+};
+
+export const Date = Template.bind({});
+Date.args = {
+  label: 'Date',
+  type: 'date',
+>>>>>>> development
 };

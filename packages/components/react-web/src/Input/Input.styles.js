@@ -13,6 +13,7 @@ export const inputStyles = (theme) => {
       cursor: pointer;
     }
 
+<<<<<<< HEAD
     button {
       border: none;
       background: none;
@@ -23,6 +24,8 @@ export const inputStyles = (theme) => {
       }
     }
 
+=======
+>>>>>>> development
     div {
       display: flex;
       padding: 100px;
@@ -30,11 +33,24 @@ export const inputStyles = (theme) => {
       align-items: center;
     }
 
+<<<<<<< HEAD
       select {
         min-height: 40px;
         width: auto;
 
       }
+=======
+    select {
+      min-height: 40px;
+      width: auto;
+    }
+
+    button {
+      border: none;
+      background: none;
+      grid-row: 2;
+    }
+>>>>>>> development
 
     input {
       padding: ${theme.base.padding};
