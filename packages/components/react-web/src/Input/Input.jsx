@@ -69,6 +69,17 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
+      {type === 'creditcard' && (
+        <React.Fragment>
+          <label htmlFor={props.id || inputId}>{label}</label>
+
+          <NumberFormat
+            format="#### #### #### ##
+        ##"
+            mask="_"
+          />
+        </React.Fragment>
+      )}
       {type === 'currency' && (
         <div>
           <select onChange={updateSymbol}>
@@ -85,8 +96,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
           <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
         </div>
       )}
-
-      {type === 'currency' ? null : (
+      {type === 'currency' || type === 'creditcard' ? null : (
         <React.Fragment>
           <input
             id={props.id || inputId}
@@ -105,6 +115,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
             ref={inputRef}
           />
           <label htmlFor={props.id || inputId}>{label}</label>
+
           {type === 'edit' ? (
             <React.Fragment>
               {!disable && (
@@ -156,6 +167,7 @@ Input.propTypes = {
     'date',
     'edit',
     'currency',
+    'creditcard',
   ]),
   /**
    * How large should the input be?
