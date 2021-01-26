@@ -153,6 +153,7 @@ Input.propTypes = {
     'radio',
     'tel',
     'text',
+    'date',
     'edit',
     'currency',
   ]),
