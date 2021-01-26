@@ -23,6 +23,19 @@ export const inputStyles = (theme) => {
       }
     }
 
+    div {
+      display: flex;
+      padding: 100px;
+      font-size: 32px;
+      align-items: center;
+    }
+
+      select {
+        min-height: 40px;
+        width: auto;
+
+      }
+
     input {
       padding: ${theme.base.padding};
       min-height: ${theme.base.minHeight};
@@ -51,11 +64,11 @@ export const inputStyles = (theme) => {
         }
 
         &[disabled] {
+          padding: 0;
           border-color: transparent;
           background: transparent;
           color: ${theme.base.disabled.color};
           cursor: default;
-          padding: 0;
 
           + label {
             cursor: default;
@@ -63,8 +76,14 @@ export const inputStyles = (theme) => {
         }
       }
 
+<<<<<<< HEAD
       &[type='edit'] {
         width: 200px;
+
+=======
+      &[type='currency'] {
+        background-color: transparent;
+>>>>>>> currency
       }
 
       &[type='checkbox'],
@@ -219,5 +238,5 @@ export const inputStyles = (theme) => {
         min-height: 56px;
       }
     }
-  `;
+  }`;
 };

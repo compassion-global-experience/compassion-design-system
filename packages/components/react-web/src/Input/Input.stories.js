@@ -49,3 +49,16 @@ Date.args = {
   label: 'Date',
   type: 'date',
 };
+
+export const Currency = Template.bind({});
+Currency.args = {
+  label: 'Currency',
+  type: 'currency',
+  min: 0,
+  max: 100,
+  placeholder: '100',
+  validator(currency) {
+    const notNum = /[^0-9]/g;
+    return currency.match(notNum) ? 'Must be a number' : null;
+  },
+};

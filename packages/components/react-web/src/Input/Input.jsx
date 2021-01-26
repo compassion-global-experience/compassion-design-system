@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
@@ -19,6 +20,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   const [value, setValue] = useState('');
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
+  const [symbol, setSymbol] = useState('$');
   const [errorMessage, setErrorMessage] = useState('');
   const [inputId] = useState(helpers.gdsId());
   const [errorId] = useState(helpers.gdsId());
@@ -46,8 +48,12 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
     }
   };
 
+  const updateSymbol = (e) => {
+    setSymbol(e.target.value);
+  };
+
   useEffect(() => {
-    if (disable === false) {
+    if (disable === false && inputRef.current) {
       inputRef.current.focus();
     }
   }, [disable]);
@@ -63,52 +69,74 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
-      <input
-        id={props.id || inputId}
-        type={type || 'text'}
-        value={value}
-        checked={checked}
-        disabled={disable}
-        name={props.name || label}
-        {...props}
-        className={cx({ [`input--${size}`]: size !== 'medium' ? size : null })}
-        aria-describedby={errorMessage ? errorId : null}
-        onChange={handleChange}
-        onBlur={changeInputToDisabled}
-        ref={inputRef}
-      />
+      {type === 'currency' && (
+        <div>
+          <select onChange={updateSymbol}>
+            <option label="USD" value="$" selected>
+              USD
+            </option>
+            <option label="EUR" value="€">
+              EUR
+            </option>
+            <option label="JPY" value="¥">
+              JPY
+            </option>
+          </select>
+          <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
+        </div>
+      )}
 
-      <label htmlFor={props.id || inputId}>{label}</label>
-      {type === 'edit' ? (
+      {type === 'currency' ? null : (
         <React.Fragment>
-          {!disable && (
-            <button type="button" aria-controls={props.id || inputId}>
-              <img src={check} alt="Reject Input Change" />
-            </button>
+          <input
+            id={props.id || inputId}
+            type={type || 'text'}
+            value={value}
+            checked={checked}
+            disabled={disable}
+            name={props.name || label}
+            {...props}
+            className={cx({
+              [`input--${size}`]: size !== 'medium' ? size : null,
+            })}
+            aria-describedby={errorMessage ? errorId : null}
+            onChange={handleChange}
+            onBlur={changeInputToDisabled}
+            ref={inputRef}
+          />
+          <label htmlFor={props.id || inputId}>{label}</label>
+          {type === 'edit' ? (
+            <React.Fragment>
+              {!disable && (
+                <button type="button" aria-controls={props.id || inputId}>
+                  <img src={check} alt="Reject Input Change" />
+                </button>
+              )}
+              {disable && (
+                <button
+                  type="button"
+                  aria-controls={props.id || inputId}
+                  onClick={changeInputToEnabled}
+                >
+                  <img src={edit} alt="Edit Input Change" />
+                </button>
+              )}
+              <button
+                type="button"
+                aria-controls={props.id || inputId}
+                aria-hidden="true"
+                className="clear"
+              >
+                <img src={clear} alt="Reject Input Change" />
+              </button>
+            </React.Fragment>
+          ) : null}
+          {errorMessage && !inline && (
+            <small className="input-group__error-message" id={errorId}>
+              {errorMessage}
+            </small>
           )}
-          {disable && (
-            <button
-              type="button"
-              aria-controls={props.id || inputId}
-              onClick={changeInputToEnabled}
-            >
-              <img src={edit} alt="Edit Input Change" />
-            </button>
-          )}
-          <button
-            type="button"
-            aria-controls={props.id || inputId}
-            aria-hidden="true"
-            className="clear"
-          >
-            <img src={clear} alt="Reject Input Change" />
-          </button>
         </React.Fragment>
-      ) : null}
-      {errorMessage && !inline && (
-        <small className="input-group__error-message" id={errorId}>
-          {errorMessage}
-        </small>
       )}
     </div>
   );
@@ -126,6 +154,7 @@ Input.propTypes = {
     'tel',
     'text',
     'edit',
+    'currency',
   ]),
   /**
    * How large should the input be?
