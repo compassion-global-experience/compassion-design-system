@@ -10,9 +10,6 @@ import CreditCard from './CreditCard.js';
 import Currency from './Currency.js';
 import Edit from './Edit.js';
 import { inputStyles } from './Input.styles';
-import edit from '../assets/edit.svg';
-import check from '../assets/check.svg';
-import clear from '../assets/clear.svg';
 
 /**
  * Primary UI component for user input
