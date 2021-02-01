@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
@@ -23,7 +22,6 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   const [value, setValue] = useState('');
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
-  const [symbol, setSymbol] = useState('$');
   const [errorMessage, setErrorMessage] = useState('');
   const [inputId] = useState(helpers.gdsId());
   const [errorId] = useState(helpers.gdsId());
@@ -51,10 +49,6 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
     }
   };
 
-  const updateSymbol = (e) => {
-    setSymbol(e.target.value);
-  };
-
   useEffect(() => {
     if (disable === false && inputRef.current) {
       inputRef.current.focus();
@@ -75,22 +69,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
       {type === 'creditcard' && (
         <CreditCard inputId={inputId} label={label} props={props} />
       )}
-      {type === 'currency' && (
-        <div>
-          <select onChange={updateSymbol}>
-            <option label="USD" value="$" selected>
-              USD
-            </option>
-            <option label="EUR" value="€">
-              EUR
-            </option>
-            <option label="JPY" value="¥">
-              JPY
-            </option>
-          </select>
-          <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
-        </div>
-      )}
+      {type === 'currency' && <Currency />}
 
       {type === 'currency' || type === 'creditcard' ? null : (
         <React.Fragment>

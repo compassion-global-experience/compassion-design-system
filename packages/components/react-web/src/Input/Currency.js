@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import NumberFormat from 'react-number-format';
 
 /** @jsxRuntime classic */
 /** @jsx jsx */
@@ -7,22 +8,27 @@ import { jsx } from '@emotion/core';
 import { inputStyles } from './Input.styles';
 
 const ContentModal = ({ close, content, isDisplayed, title }) => {
-  return (
-    <Modal close={close} isDisplayed={isDisplayed}>
-      <div css={modalStyles.modalContentStyles}>
-        <div css={contentModalStyles.contentModal}>
-          <div
-            css={contentModalStyles.titleBar}
-            {...(title ? { 'data-title': title } : {})}
-          >
-            <h1>{title}</h1>
-            <button onClick={close} aria-label="Close" type="button" />
-          </div>
+  const [symbol, setSymbol] = useState('$');
 
-          <div css={contentModalStyles.content}>{content}</div>
-        </div>
-      </div>
-    </Modal>
+  const updateSymbol = (e) => {
+    setSymbol(e.target.value);
+  };
+
+  return (
+    <div>
+      <select onChange={updateSymbol}>
+        <option label="USD" value="$" selected>
+          USD
+        </option>
+        <option label="EUR" value="€">
+          EUR
+        </option>
+        <option label="JPY" value="¥">
+          JPY
+        </option>
+      </select>
+      <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
+    </div>
   );
 };
 
