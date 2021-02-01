@@ -30,6 +30,12 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
 
   const inputRef = useRef(null);
 
+  useEffect(() => {
+    if (disable === false && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [disable]);
+
   const handleChange = (e) => {
     setValue(e.target.value);
     setChecked(e.target.checked);
@@ -37,23 +43,15 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
     if (props.onChange) props.onChange();
   };
 
+  const changeInputToEnabled = () => {
+    setDisable(false);
+  };
+
   const changeInputToDisabled = () => {
     if (type === 'edit') {
       setDisable(true);
     }
   };
-
-  const changeInputToEnabled = () => {
-    if (type === 'edit') {
-      setDisable(false);
-    }
-  };
-
-  useEffect(() => {
-    if (disable === false && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [disable]);
 
   const theme = useTheme().component.input;
 
@@ -70,7 +68,6 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         <CreditCard inputId={inputId} label={label} props={props} />
       )}
       {type === 'currency' && <Currency />}
-
       {type === 'currency' || type === 'creditcard' ? null : (
         <React.Fragment>
           <input
@@ -90,11 +87,13 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
             ref={inputRef}
           />
           <Edit
-            props={props}
             label={label}
-            type={type}
+            props={props}
             inputId={inputId}
             disable={disable}
+            inputRef={inputRef}
+            changeInputToEnabled={changeInputToEnabled}
+            changeInputToDisabled={changeInputToDisabled}
           />
           {errorMessage && !inline && (
             <small className="input-group__error-message" id={errorId}>
