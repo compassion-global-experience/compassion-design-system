@@ -50,6 +50,12 @@ Date.args = {
   type: 'date',
 };
 
+export const CreditCard = Template.bind({});
+CreditCard.args = {
+  label: 'Credit Card',
+  type: 'creditcard',
+};
+
 export const Currency = Template.bind({});
 Currency.args = {
   label: 'Currency',

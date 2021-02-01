@@ -7,6 +7,9 @@ import { helpers } from '@compassion-gds/elements';
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
 import { useTheme } from 'emotion-theming';
+import CreditCard from './CreditCard.js';
+import Currency from './Currency.js';
+import Edit from './Edit.js';
 import { inputStyles } from './Input.styles';
 import edit from '../assets/edit.svg';
 import check from '../assets/check.svg';
@@ -69,6 +72,9 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
+      {type === 'creditcard' && (
+        <CreditCard inputId={inputId} label={label} props={props} />
+      )}
       {type === 'currency' && (
         <div>
           <select onChange={updateSymbol}>
@@ -86,7 +92,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         </div>
       )}
 
-      {type === 'currency' ? null : (
+      {type === 'currency' || type === 'creditcard' ? null : (
         <React.Fragment>
           <input
             id={props.id || inputId}
@@ -104,33 +110,13 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
             onBlur={changeInputToDisabled}
             ref={inputRef}
           />
-          <label htmlFor={props.id || inputId}>{label}</label>
-          {type === 'edit' ? (
-            <React.Fragment>
-              {!disable && (
-                <button type="button" aria-controls={props.id || inputId}>
-                  <img src={check} alt="Reject Input Change" />
-                </button>
-              )}
-              {disable && (
-                <button
-                  type="button"
-                  aria-controls={props.id || inputId}
-                  onClick={changeInputToEnabled}
-                >
-                  <img src={edit} alt="Edit Input Change" />
-                </button>
-              )}
-              <button
-                type="button"
-                aria-controls={props.id || inputId}
-                aria-hidden="true"
-                className="clear"
-              >
-                <img src={clear} alt="Reject Input Change" />
-              </button>
-            </React.Fragment>
-          ) : null}
+          <Edit
+            props={props}
+            label={label}
+            type={type}
+            inputId={inputId}
+            disable={disable}
+          />
           {errorMessage && !inline && (
             <small className="input-group__error-message" id={errorId}>
               {errorMessage}
@@ -156,6 +142,7 @@ Input.propTypes = {
     'date',
     'edit',
     'currency',
+    'creditcard',
   ]),
   /**
    * How large should the input be?
