@@ -7,6 +7,7 @@ import clear from '../assets/clear.svg';
 
 const Edit = ({
   label,
+  type,
   props,
   inputId,
   disable,
@@ -16,7 +17,7 @@ const Edit = ({
   return (
     <React.Fragment>
       <label htmlFor={props.id || inputId}>{label}</label>
-      {!disable && (
+      {type === 'edit' && !disable && (
         <button
           type="button"
           aria-controls={props.id || inputId}

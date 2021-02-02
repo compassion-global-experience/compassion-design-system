@@ -84,6 +84,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
             ref={inputRef}
           />
           <Edit
+            type={type}
             label={label}
             props={props}
             inputId={inputId}
