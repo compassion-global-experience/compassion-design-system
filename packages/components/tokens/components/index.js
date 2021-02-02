@@ -7,5 +7,6 @@ module.exports = {
     input: require('./input'),
     progressBar: require('./progressBar'),
     select: require('./select'),
+    uploader: require('./uploader'),
   },
 };
