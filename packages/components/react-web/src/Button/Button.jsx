@@ -32,7 +32,7 @@ export const Button = ({
       onClick={onClick}
       {...props}
     >
-      {label}
+      {label || props.children}
     </button>
   );
 };
