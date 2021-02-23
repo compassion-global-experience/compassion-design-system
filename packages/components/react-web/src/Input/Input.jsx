@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
@@ -6,8 +6,10 @@ import { helpers } from '@compassion-gds/elements';
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
 import { useTheme } from 'emotion-theming';
+import CreditCard from './CreditCard.js';
+import Currency from './Currency.js';
+import Edit from './Edit.js';
 import { inputStyles } from './Input.styles';
-import edit from '../assets/edit.svg';
 
 /**
  * Primary UI component for user input
@@ -26,6 +28,14 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   const [errorId] = useState(helpers.gdsId());
   const inline = type === 'radio' || type === 'checkbox';
 
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (disable === false && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [disable]);
+
   const handleChange = (e) => {
     setValue(e.target.value);
     setChecked(e.target.checked);
@@ -39,6 +49,16 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
     if (validator) setErrorMessage(validator(e.target.value));
   };
 
+  const changeInputToEnabled = () => {
+    setDisable(false);
+  };
+
+  const changeInputToDisabled = () => {
+    if (type === 'edit') {
+      setDisable(true);
+    }
+  };
+
   const theme = useTheme().component.input;
 
   return (
@@ -50,36 +70,52 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
-      <input
-        id={props.id || inputId}
-        type={type || 'text'}
-        value={value}
-        checked={checked}
-        disabled={disable}
-        name={props.name || label}
-        {...props}
-        className={cx({ [`input--${size}`]: size !== 'medium' ? size : null })}
-        aria-describedby={errorMessage ? errorId : null}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-
-      <label htmlFor={props.id || inputId}>{label}</label>
-
-      {type === 'edit' && (
-        <button
-          type="button"
-          aria-controls={props.id || inputId}
-          onClick={handleBlur}
-        >
-          <img src={edit} alt="Edit input" />
-        </button>
+      {type === 'creditcard' && (
+        <CreditCard inputId={inputId} label={label} props={props} />
       )}
+      {type === 'currency' && <Currency />}
 
-      {errorMessage && !inline && (
-        <small className="input-group__error-message" id={errorId}>
-          {errorMessage}
-        </small>
+      {type === 'currency' || type === 'creditcard' ? null : (
+        <React.Fragment>
+          <input
+            id={props.id || inputId}
+            type={type || 'text'}
+            value={value}
+            checked={checked}
+            disabled={disable}
+            name={props.name || label}
+            {...props}
+            className={cx({
+              [`input--${size}`]: size !== 'medium' ? size : null,
+            })}
+            aria-describedby={errorMessage ? errorId : null}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            ref={inputRef}
+          />
+
+          <label htmlFor={props.id || inputId}>{label}</label>
+
+          {type === 'edit' ? (
+            <Edit
+              type={type}
+              label={label}
+              props={props}
+              inputId={inputId}
+              disable={disable}
+              inputRef={inputRef}
+              changeInputToEnabled={changeInputToEnabled}
+              changeInputToDisabled={changeInputToDisabled}
+              onButtonClick={handleBlur}
+            />
+          ) : null}
+
+          {errorMessage && !inline && (
+            <small className="input-group__error-message" id={errorId}>
+              {errorMessage}
+            </small>
+          )}
+        </React.Fragment>
       )}
     </div>
   );
@@ -96,8 +132,10 @@ Input.propTypes = {
     'radio',
     'tel',
     'text',
-    'edit',
     'date',
+    'edit',
+    'currency',
+    'creditcard',
   ]),
   /**
    * How large should the input be?

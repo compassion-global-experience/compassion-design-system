@@ -2,10 +2,10 @@ import { css } from '@emotion/core';
 
 export const inputStyles = (theme) => {
   return css`
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: relative;
 
     label {
       cursor: pointer;
@@ -14,9 +14,23 @@ export const inputStyles = (theme) => {
     button {
       border: none;
       background: none;
-      position: absolute;
-      top: 44%;
-      left: 208px;
+      grid-row: 2;
+
+      &.clear {
+        visibility: hidden;
+      }
+    }
+
+    div {
+      display: flex;
+      padding: 100px;
+      font-size: 32px;
+      align-items: center;
+    }
+
+    select {
+      min-height: 40px;
+      width: auto;
     }
 
     input {
@@ -47,8 +61,9 @@ export const inputStyles = (theme) => {
         }
 
         &[disabled] {
-          border-color: ${theme.base.disabled.borderColor};
-          background: ${theme.base.disabled.background};
+          padding: 0;
+          border-color: transparent;
+          background: transparent;
           color: ${theme.base.disabled.color};
           cursor: default;
 
@@ -56,6 +71,14 @@ export const inputStyles = (theme) => {
             cursor: default;
           }
         }
+      }
+
+      &[type='edit'] {
+        width: 200px;
+      }
+
+      &[type='currency'] {
+        background-color: transparent;
       }
 
       &[type='checkbox'],

@@ -29,6 +29,7 @@ module.exports = {
     'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
     'react/jsx-props-no-spreading': 0,
     'react/jsx-uses-react': 1,
+    'react/prop-types': [2, { ignore: ['children'] }],
     'space-in-parens': [1, 'never'],
   },
 };
