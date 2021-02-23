@@ -15,7 +15,7 @@ const Edit = ({
   changeInputToDisabled,
 }) => {
   return (
-    <React.Fragment>
+    <>
       <label htmlFor={props.id || inputId}>{label}</label>
       {type === 'edit' && !disable && (
         <button
@@ -43,7 +43,7 @@ const Edit = ({
       >
         <img src={clear} alt="Reject Input Change" />
       </button>
-    </React.Fragment>
+    </>
   );
 };
 

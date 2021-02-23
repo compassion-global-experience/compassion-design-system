@@ -65,6 +65,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         <CreditCard inputId={inputId} label={label} props={props} />
       )}
       {type === 'currency' && <Currency />}
+
       {type === 'currency' || type === 'creditcard' ? null : (
         <React.Fragment>
           <input
@@ -83,16 +84,20 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
             onBlur={changeInputToDisabled}
             ref={inputRef}
           />
-          <Edit
-            type={type}
-            label={label}
-            props={props}
-            inputId={inputId}
-            disable={disable}
-            inputRef={inputRef}
-            changeInputToEnabled={changeInputToEnabled}
-            changeInputToDisabled={changeInputToDisabled}
-          />
+
+          {type === 'edit' ? (
+            <Edit
+              type={type}
+              label={label}
+              props={props}
+              inputId={inputId}
+              disable={disable}
+              inputRef={inputRef}
+              changeInputToEnabled={changeInputToEnabled}
+              changeInputToDisabled={changeInputToDisabled}
+            />
+          ) : null}
+
           {errorMessage && !inline && (
             <small className="input-group__error-message" id={errorId}>
               {errorMessage}
