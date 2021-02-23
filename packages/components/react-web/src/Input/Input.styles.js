@@ -2,10 +2,12 @@ import { css } from '@emotion/core';
 
 export const inputStyles = (theme) => {
   return css`
-    position: relative;
-    display: flex;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
     label {
       cursor: pointer;
@@ -200,6 +202,8 @@ export const inputStyles = (theme) => {
     }
 
     &.input-group--error {
+      grid-template-rows: auto auto auto;
+
       .input-group__error-message {
         padding-top: 4px;
         color: ${theme.base.error.color};
