@@ -17,13 +17,16 @@ import { inputStyles } from './Input.styles';
 export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   // State used for text input fields
   const [value, setValue] = useState('');
+  const [disable, setDisable] = useState(disabled);
+  const [touched, setTouched] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+
   const [inputId] = useState(helpers.gdsId());
   const [errorId] = useState(helpers.gdsId());
   const inline = type === 'radio' || type === 'checkbox';
-  const [disable, setDisable] = useState(disabled);
 
   const inputRef = useRef(null);
 
@@ -36,8 +39,14 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   const handleChange = (e) => {
     setValue(e.target.value);
     setChecked(e.target.checked);
-    if (validator) setErrorMessage(validator(e.target.value));
+    if (validator && touched) setErrorMessage(validator(e.target.value));
     if (props.onChange) props.onChange();
+  };
+
+  const handleBlur = (e) => {
+    if (type === 'edit') setDisable(!disable);
+    setTouched(true);
+    if (validator) setErrorMessage(validator(e.target.value));
   };
 
   const changeInputToEnabled = () => {
@@ -81,9 +90,11 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
             })}
             aria-describedby={errorMessage ? errorId : null}
             onChange={handleChange}
-            onBlur={changeInputToDisabled}
+            onBlur={handleBlur}
             ref={inputRef}
           />
+
+          <label htmlFor={props.id || inputId}>{label}</label>
 
           {type === 'edit' ? (
             <Edit
@@ -95,6 +106,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
               inputRef={inputRef}
               changeInputToEnabled={changeInputToEnabled}
               changeInputToDisabled={changeInputToDisabled}
+              onButtonClick={handleBlur}
             />
           ) : null}
 

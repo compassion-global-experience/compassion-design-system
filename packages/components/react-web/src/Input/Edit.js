@@ -13,15 +13,15 @@ const Edit = ({
   disable,
   changeInputToEnabled,
   changeInputToDisabled,
+  onButtonClick,
 }) => {
   return (
     <>
-      <label htmlFor={props.id || inputId}>{label}</label>
       {type === 'edit' && !disable && (
         <button
           type="button"
           aria-controls={props.id || inputId}
-          onClick={changeInputToDisabled}
+          onClick={onButtonClick}
         >
           <img src={check} alt="Accept Input Change" />
         </button>

@@ -35,12 +35,6 @@ export const inputStyles = (theme) => {
       width: auto;
     }
 
-    button {
-      border: none;
-      background: none;
-      grid-row: 2;
-    }
-
     input {
       padding: ${theme.base.padding};
       min-height: ${theme.base.minHeight};
@@ -208,6 +202,8 @@ export const inputStyles = (theme) => {
     }
 
     &.input-group--error {
+      grid-template-rows: auto auto auto;
+
       .input-group__error-message {
         padding-top: 4px;
         color: ${theme.base.error.color};
