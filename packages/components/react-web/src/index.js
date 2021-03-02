@@ -5,3 +5,6 @@ export * from './Logo';
 export * from './Menu';
 export * from './Modal';
 export * from './Select';
+export * from './Image';
+export * from './ProgressBar';
+export * from './Uploader';
