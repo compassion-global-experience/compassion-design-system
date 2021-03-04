@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
-    "modularscale-js": "^3.0.1"
+    "modularscale-js": "^3.0.1",
+    "raw.macro": "^0.4.2"
   },
   "private": false
 }
