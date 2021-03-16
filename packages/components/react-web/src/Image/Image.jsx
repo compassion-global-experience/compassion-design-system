@@ -1,122 +1,147 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { helpers } from '@compassion-gds/elements';
+
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import { useTheme } from 'emotion-theming';
-import { imageStyles } from './Image.styles';
-import image1 from './assets/image1.jpg';
-import image2 from './assets/image2.jpg';
-import image3 from './assets/image3.jpg';
-import image4 from './assets/image4.jpg';
-import image5 from './assets/image5.jpg';
+import imageStyles from './Image.styles';
+
 
 /**
- * Primary UI component for user Image
+ * UI component for images
  */
-export const Image = ({ type, size, label, validator, ...props }) => {
-  const [selected, setSelected] = useState(image1);
-  console.log('selected =', selected);
+export const Image = ({ src, src375, src480, src728, src1280, src1600, alt, title, caption, width, height, objectFit, objectPosition, lazyLoad }) => {
+    const ref = useRef(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [realSrc, setRealSrc] = useState(lazyLoad ? null : src);
+    let srcSet = null;
 
-  const theme = useTheme().component.input;
-  const data = [
-    {
-      id: '1',
-      key: '1',
-      title: 'Title1',
-      text: 'Text1.',
-      img: image1,
-    },
-    {
-      id: '2',
-      key: '2',
-      title: 'Title2',
-      text: 'Text2.',
-      img: image2,
-    },
-    {
-      id: '3',
-      key: '3',
-      title: 'Title3',
-      text: 'Text3.',
-      img: image3,
-    },
-    {
-      id: '4',
-      key: '4',
-      title: 'Title4',
-      text: 'Text4',
-      img: image4,
-    },
-    {
-      id: '5',
-      key: '5',
-      title: 'Title5',
-      text: 'Text5',
-      img: image5,
-    },
-  ];
+    if (!lazyLoad || isLoaded && (src375 || src480 || src728 || src1280 || src1600)) {
+        srcSet = [];
 
-  return (
-    <div css={imageStyles(theme)}>
-      {selected ? <img src={selected} alt={selected.title} /> : null}
-      {data.map((obj) =>
-        selected === obj.img ? null : (
-          <div key={obj.id}>
-            <button onClick={() => setSelected(obj.img)}>
-              <img src={obj.img} alt={obj.title} />
-            </button>
-          </div>
-        )
-      )}
-    </div>
-  );
-};
+        if (src1600) srcSet.push(<source media="(min-width: 1600px)" srcset={src1600} />);
+        if (src1280) srcSet.push(<source media="(min-width: 1280px)" srcset={src1280} />);
+        if (src728) srcSet.push(<source media="(min-width: 728px)" srcset={src728} />);
+        if (src480) srcSet.push(<source media="(min-width: 480px)" srcset={src480} />);
+        if (src375) srcSet.push(<source media="(min-width: 375px)" srcset={src375} />);
+    }
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting ) {
+                setIsLoaded(true);
+                setRealSrc(src);
+            }
+        }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 1.0
+        });
+
+        if (ref.current) observer.observe(ref.current);
+
+        return () => {
+            if (ref.current) observer.unobserve(ref.current);
+        }
+    });
+
+    return (
+       <picture css={imageStyles}>
+           {srcSet}
+           <img 
+           className={cx(
+                `image__img`,
+                { [`image__img--fit-${objectFit}`]: objectFit },
+                { [`image__img--pos-${objectPosition}`]: objectPosition }
+            )}
+            src={realSrc}
+            alt={alt}
+            title={title}
+            width={width}
+            height={height}
+            ref={ref}
+           />
+           {caption &&
+            <div className="image__caption">
+                {caption}
+            </div>
+           }
+       </picture>
+    );
+}
 
 Image.propTypes = {
-  /**
-   * Type of Image
-   */
-  type: PropTypes.oneOf(['preview']),
-  /**
-   * How large should the input be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Descriptive label
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional validation function.
-   */
-  validator: PropTypes.func,
-  /**
-   * Optional; if not supplied, one will be generated to link the label and input.
-   */
-  // Disabling require-default-props because a default is generated within the component.
-  // eslint-disable-next-line react/require-default-props
-  id: PropTypes.string,
-  required: PropTypes.bool,
-  /**
-   * Is the Input disabled?
-   */
-  disabled: PropTypes.bool,
-  /**
-   * Optional; if not supplied, the `name` attribute will be set to the same value as the label.
-   */
-  // Disabling require-default-props because a default name is assigned within the component if one isn't provided
-  // eslint-disable-next-line react/require-default-props
-  name: PropTypes.string,
-  onChange: PropTypes.func,
+    /**
+     * Path to image
+     */
+    src: PropTypes.string,
+    /**
+     * Path to image at 375px
+     */
+    src375: PropTypes.string,
+    /**
+     * Path to image at 480px
+     */
+    src480: PropTypes.string,
+    /**
+     * Path to image at 728px
+     */
+    src728: PropTypes.string,
+    /**
+     * Path to image at 1280px
+     */
+    src1280: PropTypes.string,
+    /**
+     * Path to image at 1600px
+     */
+    src1600: PropTypes.string,
+    /**
+     * Specifies alternate text for image
+     */
+    alt: PropTypes.string.isRequired,
+    /**
+     * Title text for image
+     */
+    title: PropTypes.string,
+    /**
+     * Caption for image
+     */
+    caption: PropTypes.string,
+    /**
+     * Width of image
+     */
+    width: PropTypes.string,
+    /**
+     * Height of image
+     */
+    height: PropTypes.string,
+    /**
+     * Define object fit property
+     */
+    objectFit: PropTypes.oneOf(['unset', 'cover', 'contain']),
+    /**
+     * Define object position property
+     */
+    objectPosition: PropTypes.oneOf(['top', 'bottom', 'right', 'center', 'left']),
+    /**
+     * Will the image be lazy loaded?
+     */
+    lazyLoad: PropTypes.bool
 };
 
 Image.defaultProps = {
-  type: 'text',
-  size: 'medium',
-  validator: undefined,
-  required: false,
-  disabled: false,
-  onChange: undefined,
+    src: undefined,
+    src375: undefined,
+    src480: undefined,
+    src728: undefined,
+    src1280: undefined,
+    src1600: undefined,
+    title: undefined,
+    caption: undefined,
+    width: undefined,
+    height: undefined,
+    objectFit: undefined,
+    objectPosition: undefined,
+    lazyLoad: false
 };

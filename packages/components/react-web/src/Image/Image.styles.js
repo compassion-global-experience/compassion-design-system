@@ -1,30 +1,45 @@
 import { css } from '@emotion/core';
 
-export const imageStyles = (theme) => {
-  return css`
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+export default css`
+  display: inline-block;
 
-    img {
-      width: 400px;
-      height: auto;
-
-      &:first-of-type {
-        width: 100%;
-        grid-column-start: 1;
-        grid-column-end: 5;
-        grid-row-start: 1;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
+  & > .image__img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    background: #ddd;
+    
+    &--fit-cover {
+      object-fit: cover;
     }
 
-    button {
-      border: none;
-      background: transparent;
-      margin: 0 -6px;
+    &--fit-contain {
+      object-fit: contain;
     }
-  `;
-};
+
+    &--pos-top {
+      object-position: top;
+    }
+
+    &--pos-center {
+      object-position: center;
+    }
+
+    &--pos-bottom {
+      object-position: bottom;
+    }
+
+    &--pos-right {
+      object-position: right;
+    }
+
+    &--pos-left {
+      object-position: left;
+    }
+  }
+
+  & .image__caption {
+    padding: .5rem;
+    font-style: italic;
+  }
+`;
