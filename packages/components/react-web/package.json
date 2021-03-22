@@ -21,6 +21,7 @@
     "emotion": "^10.0.27",
     "emotion-theming": "^11.0.0",
     "prop-types": "^15.7.2",
+    "react": "^16.0.0",
     "react-file-drop": "^3.1.2",
     "react-number-format": "^4.4.3"
   },
@@ -80,7 +81,6 @@
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
-    "react": "^16.0.0",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
     "sanitize.css": "^12.0.1",
@@ -89,5 +89,6 @@
     "typescript": "^4.2.3",
     "webpack": "^5.24.4"
   },
-  "private": false
+  "private": false,
+  "gitHead": "a9ffec81fb71e9736f6e40601fdcf3f7f440d16f"
 }
