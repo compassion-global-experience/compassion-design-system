@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-alpha.2](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/react-web@0.4.0-alpha.1...@compassion-gds/react-web@0.4.0-alpha.2) (2021-03-22)
+
+
+### Bug Fixes
+
+* **fileselect:** Rearrange imports order to squash linting error ([7265859](https://github.com/compassion-gds/compassion-gds/commit/72658591209d854c64b692f3a744a60195865714))
+
+
+
+
+
 # [0.4.0-alpha.1](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/react-web@0.4.0-alpha.0...@compassion-gds/react-web@0.4.0-alpha.1) (2021-03-22)
 
 
