@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-alpha.1](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/react-web@0.4.0-alpha.0...@compassion-gds/react-web@0.4.0-alpha.1) (2021-03-22)
+
+
+### Bug Fixes
+
+* **react-web:** Remove errant package-lock.json file ([1f731c6](https://github.com/compassion-gds/compassion-gds/commit/1f731c6952f44ec560a366d1d72d7deaea504aa5))
+
+
+
+
+
 # [0.4.0-alpha.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/react-web@0.3.0...@compassion-gds/react-web@0.4.0-alpha.0) (2021-03-22)
 
 
