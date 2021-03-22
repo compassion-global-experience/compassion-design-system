@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import { cx } from 'emotion';
 import buttonStyles from './Button.styles';
 

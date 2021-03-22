@@ -6,7 +6,7 @@ import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import { fileSelectStyles } from './FileSelect.styles';
 
 import { Button } from '../Button';
