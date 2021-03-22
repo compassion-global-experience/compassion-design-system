@@ -1,12 +1,13 @@
 # Contributing to the `react-web` Package
 
 The `react-web` package is structured with a component-per-directory convention
-inside the `src` directory. Each component directory generally contains 3 items:
+inside the `src` directory. Each component directory generally contains 4 items:
 
 - A **JSX file** that describes the component’s structure and behavior
 - A **.styles.js file** that describes the component’s appearance
 - A **.stories.js file** that illustrates most of the ways the component can
   be configured
+- An **index.js** file that exports the JSX component’s contents
 
 ## Workflow
 
