@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
 
-export default (theme) => {
+export default () => {
   return css``;
 };
