@@ -24,7 +24,8 @@
   "dependencies": {
     "chroma-js": "^2.1.0",
     "modularscale-js": "^3.0.1",
-    "nanoid": "^3.1.20"
+    "nanoid": "^3.1.20",
+    "raw.macro": "^0.4.2"
   },
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
