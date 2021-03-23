@@ -5,7 +5,7 @@ import { helpers } from '@compassion-gds/elements';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import { imageStyles } from './Image.styles';
 import image1 from './assets/image1.jpg';
 import image2 from './assets/image2.jpg';

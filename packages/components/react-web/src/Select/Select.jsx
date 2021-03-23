@@ -7,7 +7,7 @@ import { helpers } from '@compassion-gds/elements';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import selectStyles from './Select.styles';
 
 /**

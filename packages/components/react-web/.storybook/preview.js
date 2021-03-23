@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from '@emotion/react';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

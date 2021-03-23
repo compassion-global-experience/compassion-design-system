@@ -2,8 +2,7 @@
   "packages": [
     "packages/components/*",
     "packages/elements",
-    "packages/themes/*",
-    "packages/site"
+    "packages/themes/*"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
