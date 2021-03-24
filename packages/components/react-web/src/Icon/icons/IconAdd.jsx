@@ -20,14 +20,13 @@ function IconAdd(props) {
       css={iconStyles}
       {...props}
     >
-      <title>{"Add"}</title>
       <path
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={32}
-        d="M256 112v288M400 256H112"
+        d="M256 112v288m144-144H112"
       />
     </svg>
   );

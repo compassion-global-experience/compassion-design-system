@@ -3,6 +3,7 @@
 import svgr from '@svgr/core';
 import elements from '@compassion-gds/elements';
 import prettier from 'prettier';
+import svgo from 'svgo';
 
 import fs from 'fs';
 import path from 'path';
@@ -45,7 +46,18 @@ let indexJs = '';
 
 Object.entries(iconSources).forEach((iconSource) => {
   const name = iconSource[0];
-  const rawSvg = iconSource[1];
+
+  const rawSvg = svgo.optimize(iconSource[1], [
+    {
+      name: 'removeDesc',
+      active: false,
+    },
+    {
+      name: 'removeTitle',
+      active: false,
+    },
+  ]).data;
+
   const componentName = `Icon${capitalize(name)}`;
 
   indexJs += `export { default as ${componentName} } from './icons/${componentName}';\n`;
@@ -65,9 +77,7 @@ Object.entries(iconSources).forEach((iconSource) => {
           className: 'gds-icon',
           css: '{iconStyles}',
         },
-        prettierConfig: {
-          proseWrap: 'always',
-        },
+        svgo: false,
       },
       { componentName }
     )

@@ -13,7 +13,6 @@ function IconChevronLeft(props) {
     <svg
       width={props.width}
       height={props.height}
-      viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
       fill={props.fill}
       className="gds-icon"
@@ -23,7 +22,7 @@ function IconChevronLeft(props) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L11.4142 16L20.7071 25.2929C21.0976 25.6834 21.0976 26.3166 20.7071 26.7071C20.3166 27.0976 19.6834 27.0976 19.2929 26.7071L9.29289 16.7071C8.90237 16.3166 8.90237 15.6834 9.29289 15.2929L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
+        d="M20.707 5.293a1 1 0 0 1 0 1.414L11.414 16l9.293 9.293a1 1 0 0 1-1.414 1.414l-10-10a1 1 0 0 1 0-1.414l10-10a1 1 0 0 1 1.414 0z"
       />
     </svg>
   );

@@ -20,7 +20,6 @@ function IconAccessibility(props) {
       css={iconStyles}
       {...props}
     >
-      <title>{"Accessibility"}</title>
       <circle
         fill="none"
         stroke="currentColor"
