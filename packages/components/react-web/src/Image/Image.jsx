@@ -11,7 +11,7 @@ import imageStyles from './Image.styles';
 /**
  * UI component for images
  */
-export const Image = ({ src, src375, src480, src728, src1280, src1600, alt, title, caption, width, height, objectFit, objectPosition, lazyLoad }) => {
+export const Image = ({ src, src375, src480, src728, src1280, src1600, alt, title, caption, width, height, objectFit, objectPosition, objectPositionX, objectPositionY, lazyLoad }) => {
     const ref = useRef(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [realSrc, setRealSrc] = useState(lazyLoad ? null : src);
@@ -46,14 +46,27 @@ export const Image = ({ src, src375, src480, src728, src1280, src1600, alt, titl
         }
     });
 
+    let objectPositionAttr = '';
+
+    if (objectPositionX) {
+        objectPositionAttr = objectPositionX;
+    } else {
+        objectPositionAttr = 'center';
+    }
+
+    if (objectPositionY) {
+        objectPositionAttr += ' ' + objectPositionY;
+    } else {
+        objectPositionAttr = ' center';
+    }
+
     return (
        <picture css={imageStyles}>
            {srcSet}
            <img 
            className={cx(
                 `image__img`,
-                { [`image__img--fit-${objectFit}`]: objectFit },
-                { [`image__img--pos-${objectPosition}`]: objectPosition }
+                { [`image__img--fit-${objectFit}`]: objectFit }
             )}
             src={realSrc}
             alt={alt}
@@ -61,6 +74,7 @@ export const Image = ({ src, src375, src480, src728, src1280, src1600, alt, titl
             width={width}
             height={height}
             ref={ref}
+            style={{objectPosition: objectPositionAttr}}
            />
            {caption &&
             <div className="image__caption">
@@ -121,9 +135,13 @@ Image.propTypes = {
      */
     objectFit: PropTypes.oneOf(['unset', 'cover', 'contain']),
     /**
-     * Define object position property
+     * Define object position x, percent, pixel or position
      */
-    objectPosition: PropTypes.oneOf(['top', 'bottom', 'right', 'center', 'left']),
+    objectPositionX: PropTypes.string,
+     /**
+     * Define object position x, percent, pixel or position
+     */
+    objectPositionY: PropTypes.string,
     /**
      * Will the image be lazy loaded?
      */
@@ -132,6 +150,7 @@ Image.propTypes = {
 
 Image.defaultProps = {
     src: undefined,
+    srcPreview: undefined,
     src375: undefined,
     src480: undefined,
     src728: undefined,
