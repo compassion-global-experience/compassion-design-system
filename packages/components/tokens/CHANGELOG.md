@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1-alpha.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/tokens@0.1.0...@compassion-gds/tokens@0.1.1-alpha.0) (2021-05-06)
+
+**Note:** Version bump only for package @compassion-gds/tokens
+
+
+
+
+
 # [0.1.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/tokens@0.1.0-beta.2...@compassion-gds/tokens@0.1.0) (2021-03-22)
 
 **Note:** Version bump only for package @compassion-gds/tokens

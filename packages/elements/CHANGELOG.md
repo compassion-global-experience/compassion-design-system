@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-alpha.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/elements@0.3.1...@compassion-gds/elements@0.4.0-alpha.0) (2021-05-06)
+
+
+### Bug Fixes
+
+* **icons:** Minify icons with svgo ([22267c9](https://github.com/compassion-gds/compassion-gds/commit/22267c9adb5fd29a80324e1bb5d1bec796d69dbd))
+
+
+### Features
+
+* **iconography:** Add Lock & Link icons ([6d5ffcb](https://github.com/compassion-gds/compassion-gds/commit/6d5ffcbdcbc9e05c9081a3f7f8fa323604d89728))
+* **iconography:** Add to icon set ([4ee60b2](https://github.com/compassion-gds/compassion-gds/commit/4ee60b26453226ce2160a0437568be9f23e7ae03))
+* **icons:** Add code generation to automate exporting of new icons ([3721b09](https://github.com/compassion-gds/compassion-gds/commit/3721b09408a15586e46b085f8d3c149fc6325387)), closes [#55](https://github.com/compassion-gds/compassion-gds/issues/55)
+
+
+
+
+
 ## [0.3.1](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/elements@0.3.1-alpha.1...@compassion-gds/elements@0.3.1) (2021-03-22)
 
 **Note:** Version bump only for package @compassion-gds/elements

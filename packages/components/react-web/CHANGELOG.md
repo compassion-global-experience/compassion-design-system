@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-alpha.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/react-web@0.4.0...@compassion-gds/react-web@0.5.0-alpha.0) (2021-05-06)
+
+
+### Bug Fixes
+
+* **icons:** Minify icons with svgo ([22267c9](https://github.com/compassion-gds/compassion-gds/commit/22267c9adb5fd29a80324e1bb5d1bec796d69dbd))
+
+
+### Features
+
+* **iconography:** Add new icons ([9c92e25](https://github.com/compassion-gds/compassion-gds/commit/9c92e254b9dce37f3cac25d2d7c7ba855053f94b))
+* **icons:** Automate creation of React icon components based on what's in `elements` ([1aa0de2](https://github.com/compassion-gds/compassion-gds/commit/1aa0de21c26b6d84541034971ace0afef650ded2)), closes [#55](https://github.com/compassion-gds/compassion-gds/issues/55)
+
+
+
+
+
 # [0.4.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/react-web@0.4.0-alpha.4...@compassion-gds/react-web@0.4.0) (2021-03-22)
 
 **Note:** Version bump only for package @compassion-gds/react-web
