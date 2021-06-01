@@ -12,17 +12,17 @@ jobs:
   build:
     # the name for the entire job
     name: Transform Figma design tokens for specific platforms
-    
+
     # we run this on ubuntu, leave this alone, if you don't have a good reason to change it
     runs-on: ubuntu-latest
     steps:
-      # this lets us work in the actual repository 
-      - uses: actions/checkout@master
-      
+      # this lets us work in the actual repository
+      - uses: actions/checkout@development
+
       # if the folder named "tokens" does not exist, create it
       # - name: mkdir "tokens" directory
-        # change tokens here (and in line 32) if you want to use a differently named folder 
-        # run: 'mkdir -p tokens'
+      # change tokens here (and in line 32) if you want to use a differently named folder
+      # run: 'mkdir -p tokens'
 
       # this creates a json file from the stringified json from the request body
       - name: create json from request body
@@ -45,9 +45,9 @@ jobs:
           node-version: 14.x
 
       # We now run npm i to install all dependencies and run the "transfrom" script that is defined in the package.json (change this if you need to)
-      - name: Transform design tokens 
+      - name: Transform design tokens
         # run: 'npm i && npm run transform-tokens'
-        run: 'cd packages/components/tokens && yarn install --focus && npx style-dictionary build'
+        run: 'cd packages/components/tokens && yarn install --focus && npx style-dictionary build && npx json-format-cli ${{ github.event.client_payload.tokenFileName }}'
 
       # We now store the changes in the repository
       - name: Persist changes in repository
