@@ -47,7 +47,9 @@ jobs:
       # We now run npm i to install all dependencies and run the "transfrom" script that is defined in the package.json (change this if you need to)
       - name: Transform design tokens
         # run: 'npm i && npm run transform-tokens'
-        run: 'cd packages/components/tokens && yarn install --focus && npx style-dictionary build && npx json-format-cli ${{ github.event.client_payload.tokenFileName }}'
+        run: 'cd packages/components/tokens && yarn install --focus && npx style-dictionary build && npx json-format-cli $TOKEN_FILENAME'
+        env:
+          TOKEN_FILENAME: ${{ github.event.client_payload.tokenFileName }}
 
       # We now store the changes in the repository
       - name: Persist changes in repository
