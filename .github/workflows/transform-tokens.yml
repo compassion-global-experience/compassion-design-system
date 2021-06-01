@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # this lets us work in the actual repository
-      - uses: actions/checkout@development
+      - uses: actions/checkout@master
 
       # if the folder named "tokens" does not exist, create it
       # - name: mkdir "tokens" directory
