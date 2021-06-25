@@ -119,3 +119,6 @@ public
 [Tt]humbs.db
 ehthumbs.db
 Desktop.ini
+
+# IDEs
+.idea/
