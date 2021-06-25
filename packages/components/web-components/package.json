@@ -1,0 +1,64 @@
+{
+  "name": "@compassion-gds/web-components",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "dist/"
+  ],
+  "dependencies": {
+    "@compassion-gds/elements": "^0.4.0",
+    "@compassion-gds/tokens": "^0.1.1",
+    "@emotion/core": "^10.0.35",
+    "@emotion/react": "^11.1.1",
+    "@emotion/styled": "^10.0.27",
+    "@svgr/core": "^5.5.0",
+    "emotion": "^10.0.27",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/compassion-gds/compassion-gds.git",
+    "directory": "packages/components/web-components"
+  },
+  "scripts": {
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "start": "run-s storybook",
+    "prepublishOnly": "run-s build",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "predeploy": "cd example && yarn install && yarn run build",
+    "deploy": "gh-pages -d example/build",
+    "storybook": "start-storybook --no-manager-cache -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "microbundle-crl": "^0.13.10",
+    "npm-run-all": "^4.1.5",
+    "sanitize.css": "^12.0.1"
+  },
+  "private": false,
+  "gitHead": "59f18836c7d5f6e798fbd530f529ccd9391218f2"
+}
