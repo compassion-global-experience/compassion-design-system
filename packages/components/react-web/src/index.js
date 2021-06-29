@@ -10,3 +10,5 @@ export * from './Select';
 export * from './Image';
 export * from './ProgressBar';
 export * from './Uploader';
+export * from './ThemeProvider';
+export * from './hooks';
