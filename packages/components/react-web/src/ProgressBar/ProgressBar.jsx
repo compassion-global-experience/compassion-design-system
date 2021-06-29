@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import { useTheme } from '@emotion/react';
+import { useTheme } from '../hooks';
 
 import * as progressBarStyles from './ProgressBar.styles';
 

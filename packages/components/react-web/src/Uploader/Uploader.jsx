@@ -5,7 +5,7 @@ import { FileDrop } from 'react-file-drop';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { useTheme } from '@emotion/react';
+import { useTheme } from '../hooks';
 import uploaderStyles from './Uploader.styles';
 import { uploadFiles } from './helpers';
 

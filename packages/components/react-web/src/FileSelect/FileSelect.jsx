@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { helpers } from '@compassion-gds/elements';
@@ -6,10 +6,10 @@ import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { useTheme } from '@emotion/react';
 import { fileSelectStyles } from './FileSelect.styles';
 
 import { Button } from '../Button';
+import { useTheme } from "../hooks";
 
 /**
  * UI component for uploading media
