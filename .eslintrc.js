@@ -33,4 +33,5 @@ module.exports = {
     'react/prop-types': ['error', { ignore: ['children'] }],
     'space-in-parens': ['warn', 'never'],
   },
+  ignorePatterns: ['**/dist/**/*'],
 };
