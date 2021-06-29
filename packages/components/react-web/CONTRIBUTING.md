@@ -19,7 +19,7 @@ documentation of those components by surfacing code comments, `propTypes`, and
 
 To launch Storybook, make sure you’re in the `/packages/components/react-web`
 directory and run the command `yarn storybook`. After the project is built,
-Storybook will launch in your default browser. New components or modfications
+Storybook will launch in your default browser. New components or modifications
 will be displayed in real time! 🎉
 
 The configurations outlined in each component’s .stories.js file can be seen in
