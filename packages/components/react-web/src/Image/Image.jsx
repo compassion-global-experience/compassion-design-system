@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import { useTheme } from '@emotion/react';
+import { useTheme } from '../hooks';
 import { imageStyles } from './Image.styles';
 import image1 from './assets/image1.jpg';
 import image2 from './assets/image2.jpg';
