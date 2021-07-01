@@ -32,6 +32,7 @@ export const Image = ({ src, srcPreview, srcSet, sizes, alt, caption, isLazyLoad
 
                 isLoaded = true;
             } else {
+                currentSrcSet.current = srcSet;
                 setCurrentSrc(src);
                 isLoaded = true;
             }
