@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-export const imageStyles = (theme) => {
+export const thumbnailStyles = (theme) => {
   return css`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
