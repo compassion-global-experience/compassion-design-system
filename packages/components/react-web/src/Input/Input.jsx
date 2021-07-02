@@ -5,10 +5,10 @@ import { helpers } from '@compassion-gds/elements';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import { useTheme } from 'emotion-theming';
-import CreditCard from './CreditCard.js';
-import Currency from './Currency.js';
-import Edit from './Edit.js';
+import { useTheme } from '../hooks';
+import CreditCard from './CreditCard';
+import Currency from './Currency';
+import Edit from './Edit';
 import { inputStyles } from './Input.styles';
 
 /**

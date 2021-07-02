@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/gatsby-theme-compassion",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -11,5 +11,9 @@
     "url": "https://github.com/compassion-gds/compassion-gds.git",
     "directory": "packages/themes/gatsby-theme-compassion"
   },
-  "private": false
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "71c6fec6a49dc548f13c93eee31fc2b9e7161d31"
 }

@@ -5,7 +5,7 @@ import { FileDrop } from 'react-file-drop';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '../hooks';
 import uploaderStyles from './Uploader.styles';
 import { uploadFiles } from './helpers';
 
@@ -32,7 +32,9 @@ export const Uploader = () => {
         onTargetClick={() => fileInputRef.current.click()}
       >
         {isUploading ? (
-          <p><span>Uploading...</span></p>
+          <p>
+            <span>Uploading...</span>
+          </p>
         ) : (
           <div>
             <svg

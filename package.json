@@ -15,17 +15,19 @@
   ],
   "scripts": {
     "test": "lerna run test",
-    "postinstall": "run-s build:elements build:tokens",
+    "postinstall": "npm run build",
     "prep-release": "lerna version --conventional-commits --yes",
     "start": "concurrently --kill-others --names \"storybook,elements,tokens\" -c \"bgCyan,bgMagenta,bgYellow\" \"yarn start:react\" \"yarn start:elements\" \"yarn start:tokens\"",
     "start:react": "cd packages/components/react-web && yarn start",
     "start:elements": "cd packages/elements && yarn start",
     "start:tokens": "cd packages/components/tokens && yarn start",
+    "build": "lerna run build",
     "build:tokens": "cd packages/components/tokens && yarn build",
     "build:elements": "cd packages/elements && yarn build",
     "build:storybook": "cd packages/components/react-web && yarn build-storybook"
   },
   "devDependencies": {
+    "@octokit/core": "^3.3.0",
     "commitizen": "^4.2.2",
     "concurrently": "^5.3.0",
     "cz-conventional-changelog": "3.3.0",
@@ -36,6 +38,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "lerna": "^3.22.1",
     "prettier": "^2.1.2",
     "stylelint": "^13.7.2",

@@ -1,12 +1,13 @@
 # Contributing to the `react-web` Package
 
 The `react-web` package is structured with a component-per-directory convention
-inside the `src` directory. Each component directory generally contains 3 items:
+inside the `src` directory. Each component directory generally contains 4 items:
 
 - A **JSX file** that describes the component’s structure and behavior
 - A **.styles.js file** that describes the component’s appearance
 - A **.stories.js file** that illustrates most of the ways the component can
   be configured
+- An **index.js** file that exports the JSX component’s contents
 
 ## Workflow
 
@@ -18,7 +19,7 @@ documentation of those components by surfacing code comments, `propTypes`, and
 
 To launch Storybook, make sure you’re in the `/packages/components/react-web`
 directory and run the command `yarn storybook`. After the project is built,
-Storybook will launch in your default browser. New components or modfications
+Storybook will launch in your default browser. New components or modifications
 will be displayed in real time! 🎉
 
 The configurations outlined in each component’s .stories.js file can be seen in
