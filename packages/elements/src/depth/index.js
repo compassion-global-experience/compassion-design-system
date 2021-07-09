@@ -1,8 +1,8 @@
 export default {
-  plus0: `none`,
-  plus1: `0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)`,
-  plus2: `0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)`,
-  plus3: `0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)`,
-  plus4: `0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)`,
-  plus5: `0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)`,
+  plus0: `0px 0px 1px rgba(0, 0, 0, 0.2)`,
+  plus1: `0px 3.75px 5px -1.25px rgba(0, 0, 0, 0.15), 0px 0.475px 0.6px -1.25px rgba(0, 0, 0, 0.075)`,
+  plus2: `0px 7.5px 12.5px -2.5px rgba(0, 0, 0, 0.135), 0px 0.95px 1.55px -2.5px rgba(0, 0, 0, 0.0675)`,
+  plus3: `0px 15px 20px -5px rgba(0, 0, 0, 0.12), 0px 1.9px 2.5px -5px rgba(0, 0, 0, 0.06)`,
+  plus4: `0px 22.5px 27.5px -7.5px rgba(0, 0, 0, 0.105), 0px 2.85px 3.45px -7.5px rgba(0, 0, 0, 0.0525)`,
+  plus5: `0px 30px 35px -10px rgba(0, 0, 0, 0.09), 0px 3.8px 4.4px -10px rgba(0, 0, 0, 0.045)`,
 };
