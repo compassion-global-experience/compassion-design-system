@@ -67,7 +67,7 @@ module.exports = {
 
     small: {
       minHeight: { value: `${elements.size.plus2}` },
-      fontSize: { value: `${elements.typography.fontSizes.minus2}` },
+      fontSize: { value: `${elements.typography.fontSizes.minus1}` },
     },
   },
 

@@ -5,7 +5,7 @@ const checkmarkSvg =
 
 module.exports = {
   base: {
-    label: { fontSize: { value: elements.typography.fontSizes.minus2 } },
+    label: { fontSize: { value: elements.typography.fontSizes.base } },
     border: { value: `1px solid` },
     borderColor: { value: elements.color.gray },
     borderRadius: { value: 0 },
@@ -33,7 +33,7 @@ module.exports = {
     error: {
       color: { value: elements.color.error },
       outline: { value: `1px solid ${elements.color.error}` },
-      fontSize: { value: elements.typography.fontSizes.minus2 },
+      fontSize: { value: elements.typography.fontSizes.minus1 },
     },
   },
   radio: {

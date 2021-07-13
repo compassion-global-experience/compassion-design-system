@@ -3,6 +3,6 @@ const color = require('color');
 
 module.exports = {
   base: {
-    fontSize: { value: `${elements.typography.fontSizes.minus2}` },
+    fontSize: { value: `${elements.typography.fontSizes.base}` },
   },
 };

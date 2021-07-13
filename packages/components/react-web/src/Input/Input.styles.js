@@ -26,7 +26,7 @@ export const inputStyles = (theme) => {
     div {
       display: flex;
       padding: 100px;
-      font-size: 32px;
+      /* font-size: 32px; */
       align-items: center;
     }
 
