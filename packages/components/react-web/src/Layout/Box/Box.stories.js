@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../global.css';
 import './Box.stories.css';
 
 import { Box } from './Box';

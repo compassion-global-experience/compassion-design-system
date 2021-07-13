@@ -1,6 +1,4 @@
 import React from 'react';
-import '../global.css';
-
 import { Uploader } from './Uploader';
 
 export default {
@@ -12,6 +10,4 @@ export default {
 const Template = (args) => <Uploader {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  
-};
+Primary.args = {};

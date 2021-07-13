@@ -1,6 +1,4 @@
 import React from 'react';
-import '../global.css';
-
 import { Modal } from './Modal';
 import image from './assets/photo.jpg';
 
@@ -22,7 +20,7 @@ export const Confirmation = Template.bind({});
 Confirmation.args = {
   type: 'confirmation',
   content: 'Confirm?',
-  confirmAction: function () {},
+  confirmAction() {},
   confirmType: 'proceed',
 };
 

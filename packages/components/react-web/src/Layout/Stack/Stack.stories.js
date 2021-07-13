@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../global.css';
 import './Stack.stories.css';
 
 import { Stack } from './Stack';

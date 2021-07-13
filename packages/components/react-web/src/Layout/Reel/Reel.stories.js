@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../global.css';
 import './Reel.stories.css';
 
 import { Reel } from './Reel';

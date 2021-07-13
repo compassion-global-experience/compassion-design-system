@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../global.css';
 import './Grid.stories.css';
 
 import { Grid } from './Grid';

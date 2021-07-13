@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../global.css';
 import './Cover.stories.css';
 
 import { Cover } from './Cover';

@@ -7,27 +7,26 @@ const ms = require('modularscale-js');
  *    The number of steps up or down the modular type scale.
  *    Defaults to the base font size (1rem).
  */
-export const fontSize = (step = 0) => {
-  const rems = ms(step, { base: [18, 16], ratio: 1.2 }) / 18;
+export const fontSize = (step = 0, scale = 'base') => {
+  let ratio = 1.33;
+
+  if (scale === 'plus1') {
+    ratio = 1.414;
+  } else if (scale === 'minus1') {
+    ratio = 1.25;
+  }
+
+  const baseFontSize = 16;
+
+  const rems = ms(step, { base: [baseFontSize], ratio }) / baseFontSize;
   const remString = Number.parseFloat(rems.toFixed(2));
   return `${remString}rem`;
 };
-
-// `fluid` function: https://css-tricks.com/snippets/css/fluid-typography/
-//
-// export const fluid = (
-//   minViewport,
-//   maxViewport,
-//   minFontSize = fontSize(-1),
-//   maxFontSize = fontSize(4)
-// ) => {};
 
 /**
  * Preset steps within the modular type scale, where `base` is 1rem.
  */
 export const fontSizes = {
-  minus4: fontSize(-4),
-  minus3: fontSize(-3),
   minus2: fontSize(-2),
   minus1: fontSize(-1),
   base: fontSize(0),
@@ -53,6 +52,7 @@ export const fontSizes = {
  * Default sans serif and serif font stacks.
  */
 export const fonts = {
-  sans: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  sans:
+    "'-apple-system', BlinkMacSystemFont, 'avenir next', avenir, 'segoe ui', 'helvetica neue', helvetica, Ubuntu, roboto, noto, arial, 'sans-serif'",
   serif: undefined,
 };

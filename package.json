@@ -47,5 +47,6 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2"
   },
-  "config": {}
+  "config": {},
+  "dependencies": {}
 }

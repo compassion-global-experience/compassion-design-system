@@ -10,7 +10,6 @@ export default (theme) => {
     box-shadow: ${theme.base.boxShadow};
     color: ${theme.base.color};
     font-size: ${theme.base.fontSize};
-    font-family: unset;
     cursor: ${theme.base.cursor};
 
     transition: box-shadow 200ms ${theme.base.easing},
