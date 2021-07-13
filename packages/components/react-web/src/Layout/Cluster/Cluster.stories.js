@@ -1,6 +1,4 @@
 import React from 'react';
-import '../../global.css';
-
 import { Cluster } from './Cluster';
 import { Box } from '../Box/Box';
 import { Logo } from '../../Logo/Logo';

@@ -1,6 +1,4 @@
 import React from 'react';
-import '../global.css';
-
 import { Menu } from './Menu';
 
 export default {

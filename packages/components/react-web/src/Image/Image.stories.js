@@ -1,6 +1,4 @@
 import React from 'react';
-import '../global.css';
-
 import { Image } from './Image';
 
 export default {

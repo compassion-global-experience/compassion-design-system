@@ -1,6 +1,4 @@
 import React from 'react';
-import '../global.css';
-
 import { ProgressBar } from './ProgressBar';
 
 export default {

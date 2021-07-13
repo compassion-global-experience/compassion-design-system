@@ -1,6 +1,4 @@
 import React from 'react';
-import '../global.css';
-
 import { Logo } from './Logo';
 
 export default {

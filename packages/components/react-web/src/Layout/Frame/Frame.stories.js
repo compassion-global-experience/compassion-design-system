@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../global.css';
 import './Frame.stories.css';
 
 import { Frame } from './Frame';

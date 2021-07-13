@@ -1,6 +1,4 @@
 import React from 'react';
-import '../global.css';
-
 import IconSkippy from './icons/IconSkippy';
 
 export default {

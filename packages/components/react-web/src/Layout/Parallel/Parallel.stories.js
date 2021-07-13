@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../global.css';
 import './Parallel.stories.css';
 
 import { Parallel } from './Parallel';

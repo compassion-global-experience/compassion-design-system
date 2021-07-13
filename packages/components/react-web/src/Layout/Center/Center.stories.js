@@ -1,6 +1,4 @@
 import React from 'react';
-import '../../global.css';
-
 import { Center } from './Center';
 import { Button } from '../../Button/Button';
 
