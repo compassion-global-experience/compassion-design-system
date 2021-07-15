@@ -1,76 +1,129 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { cx } from 'emotion';
-import * as menuStyles from './Menu.styles';
-import { useDetectOutsideClick } from './useDetectOutsideClick';
 
-export const Menu = ({ primary, size, label, ...props }) => {
-  const dropdownRef = useRef(null);
-  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
-  const onClick = () => setIsActive(!isActive);
+import { helpers } from '@compassion-gds/elements';
+import menuStyles from './Menu.styles';
+import { useTheme } from '../hooks';
+// import { useDetectOutsideClick } from './useDetectOutsideClick';
 
-  return (
-    <div className="container">
-      <div css={menuStyles.menuContainer}>
-        <button
-          onClick={onClick}
-          css={menuStyles.menuTrigger}
-          aria-haspopup="listbox"
-          aria-labelledby="exp_elem exp_button"
-          id="exp_button"
-        >
-          <span css={menuStyles.label}>Menu</span>
-        </button>
-        <nav ref={dropdownRef} css={menuStyles.menu({ isActive })}>
-          <ul
-            id="exp_elem_list"
-            tabindex="-1"
-            role="listbox"
-            aria-labelledby="exp_elem"
-          >
-            <li id="exp_elem_Mg" role="option">
-              <a href="#">Messages</a>
-            </li>
-            <li id="exp_elem_Sv" role="option">
-              <a href="#">Saved</a>
-            </li>
-            <li id="exp_elem_Ab" role="option">
-              <a href="#">About</a>
-            </li>
-            <li id="exp_elem_Lg" role="option">
-              <a href="#">Languages</a>
-            </li>
-            <li id="exp_elem_St" role="option">
-              <a href="#">Settings</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+export const Menu = ({ triggerOnHover, ...props }) => {
+  const theme = useTheme();
+
+  // if not hovered || clicked outside || clicked button
+
+  const menuRef = useRef(null);
+  const [triggerId] = useState(helpers.gdsId());
+  const [dropdownId] = useState(helpers.gdsId());
+  // const [isClickedOutside, setIsClickedOutside] = useDetectOutsideClick(
+  //   menuRef,
+  //   false
+  // );
+  const [isActive, setIsActive] = useState(false);
+  const [isDropdownHovered, setIsDropdownHovered] = useState(false);
+
+  const buttonEl = props.children.filter((child) => child.type === 'button')[0];
+  const dropdownEl = props.children.filter(
+    (child) =>
+      child.type.displayName === 'List' ||
+      child.type === 'ul' ||
+      child.type === 'ol'
+  )[0];
+  const triggerProps = {
+    className: `${
+      buttonEl.props.className ? buttonEl.props.className : ''
+    } gds-menu__trigger`,
+    type: 'button',
+    id: buttonEl.props.id || triggerId,
+    'aria-haspopup': true,
+    'aria-expanded': isActive,
+    'aria-controls': dropdownId,
+    onClick: () => {
+      setIsActive(!isActive);
+    },
+    onMouseEnter: () => {
+      if (triggerOnHover) {
+        setIsActive(true);
+      }
+    },
+    onMouseLeave: () => {
+      if (triggerOnHover) {
+        if (!isDropdownHovered) {
+          setIsActive(false);
+        }
+      }
+    },
+  };
+
+  const dropdownProps = {
+    className: `${
+      dropdownEl.props.className ? dropdownEl.props.className : ''
+    } gds-menu__dropdown`,
+    id: dropdownEl.props.id || dropdownId,
+    'aria-labelledby': triggerId,
+    onMouseEnter: () => {
+      if (triggerOnHover) {
+        setIsActive(true);
+        setIsDropdownHovered(true);
+      }
+    },
+    onMouseLeave: () => {
+      if (triggerOnHover) {
+        if (isActive) {
+          setIsActive(false);
+          setIsDropdownHovered(false);
+        }
+      }
+    },
+  };
+
+  const m = (
+    <div
+      className="gds-menu"
+      ref={menuRef}
+      css={menuStyles(theme.component.menu)}
+    >
+      {React.Children.map(props.children, (child) => {
+        let newProps;
+
+        if (child.type === 'button') {
+          newProps = triggerProps;
+        } else if (
+          child.type.displayName === 'List' ||
+          child.type === 'ul' ||
+          child.type === 'ol'
+        ) {
+          newProps = dropdownProps;
+
+          newProps.children = React.Children.map(
+            child.props.children,
+            (liChild) => {
+              const liProps = { role: 'none' };
+
+              liProps.children = React.Children.map(
+                liChild.props.children,
+                (anchorChild) => {
+                  const anchorProps = { role: 'menuitem' };
+                  return React.cloneElement(anchorChild, anchorProps);
+                }
+              );
+              return React.cloneElement(liChild, liProps);
+            }
+          );
+        }
+
+        const el = React.cloneElement(child, newProps);
+        return el;
+      })}
     </div>
   );
+
+  return m;
 };
 
-Menu.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * Menu contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
-  onClick: PropTypes.func,
-};
+Menu.propTypes = { triggerOnHover: PropTypes.bool };
 
-Menu.defaultProps = {
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
-};
+Menu.defaultProps = { triggerOnHover: false };
