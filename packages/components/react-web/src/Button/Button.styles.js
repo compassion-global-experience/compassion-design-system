@@ -2,8 +2,8 @@ import { css } from '@emotion/core';
 
 export default (theme) => {
   return css`
-    padding-right: 1em;
-    padding-left: 1em;
+    padding-right: ${theme.base.paddingRight};
+    padding-left: ${theme.base.paddingLeft};
     min-height: ${theme.base.minHeight};
     border: ${theme.base.border};
     background: ${theme.base.background};
