@@ -7,6 +7,7 @@ import * as i from './src/icons';
 import * as m from './src/motion';
 import s from './src/size';
 import * as t from './src/typography';
+import sp from './src/space';
 
 export const a11y = a;
 export const breakpoints = b;
@@ -17,3 +18,4 @@ export const icons = i;
 export const motion = m;
 export const size = s;
 export const typography = t;
+export const space = sp;
