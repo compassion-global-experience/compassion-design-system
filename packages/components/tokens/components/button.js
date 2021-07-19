@@ -3,8 +3,8 @@ const color = require('color');
 
 module.exports = {
   base: {
-    paddingLeft: { value: `1em` },
-    paddingRight: { value: `1em` },
+    paddingLeft: { value: elements.space.plus1 },
+    paddingRight: { value: elements.space.plus1 },
     fontSize: { value: `${elements.typography.fontSizes.base}` },
     minHeight: { value: `${elements.size.touchable}` },
     background: { value: `${elements.color.white}` },
