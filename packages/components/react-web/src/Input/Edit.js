@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+
 import edit from '../assets/edit.svg';
 import check from '../assets/check.svg';
 import clear from '../assets/clear.svg';
@@ -16,7 +20,7 @@ const Edit = ({
   onButtonClick,
 }) => {
   return (
-    <>
+    <React.Fragment>
       {type === 'edit' && !disable && (
         <button
           type="button"
@@ -43,7 +47,7 @@ const Edit = ({
       >
         <img src={clear} alt="Reject Input Change" />
       </button>
-    </>
+    </React.Fragment>
   );
 };
 
