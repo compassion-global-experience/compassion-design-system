@@ -1,4 +1,3 @@
-const multiplier = 1;
 const sizes = {
   minus4: 0.125,
   minus3: 0.25,
@@ -16,10 +15,6 @@ const sizes = {
   plus9: 8,
   plus10: 9,
   plus11: 10,
-};
-
-const size = (step) => {
-  return `${sizes[step] * multiplier}rem`;
 };
 
 export default {
