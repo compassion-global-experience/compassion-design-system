@@ -6,4 +6,3 @@ import { Image } from '@compassion-gds/react-web';
 const WebImage = reactToWebComponent(Image, React, ReactDOM);
 
 customElements.define("gds-image", WebImage);
- 
