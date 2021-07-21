@@ -1,39 +1,17 @@
-const SPACING_BASE = 8;
+import size  from '../size';
 
 /**
- * Converts pixels to rem.
- *
- * @param {Number} [px=0]
- */
-const pxToRem = px => px / 16;
-
-/**
- * Returns a rem-based spacing.
- *
- * @param {Number} [step=0]
- *    The number of steps up or down.
- *    Defaults to the base spacing - 8px (0.5rem).
- */
-const spacing = (step) => {
-  if (!step) return `${pxToRem(SPACING_BASE)}rem`;
-
-  if (step < 0) return `${pxToRem(SPACING_BASE / (step * -2))}rem`;
-
-  return `${pxToRem(step * SPACING_BASE)}rem`;
-};
-
-/**
- * Preset steps where `base` is 8px (0.5rem).
+ * Preset spaces where `base` is 0.5rem (8px).
  */
 export default {
-  minus2: spacing(-2),
-  minus1: spacing(-1),
-  base: spacing(0),
-  plus1: spacing(1.5),
-  plus2: spacing(2),
-  plus3: spacing(3),
-  plus4: spacing(4),
-  plus5: spacing(5),
-  plus6: spacing(6),
-  plus7: spacing(8),
+  minus2: size.minus4,
+  minus1: size.minus3,
+  base: size.minus2,
+  plus1: size.minus1,
+  plus2: size.base,
+  plus3: size.plus1,
+  plus4: size.plus2,
+  plus5: size.plus3,
+  plus6: size.plus4,
+  plus7: size.plus4,
 };
