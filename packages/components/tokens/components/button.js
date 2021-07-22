@@ -1,63 +1,39 @@
 const elements = require('@compassion-gds/elements');
-const color = require('color');
+
+const FUNCTIONAL_COLOR = {
+  PRIMARY: '#0A4FBB',
+  SECONDARY: '#F3F6FB',
+  DISABLED: '#717E98',
+};
 
 module.exports = {
   base: {
-    paddingLeft: { value: elements.space.plus1 },
-    paddingRight: { value: elements.space.plus1 },
+    paddingLeft: { value: `${elements.space.plus2}` },
+    paddingRight: { value: `${elements.space.plus2}` },
     fontSize: { value: `${elements.typography.fontSizes.base}` },
-    minHeight: { value: `${elements.size.touchable}` },
+    minHeight: { value: `${elements.size.plus4}` },
     background: { value: `${elements.color.white}` },
     color: { value: `${elements.color.primary}` },
-    border: { value: `1px solid ${elements.color.primary}` },
+    borderWidth: { value: `1px` },
+    borderStyle: { value: `solid` },
+    borderColor: { value: `${elements.color.primary}` },
     cursor: { value: `pointer` },
-    boxShadow: { value: `${elements.depth.plus0}` },
     easing: { value: `${elements.motion.easing()}` },
 
-    disabled: {
-      color: { value: `${elements.color.primary}` },
-      cursor: { value: `default` },
-      opacity: { value: `0.6` },
-      filter: { value: `grayscale(0.6)` },
-    },
-
     hover: {
-      background: {
-        value: `${color(elements.color.primary)
-          .lighten(1.8)
-          .hex()
-          .toLowerCase()}`,
-      },
-      color: {
-        value: `${color(elements.color.primary)
-          .lighten(0.1)
-          .hex()
-          .toLowerCase()}`,
-      },
-      borderColor: {
-        value: `${color(elements.color.primary)
-          .lighten(0.1)
-          .hex()
-          .toLowerCase()}`,
-      },
+      background: { value: `${FUNCTIONAL_COLOR.SECONDARY}` },
       boxShadow: { value: `${elements.depth.plus2}` },
     },
 
     active: {
-      'background-color': { value: `${elements.color.white}` },
-      'border-color': {
-        value: `${color(elements.color.primary)
-          .darken(0.2)
-          .hex()
-          .toLowerCase()}`,
-      },
-      color: {
-        value: `${color(elements.color.primary)
-          .darken(0.2)
-          .hex()
-          .toLowerCase()}`,
-      },
+      background: { value: `${FUNCTIONAL_COLOR.SECONDARY}` },
       boxShadow: { value: `${elements.depth.plus1}` },
+    },
+
+    disabled: {
+      cursor: { value: `default` },
+      color: { value: `${FUNCTIONAL_COLOR.DISABLED}` },
+      borderColor: { value: `${FUNCTIONAL_COLOR.DISABLED}` },
     },
 
     large: {
@@ -66,7 +42,9 @@ module.exports = {
     },
 
     small: {
-      minHeight: { value: `${elements.size.plus2}` },
+      paddingLeft: { value: `${elements.space.base}` },
+      paddingRight: { value: `${elements.space.base}` },
+      minHeight: { value: `calc(${elements.size.plus2} + ${elements.space.minus1})` },
       fontSize: { value: `${elements.typography.fontSizes.minus1}` },
     },
   },
@@ -76,20 +54,17 @@ module.exports = {
     color: { value: `${elements.color.white}` },
 
     hover: {
-      background: {
-        value: `${color(elements.color.primary)
-          .lighten(0.1)
-          .hex()
-          .toLowerCase()}`,
-      },
+      background: { value: `${FUNCTIONAL_COLOR.PRIMARY}` },
     },
+
     active: {
-      'background-color': {
-        value: `${color(elements.color.primary)
-          .darken(0.2)
-          .hex()
-          .toLowerCase()}`,
-      },
+      background: { value: `${FUNCTIONAL_COLOR.PRIMARY}` },
+    },
+
+    disabled: {
+      color: { value: `${elements.color.white}` },
+      background: { value: `${FUNCTIONAL_COLOR.DISABLED}` },
+      borderColor: { value: `${FUNCTIONAL_COLOR.DISABLED}` },
     },
   },
 };
