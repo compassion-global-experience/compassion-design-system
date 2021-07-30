@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { helpers } from '@compassion-gds/elements';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { cx } from 'emotion';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from "../hooks";
 import { thumbnailStyles } from './Thumbnail.styles';
 import image1 from './assets/image1.jpg';
 import image2 from './assets/image2.jpg';
@@ -20,7 +18,7 @@ export const Thumbnail = ({ type, size, label, validator, ...props }) => {
   const [selected, setSelected] = useState(image1);
   console.log('selected =', selected);
 
-  const theme = useTheme().component.input;
+  const theme = useTheme();
   const data = [
     {
       id: '1',
@@ -60,12 +58,12 @@ export const Thumbnail = ({ type, size, label, validator, ...props }) => {
   ];
 
   return (
-    <div css={thumbnailStyles(theme)}>
+    <div css={thumbnailStyles(theme.component.input)}>
       {selected ? <img src={selected} alt={selected.title} /> : null}
       {data.map((obj) =>
         selected === obj.img ? null : (
           <div key={obj.id}>
-            <button onClick={() => setSelected(obj.img)}>
+            <button type="button" onClick={() => setSelected(obj.img)}>
               <img src={obj.img} alt={obj.title} />
             </button>
           </div>
