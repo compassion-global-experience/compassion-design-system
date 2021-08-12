@@ -19,6 +19,7 @@ export default {
   },
 };
 
+// TODO: Decide how to handle children: https://github.com/compassion-gds/compassion-gds/issues/68
 const BasicTemplate =  ({ ordered, itemPadding, fullWidth, striped }) => html`
     <gds-list .ordered=${ordered} .itemPadding=${itemPadding} .fullWidth=${fullWidth} .striped=${striped} />
   `;
