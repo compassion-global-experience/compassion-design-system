@@ -3,6 +3,7 @@ export * from './FileSelect';
 export * from './Image';
 export * from './Input';
 export * from './Logo';
+export * from './List';
 export * from './Menu';
 export * from './ProgressBar';
 export * from './Select';
