@@ -4,6 +4,7 @@ export * from './Icon';
 export * from './Input';
 export * from './Layout';
 export * from './Logo';
+export * from './List';
 export * from './Menu';
 export * from './Modal';
 export * from './Select';
