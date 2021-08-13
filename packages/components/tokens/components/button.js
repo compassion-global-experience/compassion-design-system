@@ -1,11 +1,6 @@
 const elements = require('@compassion-gds/elements');
 
-const FUNCTIONAL_COLOR = {
-  PRIMARY: '#0A4FBB',
-  SECONDARY: '#F3F6FB',
-  DISABLED: '#717E98',
-};
-
+// TODO: Switch hardcoded colors to the `color` object {https://github.com/compassion-gds/compassion-gds/issues/88}
 module.exports = {
   base: {
     paddingLeft: { value: `${elements.space.plus2}` },
@@ -21,19 +16,19 @@ module.exports = {
     easing: { value: `${elements.motion.easing()}` },
 
     hover: {
-      background: { value: `${FUNCTIONAL_COLOR.SECONDARY}` },
+      background: { value: '#F3F6FB' },
       boxShadow: { value: `${elements.depth.plus2}` },
     },
 
     active: {
-      background: { value: `${FUNCTIONAL_COLOR.SECONDARY}` },
+      background: { value: '#F3F6FB' },
       boxShadow: { value: `${elements.depth.plus1}` },
     },
 
     disabled: {
       cursor: { value: `default` },
-      color: { value: `${FUNCTIONAL_COLOR.DISABLED}` },
-      borderColor: { value: `${FUNCTIONAL_COLOR.DISABLED}` },
+      color: { value: '#717E98' },
+      borderColor: { value: '#717E98' },
     },
 
     large: {
@@ -54,17 +49,17 @@ module.exports = {
     color: { value: `${elements.color.white}` },
 
     hover: {
-      background: { value: `${FUNCTIONAL_COLOR.PRIMARY}` },
+      background: { value: '#0A4FBB' },
     },
 
     active: {
-      background: { value: `${FUNCTIONAL_COLOR.PRIMARY}` },
+      background: { value: '#0A4FBB' },
     },
 
     disabled: {
       color: { value: `${elements.color.white}` },
-      background: { value: `${FUNCTIONAL_COLOR.DISABLED}` },
-      borderColor: { value: `${FUNCTIONAL_COLOR.DISABLED}` },
+      background: { value: '#717E98' },
+      borderColor: { value: '#717E98' },
     },
   },
 };
