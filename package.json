@@ -24,7 +24,9 @@
     "build": "lerna run build",
     "build:tokens": "cd packages/components/tokens && yarn build",
     "build:elements": "cd packages/elements && yarn build",
-    "build:storybook": "cd packages/components/react-web && yarn build-storybook"
+    "build:storybook": "yarn build:storybook:react && yarn build:storybook:wc",
+    "build:storybook:react": "cd packages/components/react-web && yarn build-storybook",
+    "build:storybook:wc": "cd packages/components/web-components && yarn build-storybook"
   },
   "devDependencies": {
     "@octokit/core": "^3.3.0",
