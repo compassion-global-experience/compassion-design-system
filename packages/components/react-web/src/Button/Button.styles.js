@@ -5,9 +5,10 @@ export default (theme) => {
     padding-right: ${theme.base.paddingRight};
     padding-left: ${theme.base.paddingLeft};
     min-height: ${theme.base.minHeight};
-    border: ${theme.base.border};
+    border-width: ${theme.base.borderWidth};
+    border-style: ${theme.base.borderStyle};
+    border-color: ${theme.base.borderColor};
     background: ${theme.base.background};
-    box-shadow: ${theme.base.boxShadow};
     color: ${theme.base.color};
     font-size: ${theme.base.fontSize};
     cursor: ${theme.base.cursor};
@@ -16,28 +17,19 @@ export default (theme) => {
       background 200ms ${theme.base.easing}, color 200ms ${theme.base.easing};
 
     &:hover {
-      border-color: ${theme.base.hover.borderColor};
       background: ${theme.base.hover.background};
       box-shadow: ${theme.base.hover.boxShadow};
-      color: ${theme.base.hover.color};
     }
 
     &:active {
+      color: ${theme.base.active.color};
       box-shadow: ${theme.base.active.boxShadow};
     }
 
     &[disabled] {
       color: ${theme.base.disabled.color};
-      opacity: ${theme.base.disabled.opacity};
-      filter: ${theme.base.disabled.filter};
       cursor: ${theme.base.disabled.cursor};
-
-      &:hover,
-      &:active {
-        background: ${theme.base.background};
-        box-shadow: ${theme.base.boxShadow};
-        color: ${theme.base.color};
-      }
+      border-color: ${theme.base.disabled.borderColor};
     }
 
     &.button--primary {
@@ -47,12 +39,11 @@ export default (theme) => {
       &:hover {
         background: ${theme.primary.hover.background};
       }
-    }
 
-    &[disabled] {
-      &:hover {
-        background: ${theme.primary.background};
-        color: ${theme.primary.color};
+      &[disabled] {
+        color: ${theme.primary.disabled.color};
+        background: ${theme.primary.disabled.background};
+        border-color: ${theme.primary.disabled.borderColor};
       }
     }
 
@@ -62,6 +53,8 @@ export default (theme) => {
     }
 
     &.button--small {
+      padding-right: ${theme.base.small.paddingRight};
+      padding-left: ${theme.base.small.paddingLeft};
       min-height: ${theme.base.small.minHeight};
       font-size: ${theme.base.small.fontSize};
     }
