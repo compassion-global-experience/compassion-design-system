@@ -10,13 +10,11 @@ import ClearIcon from '../Icon/icons/IconX';
 import EditIcon from '../Icon/icons/IconEdit';
 
 const Edit = ({
-  label,
   type,
   props,
   inputId,
   disable,
   changeInputToEnabled,
-  changeInputToDisabled,
   onButtonClick,
 }) => {
   return (
@@ -52,10 +50,14 @@ const Edit = ({
 };
 
 Edit.propTypes = {
-  close: PropTypes.func.isRequired,
-  content: PropTypes.any.isRequired,
-  isDisplayed: PropTypes.bool.isRequired,
-  title: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  inputId: PropTypes.string.isRequired,
+  disable: PropTypes.bool.isRequired,
+  changeInputToEnabled: PropTypes.func.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
+  props: PropTypes.shape({
+    id: PropTypes.string,
+  }).isRequired
 };
 
 export default Edit;
