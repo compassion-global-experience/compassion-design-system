@@ -1,0 +1,53 @@
+# Name of the action visible in the action overview
+name: Storybook
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events for the following branches
+  push:
+    branches: [ development, main ]
+  pull_request:
+    branches: [ development, main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Snapshot capturing related work
+jobs:
+  build_storybooks:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Build storybook for each package
+        run: yarn build:storybook
+      - name: Select Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook bundles
+          path: packages/components/*/storybook-static/**
+  capture_snapshots:
+    runs-on: ubuntu-20.04
+    needs: build_storybooks
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          cache: 'yarn'
+      # We don't need to install all of our dependencies for this job
+      - name: Install dependencies
+        run: yarn add lerna @percy/cli @percy/storybook@4.0.1 cross-env
+      - name: Capture snapshots
+        env:
+          PERCY_TOKEN_REACT_WEB: ${{ secrets.PERCY_TOKEN_REACT_WEB }}
+          PERCY_TOKEN_WEB_COMPONENTS: ${{ secrets.PERCY_TOKEN_WEB_COMPONENTS }}
+        run: lerna run snapshot
+  # todo: a job for GH pages: https://github.com/compassion-gds/compassion-gds/issues/89
