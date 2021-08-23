@@ -36,8 +36,7 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "snapshot": "cross-env PERCY_TOKEN=$PRECY_TOKEN_WEB_COMPONENTS percy storybook ./storybook-static"
+    "build-storybook": "build-storybook"
   },
   "browserslist": {
     "production": [
