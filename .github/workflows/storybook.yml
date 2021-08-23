@@ -27,7 +27,7 @@ jobs:
         run: yarn install
       - name: Build storybook for each package
         run: yarn build:storybook
-      - name: Select Artifacts
+      - name: Upload Storybook Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: storybook bundles
@@ -44,6 +44,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14.x'
+      - name: Download Storybook Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: storybook bundles
       # We don't need to install all of our dependencies but percy
       - name: Install dependencies
         run: npm install --quiet @percy/cli @percy/storybook@4.0.1
