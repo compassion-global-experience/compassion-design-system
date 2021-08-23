@@ -24,7 +24,7 @@
     "build": "lerna run build",
     "build:tokens": "cd packages/components/tokens && yarn build",
     "build:elements": "cd packages/elements && yarn build",
-    "build:storybook": "yarn build:storybook:react && yarn build:storybook:wc",
+    "build:storybook": "lerna run build-storybook",
     "build:storybook:react": "cd packages/components/react-web && yarn build-storybook",
     "build:storybook:wc": "cd packages/components/web-components && yarn build-storybook"
   },
