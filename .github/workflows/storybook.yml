@@ -26,7 +26,9 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build storybook for each package
-        run: yarn build:storybook
+        run: |
+          yarn build
+          yarn build:storybook
       - name: Upload Storybook Artifacts
         uses: actions/upload-artifact@v2
         with:
