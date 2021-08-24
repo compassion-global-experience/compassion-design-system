@@ -1,10 +1,5 @@
 import { icons } from '@compassion-gds/elements';
 
-const toKebabCase = string => string.replace(/([a-z])([A-Z])/g, "$1-$2").replace(/\s+/g, '-').toLowerCase();
-
-const iconList = Object.keys(icons)
-  .map(icon => ({ name: toKebabCase(icon), svg: icons[icon] }));
-
 const iconStyles = `
   <style>
     :host {
@@ -39,9 +34,8 @@ class WebIcon extends HTMLElement {
   }
 
   attributeChangedCallback() {
-    const currentIcon = iconList.find(i => i.name === this.name);
-
-    this.shadowRoot.innerHTML = `${iconStyles} ${currentIcon ? currentIcon.svg : ''}`;
+    const currentIcon = icons[this.name];
+    this.shadowRoot.innerHTML = `${iconStyles} ${currentIcon || ''}`;
   }
 }
 
