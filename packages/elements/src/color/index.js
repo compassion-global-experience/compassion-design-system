@@ -2,18 +2,28 @@ export default {
   primary: {
     main: '#005EB8',
   },
-  secondary: '#0086BF',
-  secondaryMinus1: '#20556B',
-  secondaryPlus1: '#AFD8FF',
-  accent: '#FFB500',
-  success: '#069D45',
-  successMinus1: '#023B1A',
+  secondary: {
+    main: '#0086BF',
+    minus1: '#20556B',
+    plus1: '#AFD8FF',
+  },
+  accent: {
+    main: '#FFB500',
+  },
+  success: {
+    main: '#069D45',
+    minus1: '#023B1A',
+  },
   error: '#B52C2C',
   errorMinus1: '#521414',
-  info: '#0086BF',
-  infoMinus1: '#00425D',
-  warning: '#FFB500',
-  warningMinus1: '#684A00',
+  info: { 
+    main: '#0086BF',
+    minus1: '#00425D',
+  },
+  warning: {
+    main:  '#FFB500',
+    minus1: '#684A00',
+  },
   black: '#000',
   grayMinus3: '#1D1E1B',
   grayMinus2: '#3B3C36',
