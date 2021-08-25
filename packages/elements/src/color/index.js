@@ -26,7 +26,9 @@ export default {
     main:  '#FFB500',
     minus1: '#684A00',
   },
-  black: '#000',
+  black: {
+    main: '#000',
+  },
   gray: {
     minus3: '#1D1E1B',
     minus2: '#3B3C36',
@@ -37,5 +39,7 @@ export default {
     plus3: '#C8C9C4',
     plus4: '#E3E4E2',
   },
-  white: '#fff',
+  white: {
+    main:  '#fff',
+  }
 };

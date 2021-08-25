@@ -7,7 +7,7 @@ module.exports = {
     paddingRight: { value: `${elements.space.plus2}` },
     fontSize: { value: `${elements.typography.fontSizes.base}` },
     minHeight: { value: `${elements.size.plus4}` },
-    background: { value: `${elements.color.white}` },
+    background: { value: `${elements.color.white.main}` },
     color: { value: `${elements.color.primary.main}` },
     borderWidth: { value: `1px` },
     borderStyle: { value: `solid` },
@@ -46,7 +46,7 @@ module.exports = {
 
   primary: {
     background: { value: `${elements.color.primary.main}` },
-    color: { value: `${elements.color.white}` },
+    color: { value: `${elements.color.white.main}` },
 
     hover: {
       background: { value: '#0A4FBB' },
@@ -57,7 +57,7 @@ module.exports = {
     },
 
     disabled: {
-      color: { value: `${elements.color.white}` },
+      color: { value: `${elements.color.white.main}` },
       background: { value: '#717E98' },
       borderColor: { value: '#717E98' },
     },
