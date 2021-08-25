@@ -14,8 +14,10 @@ export default {
     main: '#069D45',
     minus1: '#023B1A',
   },
-  error: '#B52C2C',
-  errorMinus1: '#521414',
+  error: {
+    main: '#B52C2C',
+    minus1: '#521414',
+  },
   info: { 
     main: '#0086BF',
     minus1: '#00425D',

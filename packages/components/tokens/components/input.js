@@ -31,8 +31,8 @@ module.exports = {
       color: { value: elements.color.grayPlus1 },
     },
     error: {
-      color: { value: elements.color.error },
-      outline: { value: `1px solid ${elements.color.error}` },
+      color: { value: elements.color.error.main },
+      outline: { value: `1px solid ${elements.color.error.main}` },
       fontSize: { value: elements.typography.fontSizes.minus1 },
     },
   },
