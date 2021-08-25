@@ -6,20 +6,20 @@ const checkmarkSvg =
 module.exports = {
   base: {
     border: { value: `1px solid` },
-    borderColor: { value: `${elements.color.gray.main}` },
+    borderColor: { value: `${elements.color.gray.base}` },
     background: { value: `#fff` },
     easing: { value: `${elements.motion.easing()}` },
     focus: {
-      outline: { value: `1px dotted ${elements.color.primary.main}` },
+      outline: { value: `1px dotted ${elements.color.primary.base}` },
     },
     hover: {
-      borderColor: { value: `${elements.color.gray.main}` },
-      background: { value: `${elements.color.gray.main}` },
+      borderColor: { value: `${elements.color.gray.base}` },
+      background: { value: `${elements.color.gray.base}` },
       backgroundImage: { value: `url("${checkmarkSvg}")` },
     },
     checked: {
-      borderColor: { value: `${elements.color.primary.main}` },
-      background: { value: `${elements.color.primary.main}` },
+      borderColor: { value: `${elements.color.primary.base}` },
+      background: { value: `${elements.color.primary.base}` },
       backgroundImage: { value: `url("${checkmarkSvg}")` },
     },
     disabled: {
