@@ -4,7 +4,7 @@ import * as elements from '@compassion-gds/elements';
 export default create({
   base: 'light',
 
-  colorPrimary: elements.color.primary,
+  colorPrimary: elements.color.primary.main,
   colorSecondary: '#e7eeee',
 
   // UI

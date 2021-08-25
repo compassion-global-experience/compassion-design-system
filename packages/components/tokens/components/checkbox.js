@@ -10,7 +10,7 @@ module.exports = {
     background: { value: `#fff` },
     easing: { value: `${elements.motion.easing()}` },
     focus: {
-      outline: { value: `1px dotted ${elements.color.primary}` },
+      outline: { value: `1px dotted ${elements.color.primary.main}` },
     },
     hover: {
       borderColor: { value: `${elements.color.gray}` },
@@ -18,8 +18,8 @@ module.exports = {
       backgroundImage: { value: `url("${checkmarkSvg}")` },
     },
     checked: {
-      borderColor: { value: `${elements.color.primary}` },
-      background: { value: `${elements.color.primary}` },
+      borderColor: { value: `${elements.color.primary.main}` },
+      background: { value: `${elements.color.primary.main}` },
       backgroundImage: { value: `url("${checkmarkSvg}")` },
     },
     disabled: {

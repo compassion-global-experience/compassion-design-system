@@ -8,10 +8,10 @@ module.exports = {
     fontSize: { value: `${elements.typography.fontSizes.base}` },
     minHeight: { value: `${elements.size.plus4}` },
     background: { value: `${elements.color.white}` },
-    color: { value: `${elements.color.primary}` },
+    color: { value: `${elements.color.primary.main}` },
     borderWidth: { value: `1px` },
     borderStyle: { value: `solid` },
-    borderColor: { value: `${elements.color.primary}` },
+    borderColor: { value: `${elements.color.primary.main}` },
     cursor: { value: `pointer` },
     easing: { value: `${elements.motion.easing()}` },
 
@@ -45,7 +45,7 @@ module.exports = {
   },
 
   primary: {
-    background: { value: `${elements.color.primary}` },
+    background: { value: `${elements.color.primary.main}` },
     color: { value: `${elements.color.white}` },
 
     hover: {

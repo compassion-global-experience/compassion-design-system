@@ -17,8 +17,8 @@ module.exports = {
     padding: { value: `0.5em` },
 
     focus: {
-      borderColor: { value: elements.color.primary },
-      outline: { value: `1px solid ${elements.color.primary}` },
+      borderColor: { value: elements.color.primary.main },
+      outline: { value: `1px solid ${elements.color.primary.main}` },
     },
     hover: {
       borderColor: { value: elements.color.grayPlus1 },
@@ -45,14 +45,14 @@ module.exports = {
   },
   checkbox: {
     checked: {
-      borderColor: { value: elements.color.primary },
-      background: { value: elements.color.primary },
+      borderColor: { value: elements.color.primary.main },
+      background: { value: elements.color.primary.main },
       backgroundImage: { value: `url("${checkmarkSvg}")` },
     },
     focus: {
       borderWidth: { value: `2px` },
-      borderColor: { value: elements.color.primary },
-      outline: { value: `1px dotted ${elements.color.primary}` },
+      borderColor: { value: elements.color.primary.main },
+      outline: { value: `1px dotted ${elements.color.primary.main}` },
     },
     disabled: {
       background: { value: `#fff` },

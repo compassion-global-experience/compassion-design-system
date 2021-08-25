@@ -14,6 +14,6 @@ module.exports = {
   large: { height: { value: `2rem` } },
   range: {
     borderRadius: { value: `1rem` },
-    background: { value: `${elements.color.primary}` },
+    background: { value: `${elements.color.primary.main}` },
   },
 };
