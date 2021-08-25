@@ -6,15 +6,15 @@ const checkmarkSvg =
 module.exports = {
   base: {
     border: { value: `1px solid` },
-    borderColor: { value: `${elements.color.gray}` },
+    borderColor: { value: `${elements.color.gray.main}` },
     background: { value: `#fff` },
     easing: { value: `${elements.motion.easing()}` },
     focus: {
       outline: { value: `1px dotted ${elements.color.primary.main}` },
     },
     hover: {
-      borderColor: { value: `${elements.color.gray}` },
-      background: { value: `${elements.color.gray}` },
+      borderColor: { value: `${elements.color.gray.main}` },
+      background: { value: `${elements.color.gray.main}` },
       backgroundImage: { value: `url("${checkmarkSvg}")` },
     },
     checked: {
@@ -23,14 +23,14 @@ module.exports = {
       backgroundImage: { value: `url("${checkmarkSvg}")` },
     },
     disabled: {
-      borderColor: { value: `${elements.color.grayPlus3}` },
+      borderColor: { value: `${elements.color.gray.plus3}` },
       background: { value: `#fff` },
       backgroundImage: { value: `none` },
-      color: { value: `${elements.color.grayPlus3}` },
+      color: { value: `${elements.color.gray.plus3}` },
 
       checked: {
-        borderColor: { value: `${elements.color.grayPlus4}` },
-        background: { value: `${elements.color.grayPlus4}` },
+        borderColor: { value: `${elements.color.gray.plus4}` },
+        background: { value: `${elements.color.gray.plus4}` },
         backgroundImage: { value: `url("${checkmarkSvg}")` },
       },
     },

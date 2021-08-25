@@ -3,10 +3,10 @@ const Color = require('color');
 
 module.exports = {
   base: {
-    border: { value: `1px solid ${elements.color.grayPlus4}` },
+    border: { value: `1px solid ${elements.color.gray.plus4}` },
     borderRadius: { value: `1rem` },
     boxShadow: {
-      value: `0 1px 2px ${Color(elements.color.gray).alpha(0.3)} inset`,
+      value: `0 1px 2px ${Color(elements.color.gray.main).alpha(0.3)} inset`,
     },
     height: { value: `1.25rem` },
   },

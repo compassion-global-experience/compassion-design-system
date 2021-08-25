@@ -5,8 +5,8 @@ module.exports = {
     height: { value: `${elements.size.plus11}` },
     color: { value: `${elements.color.black}` },
     cursor: { value: `pointer` },
-    background: { value: `${elements.color.grayPlus4}` },
-    outline: { value: `2px dashed ${elements.color.grayPlus2}` },
+    background: { value: `${elements.color.gray.plus4}` },
+    outline: { value: `2px dashed ${elements.color.gray.plus2}` },
     easing: { value: `${elements.motion.easing('standard', 'expressive')}` },
   },
 };

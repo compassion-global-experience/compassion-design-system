@@ -7,7 +7,7 @@ module.exports = {
   base: {
     label: { fontSize: { value: elements.typography.fontSizes.base } },
     border: { value: `1px solid` },
-    borderColor: { value: elements.color.gray },
+    borderColor: { value: elements.color.gray.main },
     borderRadius: { value: 0 },
     background: { value: `#fff` },
     easing: { value: elements.motion.easing() },
@@ -21,14 +21,14 @@ module.exports = {
       outline: { value: `1px solid ${elements.color.primary.main}` },
     },
     hover: {
-      borderColor: { value: elements.color.grayPlus1 },
-      background: { value: elements.color.grayPlus1 },
+      borderColor: { value: elements.color.gray.plus1 },
+      background: { value: elements.color.gray.plus1 },
       backgroundImage: { value: `url("${checkmarkSvg}")` },
     },
     disabled: {
-      borderColor: { value: elements.color.grayPlus4 },
-      background: { value: elements.color.grayPlus4 },
-      color: { value: elements.color.grayPlus1 },
+      borderColor: { value: elements.color.gray.plus4 },
+      background: { value: elements.color.gray.plus4 },
+      color: { value: elements.color.gray.plus1 },
     },
     error: {
       color: { value: elements.color.error.main },
@@ -59,8 +59,8 @@ module.exports = {
       backgroundImage: { value: `none` },
 
       checked: {
-        borderColor: { value: elements.color.grayPlus4 },
-        background: { value: elements.color.grayPlus4 },
+        borderColor: { value: elements.color.gray.plus4 },
+        background: { value: elements.color.gray.plus4 },
         backgroundImage: { value: `url("${checkmarkSvg}")` },
       },
     },
