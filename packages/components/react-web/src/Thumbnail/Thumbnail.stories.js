@@ -40,11 +40,6 @@ const MOCKED_DATA = [
   },
 ];
 
-const Template = (args) => <Thumbnail {...args} />;
+const Template = () => <Thumbnail data={MOCKED_DATA} />;
 
 export const Preview = Template.bind({});
-Preview.args = {
-  label: 'Preview',
-  type: 'preview',
-  data: MOCKED_DATA
-};
