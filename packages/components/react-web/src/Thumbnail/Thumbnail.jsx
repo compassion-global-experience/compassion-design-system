@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 /** @jsxRuntime classic */
 /** @jsx jsx */
@@ -9,10 +9,15 @@ import { thumbnailStyles } from './Thumbnail.styles';
 /**
  * Primary UI component for user Image
  */
-export const Thumbnail = ({ type, size, label, validator, data, ...props  }) => {
+export const Thumbnail = ({ type, size, label, validator, data, onChange, ...props  }) => {
   const [selected, setSelected] = useState(data[0]);
 
   const theme = useTheme();
+
+  const handleSelect = useCallback(newImg => {
+    onChange(newImg);
+    setSelected(newImg);
+  }, []);
 
   return (
     <div css={thumbnailStyles(theme.component.input)}>
@@ -20,7 +25,7 @@ export const Thumbnail = ({ type, size, label, validator, data, ...props  }) => 
       {data.map((obj) =>
         selected.id === obj.id ? null : (
           <div key={obj.id}>
-            <button type="button" onClick={() => setSelected(obj)}>
+            <button type="button" onClick={() => handleSelect(obj)}>
               <img src={obj.img} alt={obj.title} />
             </button>
           </div>
