@@ -5,57 +5,15 @@ import PropTypes from 'prop-types';
 import { jsx } from '@emotion/core';
 import { useTheme } from "../hooks";
 import { thumbnailStyles } from './Thumbnail.styles';
-import image1 from './assets/image1.jpg';
-import image2 from './assets/image2.jpg';
-import image3 from './assets/image3.jpg';
-import image4 from './assets/image4.jpg';
-import image5 from './assets/image5.jpg';
 
 /**
  * Primary UI component for user Image
  */
-export const Thumbnail = ({ type, size, label, validator, ...props }) => {
-  const [selected, setSelected] = useState(image1);
+export const Thumbnail = ({ type, size, label, validator, data, ...props  }) => {
+  const [selected, setSelected] = useState(data[0].img);
   console.log('selected =', selected);
 
   const theme = useTheme();
-  const data = [
-    {
-      id: '1',
-      key: '1',
-      title: 'Title1',
-      text: 'Text1.',
-      img: image1,
-    },
-    {
-      id: '2',
-      key: '2',
-      title: 'Title2',
-      text: 'Text2.',
-      img: image2,
-    },
-    {
-      id: '3',
-      key: '3',
-      title: 'Title3',
-      text: 'Text3.',
-      img: image3,
-    },
-    {
-      id: '4',
-      key: '4',
-      title: 'Title4',
-      text: 'Text4',
-      img: image4,
-    },
-    {
-      id: '5',
-      key: '5',
-      title: 'Title5',
-      text: 'Text5',
-      img: image5,
-    },
-  ];
 
   return (
     <div css={thumbnailStyles(theme.component.input)}>
@@ -74,6 +32,13 @@ export const Thumbnail = ({ type, size, label, validator, ...props }) => {
 };
 
 Thumbnail.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({ 
+      id: PropTypes.oneOfType([PropTypes.string,PropTypes.number]),
+      img: PropTypes.string, 
+      title: PropTypes.string, 
+    })
+  ),
   /**
    * Type of Image
    */
@@ -111,6 +76,7 @@ Thumbnail.propTypes = {
 };
 
 Thumbnail.defaultProps = {
+  data: [],
   type: 'text',
   size: 'medium',
   validator: undefined,
