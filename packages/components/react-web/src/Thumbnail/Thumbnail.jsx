@@ -10,18 +10,17 @@ import { thumbnailStyles } from './Thumbnail.styles';
  * Primary UI component for user Image
  */
 export const Thumbnail = ({ type, size, label, validator, data, ...props  }) => {
-  const [selected, setSelected] = useState(data[0].img);
-  console.log('selected =', selected);
+  const [selected, setSelected] = useState(data[0]);
 
   const theme = useTheme();
 
   return (
     <div css={thumbnailStyles(theme.component.input)}>
-      {selected ? <img src={selected} alt={selected.title} /> : null}
+      {selected && <img src={selected.img} alt={selected.title} />}
       {data.map((obj) =>
-        selected === obj.img ? null : (
+        selected.id === obj.id ? null : (
           <div key={obj.id}>
-            <button type="button" onClick={() => setSelected(obj.img)}>
+            <button type="button" onClick={() => setSelected(obj)}>
               <img src={obj.img} alt={obj.title} />
             </button>
           </div>
