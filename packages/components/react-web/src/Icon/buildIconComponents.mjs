@@ -71,6 +71,7 @@ Object.entries(iconSources).forEach((iconSource) => {
         ignoreExisting: true,
         ext: 'jsx',
         svgProps: {
+          viewBox: '0 0 32 32',
           fill: '{props.fill}',
           width: '{props.width}',
           height: '{props.height}',

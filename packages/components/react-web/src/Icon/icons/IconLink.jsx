@@ -14,24 +14,21 @@ function IconLink(props) {
       width={props.width}
       height={props.height}
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
       fill={props.fill}
       className="gds-icon"
       css={iconStyles}
       {...props}
     >
       <path
-        d="m15.293 8.929 2.475-2.475a5.5 5.5 0 1 1 7.778 7.778l-3.536 3.536a5.5 5.5 0 0 1-7.778 0"
-        stroke="#000"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M23.38 6.184a4.5 4.5 0 0 0-4.905.977L16 9.636a1 1 0 0 1-1.414-1.414l2.474-2.475a6.502 6.502 0 0 1 9.195-.002 6.499 6.499 0 0 1-.002 9.194l-3.535 3.536a6.5 6.5 0 0 1-9.193 0 1 1 0 0 1 1.414-1.414 4.5 4.5 0 0 0 6.364 0l3.536-3.536a4.502 4.502 0 0 0-1.459-7.341z"
       />
       <path
-        d="m16.707 23.071-2.475 2.475a5.5 5.5 0 1 1-7.778-7.778l3.536-3.536a5.499 5.499 0 0 1 7.778 0"
-        stroke="#000"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M13.879 13.621a4.499 4.499 0 0 0-3.182 1.318L7.16 18.475a4.502 4.502 0 0 0-.002 6.366 4.499 4.499 0 0 0 6.366-.002L16 22.364a1 1 0 0 1 1.414 1.414l-2.474 2.475a6.5 6.5 0 1 1-9.193-9.193l3.535-3.535a6.502 6.502 0 0 1 9.193 0 1 1 0 1 1-1.414 1.414 4.498 4.498 0 0 0-3.182-1.318z"
       />
     </svg>
   );
