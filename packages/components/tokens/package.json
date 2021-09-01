@@ -1,11 +1,11 @@
 {
   "name": "@compassion-gds/tokens",
   "version": "0.1.1",
+  "engines": {
+    "node": ">=16.8.0"
+  },
   "license": "MIT",
   "main": "dist/index.json",
-  "engines": {
-    "node": ">=10"
-  },
   "files": [
     "dist/"
   ],
