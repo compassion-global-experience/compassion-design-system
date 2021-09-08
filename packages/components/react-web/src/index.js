@@ -1,3 +1,4 @@
+export * from './Avatars';
 export * from './Button';
 export * from './FileSelect';
 export * from './Icon';
