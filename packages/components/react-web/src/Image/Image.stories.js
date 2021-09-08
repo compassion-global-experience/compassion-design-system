@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from './Image';
 
 export default {
-  title: 'Global Design System/Image',
+  title: 'Components/Image',
   component: Image,
   argTypes: {},
 };

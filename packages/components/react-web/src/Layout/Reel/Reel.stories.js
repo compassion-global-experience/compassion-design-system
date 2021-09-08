@@ -4,7 +4,7 @@ import './Reel.stories.css';
 import { Reel } from './Reel';
 
 export default {
-  title: 'Global Design System/Layout/Reel',
+  title: 'Components/Layout Components/Reel',
   component: Reel,
   argTypes: {
     trackColor: { control: 'color' },

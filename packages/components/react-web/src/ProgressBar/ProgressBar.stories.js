@@ -2,7 +2,7 @@ import React from 'react';
 import { ProgressBar } from './ProgressBar';
 
 export default {
-  title: 'Global Design System/Progress Bar',
+  title: 'Layouts/Progress Bar',
   component: ProgressBar,
   argTypes: {
     value: {

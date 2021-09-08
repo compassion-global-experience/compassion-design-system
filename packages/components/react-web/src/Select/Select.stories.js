@@ -2,7 +2,7 @@ import React from 'react';
 import { Select } from './Select';
 
 export default {
-  title: 'Global Design System/Select',
+  title: 'Components/Forms/Select',
   component: Select,
   argTypes: {},
 };

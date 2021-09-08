@@ -4,7 +4,7 @@ import './Frame.stories.css';
 import { Frame } from './Frame';
 
 export default {
-  title: 'Global Design System/Layout/Frame',
+  title: 'Components/Layout Components/Frame',
   component: Frame,
 };
 

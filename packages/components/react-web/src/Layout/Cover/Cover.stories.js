@@ -5,7 +5,7 @@ import { Cover } from './Cover';
 import { Cluster } from '../Cluster/Cluster';
 
 export default {
-  title: 'Global Design System/Layout/Cover',
+  title: 'Components/Layout Components/Cover',
   component: Cover,
 };
 

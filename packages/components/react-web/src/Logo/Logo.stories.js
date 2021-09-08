@@ -2,7 +2,7 @@ import React from 'react';
 import { Logo } from './Logo';
 
 export default {
-  title: 'Global Design System/Logo',
+  title: 'Components/Logo',
   component: Logo,
   argTypes: {},
 };

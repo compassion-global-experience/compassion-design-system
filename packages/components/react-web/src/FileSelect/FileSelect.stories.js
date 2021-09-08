@@ -2,7 +2,7 @@ import React from 'react';
 import { FileSelect } from './FileSelect';
 
 export default {
-  title: 'Global Design System/FileSelect',
+  title: 'Layouts/FileSelect',
   component: FileSelect,
   argTypes: {},
 };

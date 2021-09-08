@@ -2,7 +2,7 @@ import React from 'react';
 import { Thumbnail } from './Thumbnail';
 
 export default {
-  title: 'Global Design System/Thumbnail',
+  title: 'Layouts/Thumbnail',
   component: Thumbnail,
   argTypes: {},
 };

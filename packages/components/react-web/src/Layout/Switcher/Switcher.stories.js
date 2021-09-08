@@ -5,7 +5,7 @@ import { Switcher } from './Switcher';
 import { Box } from '../Box/Box';
 
 export default {
-  title: 'Global Design System/Layout/Switcher',
+  title: 'Components/Layout Components/Switcher',
   component: Switcher,
 };
 
