@@ -4,16 +4,15 @@ import PropTypes from 'prop-types';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { cx } from 'emotion';
 
 import { helpers } from '@compassion-gds/elements';
 import menuStyles from './Menu.styles';
 import { useTheme } from '../hooks';
 // import { useDetectOutsideClick } from './useDetectOutsideClick';
 
-export const Menu = ({ triggerOnHover, ...props }) => {
+export const Menu = ({ triggerOnHover, expanded, openToward, ...props }) => {
   const theme = useTheme();
-
-  // if not hovered || clicked outside || clicked button
 
   const menuRef = useRef(null);
   const [triggerId] = useState(helpers.gdsId());
@@ -22,7 +21,7 @@ export const Menu = ({ triggerOnHover, ...props }) => {
   //   menuRef,
   //   false
   // );
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(expanded);
   const [isDropdownHovered, setIsDropdownHovered] = useState(false);
 
   const buttonEl = props.children.filter((child) => child.type === 'button')[0];
@@ -32,6 +31,7 @@ export const Menu = ({ triggerOnHover, ...props }) => {
       child.type === 'ul' ||
       child.type === 'ol'
   )[0];
+
   const triggerProps = {
     className: `${
       buttonEl.props.className ? buttonEl.props.className : ''
@@ -59,9 +59,6 @@ export const Menu = ({ triggerOnHover, ...props }) => {
   };
 
   const dropdownProps = {
-    className: `${
-      dropdownEl.props.className ? dropdownEl.props.className : ''
-    } gds-menu__dropdown`,
     id: dropdownEl.props.id || dropdownId,
     'aria-labelledby': triggerId,
     onMouseEnter: () => {
@@ -80,16 +77,19 @@ export const Menu = ({ triggerOnHover, ...props }) => {
     },
   };
 
+  const addDirectionalCssClass = openToward !== 'bottom';
   const m = (
     <div
-      className="gds-menu"
+      className={cx('gds-menu', {
+        [`gds-menu--open-toward-${openToward}`]: addDirectionalCssClass,
+      })}
       ref={menuRef}
       css={menuStyles(theme.component.menu)}
     >
       {React.Children.map(props.children, (child) => {
         let newProps;
 
-        if (child.type === 'button') {
+        if (child.type === 'button' || child.type.displayName === 'Button') {
           newProps = triggerProps;
         } else if (
           child.type.displayName === 'List' ||
@@ -124,6 +124,24 @@ export const Menu = ({ triggerOnHover, ...props }) => {
   return m;
 };
 
-Menu.propTypes = { triggerOnHover: PropTypes.bool };
+Menu.propTypes = {
+  /**
+   * Indicates if the Menu should opened when the user hovers the trigger
+   * element.
+   */
+  triggerOnHover: PropTypes.bool,
+  /**
+   * Indicates whether the Menu should be expanded when it renders.
+   */
+  expanded: PropTypes.bool,
+  /**
+   * Indicates the direction the Menu should open.
+   */
+  openToward: PropTypes.oneOf(['bottom', 'top', 'left', 'right']),
+};
 
-Menu.defaultProps = { triggerOnHover: false };
+Menu.defaultProps = {
+  triggerOnHover: false,
+  expanded: false,
+  openToward: 'bottom',
+};
