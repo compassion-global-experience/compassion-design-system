@@ -16,6 +16,7 @@ export default create({
   // Typography
   fontBase:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  fontCode: '"IBM Plex Mono", monospace',
 
   // Text colors
   textColor: 'black',

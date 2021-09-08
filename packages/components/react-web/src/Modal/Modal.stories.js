@@ -3,7 +3,7 @@ import { Modal } from './Modal';
 import image from './assets/photo.jpg';
 
 export default {
-  title: 'Global Design System/Modal',
+  title: 'Layouts/Modal',
   component: Modal,
   argTypes: {},
 };

@@ -4,7 +4,7 @@ import { Box } from '../Box/Box';
 import { Logo } from '../../Logo/Logo';
 
 export default {
-  title: 'Global Design System/Layout/Cluster',
+  title: 'Components/Layout Components/Cluster',
   component: Cluster,
 };
 

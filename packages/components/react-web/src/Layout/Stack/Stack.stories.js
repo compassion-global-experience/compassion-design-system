@@ -5,7 +5,7 @@ import { Stack } from './Stack';
 import { Box } from '../Box/Box';
 
 export default {
-  title: 'Global Design System/Layout/Stack',
+  title: 'Components/Layout Components/Stack',
   component: Stack,
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Input } from './Input';
 
 export default {
-  title: 'Global Design System/Input',
+  title: 'Components/Forms/Input',
   component: Input,
   argTypes: {},
 };

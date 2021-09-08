@@ -2,7 +2,7 @@ import React from 'react';
 import { Uploader } from './Uploader';
 
 export default {
-  title: 'Global Design System/Uploader',
+  title: 'Layouts/Uploader',
   component: Uploader,
   argTypes: {},
 };

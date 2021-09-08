@@ -7,7 +7,7 @@ import { Stack } from '../Stack/Stack';
 import { Frame } from '../Frame/Frame';
 
 export default {
-  title: 'Global Design System/Layout/Grid',
+  title: 'Components/Layout Components/Grid',
   component: Grid,
 };
 
