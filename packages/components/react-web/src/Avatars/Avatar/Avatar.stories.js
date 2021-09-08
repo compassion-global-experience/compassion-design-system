@@ -1,10 +1,8 @@
 import React from 'react';
 import { Avatar } from './Avatar';
-import { AvatarGroup } from '../AvatarGroup';
+import { Image } from '../../Image';
 
 import AvatarDocs from './Avatar.docs.mdx';
-
-import { Image } from '../../Image';
 
 export default {
   title: 'Layouts/Avatars/Avatar',
@@ -29,7 +27,7 @@ const imageComponent = (
 );
 
 export const Basic = (args) => (
-  <Avatar initials="KA" color="#cc00ff" {...args} />
+  <Avatar abbreviation="KA" color="#cc00ff" {...args} />
 );
 
 export const WithImage = (args) => <Avatar image={imageComponent} {...args} />;

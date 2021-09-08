@@ -10,7 +10,14 @@ import { useTheme } from '../../hooks';
 /**
  * Primary UI component for user interaction
  */
-export const Avatar = ({ size, shape, image, initials, color, ...props }) => {
+export const Avatar = ({
+  size,
+  shape,
+  image,
+  abbreviation,
+  color,
+  ...props
+}) => {
   const theme = useTheme();
 
   const withImage = !!image;
@@ -22,11 +29,11 @@ export const Avatar = ({ size, shape, image, initials, color, ...props }) => {
         [`avatar--${size}`]: size !== Avatar.defaultProps.size,
         [`avatar--${shape}`]: shape !== Avatar.defaultProps.shape,
         [`avatar--image`]: image,
-        [`avatar--initials`]: initials && !image,
+        [`avatar--abbreviation`]: abbreviation && !image,
       })}
       {...props}
     >
-      {image || (initials && initials.toUpperCase())}
+      {image || (abbreviation && abbreviation.toUpperCase())}
       {/* Image || Initials || Auto */}
     </div>
   );
@@ -35,7 +42,7 @@ export const Avatar = ({ size, shape, image, initials, color, ...props }) => {
 Avatar.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   shape: PropTypes.oneOf(['circle', 'square', 'rounded']),
-  initials: PropTypes.string,
+  abbreviation: PropTypes.string,
   color: PropTypes.string,
   image: PropTypes.elementType,
 };
@@ -43,7 +50,7 @@ Avatar.propTypes = {
 Avatar.defaultProps = {
   size: 'small',
   shape: 'circle',
-  initials: null,
+  abbreviation: null,
   color: '#efefef',
   image: null,
 };
