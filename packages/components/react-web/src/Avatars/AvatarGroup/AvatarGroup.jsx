@@ -22,15 +22,29 @@ export const AvatarGroup = ({ size, overlap, gapColor, shape, ...props }) => {
       {...props}
     >
       {props.children}
-      {/* Image || Initials || Auto */}
     </div>
   );
 };
 
 AvatarGroup.propTypes = {
+  /**
+   * The size of the Avatars in the group. **Note:** This prop will override any
+   * `size` props specified on the individual Avatar components.
+   */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * The amount of overlap among the Avatars in the group.
+   */
   overlap: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  /**
+   * A CSS color to apply to the gap between Avatars.
+   */
   gapColor: PropTypes.string,
+  /**
+   * Display the Avatar as a circle, square, or with a `border-radius`.
+   * **Note:** This prop will override any `size` props specified on the
+   * individual Avatar components.
+   */
   shape: PropTypes.oneOf(['circle', 'square', 'rounded']),
 };
 

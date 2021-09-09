@@ -4,12 +4,10 @@ import PropTypes from 'prop-types';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
-import avatarStyles from './Avatar.styles';
-import { useTheme } from '../../hooks';
 
-/**
- * Primary UI component for user interaction
- */
+import { useTheme } from '../../hooks';
+import avatarStyles from './Avatar.styles';
+
 export const Avatar = ({
   size,
   shape,
