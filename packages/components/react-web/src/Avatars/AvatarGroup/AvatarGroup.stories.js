@@ -19,11 +19,11 @@ export default {
 
 export const Default = (args) => (
   <AvatarGroup {...args}>
-    <Avatar initials="AB" />
-    <Avatar initials="BC" />
-    <Avatar initials="CD" />
-    <Avatar initials="DE" />
-    <Avatar initials="EF" />
-    <Avatar initials="FG" />
+    <Avatar abbreviation="AB" />
+    <Avatar abbreviation="BC" />
+    <Avatar abbreviation="CD" />
+    <Avatar abbreviation="DE" />
+    <Avatar abbreviation="EF" />
+    <Avatar abbreviation="FG" />
   </AvatarGroup>
 );
