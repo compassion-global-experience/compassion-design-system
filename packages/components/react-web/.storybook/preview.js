@@ -17,6 +17,7 @@ export const parameters = {
       ],
     },
   },
+  viewMode: 'docs',
 };
 
 export const decorators = [
