@@ -1,11 +1,29 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
-// import { Avatar } from './Avatar';
+import { Avatar } from './Avatar';
 
 # Avatar
 
+Use the Avatar component to visually represent a user or organization. An
+Avatar's size, shape, background color, and abbreviation may all be
+customized. An [Image component](/docs/components-image) can be
+provided as well.
+
+Note that if an abbreviation is used, the component will select a text color
+that provides sufficient contrast against its background color.
+
+Related Avatars can be displayed together with the
+[AvatarGroup component](/?path=/docs/layouts-avatars-avatargroup).
+
 <Canvas>
-  <Story id="layouts-avatars-avatar--basic" />
+  <Story name="Basic" id="layouts-avatars-avatar--basic" />
 </Canvas>
+
+<ArgsTable of={Avatar} />
+
+## With Image
+
+Specify an [Image component](/?path=/docs/components-image) on the Avatar for an
+out-of-the-box lazy-loading solution.
 
 <Canvas>
   <Story id="layouts-avatars-avatar--with-image" />

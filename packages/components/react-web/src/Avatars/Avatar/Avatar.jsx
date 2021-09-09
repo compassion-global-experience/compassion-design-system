@@ -40,11 +40,29 @@ export const Avatar = ({
 };
 
 Avatar.propTypes = {
+  /**
+   * The size of the Avatar.
+   */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Display the Avatar as a circle, square, or with a `border-radius`.
+   */
   shape: PropTypes.oneOf(['circle', 'square', 'rounded']),
+  /**
+   * An abbreviation that represents the user or organization, typically
+   * initials. **Note:** Overflowing content will be clipped.
+   */
   abbreviation: PropTypes.string,
+  /**
+   * A CSS color for the background color of the Avatar. The component will
+   * calculate an appropriately-contrasting text color from this value.
+   */
   color: PropTypes.string,
-  image: PropTypes.elementType,
+  /**
+   * The [Image component](/?path=/docs/components-image) to use for the Avatar.
+   * If this is set, all other props are overridden except for the `color` prop.
+   */
+  image: PropTypes.element,
 };
 
 Avatar.defaultProps = {
