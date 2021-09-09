@@ -1,6 +1,6 @@
 import React from 'react';
 import { flags } from '@compassion-gds/elements';
-
+import FlagDocs from './Flag.docs.mdx';
 import FlagAustralia from './PartnerCountries/FlagAustralia';
 
 import { ProgramCountries, PartnerCountries } from './index';
@@ -12,7 +12,11 @@ export default {
     programFlags: Object.keys(flags.programCountries),
     partnerFlags: Object.keys(flags.partnerCountries),
   },
-  argTypes: {},
+  parameters: {
+    docs: {
+      page: FlagDocs,
+    },
+  },
 };
 export const Sizing = (args) => (
   <>
@@ -24,7 +28,7 @@ export const Sizing = (args) => (
   </>
 );
 
-export const ProgramVariants = (args) => (
+export const ProgramFlags = (args) => (
   <ul style={{ display: 'flex', flexWrap: 'wrap', listStyle: 'none' }}>
     {args.programFlags.map((name) => {
       const flagName = `Flag${name[0].toUpperCase()}${name.substr(1)}`;
@@ -32,7 +36,7 @@ export const ProgramVariants = (args) => (
 
       return (
         <li
-          key="name"
+          key={name}
           style={{ width: 222, display: 'flex', alignItems: 'center', gap: 8 }}
         >
           <Flag width="2em" height="2em" /> <span>{name}</span>
@@ -42,7 +46,7 @@ export const ProgramVariants = (args) => (
   </ul>
 );
 
-export const PartnerVariants = (args) => (
+export const PartnerFlags = (args) => (
   <ul style={{ display: 'flex', flexWrap: 'wrap', listStyle: 'none' }}>
     {args.partnerFlags.map((name) => {
       const flagName = `Flag${name[0].toUpperCase()}${name.substr(1)}`;
@@ -50,7 +54,7 @@ export const PartnerVariants = (args) => (
 
       return (
         <li
-          key="name"
+          key={name}
           style={{ width: 222, display: 'flex', alignItems: 'center', gap: 8 }}
         >
           <Flag width="2em" height="2em" /> <span>{name}</span>
