@@ -7,10 +7,10 @@ import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
 import { useTheme } from '../hooks';
 
-import * as progressBarStyles from './ProgressBar.styles';
+import * as progressStyles from './Progress.styles';
 
-export const ProgressBar = ({ value, size }) => {
-  const theme = useTheme().component.progressBar;
+export const Progress = ({ value, size }) => {
+  const theme = useTheme().component.progress;
 
   let progress = value;
   if (value < 0) progress = 0;
@@ -18,13 +18,13 @@ export const ProgressBar = ({ value, size }) => {
 
   return (
     <div
-      css={progressBarStyles.progressBar(theme)}
+      css={progressStyles.progress(theme)}
       className={cx({
-        [`progress-bar--${size}`]: size !== 'medium',
+        [`progress--${size}`]: size !== 'medium',
       })}
     >
       <div
-        css={progressBarStyles.range(theme)}
+        css={progressStyles.range(theme)}
         style={{ width: `${progress}%` }}
         role="progressbar"
         aria-label={`${progress}%`}
@@ -36,17 +36,17 @@ export const ProgressBar = ({ value, size }) => {
   );
 };
 
-ProgressBar.propTypes = {
+Progress.propTypes = {
   /**
    * Percentage of progress
    */
   value: PropTypes.number.isRequired,
   /**
-   * How large should the bar be?
+   * How large should the indicator be?
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
-ProgressBar.defaultProps = {
+Progress.defaultProps = {
   size: 'medium',
 };

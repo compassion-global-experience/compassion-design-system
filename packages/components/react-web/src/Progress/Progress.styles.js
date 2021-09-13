@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-export const progressBar = (theme) => {
+export const progress = (theme) => {
   return css`
     overflow: hidden;
     width: 350px;
@@ -10,11 +10,11 @@ export const progressBar = (theme) => {
     border-radius: ${theme.base.borderRadius};
     box-shadow: ${theme.base.boxShadow};
 
-    &.progress-bar--small {
+    &.progress--small {
       height: ${theme.small.height};
     }
 
-    &.progress-bar--large {
+    &.progress--large {
       height: ${theme.large.height};
     }
   `;

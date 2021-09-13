@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { html } from 'lit-html';
 
-import './ProgressBar';
+import './Progress';
 
 export default {
-  title: 'Global Design System/ProgressBar',
+  title: 'Global Design System/Progress',
   argTypes: {
     value: {
       control: {
@@ -16,17 +16,17 @@ export default {
     },
     size: {
       options: ['small', 'medium', 'large'],
-      control: { type: 'inline-radio' }
+      control: { type: 'inline-radio' },
     },
   },
-}
+};
 
 const Template = ({ value, size }) => {
-  return html`<gds-progress-bar .size=${size} .value=${value} />`;
-}
+  return html`<gds-progress .size=${size} .value=${value} />`;
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
   value: 35,
-  size: 'medium'
+  size: 'medium',
 };

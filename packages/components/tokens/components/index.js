@@ -6,7 +6,7 @@ module.exports = {
     grid: require('./grid'),
     input: require('./input'),
     list: require('./list'),
-    progressBar: require('./progressBar'),
+    progress: require('./progress'),
     select: require('./select'),
     uploader: require('./uploader'),
   },
