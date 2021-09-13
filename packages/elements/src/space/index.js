@@ -1,4 +1,4 @@
-import size  from '../size';
+import size from '../size';
 
 /**
  * Preset spaces where `base` is 0.5rem (8px).
@@ -13,5 +13,5 @@ export default {
   plus4: size.plus2,
   plus5: size.plus3,
   plus6: size.plus4,
-  plus7: size.plus4,
+  plus7: size.plus5,
 };
