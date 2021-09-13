@@ -40,3 +40,11 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+export const AsLink = Template.bind({});
+AsLink.args = {
+  primary: false,
+  asLink: true,
+  label: "I'm actually a link",
+  href: 'https://compassion.com',
+};
