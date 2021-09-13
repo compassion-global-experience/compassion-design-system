@@ -82,6 +82,9 @@ Button.propTypes = {
    * Indicates if the Button should be disabled.
    */
   disabled: PropTypes.bool,
+  /**
+   * Does the Button trigger navigation? If so, it should be rendered as a link.
+   */
   asLink: PropTypes.bool,
   /**
    * Optional click handler
