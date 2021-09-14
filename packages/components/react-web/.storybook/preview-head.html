@@ -37,9 +37,9 @@
   body {
     min-height: 100vh;
     font-size: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
-      'segoe ui', 'helvetica neue', helvetica, Ubuntu, roboto, noto, arial,
-      sans-serif;
+    font-family: 'Compassion Sans', -apple-system, BlinkMacSystemFont,
+      'avenir next', avenir, 'segoe ui', 'helvetica neue', helvetica, Ubuntu,
+      roboto, noto, arial, sans-serif;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
   }
@@ -86,10 +86,6 @@
     font-size: 16px;
   }
 
-  code {
-    font-family: 'IBM Plex Mono';
-  }
-
   :focus-visible {
     outline: 2px dashed #0948aa;
     outline-offset: 2px;
@@ -98,6 +94,78 @@
   :focus:not(:focus-visible) {
     outline: 1px dotted #0948aa;
     outline-offset: 1px;
+  }
+
+  @font-face {
+    font-weight: 200;
+    font-style: italic;
+    font-family: 'Compassion Sans';
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUPjIg1_i6t8kCHKm459WxZBg_z_PZwjimrqw.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'Compassion Sans';
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUQjIg1_i6t8kCHKm459WxRyS7m0dR9pA.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-weight: 600;
+    font-style: italic;
+    font-family: 'Compassion Sans';
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUPjIg1_i6t8kCHKm459WxZFgrz_PZwjimrqw.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-weight: 200;
+    font-style: normal;
+    font-family: 'Compassion Sans';
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_aZA3gnD_vx3rCs.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Compassion Sans';
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-weight: 600;
+    font-style: normal;
+    font-family: 'Compassion Sans';
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_bZF3gnD_vx3rCs.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
   }
 
   /* TODO: Break everything ABOVE this into a reset distributed with the DS. */
