@@ -7,7 +7,7 @@ module.exports = {
   base: {
     label: { fontSize: { value: elements.typography.fontSizes.base } },
     border: { value: `1px solid` },
-    borderColor: { value: elements.color.gray.base },
+    borderColor: { value: elements.color.gray.main },
     borderRadius: { value: 0 },
     background: { value: `#fff` },
     easing: { value: elements.motion.easing() },
@@ -17,8 +17,8 @@ module.exports = {
     padding: { value: `0.5em` },
 
     focus: {
-      borderColor: { value: elements.color.primary.base },
-      outline: { value: `1px solid ${elements.color.primary.base}` },
+      borderColor: { value: elements.color.primary.main },
+      outline: { value: `1px solid ${elements.color.primary.main}` },
     },
     hover: {
       borderColor: { value: elements.color.gray.plus1 },
@@ -31,8 +31,8 @@ module.exports = {
       color: { value: elements.color.gray.plus1 },
     },
     error: {
-      color: { value: elements.color.error.base },
-      outline: { value: `1px solid ${elements.color.error.base}` },
+      color: { value: elements.color.error.main },
+      outline: { value: `1px solid ${elements.color.error.main}` },
       fontSize: { value: elements.typography.fontSizes.minus1 },
     },
   },
@@ -45,14 +45,14 @@ module.exports = {
   },
   checkbox: {
     checked: {
-      borderColor: { value: elements.color.primary.base },
-      background: { value: elements.color.primary.base },
+      borderColor: { value: elements.color.primary.main },
+      background: { value: elements.color.primary.main },
       backgroundImage: { value: `url("${checkmarkSvg}")` },
     },
     focus: {
       borderWidth: { value: `2px` },
-      borderColor: { value: elements.color.primary.base },
-      outline: { value: `1px dotted ${elements.color.primary.base}` },
+      borderColor: { value: elements.color.primary.main },
+      outline: { value: `1px dotted ${elements.color.primary.main}` },
     },
     disabled: {
       background: { value: `#fff` },
