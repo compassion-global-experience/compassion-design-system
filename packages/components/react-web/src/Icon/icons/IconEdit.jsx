@@ -8,7 +8,7 @@ import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 import iconStyles from "../Icon.styles";
 
-function IconCamera(props) {
+function IconEdit(props) {
   return (
     <svg
       width={props.width}
@@ -19,20 +19,20 @@ function IconCamera(props) {
       css={iconStyles}
       {...props}
     >
-      <path fillRule="evenodd" clipRule="evenodd" d="M0 0h24v24H0z" fill="none"/>
-      <path fillRule="evenodd" clipRule="evenodd" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+      <path d="M0 0h24v24H0z" />
+      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
     </svg>
   );
 }
-export default IconCamera;
+export default IconEdit;
 
-IconCamera.propTypes = {
+IconEdit.propTypes = {
   fill: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
 };
 
-IconCamera.defaultProps = {
+IconEdit.defaultProps = {
   fill: "currentColor",
   width: "1em",
   height: "1em",
