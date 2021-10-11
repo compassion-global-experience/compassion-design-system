@@ -42,11 +42,11 @@ Checkbox.args = {
   type: 'checkbox',
 };
 
-export const CreditCard = Template.bind({});
-CreditCard.args = {
-  label: 'Credit Card',
-  type: 'creditcard',
-};
+// export const CreditCard = Template.bind({});
+// CreditCard.args = {
+//   label: 'Credit Card',
+//   type: 'creditcard',
+// };
 
 export const Date = Template.bind({});
 Date.args = {
@@ -54,8 +54,8 @@ Date.args = {
   type: 'date',
 };
 
-export const Currency = Template.bind({});
-Currency.args = {
-  label: 'Currency',
-  type: 'currency',
-};
+// export const Currency = Template.bind({});
+// Currency.args = {
+//   label: 'Currency',
+//   type: 'currency',
+// };
