@@ -1,38 +1,54 @@
 import React from 'react';
-import { icons } from '@compassion-gds/elements';
 
 import IconSkippy from './icons/IconSkippy';
-import * as Icons from './index';
+import IconGlobe from './icons/IconGlobe';
+import IconDocs from './Icon.docs.mdx';
+import IconHome from './icons/IconHome';
+import IconPin from './icons/IconPin';
+
+import { InlineIcon as IWT } from './InlineIcon';
 
 export default {
   title: 'Components/Icon',
   component: IconSkippy,
-  args: {
-    sampleIcons: Object.keys(icons),
-    color: '#005EB8',
-  },
-  argTypes: {
-    color: {
-      control: 'color',
+  args: {},
+  parameters: {
+    docs: {
+      page: IconDocs,
     },
   },
 };
 
-export const SampleVariants = (args) => (
-  <ul style={{ display: 'flex', flexWrap: 'wrap', listStyle: 'none' }}>
-    {args.sampleIcons.map((name) => {
-      const iconName = `Icon${name[0].toUpperCase()}${name.substr(1)}`;
-      const Icon = Icons[iconName];
+export const IconProps = (args) => <IconSkippy width="2rem" />;
 
-      return (
-        <li
-          key="name"
-          style={{ width: 222, display: 'flex', alignItems: 'center', gap: 8 }}
-        >
-          <Icon width="2em" height="2em" fill={args.color} />{' '}
-          <span>{name}</span>
-        </li>
-      );
-    })}
-  </ul>
+export const IconColor = (args) => (
+  <>
+    <section>
+      <span style={{ color: '#b52c2c' }}>
+        <IconPin width="2rem" />
+      </span>
+    </section>
+  </>
+);
+
+export const MeaningfulIcon = (args) => <IconSkippy width="2rem" role="img" />;
+
+export const InlineIcon = (args) => (
+  <>
+    <IWT>
+      Hello world
+      <IconGlobe aria-hidden="true" />
+    </IWT>
+    &nbsp;
+    <IWT vertical>
+      <IconGlobe aria-hidden="true" color="#0948aa" />
+      Hello world
+    </IWT>
+  </>
+);
+
+export const ActionIcon = (args) => (
+  <a href="/">
+    <IconHome aria-label="Go to the home page" role="img" width="2rem" />
+  </a>
 );
