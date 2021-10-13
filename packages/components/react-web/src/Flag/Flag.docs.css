@@ -9,7 +9,7 @@
 
 .flags li {
   padding: 1em;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .flags .code {
@@ -21,11 +21,11 @@
   font-family: 'IBM Plex Mono';
 }
 
-.flags li .gds-flag {
+/* .flags li .gds-flag {
   transition: transform 100ms ease-out;
   transform: scale(1);
 }
 
 .flags li:hover .gds-flag {
   transform: scale(1.2);
-}
+} */
