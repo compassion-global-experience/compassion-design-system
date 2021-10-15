@@ -9,7 +9,7 @@ import IconPin from './icons/IconPin';
 import { InlineIcon as IWT } from './InlineIcon';
 
 export default {
-  title: 'Components/Icon',
+  title: 'Elements/Icon',
   component: IconSkippy,
   args: {},
   parameters: {
