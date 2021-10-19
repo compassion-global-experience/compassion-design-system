@@ -21,5 +21,6 @@ export default {
   grayPlus2: '#ACAEA7',
   grayPlus3: '#C8C9C4',
   grayPlus4: '#E3E4E2',
+  grayPlus5: '#F1F2F1',
   white: '#fff',
 };

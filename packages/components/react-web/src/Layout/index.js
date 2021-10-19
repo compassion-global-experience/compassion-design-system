@@ -1,4 +1,5 @@
 export * from './Box';
+export * from './Card';
 export * from './Center';
 export * from './Cluster';
 export * from './Cover';
