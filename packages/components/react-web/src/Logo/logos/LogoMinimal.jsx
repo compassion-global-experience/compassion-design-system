@@ -8,7 +8,6 @@ import React from "react";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
-import logoStyles from "../Logo.styles";
 
 function LogoMinimal(props) {
   return (
@@ -17,6 +16,7 @@ function LogoMinimal(props) {
       height="100%"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 194"
+      fill={props.fill}
       className="gds-logo"
       css={logoStyles}
       {...props}
@@ -44,7 +44,7 @@ LogoMinimal.propTypes = {
   /**
    * A CSS fill color.
    */
-  color: PropTypes.oneOf(["brand", "dark", "light"]),
+  fill: PropTypes.string.isRequired,
   /**
    * Any valid CSS width value.
    */
@@ -52,6 +52,6 @@ LogoMinimal.propTypes = {
 };
 
 LogoMinimal.defaultProps = {
-  color: "brand",
+  fill: "brand",
   width: "100%",
 };
