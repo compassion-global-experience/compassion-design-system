@@ -50,3 +50,5 @@ export { default as IconXCircle } from './icons/IconXCircle';
 export { default as IconZoom } from './icons/IconZoom';
 export { default as IconZoomIn } from './icons/IconZoomIn';
 export { default as IconZoomOut } from './icons/IconZoomOut';
+
+export * from './InlineIcon';

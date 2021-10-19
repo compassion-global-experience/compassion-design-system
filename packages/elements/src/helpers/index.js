@@ -7,3 +7,5 @@ export const id = () => {
 export const gdsId = () => {
   return `gds-${nanoid()}`;
 };
+
+export * from './color';

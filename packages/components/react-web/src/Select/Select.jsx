@@ -11,7 +11,11 @@ import { useTheme } from '../hooks';
 import selectStyles from './Select.styles';
 
 /**
- * Primary UI component for user interaction
+ * Form elements gather information from users via Inputs, Textareas, Selects,
+ * Checkboxes, Radio buttons, and the like.
+ *
+ * For accessibility purposes, every instance of a form element must be
+ * accompanied by a label, even if it’s visually hidden in the interface.
  */
 export const Select = ({ size, label, validator, ...props }) => {
   const [value, setValue] = useState('');
@@ -28,10 +32,9 @@ export const Select = ({ size, label, validator, ...props }) => {
   };
 
   return (
-    <div className="select-group">
+    <div className="select-group" css={selectStyles(theme)}>
       <select
         id={props.id || selectId}
-        css={selectStyles(theme)}
         value={value}
         name={props.name || label}
         disabled={props.disabled}
@@ -39,10 +42,7 @@ export const Select = ({ size, label, validator, ...props }) => {
         onChange={handleChange}
         {...props}
       >
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+        {props.children}
       </select>
       <label htmlFor={props.id || selectId}>{label}</label>
     </div>
@@ -83,7 +83,6 @@ Select.propTypes = {
   // Disabling require-default-props because a default name is assigned within the component if one isn't provided
   // eslint-disable-next-line react/require-default-props
   name: PropTypes.string,
-  onChange: PropTypes.func,
 };
 
 Select.defaultProps = {
@@ -92,5 +91,4 @@ Select.defaultProps = {
   required: false,
   disabled: false,
   validator: undefined,
-  onChange: undefined,
 };

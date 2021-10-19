@@ -3,7 +3,7 @@ import { Center } from './Center';
 import { Button } from '../../Button/Button';
 
 export default {
-  title: 'Global Design System/Layout/Center',
+  title: 'Components/Layout Components/Center',
   component: Center,
 };
 

@@ -2,12 +2,16 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * UI component for images
+ * Use the Image component to easily implement lazy-loading with low-quality
+ * image placeholders.
+ *
+ * The Image component also supports the responsive `sizes` and `srcSet`
+ * properties. _Best-practices documentation coming soon!_
  */
 
 export const Image = ({
   src,
-  srcPreview,
+  srcPlaceholder,
   srcSet,
   sizes,
   alt,
@@ -30,8 +34,8 @@ export const Image = ({
     const { current } = ref;
 
     function setSrc() {
-      if (srcPreview) {
-        setCurrentSrc(srcPreview);
+      if (srcPlaceholder) {
+        setCurrentSrc(srcPlaceholder);
 
         const img = document.createElement('img');
         if (srcSet) {
@@ -72,7 +76,7 @@ export const Image = ({
   }, [
     ref,
     src,
-    srcPreview,
+    srcPlaceholder,
     srcSet,
     isLazyLoaded,
     isLazyLoadedLoaded,
@@ -80,9 +84,9 @@ export const Image = ({
   ]);
 
   return (
-    <figure className="img" ref={ref}>
+    <figure className="gds-image" ref={ref}>
       <img
-        className="img__photo"
+        className="gds-image__photo"
         src={currentSrc}
         sizes={sizes}
         srcSet={currentSrcSet.current}
@@ -96,14 +100,16 @@ export const Image = ({
           objectPosition,
         }}
       />
-      {caption && <figcaption>{caption}</figcaption>}
+      {caption && (
+        <figcaption className="gds-image__caption">{caption}</figcaption>
+      )}
     </figure>
   );
 };
 
 Image.defaultProps = {
   src: null,
-  srcPreview: null,
+  srcPlaceholder: null,
   srcSet: null,
   sizes: null,
   caption: null,
@@ -117,12 +123,44 @@ Image.defaultProps = {
 };
 
 Image.propTypes = {
+  /**
+   * The highest-quality image source you wish to be displayed. The
+   * responsive `srcSet` or `sizes` attributes can be provided to ensure proper
+   * image quality for the viewport widths they specify.
+   */
   src: PropTypes.string,
-  srcPreview: PropTypes.string,
+  /**
+   * A low-quality version of the image to be used as a placeholder while a
+   * higher quality is loading. A highly-compressed  image as small as 10px ×
+   * 10px is adequate!
+   */
+  srcPlaceholder: PropTypes.string,
+  /**
+   * A comma-delimited string that will be passed to the image's `srcset`
+   * attribute.
+   */
   srcSet: PropTypes.string,
+  /**
+   * A comma-delimited string that will be passed to the image's `sizes`
+   * attribute.
+   */
   sizes: PropTypes.string,
+  /**
+   * The image's `alt` text. Good `alt` text should be specific and succint and
+   * not begin with "Image of…" or "Picture of…"
+   *
+   * If the image is purely decorative and has no contextual meaning, an empty
+   * string is permissible.
+   */
   alt: PropTypes.string.isRequired,
+  /**
+   * Text to be displayed below or alongside the image as a caption. This
+   * element can be styled by targeting `.gds-image__caption`.
+   */
   caption: PropTypes.string,
+  /**
+   * Indicates whether the image should be lazy-loaded.
+   */
   isLazyLoaded: PropTypes.bool,
   width: PropTypes.string,
   maxWidth: PropTypes.string,

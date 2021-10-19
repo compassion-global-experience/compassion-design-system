@@ -2,39 +2,22 @@ import React from 'react';
 import { Select } from './Select';
 
 export default {
-  title: 'Global Design System/Select',
+  title: 'Components/Forms/Select',
   component: Select,
   argTypes: {},
 };
 
-const Template = (args) => <Select {...args} />;
+const Template = (args) => (
+  <Select {...args}>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </Select>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Select',
-  onChange: undefined,
-  onClick: undefined,
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Select',
-  onChange: undefined,
-  onClick: undefined,
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Select',
-  onChange: undefined,
-  onClick: undefined,
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Select',
-  onChange: undefined,
+  label: 'Label text',
   onClick: undefined,
 };

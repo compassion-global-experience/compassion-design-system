@@ -1,9 +1,9 @@
 import { css } from '@emotion/core';
 
-export default (theme) => {
+export default (theme, stripeColor) => {
   return css`
     --gds-list-item-padding: ${theme.base.itemPadding};
-    --gds-list-stripe-color: ${theme.base.stripeColor};
+    --gds-list-stripe-color: ${stripeColor || theme.base.stripeColor};
 
     &.gds-list--small {
       > li {

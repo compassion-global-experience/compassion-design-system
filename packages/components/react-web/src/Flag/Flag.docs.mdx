@@ -1,0 +1,59 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+
+import { flags } from '@compassion-gds/elements';
+import { ProgramCountries, PartnerCountries } from './index';
+
+import { FlagAustralia } from './PartnerCountries';
+import './Flag.docs.css';
+
+# Flag
+
+Compassion partners with frontline churches in 25 nations around the world, in
+addition to operating national offices in 13 countries. Use these flags to make
+a visual, recognizable connection between your content and the countries it may
+relate to.
+
+**Before you begin a design,** note that there are special considerations in
+certain countries where Compassion operates. These countries have strict rules
+and regulations for Christian nongovernmental organizations (NGOs), including
+Compassion. Please reference the
+[Country-Specific Sensitive Messaging Standards](https://compassion.media/Styleguide/messaging/#page/2D760E25-6DAF-4F58-AA6B4E192B63133D)
+section of the Communications Manual for country-specific detail.
+
+Communicating how Compassion works in these countries relies on truthful, yet
+careful wording and messaging. Please communicate to supporters that the local
+church continues to serve and love these children regardless of their faith.
+
+## Program country flags
+
+<ul class="flags flags--program">
+  {
+    Object.keys(flags.programCountries).map(country => {
+      const Flag = ProgramCountries[`Flag${country}`]; return <li><span>{country.replace(/([a-z])([A-Z])/g, "$1 $2")}</span><Flag /><span className="code">&lt;Flag{country} /&gt;</span></li>
+    })
+  }
+
+</ul>
+
+## Partner country flags
+
+<ul class="flags flags--partner">
+  {
+    Object.keys(flags.partnerCountries).map(country => {
+      const Flag = PartnerCountries[`Flag${country}`]; return <li><span>{country.replace(/([a-z])([A-Z])/g, "$1 $2")}</span><Flag /><span className="code">&lt;Flag{country} /&gt;</span></li>
+    })
+  }
+
+</ul>
+
+## Sizing
+
+Flags will grow to fill their container by default. To constrain the size of a
+Flag, either give a size to its parent or add a `height` or `width` prop to the
+Flag.
+
+<Canvas>
+  <Story id="components-flag--sizing" />
+</Canvas>
+
+<ArgsTable of={FlagAustralia} />

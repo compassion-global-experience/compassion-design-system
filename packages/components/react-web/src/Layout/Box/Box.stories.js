@@ -4,7 +4,7 @@ import './Box.stories.css';
 import { Box } from './Box';
 
 export default {
-  title: 'Global Design System/Layout/Box',
+  title: 'Components/Layout Components/Box',
   component: Box,
 };
 

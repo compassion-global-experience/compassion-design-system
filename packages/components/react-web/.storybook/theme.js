@@ -4,18 +4,19 @@ import * as elements from '@compassion-gds/elements';
 export default create({
   base: 'light',
 
-  colorPrimary: elements.color.primary,
+  colorPrimary: elements.color.primary.main,
   colorSecondary: '#e7eeee',
 
   // UI
   appBg: '#fff',
   appContentBg: '#fff',
-  appBorderColor: elements.color.grayPlus2,
+  appBorderColor: elements.color.gray.plus2,
   appBorderRadius: 3,
 
   // Typography
   fontBase:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  fontCode: '"IBM Plex Mono", monospace',
 
   // Text colors
   textColor: 'black',

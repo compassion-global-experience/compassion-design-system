@@ -16,7 +16,7 @@ export const fontSize = (step = 0, scale = 'base') => {
     ratio = 1.25;
   }
 
-  const baseFontSize = 16;
+  const baseFontSize = scale === 'plus1' ? 18 : 16;
 
   const rems = ms(step, { base: [baseFontSize], ratio }) / baseFontSize;
   const remString = Number.parseFloat(rems.toFixed(2));
@@ -52,7 +52,10 @@ export const fontSizes = {
  * Default sans serif and serif font stacks.
  */
 export const fonts = {
-  sans:
+  heading:
+    "'Compassion Sans', '-apple-system', BlinkMacSystemFont, 'avenir next', avenir, 'segoe ui', 'helvetica neue', helvetica, Ubuntu, roboto, noto, arial, 'sans-serif'",
+  body:
     "'-apple-system', BlinkMacSystemFont, 'avenir next', avenir, 'segoe ui', 'helvetica neue', helvetica, Ubuntu, roboto, noto, arial, 'sans-serif'",
-  serif: undefined,
+  monospace:
+    "'Compassion Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace",
 };

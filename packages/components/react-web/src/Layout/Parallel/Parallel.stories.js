@@ -5,7 +5,7 @@ import { Parallel } from './Parallel';
 import { Box } from '../Box/Box';
 
 export default {
-  title: 'Global Design System/Layout/Parallel',
+  title: 'Components/Layout Components/Parallel',
   component: Parallel,
 };
 

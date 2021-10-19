@@ -22,14 +22,14 @@ export default (theme) => {
     }
 
     &:active {
-      color: ${theme.base.active.color};
       box-shadow: ${theme.base.active.boxShadow};
+      color: ${theme.base.active.color};
     }
 
     &[disabled] {
+      border-color: ${theme.base.disabled.borderColor};
       color: ${theme.base.disabled.color};
       cursor: ${theme.base.disabled.cursor};
-      border-color: ${theme.base.disabled.borderColor};
     }
 
     &.button--primary {
@@ -41,10 +41,16 @@ export default (theme) => {
       }
 
       &[disabled] {
-        color: ${theme.primary.disabled.color};
-        background: ${theme.primary.disabled.background};
         border-color: ${theme.primary.disabled.borderColor};
+        background: ${theme.primary.disabled.background};
+        color: ${theme.primary.disabled.color};
       }
+    }
+
+    &.button--link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
     }
 
     &.button--large {

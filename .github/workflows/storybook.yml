@@ -1,0 +1,63 @@
+# Name of the action visible in the action overview
+name: Storybook
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events for the following branches
+  push:
+    branches: [ development, main ]
+  pull_request:
+    branches: [ development, main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Snapshot capturing related work
+jobs:
+  build_storybooks:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Build storybook for each package
+        run: yarn build:storybook
+      - name: Upload Storybook Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook bundles
+          path: packages/components/*/storybook-static/**
+  capture_snapshots:
+    runs-on: ubuntu-20.04
+    needs: build_storybooks
+    strategy:
+      matrix:
+        include:
+          - package: react-web
+            token: PERCY_TOKEN_REACT_WEB
+          - package: web-components
+            token: PERCY_TOKEN_WEB_COMPONENTS
+    steps:
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Download Storybook Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: storybook bundles
+      # We don't need to install all of our dependencies but percy
+      - name: Install dependencies
+        run: npm install --quiet @percy/cli @percy/storybook@4.0.1
+      - name: Capture snapshots
+        env:
+          PERCY_TOKEN: ${{ secrets[matrix.token] }}
+          BUNDLE_PATH: ${{ format('{0}/storybook-static', matrix.package) }}
+        run: ./node_modules/.bin/percy storybook $BUNDLE_PATH
+
+  # todo: a job for GH pages: https://github.com/compassion-gds/compassion-gds/issues/89

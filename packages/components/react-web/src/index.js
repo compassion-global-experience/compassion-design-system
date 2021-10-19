@@ -1,3 +1,4 @@
+export * from './Avatars';
 export * from './Button';
 export * from './FileSelect';
 export * from './Icon';
@@ -9,7 +10,7 @@ export * from './Modal';
 export * from './Select';
 export * from './Image';
 export * from './Thumbnail';
-export * from './ProgressBar';
+export * from './Progress';
 export * from './Uploader';
 export * from './ThemeProvider';
 export * from './hooks';

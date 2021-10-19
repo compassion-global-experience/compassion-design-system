@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import IconSkipppy from './icons/IconSkippy';
+
+import { icons } from '@compassion-gds/elements';
+import * as IconComponents from './index';
+
+import { InlineIcon } from './InlineIcon';
+
+import './Icon.docs.css';
+
+# Icon
+
+Use iconography purposefully to call attention to a particular action, object,
+or section. Icons should _almost universally_ be paired with a label or
+meaningful text to boost comprehension and reduce cognitive load.
+
+Each icon is exported as an individual component to support a broad set of icons
+while keeping your bundle size as small as possible.
+
+<Canvas withSource="open">
+  <Story id="elements-icon--icon-props" />
+</Canvas>
+
+<ArgsTable of={IconSkipppy} />
+
+## Icon Color
+
+If a color isn’t passed as a prop to an icon component, the icon’s fill property
+is inherited from its container. This makes it simple for text and an adjacent
+icon to share the same color, or for all icons in a container to share a common
+color.
+
+<Canvas withSource="open">
+  <Story id="elements-icon--icon-color" />
+</Canvas>
+
+## Icon Reference
+
+<ul class="icons">
+  { Object.keys(IconComponents).map((componentName) => {
+      const Icon = IconComponents[componentName]; return <li class="icon"><Icon /><span class="code">&lt;{componentName} /&gt;</span></li>;}) }
+
+</ul>
+
+## Meaningful Icon
+
+Add a `role="img"` attribute to _indicate an icon carries visual meaning_ that
+should be announced by assistive technologies. The icon's title and description
+are available to assistive technologies via an `aria-describedby` attribute in
+the icon’s SVG markup. This is similar in function to an `img` element’s `alt`
+attribute.
+
+Avoid this pattern if an icon is used by itself for an action. Use the **Action
+Icon** pattern in such instances.
+
+<Canvas withSource="open">
+  <Story id="elements-icon--meaningful-icon" />
+</Canvas>
+
+## Icon with Text
+
+Use this pattern when an icon’s meaning can be inferred by the text around
+it—thus making the icon purely decorative.
+
+_Note the use of the `aria-hidden` attribute._ Ensure the text passed to the
+component conveys all necessary information.
+
+<Canvas withSource="open">
+  <Story id="elements-icon--inline-icon" />
+</Canvas>
+
+## Action Icon
+
+Use the Action Icon pattern when an icon has an implicit meaning that isn’t
+conveyed by its `aria-describedby` attribute (which is a literal description of
+the icon, similar in nature to `alt` text). An `aria-label` is necessary to help
+describe the intent (not content) of the icon.
+
+<Canvas withSource="open">
+  <Story id="elements-icon--action-icon" />
+</Canvas>

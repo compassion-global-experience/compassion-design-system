@@ -1,0 +1,259 @@
+import { Meta } from '@storybook/addon-docs';
+import { typography } from '@compassion-gds/elements';
+import { styled } from '@storybook/theming';
+
+<Meta title="Elements/Typography" />
+
+export const fontSize = typography.fontSize;
+export const fontStack = typography.fonts;
+
+# Typography
+
+Use typography to organize the content of your project with a purposeful
+hierarchy. The Compassion Design System provides typography tools to help make
+your content clear, efficient, and beautiful.
+
+export const Montserrat = styled.div`
+  font-family: ${fontStack.heading};
+  font-weight: ${(props) => props.weight || 400};
+  font-size: ${(props) => props.size};
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+`;
+
+export const ScaleDemo = styled.section`
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    'snippet sample'
+    'snippet sample'
+    'snippet sample'
+    'snippet sample'
+    'snippet sample'
+    'snippet sample'
+    'snippet sample'
+    'snippet sample'
+    'snippet sample';
+  code {
+    font-family: 'IBM Plex Mono';
+    font-size: ${fontSize(-1)};
+    grid-column: 1;
+  }
+`;
+
+<!--
+<section>
+  <Typography>Lorem</Typography>
+</section>
+-->
+
+## Typefaces & weights
+
+The Compassion Design System uses **Montserrat** as its primary typeface. To
+maintain a clean aesthetic, only the Regular, Extra Light, and Semibold weights
+are included.
+
+**Note:** The Design System aliases Montserrat as "Compassion Sans" in its
+`@font-face` definitions to allow for easier upkeep.
+
+<Montserrat size={fontSize(2)}>Regular</Montserrat>
+<Montserrat weight={200} size={fontSize(2)}>
+  Extra Light
+</Montserrat>
+<Montserrat weight={600} size={fontSize(2)}>
+  Semibold
+</Montserrat>
+
+## Modular scale
+
+A constrained, purposeful set of font sizes is included in the Design System to
+boost consistency within an interface and to assist in creating focused,
+meaningful visual hierarchies. By default the modular scale uses a ratio of 1.33
+between steps.
+[_Read more about modular scales_](https://medium.com/sketch-app-sources/exploring-responsive-type-scales-cf1da541be54).
+
+<ScaleDemo>
+  <code>fontSize(-2)</code>
+  <Montserrat size={fontSize(-2)}>Known, Loved and Connected</Montserrat>
+  <code>fontSize(-1)</code>
+  <Montserrat size={fontSize(-1)}>Known, Loved and Connected</Montserrat>
+  <code>fontSize(-0)</code>
+  <Montserrat size={fontSize()}>Known, Loved and Connected</Montserrat>
+  <code>fontSize(1)</code>
+  <Montserrat size={fontSize(1)}>Known, Loved and Connected</Montserrat>
+  <code>fontSize(2)</code>
+  <Montserrat size={fontSize(2)}>Known, Loved and Connected</Montserrat>
+  <code>fontSize(3)</code>
+  <Montserrat size={fontSize(3)}>Known, Loved and Connected</Montserrat>
+  <code>fontSize(4)</code>
+  <Montserrat size={fontSize(4)}>Known, Loved and Connected</Montserrat>
+  <code>fontSize(5)</code>
+  <Montserrat size={fontSize(5)}>Known, Loved and Connected</Montserrat>
+  <code>fontSize(6)</code>
+  <Montserrat size={fontSize(6)}>Known, Loved and Connected</Montserrat>
+</ScaleDemo>
+
+## Headings
+
+export const HeadingsDemo = styled.section`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${fontStack.heading};
+  }
+  h1 {
+    font-size: ${fontSize(4)};
+  }
+  h2 {
+    font-size: ${fontSize(3)};
+  }
+  h3 {
+    font-size: ${fontSize(2)};
+  }
+  h4 {
+    font-size: ${fontSize(1)};
+  }
+  h5,
+  h6 {
+    font-size: ${fontSize(0)};
+  }
+`;
+
+<HeadingsDemo>
+  <h1>h1</h1>
+  <h2>h2</h2>
+  <h3>h3</h3>
+  <h4>h4</h4>
+  <h5>h5</h5>
+  <h6>h6</h6>
+</HeadingsDemo>
+
+## Dynamic modular scales
+
+A dynamic modular scale is provided out of the box to enable a tighter scale on
+small screens and a wider scale on large screens. The dynamic scale acknowledges
+the user’s screen real estate while maintaining consistency and hierarchy.
+
+Specific values on the dynamic scale can be accessed by passing a second
+parameter to the `fontSize` function indicating the desired scale. If a second
+parameter isn't provided the base scale is used:
+
+```js
+import { typography as t } from '@compassion-gds/elements';
+
+t.fontSize(0, 'minus1'); // Returns base font size using the `minus1` ratio
+t.fontSize(1); // Returns one step up the modular scale using the base ratio
+t.fontSize(-1, 'plus1'); // Returns one step down the scale using the `plus1` ratio
+```
+
+export const DynamicDemo = styled.section`
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-flex;
+    flex-direction: column;
+  }
+`;
+
+<DynamicDemo>
+  <ul>
+    <li>
+      <code>minus1</code>
+      <div>
+        <Montserrat size={fontSize(4, 'minus1')}>h1</Montserrat>
+        <Montserrat size={fontSize(3, 'minus1')}>h2</Montserrat>
+        <Montserrat size={fontSize(2, 'minus1')}>h3</Montserrat>
+      </div>
+    </li>
+    <li>
+      <code>base</code>
+      <div>
+        <Montserrat size={fontSize(4)}>h1</Montserrat>
+        <Montserrat size={fontSize(3)}>h2</Montserrat>
+        <Montserrat size={fontSize(2)}>h3</Montserrat>
+      </div>
+    </li>
+    <li>
+      <code>plus1</code>
+      <div>
+        <Montserrat size={fontSize(4, 'plus1')}>h1</Montserrat>
+        <Montserrat size={fontSize(3, 'plus1')}>h2</Montserrat>
+        <Montserrat size={fontSize(2, 'plus1')}>h3</Montserrat>
+      </div>
+    </li>
+  </ul>
+</DynamicDemo>
+
+## Body
+
+The Design System recommends usage of a "system font stack" for body copy. Using
+a system font stack allows users to see your content without the additional
+network request required by a web font, which also eliminates a Flash of
+Unstyled Text (FOUT). Additionally, the look and feel of content laid out with a
+system font stack is highly legible and feels familiar to users because so much
+app and OS content already uses these typefaces.
+
+```js
+return css`
+  /*  Returns '-apple-system', BlinkMacSystemFont, 'avenir next', avenir,
+   *          'segoe ui', 'helvetica neue', helvetica, Ubuntu, roboto, noto,
+   *          arial, 'sans-serif' presently */
+  font-family: ${typography.fonts.body};
+`;
+```
+
+### Body copy sizes
+
+export const BodyExample = styled.p`
+  font-family: ${typography.fonts.body};
+  font-size: ${(props) => props.size};
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2em;
+`;
+
+export const bodyCopy = `Compassion. A movement. A calling. A cause. A people.
+Compassion is global, reflecting the beautiful diversity of God's kingdom. We
+are collaborative, depending on teamwork and partnership. We are inclusive and
+accepting of others. We are honest. We say what we mean, and we do what we say.
+We are respectful, protecting the divine character in everyone. We strive to
+always be grace filled, kind, forgiving and merciful.`;
+
+`fontSize(0)` (Default):
+
+<BodyExample size={fontSize(0)}>{bodyCopy}</BodyExample>
+
+`fontSize(1)`:
+
+<BodyExample size={fontSize(1)}>{bodyCopy}</BodyExample>
+
+_Coming soon:_
+
+- Lede & eyebrow pairings
+- Suggested measure
+
+## Color
+
+_Coming soon:_
+
+- Primary
+- Secondary/diminished
+- Interactive
+- Disabled
+- Indicating colors
+
+export const Template = () => {};

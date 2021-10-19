@@ -6,13 +6,17 @@ import { helpers } from '@compassion-gds/elements';
 import { jsx } from '@emotion/core';
 import { cx } from 'emotion';
 import { useTheme } from '../hooks';
-import CreditCard from './CreditCard';
-import Currency from './Currency';
+// import CreditCard from './CreditCard';
+// import Currency from './Currency';
 import Edit from './Edit';
 import { inputStyles } from './Input.styles';
 
 /**
- * Primary UI component for user input
+ * Form elements gather information from users via Inputs, Textareas, Selects,
+ * Checkboxes, Radio buttons, and the like.
+ *
+ * For accessibility purposes, every instance of a form element must be
+ * accompanied by a label, even if it’s visually hidden in the interface.
  */
 export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   // State used for text input fields
@@ -70,11 +74,12 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
-      {type === 'creditcard' && (
+      {/* {type === 'creditcard' && (
         <CreditCard inputId={inputId} label={label} props={props} />
       )}
-      {type === 'currency' && <Currency />}
+      {type === 'currency' && <Currency />} */}
 
+      {/* {type === 'currency' || type === 'creditcard' ? null : ( */}
       {type === 'currency' || type === 'creditcard' ? null : (
         <React.Fragment>
           <input
@@ -134,8 +139,8 @@ Input.propTypes = {
     'text',
     'date',
     'edit',
-    'currency',
-    'creditcard',
+    // 'currency',
+    // 'creditcard',
   ]),
   /**
    * How large should the input be?

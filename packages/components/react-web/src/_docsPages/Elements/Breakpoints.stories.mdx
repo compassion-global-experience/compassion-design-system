@@ -1,0 +1,92 @@
+import { Meta } from '@storybook/addon-docs';
+import { styled } from '@storybook/theming';
+
+import { breakpoints, depth } from '@compassion-gds/elements';
+
+<Meta title="Elements/Breakpoints" />
+
+# Breakpoints
+
+Breakpoints allow designs to respond to groups of viewport sizes and
+orientations. Because accounting for every screen width is nigh impossible,
+layouts should be **fluid** between breakpoints, sized in percentages or
+viewport units.
+
+An easy way to practice this methodology is “mobile first” design: Design for
+narrow viewports first, adding larger breakpoints as needed. Be sure to use
+`min-width` conditions in your media queries to more easily enable this
+approach.
+
+It’s recommended that designs work on viewports as narrow as 320px, but this
+guideline isn’t solely meant to support mobile users! While
+[7% of mobile browsing in 2020 happened on devices 320px in width](https://worship.agency/mobile-screen-sizes-for-2021),
+WCAG 2.1 accessibility guidelines state that sites should function at a width of
+320px without a horizontal scrollbar to ensure proper reflow when users have
+zoomed their browser up to 400%. _See
+[WCAG 2.1 Criteria 1.4.10](https://www.w3.org/WAI/WCAG21/Understanding/reflow.html)._
+
+## Breakpoint widths &amp; usage
+
+To use breakpoint values provided by the Compassion Design System, import the
+`breakpoints` object from the `@compassion-gds/elements` package:
+
+```js
+import { breakpoints } from '@compassion-gds/elements';
+```
+
+`breakpoints` is a JSON object with pixel widths that can be passed into your
+media queries via CSS custom properties (variables), CSS-in-JS, or any other
+method you choose.
+
+export const Sm = styled.div`
+  width: ${breakpoints.sm};
+`;
+
+export const Md = styled.div`
+  width: ${breakpoints.md};
+`;
+
+export const Lg = styled.div`
+  width: ${breakpoints.lg};
+`;
+
+export const Xl = styled.div`
+  width: ${breakpoints.xl};
+`;
+
+export const Xxl = styled.div`
+  width: ${breakpoints.xxl};
+`;
+
+export const Wrapper = styled.div`
+  display: grid;
+  grid-gap: 2rem;
+  grid-auto-rows: repeat(5, auto);
+  .breakpoint {
+    padding: 0.5rem;
+    background: #f0f0f0;
+    box-shadow: ${depth.plus1};
+  }
+  code {
+    border: 0;
+    background: transparent;
+  }
+`;
+
+<Wrapper>
+  <Sm className="breakpoint">
+    <code>breakpoints.sm (576px)</code>
+  </Sm>
+  <Md className="breakpoint">
+    <code>breakpoints.md (768px)</code>
+  </Md>
+  <Lg className="breakpoint">
+    <code>breakpoints.lg (992px)</code>
+  </Lg>
+  <Xl className="breakpoint">
+    <code>breakpoints.xl (1200px)</code>
+  </Xl>
+  <Xxl className="breakpoint">
+    <code>breakpoints.xxl (1400px)</code>
+  </Xxl>
+</Wrapper>

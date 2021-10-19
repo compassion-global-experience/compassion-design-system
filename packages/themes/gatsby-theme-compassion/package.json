@@ -1,6 +1,9 @@
 {
   "name": "@compassion-gds/gatsby-theme-compassion",
   "version": "0.2.2",
+  "engines": {
+    "node": ">=16.8.0"
+  },
   "main": "index.js",
   "license": "MIT",
   "scripts": {

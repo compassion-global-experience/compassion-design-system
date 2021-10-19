@@ -2,26 +2,29 @@ import { css } from '@emotion/core';
 
 export default (theme) => {
   return css`
-    padding-right: 1rem;
-    padding-left: 1rem;
-    min-height: 44px;
-    border: 1px solid #0948aa;
-    background: #fff;
-    color: #0948aa;
-    font-family: unset;
-    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column-reverse;
 
-    &.select--primary {
-      background: #0948aa;
-      color: #fff;
-    }
+    select {
+      align-self: flex-start;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      min-height: 44px;
+      border: 2px solid #777;
+      background: #fff;
+      font-family: unset;
+      cursor: pointer;
 
-    &.select--large {
-      min-height: 64px;
-    }
+      &:focus,
+      &:active {
+        border: 2px solid #0948aa;
+      }
 
-    &.select--small {
-      min-height: 36px;
+      &[disabled] {
+        border: 1px solid #efefef;
+        cursor: default;
+        pointer-events: none;
+      }
     }
   `;
 };

@@ -14,7 +14,7 @@ export const List = ({
   ordered,
   itemPadding,
   fullWidth,
-  striped,
+  stripeColor,
   ...props
 }) => {
   const theme = useTheme();
@@ -28,10 +28,13 @@ export const List = ({
       className={cx(
         'gds-list',
         { [`gds-list--${itemPadding}`]: itemPadding },
-        { [`gds-list--striped`]: striped },
+        {
+          [`gds-list--striped`]:
+            stripeColor && stripeColor.toString().length > 0,
+        },
         { [`gds-list--full-width`]: fullWidth }
       )}
-      css={listStyles(theme.component.list)}
+      css={listStyles(theme.component.list, stripeColor)}
       {...props}
     >
       {props.children}
@@ -48,15 +51,19 @@ List.propTypes = {
    * How large should each list item be?
    */
   itemPadding: PropTypes.oneOf(['small', 'medium', 'large']),
-  /** Should the list expand to the width of its container? */
+  /**
+   *  Expands the list to the width of its container when set.
+   */
   fullWidth: PropTypes.bool,
-  /** Display the list with zebra stripes? */
-  striped: PropTypes.bool,
+  /**
+   * Specify a CSS color to enable alternate-row striping.
+   */
+  stripeColor: PropTypes.string,
 };
 
 List.defaultProps = {
-  ordered: true,
-  itemPadding: 'medium',
+  ordered: false,
+  itemPadding: 'small',
   fullWidth: false,
-  striped: false,
+  stripeColor: null,
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './Button';
 
 export default {
-  title: 'Global Design System/Button',
+  title: 'Components/Button',
   component: Button,
   argTypes: {},
 };
@@ -39,4 +39,12 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
+};
+
+export const AsLink = Template.bind({});
+AsLink.args = {
+  primary: false,
+  asLink: true,
+  label: "I'm actually a link",
+  href: 'https://compassion.com',
 };
