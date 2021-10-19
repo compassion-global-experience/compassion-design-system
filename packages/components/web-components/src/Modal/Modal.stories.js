@@ -20,7 +20,7 @@ const Template = ({
   onClose,
   onOpen,
   photo,
-  title
+  contentTitle
  }) =>
   html`<gds-modal 
     .type=${type}
@@ -33,7 +33,7 @@ const Template = ({
     .onClose=${onClose}
     .onOpen=${onOpen}
     .photo=${photo}
-    .title=${title}
+    .contentTitle=${contentTitle}
   />`
 
 export const Alert = Template.bind({}); 
@@ -57,7 +57,7 @@ export const Content = Template.bind({});
 Content.args = {
   type: 'content',
   content: 'Your Content Here',
-  title: 'Your Title Here',
+  contentTitle: 'Your Title Here',
   onOpen: action('On modal open.'),
   onClose: action('On modal close.'),
 };

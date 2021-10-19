@@ -13,11 +13,11 @@ export const Logo = ({ style, color, width }) => {
   let colorVal;
 
   if (color === 'brand') {
-    colorVal = gdsColors.primary;
+    colorVal = gdsColors.primary.main;
   } else if (color === 'dark') {
-    colorVal = gdsColors.black;
+    colorVal = gdsColors.black.main;
   } else {
-    colorVal = gdsColors.white;
+    colorVal = gdsColors.white.main;
   }
 
   if (style === 'full') {
