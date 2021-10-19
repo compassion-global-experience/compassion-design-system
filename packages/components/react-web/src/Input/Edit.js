@@ -5,18 +5,16 @@ import PropTypes from 'prop-types';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 
-import edit from '../assets/edit.svg';
-import check from '../assets/check.svg';
-import clear from '../assets/clear.svg';
+import CheckIcon from '../Icon/icons/IconCheck';
+import ClearIcon from '../Icon/icons/IconX';
+import EditIcon from '../Icon/icons/IconEdit';
 
 const Edit = ({
-  label,
   type,
   props,
   inputId,
   disable,
   changeInputToEnabled,
-  changeInputToDisabled,
   onButtonClick,
 }) => {
   return (
@@ -27,7 +25,7 @@ const Edit = ({
           aria-controls={props.id || inputId}
           onClick={onButtonClick}
         >
-          <img src={check} alt="Accept Input Change" />
+          <CheckIcon font-size="30px" />
         </button>
       )}
       {disable && (
@@ -36,7 +34,7 @@ const Edit = ({
           aria-controls={props.id || inputId}
           onClick={changeInputToEnabled}
         >
-          <img src={edit} alt="Edit Input Change" />
+          <EditIcon font-size="24px" />
         </button>
       )}
       <button
@@ -45,17 +43,21 @@ const Edit = ({
         aria-hidden="true"
         className="clear"
       >
-        <img src={clear} alt="Reject Input Change" />
+        <ClearIcon font-size="30px" />
       </button>
     </React.Fragment>
   );
 };
 
 Edit.propTypes = {
-  close: PropTypes.func.isRequired,
-  content: PropTypes.any.isRequired,
-  isDisplayed: PropTypes.bool.isRequired,
-  title: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  inputId: PropTypes.string.isRequired,
+  disable: PropTypes.bool.isRequired,
+  changeInputToEnabled: PropTypes.func.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
+  props: PropTypes.shape({
+    id: PropTypes.string,
+  }).isRequired
 };
 
 export default Edit;

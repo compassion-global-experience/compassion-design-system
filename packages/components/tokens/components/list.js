@@ -2,7 +2,7 @@ const elements = require('@compassion-gds/elements');
 
 module.exports = {
   base: {
-    stripeColor: { value: `${elements.color.grayPlus4}` },
+    stripeColor: { value: `${elements.color.gray.plus4}` },
     itemPadding: { value: `0.625rem` },
   },
   large: {
