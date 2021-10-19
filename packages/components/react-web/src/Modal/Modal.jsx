@@ -35,7 +35,7 @@ export const Modal = (props) => {
           content={props.content}
           onOpen={props.onOpen}
           onClose={props.onClose}
-          title={props.title}
+          title={props.contentTitle}
         >
           Click Me!
         </ContentModalButton>
@@ -102,5 +102,5 @@ Modal.propTypes = {
    * When provided, results in a title bar with an X in top right hand corner to close modal. If not provided, the title bar is removed and the X close button floats above top right-hand corner of modal.
    * This is an optional prop to be used with modals of type 'content'.
    */
-  title: PropTypes.string,
+   contentTitle: PropTypes.string,
 };
