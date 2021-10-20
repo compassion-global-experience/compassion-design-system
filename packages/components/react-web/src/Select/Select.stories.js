@@ -1,23 +1,28 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 import { Select } from './Select';
 
 export default {
   title: 'Components/Forms/Select',
   component: Select,
-  argTypes: {},
+  args: {
+      options: [
+          { value: 1, label: 'Option 1' },
+          { value: { obj: 2 }, label: 'Option 2' },
+          { value: '3', label: 'Option 3' },
+          { value: [4], label: 'Option 4' },
+      ],
+      onChange: action('On select change'),
+  },
 };
 
 const Template = (args) => (
-  <Select {...args}>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-  </Select>
+  <Select {...args} />
 );
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Label text',
-  onClick: undefined,
+  label: 'Label Text',
+  placeholder: 'Placeholder Text',
 };
