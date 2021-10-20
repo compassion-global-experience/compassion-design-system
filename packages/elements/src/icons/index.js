@@ -8,15 +8,12 @@ const replaceFill = (rawSvg) => {
   return rawSvg.replace('fill="none"', 'fill="currentColor"').replace(/fill="[^"]+"/g, '');
 };
 
-export const accessibility = replaceFill(raw('./svg/accessibility.svg'))
-export const add = replaceFill(raw('./svg/add.svg'))
-export const addCircle = replaceFill(raw('./svg/addCircle.svg'))
 export const ArrowClockwise = replaceFill(raw('./svg/ArrowClockwise.svg'))
 export const ArrowDown = replaceFill(raw('./svg/ArrowDown.svg'))
 export const ArrowLeft = replaceFill(raw('./svg/ArrowLeft.svg'))
 export const ArrowRight = replaceFill(raw('./svg/ArrowRight.svg'))
-export const ArrowsLeftRight = replaceFill(raw('./svg/ArrowsLeftRight.svg'))
 export const ArrowUp = replaceFill(raw('./svg/ArrowUp.svg'))
+export const ArrowsLeftRight = replaceFill(raw('./svg/ArrowsLeftRight.svg'))
 export const Camera = replaceFill(raw('./svg/Camera.svg'))
 export const ChatText = replaceFill(raw('./svg/ChatText.svg'))
 export const Check = replaceFill(raw('./svg/Check.svg'))

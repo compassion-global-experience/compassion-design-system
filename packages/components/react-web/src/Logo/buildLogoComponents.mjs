@@ -25,7 +25,6 @@ import React from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
-import logoStyles from '../Logo.styles';
 `;
 
 const footer = `
@@ -42,7 +41,6 @@ COMPONENT_NAME.propTypes = {
 };
 
 COMPONENT_NAME.defaultProps = {
-  fill: 'brand',
   width: '100%',
 };
 
@@ -82,7 +80,6 @@ Object.entries(logoSources).forEach((logoSource) => {
           width: '{props.width}',
           height: '100%',
           className: 'gds-logo',
-          css: '{logoStyles}',
         },
         svgo: false,
       },

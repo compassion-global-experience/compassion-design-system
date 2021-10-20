@@ -18,12 +18,12 @@ export default {
     main: '#B52C2C',
     minus1: '#521414',
   },
-  info: { 
+  info: {
     main: '#0086BF',
     minus1: '#00425D',
   },
   warning: {
-    main:  '#FFB500',
+    main: '#FFB500',
     minus1: '#684A00',
   },
   black: {
@@ -40,6 +40,6 @@ export default {
     plus4: '#E3E4E2',
   },
   white: {
-    main:  '#fff',
-  }
+    main: '#fff',
+  },
 };

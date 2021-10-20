@@ -14,4 +14,5 @@ export default {
   plus5: size.plus3,
   plus6: size.plus4,
   plus7: size.plus5,
+  plus8: size.plus6,
 };

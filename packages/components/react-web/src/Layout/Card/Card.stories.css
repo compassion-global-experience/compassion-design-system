@@ -1,0 +1,7 @@
+[id*='card--basic'] .gds-card {
+  width: 500px;
+}
+
+[id*='card--image-card'] .gds-card {
+  width: 400px;
+}

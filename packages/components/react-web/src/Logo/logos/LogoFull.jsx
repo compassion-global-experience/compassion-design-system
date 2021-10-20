@@ -8,7 +8,6 @@ import React from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
-import logoStyles from '../Logo.styles';
 
 function LogoFull(props) {
   return (
@@ -17,8 +16,8 @@ function LogoFull(props) {
       xmlns="http://www.w3.org/2000/svg"
       width={props.width}
       height="100%"
+      fill={props.fill}
       className="gds-logo"
-      css={logoStyles}
       {...props}
     >
       <path d="M253.26 164.86c0-.73-.7-1.33-1.54-1.33h-.01c-.84 0-1.5.59-1.5 1.33 0 .73.66 1.33 1.51 1.33.84 0 1.54-.6 1.54-1.33zM255.68 185.19c-1.86 0-2.53-.77-2.53-2v-11.77h-.52l-4.56 1.58v.55l1.64.32c.92.17 1.1.35 1.1 1.72v7.04c0 1.86-.78 2.56-2.92 2.56v.67h7.79v-.67zM264.33 185.2c-1.9 0-2.35-.46-2.35-2.4v-7.6c1.82-1.26 3.54-2.24 4.66-2.24 1.4 0 2.77.87 2.77 3.67 0 4.67-.07 7.23-.73 7.9-.4.38-.99.63-2 .66v.67h7.53v-.67h-.77c-1.43 0-2-.45-1.96-1.4.012-.415.043-.788.079-1.236.084-1.03.201-2.456.201-5.704 0-3.51-1.37-5.26-3.75-5.26-1.615 0-3.442 1.146-5.604 2.503l-.426.267v-2.73h-.56l-4.04 1.47v.56l1.2.24c.91.18 1.05.42 1.05 1.72v7.37c0 1.36-.81 2.2-2.35 2.2v.67h7.05v-.66zM279.17 194.03c4.38 0 7.26-4.74 7.26-11.78v-14.98c0-1.86.49-2.49 2.74-2.56v-.67h-8.88v.67h.39c2.52 0 2.84.7 2.84 3.79v18.73c0 3.89-1.19 5.15-2.87 5.15-.779 0-1.408-.457-2.004-.89-.537-.39-1.047-.76-1.616-.76-.7 0-1.26.67-1.26 1.4 0 1.1 1.48 1.9 3.4 1.9z" />
@@ -105,7 +104,7 @@ LogoFull.propTypes = {
   /**
    * A CSS fill color.
    */
-  color: PropTypes.oneOf(['brand', 'dark', 'light']),
+  fill: PropTypes.string.isRequired,
   /**
    * Any valid CSS width value.
    */
@@ -113,6 +112,5 @@ LogoFull.propTypes = {
 };
 
 LogoFull.defaultProps = {
-  color: 'brand',
   width: '100%',
 };

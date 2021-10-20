@@ -8,7 +8,10 @@ import stackStyles from './Stack.styles';
 
 export const Stack = ({ space, splitAfter, ...props }) => {
   return (
-    <div css={stackStyles({ space, splitAfter })} className="gds-stack">
+    <div
+      css={stackStyles({ space, splitAfter })}
+      className={`gds-stack ${props.className ? props.className : ''}`}
+    >
       {props.children}
     </div>
   );
@@ -37,6 +40,6 @@ Stack.propTypes = {
 };
 
 Stack.defaultProps = {
-  space: `1.5rem`,
+  space: `0`,
   splitAfter: undefined,
 };
