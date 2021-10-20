@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-alpha.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/tokens@0.1.1...@compassion-gds/tokens@0.2.0-alpha.0) (2021-10-20)
+
+
+### Features
+
+* **lists:** Build basic styled list component ([8c69f6e](https://github.com/compassion-gds/compassion-gds/commit/8c69f6e5f99f3580d2f79ef26edf3f5e046d22b1))
+
+
+
+
+
 ## [0.1.1](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/tokens@0.1.1-alpha.0...@compassion-gds/tokens@0.1.1) (2021-05-06)
 
 **Note:** Version bump only for package @compassion-gds/tokens

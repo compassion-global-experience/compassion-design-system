@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/react-web",
-  "version": "0.5.0",
+  "version": "0.6.0-alpha.0",
   "engines": {
     "node": ">=16.8.0"
   },
@@ -12,8 +12,8 @@
     "dist/"
   ],
   "dependencies": {
-    "@compassion-gds/elements": "^0.4.0",
-    "@compassion-gds/tokens": "^0.1.1",
+    "@compassion-gds/elements": "^0.5.0-alpha.0",
+    "@compassion-gds/tokens": "^0.2.0-alpha.0",
     "@emotion/core": "^10.0.35",
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^10.0.27",
