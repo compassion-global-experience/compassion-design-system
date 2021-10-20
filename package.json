@@ -24,6 +24,7 @@
     "start:react": "cd packages/components/react-web && yarn start",
     "start:elements": "cd packages/elements && yarn start",
     "start:tokens": "cd packages/components/tokens && yarn start",
+    "bootstrap": "npx lerna bootstrap",
     "build": "lerna run build",
     "build:tokens": "cd packages/components/tokens && yarn build",
     "build:elements": "cd packages/elements && yarn build",
