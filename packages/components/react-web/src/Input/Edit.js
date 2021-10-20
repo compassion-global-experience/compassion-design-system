@@ -25,7 +25,7 @@ const Edit = ({
           aria-controls={props.id || inputId}
           onClick={onButtonClick}
         >
-          <CheckIcon font-size="30px" />
+          <CheckIcon width={30} height={30} />
         </button>
       )}
       {disable && (
@@ -34,7 +34,7 @@ const Edit = ({
           aria-controls={props.id || inputId}
           onClick={changeInputToEnabled}
         >
-          <EditIcon font-size="24px" />
+          <EditIcon width={24} height={24} />
         </button>
       )}
       <button
@@ -43,7 +43,7 @@ const Edit = ({
         aria-hidden="true"
         className="clear"
       >
-        <ClearIcon font-size="30px" />
+        <ClearIcon width={30} height={30} />
       </button>
     </React.Fragment>
   );
