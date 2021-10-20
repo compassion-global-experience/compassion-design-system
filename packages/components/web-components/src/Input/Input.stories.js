@@ -35,7 +35,7 @@ const Template = ({
   disabled,
   name,
   onChange
-}) => 
+}) =>
   html`<gds-input
     .type=${type}
     .size=${size}
@@ -83,23 +83,9 @@ Checkbox.args = {
   type: 'checkbox',
 };
 
-export const CreditCard = Template.bind({});
-
-CreditCard.args = {
-  label: 'Credit Card',
-  type: 'creditcard',
-};
-
 export const Date = Template.bind({});
 
 Date.args = {
   label: 'Date',
   type: 'date',
-};
-
-export const Currency = Template.bind({});
-
-Currency.args = {
-  label: 'Currency',
-  type: 'currency',
 };

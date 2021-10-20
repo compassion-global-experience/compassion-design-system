@@ -17,7 +17,7 @@
     "directory": "packages/elements"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs && mkdir -p ./dist/logos/png && cp -R ./src/logos/png ./dist/logos",
+    "build": "microbundle-crl --no-compress --format modern,cjs && syncdir src/logos/png dist/logos/png",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "test": "echo Hello from elements"
   },

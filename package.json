@@ -24,6 +24,7 @@
     "start:react": "cd packages/components/react-web && yarn start",
     "start:elements": "cd packages/elements && yarn start",
     "start:tokens": "cd packages/components/tokens && yarn start",
+    "bootstrap": "npx lerna bootstrap",
     "build": "lerna run build",
     "build:tokens": "cd packages/components/tokens && yarn build",
     "build:elements": "cd packages/elements && yarn build",
@@ -52,7 +53,8 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0",
-    "stylelint-prettier": "^1.1.2"
+    "stylelint-prettier": "^1.1.2",
+    "sync-directory": "^4.0.4"
   },
   "config": {},
   "dependencies": {}

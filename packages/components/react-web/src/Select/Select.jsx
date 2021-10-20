@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { helpers } from '@compassion-gds/elements';
@@ -17,32 +17,51 @@ import selectStyles from './Select.styles';
  * For accessibility purposes, every instance of a form element must be
  * accompanied by a label, even if it’s visually hidden in the interface.
  */
-export const Select = ({ size, label, validator, ...props }) => {
-  const [value, setValue] = useState('');
+export const Select = ({
+  size,
+  label,
+  validator,
+  options, onChange,
+  defaultValue,
+  getOptionKey,
+  getOptionLabel,
+  placeholder,
+  ...props
+}) => {
+  const [value, setValue] = useState(defaultValue);
   const [errorMessage, setErrorMessage] = useState('');
   const [selectId] = useState(helpers.gdsId());
   const [errorId] = useState(helpers.gdsId());
 
   const theme = useTheme().component.select;
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
-    if (validator) setErrorMessage(validator(e.target.value));
-    if (props.onChange) props.onChange();
-  };
+  const handleChange = useCallback((e) => {
+    const selectedOption = options[e.target.value];
+
+    setValue(selectedOption);
+    if (validator) setErrorMessage(validator(selectedOption));
+    onChange(selectedOption, e);
+  }, [options, onChange, validator]);
 
   return (
-    <div className="select-group" css={selectStyles(theme)}>
+    <div className='select-group' css={selectStyles(theme)}>
       <select
         id={props.id || selectId}
-        value={value}
+        value={options.indexOf(value)}
         name={props.name || label}
         disabled={props.disabled}
         aria-describedby={errorMessage ? errorId : null}
         onChange={handleChange}
         {...props}
       >
-        {props.children}
+        {Boolean(placeholder) && <option value="" hidden>{placeholder}</option>}
+        {options.map(
+          (o, i) => (
+            <option key={getOptionKey(o, i)} value={i}>
+              {getOptionLabel(o, i)}
+            </option>
+          ),
+        )}
       </select>
       <label htmlFor={props.id || selectId}>{label}</label>
     </div>
@@ -55,13 +74,15 @@ Select.propTypes = {
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
-   * Select contents
+   * Field label
    */
   label: PropTypes.string.isRequired,
+
+  placeholder: PropTypes.string,
   /**
-   * Optional click handler
+   * Default or initial value
    */
-  onClick: PropTypes.func,
+  defaultValue: PropTypes.shape({}),
   /**
    * Optional validation function.
    */
@@ -72,6 +93,7 @@ Select.propTypes = {
   // Disabling require-default-props because a default is generated within the component.
   // eslint-disable-next-line react/require-default-props
   id: PropTypes.string,
+
   required: PropTypes.bool,
   /**
    * Is the Select disabled?
@@ -83,12 +105,35 @@ Select.propTypes = {
   // Disabling require-default-props because a default name is assigned within the component if one isn't provided
   // eslint-disable-next-line react/require-default-props
   name: PropTypes.string,
+
+  // Optional change handler
+  onChange: PropTypes.func,
+
+  /**
+   * Select options can be any object
+   * but we have defaults that work with objects with a `label` key out of the box
+   */
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
+
+  /**
+   * Optional. A getter that receive an option (from options) and should return unique id for it
+   */
+  getOptionKey: PropTypes.func,
+
+  /**
+   * Optional. An option label getter, the default implementation uses object.label
+   */
+  getOptionLabel: PropTypes.func,
 };
 
 Select.defaultProps = {
   size: 'medium',
-  onClick: undefined,
   required: false,
   disabled: false,
   validator: undefined,
+  onChange: () => {},
+  defaultValue: undefined,
+  getOptionKey: (option, index) => index,
+  getOptionLabel: (option) => option.label,
+  placeholder: undefined,
 };
