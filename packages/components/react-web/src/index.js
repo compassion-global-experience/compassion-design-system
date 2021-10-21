@@ -13,4 +13,3 @@ export * from './Thumbnail';
 export * from './Progress';
 export * from './Uploader';
 export * from './ThemeProvider';
-export * from './hooks';
