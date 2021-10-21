@@ -1,6 +1,8 @@
-import React, { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
-import PropTypes from 'prop-types';
 import { useContext, createContext } from 'react';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { ThemeProvider as EmotionThemeProvider, jsx } from '@emotion/react';
+import PropTypes from 'prop-types';
 import defaultTheme from "@compassion-gds/tokens";
 
 const ThemeContext = createContext(defaultTheme);
