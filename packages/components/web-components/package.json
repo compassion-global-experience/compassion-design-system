@@ -15,9 +15,9 @@
     "@compassion-gds/elements": "^0.5.0-alpha.0",
     "@compassion-gds/react-web": "^0.6.0-alpha.0",
     "@compassion-gds/tokens": "^0.2.0-alpha.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-to-webcomponent": "^1.5.1"
+    "react-to-webcomponent": "^1.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "repository": {
     "type": "git",
@@ -52,11 +52,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@storybook/addon-actions": "^6.3.0",
-    "@storybook/addon-essentials": "^6.3.0",
-    "@storybook/addon-links": "^6.3.0",
-    "@storybook/addons": "^6.3.0",
-    "@storybook/web-components": "^6.3.0",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addons": "^6.3.12",
+    "@storybook/web-components": "^6.3.12",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.2",
     "lit-html": "^1.4.1",
