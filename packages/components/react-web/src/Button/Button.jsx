@@ -85,6 +85,10 @@ Button.propTypes = {
    */
   asLink: PropTypes.bool,
   /**
+   * Does the Button trigger navigation? If so, the href is required.
+   */
+  href: p => (p.asLink && !p.href) && new Error('"href" is required if you use button as link'),
+  /**
    * Optional click handler
    */
   onClick: PropTypes.func,
@@ -95,5 +99,6 @@ Button.defaultProps = {
   size: 'medium',
   disabled: false,
   asLink: false,
+  href: null,
   onClick: undefined,
 };
