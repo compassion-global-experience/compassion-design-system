@@ -21,15 +21,12 @@
     "@emotion/core": "^10.0.35",
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^10.0.27",
-    "@storybook/addon-a11y": "^6.3.7",
-    "@storybook/theming": "^6.3.7",
     "@svgr/core": "^5.5.0",
     "emotion": "^10.0.27",
-    "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
     "react-file-drop": "^3.1.2",
-    "react-number-format": "^4.4.3",
-    "svgo": "^2.2.2"
+    "react-number-format": "^4.7.3",
+    "svgo": "^2.7.0"
   },
   "repository": {
     "type": "git",
@@ -64,15 +61,13 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
+    "@storybook/addon-a11y": "^6.3.7",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
-    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.3.7",
-    "babel-eslint": "^10.0.3",
+    "@storybook/theming": "^6.3.7",
     "cross-env": "^7.0.2",
-    "css-loader": "^5.1.2",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
@@ -85,11 +80,10 @@
     "gh-pages": "^2.2.0",
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
-    "react-syntax-highlighter": "^15.4.4",
     "react-scripts": "4.0.3",
-    "sanitize.css": "^12.0.1",
-    "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0"
+    "react-syntax-highlighter": "^15.4.4",
+    "sanitize.css": "^13.0.0",
+    "prettier": "^2.4.1"
   },
   "private": false,
   "gitHead": "59f18836c7d5f6e798fbd530f529ccd9391218f2"
