@@ -19,9 +19,9 @@ export default {
   },
 };
 
-export const IconProps = (args) => <IconSkippy width="2rem" />;
+export const IconProps = () => <IconSkippy width="2rem" />;
 
-export const IconColor = (args) => (
+export const IconColor = () => (
   <>
     <section>
       <span style={{ color: '#b52c2c' }}>
@@ -31,9 +31,9 @@ export const IconColor = (args) => (
   </>
 );
 
-export const MeaningfulIcon = (args) => <IconSkippy width="2rem" role="img" />;
+export const MeaningfulIcon = () => <IconSkippy width="2rem" role="img" />;
 
-export const InlineIcon = (args) => (
+export const InlineIcon = () => (
   <>
     <IWT>
       Hello world
@@ -47,7 +47,7 @@ export const InlineIcon = (args) => (
   </>
 );
 
-export const ActionIcon = (args) => (
+export const ActionIcon = () => (
   <a href="/">
     <IconHome aria-label="Go to the home page" role="img" width="2rem" />
   </a>

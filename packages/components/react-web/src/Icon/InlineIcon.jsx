@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 
 import { cx } from '@emotion/css';
 import inlineIcon from './InlineIcon.module.css';
-import { useTheme } from '../hooks';
 
 export const InlineIcon = ({ vertical, ...props }) => {
-  const theme = useTheme();
-
   return (
     <span
       css={inlineIcon}

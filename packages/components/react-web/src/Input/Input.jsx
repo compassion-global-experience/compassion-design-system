@@ -4,8 +4,6 @@ import { helpers } from '@compassion-gds/elements';
 
 import { cx } from '@emotion/css';
 import { useTheme } from '../hooks';
-// import CreditCard from './CreditCard';
-// import Currency from './Currency';
 import Edit from './Edit';
 import { inputStyles } from './Input.styles';
 
@@ -72,12 +70,6 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
-      {/* {type === 'creditcard' && (
-        <CreditCard inputId={inputId} label={label} props={props} />
-      )}
-      {type === 'currency' && <Currency />} */}
-
-      {/* {type === 'currency' || type === 'creditcard' ? null : ( */}
       {type === 'currency' || type === 'creditcard' ? null : (
         <React.Fragment>
           <input
@@ -137,8 +129,6 @@ Input.propTypes = {
     'text',
     'date',
     'edit',
-    // 'currency',
-    // 'creditcard',
   ]),
   /**
    * How large should the input be?
