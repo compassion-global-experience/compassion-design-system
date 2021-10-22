@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/web-components",
-  "version": "0.1.0",
+  "version": "0.2.0-alpha.0",
   "engines": {
     "node": ">=14.8.1"
   },
@@ -12,12 +12,12 @@
     "dist/"
   ],
   "dependencies": {
-    "@compassion-gds/elements": "^0.4.0",
-    "@compassion-gds/react-web": "^0.5.0",
-    "@compassion-gds/tokens": "^0.1.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-to-webcomponent": "^1.5.1"
+    "@compassion-gds/elements": "^0.5.0-alpha.0",
+    "@compassion-gds/react-web": "^0.6.0-alpha.0",
+    "@compassion-gds/tokens": "^0.2.0-alpha.0",
+    "react-to-webcomponent": "^1.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook"
   },
   "browserslist": {
@@ -52,12 +52,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@storybook/addon-actions": "^6.3.0",
-    "@storybook/addon-essentials": "^6.3.0",
-    "@storybook/addon-links": "^6.3.0",
-    "@storybook/addons": "^6.3.0",
-    "@storybook/web-components": "^6.3.0",
-    "babel-loader": "^8.2.2",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addons": "^6.3.12",
+    "@storybook/web-components": "^6.3.12",
     "cross-env": "^7.0.2",
     "lit-html": "^1.4.1",
     "microbundle-crl": "^0.13.10",

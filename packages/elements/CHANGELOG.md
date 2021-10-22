@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-alpha.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/elements@0.4.0...@compassion-gds/elements@0.5.0-alpha.0) (2021-10-20)
+
+
+### Bug Fixes
+
+* **icons:** Make icon sizing more flexible ([6e851e5](https://github.com/compassion-gds/compassion-gds/commit/6e851e528ce1917d34b9a29490146869efffce74))
+
+
+### Features
+
+* **elements:** Add color contrast ratio helper ([00f81a2](https://github.com/compassion-gds/compassion-gds/commit/00f81a26472a27c6e26fd85621777a24de6b4beb))
+* **elements:** Add flags to elements ([e6d18cc](https://github.com/compassion-gds/compassion-gds/commit/e6d18cc4ee58ad2110c6a5b30288c9e1d1412adc))
+* **elements/space:** add space ([b956959](https://github.com/compassion-gds/compassion-gds/commit/b956959223df91b061cf300329a42c76b2d31d64)), closes [#70](https://github.com/compassion-gds/compassion-gds/issues/70)
+
+
+
+
+
 # [0.4.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/elements@0.4.0-alpha.0...@compassion-gds/elements@0.4.0) (2021-05-06)
 
 **Note:** Version bump only for package @compassion-gds/elements

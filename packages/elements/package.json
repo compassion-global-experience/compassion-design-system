@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/elements",
-  "version": "0.4.0",
+  "version": "0.5.0-alpha.0",
   "engines": {
     "node": ">=14.8.1"
   },
@@ -17,7 +17,7 @@
     "directory": "packages/elements"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs && mkdir -p ./dist/logos/png && cp -R ./src/logos/png ./dist/logos",
+    "build": "microbundle-crl --no-compress --format modern,cjs && syncdir src/logos/png dist/logos/png",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "test": "echo Hello from elements"
   },
