@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0-alpha.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/react-web@0.5.0...@compassion-gds/react-web@0.6.0-alpha.0) (2021-10-20)
+
+
+### Bug Fixes
+
+* **icons:** Make icon sizing more flexible ([6e851e5](https://github.com/compassion-gds/compassion-gds/commit/6e851e528ce1917d34b9a29490146869efffce74))
+* **react-web:** Input/Edit Fragment usage fix ([e380454](https://github.com/compassion-gds/compassion-gds/commit/e380454716cbf888785a79a8042687bb793f4509)), closes [#76](https://github.com/compassion-gds/compassion-gds/issues/76)
+* **react-web/Thumbnail:** Cannot read property 'input' of undefined ([6e3c5c4](https://github.com/compassion-gds/compassion-gds/commit/6e3c5c4825eb10ae214100f7fa2c3906bf376886))
+
+
+### Features
+
+* **avatars:** Add Avatar and AvatarGroup components ([d798deb](https://github.com/compassion-gds/compassion-gds/commit/d798deb05ddbc99888094b4a1cecc7ceaf35a971))
+* **buttons:** Add & document `asLink` Buttons ([c0d3a09](https://github.com/compassion-gds/compassion-gds/commit/c0d3a090c0e0bea069214e4b1ce31a1ac4fc91c1))
+* **flags:** Add Flag component and initial stories ([01a7aa4](https://github.com/compassion-gds/compassion-gds/commit/01a7aa447bf61412e5d820f293d9f768fe026b69))
+* **image:** New responsive, lazy-loading image component ([9ca2fe9](https://github.com/compassion-gds/compassion-gds/commit/9ca2fe9e71102fe7543eb31f20c60f9d5b8315d5))
+* **lists:** Build basic styled list component ([8c69f6e](https://github.com/compassion-gds/compassion-gds/commit/8c69f6e5f99f3580d2f79ef26edf3f5e046d22b1))
+* **menu:** Basic Menu component refactor ([328c218](https://github.com/compassion-gds/compassion-gds/commit/328c2180dc43b56438c425be7d8ca14a0f1e88e6))
+* **menus:** Revamp `Menu` component ([b3563bd](https://github.com/compassion-gds/compassion-gds/commit/b3563bda2e17c0a560a31d08c330c4c0c5bdb6e5))
+* **react-web:** extract custom ThemeProvider and useTheme hook ([e6de919](https://github.com/compassion-gds/compassion-gds/commit/e6de919e109d96a19e69139d28c3092f5cbc0b65))
+* **reset:** Update list reset properties ([9d44ac6](https://github.com/compassion-gds/compassion-gds/commit/9d44ac62728212515cb513bdaf66794bbd963ae5))
+
+
+
+
+
 # [0.5.0](https://github.com/compassion-gds/compassion-gds/compare/@compassion-gds/react-web@0.5.0-alpha.0...@compassion-gds/react-web@0.5.0) (2021-05-06)
 
 **Note:** Version bump only for package @compassion-gds/react-web

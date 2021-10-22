@@ -2,6 +2,7 @@
   "packages": [
     "packages/components/*",
     "packages/elements",
+    "packages/examples/*",
     "packages/themes/*"
   ],
   "npmClient": "yarn",

@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/react-web",
-  "version": "0.5.0",
+  "version": "0.6.0-alpha.0",
   "engines": {
     "node": ">=16.8.0"
   },
@@ -11,9 +11,13 @@
   "files": [
     "dist/"
   ],
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
+  },
   "dependencies": {
-    "@compassion-gds/elements": "^0.4.0",
-    "@compassion-gds/tokens": "^0.1.1",
+    "@compassion-gds/elements": "^0.5.0-alpha.0",
+    "@compassion-gds/tokens": "^0.2.0-alpha.0",
     "@emotion/core": "^10.0.35",
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^10.0.27",
@@ -23,7 +27,6 @@
     "emotion": "^10.0.27",
     "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
-    "react": "^16.0.0",
     "react-file-drop": "^3.1.2",
     "react-number-format": "^4.4.3",
     "svgo": "^2.2.2"
@@ -35,6 +38,7 @@
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
+    "watch": "microbundle-crl watch",
     "start": "run-s storybook",
     "prepublishOnly": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -44,7 +48,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
-    "storybook": "start-storybook --no-manager-cache -p 6006",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "browserslist": {
@@ -67,10 +71,8 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.3.7",
     "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.2.1",
     "cross-env": "^7.0.2",
     "css-loader": "^5.1.2",
-    "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
@@ -83,14 +85,11 @@
     "gh-pages": "^2.2.0",
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
     "react-syntax-highlighter": "^15.4.4",
+    "react-scripts": "4.0.3",
     "sanitize.css": "^12.0.1",
     "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0",
-    "typescript": "^4.2.3",
-    "webpack": "^5.24.4"
+    "style-loader": "^2.0.0"
   },
   "private": false,
   "gitHead": "59f18836c7d5f6e798fbd530f529ccd9391218f2"
