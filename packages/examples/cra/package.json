@@ -14,7 +14,9 @@
     "start": "react-scripts start",
     "bundle": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analyze:source-maps": "npx source-map-explorer 'build/static/js/*.js'",
+    "analyze:bundle": "npx cra-bundle-analyzer"
   },
   "eslintConfig": {
     "extends": [
