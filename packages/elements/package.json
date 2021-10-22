@@ -2,7 +2,7 @@
   "name": "@compassion-gds/elements",
   "version": "0.4.0",
   "engines": {
-    "node": ">=16.8.0"
+    "node": ">=14.8.1"
   },
   "license": "MIT",
   "main": "dist/index.js",
