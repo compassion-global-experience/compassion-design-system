@@ -17,8 +17,8 @@
     "directory": "packages/elements"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs && syncdir src/logos/png dist/logos/png",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "build": "microbundle --no-compress --format modern,cjs && syncdir src/logos/png dist/logos/png",
+    "start": "microbundle watch --no-compress --format modern,cjs",
     "test": "echo Hello from elements"
   },
   "dependencies": {
@@ -28,7 +28,7 @@
     "raw.macro": "^0.4.2"
   },
   "devDependencies": {
-    "microbundle-crl": "^0.13.10",
+    "microbundle": "^0.14.1",
     "modularscale-js": "^3.0.1",
     "sync-directory": "^4.0.4"
   },

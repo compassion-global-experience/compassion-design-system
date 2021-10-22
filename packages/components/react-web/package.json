@@ -23,6 +23,7 @@
     "@emotion/styled": "^10.0.27",
     "@svgr/core": "^5.5.0",
     "emotion": "^10.0.27",
+    "microbundle": "^0.14.1",
     "prop-types": "^15.7.2",
     "react-file-drop": "^3.1.2",
     "react-number-format": "^4.7.3",
@@ -34,8 +35,8 @@
     "directory": "packages/components/react-web"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "watch": "microbundle-crl watch",
+    "build": "microbundle --no-compress --format modern,cjs --jsx React.createElement",
+    "watch": "microbundle watch",
     "start": "run-s storybook",
     "prepublishOnly": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -78,12 +79,13 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
-    "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
+    "prettier": "^2.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "react-syntax-highlighter": "^15.4.4",
-    "sanitize.css": "^13.0.0",
-    "prettier": "^2.4.1"
+    "sanitize.css": "^13.0.0"
   },
   "private": false,
   "gitHead": "59f18836c7d5f6e798fbd530f529ccd9391218f2"
