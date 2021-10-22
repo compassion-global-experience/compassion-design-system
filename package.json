@@ -13,6 +13,7 @@
   "workspaces": [
     "packages/components/*",
     "packages/elements",
+    "packages/examples/*",
     "packages/themes/*",
     "packages/site"
   ],
@@ -55,6 +56,11 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
     "sync-directory": "^4.0.4"
+  },
+  "resolutions": {
+    "babel-loader": "8.1.0",
+    "eslint": "^7.11.0",
+    "webpack": "4.44.2"
   },
   "config": {},
   "dependencies": {}
