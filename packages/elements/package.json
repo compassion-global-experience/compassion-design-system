@@ -30,7 +30,6 @@
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
     "modularscale-js": "^3.0.1",
-    "raw.macro": "^0.4.2",
     "sync-directory": "^4.0.4"
   },
   "private": false
