@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import NumberFormat from 'react-number-format';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 import { inputStyles } from './Input.styles';
 
 const ContentModal = ({ close, content, isDisplayed, title }) => {

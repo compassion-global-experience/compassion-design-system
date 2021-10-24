@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 import { cx } from 'emotion';
 import avatarGroupStyles from './AvatarGroup.styles';
 import { useTheme } from '../../hooks';

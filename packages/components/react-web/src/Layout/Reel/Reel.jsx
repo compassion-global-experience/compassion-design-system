@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 
 import reelStyles from './Reel.styles';
 

@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 
 import stackStyles from './Stack.styles';
 

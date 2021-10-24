@@ -5,9 +5,7 @@ import { color as gdsColors } from '@compassion-gds/elements';
 import LogoFull from './logos/LogoFull';
 import LogoMinimal from './logos/LogoMinimal';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 
 export const Logo = ({ style, color, width }) => {
   let colorVal;
