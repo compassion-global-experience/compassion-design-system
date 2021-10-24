@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { helpers } from '@compassion-gds/elements';
 import menuStyles from './Menu.styles';

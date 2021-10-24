@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import { KEYCODES } from '../constants';
 
-
-import { cx } from 'emotion';
 import * as modalStyles from './Modal.styles';
 
 const Modal = ({ children, close, isDisplayed }) => {

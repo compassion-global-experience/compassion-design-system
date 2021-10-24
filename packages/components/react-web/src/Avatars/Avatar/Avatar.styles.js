@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { helpers } from '@compassion-gds/elements';
 
 export default (theme, color, withImage) => {

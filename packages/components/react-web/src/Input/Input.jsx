@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { helpers } from '@compassion-gds/elements';
 
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { useTheme } from '../hooks';
 // import CreditCard from './CreditCard';
 // import Currency from './Currency';

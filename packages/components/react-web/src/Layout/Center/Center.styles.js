@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 const maxWidthPartial = (maxWidth) => {
   return maxWidth !== 0

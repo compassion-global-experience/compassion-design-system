@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import { helpers } from '@compassion-gds/elements';
 
-
-import { cx } from 'emotion';
 import { useTheme } from '../hooks';
 import selectStyles from './Select.styles';
 

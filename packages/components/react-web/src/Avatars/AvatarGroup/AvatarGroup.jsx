@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import avatarGroupStyles from './AvatarGroup.styles';
 import { useTheme } from '../../hooks';
 

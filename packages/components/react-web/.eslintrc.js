@@ -5,6 +5,7 @@ module.exports = {
     'standard-react',
     'plugin:jsx-a11y/recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
@@ -26,5 +27,7 @@ module.exports = {
   ignorePatterns: [
     // Generated files
     '**/icons/*.jsx',
+    '**/Flag/PartnerCountries/*.jsx',
+    '**/Flag/ProgramCountries/*.jsx',
   ],
 };

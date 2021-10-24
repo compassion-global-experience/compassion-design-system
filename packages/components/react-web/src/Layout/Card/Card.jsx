@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { Frame } from '../Frame';
 import { Stack } from '../Stack';

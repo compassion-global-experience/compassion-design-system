@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-
-import { cx } from 'emotion';
 import gridStyles from './Grid.styles';
 
 export const Grid = ({ minWidth, space, ...props }) => {
