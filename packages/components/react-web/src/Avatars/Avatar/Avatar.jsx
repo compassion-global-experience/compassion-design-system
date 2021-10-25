@@ -57,7 +57,7 @@ Avatar.propTypes = {
    */
   color: PropTypes.string,
   /**
-   * The [Image component](/?path=/docs/components-image) to use for the Avatar.
+   * The [Image component](/docs/components-image--primary) to use for the Avatar.
    * If this is set, all other props are overridden except for the `color` prop.
    */
   image: PropTypes.element,
