@@ -45,7 +45,7 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/300x200/?bow+mar+colorado" />
+          <img src="https://source.unsplash.com/erxoxRcdMQA/300x200" />
         </Frame>
         <h3>Bow Mar</h3>
         <p>
@@ -59,7 +59,7 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/300x200/?arriba+colorado" />
+          <img src="https://source.unsplash.com/K1hq1atFeYs/300x200" />
         </Frame>
         <h3>Arriba</h3>
         <p>
@@ -73,7 +73,7 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/300x200/?castle+rock" />
+          <img src="https://source.unsplash.com/5v2eickpK3s/300x200" />
         </Frame>
         <h3>Castle Rock</h3>
         <p>
@@ -86,7 +86,7 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/300x200/?del+norte+colorado" />
+          <img src="https://source.unsplash.com/KkC5ELYv21c/300x200" />
         </Frame>
         <h3>Del Norte</h3>
         <p>
@@ -99,7 +99,7 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/300x200/?dinosaur+colorado" />
+          <img src="https://source.unsplash.com/IVxEfB-yuwA/300x200" />
         </Frame>
         <h3>Dinosaur</h3>
         <p>
@@ -118,7 +118,7 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/300x200/?fairplay+colorado" />
+          <img src="https://source.unsplash.com/xMnUx3T201g/300x200" />
         </Frame>
         <h3>Fairplay</h3>
         <p>
@@ -133,7 +133,7 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/300x200/?manzanola+colorado" />
+          <img src="https://source.unsplash.com/CoqJGsFVJtM/300x200" />
         </Frame>
         <h3>Manzanola</h3>
         <p>
