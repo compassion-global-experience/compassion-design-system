@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 
 import switcherStyles from './Switcher.styles';
 
-export const Switcher = ({ threshold, space, horizontalLimit, ...props }) => {
+export const Switcher = ({ threshold, space, horizontalLimit, children, ...props }) => {
   return (
     <div
       css={switcherStyles({ threshold, space, horizontalLimit })}
       className="gds-switcher"
+      {...props}
     >
-      {props.children}
+      {children}
     </div>
   );
 };

@@ -27,6 +27,7 @@ export const Button = ({
   disabled,
   asLink,
   onClick,
+  children,
   ...props
 }) => {
   const theme = useTheme();
@@ -43,7 +44,7 @@ export const Button = ({
       onClick={onClick}
       {...props}
     >
-      {label || props.children}
+      {label || children}
     </button>
   ) : (
     <a
@@ -58,7 +59,7 @@ export const Button = ({
       onClick={onClick}
       {...props}
     >
-      {label || props.children}
+      {label || children}
     </a>
   );
 };

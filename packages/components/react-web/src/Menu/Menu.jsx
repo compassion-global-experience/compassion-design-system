@@ -9,7 +9,7 @@ import menuStyles from './Menu.styles';
 import { useTheme } from '../hooks';
 // import { useDetectOutsideClick } from './useDetectOutsideClick';
 
-export const Menu = ({ triggerOnHover, expanded, openToward, ...props }) => {
+export const Menu = ({ triggerOnHover, expanded, openToward, children, ...props }) => {
   const theme = useTheme();
 
   const menuRef = useRef(null);
@@ -22,8 +22,8 @@ export const Menu = ({ triggerOnHover, expanded, openToward, ...props }) => {
   const [isActive, setIsActive] = useState(expanded);
   const [isDropdownHovered, setIsDropdownHovered] = useState(false);
 
-  const buttonEl = props.children.filter((child) => child.type === 'button')[0];
-  const dropdownEl = props.children.filter(
+  const buttonEl = children.filter((child) => child.type === 'button')[0];
+  const dropdownEl = children.filter(
     (child) =>
       child.type.displayName === 'List' ||
       child.type === 'ul' ||
@@ -83,8 +83,9 @@ export const Menu = ({ triggerOnHover, expanded, openToward, ...props }) => {
       })}
       ref={menuRef}
       css={menuStyles(theme.component.menu)}
+      {...props}
     >
-      {React.Children.map(props.children, (child) => {
+      {React.Children.map(children, (child) => {
         let newProps;
 
         if (child.type === 'button' || child.type.displayName === 'Button') {

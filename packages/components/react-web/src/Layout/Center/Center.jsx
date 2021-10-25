@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 
 import centerStyles from './Center.styles';
 
-export const Center = ({ maxWidth, gutter, intrinsicallyCenter, ...props }) => {
+export const Center = ({ maxWidth, gutter, intrinsicallyCenter, children, ...props }) => {
   return (
     <div
       css={centerStyles({ maxWidth, gutter, intrinsicallyCenter })}
       className="gds-center"
+      {...props}
     >
-      {props.children}
+      {children}
     </div>
   );
 };

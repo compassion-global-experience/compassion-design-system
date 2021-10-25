@@ -20,6 +20,7 @@ export const Card = ({
   imagePosition,
   border,
   backgroundColor,
+  children,
   ...props
 }) => {
   const El =
@@ -40,16 +41,17 @@ export const Card = ({
         backgroundColor,
       })}
       className={cx({
-        ['gds-card']: true,
-        ['gds-card--anchor']: renderAs === `anchor`,
-        ['gds-card--button']: renderAs === `button`,
+        'gds-card': true,
+        'gds-card--anchor': renderAs === `anchor`,
+        'gds-card--button': renderAs === `button`,
       })}
       href={href}
       onClick={onClick}
       type={renderAs === `button` ? `button` : null}
+      {...props}
     >
       <NestedEl>
-        <Stack className="gds-card__body">{props.children}</Stack>
+        <Stack className="gds-card__body">{children}</Stack>
         {/* If CTA text, render button and make button—not card—focusable. */}
         {/* If no CTA text, whole card will have focused appearance */}
         <Frame

@@ -9,14 +9,16 @@ export const Cover = ({
   minHeight,
   padding,
   space,
+  children,
   ...props
 }) => {
   return (
     <div
       css={coverStyles({ centeredSelector, minHeight, padding, space })}
       className="gds-cover"
+      {...props}
     >
-      {props.children}
+      {children}
     </div>
   );
 };

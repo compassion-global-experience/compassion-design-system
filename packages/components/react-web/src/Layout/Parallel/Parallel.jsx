@@ -9,14 +9,16 @@ export const Parallel = ({
   mainMinWidth,
   space,
   sideLocation,
+  children,
   ...props
 }) => {
   return (
     <div
       css={parallelStyles({ sideWidth, mainMinWidth, space, sideLocation })}
       className="gds-parallel"
+      {...props}
     >
-      {props.children}
+      {children}
     </div>
   );
 };

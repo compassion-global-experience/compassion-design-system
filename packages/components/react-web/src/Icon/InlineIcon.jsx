@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { cx } from '@emotion/css';
 import inlineIcon from './InlineIcon.module.css';
 
-export const InlineIcon = ({ vertical, ...props }) => {
+export const InlineIcon = ({ vertical, children, ...props }) => {
   return (
     <span
       css={inlineIcon}
@@ -14,7 +14,7 @@ export const InlineIcon = ({ vertical, ...props }) => {
       )}
       {...props}
     >
-      {props.children}
+      {children}
     </span>
   );
 };

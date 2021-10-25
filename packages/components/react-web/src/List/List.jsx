@@ -13,6 +13,7 @@ export const List = ({
   itemPadding,
   fullWidth,
   stripeColor,
+  children,
   ...props
 }) => {
   const theme = useTheme();
@@ -35,7 +36,7 @@ export const List = ({
       css={listStyles(theme.component.list, stripeColor)}
       {...props}
     >
-      {props.children}
+      {children}
     </ElTag>
   );
 };

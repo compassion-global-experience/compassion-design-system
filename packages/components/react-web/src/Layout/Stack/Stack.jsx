@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 
 import stackStyles from './Stack.styles';
 
-export const Stack = ({ space, splitAfter, ...props }) => {
+export const Stack = ({ space, splitAfter, children, ...props }) => {
   return (
     <div
       css={stackStyles({ space, splitAfter })}
       className={`gds-stack ${props.className ? props.className : ''}`}
+      {...props}
     >
-      {props.children}
+      {children}
     </div>
   );
 };
