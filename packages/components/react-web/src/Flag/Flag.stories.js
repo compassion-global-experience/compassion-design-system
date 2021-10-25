@@ -6,7 +6,7 @@ import FlagAustralia from './PartnerCountries/FlagAustralia';
 import { ProgramCountries, PartnerCountries } from './index';
 
 export default {
-  title: 'Components/Flag',
+  title: 'Elements/Flag',
   component: FlagAustralia,
   args: {
     programFlags: Object.keys(flags.programCountries),

@@ -10,6 +10,8 @@ export const parameters = {
         'Intro',
         'Getting Started',
         ['Getting Started', 'For Developers', 'For Designers'],
+        'Contributing',
+        ['For Developers', 'For Designers'],
         'Elements',
         'Components',
         'Layouts',

@@ -5,7 +5,7 @@ import { Image } from '../../Image';
 import AvatarDocs from './Avatar.docs.mdx';
 
 export default {
-  title: 'Layouts/Avatars/Avatar',
+  title: 'Components/Avatar',
   component: Avatar,
   argTypes: {
     color: { control: { type: 'color' } },
