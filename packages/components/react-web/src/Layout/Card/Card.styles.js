@@ -38,7 +38,7 @@ const borderPartial = (isClickable, border, hasImage, imagePosition) => {
 
   return border
     ? css`
-        border: 1px solid ${color.grayPlus4};
+        border: 1px solid ${color.gray.plus4};
       `
     : css``;
 };
@@ -51,7 +51,7 @@ export default (theme) => {
       ? 'transparent'
       : theme.backgroundColor === 'white'
       ? color[theme.backgroundColor]
-      : color.grayPlus5};
+      : color.gray.plus5};
 
     cursor: ${theme.isClickable ? `pointer` : `unset`};
 
@@ -73,7 +73,7 @@ export default (theme) => {
     h4,
     h5,
     h6 {
-      color: ${color.primary};
+      color: ${color.primary.main};
       font-weight: bold;
       font-size: ${typography.fontSizes.base};
     }
