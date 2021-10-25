@@ -15,9 +15,8 @@
     "@compassion-gds/elements": "^0.5.0-alpha.0",
     "@compassion-gds/react-web": "^0.6.0-alpha.0",
     "@compassion-gds/tokens": "^0.2.0-alpha.0",
-    "react-to-webcomponent": "^1.5.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "microbundle": "^0.14.1",
+    "react-to-webcomponent": "^1.5.1"
   },
   "repository": {
     "type": "git",
@@ -25,16 +24,16 @@
     "directory": "packages/components/web-components"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "microbundle --no-compress --format modern,cjs",
     "start": "run-s storybook",
     "prepublishOnly": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
+    "test:unit": "echo No tests available",
+    "test:watch": "echo No tests available",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
+    "deploy": "echo Deploy script is not configured",
     "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook"
   },
@@ -51,17 +50,13 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
     "@storybook/addons": "^6.3.12",
     "@storybook/web-components": "^6.3.12",
-    "cross-env": "^7.0.2",
-    "lit-html": "^1.4.1",
-    "microbundle-crl": "^0.13.10",
-    "npm-run-all": "^4.1.5",
-    "sanitize.css": "^12.0.1"
+    "lit-html": "^2.0.1",
+    "npm-run-all": "^4.1.5"
   },
   "private": false,
   "gitHead": "59f18836c7d5f6e798fbd530f529ccd9391218f2"
