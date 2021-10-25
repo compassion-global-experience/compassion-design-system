@@ -5,7 +5,7 @@ import { AvatarGroup } from './AvatarGroup';
 import AvatarGroupDocs from './AvatarGroup.docs.mdx';
 
 export default {
-  title: 'Layouts/Avatars/AvatarGroup',
+  title: 'Layouts/AvatarGroup',
   component: AvatarGroup,
   argTypes: {
     gapColor: { control: { type: 'color' } },
