@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/examples-web-components-webpack",
-  "version": "0.1.0",
+  "version": "0.2.0-alpha.0",
   "description": "An example of @compassion-gds/web-components bundled with webpack",
   "source": "src/index.html",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "private": true,
   "dependencies": {
-    "@compassion-gds/web-components": "^0.2.0-alpha.0"
+    "@compassion-gds/web-components": "^0.2.0-alpha.1"
   },
   "devDependencies": {
     "webpack": "^4.44.2",
