@@ -7,9 +7,9 @@ import image from './assets/photo.jpg';
 
 export default {
   title: 'Global Design System/Modal',
-}
+};
 
-const Template = ({ 
+const Template = ({
   type,
   cancelLabel,
   closeLabel,
@@ -20,9 +20,9 @@ const Template = ({
   onClose,
   onOpen,
   photo,
-  contentTitle
- }) =>
-  html`<gds-modal 
+  contentTitle,
+}) =>
+  html`<gds-modal
     .type=${type}
     .cancelLabel=${cancelLabel || undefined}
     .closeLabel=${closeLabel}
@@ -34,9 +34,9 @@ const Template = ({
     .onOpen=${onOpen}
     .photo=${photo}
     .contentTitle=${contentTitle}
-  />`
+  />`;
 
-export const Alert = Template.bind({}); 
+export const Alert = Template.bind({});
 Alert.args = {
   type: 'alert',
   content: 'Your Message Here',

@@ -25,7 +25,7 @@ export const ContentModalButton = ({
   };
 
   return (
-    <Fragment>
+    <>
       <button
         aria-label="Open Window"
         onClick={handleOpen}
@@ -41,7 +41,7 @@ export const ContentModalButton = ({
         isDisplayed={isDisplayed}
         title={title}
       />
-    </Fragment>
+    </>
   );
 };
 
@@ -52,4 +52,9 @@ ContentModalButton.propTypes = {
   title: PropTypes.string,
 };
 
+ContentModalButton.defaultProps = {
+  onClose: undefined,
+  onOpen: undefined,
+  title: undefined,
+};
 export default ContentModalButton;

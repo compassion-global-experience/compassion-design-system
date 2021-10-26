@@ -8,13 +8,13 @@ export default {
   title: 'Global Design System/FileSelect',
 };
 
-export const Basic = () =>  html`<gds-file-select />`;
+export const Basic = () => html`<gds-file-select />`;
 Basic.args = {};
 
-export const Custom =  ({ label, emptyStateLabel }) =>
-    html`<gds-file-select label=${label} .emptyStateLabel=${emptyStateLabel} />`;
+export const Custom = ({ label, emptyStateLabel }) =>
+  html`<gds-file-select label=${label} .emptyStateLabel=${emptyStateLabel} />`;
 Custom.args = {
-    label: 'Custom',
-    emptyStateLabel: 'Custom Empty Label',
-    onSelect: action('On File(s) selected'),
-}
+  label: 'Custom',
+  emptyStateLabel: 'Custom Empty Label',
+  onSelect: action('On File(s) selected'),
+};

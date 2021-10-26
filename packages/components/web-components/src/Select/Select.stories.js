@@ -14,7 +14,7 @@ export default {
     required: false,
     name: 'select-name',
     size: 'medium',
-    validator: selected => selected % 2 ? 'Select odd number.' : null,
+    validator: (selected) => (selected % 2 ? 'Select odd number.' : null),
     onChange: action('On change handler'),
     options: [
       { value: 1, label: 'Option 1' },
@@ -26,10 +26,10 @@ export default {
   argTypes: {
     size: {
       options: ['small', 'medium', 'large'],
-      control: { type: 'inline-radio' }
+      control: { type: 'inline-radio' },
     },
-  }
-}
+  },
+};
 
 export const Basic = ({
   size,
@@ -42,7 +42,7 @@ export const Basic = ({
   onChange,
   options,
   placeholder,
- }) =>
+}) =>
   html`<gds-select
     .size=${size}
     .label=${label}
@@ -54,4 +54,4 @@ export const Basic = ({
     .name=${name}
     .onChange=${onChange}
     .options=${options}
-  />`
+  />`;

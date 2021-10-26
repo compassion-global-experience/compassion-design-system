@@ -9,11 +9,17 @@ export default {
   args: {
     label: 'Button',
     onClick: action('click handler'),
-  }
+  },
 };
 
-const Template =  ({ primary, disabled, label, onClick, size }) =>
-    html`<gds-button primary=${primary || ''} .label=${label} disabled=${disabled || ''} @click=${onClick} size=${size || ''} />`;
+const Template = ({ primary, disabled, label, onClick, size }) =>
+  html`<gds-button
+    primary=${primary || ''}
+    .label=${label}
+    disabled=${disabled || ''}
+    @click=${onClick}
+    size=${size || ''}
+  />`;
 
 export const Primary = Template.bind({});
 Primary.args = {

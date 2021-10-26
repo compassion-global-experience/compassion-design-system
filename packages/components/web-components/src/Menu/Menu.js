@@ -5,4 +5,4 @@ import { Menu } from '@compassion-gds/react-web';
 
 const WebMenu = reactToWebComponent(Menu, React, ReactDOM);
 
-customElements.define("gds-menu", WebMenu);
+customElements.define('gds-menu', WebMenu);

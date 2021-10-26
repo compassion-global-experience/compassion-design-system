@@ -5,4 +5,4 @@ import { FileSelect } from '@compassion-gds/react-web';
 
 const WebFileSelect = reactToWebComponent(FileSelect, React, ReactDOM);
 
-customElements.define("gds-file-select", WebFileSelect);
+customElements.define('gds-file-select', WebFileSelect);

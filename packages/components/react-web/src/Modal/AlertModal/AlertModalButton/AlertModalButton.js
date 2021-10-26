@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import AlertModal from '../AlertModal.js';
+import { AlertModal } from '../AlertModal';
 import useToggleDisplay from '../../hooks/useToggleDisplay';
 
 export const AlertModalButton = ({
-  closeLabel = 'Close',
+  closeLabel,
   content,
   children,
   ...props
@@ -13,7 +13,7 @@ export const AlertModalButton = ({
   const [isDisplayed, setIsDisplayed] = useToggleDisplay();
 
   return (
-    <Fragment>
+    <>
       <button
         aria-label={closeLabel}
         onClick={setIsDisplayed}
@@ -29,13 +29,16 @@ export const AlertModalButton = ({
         content={content}
         isDisplayed={isDisplayed}
       />
-    </Fragment>
+    </>
   );
 };
 
 AlertModalButton.propTypes = {
   closeLabel: PropTypes.string,
   content: PropTypes.string.isRequired,
+};
+AlertModalButton.defaultProps = {
+  closeLabel: 'Close',
 };
 
 export default AlertModalButton;

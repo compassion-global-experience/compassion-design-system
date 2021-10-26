@@ -44,8 +44,8 @@ export default {
     data: MOCKED_DATA,
     onChange: action('On change handler'),
   },
-}
+};
 
 export const Basic = ({ data, onChange }) => html`
   <gds-thumbnail .data=${data} .onChange=${onChange} />
-`
+`;

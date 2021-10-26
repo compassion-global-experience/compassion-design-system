@@ -5,4 +5,4 @@ import { Thumbnail } from '@compassion-gds/react-web';
 
 const WebThumbnail = reactToWebComponent(Thumbnail, React, ReactDOM);
 
-customElements.define("gds-thumbnail", WebThumbnail);
+customElements.define('gds-thumbnail', WebThumbnail);

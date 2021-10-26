@@ -22,8 +22,8 @@ export default {
       options: ['small', 'medium', 'large'],
       control: { type: 'inline-radio' },
     },
-  }
-}
+  },
+};
 
 const Template = ({
   type,
@@ -34,7 +34,7 @@ const Template = ({
   required,
   disabled,
   name,
-  onChange
+  onChange,
 }) =>
   html`<gds-input
     .type=${type}
@@ -46,7 +46,7 @@ const Template = ({
     .disabled=${disabled}
     .name=${name}
     .onChange=${onChange}
-  />`
+  />`;
 
 export const Text = Template.bind({});
 
@@ -59,7 +59,8 @@ export const Password = Template.bind({});
 Password.args = {
   label: 'Password',
   type: 'password',
-  validator: pass => pass.length <= 5 ? 'Must be at least 6 characters' : null,
+  validator: (pass) =>
+    pass.length <= 5 ? 'Must be at least 6 characters' : null,
 };
 
 export const Edit = Template.bind({});

@@ -5,8 +5,7 @@ import './Uploader';
 
 export default {
   title: 'Global Design System/Uploader',
-  argTypes: {
-  }
-}
+  argTypes: {},
+};
 
-export const Primary = () => html`<gds-uploader />`
+export const Primary = () => html`<gds-uploader />`;

@@ -5,4 +5,4 @@ import { Modal } from '@compassion-gds/react-web';
 
 const WebModal = reactToWebComponent(Modal, React, ReactDOM);
 
-customElements.define("gds-modal", WebModal);
+customElements.define('gds-modal', WebModal);

@@ -39,7 +39,9 @@ module.exports = {
     small: {
       paddingLeft: { value: `${elements.space.base}` },
       paddingRight: { value: `${elements.space.base}` },
-      minHeight: { value: `calc(${elements.size.plus2} + ${elements.space.minus1})` },
+      minHeight: {
+        value: `calc(${elements.size.plus2} + ${elements.space.minus1})`,
+      },
       fontSize: { value: `${elements.typography.fontSizes.minus1}` },
     },
   },

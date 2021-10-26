@@ -8,7 +8,7 @@ export const PhotoModalButton = ({ photo, children, ...props }) => {
   const [isDisplayed, setIsDisplayed] = useToggleDisplay();
 
   return (
-    <Fragment>
+    <>
       <button
         aria-label="View Photo"
         onClick={setIsDisplayed}
@@ -23,7 +23,7 @@ export const PhotoModalButton = ({ photo, children, ...props }) => {
         isDisplayed={isDisplayed}
         close={setIsDisplayed}
       />
-    </Fragment>
+    </>
   );
 };
 

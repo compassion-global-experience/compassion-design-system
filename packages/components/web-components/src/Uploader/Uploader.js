@@ -5,4 +5,4 @@ import { Uploader } from '@compassion-gds/react-web';
 
 const WebUploader = reactToWebComponent(Uploader, React, ReactDOM);
 
-customElements.define("gds-uploader", WebUploader);
+customElements.define('gds-uploader', WebUploader);

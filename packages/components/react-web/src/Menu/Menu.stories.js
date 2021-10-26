@@ -69,7 +69,7 @@ export const OpenTowardTop = (args) => (
       {/* eslint-disable jsx-a11y/anchor-is-valid */}
       <li>
         <a href="#">Item 1</a>
-        </li>
+      </li>
       {/* eslint-enable jsx-a11y/anchor-is-valid */}
     </List>
   </Menu>

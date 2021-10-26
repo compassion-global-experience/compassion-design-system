@@ -5,4 +5,4 @@ import { Button } from '@compassion-gds/react-web';
 
 const WebButton = reactToWebComponent(Button, React, ReactDOM);
 
-customElements.define("gds-button", WebButton);
+customElements.define('gds-button', WebButton);

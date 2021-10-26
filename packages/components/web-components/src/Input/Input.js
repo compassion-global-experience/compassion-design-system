@@ -5,4 +5,4 @@ import { Input } from '@compassion-gds/react-web';
 
 const WebInput = reactToWebComponent(Input, React, ReactDOM);
 
-customElements.define("gds-input", WebInput);
+customElements.define('gds-input', WebInput);

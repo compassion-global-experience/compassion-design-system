@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import ConfirmModal from '../ConfirmModal';
+import { ConfirmModal } from '../ConfirmModal';
 import useToggleDisplay from '../../hooks/useToggleDisplay';
 
 export const ConfirmModalButton = ({
-  cancelLabel = 'Cancel',
+  cancelLabel,
   confirmAction,
-  confirmLabel = 'Proceed',
+  confirmLabel,
   confirmType,
   content,
   children,
@@ -16,7 +16,7 @@ export const ConfirmModalButton = ({
   const [isDisplayed, setIsDisplayed] = useToggleDisplay();
 
   return (
-    <Fragment>
+    <>
       <button
         aria-label={cancelLabel}
         onClick={setIsDisplayed}
@@ -35,7 +35,7 @@ export const ConfirmModalButton = ({
         isDisplayed={isDisplayed}
         confirmType={confirmType}
       />
-    </Fragment>
+    </>
   );
 };
 
@@ -45,6 +45,12 @@ ConfirmModalButton.propTypes = {
   confirmLabel: PropTypes.string,
   confirmType: PropTypes.string.isRequired,
   content: PropTypes.string,
+};
+
+ConfirmModalButton.defaultProps = {
+  cancelLabel: 'Cancel',
+  confirmLabel: 'Proceed',
+  content: undefined,
 };
 
 export default ConfirmModalButton;

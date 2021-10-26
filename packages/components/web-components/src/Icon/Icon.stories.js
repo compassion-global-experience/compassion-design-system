@@ -12,36 +12,35 @@ export default {
     color: '#005EB8',
   },
   argTypes: {
-      color: {
-          control: 'color',
-      }
-  }
-}
+    color: {
+      control: 'color',
+    },
+  },
+};
 
 export const SampleVariants = ({ sampleIcons = [], color }) => html`
-    <style>
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-        }
-        
-        li {
-            width: 222px;
-        }
-        
-        gds-icon {
-            color: ${color};
-        }
-    </style>
-    
-    <ul>
-        ${sampleIcons.map(name => (
-            html`
-              <li>
-                  <gds-icon .name=${name}></gds-icon> <span>${name}</span>
-              </li>
-            `
-        ))}
-    </ul>
+  <style>
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    li {
+      width: 222px;
+    }
+
+    gds-icon {
+      color: ${color};
+    }
+  </style>
+
+  <ul>
+    ${sampleIcons.map(
+      (name) =>
+        html`
+          <li><gds-icon .name=${name}></gds-icon> <span>${name}</span></li>
+        `
+    )}
+  </ul>
 `;

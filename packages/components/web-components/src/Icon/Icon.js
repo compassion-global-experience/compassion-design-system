@@ -16,7 +16,7 @@ const iconStyles = `
 
 class WebIcon extends HTMLElement {
   static get observedAttributes() {
-    return [ 'name' ];
+    return ['name'];
   }
 
   get name() {
@@ -40,4 +40,3 @@ class WebIcon extends HTMLElement {
 }
 
 customElements.define('gds-icon', WebIcon);
-

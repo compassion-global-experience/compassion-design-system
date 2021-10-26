@@ -39,12 +39,14 @@ const uploadFile = async (file) => {
     method: 'POST',
     body: formData,
   });
-}
+};
 
 export const uploadFiles = async (fileList) => {
-  const filesArray = Array.from(fileList)
+  const filesArray = Array.from(fileList);
 
-  await Promise.all(filesArray.map(async (file) => {
-    await uploadFile(file);
-  }))
+  await Promise.all(
+    filesArray.map(async (file) => {
+      await uploadFile(file);
+    })
+  );
 };

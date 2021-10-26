@@ -9,6 +9,7 @@ export default {
     primary: true,
     label: 'Menu',
   },
-}
+};
 
-export const Primary = ({ primary, label }) => html`<gds-menu .label=${label} ?primary=${primary} />`
+export const Primary = ({ primary, label }) =>
+  html`<gds-menu .label=${label} ?primary=${primary} />`;

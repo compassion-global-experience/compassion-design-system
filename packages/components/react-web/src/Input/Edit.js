@@ -14,7 +14,7 @@ const Edit = ({
   onButtonClick,
 }) => {
   return (
-    <React.Fragment>
+    <>
       {type === 'edit' && !disable && (
         <button
           type="button"
@@ -41,7 +41,7 @@ const Edit = ({
       >
         <ClearIcon width={30} height={30} />
       </button>
-    </React.Fragment>
+    </>
   );
 };
 
@@ -53,7 +53,7 @@ Edit.propTypes = {
   onButtonClick: PropTypes.func.isRequired,
   props: PropTypes.shape({
     id: PropTypes.string,
-  }).isRequired
+  }).isRequired,
 };
 
 export default Edit;
