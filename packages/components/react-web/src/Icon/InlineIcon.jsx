@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 import { cx } from '@emotion/css';
 import inlineIcon from './InlineIcon.module.css';
 

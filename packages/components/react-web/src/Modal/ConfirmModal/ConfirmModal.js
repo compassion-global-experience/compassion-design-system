@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Modal from '../BaseModal/Modal';
 
-
 import * as modalStyles from '../BaseModal/Modal.styles';
 import * as confirmModalStyles from './ConfirmModal.styles';
 

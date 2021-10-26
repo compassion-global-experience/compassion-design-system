@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-
-
 import stackStyles from './Stack.styles';
 
 export const Stack = ({ space, splitAfter, children, ...props }) => {

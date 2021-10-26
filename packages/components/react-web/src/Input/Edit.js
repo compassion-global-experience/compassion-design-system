@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-
 import CheckIcon from '../Icon/icons/IconCheck';
 import ClearIcon from '../Icon/icons/IconX';
 import EditIcon from '../Icon/icons/IconEdit';

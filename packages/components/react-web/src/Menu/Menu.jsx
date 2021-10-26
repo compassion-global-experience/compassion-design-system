@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-
 import { cx } from '@emotion/css';
 
 import { helpers } from '@compassion-gds/elements';

@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-
-
 import boxStyles from './Box.styles';
 
 export const Box = ({ padding, children, ...rest }) => {

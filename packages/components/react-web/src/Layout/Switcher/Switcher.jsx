@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-
-
 import switcherStyles from './Switcher.styles';
 
 export const Switcher = ({ threshold, space, horizontalLimit, children, ...props }) => {

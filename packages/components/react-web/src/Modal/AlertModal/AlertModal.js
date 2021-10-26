@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 import * as modalStyles from '../BaseModal/Modal.styles';
 import * as alertModalStyles from './AlertModal.styles';
 

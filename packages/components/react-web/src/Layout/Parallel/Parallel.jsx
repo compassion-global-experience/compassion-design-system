@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-
-
 import parallelStyles from './Parallel.styles';
 
 export const Parallel = ({

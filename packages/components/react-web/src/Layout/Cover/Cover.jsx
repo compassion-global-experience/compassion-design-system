@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-
-
 import coverStyles from './Cover.styles';
 
 export const Cover = ({

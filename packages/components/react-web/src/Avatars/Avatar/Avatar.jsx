@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 import { cx } from '@emotion/css';
 
 import { useTheme } from '../../hooks';

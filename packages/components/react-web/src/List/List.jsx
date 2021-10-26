@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 import { cx } from '@emotion/css';
 import listStyles from './List.styles';
 import { useTheme } from '../hooks';

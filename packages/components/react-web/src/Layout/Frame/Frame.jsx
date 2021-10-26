@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 import { cx, css } from '@emotion/css';
 
 import frameStyles from './Frame.styles';

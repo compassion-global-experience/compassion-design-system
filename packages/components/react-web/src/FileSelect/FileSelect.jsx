@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { helpers } from '@compassion-gds/elements';
 
-
 import { fileSelectStyles } from './FileSelect.styles';
 
 import { Button } from '../Button';

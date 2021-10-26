@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 
-
-
 import reelStyles from './Reel.styles';
 
 export const Reel = ({
