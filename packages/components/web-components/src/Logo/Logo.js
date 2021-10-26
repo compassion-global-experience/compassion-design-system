@@ -5,4 +5,4 @@ import { Logo } from '@compassion-gds/react-web';
 
 const WebLogo = reactToWebComponent(Logo, React, ReactDOM);
 
-customElements.define("gds-logo", WebLogo);
+customElements.define('gds-logo', WebLogo);

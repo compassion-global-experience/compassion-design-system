@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 export default (theme) => {
   const limit = theme.horizontalLimit ? theme.horizontalLimit + 1 : 9999;

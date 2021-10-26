@@ -1,10 +1,8 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { cx } from 'emotion';
+
+import { cx } from '@emotion/css';
 
 import { helpers } from '@compassion-gds/elements';
 import menuStyles from './Menu.styles';

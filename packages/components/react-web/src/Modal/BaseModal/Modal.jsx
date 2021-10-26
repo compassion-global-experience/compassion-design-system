@@ -4,10 +4,6 @@ import PropTypes from 'prop-types';
 
 import { KEYCODES } from '../constants';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { cx } from 'emotion';
 import * as modalStyles from './Modal.styles';
 
 const Modal = ({ children, close, isDisplayed }) => {

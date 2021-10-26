@@ -3,10 +3,6 @@
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 import React from "react";
-
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 import iconStyles from "../Icon.styles";
 
@@ -25,17 +21,17 @@ function IconMap(props) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M12.97 4.76a1 1 0 0 1-.73 1.21L5 7.78v15.94l6.76-1.69a1 1 0 1 1 .48 1.94l-8 2A1 1 0 0 1 3 25V7a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 1.21.73z"
+        d="M12.97 4.76a1 1 0 0 1-.73 1.21L5 7.78v15.94l6.76-1.69a1 1 0 1 1 .48 1.94l-8 2A1 1 0 0 1 3 25V7a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 1.21.73Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M11.47 4.15a1 1 0 0 1 .98-.04l8 4A1 1 0 0 1 21 9v18a1 1 0 0 1-1.45.9l-8-4A1 1 0 0 1 11 23V5a1 1 0 0 1 .47-.85zM13 6.62v15.76l6 3V9.62l-6-3z"
+        d="M11.47 4.15a1 1 0 0 1 .98-.04l8 4A1 1 0 0 1 21 9v18a1 1 0 0 1-1.45.9l-8-4A1 1 0 0 1 11 23V5a1 1 0 0 1 .47-.85ZM13 6.62v15.76l6 3V9.62l-6-3Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M28.62 6.21A1 1 0 0 1 29 7v18a1 1 0 0 1-.76.97l-8 2a1 1 0 1 1-.48-1.94L27 24.22V8.28l-6.76 1.69a1 1 0 1 1-.48-1.94l8-2a1 1 0 0 1 .86.18z"
+        d="M28.62 6.21A1 1 0 0 1 29 7v18a1 1 0 0 1-.76.97l-8 2a1 1 0 1 1-.48-1.94L27 24.22V8.28l-6.76 1.69a1 1 0 1 1-.48-1.94l8-2a1 1 0 0 1 .86.18Z"
       />
     </svg>
   );

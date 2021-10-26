@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web components Webpack App</title>
+  <script src="main.js"></script>
+  <style>
+    html, body, main {
+        height: calc(100vh - 32px);
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: 16px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+    }
+
+    main {
+        flex: 9;
+    }
+
+    header {
+        flex: 1;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    nav > * {
+        width: max-content;
+    }
+
+    .subscribe-from {
+        margin-left: auto;
+        display: inline-flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <gds-button label="GDS Button" onclick="console.log('GDS')"></gds-button>
+      <gds-button primary="true" label="GDS Primary" onclick="console.log('GDS Primary')"></gds-button>
+      <button onclick="console.log('regular')">
+        Regular Native Button
+      </button>
+    </nav>
+  </header>
+  <main>
+    <gds-logo color="brand" width="100%" type="full"></gds-logo>
+  </main>
+  <footer>
+    <form onsubmit="console.log('form submit')" class="subscribe-from">
+        <gds-input label="Subscribe"></gds-input>
+        <gds-button label="Submit" size="small" onclick="this.parentNode.submit()"></gds-button>
+    </form>
+  </footer>
+</body>
+</html>

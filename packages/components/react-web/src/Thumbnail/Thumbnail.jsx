@@ -1,8 +1,6 @@
 import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 import { useTheme } from "../hooks";
 import { thumbnailStyles } from './Thumbnail.styles';
 

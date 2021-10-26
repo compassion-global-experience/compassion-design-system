@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 const splitAfterPartial = (splitAfter) => {
   if (splitAfter !== undefined) {

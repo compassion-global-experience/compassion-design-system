@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 
 import CheckIcon from '../Icon/icons/IconCheck';
 import ClearIcon from '../Icon/icons/IconX';

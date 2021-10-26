@@ -1,4 +1,4 @@
-import { css, keyframes } from '@emotion/core';
+import { css, keyframes } from '@emotion/react';
 
 const fadein = keyframes`
   from {

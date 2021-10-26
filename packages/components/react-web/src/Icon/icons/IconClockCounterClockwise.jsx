@@ -3,10 +3,6 @@
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 import React from "react";
-
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 import iconStyles from "../Icon.styles";
 
@@ -25,17 +21,17 @@ function IconClockCounterClockwise(props) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M16 9a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1z"
+        d="M16 9a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M15.134 15.5a1 1 0 0 1 1.366-.366l5.196 3a1 1 0 0 1-1 1.732l-5.196-3a1 1 0 0 1-.366-1.366zM3.979 6.464a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-5a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1z"
+        d="M15.134 15.5a1 1 0 0 1 1.366-.366l5.196 3a1 1 0 0 1-1 1.732l-5.196-3a1 1 0 0 1-.366-1.366ZM3.979 6.464a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-5a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M13.659 4.23a12 12 0 1 1-6.144 20.255 1 1 0 1 1 1.414-1.414 10 10 0 1 0 0-14.142l-4.243 4.243a1 1 0 0 1-1.414-1.415l4.243-4.242a12 12 0 0 1 6.144-3.284z"
+        d="M13.659 4.23a12 12 0 1 1-6.144 20.255 1 1 0 1 1 1.414-1.414 10 10 0 1 0 0-14.142l-4.243 4.243a1 1 0 0 1-1.414-1.415l4.243-4.242a12 12 0 0 1 6.144-3.284Z"
       />
     </svg>
   );

@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import { helpers } from '@compassion-gds/elements';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 import { fileSelectStyles } from './FileSelect.styles';
 
 import { Button } from '../Button';

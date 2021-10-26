@@ -3,10 +3,6 @@
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 import React from "react";
-
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 import iconStyles from "../Icon.styles";
 
@@ -25,12 +21,12 @@ function IconArrowClockwise(props) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M28.021 5.464a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-6a1 1 0 1 1 0-2h5v-5a1 1 0 0 1 1-1z"
+        d="M28.021 5.464a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-6a1 1 0 1 1 0-2h5v-5a1 1 0 0 1 1-1Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M17.95 6.192a10 10 0 1 0 5.121 16.88 1 1 0 1 1 1.414 1.413 12 12 0 1 1 0-16.97l4.243 4.242a1 1 0 0 1-1.414 1.415L23.07 8.929a10 10 0 0 0-5.12-2.737z"
+        d="M17.95 6.192a10 10 0 1 0 5.121 16.88 1 1 0 1 1 1.414 1.413 12 12 0 1 1 0-16.97l4.243 4.242a1 1 0 0 1-1.414 1.415L23.07 8.929a10 10 0 0 0-5.12-2.737Z"
       />
     </svg>
   );

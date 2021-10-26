@@ -3,10 +3,6 @@
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 import React from "react";
-
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 import iconStyles from "../Icon.styles";
 
@@ -25,17 +21,17 @@ function IconWheelchair(props) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M11.986 3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM8.486 5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"
+        d="M11.986 3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM8.486 5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M11.986 6.5a1 1 0 0 1 1 1v8h10a1 1 0 0 1 .894.553l3.612 7.224 2.178-.726a1 1 0 0 1 .632 1.898l-3 1a1 1 0 0 1-1.21-.502L22.367 17.5H11.986a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"
+        d="M11.986 6.5a1 1 0 0 1 1 1v8h10a1 1 0 0 1 .894.553l3.612 7.224 2.178-.726a1 1 0 0 1 .632 1.898l-3 1a1 1 0 0 1-1.21-.502L22.367 17.5H11.986a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M12.986 13a7 7 0 1 0 6.986 7.438 1 1 0 1 1 1.996.125A9 9 0 1 1 12.986 11h7a1 1 0 1 1 0 2h-7z"
+        d="M12.986 13a7 7 0 1 0 6.986 7.438 1 1 0 1 1 1.996.125A9 9 0 1 1 12.986 11h7a1 1 0 1 1 0 2h-7Z"
       />
     </svg>
   );

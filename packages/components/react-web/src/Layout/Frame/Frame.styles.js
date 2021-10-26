@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 export default (theme) => {
   const useObjectPosition = theme.objectPosition !== `center`;

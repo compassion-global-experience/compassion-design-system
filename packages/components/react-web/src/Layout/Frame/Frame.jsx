@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 import { cx, css } from '@emotion/css';
 
 import frameStyles from './Frame.styles';

@@ -3,10 +3,6 @@
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 import React from "react";
-
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 import iconStyles from "../Icon.styles";
 
@@ -25,12 +21,12 @@ function IconUser(props) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M16 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm-9 7a9 9 0 1 1 18 0 9 9 0 0 1-18 0z"
+        d="M16 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm-9 7a9 9 0 1 1 18 0 9 9 0 0 1-18 0Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M16 21a13.005 13.005 0 0 0-11.26 6.5 1 1 0 0 1-1.732-1.001 15.005 15.005 0 0 1 25.984 0 1 1 0 0 1-1.731 1A13.004 13.004 0 0 0 16 21z"
+        d="M16 21a13.005 13.005 0 0 0-11.26 6.5 1 1 0 0 1-1.732-1.001 15.005 15.005 0 0 1 25.984 0 1 1 0 0 1-1.731 1A13.004 13.004 0 0 0 16 21Z"
       />
     </svg>
   );

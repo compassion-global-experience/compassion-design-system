@@ -18,6 +18,7 @@ export { default as IconChevronUp } from './icons/IconChevronUp';
 export { default as IconClockCounterClockwise } from './icons/IconClockCounterClockwise';
 export { default as IconCompass } from './icons/IconCompass';
 export { default as IconCreditCard } from './icons/IconCreditCard';
+export { default as IconEdit } from './icons/IconEdit';
 export { default as IconError } from './icons/IconError';
 export { default as IconGear } from './icons/IconGear';
 export { default as IconGift } from './icons/IconGift';

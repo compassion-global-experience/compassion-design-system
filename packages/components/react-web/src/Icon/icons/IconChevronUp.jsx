@@ -3,10 +3,6 @@
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 import React from "react";
-
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 import iconStyles from "../Icon.styles";
 
@@ -25,7 +21,7 @@ function IconChevronUp(props) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M15.293 9.293a1 1 0 0 1 1.414 0l10 10a1 1 0 0 1-1.414 1.414L16 11.414l-9.293 9.293a1 1 0 0 1-1.414-1.414l10-10z"
+        d="M15.293 9.293a1 1 0 0 1 1.414 0l10 10a1 1 0 0 1-1.414 1.414L16 11.414l-9.293 9.293a1 1 0 0 1-1.414-1.414l10-10Z"
       />
     </svg>
   );

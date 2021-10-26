@@ -18,12 +18,10 @@
   "dependencies": {
     "@compassion-gds/elements": "^0.5.0-alpha.0",
     "@compassion-gds/tokens": "^0.2.0-alpha.0",
-    "@emotion/core": "^10.0.35",
-    "@emotion/react": "^11.1.1",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/css": "^11.5.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
     "@svgr/core": "^5.5.0",
-    "emotion": "^10.0.27",
-    "microbundle": "^0.14.1",
     "prop-types": "^15.7.2",
     "react-file-drop": "^3.1.2",
     "react-number-format": "^4.7.3",
@@ -35,8 +33,9 @@
     "directory": "packages/components/react-web"
   },
   "scripts": {
-    "build": "microbundle --no-compress --format modern,cjs --jsx React.createElement",
-    "watch": "microbundle watch",
+    "mb": "microbundle --jsx jsx --jsxImportSource @emotion/react --format modern,cjs",
+    "build": "yarn run mb --no-compress",
+    "watch": "yarn mb watch",
     "start": "run-s storybook",
     "prepublishOnly": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -62,6 +61,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
     "@storybook/addon-a11y": "^6.3.7",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
@@ -83,6 +84,7 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gh-pages": "^2.2.0",
+    "microbundle": "^0.14.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.1",
     "prettier": "^2.4.1",
@@ -93,5 +95,8 @@
     "sanitize.css": "^13.0.0"
   },
   "private": false,
-  "gitHead": "59f18836c7d5f6e798fbd530f529ccd9391218f2"
+  "gitHead": "59f18836c7d5f6e798fbd530f529ccd9391218f2",
+  "sideEffects": [
+    "*.css"
+  ]
 }

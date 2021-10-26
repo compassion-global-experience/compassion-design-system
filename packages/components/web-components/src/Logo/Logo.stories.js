@@ -7,10 +7,15 @@ export default {
   title: 'Global Design System/Logo',
   args: {
     color: 'brand',
+    type: 'full',
   },
   argTypes: {
     color: {
       options: ['brand', 'dark', 'light'],
+      control: { type: 'inline-radio' },
+    },
+    type: {
+      options: ['full', 'minimal'],
       control: { type: 'inline-radio' },
     },
   },
@@ -22,10 +27,10 @@ export default {
       ],
     },
   },
-}
+};
 
-const Template = ({ color, width }) => html`<gds-logo .color=${color} .width=${width} />`;
-
+const Template = ({ color, width, type }) =>
+  html`<gds-logo .color=${color} .width=${width} .type=${type} />`;
 
 export const Default = Template.bind({});
 Default.args = {};

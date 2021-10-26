@@ -3,10 +3,6 @@
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 import React from "react";
-
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 import iconStyles from "../Icon.styles";
 
@@ -25,17 +21,17 @@ function IconTrash(props) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M5 6h22a1 1 0 1 1 0 2H5a1 1 0 0 1 0-2zM13 12a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0v-8a1 1 0 0 1 1-1zM19 12a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0v-8a1 1 0 0 1 1-1z"
+        d="M5 6h22a1 1 0 1 1 0 2H5a1 1 0 0 1 0-2ZM13 12a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0v-8a1 1 0 0 1 1-1ZM19 12a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0v-8a1 1 0 0 1 1-1Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M7 6a1 1 0 0 1 1 1v19h16V7a1 1 0 1 1 2 0v19a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1z"
+        d="M7 6a1 1 0 0 1 1 1v19h16V7a1 1 0 1 1 2 0v19a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Z"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M10.879 2.879A3 3 0 0 1 13 2h6a3 3 0 0 1 3 3v2a1 1 0 1 1-2 0V5a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v2a1 1 0 1 1-2 0V5a3 3 0 0 1 .879-2.121z"
+        d="M10.879 2.879A3 3 0 0 1 13 2h6a3 3 0 0 1 3 3v2a1 1 0 1 1-2 0V5a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v2a1 1 0 1 1-2 0V5a3 3 0 0 1 .879-2.121Z"
       />
     </svg>
   );

@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { cx } from 'emotion';
+
+import { cx } from '@emotion/css';
 import listStyles from './List.styles';
 import { useTheme } from '../hooks';
 

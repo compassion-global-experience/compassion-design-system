@@ -5,11 +5,7 @@ import { color as gdsColors } from '@compassion-gds/elements';
 import LogoFull from './logos/LogoFull';
 import LogoMinimal from './logos/LogoMinimal';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-
-export const Logo = ({ style, color, width }) => {
+export const Logo = ({ type, color, width }) => {
   let colorVal;
 
   if (color === 'brand') {
@@ -20,15 +16,15 @@ export const Logo = ({ style, color, width }) => {
     colorVal = gdsColors.white.main;
   }
 
-  if (style === 'full') {
-    return <LogoFull fill={colorVal} width={width}></LogoFull>;
-  } else {
-    return <LogoMinimal fill={colorVal} width={width}></LogoMinimal>;
+  if (type === 'full') {
+    return <LogoFull fill={colorVal} width={width} />;
   }
+
+  return <LogoMinimal fill={colorVal} width={width} />;
 };
 
 Logo.propTypes = {
-  style: PropTypes.oneOf(['full', 'minimal']),
+  type: PropTypes.oneOf(['full', 'minimal']),
   /**
    * `fill` value of Logo.
    */
@@ -38,7 +34,7 @@ Logo.propTypes = {
 };
 
 Logo.defaultProps = {
-  style: 'full',
+  type: 'full',
   color: 'brand',
   width: '100%',
 };

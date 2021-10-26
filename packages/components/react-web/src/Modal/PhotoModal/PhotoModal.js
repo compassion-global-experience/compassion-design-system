@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import Modal from '../BaseModal/Modal';
 
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+
 import * as modalStyles from '../BaseModal/Modal.styles';
 import * as photoModalStyles from './PhotoModal.styles';
 
