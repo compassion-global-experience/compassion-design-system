@@ -44,14 +44,21 @@ const borderPartial = (isClickable, border, hasImage, imagePosition) => {
 };
 
 export default (theme) => {
+  let backgroundColor;
+
+  if (
+    theme.backgroundColor === 'transparent' ||
+    theme.backgroundColor === 'white'
+  ) {
+    backgroundColor = color[theme.backgroundColor];
+  } else {
+    backgroundColor = color.gray.plus4;
+  }
+
   return css`
     --gds-stack-space: 0;
 
-    background-color: ${theme.backgroundColor === 'transparent'
-      ? 'transparent'
-      : theme.backgroundColor === 'white'
-      ? color[theme.backgroundColor]
-      : color.gray.plus5};
+    background-color: ${backgroundColor};
 
     cursor: ${theme.isClickable ? `pointer` : `unset`};
 

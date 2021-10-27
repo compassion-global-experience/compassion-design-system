@@ -53,24 +53,42 @@ well as web components.
 
 ### React Components
 
-To install the React components to your project, run either `npm i -D @compassion-gds/react-web` or `yarn i @compassion-gds/react-web`.
+To install the React components to your project, run either `npm i -D @compassion-gds/react-web`
+or `yarn i @compassion-gds/react-web`, depending on which package manager your
+project uses.
 
 #### Importing a React Component
+
+Each component exists as a named export within the `@compassion-gds/react-web`
+package:
+
+```js
+import { Button } from '@compassion-gds/react-web';
+```
+
+This Storybook instance has documentation on how to configure each component
+once it’s been imported.
 
 #### Web Components
 
 A set of web components is provided for non-React projects, such as those built
-with "vanilla" HTML, Wordpress, .NET, Rails, or other server-side technologies.
+with “vanilla” HTML, Wordpress, .NET, Rails, or other server-side technologies.
 
-<!-- #### Importing a Web Component
+#### Using a Web Component
 
-[…] -->
+Include the CDS web components in your bundle, then include your bundle on your
+site:
+
+```html
+<script src="/path/to/your/bundle.js"></script>
+```
 
 ### Explore!
 
 <!-- - Watch our "Getting Started" screencast!\*  -->
 
-- Visit our Storybooks for all sorts of component documentation
+Browse the Storybook documentation to learn how the different components
+work and how they can be configured!
 
 ## Now What?
 
@@ -80,16 +98,6 @@ mind. It would be a huge joy if you'd join our global community of designers
 and developers to be a part of sharpening one anothers' skills and improving the
 Design System together!
 
-### Connect with Us!
-
-Questions? Ideas? Want to contribute? We're eager to partner with you! Join our
-global community and let's improve the Design System together!
-
-- [Our community on Teams](https://teams.microsoft.com/l/team/19%3ab931ee38989d4645866ad97918692180%40thread.tacv2/conversations?groupId=6bc4beeb-823e-483d-8f65-512f2602dbbb&tenantId=d3c08eb3-7c4c-4a01-bc01-6c67b56c8da9)
-- [Email us](mailto:globalux@compassion.com?subject=Compassion%20Design%20System)
-- [On GitHub](https://github.com/compassion-gds)
-- [Connect on Figma](https://www.figma.com/@compassion)
-
 ### Grow Alongside the CDS!
 
 Periodically we publish updates of new elements, components, and layouts
@@ -97,14 +105,21 @@ submitted by our global neighbours. Check out the Updating the CDS page for more
 info on how that works, the list of checks and balances we follow, and how to
 update your experiences as the Design System grows!
 
-As you become more comfortable working with the Compassion Design System, we'd
-love for you to contribute to it for the good of all of our global neighbours!
+As you become more comfortable working with the Compassion Design System, **we’d
+love for you to contribute to it** for the good of all of our global neighbours!
 The CDS is built on the premise that collectively we are better and when we come
 together and serve one another with open hands, open minds, and open hearts,
-nothing can stand against us. Check out the [How to Contribute - For
-Designers](https://www.notion.so/How-to-Contribute-For-Designers-befaec3a0de8430b800b40f15c1525c9)
-or [How to Contribute - For
-Developers](https://www.notion.so/How-to-Contribute-For-Developers-83c7217888ef4722a4ced04555af6d50)
+nothing can stand against us. Check out the [Contributing: For Developers](/docs/contributing-for-developers--page)
 page to learn how to give back!
+
+### Connect with Us!
+
+Questions? Ideas? Want to contribute? We're eager to partner with you! Join our
+global community and let's improve the Design System together!
+
+- [Our community on Teams](https://teams.microsoft.com/l/team/19%3ab931ee38989d4645866ad97918692180%40thread.tacv2/conversations?groupId=6bc4beeb-823e-483d-8f65-512f2602dbbb&tenantId=d3c08eb3-7c4c-4a01-bc01-6c67b56c8da9)
+- [Email us](mailto:globalux@compassion.com?subject=Compassion%20Design%20System)
+  <!-- - [On GitHub](https://github.com/compassion-gds) -->
+  <!-- - [Connect on Figma](https://www.figma.com/@compassion) -->
 
 export const Template = () => {};

@@ -1,10 +1,13 @@
 import { Meta } from '@storybook/addon-docs';
 
+import { Card } from '../Layout/Card';
+import { Grid } from '../Layout/Grid';
+
 <Meta title="Intro" />
 
-# Intro
+# Compassion Design System
 
-The Compassion Design System is Compassion’s open-source design toolkit to
+The Compassion Design System is Compassion’s open-source toolkit to
 accelerate designing, building, and delivering **neighbour-centered digital
 experiences** that are robust, consistent, accessible and brand-aligned. The
 CDS empowers teams to create cohesive experiences for all of our neighbours
@@ -16,25 +19,47 @@ Its working code, design resources, and UI guidelines will get your project off
 the ground in no time—and the repeatable problems the design system solves will
 free up time for designers and developers to solve more complex problems.
 
+## Get started!
+
+Start designing with the CDS today and join our growing community of
+neighbour-centered creators!
+
+- Developers: [Install the tools and explore the components](/docs/getting-started-for-developers--page).
+- Designers: [Jump into the CDS ecosystem](/docs/getting-started-for-designers--page).
+- Product: [Learn what the CDS can unlock for you](/docs/getting-started-getting-started--page).
+
 ## How it’s assembled
 
-### Elements
+<Grid minWidth="300px">
+  <Card image={<img src="/images/elements.jpg" alt="A gold substance" />}>
+    <h3>Elements</h3>
+    <p>
+      The CDS follows the tenets of <em>atomic design</em> by starting with the
+      simplest pieces—referred to as <b>Elements</b>. Elements are parts of a
+      design like color, depth, and typography that can’t be broken down any
+      further.
+    </p>
+  </Card>
 
-The CDS follows the tenets of _atomic design_ by starting with the simplest
-pieces—referred to as **Elements**. Elements are parts of a design like color,
-depth, and typography that can’t be broken down any further.
+<Card image={<img src="/images/components.jpg" alt="Electronics components" />}>
+  <h3>Components</h3>
+  <p>
+    Elements are assembled with each other to build <b>Components</b> that begin
+    to look familiar within an app or website. Components are uncomplicated
+    pieces of a layout such as buttons, individual form elements, or progress
+    bars.
+  </p>
+</Card>
 
-### Components
-
-Elements are assembled with each other to build **Components** that begin to
-look familiar within an app or website. Components are uncomplicated pieces of
-a layout such as buttons, individual form elements, or progress bars.
-
-### Layouts
-
-Components and Elements are then combined into **Layouts** that start to reveal
-the meaning and function of a particular section of an interface. A Layout
-could consist of text and an image contained within a card, a file uploader, or
-a group of inputs assembled into a form.
+  <Card image={<img src="/images/layouts.jpg" alt="A DIY robot" />}>
+    <h3>Layouts</h3>
+    <p>
+      Components and Elements are then combined into <b>Layouts</b> that start
+      to reveal the meaning and function of a particular section of an
+      interface. A Layout could consist of text and an image contained within a
+      card, a file uploader, or a group of inputs assembled into a form.
+    </p>
+  </Card>
+</Grid>
 
 export const Template = () => {};

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 import { cx } from '@emotion/css';
 
 import { Frame } from '../Frame';
@@ -14,16 +13,14 @@ export const Card = ({
   href,
   onClick,
   padding,
-  asListItem,
   image,
-  imageRatio,
-  imagePosition,
   border,
   backgroundColor,
   ...props
 }) => {
   const El =
     renderAs === `anchor` ? `a` : renderAs === `button` ? `button` : `div`;
+
   const NestedEl = image ? Stack : React.Fragment;
 
   const hasImage = image !== undefined && image !== null;
@@ -36,13 +33,12 @@ export const Card = ({
         padding,
         border,
         hasImage,
-        imagePosition,
         backgroundColor,
       })}
       className={cx({
-        ['gds-card']: true,
-        ['gds-card--anchor']: renderAs === `anchor`,
-        ['gds-card--button']: renderAs === `button`,
+        'gds-card': true,
+        'gds-card--anchor': renderAs === `anchor`,
+        'gds-card--button': renderAs === `button`,
       })}
       href={href}
       onClick={onClick}
@@ -52,13 +48,17 @@ export const Card = ({
         <Stack className="gds-card__body">{props.children}</Stack>
         {/* If CTA text, render button and make button—not card—focusable. */}
         {/* If no CTA text, whole card will have focused appearance */}
-        <Frame
-          className={cx('gds-card__image', {
-            [props.className]: props.className,
-          })}
-        >
-          {image}
-        </Frame>
+        {image ? (
+          <Frame
+            className={cx('gds-card__image', {
+              [props.className]: props.className,
+            })}
+          >
+            {image}
+          </Frame>
+        ) : (
+          <></>
+        )}
       </NestedEl>
     </El>
   );

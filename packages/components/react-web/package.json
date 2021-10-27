@@ -95,7 +95,7 @@
     "sanitize.css": "^13.0.0"
   },
   "private": false,
-  "gitHead": "59f18836c7d5f6e798fbd530f529ccd9391218f2",
+  "gitHead": "4938ee413e56e8669ac3693161e6215490a1d114",
   "sideEffects": [
     "*.css"
   ]
