@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 import stackStyles from './Stack.styles';
 
-export const Stack = ({ space, splitAfter, children, ...props }) => {
+export const Stack = ({ space, splitAfter, className, children, ...props }) => {
   return (
     <div
       css={stackStyles({ space, splitAfter })}
-      className={`gds-stack ${props.className ? props.className : ''}`}
+      className={`gds-stack ${className}`}
       {...props}
     >
       {children}
@@ -34,9 +34,11 @@ Stack.propTypes = {
   space: PropTypes.string,
   /** The child after which all remaining children will be bottom-aligned. */
   splitAfter: greaterThanNegativeOne,
+  className: PropTypes.string,
 };
 
 Stack.defaultProps = {
   space: `0`,
   splitAfter: undefined,
+  className: undefined,
 };

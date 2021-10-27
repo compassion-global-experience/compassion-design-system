@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 
 import reelStyles from './Reel.styles';
 
+const REEL_CLASS = `gds-reel`;
+
 export const Reel = ({
   itemWidth,
   space,
@@ -13,9 +15,8 @@ export const Reel = ({
   children,
   ...props
 }) => {
-  const classn = `gds-reel`;
   useEffect(() => {
-    const reels = Array.from(document.querySelectorAll(`.${classn}`));
+    const reels = Array.from(document.querySelectorAll(`.${REEL_CLASS}`));
     const toggleOverflowClass = (elem) => {
       elem.classList.toggle(
         'gds-reel--overflowing',
@@ -48,7 +49,7 @@ export const Reel = ({
         thumbColor,
         hideScrollbar,
       })}
-      className={classn}
+      className={REEL_CLASS}
       {...props}
     >
       {children}

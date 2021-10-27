@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import NumberFormat from 'react-number-format';
 
-import { inputStyles } from './Input.styles';
-
-const ContentModal = ({ close, content, isDisplayed, title }) => {
+const ContentModal = (props) => {
   const [symbol, setSymbol] = useState('$');
 
   const updateSymbol = (e) => {
@@ -12,7 +9,8 @@ const ContentModal = ({ close, content, isDisplayed, title }) => {
   };
 
   return (
-    <div>
+    <div {...props}>
+      {/* eslint-disable-next-line jsx-a11y/no-onchange */}
       <select onChange={updateSymbol}>
         <option label="USD" value="$" selected>
           USD
@@ -27,13 +25,6 @@ const ContentModal = ({ close, content, isDisplayed, title }) => {
       <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
     </div>
   );
-};
-
-ContentModal.propTypes = {
-  close: PropTypes.func.isRequired,
-  content: PropTypes.any.isRequired,
-  isDisplayed: PropTypes.bool.isRequired,
-  title: PropTypes.string,
 };
 
 export default ContentModal;

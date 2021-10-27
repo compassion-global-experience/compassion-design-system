@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
 
-import { cx, css } from '@emotion/css';
-
 import frameStyles from './Frame.styles';
 
-export const Frame = ({ ratio, objectPosition, children, ...props }) => {
+export const Frame = ({
+  ratio,
+  objectPosition,
+  children,
+  className,
+  ...props
+}) => {
   const matches = ratio && ratio !== null ? ratio.match(/(\d+):(\d+)/) : null;
 
   const [denominator, numerator] =
@@ -13,7 +17,7 @@ export const Frame = ({ ratio, objectPosition, children, ...props }) => {
   return (
     <div
       css={frameStyles({ denominator, numerator, objectPosition })}
-      className={`gds-frame ${props.className ? props.className : ''}`}
+      className={`gds-frame ${className}`}
       {...props}
     >
       {children}
@@ -24,6 +28,11 @@ export const Frame = ({ ratio, objectPosition, children, ...props }) => {
 Frame.propTypes = {
   ratio: PropTypes.string,
   objectPosition: PropTypes.string,
+  className: PropTypes.string,
 };
 
-Frame.defaultProps = { ratio: '1:1', objectPosition: `center` };
+Frame.defaultProps = {
+  ratio: '1:1',
+  objectPosition: `center`,
+  className: null,
+};
