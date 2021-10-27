@@ -13,20 +13,16 @@ export const Card = ({
   href,
   onClick,
   padding,
-  asListItem,
+  className,
   image,
-  imageRatio,
-  imagePosition,
   border,
   backgroundColor,
   children,
   ...props
 }) => {
-  const El =
-    renderAs === `anchor` ? `a` : renderAs === `button` ? `button` : `div`;
+  const El = getRenderElement(renderAs);
   const NestedEl = image ? Stack : React.Fragment;
 
-  const hasImage = image !== undefined && image !== null;
   const isClickable = renderAs === `anchor` || renderAs === `button`;
 
   return (
@@ -35,8 +31,6 @@ export const Card = ({
         isClickable,
         padding,
         border,
-        hasImage,
-        imagePosition,
         backgroundColor,
       })}
       className={cx({
@@ -55,7 +49,7 @@ export const Card = ({
         {/* If no CTA text, whole card will have focused appearance */}
         <Frame
           className={cx('gds-card__image', {
-            [props.className]: props.className,
+            [className]: className,
           })}
         >
           {image}
@@ -63,6 +57,12 @@ export const Card = ({
       </NestedEl>
     </El>
   );
+};
+
+const getRenderElement = (renderAs) => {
+  if (renderAs === 'anchor') return 'a';
+  if (renderAs === 'button') return 'button';
+  return 'div';
 };
 
 Card.propTypes = {
@@ -76,20 +76,18 @@ Card.propTypes = {
    * standard `img` element.
    */
   image: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
-  // imagePosition: PropTypes.oneOf(['top', 'right', 'left']),
-  // imageRatio: PropTypes.string,
   backgroundColor: PropTypes.oneOf(['white', 'gray', 'transparent']),
   border: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 Card.defaultProps = {
+  className: null,
   renderAs: 'div',
   href: null,
   onClick: null,
   padding: `sm`,
   image: undefined,
-  // imagePosition: 'top',
-  // imageRatio: `1:1`,
   border: true,
   backgroundColor: `white`,
 };
