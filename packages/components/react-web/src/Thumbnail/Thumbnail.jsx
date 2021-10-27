@@ -1,18 +1,18 @@
 import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-import { useTheme } from "../hooks";
+import { useTheme } from '../hooks';
 import { thumbnailStyles } from './Thumbnail.styles';
 
 /**
  * Primary UI component for user Image
  */
-export const Thumbnail = ({ data, onChange, ...props  }) => {
+export const Thumbnail = ({ data, onChange, ...props }) => {
   const [selected, setSelected] = useState(data[0]);
 
   const theme = useTheme();
 
-  const handleSelect = useCallback(newImg => {
+  const handleSelect = useCallback((newImg) => {
     onChange(newImg);
     setSelected(newImg);
   }, []);
@@ -34,14 +34,14 @@ export const Thumbnail = ({ data, onChange, ...props  }) => {
 };
 
 Thumbnail.propTypes = {
-    /**
+  /**
    * Array of image records that would be used as thumbnails
    */
   data: PropTypes.arrayOf(
-    PropTypes.shape({ 
-      id: PropTypes.oneOfType([PropTypes.string,PropTypes.number]),
-      img: PropTypes.string, 
-      title: PropTypes.string, 
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      img: PropTypes.string,
+      title: PropTypes.string,
     })
   ),
   onChange: PropTypes.func,

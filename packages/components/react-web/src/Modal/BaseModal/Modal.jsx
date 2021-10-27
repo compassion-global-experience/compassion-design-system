@@ -29,7 +29,7 @@ const Modal = ({ children, close, isDisplayed }) => {
     const html = document.querySelector('html');
     const openModals = document.querySelectorAll("[aria-modal='true']").length;
 
-    //prevents scrolling when any number of modals are rendered
+    // prevents scrolling when any number of modals are rendered
     html && (html.style.overflow = openModals > 0 ? 'hidden' : '');
     document.body.style.overflow = openModals > 0 ? 'hidden' : '';
   }, [isDisplayed]);

@@ -16,7 +16,7 @@ export const Frame = ({ ratio, objectPosition, children, ...props }) => {
       className={`gds-frame ${props.className ? props.className : ''}`}
       {...props}
     >
-       {children}
+      {children}
     </div>
   );
 };

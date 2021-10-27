@@ -2,7 +2,13 @@ import PropTypes from 'prop-types';
 
 import clusterStyles from './Cluster.styles';
 
-export const Cluster = ({ justifyContent, alignItems, space, children, ...props }) => {
+export const Cluster = ({
+  justifyContent,
+  alignItems,
+  space,
+  children,
+  ...props
+}) => {
   return (
     <div
       css={clusterStyles({ justifyContent, alignItems, space })}

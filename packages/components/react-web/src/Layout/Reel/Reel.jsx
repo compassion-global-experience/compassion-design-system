@@ -10,7 +10,7 @@ export const Reel = ({
   trackColor,
   thumbColor,
   hideScrollbar,
-  children, 
+  children,
   ...props
 }) => {
   const classn = `gds-reel`;

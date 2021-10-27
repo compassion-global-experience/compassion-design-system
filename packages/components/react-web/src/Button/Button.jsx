@@ -87,7 +87,10 @@ Button.propTypes = {
   /**
    * Does the Button trigger navigation? If so, the href is required.
    */
-  href: p => (p.asLink && !p.href) && new Error('"href" is required if you use button as link'),
+  href: (p) =>
+    p.asLink &&
+    !p.href &&
+    new Error('"href" is required if you use button as link'),
   /**
    * Optional click handler
    */

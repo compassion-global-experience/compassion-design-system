@@ -71,7 +71,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
       })}
     >
       {type === 'currency' || type === 'creditcard' ? null : (
-        <React.Fragment>
+        <>
           <input
             id={props.id || inputId}
             type={type || 'text'}
@@ -110,7 +110,7 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
               {errorMessage}
             </small>
           )}
-        </React.Fragment>
+        </>
       )}
     </div>
   );

@@ -4,7 +4,14 @@ import { cx } from '@emotion/css';
 import avatarGroupStyles from './AvatarGroup.styles';
 import { useTheme } from '../../hooks';
 
-export const AvatarGroup = ({ size, overlap, gapColor, shape, children, ...props }) => {
+export const AvatarGroup = ({
+  size,
+  overlap,
+  gapColor,
+  shape,
+  children,
+  ...props
+}) => {
   const theme = useTheme();
 
   return (

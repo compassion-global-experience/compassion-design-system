@@ -17,7 +17,8 @@ export const Select = ({
   size,
   label,
   validator,
-  options, onChange,
+  options,
+  onChange,
   defaultValue,
   getOptionKey,
   getOptionLabel,
@@ -31,16 +32,19 @@ export const Select = ({
 
   const theme = useTheme().component.select;
 
-  const handleChange = useCallback((e) => {
-    const selectedOption = options[e.target.value];
+  const handleChange = useCallback(
+    (e) => {
+      const selectedOption = options[e.target.value];
 
-    setValue(selectedOption);
-    if (validator) setErrorMessage(validator(selectedOption));
-    onChange(selectedOption, e);
-  }, [options, onChange, validator]);
+      setValue(selectedOption);
+      if (validator) setErrorMessage(validator(selectedOption));
+      onChange(selectedOption, e);
+    },
+    [options, onChange, validator]
+  );
 
   return (
-    <div className='select-group' css={selectStyles(theme)}>
+    <div className="select-group" css={selectStyles(theme)}>
       <select
         id={props.id || selectId}
         value={options.indexOf(value)}
@@ -50,14 +54,16 @@ export const Select = ({
         onChange={handleChange}
         {...props}
       >
-        {Boolean(placeholder) && <option value="" hidden>{placeholder}</option>}
-        {options.map(
-          (o, i) => (
-            <option key={getOptionKey(o, i)} value={i}>
-              {getOptionLabel(o, i)}
-            </option>
-          ),
+        {Boolean(placeholder) && (
+          <option value="" hidden>
+            {placeholder}
+          </option>
         )}
+        {options.map((o, i) => (
+          <option key={getOptionKey(o, i)} value={i}>
+            {getOptionLabel(o, i)}
+          </option>
+        ))}
       </select>
       <label htmlFor={props.id || selectId}>{label}</label>
     </div>

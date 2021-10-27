@@ -8,7 +8,13 @@ import menuStyles from './Menu.styles';
 import { useTheme } from '../hooks';
 // import { useDetectOutsideClick } from './useDetectOutsideClick';
 
-export const Menu = ({ triggerOnHover, expanded, openToward, children, ...props }) => {
+export const Menu = ({
+  triggerOnHover,
+  expanded,
+  openToward,
+  children,
+  ...props
+}) => {
   const theme = useTheme();
 
   const menuRef = useRef(null);
