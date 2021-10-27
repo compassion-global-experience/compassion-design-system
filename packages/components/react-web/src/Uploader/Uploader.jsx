@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { FileDrop } from 'react-file-drop';
 
 import { useTheme } from '../hooks';

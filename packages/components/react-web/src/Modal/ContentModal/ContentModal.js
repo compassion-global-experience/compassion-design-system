@@ -28,9 +28,13 @@ const ContentModal = ({ close, content, isDisplayed, title }) => {
 
 ContentModal.propTypes = {
   close: PropTypes.func.isRequired,
-  content: PropTypes.any.isRequired,
+  content: PropTypes.string.isRequired,
   isDisplayed: PropTypes.bool.isRequired,
   title: PropTypes.string,
+};
+
+ContentModal.defaultProps = {
+  title: undefined,
 };
 
 export default ContentModal;

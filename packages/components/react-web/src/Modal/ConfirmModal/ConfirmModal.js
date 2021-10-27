@@ -50,4 +50,8 @@ ConfirmModal.propTypes = {
   isDisplayed: PropTypes.bool.isRequired,
 };
 
+ConfirmModal.defaultProps = {
+  content: undefined,
+};
+
 export default ConfirmModal;

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AlertModalButton from './AlertModal/AlertModalButton/AlertModalButton';
-import ConfirmModalButton from './ConfirmModal/ConfirmModalButton/ConfirmModalButton';
-import ContentModalButton from './ContentModal/ContentModalButton/ContentModalButton';
-import PhotoModalButton from './PhotoModal/PhotoModalButton/PhotoModalButton';
+import { AlertModalButton } from './AlertModal/AlertModalButton/AlertModalButton';
+import { ConfirmModalButton } from './ConfirmModal/ConfirmModalButton/ConfirmModalButton';
+import { ContentModalButton } from './ContentModal/ContentModalButton/ContentModalButton';
+import { PhotoModalButton } from './PhotoModal/PhotoModalButton/PhotoModalButton';
 
 /**
  * Modal UI component for displaying content in isolation
@@ -103,4 +103,17 @@ Modal.propTypes = {
    * This is an optional prop to be used with modals of type 'content'.
    */
   contentTitle: PropTypes.string,
+};
+
+Modal.defaultProps = {
+  cancelLabel: undefined,
+  closeLabel: undefined,
+  confirmAction: undefined,
+  confirmLabel: undefined,
+  confirmType: undefined,
+  content: undefined,
+  onClose: undefined,
+  onOpen: undefined,
+  photo: undefined,
+  contentTitle: undefined,
 };

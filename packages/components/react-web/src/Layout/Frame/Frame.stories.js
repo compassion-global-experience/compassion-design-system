@@ -11,7 +11,7 @@ export default {
 const BasicTemplate = (args) => (
   <Frame {...args}>
     <img
-      src="https://source.unsplash.com/h9Zr7Hq8yaA/800x600"
+      src="https://via.placeholder.com/800x600"
       alt='A random Unsplash result for "Rocky Mountains"'
     />
   </Frame>
@@ -23,7 +23,7 @@ Basic.args = { ratio: '16:9' };
 const WithObjectPositionTemplate = (args) => (
   <Frame {...args}>
     <img
-      src="https://source.unsplash.com/h9Zr7Hq8yaA/800x600"
+      src="https://via.placeholder.com/800x600"
       alt='A random Unsplash result for "Rocky Mountains"'
     />
   </Frame>

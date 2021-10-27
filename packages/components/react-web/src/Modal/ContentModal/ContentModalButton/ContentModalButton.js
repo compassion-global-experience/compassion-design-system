@@ -46,7 +46,7 @@ export const ContentModalButton = ({
 };
 
 ContentModalButton.propTypes = {
-  content: PropTypes.any.isRequired,
+  content: PropTypes.string.isRequired,
   onClose: PropTypes.func,
   onOpen: PropTypes.func,
   title: PropTypes.string,

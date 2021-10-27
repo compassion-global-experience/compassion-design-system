@@ -12,10 +12,13 @@ export const Thumbnail = ({ data, onChange, ...props }) => {
 
   const theme = useTheme();
 
-  const handleSelect = useCallback((newImg) => {
-    onChange(newImg);
-    setSelected(newImg);
-  }, []);
+  const handleSelect = useCallback(
+    (newImg) => {
+      onChange(newImg);
+      setSelected(newImg);
+    },
+    [onChange]
+  );
 
   return (
     <div css={thumbnailStyles(theme.component.input)} {...props}>

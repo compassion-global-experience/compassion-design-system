@@ -45,6 +45,7 @@ export const Select = ({
 
   return (
     <div className="select-group" css={selectStyles(theme)}>
+      {/* eslint-disable-next-line jsx-a11y/no-onchange */}
       <select
         id={props.id || selectId}
         value={options.indexOf(value)}
