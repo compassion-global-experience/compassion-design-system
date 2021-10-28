@@ -23,6 +23,7 @@ export const Image = ({
   maxHeight,
   objectFit,
   objectPosition,
+  ...props
 }) => {
   const ref = useRef(null);
   const [currentSrc, setCurrentSrc] = useState(null);
@@ -84,7 +85,7 @@ export const Image = ({
   ]);
 
   return (
-    <figure className="gds-image" ref={ref}>
+    <figure className="gds-image" ref={ref} {...props}>
       <img
         className="gds-image__photo"
         src={currentSrc}

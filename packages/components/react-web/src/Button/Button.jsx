@@ -23,9 +23,7 @@ export const Button = ({
   primary,
   size,
   label,
-  disabled,
   asLink,
-  onClick,
   children,
   ...props
 }) => {
@@ -39,8 +37,6 @@ export const Button = ({
         { 'button--primary': primary },
         { [`button--${size}`]: size }
       )}
-      disabled={disabled}
-      onClick={onClick}
       {...props}
     >
       {label || children}
@@ -54,8 +50,6 @@ export const Button = ({
         { 'button--primary': primary },
         { [`button--${size}`]: size }
       )}
-      disabled={disabled}
-      onClick={onClick}
       {...props}
     >
       {label || children}

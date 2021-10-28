@@ -14,7 +14,15 @@ import { inputStyles } from './Input.styles';
  * For accessibility purposes, every instance of a form element must be
  * accompanied by a label, even if it’s visually hidden in the interface.
  */
-export const Input = ({ type, size, label, disabled, validator, ...props }) => {
+export const Input = ({
+  type,
+  size,
+  label,
+  disabled,
+  validator,
+  id,
+  ...props
+}) => {
   // State used for text input fields
   const [value, setValue] = useState('');
   const [disable, setDisable] = useState(disabled);
@@ -24,8 +32,8 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
 
-  const [inputId] = useState(helpers.gdsId());
-  const [errorId] = useState(helpers.gdsId());
+  const inputId = id ?? helpers.gdsId();
+  const errorId = helpers.gdsId();
   const inline = type === 'radio' || type === 'checkbox';
 
   const inputRef = useRef(null);
@@ -70,40 +78,38 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
-      {type === 'currency' || type === 'creditcard' ? null : (
+      {type !== 'currency' && type !== 'creditcard' && (
         <>
           <input
-            id={props.id || inputId}
+            id={inputId}
             type={type || 'text'}
             value={value}
             checked={checked}
             disabled={disable}
             name={props.name || label}
-            {...props}
-            className={cx({
-              [`input--${size}`]: size !== 'medium' ? size : null,
-            })}
-            aria-describedby={errorMessage ? errorId : null}
+            className={cx({ [`input--${size}`]: !!size })}
+            aria-describedby={errorMessage && errorId}
             onChange={handleChange}
             onBlur={handleBlur}
             ref={inputRef}
+            {...props}
           />
 
-          <label htmlFor={props.id || inputId}>{label}</label>
+          <label htmlFor={inputId}>{label}</label>
 
-          {type === 'edit' ? (
+          {type === 'edit' && (
             <Edit
               type={type}
               label={label}
-              props={props}
               inputId={inputId}
               disable={disable}
               inputRef={inputRef}
               changeInputToEnabled={changeInputToEnabled}
               changeInputToDisabled={changeInputToDisabled}
               onButtonClick={handleBlur}
+              {...props}
             />
-          ) : null}
+          )}
 
           {errorMessage && !inline && (
             <small className="input-group__error-message" id={errorId}>
