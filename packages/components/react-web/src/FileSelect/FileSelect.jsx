@@ -19,7 +19,7 @@ export const FileSelect = ({ label, emptyStateLabel, id, ...props }) => {
     const fileNames = Array.from(inputEl.current.files).map(
       (file) => file.name
     );
-    setLabelText(fileNames.length > 0 ? fileNames.join(', ') : emptyStateLabel);
+    setLabelText(fileNames.join(', ') || emptyStateLabel);
   };
 
   const theme = useTheme().component.fileSelect;
