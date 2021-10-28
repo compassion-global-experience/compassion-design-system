@@ -11,41 +11,30 @@ const Edit = ({
   disable,
   changeInputToEnabled,
   onButtonClick,
-  id,
-  ...props
 }) => {
-  const buttonId = id ?? inputId;
-
   return (
     <>
       {type === 'edit' && !disable && (
-        <button
-          type="button"
-          aria-controls={buttonId}
-          onClick={onButtonClick}
-          {...props}
-        >
-          <CheckIcon width={30} height={30} />
+        <button type="button" aria-controls={inputId} onClick={onButtonClick}>
+          <CheckIcon width="30" height="30" />
         </button>
       )}
       {disable && (
         <button
           type="button"
-          aria-controls={buttonId}
+          aria-controls={inputId}
           onClick={changeInputToEnabled}
-          {...props}
         >
-          <EditIcon width={24} height={24} />
+          <EditIcon width="24" height="24" />
         </button>
       )}
       <button
         type="button"
-        aria-controls={buttonId}
+        aria-controls={inputId}
         aria-hidden="true"
         className="clear"
-        {...props}
       >
-        <ClearIcon width={30} height={30} />
+        <ClearIcon width="30" height="30" />
       </button>
     </>
   );
@@ -57,11 +46,6 @@ Edit.propTypes = {
   disable: PropTypes.bool.isRequired,
   changeInputToEnabled: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
-  id: PropTypes.string,
-};
-
-Edit.defaultProps = {
-  id: undefined,
 };
 
 export default Edit;

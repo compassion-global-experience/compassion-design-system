@@ -21,10 +21,12 @@ export const Input = ({
   disabled,
   validator,
   id,
+  value: defaultValue,
+  onChange,
   ...props
 }) => {
   // State used for text input fields
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(defaultValue);
   const [disable, setDisable] = useState(disabled);
   const [touched, setTouched] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -48,7 +50,7 @@ export const Input = ({
     setValue(e.target.value);
     setChecked(e.target.checked);
     if (validator && touched) setErrorMessage(validator(e.target.value));
-    if (props.onChange) props.onChange();
+    if (onChange) onChange(e.target.value);
   };
 
   const handleBlur = (e) => {
@@ -66,7 +68,6 @@ export const Input = ({
       setDisable(true);
     }
   };
-
   const theme = useTheme().component.input;
 
   return (
@@ -100,14 +101,10 @@ export const Input = ({
           {type === 'edit' && (
             <Edit
               type={type}
-              label={label}
               inputId={inputId}
               disable={disable}
-              inputRef={inputRef}
               changeInputToEnabled={changeInputToEnabled}
-              changeInputToDisabled={changeInputToDisabled}
               onButtonClick={handleBlur}
-              {...props}
             />
           )}
 
@@ -166,6 +163,7 @@ Input.propTypes = {
   // eslint-disable-next-line react/require-default-props
   name: PropTypes.string,
   onChange: PropTypes.func,
+  value: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -175,4 +173,5 @@ Input.defaultProps = {
   validator: undefined,
   required: false,
   onChange: undefined,
+  value: '',
 };
