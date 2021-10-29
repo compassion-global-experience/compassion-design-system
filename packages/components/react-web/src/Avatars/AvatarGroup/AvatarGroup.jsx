@@ -1,21 +1,22 @@
 import PropTypes from 'prop-types';
 
-
 import { cx } from '@emotion/css';
 import avatarGroupStyles from './AvatarGroup.styles';
 import { useTheme } from '../../hooks';
 
 export const AvatarGroup = ({ size, overlap, gapColor, shape, ...props }) => {
   const theme = useTheme();
+  const isDefaultSize = size === AvatarGroup.defaultProps.size;
+  const isDefaultShape = shape === AvatarGroup.defaultProps.shape;
+  const isDefaultOverlap = shape === AvatarGroup.defaultProps.overlap;
 
   return (
     <div
       css={avatarGroupStyles(theme.component.avatarGroup, gapColor)}
       className={cx('avatar-group', {
-        [`avatar-group--${size}`]: size !== AvatarGroup.defaultProps.size,
-        [`avatar-group--${shape}`]: shape !== AvatarGroup.defaultProps.shape,
-        [`avatar-group--overlap-${overlap}`]:
-          overlap !== AvatarGroup.defaultProps.overlap,
+        [`avatar-group--${size}`]: !isDefaultSize,
+        [`avatar-group--${shape}`]: !isDefaultShape,
+        [`avatar-group--overlap-${overlap}`]: !isDefaultOverlap,
       })}
       {...props}
     >
