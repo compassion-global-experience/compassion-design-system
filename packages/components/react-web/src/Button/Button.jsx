@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 import { cx } from '@emotion/css';
 import buttonStyles from './Button.styles';
 import { useTheme } from '../hooks';
@@ -24,42 +23,37 @@ export const Button = ({
   primary,
   size,
   label,
-  disabled,
   asLink,
-  onClick,
+  children,
   ...props
 }) => {
   const theme = useTheme();
+  const withSize = Boolean(size);
 
-  return !asLink ? (
+  return asLink ? (
+    <a
+      css={buttonStyles(theme.component.button)}
+      className={cx(
+        { 'button--link': true },
+        { 'button--primary': primary },
+        { [`button--${size}`]: withSize }
+      )}
+      {...props}
+    >
+      {label || children}
+    </a>
+  ) : (
     <button
       type="button"
       css={buttonStyles(theme.component.button)}
       className={cx(
         { 'button--primary': primary },
-        { [`button--${size}`]: size }
+        { [`button--${size}`]: withSize }
       )}
-      disabled={disabled}
-      onClick={onClick}
       {...props}
     >
-      {label || props.children}
+      {label || children}
     </button>
-  ) : (
-    <a
-      href={props.href}
-      css={buttonStyles(theme.component.button)}
-      className={cx(
-        { 'button--link': true },
-        { 'button--primary': primary },
-        { [`button--${size}`]: size }
-      )}
-      disabled={disabled}
-      onClick={onClick}
-      {...props}
-    >
-      {label || props.children}
-    </a>
   );
 };
 
@@ -85,6 +79,13 @@ Button.propTypes = {
    */
   asLink: PropTypes.bool,
   /**
+   * Does the Button trigger navigation? If so, the href is required.
+   */
+  href: (p) =>
+    p.asLink &&
+    !p.href &&
+    new Error('"href" is required if you use button as link'),
+  /**
    * Optional click handler
    */
   onClick: PropTypes.func,
@@ -95,5 +96,6 @@ Button.defaultProps = {
   size: 'medium',
   disabled: false,
   asLink: false,
+  href: null,
   onClick: undefined,
 };
