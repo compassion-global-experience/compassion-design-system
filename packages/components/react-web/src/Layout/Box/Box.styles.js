@@ -1,12 +1,10 @@
 import { css } from '@emotion/react';
 
 const paddingPartial = (padding) => {
-  return padding !== 0
-    ? css`
-        --gds-box-padding: ${padding === `0` ? `0px` : padding};
-        padding: var(--gds-box-padding);
-      `
-    : css``;
+  return css`
+    --gds-box-padding: ${padding};
+    padding: var(--gds-box-padding);
+  `;
 };
 
 export default (theme) => {
