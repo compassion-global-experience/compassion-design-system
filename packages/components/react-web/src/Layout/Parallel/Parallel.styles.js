@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 export default (theme) => {
   return css`
-    --gds-parallel-space: ${theme.space === `0` ? `0px` : theme.space};
+    --gds-parallel-space: ${theme.space ?? '0'};
     overflow: hidden;
 
     & > * {
@@ -14,11 +14,10 @@ export default (theme) => {
     & > * > * {
       margin: calc(var(--gds-parallel-space) / 2);
 
-      ${theme.sideWidth !== undefined
-        ? css`
-            flex-basis: ${theme.sideWidth};
-          `
-        : css``}
+      ${theme.sideWidth &&
+      css`
+        flex-basis: ${theme.sideWidth};
+      `}
 
       flex-grow: 1;
     }
