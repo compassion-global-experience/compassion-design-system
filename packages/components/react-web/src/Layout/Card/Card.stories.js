@@ -28,7 +28,12 @@ Basic.args = {
 const ImageCardTemplate = (args) => (
   <Card
     {...args}
-    image={<img src="https://source.unsplash.com/lTTt0px6zkM/1200x1600" />}
+    image={
+      <img
+        alt="Black canyon of the gunnison national park"
+        src="https://source.unsplash.com/lTTt0px6zkM/1200x1600"
+      />
+    }
   >
     <h3>Use whatever heading level is appropriate for your context!</h3>
     <p>
