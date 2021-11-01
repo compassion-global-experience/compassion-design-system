@@ -2,20 +2,23 @@ import React from 'react';
 import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 
-const CreditCard = ({ props, label, inputId }) => {
+const CreditCard = ({ id, label }) => {
   return (
-    <React.Fragment>
-      <label htmlFor={props.id || inputId}>{label}</label>
+    <>
+      <label htmlFor={id}>{label}</label>
       <NumberFormat format="#### #### #### ####" mask="_" />
-    </React.Fragment>
+    </>
   );
 };
 
 CreditCard.propTypes = {
-  close: PropTypes.func.isRequired,
-  content: PropTypes.any.isRequired,
-  isDisplayed: PropTypes.bool.isRequired,
-  title: PropTypes.string,
+  id: PropTypes.string,
+  label: PropTypes.string,
+};
+
+CreditCard.defaultProps = {
+  id: undefined,
+  label: undefined,
 };
 
 export default CreditCard;

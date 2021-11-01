@@ -2,28 +2,22 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import NumberFormat from 'react-number-format';
 
-
-import { inputStyles } from './Input.styles';
-
-const ContentModal = ({ close, content, isDisplayed, title }) => {
-  const [symbol, setSymbol] = useState('$');
+const ContentModal = ({ options, value, handleChange, ...props }) => {
+  const [symbol, setSymbol] = useState(value);
 
   const updateSymbol = (e) => {
     setSymbol(e.target.value);
+    handleChange(e.target.value);
   };
 
   return (
     <div>
       <select onChange={updateSymbol}>
-        <option label="USD" value="$" selected>
-          USD
-        </option>
-        <option label="EUR" value="€">
-          EUR
-        </option>
-        <option label="JPY" value="¥">
-          JPY
-        </option>
+        {options.map((o, idx) => (
+          <option label={o.label} value={o.value} key={o.value} selected={!idx}>
+            {o.label}
+          </option>
+        ))}
       </select>
       <NumberFormat thousandSeparator prefix={symbol} placeholder="100" />
     </div>
@@ -31,10 +25,19 @@ const ContentModal = ({ close, content, isDisplayed, title }) => {
 };
 
 ContentModal.propTypes = {
-  close: PropTypes.func.isRequired,
-  content: PropTypes.any.isRequired,
-  isDisplayed: PropTypes.bool.isRequired,
-  title: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  value: PropTypes.string,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+    })
+  ),
+};
+
+ContentModal.defaultProps = {
+  value: '$',
+  options: [],
 };
 
 export default ContentModal;
