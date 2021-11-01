@@ -15,8 +15,9 @@ export const Frame = ({
     <div
       css={frameStyles({ denominator, numerator, objectPosition })}
       className={`gds-frame ${className}`}
+      {...props}
     >
-      {props.children}
+      {children}
     </div>
   );
 };
