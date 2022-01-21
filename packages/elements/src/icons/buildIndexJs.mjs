@@ -27,7 +27,7 @@ fs.readdir(svgFolder, (err, svgs) => {
   svgs.forEach((svg) => {
     const name = svg.replace(/\.svg/, '');
 
-    svgExports += `export const ${name} = replaceFill(raw('./svg/${svg}'))\n`;
+    svgExports += `export const ${name} = replaceFill(raw('./svg/${svg}'));\n`;
   });
 
   fs.writeFile(`${path.resolve()}/index.js`, svgExports, (er) => {

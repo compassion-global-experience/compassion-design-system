@@ -17,7 +17,8 @@
     "directory": "packages/elements"
   },
   "scripts": {
-    "build": "microbundle --no-compress --format modern,cjs && syncdir src/logos/png dist/logos/png",
+    "build": "microbundle --no-compress --format modern,cjs && yarn copy-assets",
+    "copy-assets": "syncdir src/logos/png dist/logos/png && syncdir src/icons/svg dist/svg",
     "start": "microbundle watch --no-compress --format modern,cjs",
     "test": "echo Hello from elements"
   },

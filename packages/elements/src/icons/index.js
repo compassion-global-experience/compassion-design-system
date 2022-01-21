@@ -5,9 +5,7 @@
 import raw from 'raw.macro';
 
 const replaceFill = (rawSvg) => {
-  return rawSvg
-    .replace('fill="none"', 'fill="currentColor"')
-    .replace(/fill="[^"]+"/, '');
+  return rawSvg.replace('fill="none"', 'fill="currentColor"').replace(/fill="[^"]+"/g, '');
 };
 
 export const ArrowClockwise = replaceFill(raw('./svg/ArrowClockwise.svg'));
@@ -23,9 +21,7 @@ export const ChevronDown = replaceFill(raw('./svg/ChevronDown.svg'));
 export const ChevronLeft = replaceFill(raw('./svg/ChevronLeft.svg'));
 export const ChevronRight = replaceFill(raw('./svg/ChevronRight.svg'));
 export const ChevronUp = replaceFill(raw('./svg/ChevronUp.svg'));
-export const ClockCounterClockwise = replaceFill(
-  raw('./svg/ClockCounterClockwise.svg')
-);
+export const ClockCounterClockwise = replaceFill(raw('./svg/ClockCounterClockwise.svg'));
 export const Compass = replaceFill(raw('./svg/Compass.svg'));
 export const CreditCard = replaceFill(raw('./svg/CreditCard.svg'));
 export const Edit = replaceFill(raw('./svg/Edit.svg'));
