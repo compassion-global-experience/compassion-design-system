@@ -18,7 +18,7 @@ function IconEdit(props) {
       css={iconStyles}
       {...props}
     >
-      <path clipRule="evenodd" d="M0 0h24v24H0z" fill="none" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M0 0h24v24H0z" fill="none" />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
