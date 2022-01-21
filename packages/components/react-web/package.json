@@ -32,7 +32,7 @@
   },
   "scripts": {
     "mb": "microbundle --jsx jsx --jsxImportSource @emotion/react --format modern,cjs",
-    "build": "yarn run mb --no-compress",
+    "build": "yarn svgr && yarn run mb --no-compress",
     "watch": "yarn mb watch",
     "start": "run-s storybook",
     "svgr": "svgr ../../elements/src/icons/svg",
