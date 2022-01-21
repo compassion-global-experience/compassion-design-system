@@ -21,11 +21,9 @@
     "@emotion/css": "^11.5.0",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
-    "@svgr/core": "^5.5.0",
     "prop-types": "^15.7.2",
     "react-file-drop": "^3.1.2",
-    "react-number-format": "^4.7.3",
-    "svgo": "^2.7.0"
+    "react-number-format": "^4.7.3"
   },
   "repository": {
     "type": "git",
@@ -34,9 +32,10 @@
   },
   "scripts": {
     "mb": "microbundle --jsx jsx --jsxImportSource @emotion/react --format modern,cjs",
-    "build": "yarn run mb --no-compress",
+    "build": "yarn svgr && yarn run mb --no-compress",
     "watch": "yarn mb watch",
     "start": "run-s storybook",
+    "svgr": "svgr ../../elements/src/icons/svg",
     "prepublishOnly": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
@@ -69,6 +68,7 @@
     "@storybook/addon-links": "^6.3.7",
     "@storybook/react": "^6.3.7",
     "@storybook/theming": "^6.3.7",
+    "@svgr/cli": "^6.2.0",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.11.0",
@@ -92,7 +92,8 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "react-syntax-highlighter": "^15.4.4",
-    "sanitize.css": "^13.0.0"
+    "sanitize.css": "^13.0.0",
+    "svgo": "^2.7.0"
   },
   "private": false,
   "gitHead": "4938ee413e56e8669ac3693161e6215490a1d114",

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import IconSkippy from './icons/IconSkippy';
-import IconGlobe from './icons/IconGlobe';
+import IconSkippy from './icons/Skippy';
+import IconGlobe from './icons/Globe';
 import IconDocs from './Icon.docs.mdx';
-import IconHome from './icons/IconHome';
-import IconPin from './icons/IconPin';
+import IconHome from './icons/Home';
+import IconPin from './icons/Pin';
 
 import { InlineIcon as IWT } from './InlineIcon';
 
