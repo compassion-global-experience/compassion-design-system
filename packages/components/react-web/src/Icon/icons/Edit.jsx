@@ -7,21 +7,26 @@ import iconStyles from '../Icon.styles';
 
 const SvgEdit = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
   >
-    <path clipRule="evenodd" d="M0 0h24v24H0z" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M0 0h24v24H0z"
+      fill="transparent"
+    />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );

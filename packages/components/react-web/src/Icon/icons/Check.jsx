@@ -7,11 +7,11 @@ import iconStyles from '../Icon.styles';
 
 const SvgCheck = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
@@ -20,7 +20,7 @@ const SvgCheck = (props) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M27.707 8.294a1 1 0 0 1 0 1.414l-14 14a1 1 0 0 1-1.414 0l-7-7a1 1 0 1 1 1.414-1.414L13 21.585 26.293 8.294a1 1 0 0 1 1.414 0Z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );

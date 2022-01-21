@@ -3,10 +3,8 @@ module.exports = {
     {
       name: 'preset-default',
       params: {
-        overrides: {
-          removeDesc: false,
-          removeTitle: false,
-        },
+        removeDesc: false,
+        removeTitle: false,
       },
     },
   ],

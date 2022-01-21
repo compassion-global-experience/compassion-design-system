@@ -7,11 +7,11 @@ import iconStyles from '../Icon.styles';
 
 const SvgChevronLeft = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
@@ -20,7 +20,7 @@ const SvgChevronLeft = (props) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M20.707 5.293a1 1 0 0 1 0 1.414L11.414 16l9.293 9.293a1 1 0 0 1-1.414 1.414l-10-10a1 1 0 0 1 0-1.414l10-10a1 1 0 0 1 1.414 0Z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );

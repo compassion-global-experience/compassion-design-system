@@ -7,11 +7,11 @@ import iconStyles from '../Icon.styles';
 
 const SvgWheelchair = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
@@ -20,19 +20,19 @@ const SvgWheelchair = (props) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M11.986 3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM8.486 5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M11.986 6.5a1 1 0 0 1 1 1v8h10a1 1 0 0 1 .894.553l3.612 7.224 2.178-.726a1 1 0 0 1 .632 1.898l-3 1a1 1 0 0 1-1.21-.502L22.367 17.5H11.986a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M12.986 13a7 7 0 1 0 6.986 7.438 1 1 0 1 1 1.996.125A9 9 0 1 1 12.986 11h7a1 1 0 1 1 0 2h-7Z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );

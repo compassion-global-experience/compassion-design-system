@@ -7,11 +7,11 @@ import iconStyles from '../Icon.styles';
 
 const SvgClockCounterClockwise = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
@@ -20,19 +20,19 @@ const SvgClockCounterClockwise = (props) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M16 9a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M15.134 15.5a1 1 0 0 1 1.366-.366l5.196 3a1 1 0 0 1-1 1.732l-5.196-3a1 1 0 0 1-.366-1.366ZM3.979 6.464a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-5a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M13.659 4.23a12 12 0 1 1-6.144 20.255 1 1 0 1 1 1.414-1.414 10 10 0 1 0 0-14.142l-4.243 4.243a1 1 0 0 1-1.414-1.415l4.243-4.242a12 12 0 0 1 6.144-3.284Z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );

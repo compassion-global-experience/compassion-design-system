@@ -7,11 +7,11 @@ import iconStyles from '../Icon.styles';
 
 const SvgCamera = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
@@ -20,13 +20,13 @@ const SvgCamera = (props) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M11.167 4.445A1 1 0 0 1 12 4h8a1 1 0 0 1 .832.445L22.535 7H26a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V10a3 3 0 0 1 3-3h3.464l1.703-2.555ZM12.534 6l-1.703 2.555A1 1 0 0 1 10 9H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h20a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1h-4a1 1 0 0 1-.833-.445L19.464 6h-6.93Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M16 13a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-5.5 3.5a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0Z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );

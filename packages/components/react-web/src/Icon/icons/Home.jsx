@@ -7,11 +7,11 @@ import iconStyles from '../Icon.styles';
 
 const SvgHome = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
@@ -20,19 +20,19 @@ const SvgHome = (props) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M14.654 3.87a2 2 0 0 1 2.69 0l10.001 9.092a2 2 0 0 1 .655 1.48V27a1 1 0 1 1-2 0V14.442L16 5.35 6 14.442V27a1 1 0 1 1-2 0V14.442a2 2 0 0 1 .655-1.48l9.999-9.091Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M1 27a1 1 0 0 1 1-1h28a1 1 0 1 1 0 2H2a1 1 0 0 1-1-1Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M12 18.999a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0v-7h-4v7a1 1 0 1 1-2 0v-8Z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );

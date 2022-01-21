@@ -7,11 +7,11 @@ import iconStyles from '../Icon.styles';
 
 const SvgMenu = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
@@ -20,7 +20,7 @@ const SvgMenu = (props) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M4 16a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1ZM4 8a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1ZM4 24a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );

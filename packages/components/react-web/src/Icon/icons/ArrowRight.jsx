@@ -7,11 +7,11 @@ import iconStyles from '../Icon.styles';
 
 const SvgArrowRight = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
@@ -20,13 +20,13 @@ const SvgArrowRight = (props) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M28 16a1 1 0 0 1-1 1H5a1 1 0 1 1 0-2h22a1 1 0 0 1 1 1Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M17.293 25.707a1 1 0 0 1 0-1.414L25.586 16l-8.293-8.293a1 1 0 0 1 1.414-1.414l9 9a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-1.414 0Z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );

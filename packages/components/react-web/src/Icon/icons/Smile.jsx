@@ -7,11 +7,11 @@ import iconStyles from '../Icon.styles';
 
 const SvgSmile = (props) => (
   <svg
-    width={props.width}
-    height={props.height}
-    viewBox="0 0 32 32"
+    width="1em"
+    height="1em"
     fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     className="gds-icon"
     css={iconStyles}
     {...props}
@@ -20,17 +20,17 @@ const SvgSmile = (props) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M16 5C9.925 5 5 9.925 5 16s4.925 11 11 11 11-4.925 11-11S22.075 5 16 5ZM3 16C3 8.82 8.82 3 16 3s13 5.82 13 13-5.82 13-13 13S3 23.18 3 16Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M21.698 18.134a1 1 0 0 1 .365 1.366 7.003 7.003 0 0 1-12.126 0 1 1 0 1 1 1.731-1 5.002 5.002 0 0 0 8.663-.001 1 1 0 0 1 1.367-.365Z"
-      fill="#000"
+      fill={props.fill}
     />
     <path
       d="M11.5 15a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM20.5 15a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-      fill="#000"
+      fill={props.fill}
     />
   </svg>
 );
