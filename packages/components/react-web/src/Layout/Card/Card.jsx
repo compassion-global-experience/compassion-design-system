@@ -37,7 +37,9 @@ export const Card = ({
         <Stack className="gds-card__body">{children}</Stack>
         {/* If CTA text, render button and make button—not card—focusable. */}
         {/* If no CTA text, whole card will have focused appearance */}
-        <Frame className={cx('gds-card__image', className)}>{image}</Frame>
+        {Boolean(image) && (
+          <Frame className={cx('gds-card__image', className)}>{image}</Frame>
+        )}
       </NestedEl>
     </El>
   );
