@@ -10,11 +10,12 @@ export const Frame = ({
   ...props
 }) => {
   const [, denominator, numerator] = ratio.match(/(\d+):(\d+)/) ?? [];
+  const classNames = ['gds-frame', className].filter(Boolean).join(' ');
 
   return (
     <div
       css={frameStyles({ denominator, numerator, objectPosition })}
-      className={`gds-frame ${className}`}
+      className={classNames}
       {...props}
     >
       {children}
