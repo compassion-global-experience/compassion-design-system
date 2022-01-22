@@ -25,6 +25,7 @@ export const Button = ({
   label,
   asLink,
   children,
+  href,
   ...props
 }) => {
   const theme = useTheme();
@@ -32,6 +33,7 @@ export const Button = ({
 
   return asLink ? (
     <a
+      href={href}
       css={buttonStyles(theme.component.button)}
       className={cx(
         { 'button--link': true },
