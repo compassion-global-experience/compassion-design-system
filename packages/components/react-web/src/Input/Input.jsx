@@ -54,13 +54,8 @@ export const Input = ({
   };
 
   const handleBlur = (e) => {
-    if (type === 'edit') setDisable(!disable);
     setTouched(true);
     if (validator) setErrorMessage(validator(e.target.value));
-  };
-
-  const changeInputToEnabled = () => {
-    setDisable(false);
   };
 
   const theme = useTheme().component.input;
@@ -97,8 +92,9 @@ export const Input = ({
             <Edit
               id={inputId}
               disable={disable}
-              changeInputToEnabled={changeInputToEnabled}
-              onButtonClick={handleBlur}
+              value={value}
+              setDisabledMode={setDisable}
+              onTextChange={handleChange}
             />
           )}
 
