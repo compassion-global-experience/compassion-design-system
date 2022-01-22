@@ -5,10 +5,10 @@ import CheckIcon from '../Icon/icons/Check';
 import ClearIcon from '../Icon/icons/X';
 import EditIcon from '../Icon/icons/Edit';
 
-const Edit = ({ type, id, disable, changeInputToEnabled, onButtonClick }) => {
+const Edit = ({ id, disable, changeInputToEnabled, onButtonClick }) => {
   return (
     <>
-      {type === 'edit' && !disable && (
+      {!disable && (
         <button type="button" aria-controls={id} onClick={onButtonClick}>
           <CheckIcon width="30" height="30" />
         </button>
@@ -31,7 +31,6 @@ const Edit = ({ type, id, disable, changeInputToEnabled, onButtonClick }) => {
 };
 
 Edit.propTypes = {
-  type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   disable: PropTypes.bool.isRequired,
   changeInputToEnabled: PropTypes.func.isRequired,

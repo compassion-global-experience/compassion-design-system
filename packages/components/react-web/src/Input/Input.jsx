@@ -95,7 +95,6 @@ export const Input = ({
 
           {type === 'edit' && (
             <Edit
-              type={type}
               id={inputId}
               disable={disable}
               changeInputToEnabled={changeInputToEnabled}
