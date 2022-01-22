@@ -53,7 +53,7 @@ jobs:
           name: storybook bundles
       # We don't need to install all of our dependencies but percy
       - name: Install dependencies
-        run: yarn add --silent --no-lockfile @percy/cli @percy/storybook@4.0.1
+        run: yarn add --silent --no-lockfile @percy/cli @percy/storybook
       - name: Capture snapshots
         env:
           PERCY_TOKEN: ${{ secrets[matrix.token] }}
