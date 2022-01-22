@@ -34,8 +34,8 @@ export const Input = ({
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
 
-  const inputId = id ?? helpers.gdsId();
-  const errorId = helpers.gdsId();
+  const inputId = useState(() => id || helpers.gdsId());
+  const [errorId] = useState(helpers.gdsId);
   const inline = type === 'radio' || type === 'checkbox';
 
   const inputRef = useRef(null);
