@@ -29,7 +29,7 @@ export const Card = ({
         border,
         backgroundColor,
       })}
-      className={cx({ 'gds-card': true, ...elementClass })}
+      className={cx('gds-card', elementClass)}
       type={type}
       {...props}
     >
@@ -37,9 +37,7 @@ export const Card = ({
         <Stack className="gds-card__body">{children}</Stack>
         {/* If CTA text, render button and make button—not card—focusable. */}
         {/* If no CTA text, whole card will have focused appearance */}
-        <Frame className={cx('gds-card__image', { [className]: className })}>
-          {image}
-        </Frame>
+        <Frame className={cx('gds-card__image', className)}>{image}</Frame>
       </NestedEl>
     </El>
   );
@@ -50,9 +48,7 @@ const getRenderElement = (renderAs) => {
     return {
       El: 'a',
       isClickable: true,
-      elementClass: {
-        'gds-card--anchor': true,
-      },
+      elementClass: 'gds-card--anchor',
     };
   }
 
@@ -60,9 +56,7 @@ const getRenderElement = (renderAs) => {
     return {
       El: 'button',
       isClickable: true,
-      elementClass: {
-        'gds-card--button': true,
-      },
+      elementClass: 'gds-card--button',
       type: 'button',
     };
   }
