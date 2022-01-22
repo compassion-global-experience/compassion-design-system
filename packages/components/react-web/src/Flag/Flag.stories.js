@@ -18,7 +18,7 @@ export default {
     },
   },
 };
-export const Sizing = (args) => (
+export const Sizing = () => (
   <>
     <FlagAustralia height="4rem" />
     <FlagAustralia height="7vw" />

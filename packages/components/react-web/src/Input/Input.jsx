@@ -4,8 +4,6 @@ import { helpers } from '@compassion-gds/elements';
 
 import { cx } from '@emotion/css';
 import { useTheme } from '../hooks';
-// import CreditCard from './CreditCard';
-// import Currency from './Currency';
 import Edit from './Edit';
 import { inputStyles } from './Input.styles';
 
@@ -16,9 +14,19 @@ import { inputStyles } from './Input.styles';
  * For accessibility purposes, every instance of a form element must be
  * accompanied by a label, even if it’s visually hidden in the interface.
  */
-export const Input = ({ type, size, label, disabled, validator, ...props }) => {
+export const Input = ({
+  id,
+  type,
+  size,
+  label,
+  disabled,
+  validator,
+  value: defaultValue,
+  onChange,
+  ...props
+}) => {
   // State used for text input fields
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(defaultValue);
   const [disable, setDisable] = useState(disabled);
   const [touched, setTouched] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,8 +34,8 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
   // State used for radio buttons and checkboxes
   const [checked, setChecked] = useState(false);
 
-  const [inputId] = useState(helpers.gdsId());
-  const [errorId] = useState(helpers.gdsId());
+  const inputId = useState(() => id || helpers.gdsId());
+  const [errorId] = useState(helpers.gdsId);
   const inline = type === 'radio' || type === 'checkbox';
 
   const inputRef = useRef(null);
@@ -42,23 +50,12 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
     setValue(e.target.value);
     setChecked(e.target.checked);
     if (validator && touched) setErrorMessage(validator(e.target.value));
-    if (props.onChange) props.onChange();
+    if (onChange) onChange(e.target.value);
   };
 
   const handleBlur = (e) => {
-    if (type === 'edit') setDisable(!disable);
     setTouched(true);
     if (validator) setErrorMessage(validator(e.target.value));
-  };
-
-  const changeInputToEnabled = () => {
-    setDisable(false);
-  };
-
-  const changeInputToDisabled = () => {
-    if (type === 'edit') {
-      setDisable(true);
-    }
   };
 
   const theme = useTheme().component.input;
@@ -72,53 +69,41 @@ export const Input = ({ type, size, label, disabled, validator, ...props }) => {
         [`input-group--error`]: errorMessage,
       })}
     >
-      {/* {type === 'creditcard' && (
-        <CreditCard inputId={inputId} label={label} props={props} />
-      )}
-      {type === 'currency' && <Currency />} */}
-
-      {/* {type === 'currency' || type === 'creditcard' ? null : ( */}
-      {type === 'currency' || type === 'creditcard' ? null : (
-        <React.Fragment>
+      {type !== 'currency' && type !== 'creditcard' && (
+        <>
           <input
-            id={props.id || inputId}
+            id={inputId}
             type={type || 'text'}
             value={value}
             checked={checked}
             disabled={disable}
             name={props.name || label}
-            {...props}
-            className={cx({
-              [`input--${size}`]: size !== 'medium' ? size : null,
-            })}
-            aria-describedby={errorMessage ? errorId : null}
+            className={cx({ [`input--${size}`]: !!size })}
+            aria-describedby={errorMessage && errorId}
             onChange={handleChange}
             onBlur={handleBlur}
             ref={inputRef}
+            {...props}
           />
 
-          <label htmlFor={props.id || inputId}>{label}</label>
+          <label htmlFor={inputId}>{label}</label>
 
-          {type === 'edit' ? (
+          {type === 'edit' && (
             <Edit
-              type={type}
-              label={label}
-              props={props}
-              inputId={inputId}
+              id={inputId}
               disable={disable}
-              inputRef={inputRef}
-              changeInputToEnabled={changeInputToEnabled}
-              changeInputToDisabled={changeInputToDisabled}
-              onButtonClick={handleBlur}
+              value={value}
+              setDisabledMode={setDisable}
+              onTextChange={handleChange}
             />
-          ) : null}
+          )}
 
           {errorMessage && !inline && (
             <small className="input-group__error-message" id={errorId}>
               {errorMessage}
             </small>
           )}
-        </React.Fragment>
+        </>
       )}
     </div>
   );
@@ -137,8 +122,6 @@ Input.propTypes = {
     'text',
     'date',
     'edit',
-    // 'currency',
-    // 'creditcard',
   ]),
   /**
    * How large should the input be?
@@ -170,6 +153,7 @@ Input.propTypes = {
   // eslint-disable-next-line react/require-default-props
   name: PropTypes.string,
   onChange: PropTypes.func,
+  value: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -179,4 +163,5 @@ Input.defaultProps = {
   validator: undefined,
   required: false,
   onChange: undefined,
+  value: '',
 };

@@ -1,13 +1,9 @@
 import PropTypes from 'prop-types';
 
-
 import { cx } from '@emotion/css';
 import inlineIcon from './InlineIcon.module.css';
-import { useTheme } from '../hooks';
 
-export const InlineIcon = ({ vertical, ...props }) => {
-  const theme = useTheme();
-
+export const InlineIcon = ({ vertical, children, ...props }) => {
   return (
     <span
       css={inlineIcon}
@@ -17,7 +13,7 @@ export const InlineIcon = ({ vertical, ...props }) => {
       )}
       {...props}
     >
-      {props.children}
+      {children}
     </span>
   );
 };

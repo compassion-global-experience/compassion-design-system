@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 import { cx } from '@emotion/css';
 
 import { useTheme } from '../../hooks';
@@ -15,17 +14,18 @@ export const Avatar = ({
   ...props
 }) => {
   const theme = useTheme();
-
-  const withImage = !!image;
+  const isDefaultSize = size === Avatar.defaultProps.size;
+  const isDefaultShape = shape === Avatar.defaultProps.shape;
+  const withImage = Boolean(image);
 
   return (
     <div
       css={avatarStyles(theme.component.avatar, color, withImage)}
       className={cx('avatar', {
-        [`avatar--${size}`]: size !== Avatar.defaultProps.size,
-        [`avatar--${shape}`]: shape !== Avatar.defaultProps.shape,
-        [`avatar--image`]: image,
-        [`avatar--abbreviation`]: abbreviation && !image,
+        [`avatar--${size}`]: !isDefaultSize,
+        [`avatar--${shape}`]: !isDefaultShape,
+        [`avatar--image`]: withImage,
+        [`avatar--abbreviation`]: abbreviation && !withImage,
       })}
       {...props}
     >

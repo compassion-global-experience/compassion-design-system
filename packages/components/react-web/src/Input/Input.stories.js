@@ -28,6 +28,7 @@ Edit.args = {
   label: 'Edit',
   disabled: false,
   type: 'edit',
+  value: 'Sample Value',
 };
 
 export const Radio = Template.bind({});

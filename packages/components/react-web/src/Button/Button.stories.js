@@ -47,4 +47,5 @@ AsLink.args = {
   asLink: true,
   label: "I'm actually a link",
   href: 'https://compassion.com',
+  target: '_blank',
 };

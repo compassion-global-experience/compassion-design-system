@@ -3,41 +3,42 @@ import PropTypes from 'prop-types';
 
 import { helpers } from '@compassion-gds/elements';
 
-
 import { fileSelectStyles } from './FileSelect.styles';
 
 import { Button } from '../Button';
-import { useTheme } from "../hooks";
+import { useTheme } from '../hooks';
 
 /**
  * UI component for uploading media
  */
-export const FileSelect = ({ label, emptyStateLabel, ...props }) => {
+export const FileSelect = ({ label, emptyStateLabel, id, ...props }) => {
   const inputEl = useRef(null);
   const [labelText, setLabelText] = useState(emptyStateLabel);
+
+  const handleClick = () => inputEl.current.click();
 
   const updateFiles = () => {
     const fileNames = Array.from(inputEl.current.files).map(
       (file) => file.name
     );
-    setLabelText(fileNames.length > 0 ? fileNames.join(', ') : emptyStateLabel);
+    setLabelText(fileNames.join(', ') || emptyStateLabel);
   };
 
   const theme = useTheme().component.fileSelect;
-  const id = props.id || helpers.id();
+  const inputId = id ?? helpers.id();
 
   return (
-    <div css={fileSelectStyles(theme)}>
+    <div css={fileSelectStyles(theme)} {...props}>
       <input
         type="file"
         ref={inputEl}
         onChange={updateFiles}
         name="fileSelect"
-        id={`gds-${id}`}
+        id={`gds-${inputId}`}
         multiple
         accept="image/*, video/*"
       />
-      <Button primary label={label} onClick={() => inputEl.current.click()} />
+      <Button primary label={label} onClick={handleClick} />
       <span className="file-select__summary" title={labelText}>
         {labelText}
       </span>
@@ -61,6 +62,7 @@ FileSelect.propTypes = {
 };
 
 FileSelect.defaultProps = {
+  id: undefined,
   label: 'Choose File(s)',
   emptyStateLabel: 'No files selected.',
 };

@@ -19,7 +19,7 @@ export const inputStyles = (theme) => {
       grid-row: 2;
 
       &.clear {
-        visibility: hidden;
+        color: ${theme.base.error.color};
       }
     }
 
