@@ -33,32 +33,26 @@ const paddingPartial = (padding) => {
   `;
 };
 
-const borderPartial = (isClickable, border, hasImage, imagePosition) => {
-  const zeroBorderProp = `border-${imagePosition}`;
+const borderPartial = (border) =>
+  border &&
+  css`
+    border: 1px solid ${color.gray.plus4};
+  `;
 
-  return border
-    ? css`
-        border: 1px solid ${color.gray.plus4};
-      `
-    : css``;
+const backgroundPartial = (backgroundColor) => {
+  let bgColor;
+
+  if (backgroundColor === 'transparent') bgColor = 'transparent';
+  else if (backgroundColor === 'white') bgColor = color.white.main;
+  else bgColor = color.gray.plus5;
+
+  return bgColor;
 };
 
 export default (theme) => {
-  let backgroundColor;
-
-  if (
-    theme.backgroundColor === 'transparent' ||
-    theme.backgroundColor === 'white'
-  ) {
-    backgroundColor = color[theme.backgroundColor];
-  } else {
-    backgroundColor = color.gray.plus4;
-  }
-
   return css`
     --gds-stack-space: 0;
-
-    background-color: ${backgroundColor};
+    background-color: ${backgroundPartial(theme.backgroundColor)};
 
     cursor: ${theme.isClickable ? `pointer` : `unset`};
 
@@ -92,12 +86,7 @@ export default (theme) => {
 
     .gds-card__body {
       ${paddingPartial(theme.padding)};
-      ${borderPartial(
-        theme.isClickable,
-        theme.border,
-        theme.hasImage,
-        theme.imagePosition
-      )};
+      ${borderPartial(theme.border)};
     }
 
     .gds-card__image {

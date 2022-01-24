@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 
-
-
 import reelStyles from './Reel.styles';
+
+const REEL_CLASS = `gds-reel`;
 
 export const Reel = ({
   itemWidth,
@@ -12,11 +12,12 @@ export const Reel = ({
   trackColor,
   thumbColor,
   hideScrollbar,
+  padding,
+  children,
   ...props
 }) => {
-  const classn = `gds-reel`;
   useEffect(() => {
-    const reels = Array.from(document.querySelectorAll(`.${classn}`));
+    const reels = Array.from(document.querySelectorAll(`.${REEL_CLASS}`));
     const toggleOverflowClass = (elem) => {
       elem.classList.toggle(
         'gds-reel--overflowing',
@@ -44,14 +45,16 @@ export const Reel = ({
       css={reelStyles({
         itemWidth,
         space,
+        padding,
         height,
         trackColor,
         thumbColor,
         hideScrollbar,
       })}
-      className={classn}
+      className={REEL_CLASS}
+      {...props}
     >
-      {props.children}
+      {children}
     </div>
   );
 };
@@ -59,6 +62,7 @@ export const Reel = ({
 Reel.propTypes = {
   itemWidth: PropTypes.string,
   space: PropTypes.string,
+  padding: PropTypes.string,
   height: PropTypes.string,
   trackColor: PropTypes.string,
   thumbColor: PropTypes.string,
@@ -68,6 +72,7 @@ Reel.propTypes = {
 Reel.defaultProps = {
   itemWidth: `auto`,
   space: `1.5rem`,
+  padding: `1.5rem`,
   height: `auto`,
   trackColor: `#000`,
   thumbColor: `#fff`,

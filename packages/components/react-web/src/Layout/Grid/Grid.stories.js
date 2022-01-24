@@ -45,7 +45,10 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/erxoxRcdMQA/300x200" />
+          <img
+            alt="Random nature photograph"
+            src="https://source.unsplash.com/erxoxRcdMQA/300x200"
+          />
         </Frame>
         <h3>Bow Mar</h3>
         <p>
@@ -59,7 +62,10 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/K1hq1atFeYs/300x200" />
+          <img
+            alt="Random nature photograph"
+            src="https://source.unsplash.com/K1hq1atFeYs/300x200"
+          />
         </Frame>
         <h3>Arriba</h3>
         <p>
@@ -73,7 +79,10 @@ const CardsTemplate = (args) => (
     <Box>
       <Stack space="1rem">
         <Frame ratio="3:2">
-          <img src="https://source.unsplash.com/5v2eickpK3s/300x200" />
+          <img
+            alt="Random nature photograph"
+            src="https://source.unsplash.com/5v2eickpK3s/300x200"
+          />
         </Frame>
         <h3>Castle Rock</h3>
         <p>

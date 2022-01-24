@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 
 import gridStyles from './Grid.styles';
 
-export const Grid = ({ minWidth, space, ...props }) => {
+export const Grid = ({ minWidth, space, children, ...props }) => {
   return (
-    <div css={gridStyles({ minWidth, space })} className="gds-grid">
-      {props.children}
+    <div css={gridStyles({ minWidth, space })} className="gds-grid" {...props}>
+      {children}
     </div>
   );
 };

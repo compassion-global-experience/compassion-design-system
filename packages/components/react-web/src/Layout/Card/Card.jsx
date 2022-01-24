@@ -10,21 +10,16 @@ import cardStyles from './Card.styles';
 
 export const Card = ({
   renderAs,
-  href,
-  onClick,
   padding,
+  className,
   image,
   border,
   backgroundColor,
+  children,
   ...props
 }) => {
-  const El =
-    renderAs === `anchor` ? `a` : renderAs === `button` ? `button` : `div`;
-
+  const { El, isClickable, elementClass, type } = getRenderElement(renderAs);
   const NestedEl = image ? Stack : React.Fragment;
-
-  const hasImage = image !== undefined && image !== null;
-  const isClickable = renderAs === `anchor` || renderAs === `button`;
 
   return (
     <El
@@ -32,36 +27,46 @@ export const Card = ({
         isClickable,
         padding,
         border,
-        hasImage,
         backgroundColor,
       })}
-      className={cx({
-        'gds-card': true,
-        'gds-card--anchor': renderAs === `anchor`,
-        'gds-card--button': renderAs === `button`,
-      })}
-      href={href}
-      onClick={onClick}
-      type={renderAs === `button` ? `button` : null}
+      className={cx('gds-card', elementClass)}
+      type={type}
+      {...props}
     >
       <NestedEl>
-        <Stack className="gds-card__body">{props.children}</Stack>
+        <Stack className="gds-card__body">{children}</Stack>
         {/* If CTA text, render button and make button—not card—focusable. */}
         {/* If no CTA text, whole card will have focused appearance */}
-        {image ? (
-          <Frame
-            className={cx('gds-card__image', {
-              [props.className]: props.className,
-            })}
-          >
-            {image}
-          </Frame>
-        ) : (
-          <></>
+        {Boolean(image) && (
+          <Frame className={cx('gds-card__image', className)}>{image}</Frame>
         )}
       </NestedEl>
     </El>
   );
+};
+
+const getRenderElement = (renderAs) => {
+  if (renderAs === 'anchor') {
+    return {
+      El: 'a',
+      isClickable: true,
+      elementClass: 'gds-card--anchor',
+    };
+  }
+
+  if (renderAs === 'button') {
+    return {
+      El: 'button',
+      isClickable: true,
+      elementClass: 'gds-card--button',
+      type: 'button',
+    };
+  }
+
+  return {
+    El: 'div',
+    isClickable: false,
+  };
 };
 
 Card.propTypes = {
@@ -75,20 +80,18 @@ Card.propTypes = {
    * standard `img` element.
    */
   image: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
-  // imagePosition: PropTypes.oneOf(['top', 'right', 'left']),
-  // imageRatio: PropTypes.string,
   backgroundColor: PropTypes.oneOf(['white', 'gray', 'transparent']),
   border: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 Card.defaultProps = {
+  className: null,
   renderAs: 'div',
   href: null,
   onClick: null,
   padding: `sm`,
   image: undefined,
-  // imagePosition: 'top',
-  // imageRatio: `1:1`,
   border: true,
   backgroundColor: `white`,
 };

@@ -5,6 +5,7 @@ export default (theme) => {
     --gds-reel-height: ${theme.height};
     --gds-reel-item-width: ${theme.itemWidth};
     --gds-reel-space: ${theme.space};
+    --gds-reel-padding: ${theme.padding};
     --gds-reel-track-color: ${theme.trackColor};
     --gds-reel-thumb-color: ${theme.thumbColor};
 
@@ -61,7 +62,7 @@ export default (theme) => {
     }
 
     &.gds-reel--overflowing {
-      padding-bottom: var(--gds-reel-space);
+      padding-bottom: var(--gds-reel-padding);
     }
   `;
 };
