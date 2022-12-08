@@ -1,5 +1,5 @@
 {
-  "name": "compassion-gds",
+  "name": "@compassion-gds/cds-css",
   "version": "0.0.0",
   "engines": {
     "node": ">=14.8.1"

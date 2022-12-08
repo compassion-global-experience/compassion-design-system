@@ -15,7 +15,8 @@
     "packages/elements",
     "packages/examples/*",
     "packages/themes/*",
-    "packages/site"
+    "packages/site",
+    "packages/cds-css"
   ],
   "scripts": {
     "test": "lerna run test",
