@@ -1,0 +1,41 @@
+{
+  "tooltip": {
+    "padding-x": {
+      "value": "{core.space.base}",
+      "type": "spacing"
+    },
+    "padding-y": {
+      "value": "{core.space.minus1}",
+      "type": "spacing"
+    },
+    "border-radius": {
+      "value": "{theme.ui.border-radius.sm}",
+      "type": "borderRadius"
+    },
+    "border-width": {
+      "value": "{core.border-width.1}",
+      "type": "borderWidth"
+    },
+    "font": {
+      "value": {
+        "fontFamily": "{theme.font.family.body}",
+        "fontWeight": "{theme.font.weight.regular}",
+        "lineHeight": "{theme.font.lineheight.xs} -3",
+        "fontSize": "{theme.font.size.xs} -3"
+      },
+      "type": "typography"
+    },
+    "background-color": {
+      "value": "{theme.color.text.default}",
+      "type": "color"
+    },
+    "border-color": {
+      "value": "{theme.color.text.default}",
+      "type": "color"
+    },
+    "text-color": {
+      "value": "{theme.color.background.default}",
+      "type": "color"
+    }
+  }
+}

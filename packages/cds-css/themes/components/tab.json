@@ -1,0 +1,95 @@
+{
+  "tab": {
+    "background-color": {
+      "value": "{theme.color.background.canvas}",
+      "type": "color"
+    },
+    "border-color": {
+      "value": "{theme.color.background.surface}",
+      "type": "color"
+    },
+    "no-background": {
+      "value": "{core.color.transparent}",
+      "type": "color"
+    },
+    "underline-color": {
+      "value": "{theme.color.actions.disabled.amplified}",
+      "type": "color"
+    },
+    "action-color": {
+      "value": "{theme.color.actions.primary.default}",
+      "type": "color"
+    },
+    "hover": {
+      "background-color": {
+        "value": "{theme.color.actions.primary.subtle}",
+        "type": "color"
+      }
+    },
+    "active": {
+      "background-color": {
+        "value": "{theme.color.background.surface}",
+        "type": "color"
+      },
+      "action-color": {
+        "value": "{theme.color.text.muted}",
+        "type": "color"
+      }
+    },
+    "disabled": {
+      "background-color": {
+        "value": "{theme.color.actions.disabled.subtle}",
+        "type": "color"
+      },
+      "action-color": {
+        "value": "{theme.color.actions.disabled.muted}",
+        "type": "color"
+      }
+    },
+    "border-radius": {
+      "value": "{theme.ui.border-radius.sm}",
+      "type": "borderRadius"
+    },
+    "shadow": {
+      "value": "{core.depth.plus1}",
+      "type": "boxShadow"
+    },
+    "no-shadow": {
+      "value": "{core.depth.none}",
+      "type": "boxShadow"
+    },
+    "border-width": {
+      "value": "{core.border-width.1}",
+      "type": "borderWidth"
+    },
+    "no-border": {
+      "value": "{core.border-width.0}",
+      "type": "borderWidth"
+    },
+    "padding-left": {
+      "value": "{padding.3}",
+      "type": "spacing"
+    },
+    "padding-top": {
+      "value": "{padding.2}",
+      "type": "spacing"
+    },
+    "padding-bottom": {
+      "value": "{padding.2}",
+      "type": "spacing"
+    },
+    "padding-right": {
+      "value": "{padding.3}",
+      "type": "spacing"
+    },
+    "font": {
+      "value": {
+        "fontFamily": "{theme.font.family.body}",
+        "fontWeight": "{theme.font.weight.semibold}",
+        "lineHeight": "{theme.font.lineheight.sm}",
+        "fontSize": "{theme.font.size.sm}"
+      },
+      "type": "typography"
+    }
+  }
+}
