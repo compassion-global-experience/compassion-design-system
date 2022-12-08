@@ -27,6 +27,7 @@
     "start:tokens": "cd packages/components/tokens && yarn start",
     "bootstrap": "npx lerna bootstrap",
     "build": "lerna run build",
+    "build:css": "cd packages/cds-css && yarn build",
     "build:tokens": "cd packages/components/tokens && yarn build",
     "build:elements": "cd packages/elements && yarn build",
     "build:storybook": "lerna run build-storybook",
