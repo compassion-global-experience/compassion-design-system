@@ -1,7 +1,5 @@
 const StyleDictionaryPackage = require('style-dictionary');
-
-const { fileHeader, formattedVariables } = StyleDictionaryPackage.formatHelpers;
-const { kebabCase, isPx, transformShadow } = require('./utils');
+const { transformShadow } = require('./utils');
 
 /**
  * format for css variables
@@ -13,23 +11,9 @@ StyleDictionaryPackage.registerFormat({
         ${dictionary.allProperties
           .map((prop) => `  --${prop.name}: ${prop.value};`)
           .join('\n')}
-      };`;
+      }`;
   },
 });
-
-/**
- * format for scss variables
- */
-//  StyleDictionaryPackage.registerFormat({
-// 	name: "scss/variables",
-// 	formatter: function(dictionary, config) {
-// 	  return `${this.selector} {
-// 		  ${dictionary.allProperties
-// 			.map((prop) => `  $${prop.name}: ${prop.value};`)
-// 			.join("\n")}
-// 		}`;
-// 	},
-//   });
 
 StyleDictionaryPackage.registerTransform({
   name: 'sizes/px',
@@ -96,8 +80,8 @@ function getStyleDictionaryConfig(theme) {
   return {
     source: [`tokens/${theme}/*.json`],
     platforms: {
-      scss: {
-        buildPath: `dist/scss/variables/`,
+      css: {
+        buildPath: `variables/`,
         transforms: [
           'attribute/cti',
           'name/cti/kebab',
@@ -121,7 +105,7 @@ function getStyleDictionaryConfig(theme) {
 
 console.log('Building tokens...');
 
-['_cds-light', '_cds-dark'].map(function (theme) {
+['_cds-light', '_cds-dark'].map((theme) => {
   console.log('\n==============================================');
   console.log(`\nProcessing: [${theme}]`);
 
@@ -129,12 +113,13 @@ console.log('Building tokens...');
     getStyleDictionaryConfig(theme)
   );
 
-  const platforms = ['scss'];
+  const platforms = ['css'];
   platforms.map((platform) => {
     return StyleDictionary.buildPlatform(platform);
   });
 
   console.log('\nEnd processing');
+  return theme;
 });
 
 console.log('\n==============================================');
