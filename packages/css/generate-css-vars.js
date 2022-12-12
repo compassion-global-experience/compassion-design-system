@@ -81,7 +81,7 @@ function getStyleDictionaryConfig(theme) {
     source: [`tokens/${theme}/*.json`],
     platforms: {
       css: {
-        buildPath: `variables/`,
+        buildPath: `vars/`,
         transforms: [
           'attribute/cti',
           'name/cti/kebab',
