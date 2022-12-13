@@ -95,7 +95,7 @@ function getStyleDictionaryConfig(theme) {
           {
             destination: `${theme}.css`,
             format: `css/variables`,
-            selector: `.${theme}-theme`,
+            selector: ':root',
           },
         ],
       },
