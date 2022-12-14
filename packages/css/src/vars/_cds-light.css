@@ -27,7 +27,7 @@
   --type-body-p-desktop-bold: 16px/20px Gotham Bold;
   --type-body-p-mobile-regular: 16px/20px Gotham Book;
   --type-body-p-mobile-bold: 16px/20px Gotham Bold;
-  --type-color: #000000;
+  --type-color: #2e2f2a;
   --type-color-white: #ffffff;
   --type-color-accent: #FFB500;
   --type-case-uppercase: uppercase;
@@ -194,6 +194,7 @@
   --dropdown-text-color: #2e2f2a;
   --dropdown-icon-color: #4b4c45;
   --dropdown-hover-background-color: #D2E9FF;
+  --dropdown-hover-action-color: #005EB8;
   --dropdown-active-background-color: #e3e4e2;
   --dropdown-disabled-action-color: #acaea7;
   --dropdown-border-radius: 4px;

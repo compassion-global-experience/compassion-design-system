@@ -1,4 +1,4 @@
-import '../components/button.css';
+import '../src/components/button.css';
 
 export const createButton = ({
   mode = 'secondary',
