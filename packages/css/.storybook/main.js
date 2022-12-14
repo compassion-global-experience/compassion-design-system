@@ -9,5 +9,6 @@ module.exports = {
     "@storybook/addon-interactions",
     "@etchteam/storybook-addon-css-variables-theme"
   ],
-  "framework": "@storybook/html"
+  "framework": "@storybook/html",
+  "staticDirs": [{ from: '../src/fonts', to: '/fonts' }],
 }

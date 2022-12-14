@@ -1,5 +1,5 @@
-import light from '!!style-loader?injectType=lazyStyleTag!css-loader!../vars/_cds-light.css'
-import dark from '!!style-loader?injectType=lazyStyleTag!css-loader!../vars/_cds-dark.css'
+import light from '!!style-loader?injectType=lazyStyleTag!css-loader!../src/vars/_cds-light.css'
+import dark from '!!style-loader?injectType=lazyStyleTag!css-loader!../src/vars/_cds-dark.css'
 
 import cssVariablesTheme from '@etchteam/storybook-addon-css-variables-theme'
 
