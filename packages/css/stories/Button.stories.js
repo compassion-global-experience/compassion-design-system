@@ -1,8 +1,7 @@
 import { createButton } from './Button';
 
-// More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     label: { control: 'text' },
@@ -27,7 +26,6 @@ const Template = ({ label, ...args }) => {
 };
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
 Primary.args = {
   mode: 'primary',
   label: 'Button',
@@ -38,15 +36,27 @@ Secondary.args = {
   label: 'Button',
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  mode: 'tertiary',
+  label: 'Button',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
   label: 'Button',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
   size: 'medium',
+  label: 'Button',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
   label: 'Button',
 };
 
