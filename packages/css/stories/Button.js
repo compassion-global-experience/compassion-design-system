@@ -12,7 +12,7 @@ export const createButton = ({
   btn.innerText = label;
   btn.addEventListener('click', onClick);
 
-  btn.className = ['button-base', 'button-master', mode, size].join(' ');
+  btn.className = ['button-main', mode, size].join(' ');
   btn.disabled = disabled;
 
   return btn;
