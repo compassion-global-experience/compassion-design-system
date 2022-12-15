@@ -1,3 +1,5 @@
+import '../reset.css'
+
 import light from '!!style-loader?injectType=lazyStyleTag!css-loader!../src/theme/light.css'
 import dark from '!!style-loader?injectType=lazyStyleTag!css-loader!../src/theme/dark.css'
 
