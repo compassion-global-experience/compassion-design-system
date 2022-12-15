@@ -1,4 +1,4 @@
-import { createButton } from './Button';
+import './button.css';
 
 export default {
   title: 'Components/Button',
@@ -16,6 +16,24 @@ export default {
     },
     disabled: { control: 'boolean' },
   },
+};
+
+const createButton = ({
+  mode = 'secondary',
+  size = 'medium',
+  disabled = false,
+  label,
+  onClick,
+}) => {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.innerText = label;
+  btn.addEventListener('click', onClick);
+
+  btn.className = ['button-main', mode, size].join(' ');
+  btn.disabled = disabled;
+
+  return btn;
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
