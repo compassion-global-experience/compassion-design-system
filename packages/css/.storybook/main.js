@@ -10,5 +10,5 @@ module.exports = {
     "@etchteam/storybook-addon-css-variables-theme"
   ],
   "framework": "@storybook/html",
-  "staticDirs": [{ from: '../src/fonts', to: '/fonts' }],
+  "staticDirs": [{ from: '../assets', to: '/assets' }],
 }
