@@ -1,5 +1,3 @@
-import './button.css';
-
 export default {
   title: 'Components/Button',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
