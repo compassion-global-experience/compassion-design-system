@@ -13,6 +13,19 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  backgrounds: {
+    default: 'grey',
+    values: [
+      {
+        name: 'grey',
+        value: '#E3E4E2',
+      },
+      {
+        name: 'white',
+        value: '#FFFFFF',
+      },
+    ],
+  },
   cssVariables: {
     files: {
       'Light Theme': light,
