@@ -60,14 +60,14 @@
 .button-main.primary {
   padding: var(--button-primary-small-padding-y) var(--button-primary-small-padding-x);
   border-width: var(--button-primary-border-width);
-  border-color: var(--button-primary-solid-default-border-color);
+  border-color: var(--button-primary-default-border-color);
   border-radius: var(--button-primary-border-radius);
-  background: var(--button-primary-solid-default-background-color);
-  color: var(--button-primary-solid-default-text-color);
+  background: var(--button-primary-default-background-color);
+  color: var(--button-primary-default-text-color);
 }
 
 .button-main.primary .icon {
-  color: var(--button-primary-solid-default-icon-color);
+  color: var(--button-primary-default-icon-color);
 }
 
 .button-main.primary.medium {
@@ -79,23 +79,23 @@
 }
 
 .button-main.primary:hover {
-  border-color: var(--button-primary-solid-hover-border-color);
-  background: var(--button-primary-solid-hover-background-color);
-  color: var(--button-primary-solid-hover-text-color);
+  border-color: var(--button-primary-hover-border-color);
+  background: var(--button-primary-hover-background-color);
+  color: var(--button-primary-hover-text-color);
 }
 
 .button-main.primary:hover .icon {
-  color: var(--button-primary-solid-hover-icon-color);
+  color: var(--button-primary-hover-icon-color);
 }
 
 .button-main.primary[disabled] {
-  border-color: var(--button-primary-solid-disabled-border-color);
-  background: var(--button-primary-solid-disabled-background-color);
-  color: var(--button-primary-solid-disabled-text-color);
+  border-color: var(--button-primary-disabled-border-color);
+  background: var(--button-primary-disabled-background-color);
+  color: var(--button-primary-disabled-text-color);
 }
 
 .button-main.primary[disabled] .icon {
-  color: var(--button-primary-solid-disabled-icon-color);
+  color: var(--button-primary-disabled-icon-color);
 }
 
 /* TERTIARY */
