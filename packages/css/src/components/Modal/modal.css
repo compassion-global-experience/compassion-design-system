@@ -1,10 +1,14 @@
 .modal {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
     max-width: 660px;
     width: 100%;
     border-radius: var(--modal-border-radius);
     background: var(--modal-background-color);
     box-shadow: var(--modal-shadow);
+    transform: translate(-50%, -50%);
 }
 
 .modal-header {
