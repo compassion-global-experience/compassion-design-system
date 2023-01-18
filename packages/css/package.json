@@ -23,8 +23,7 @@
   },
   "private": true,
   "dependencies": {
-    "@etchteam/storybook-addon-css-variables-theme": "^1.4.0",
-    "style-dictionary": "^2.10.2"
+    "@etchteam/storybook-addon-css-variables-theme": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
@@ -37,6 +36,7 @@
     "@storybook/html": "^6.5.14",
     "@storybook/manager-webpack4": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
-    "babel-loader": "^8.3.0"
+    "babel-loader": "^8.1.0",
+    "style-dictionary": "^2.10.2"
   }
 }
