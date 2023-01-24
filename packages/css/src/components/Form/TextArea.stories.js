@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Forms/TextField',
+  title: 'Components/Forms/TextArea',
   argTypes: {
     label: { control: 'text' },
     size: {
@@ -10,20 +10,15 @@ export default {
       control: { type: 'select' },
       options: ['default', 'disabled', 'active', 'error', 'success'],
     },
-    iconPosition: {
-      control: { type: 'select' },
-      options: ['left', 'right'],
-    },
   },
   decorators: [(Story) => `<div style="width: 360px;">${Story()}</div>`],
 };
 
-const TextField = ({
+const TextArea = ({
   label = 'Label Text',
   value = '',
   size = 'medium',
   state = 'default',
-  hint = '',
   icon = '',
   iconPosition = 'right',
 }) => {
@@ -36,19 +31,18 @@ const TextField = ({
           <label class="form-label ${disabled}" for="test-field">
             ${label}
           </label>
+          <span class="form-hint ${state}">0/1200</span>
         </div>
         <div class="form-field ${state} ${size} ${iconClassName}">
-          <input
+          <textarea
             id="test-field"
-            type="text"
-            value="${value}"
+            rows="6"
             class="form-input"
             placeholder="Input Value"
             ${disabled}
-          />
+          >${value}</textarea>
           ${icon.length ? `<span class="form-icon">${icon}</span>` : ''}
         </div>
-        ${hint.length ? `<span class="form-hint ${state}">${hint}</span>` : ''}
     </div>
 `;
 };
@@ -65,55 +59,34 @@ const FORM_ICON = {
       <path fill-rule="evenodd" clip-rule="evenodd" d="M3.14645 3.14645C3.34171 2.95118 3.65829 2.95118 3.85355 3.14645L12.8536 12.1464C13.0488 12.3417 13.0488 12.6583 12.8536 12.8536C12.6583 13.0488 12.3417 13.0488 12.1464 12.8536L3.14645 3.85355C2.95118 3.65829 2.95118 3.34171 3.14645 3.14645Z" fill="black"/>
     </svg>
   `,
-  info: `
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2.5C4.96243 2.5 2.5 4.96243 2.5 8C2.5 11.0376 4.96243 13.5 8 13.5C11.0376 13.5 13.5 11.0376 13.5 8C13.5 4.96243 11.0376 2.5 8 2.5ZM1.5 8C1.5 4.41015 4.41015 1.5 8 1.5C11.5899 1.5 14.5 4.41015 14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8Z" fill="black"/>
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 7.5C7 7.22386 7.22386 7 7.5 7H8C8.27614 7 8.5 7.22386 8.5 7.5V10.5C8.77614 10.5 9 10.7239 9 11C9 11.2761 8.77614 11.5 8.5 11.5H8C7.72386 11.5 7.5 11.2761 7.5 11V8C7.22386 8 7 7.77614 7 7.5Z" fill="black"/>
-      <path d="M8 6C8.41421 6 8.75 5.66421 8.75 5.25C8.75 4.83579 8.41421 4.5 8 4.5C7.58579 4.5 7.25 4.83579 7.25 5.25C7.25 5.66421 7.58579 6 8 6Z" fill="black"/>
-    </svg>
-  `,
 };
 
-export const Default = TextField.bind({});
+export const Default = TextArea.bind({});
 Default.args = {
   label: 'Label Text',
   value: 'Filled',
   state: 'default',
 };
 
-export const Disabled = TextField.bind({});
+export const Disabled = TextArea.bind({});
 Disabled.args = {
   label: 'Label Text',
   value: 'Disabled',
   state: 'disabled',
 };
 
-export const Error = TextField.bind({});
+export const Error = TextArea.bind({});
 Error.args = {
   label: 'Label Text',
   value: 'Error',
   state: 'error',
-  hint: 'Hint Text',
   icon: FORM_ICON.error,
 };
 
-export const Success = TextField.bind({});
+export const Success = TextArea.bind({});
 Success.args = {
   label: 'Label Text',
   value: 'Success',
   state: 'success',
   icon: FORM_ICON.success,
-};
-
-export const Info = TextField.bind({});
-Info.args = {
-  label: 'Label Text',
-  icon: FORM_ICON.info,
-};
-
-export const IconLeft = TextField.bind({});
-IconLeft.args = {
-  label: 'Label Text',
-  icon: FORM_ICON.info,
-  iconPosition: 'left',
 };
