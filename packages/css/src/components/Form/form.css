@@ -38,6 +38,11 @@
   font: var(--form-input-text-large);
 }
 
+/* ERROR */
+.form-field.error .form-input {
+  border-color: var(--form-error-border-color);
+}
+
 /* DISABLED */
 .form-input[disabled],
 .form-field.disabled .form-input {
