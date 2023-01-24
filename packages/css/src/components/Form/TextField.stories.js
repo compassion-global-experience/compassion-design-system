@@ -27,12 +27,12 @@ const TextField = ({
   icon = '',
   iconPosition = 'right',
 }) => {
-  const disabledProp = state === 'disabled' ? 'disabled' : '';
+  const disabled = state === 'disabled' ? 'disabled' : '';
   const iconClassName = icon.length ? `icon-${iconPosition}` : '';
 
   return `
     <div class="form-field-container">
-        <label class="form-label" for="test-field">
+        <label class="form-label ${disabled}" for="test-field">
           ${label}
         </label>
         <div class="form-field ${state} ${size} ${iconClassName}">
@@ -42,7 +42,7 @@ const TextField = ({
             value="${value}"
             class="form-input"
             placeholder="Input Value"
-            ${disabledProp}
+            ${disabled}
           />
           ${icon.length ? `<span class="form-icon">${icon}</span>` : ''}
         </div>
