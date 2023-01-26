@@ -1,0 +1,124 @@
+.form-field-container {
+  margin-bottom: var(--margin-3);
+}
+
+.form-label {
+  color: var(--form-label-color);
+  font: var(--form-input-text-label);
+}
+
+.form-label.disabled {
+  color: var(--form-disabled-label-color);
+}
+
+.form-input {
+  display: block;
+  padding: var(--form-input-medium-padding-y) var(--form-input-medium-padding-x);
+  width: 100%;
+  border-width: var(--form-input-border-width);
+  border-style: solid;
+  border-color: var(--form-border-color);
+  border-radius: var(--form-input-border-radius);
+  background: var(--form-background-color);
+  color: var(--form-input-color);
+  font: var(--form-input-text-medium);
+}
+
+.form-input::placeholder {
+  color: var(--form-placeholder-color);
+}
+
+.form-field.small .form-input {
+  padding: var(--form-input-small-padding-y) var(--form-input-small-padding-x);
+  font: var(--form-input-text-small);
+}
+
+.form-field.large .form-input {
+  padding: var(--form-input-large-padding-y) var(--form-input-large-padding-x);
+  font: var(--form-input-text-large);
+}
+
+/* ERROR */
+.form-field.error .form-input {
+  border-color: var(--form-error-border-color);
+}
+
+/* DISABLED */
+.form-input[disabled],
+.form-field.disabled .form-input {
+  border-color: var(--form-disabled-border-color);
+  background: var(--form-disabled-background-color);
+  color: var(--form-disabled-input-color);
+}
+
+/* HINT */
+.form-hint {
+  color: var(--form-hint-text-color);
+  font: var(--form-hint-text);
+}
+
+.form-hint.disabled {
+  color: var(--form-disabled-hint-color);
+}
+
+.form-hint.error {
+  color: var(--form-error-hint-text);
+}
+
+/* WITH ICONS */
+.form-field {
+  position: relative;
+}
+
+.form-field .form-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-field .form-icon svg path {
+  fill: var(--form-icon-color);
+}
+
+.form-field.error .form-icon svg path {
+  fill: var(--form-error-icon-color);
+}
+
+.form-field.success .form-icon svg path {
+  fill: var(--form-success-icon-color);
+}
+
+.form-field.icon-right .form-icon {
+  right: var(--form-input-medium-padding-x);
+}
+
+.form-field.icon-right .form-input {
+  padding-right: calc(3 * var(--form-input-medium-padding-x));
+}
+
+.form-field.icon-right.small .form-icon {
+  right: var(--form-input-small-padding-x);
+}
+
+.form-field.icon-right.large .form-icon {
+  right: var(--form-input-large-padding-x);
+}
+
+.form-field.icon-left .form-icon {
+  left: var(--form-input-medium-padding-x);
+}
+
+.form-field.icon-left .form-input {
+  padding-left: calc(3 * var(--form-input-medium-padding-x));
+}
+
+.form-field.icon-left.small .form-icon {
+  left: var(--form-input-small-padding-x);
+}
+
+.form-field.icon-left.large .form-icon {
+  left: var(--form-input-large-padding-x);
+}

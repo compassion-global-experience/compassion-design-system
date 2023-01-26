@@ -18,7 +18,7 @@ export const parameters = {
     values: [
       {
         name: 'grey',
-        value: '#E3E4E2',
+        value: '#F8F8F8',
       },
       {
         name: 'white',
