@@ -10,6 +10,7 @@ export default {
       control: { type: 'select' },
       options: ['default', 'disabled', 'active', 'error', 'success'],
     },
+    hint: { control: 'text' },
     iconPosition: {
       control: { type: 'select' },
       options: ['left', 'right'],
@@ -114,4 +115,17 @@ IconLeft.args = {
   label: 'Label Text',
   icon: FORM_ICON.info,
   iconPosition: 'left',
+};
+
+export const Placeholder = TextField.bind({});
+Placeholder.args = {
+  label: 'Label Text',
+  value: '',
+};
+
+export const WithHint = TextField.bind({});
+WithHint.args = {
+  label: 'Label Text',
+  value: 'With Hint',
+  hint: 'Sample hint',
 };
