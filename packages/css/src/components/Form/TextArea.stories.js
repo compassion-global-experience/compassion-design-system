@@ -31,7 +31,7 @@ const TextArea = ({
           <label class="form-label ${disabled}" for="test-field">
             ${label}
           </label>
-          <span class="form-hint ${state}">0/1200</span>
+          <span class="form-hint ${state}">0 / 1200</span>
         </div>
         <div class="form-field ${state} ${size} ${iconClassName}">
           <textarea
