@@ -6,35 +6,32 @@
   },
   "description": "Compassion International's Global Design System",
   "main": "index.js",
-  "repository": "git@github.com:compassion-gds/compassion-gds.git",
+  "repository": "git@github.com:compassion-global-experience/compassion-design-system.git",
   "author": "Kendrick Arnett <kmarnett@gmail.com>",
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/components/*",
-    "packages/elements",
-    "packages/examples/*",
-    "packages/themes/*",
-    "packages/site",
-    "packages/css"
+    "packages/css",
+    "packages/react",
+    "examples/*"
   ],
   "scripts": {
     "test": "lerna run test",
     "postinstall": "npm run build",
     "prep-release": "lerna version --conventional-commits --yes",
     "start": "concurrently --kill-others --names \"storybook,elements,tokens\" -c \"bgCyan,bgMagenta,bgYellow\" \"yarn start:react\" \"yarn start:elements\" \"yarn start:tokens\"",
-    "start:react": "cd packages/components/react-web && yarn start",
+    "start:react": "cd packages/react && yarn start",
     "start:elements": "cd packages/elements && yarn start",
     "start:tokens": "cd packages/components/tokens && yarn start",
     "bootstrap": "npx lerna bootstrap",
     "build": "lerna run build",
     "build:css": "cd packages/css && yarn build",
-    "build:storybook:css": "cd packages/css && yarn storybook",
     "build:tokens": "cd packages/components/tokens && yarn build",
     "build:elements": "cd packages/elements && yarn build",
     "build:storybook": "lerna run build-storybook",
-    "build:storybook:react": "cd packages/components/react-web && yarn build-storybook",
-    "build:storybook:wc": "cd packages/components/web-components && yarn build-storybook"
+    "build:storybook:react": "cd packages/react && yarn build-storybook",
+    "build:storybook:wc": "cd packages/components/web-components && yarn build-storybook",
+    "build:storybook:css": "cd packages/css && yarn storybook"
   },
   "devDependencies": {
     "@octokit/core": "^3.5.1",
@@ -62,7 +59,5 @@
     "babel-loader": "8.1.0",
     "eslint": "^7.11.0",
     "webpack": "4.44.2"
-  },
-  "config": {},
-  "dependencies": {}
+  }
 }
