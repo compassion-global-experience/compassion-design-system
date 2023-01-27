@@ -1,0 +1,6 @@
+v16
+
+# We intentionally specify just the major version
+# For development (for this project) it's not critical to be on the latest node version
+# We want to let users use the node version they already have rather than having
+# them install a specific minor/patch version
