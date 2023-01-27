@@ -1,11 +1,9 @@
 {
   "packages": [
-    "packages/components/*",
-    "packages/elements",
-    "packages/examples/*",
-    "packages/themes/*"
+    "packages/*",
+    "examples/*"
   ],
-  "npmClient": "yarn",
+  "npmClient": "npm",
   "useWorkspaces": true,
   "version": "independent",
   "command": {
