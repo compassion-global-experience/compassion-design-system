@@ -16,6 +16,7 @@
   margin: 4px 0;
   padding: var(--form-input-medium-padding-y) var(--form-input-medium-padding-x);
   width: 100%;
+  outline: none;
   border-width: var(--form-input-border-width);
   border-style: solid;
   border-color: var(--form-border-color);
@@ -29,7 +30,10 @@
   color: var(--form-placeholder-color);
 }
 
-.form-input:focus {
+.form-input:focus-visible,
+.form-input:focus,
+.form-input:focus-within,
+.form-input:active  {
   border-color: var(--form-focus-border-color);
 }
 
