@@ -24,20 +24,19 @@
   },
   "private": true,
   "dependencies": {
-    "@etchteam/storybook-addon-css-variables-theme": "^1.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
+    "@babel/core": "^7.20.12",
     "@etchteam/storybook-addon-css-variables-theme": "^1.4.0",
-    "@storybook/addon-actions": "^6.5.14",
-    "@storybook/addon-essentials": "^6.5.14",
-    "@storybook/addon-interactions": "^6.5.14",
-    "@storybook/addon-links": "^6.5.14",
-    "@storybook/builder-webpack4": "^6.5.14",
-    "@storybook/html": "^6.5.14",
-    "@storybook/manager-webpack4": "^6.5.14",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/html": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.3.0",
     "style-dictionary": "^2.10.2"
   }
 }
