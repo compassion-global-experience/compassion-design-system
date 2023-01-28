@@ -26,20 +26,18 @@
   "devDependencies": {
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.11.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^5.1.1",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
     "lerna": "^6.4.1",
-    "prettier": "^2.4.1",
+    "prettier": "^2.8.3",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "stylelint-prettier": "^1.1.2"
+    "stylelint-prettier": "^1.2.0"
   }
 }
