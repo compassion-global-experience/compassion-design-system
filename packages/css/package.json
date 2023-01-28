@@ -1,9 +1,6 @@
 {
   "name": "@compassion-gds/css",
-  "version": "0.0.0",
-  "engines": {
-    "node": ">=14.8.1"
-  },
+  "version": "0.0.1",
   "description": "Compassion International's Global Design System",
   "license": "MIT",
   "scripts": {
@@ -15,14 +12,13 @@
     "transform-dark": "npx token-transformer themes tokens/_cds-dark/tokens.json core/cds-core,cds-dark/theme-cds-dark,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-dark/theme-cds-dark",
     "generate-css-vars": "node ./generate-css-vars.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "npm run build && build-storybook"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/compassion-gds/compassion-gds.git",
+    "url": "https://github.com/compassion-global-experience/compassion-design-system",
     "directory": "packages/css"
   },
-  "private": true,
   "dependencies": {
   },
   "devDependencies": {
