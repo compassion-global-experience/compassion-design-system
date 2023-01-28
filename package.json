@@ -20,9 +20,9 @@
     "prep-release": "lerna version --conventional-commits --yes",
     "bootstrap": "npx lerna bootstrap",
     "build": "lerna run build",
-    "build:css": "cd packages/css && yarn build",
+    "build:css": "cd packages/css && npm run build",
     "build:storybook": "lerna run build-storybook",
-    "build:storybook:css": "cd packages/css && yarn storybook"
+    "build:storybook:css": "cd packages/css && npm run build-storybook"
   },
   "devDependencies": {
     "@octokit/core": "^3.5.1",

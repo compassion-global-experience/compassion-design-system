@@ -7,6 +7,7 @@
   "description": "Compassion International's Global Design System",
   "license": "MIT",
   "scripts": {
+    "start": "npm run build && npm run storybook",
     "clone:themes": "git clone --filter=blob:none https://github.com/compassion-global-experience/cds-tokens.git && cp -r cds-tokens/themes/ ./themes/ && rm -rf cds-tokens",
     "build": "npm run clone:themes && npm run transform && npm run generate-css-vars",
     "transform": "npm run transform-light && npm run transform-dark",

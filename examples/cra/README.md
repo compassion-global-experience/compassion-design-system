@@ -2,4 +2,4 @@ This example was bootstrapped with [Create React App](https://github.com/faceboo
 
 It is linked to the react-web package in the parent directory for development purposes.
 
-You can run `yarn install` and then `yarn start` to test your package.
+You can run `npm install` and then `npm start` to test your package.
