@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build storybook for each package
-        run: npm run build:storybook
+        run: npm run build:storybooks
       - name: Upload Storybook Artifacts
         uses: actions/upload-artifact@v2
         with:
