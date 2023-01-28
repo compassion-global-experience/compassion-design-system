@@ -11,8 +11,7 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/*"
   ],
   "scripts": {
     "test": "lerna run test",
