@@ -24,10 +24,7 @@
     "build:storybooks:css": "npm run build:storybooks --scope=css"
   },
   "devDependencies": {
-    "@octokit/core": "^3.5.1",
-    "airbnb-js-shims": "^2.2.1",
     "commitizen": "^4.2.4",
-    "concurrently": "^6.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.1",
