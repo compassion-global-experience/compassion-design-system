@@ -12,7 +12,7 @@
     "transform-dark": "npx token-transformer themes tokens/_cds-dark/tokens.json core/cds-core,cds-dark/theme-cds-dark,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-dark/theme-cds-dark",
     "generate-css-vars": "node ./generate-css-vars.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "npm run build && build-storybook --quiet"
+    "build:storybook": "npm run build && build-storybook --quiet"
   },
   "repository": {
     "type": "git",

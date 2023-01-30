@@ -18,9 +18,7 @@
     "prep-release": "lerna version --conventional-commits --yes",
     "bootstrap": "npx lerna bootstrap",
     "build:packages": "lerna run build",
-    "build:css": "npm run build:packages -- --scope=@compassion-gds/css",
-    "build:storybooks": "lerna run build-storybook",
-    "build:storybooks:css": "npm run build:storybooks --scope=css"
+    "build:storybooks": "lerna run build:storybook"
   },
   "devDependencies": {
     "commitizen": "^4.2.4",
