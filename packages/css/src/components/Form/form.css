@@ -1,5 +1,5 @@
 .form-field-container {
-  margin-bottom: var(--margin-3);
+  margin-bottom: var(--margin-2);
 }
 
 .form-label {
@@ -13,8 +13,10 @@
 
 .form-input {
   display: block;
+  margin: 4px 0;
   padding: var(--form-input-medium-padding-y) var(--form-input-medium-padding-x);
   width: 100%;
+  outline: none;
   border-width: var(--form-input-border-width);
   border-style: solid;
   border-color: var(--form-border-color);
@@ -26,6 +28,13 @@
 
 .form-input::placeholder {
   color: var(--form-placeholder-color);
+}
+
+.form-input:focus-visible,
+.form-input:focus,
+.form-input:focus-within,
+.form-input:active  {
+  border-color: var(--form-focus-border-color);
 }
 
 .form-field.small .form-input {
@@ -121,4 +130,21 @@
 
 .form-field.icon-left.large .form-icon {
   left: var(--form-input-large-padding-x);
+}
+
+/* TEXTAREA */
+.form-label-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  line-height: 1.5;
+}
+
+textarea.form-input {
+  max-width: 100%;
+}
+
+textarea.form-input + .form-icon {
+  top: var(--form-input-large-padding-y);
+  bottom: unset;
 }
