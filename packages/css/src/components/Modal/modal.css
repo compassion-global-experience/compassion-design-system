@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     z-index: 99;
-    max-width: var(--default-max-width);
+    max-width: var(--modal-default-max-width);
     width: 100%;
     border-radius: var(--modal-border-radius);
     background: var(--modal-background-color);
@@ -48,9 +48,9 @@
 }
 
 .modal.small {
-    max-width: var(--small-max-width);
+    max-width: var(--modal-small-max-width);
 }
 
 .modal.wide {
-    max-width: var(--wide-max-width);
+    max-width: var(--modal-wide-max-width);
 }

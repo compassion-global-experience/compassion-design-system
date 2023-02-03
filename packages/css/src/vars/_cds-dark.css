@@ -117,9 +117,9 @@
   --modal-border-color: #4b4c45;
   --modal-header-font: 25px/32px Gotham Book;
   --modal-body-font: 16px/20px Gotham Book;
-  --default-max-width: 660px;
-  --small-max-width: 320px;
-  --wide-max-width: 990px;
+  --modal-default-max-width: 660px;
+  --modal-small-max-width: 320px;
+  --modal-wide-max-width: 990px;
   --header-default-background-color: #1d1e1b;
   --header-default-action-color: #FFFFFF;
   --header-default-border-color: #4b4c45;
