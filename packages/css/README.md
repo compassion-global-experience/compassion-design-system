@@ -1,7 +1,7 @@
 # Compassion’s CSS
 
 ## Building CSS variables
- - Run `yarn build`
+ - Run `npm rub build`
 
 ## Running storybook
-- Run `yarn storybook`
+- Run `npm start` or `npm run storybook`

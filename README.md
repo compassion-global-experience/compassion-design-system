@@ -11,23 +11,22 @@ Compassion's _Known, Loved, and Connected_ brand promise at heart.
 
 This is a monorepo for the many projects that make up Compassion International’s design system:
 
-- [Reusable React components](./packages/components/react-web) and [web
-  components](./packages/components/web-components) libraries
-- [Tokens and JavaScript helpers for design elements](./packages/elements)
-- [Examples](./packages/examples) of practical usage of the CDS
+- [vanilla/css classes](packages/css)
+- [Reusable React components](packages/react)
+- [Examples](examples) of practical usage of the CDS
 
 ## Installing Tools
 
 The Digital Design toolkit is available both as a set of React components as
-well as web components.
+well as composable css class names.
 
 ### React Components
 
-To install the React components to your project, run either `npm i -D @compassion-gds/react-web` or `yarn i @compassion-gds/react-web`.
+To install the React components to your project, run either `npm i -s @compassion-gds/react` or `yarn add @compassion-gds/react`.
 
-### Web Components
+### Stylesheet
 
-A set of web components is provided for non-React projects, such as those built
+A set of css class names is provided for non-React projects, such as those built
 with “vanilla” HTML, Wordpress, .NET, Rails, or other server-side technologies.
 
 ## Explore!

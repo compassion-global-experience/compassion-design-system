@@ -1,1 +1,0 @@
-# Compassion’s Gatsby Theme

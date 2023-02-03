@@ -88,6 +88,9 @@ dist
 .cache/
 public
 
+# Storybook builds
+storybook-static/
+
 # vuepress build output
 .vuepress/dist
 

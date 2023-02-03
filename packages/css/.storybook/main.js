@@ -11,4 +11,7 @@ module.exports = {
   ],
   "framework": "@storybook/html",
   "staticDirs": [{ from: '../assets', to: '/assets' }],
+  "features": {
+    "postcss": false,
+  },
 }

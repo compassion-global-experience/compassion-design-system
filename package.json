@@ -6,63 +6,35 @@
   },
   "description": "Compassion International's Global Design System",
   "main": "index.js",
-  "repository": "git@github.com:compassion-gds/compassion-gds.git",
+  "repository": "git@github.com:compassion-global-experience/compassion-design-system.git",
   "author": "Kendrick Arnett <kmarnett@gmail.com>",
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/components/*",
-    "packages/elements",
-    "packages/examples/*",
-    "packages/themes/*",
-    "packages/site",
-    "packages/css"
+    "packages/*"
   ],
   "scripts": {
     "test": "lerna run test",
-    "postinstall": "npm run build",
     "prep-release": "lerna version --conventional-commits --yes",
-    "start": "concurrently --kill-others --names \"storybook,elements,tokens\" -c \"bgCyan,bgMagenta,bgYellow\" \"yarn start:react\" \"yarn start:elements\" \"yarn start:tokens\"",
-    "start:react": "cd packages/components/react-web && yarn start",
-    "start:elements": "cd packages/elements && yarn start",
-    "start:tokens": "cd packages/components/tokens && yarn start",
     "bootstrap": "npx lerna bootstrap",
-    "build": "lerna run build",
-    "build:css": "cd packages/css && yarn build",
-    "build:storybook:css": "cd packages/css && yarn storybook",
-    "build:tokens": "cd packages/components/tokens && yarn build",
-    "build:elements": "cd packages/elements && yarn build",
-    "build:storybook": "lerna run build-storybook",
-    "build:storybook:react": "cd packages/components/react-web && yarn build-storybook",
-    "build:storybook:wc": "cd packages/components/web-components && yarn build-storybook"
+    "build:packages": "lerna run build",
+    "build:storybooks": "lerna run build:storybook"
   },
   "devDependencies": {
-    "@octokit/core": "^3.5.1",
-    "airbnb-js-shims": "^2.2.1",
     "commitizen": "^4.2.4",
-    "concurrently": "^6.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.11.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^5.1.1",
-    "lerna": "^4.0.0",
-    "prettier": "^2.4.1",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "lerna": "^6.4.1",
+    "prettier": "^2.8.3",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "stylelint-prettier": "^1.1.2"
-  },
-  "resolutions": {
-    "babel-loader": "8.1.0",
-    "eslint": "^7.11.0",
-    "webpack": "4.44.2"
-  },
-  "config": {},
-  "dependencies": {}
+    "stylelint-prettier": "^1.2.0"
+  }
 }
