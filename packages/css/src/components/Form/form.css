@@ -86,18 +86,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--form-icon-color);
 }
 
-.form-field .form-icon svg path {
-  fill: var(--form-icon-color);
+.form-field.error .form-icon {
+  color: var(--form-error-icon-color);
 }
 
-.form-field.error .form-icon svg path {
-  fill: var(--form-error-icon-color);
-}
-
-.form-field.success .form-icon svg path {
-  fill: var(--form-success-icon-color);
+.form-field.success .form-icon {
+  color: var(--form-success-icon-color);
 }
 
 .form-field.icon-right .form-icon {
