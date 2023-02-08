@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import '../reset.css';
 
 export const parameters = {
@@ -39,30 +38,6 @@ export const globalTypes = {
       dynamicTitle: true,
     },
   },
-};
-
-/**
- * A crude way to change the theme
- * Intended just for our Storybook usage
- * Library Users should import their preferred theme from the root index.js file
- * @param name
- * @returns {null}
- * @constructor
- */
-const Theme = ({ name = 'light' }) => {
-  useEffect(() => {
-    switch (name) {
-      case 'light':
-        import('@compassion-gds/css/src/theme/light.css');
-        break;
-      case 'dark':
-        import('@compassion-gds/css/src/theme/dark.css');
-        break;
-      default:
-        console.error(`Unknown theme name: "${name}"`);
-    }
-  }, [name]);
-  return null;
 };
 
 /**

@@ -25,7 +25,7 @@
     "build": "rollup -c",
     "test": "jest",
     "storybook": "storybook dev -p 6007",
-    "build-storybook": "storybook build --quiet"
+    "build:storybook": "storybook build --quiet"
   },
   "repository": {
     "type": "git",
