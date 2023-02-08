@@ -8,7 +8,7 @@ export default {
     },
     state: {
       control: { type: 'select' },
-      options: ['default', 'disabled', 'active', 'error', 'success'],
+      options: ['default', 'disabled', 'error', 'success'],
     },
   },
   decorators: [(Story) => `<div style="width: 360px;">${Story()}</div>`],
