@@ -1,10 +1,12 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import copy from 'rollup-plugin-copy';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
-import postcss from "rollup-plugin-postcss";
+import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import packageJson from './package.json' assert { type: "json" };
+import path from 'node:path';
+import packageJson from './package.json' assert { type: 'json' };
 
 export default [
   {
@@ -26,13 +28,32 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
-      postcss(),
+      postcss({
+        extract: 'base.css',
+      }),
     ],
   },
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts()],
+    plugins: [
+      dts(),
+      copy({
+        targets: [
+          { src: 'dist/cjs/base.css', dest: 'dist/css' },
+          {
+            src: path.resolve(
+              '../../node_modules/@compassion-gds/css',
+              'src/vars/*.css'
+            ),
+            dest: 'dist/css',
+            rename: (name, extension) =>
+              `${name.replace('_cds-', '')}.${extension}`,
+          },
+        ],
+        verbose: true,
+      }),
+    ],
     external: [/\.css$/],
   },
 ];
