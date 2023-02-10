@@ -1,4 +1,5 @@
-import '../reset.css';
+import { useEffect } from 'react';
+import '@compassion-gds/css/reset.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -43,25 +44,30 @@ export const globalTypes = {
 /**
  * A crude way to change the theme
  * Intended just for our Storybook usage
- * Library Users should load their preferred theme using a stylesheet ref tag
+ * Library Users should import their preferred theme from the root index.js file
  * @param name
  */
-const loadTheme = async (name) => {
-  switch (name) {
-    case 'light':
-      import('@compassion-gds/css/src/theme/light.css');
-      break;
-    case 'dark':
-      import('@compassion-gds/css/src/theme/dark.css');
-      break;
-    default:
-      console.error(`Unknown theme name: "${name}"`);
-  }
+const Theme = ({ name = 'light' }) => {
+  useEffect(() => {
+    switch (name) {
+      case 'light':
+        import('@compassion-gds/css/src/theme/light.css');
+        break;
+      case 'dark':
+        import('@compassion-gds/css/src/theme/dark.css');
+        break;
+      default:
+        console.error(`Unknown theme name: "${name}"`);
+    }
+  }, [name]);
+  return null;
 };
 
 export const decorators = [
-  (Story, context) => {
-    loadTheme(context.globals.theme).catch(console.error);
-    return Story();
-  },
+  (Story, context) => (
+    <>
+      <Theme name={context.globals.theme} />
+      <Story />
+    </>
+  ),
 ];

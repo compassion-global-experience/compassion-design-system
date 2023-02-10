@@ -2,7 +2,6 @@
   "name": "@compassion-gds/css",
   "version": "0.0.1",
   "description": "Compassion International's Global Design System",
-  "license": "MIT",
   "scripts": {
     "start": "npm run build && npm run storybook",
     "clone:themes": "git clone --filter=blob:none https://github.com/compassion-global-experience/cds-tokens.git && cp -r cds-tokens/themes/ ./themes/ && rm -rf cds-tokens",
@@ -11,28 +10,40 @@
     "transform-light": "npx token-transformer themes tokens/_cds-light/tokens.json core/cds-core,cds-light/theme-cds-light,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-light/theme-cds-light",
     "transform-dark": "npx token-transformer themes tokens/_cds-dark/tokens.json core/cds-core,cds-dark/theme-cds-dark,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-dark/theme-cds-dark",
     "generate-css-vars": "node ./generate-css-vars.js",
-    "storybook": "start-storybook -p 6006",
-    "build:storybook": "npm run build && build-storybook --quiet"
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "npm run build && storybook build --quiet"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/compassion-global-experience/compassion-design-system",
     "directory": "packages/css"
   },
-  "dependencies": {
+  "keywords": [
+    "compassion",
+    "compassion-gds",
+    "gds",
+    "css"
+  ],
+  "author": "Compassion XD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/compassion-global-experience/compassion-design-system/issues"
   },
+  "homepage": "https://github.com/compassion-global-experience/compassion-design-system#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@etchteam/storybook-addon-css-variables-theme": "^1.4.0",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-interactions": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/builder-webpack5": "^6.5.16",
-    "@storybook/html": "^6.5.16",
-    "@storybook/manager-webpack5": "^6.5.16",
-    "@storybook/testing-library": "^0.0.13",
+    "@babel/preset-env": "^7.20.2",
+    "@storybook/addon-actions": "^7.0.0-beta.43",
+    "@storybook/addon-essentials": "^7.0.0-beta.43",
+    "@storybook/addon-interactions": "^7.0.0-beta.43",
+    "@storybook/addon-links": "^7.0.0-beta.43",
+    "@storybook/html": "^7.0.0-beta.43",
+    "@storybook/html-webpack5": "^7.0.0-beta.43",
+    "@storybook/testing-library": "^0.0.14-next.1",
     "babel-loader": "^8.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.0-beta.43",
     "style-dictionary": "^2.10.2"
   }
 }

@@ -38,8 +38,8 @@ jobs:
     strategy:
       matrix:
         include:
-#          - package: react
-#            token: PERCY_TOKEN_REACT_WEB
+          - package: react
+            token: PERCY_TOKEN_REACT_WEB
           - package: css
             token: PERCY_TOKEN_WEB_COMPONENTS
     steps:
