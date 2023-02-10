@@ -2,7 +2,6 @@
   "name": "@compassion-gds/css",
   "version": "0.0.1",
   "description": "Compassion International's Global Design System",
-  "license": "MIT",
   "scripts": {
     "start": "npm run build && npm run storybook",
     "clone:themes": "git clone --filter=blob:none https://github.com/compassion-global-experience/cds-tokens.git && cp -r cds-tokens/themes/ ./themes/ && rm -rf cds-tokens",
@@ -19,6 +18,18 @@
     "url": "https://github.com/compassion-global-experience/compassion-design-system",
     "directory": "packages/css"
   },
+  "keywords": [
+    "compassion",
+    "compassion-gds",
+    "gds",
+    "css"
+  ],
+  "author": "Compassion XD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/compassion-global-experience/compassion-design-system/issues"
+  },
+  "homepage": "https://github.com/compassion-global-experience/compassion-design-system#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
