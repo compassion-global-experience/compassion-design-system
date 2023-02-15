@@ -145,3 +145,46 @@ textarea.form-input + .form-icon {
   top: var(--form-input-large-padding-y);
   bottom: unset;
 }
+
+/* RADIO & CHECKBOX */
+.form-control {
+  display: flex;
+  align-items: center;
+  gap: var(--margin-1);
+}
+
+.form-control .form-label {
+  font: var(--form-check-radio-label);
+}
+
+.form-control input[type=radio] {
+  margin: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--form-border-color);
+  border-radius: 50%;
+  background: var(--form-background-color);
+  font: inherit;
+  appearance: none;
+  transition: 120ms border ease-in-out;
+}
+
+.form-control input[type="radio"]:checked {
+  border-width: 7px;
+  border-color: var(--form-check-radio-default);
+}
+
+.form-control input[type="radio"]:checked:hover {
+  border-color: var(--form-check-radio-hover);
+}
+
+.form-control input[type="radio"]:checked:disabled {
+  border-color: var(--form-border-color);
+  background: var(--form-disabled-input-color);
+}
+
+.form-control input[type="radio"]:not(:checked).error {
+  border-width: 1px;
+  border-color: var(--form-error-border-color);
+  background: var(--form-background-color);
+}
