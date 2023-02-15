@@ -57,13 +57,13 @@ Default.args = {
 };
 
 export const Disabled = Radio.bind({});
-Default.args = {
+Disabled.args = {
     label: 'Label Text',
     state: 'disabled',
 };
 
 export const Error = Radio.bind({});
-Default.args = {
+Error.args = {
     label: 'Label Text',
     state: 'error',
 };
