@@ -129,6 +129,29 @@
   left: var(--form-input-large-padding-x);
 }
 
+/* PIN */
+.form-field.pin-field {
+  display: flex;
+  gap: var(--margin-3);
+}
+
+.form-field.pin-field .form-input {
+  padding: var(--form-input-small-padding-y);
+  width: 48px;
+  height: 48px;
+  text-align: center;
+}
+
+.pin-field.small .form-input {
+  width: 34px;
+  height: 34px;
+}
+
+.pin-field.large .form-input {
+  width: 50px;
+  height: 50px;
+}
+
 /* TEXTAREA */
 .form-label-wrap {
   display: flex;
