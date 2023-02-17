@@ -18,7 +18,7 @@ const Radio = ({
   const hasError = state === 'error';
 
   return `
-    <div class="form-field-container">
+    <div class="form-field-row">
         <div class="form-control">
           <input
             id="test-radio"
@@ -32,7 +32,7 @@ const Radio = ({
           </label>
         </div>
     </div>
-    <div class="form-field-container">
+    <div class="form-field-row">
         <div class="form-control">
           <input
             id="test-radio-2"

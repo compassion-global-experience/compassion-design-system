@@ -21,7 +21,7 @@ const Checkbox = ({
   const checkedAttr = checked ? 'checked' : '';
 
   return `
-    <div class="form-field-container">
+    <div class="form-field-row">
         <div class="form-control">
           <input
             id="test-checkbox"
