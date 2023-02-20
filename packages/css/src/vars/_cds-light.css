@@ -176,6 +176,11 @@
   --form-focus-border-color: #005EB8;
   --form-check-radio-default: #005EB8;
   --form-check-radio-hover: #007BF0;
+  --form-check-radio-size-default: 22px;
+  --form-check-radio-size-inside: 8px;
+  --form-pin-size-default: 48px;
+  --form-pin-size-small: 32px;
+  --form-pin-size-large: 52px;
   --form-input-border-radius: 4px;
   --form-input-border-width: 1px;
   --form-input-text-small: 13px/16px Gotham Book;
@@ -238,9 +243,11 @@
   --card-border-radius: 8px;
   --card-shadow: 0px 0.475px 0.6px -1.25px #00000014, 0px 3.75px 5px -1.25px #00000026;
   --card-border-width: 1px;
-  --card-header: 25px/28px Gotham Bold;
+  --card-header-default: 25px/28px Gotham Bold;
+  --card-header-small: 20px/20px Gotham Bold;
   --card-subhead: 20px/20px Gotham Bold;
-  --card-body: 16px/20px Gotham Book;
+  --card-body-default: 16px/20px Gotham Book;
+  --card-body-small: 13px/16px Gotham Book;
   --card-padding-x: 16px;
   --card-padding-y: 16px;
   --button-primary-default-background-color: #005EB8;

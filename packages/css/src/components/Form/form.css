@@ -160,8 +160,8 @@ textarea.form-input + .form-icon {
 .form-control input[type="radio"],
 .form-control input[type="checkbox"] {
   margin: 0;
-  width: 22px;
-  height: 22px;
+  width: var(--form-check-radio-size-default);
+  height: var(--form-check-radio-size-default);
   outline: none;
   border: 1px solid var(--form-border-color);
   background: var(--form-background-color);
@@ -175,7 +175,7 @@ textarea.form-input + .form-icon {
 }
 
 .form-control input[type="radio"]:checked {
-  border-width: 7px;
+  border-width: var(--form-check-radio-size-inside);
   border-color: var(--form-check-radio-default);
 }
 
@@ -205,7 +205,7 @@ textarea.form-input + .form-icon {
 .form-control input[type="checkbox"]:checked {
   border-color: var(--form-check-radio-default);
   background: var(--form-check-radio-default);
-  font-size: 22px;
+  font-size: var(--form-check-radio-size-default);
 }
 
 .form-control input[type="checkbox"]:checked::before {
