@@ -94,6 +94,7 @@
 
 /* HINT */
 .form-hint {
+  display: block;
   color: var(--form-hint-text-color);
   font: var(--form-hint-text);
 }
@@ -221,4 +222,43 @@ textarea.form-input + .form-icon {
 .form-control input:focus-within,
 .form-control input:active  {
   border-color: var(--form-focus-border-color);
+}
+
+/* INPUT GROUP */
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 4px 0;
+}
+
+.input-group-adornment {
+  display: flex;
+  padding: 0 var(--form-input-medium-padding-x);
+  border-top-left-radius: var(--form-input-border-radius);
+  border-bottom-left-radius: var(--form-input-border-radius);
+  background: var(--form-border-color);
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group-adornment.small {
+  padding-right: var(--form-input-small-padding-x);
+  padding-left: var(--form-input-small-padding-x);
+}
+
+.input-group-adornment.large {
+  padding-right: var(--form-input-large-padding-x);
+  padding-left: var(--form-input-large-padding-x);
+}
+
+.input-group .form-field {
+  margin: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-field + .input-group-adornment,
+.input-group-adornment + .form-field {
+  border-radius: 0 var(--form-input-border-radius) var(--form-input-border-radius) 0;
 }
