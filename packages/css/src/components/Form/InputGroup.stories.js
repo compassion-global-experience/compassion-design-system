@@ -11,7 +11,8 @@ export default {
       options: ['default', 'disabled', 'error', 'success'],
     },
     hint: { control: 'text' },
-    position: {
+    adornmentText: { control: 'text' },
+    adornmentPosition: {
       control: { type: 'select' },
       options: ['start', 'end'],
     },
@@ -27,10 +28,11 @@ const InputGroup = ({
   hint = '',
   iconRight = '',
   iconLeft = '',
-  position = 'end',
+  adornmentText = '',
+  adornmentPosition = 'end',
 }) => {
   const disabled = state === 'disabled' ? 'disabled' : '';
-  const startPosition = position === 'start';
+  const startPosition = adornmentPosition === 'start';
 
   return `
     <div class="form-field-container">
@@ -40,7 +42,12 @@ const InputGroup = ({
           </label>
         </div>
         <div class="input-group">
-          ${startPosition ? `<span class="input-group-adornment ${size}"><i class="ph-info ph-lg"></i></span>` : ''}
+          ${startPosition ? `
+            <div class="input-group-adornment ${size}">
+              <i class="ph-info ph-lg"></i>
+              ${adornmentText.length ? `<span class="input-group-adornment-text">${adornmentText}</span>` : ''}
+            </div>
+          ` : ''}
           <div class="form-field ${state} ${size}">
             ${iconLeft.length ? `<span class="form-icon">${iconLeft}</span>` : ''}
             <input
@@ -53,7 +60,12 @@ const InputGroup = ({
             />
             ${iconRight.length ? `<span class="form-icon">${iconRight}</span>` : ''}
           </div>
-          ${!startPosition ? `<span class="input-group-adornment ${size}"><i class="ph-info ph-lg"></i></span>` : ''}
+          ${!startPosition ? `
+            <div class="input-group-adornment ${size}">
+              <i class="ph-info ph-lg"></i>
+              ${adornmentText.length ? `<span class="input-group-adornment-text">${adornmentText}</span>` : ''}
+            </div>
+          ` : ''}
         </div>
         ${hint.length ? `<span class="form-hint ${state}">${hint}</span>` : ''}
     </div>
@@ -109,7 +121,14 @@ export const StartAdornment = InputGroup.bind({});
 StartAdornment.args = {
   label: 'Label Text',
   value: 'With Left Adornment',
-  position: 'start',
+  adornmentPosition: 'start',
+};
+
+export const WithText = InputGroup.bind({});
+WithText.args = {
+  label: 'Label Text',
+  adornmentText: 'Text',
+  adornmentPosition: 'start',
 };
 
 export const WithHint = InputGroup.bind({});
