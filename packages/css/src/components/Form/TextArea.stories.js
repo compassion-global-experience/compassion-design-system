@@ -20,10 +20,8 @@ const TextArea = ({
   size = 'medium',
   state = 'default',
   icon = '',
-  iconPosition = 'right',
 }) => {
   const disabled = state === 'disabled' ? 'disabled' : '';
-  const iconClassName = icon.length ? `icon-${iconPosition}` : '';
 
   return `
     <div class="form-field-container">
@@ -33,7 +31,7 @@ const TextArea = ({
           </label>
           <span class="form-hint ${state}">0 / 1200</span>
         </div>
-        <div class="form-field ${state} ${size} ${iconClassName}">
+        <div class="form-field ${state} ${size}">
           <textarea
             id="test-field"
             rows="6"

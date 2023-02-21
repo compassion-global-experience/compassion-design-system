@@ -11,10 +11,8 @@ export default {
       options: ['default', 'disabled', 'active', 'error', 'success'],
     },
     hint: { control: 'text' },
-    iconPosition: {
-      control: { type: 'select' },
-      options: ['left', 'right'],
-    },
+    iconLeft: { control: 'text' },
+    iconRight: { control: 'text' },
   },
   decorators: [(Story) => `<div style="width: 360px;">${Story()}</div>`],
 };
@@ -25,11 +23,10 @@ const TextField = ({
   size = 'medium',
   state = 'default',
   hint = '',
-  icon = '',
-  iconPosition = 'right',
+  iconRight = '',
+  iconLeft = '',
 }) => {
   const disabled = state === 'disabled' ? 'disabled' : '';
-  const iconClassName = icon.length ? `icon-${iconPosition}` : '';
 
   return `
     <div class="form-field-container">
@@ -38,7 +35,8 @@ const TextField = ({
             ${label}
           </label>
         </div>
-        <div class="form-field ${state} ${size} ${iconClassName}">
+        <div class="form-field ${state} ${size}">
+        ${iconLeft.length ? `<span class="form-icon">${iconLeft}</span>` : ''}
           <input
             id="test-field"
             type="text"
@@ -47,7 +45,7 @@ const TextField = ({
             placeholder="Input Value"
             ${disabled}
           />
-          ${icon.length ? `<span class="form-icon">${icon}</span>` : ''}
+          ${iconRight.length ? `<span class="form-icon">${iconRight}</span>` : ''}
         </div>
         ${hint.length ? `<span class="form-hint ${state}">${hint}</span>` : ''}
     </div>
@@ -80,7 +78,7 @@ Error.args = {
   value: 'Error',
   state: 'error',
   hint: 'Hint Text',
-  icon: FORM_ICON.error,
+  iconRight: FORM_ICON.error,
 };
 
 export const Success = TextField.bind({});
@@ -88,20 +86,19 @@ Success.args = {
   label: 'Label Text',
   value: 'Success',
   state: 'success',
-  icon: FORM_ICON.success,
+  iconRight: FORM_ICON.success,
 };
 
 export const Info = TextField.bind({});
 Info.args = {
   label: 'Label Text',
-  icon: FORM_ICON.info,
+  iconRight: FORM_ICON.info,
 };
 
 export const IconLeft = TextField.bind({});
 IconLeft.args = {
   label: 'Label Text',
-  icon: FORM_ICON.info,
-  iconPosition: 'left',
+  iconLeft: FORM_ICON.info,
 };
 
 export const Placeholder = TextField.bind({});
