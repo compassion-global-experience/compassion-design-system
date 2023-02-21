@@ -178,6 +178,7 @@
   --form-check-radio-hover: #007BF0;
   --form-check-radio-size-default: 22px;
   --form-check-radio-size-inside: 8px;
+  --form-check-radio-gap: 8px;
   --form-pin-size-default: 48px;
   --form-pin-size-small: 32px;
   --form-pin-size-large: 52px;
@@ -187,12 +188,14 @@
   --form-input-text-medium: 16px/20px Gotham Book;
   --form-input-text-large: 20px/20px Gotham Book;
   --form-input-text-label: 13px/16px Gotham Medium;
+  --form-input-text-gap: 10px;
   --form-input-small-padding-x: 8px;
   --form-input-small-padding-y: 8px;
   --form-input-medium-padding-x: 16px;
   --form-input-medium-padding-y: 12px;
   --form-input-large-padding-x: 24px;
-  --form-input-large-padding-y: 12px;
+  --form-input-large-padding-y: 16px;
+  --form-input-gap: 5px;
   --form-hint-text: 10px/12px Gotham Book;
   --form-border-radius-none: 0px;
   --form-select-arrow: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");

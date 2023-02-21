@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  margin: 4px 0;
+  margin: var(--form-input-gap) 0;
   padding: var(--form-input-medium-padding-y) var(--form-input-medium-padding-x);
   width: 100%;
   border-width: var(--form-input-border-width);
@@ -42,7 +42,7 @@
   color: var(--form-input-color);
   font: var(--form-input-text-medium);
   align-items: center;
-  gap: 10px;
+  gap: var(--form-input-text-gap);
 }
 
 .form-field:focus-visible,
@@ -132,7 +132,7 @@ textarea.form-input + .form-icon {
 .form-control {
   display: flex;
   align-items: center;
-  gap: var(--margin-1);
+  gap: var(--form-check-radio-gap);
 }
 
 .form-control .form-label {
@@ -229,7 +229,7 @@ textarea.form-input + .form-icon {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  margin: 4px 0;
+  margin: var(--form-input-gap) 0;
 }
 
 .input-group-adornment {
@@ -242,7 +242,7 @@ textarea.form-input + .form-icon {
   font: var(--form-input-group-text-medium);
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: var(--form-input-gap);
 }
 
 .input-group-adornment.small {
