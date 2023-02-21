@@ -8,7 +8,7 @@ export default {
     },
     state: {
       control: { type: 'select' },
-      options: ['default', 'disabled', 'active', 'error', 'success'],
+      options: ['default', 'disabled', 'error', 'success'],
     },
     hint: { control: 'text' },
     iconLeft: { control: 'text' },

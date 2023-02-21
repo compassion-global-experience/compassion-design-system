@@ -6,6 +6,10 @@ export default {
             control: { type: 'select' },
             options: ['small', 'medium', 'large'],
         },
+        state: {
+            control: { type: 'select' },
+            options: ['default', 'disabled', 'error'],
+        },
     },
 };
 
@@ -24,16 +28,16 @@ const PinField = ({
         </label>
       </div>
       <div class="pin-field ${size}">
-        <div class="form-field ${disabled}">
+        <div class="form-field ${state} ${disabled}">
           <input class="form-input" type="password" maxlength=1 ${disabled} />
         </div>
-        <div class="form-field ${disabled}">
+        <div class="form-field ${state} ${disabled}">
           <input class="form-input" type="password" maxlength=1 ${disabled} />
         </div>
-        <div class="form-field ${disabled}">
+        <div class="form-field ${state} ${disabled}">
           <input class="form-input" type="password" maxlength=1 ${disabled} />
         </div>
-        <div class="form-field ${disabled}">
+        <div class="form-field ${state} ${disabled}">
           <input class="form-input" type="password" maxlength=1 ${disabled} />
         </div>
       </div>
@@ -60,4 +64,16 @@ const PinField = ({
 export const Default = PinField.bind({});
 Default.args = {
     label: 'Label Text',
+};
+
+export const Disabled = PinField.bind({});
+Disabled.args = {
+    label: 'Label Text',
+    state: 'disabled',
+};
+
+export const Error = PinField.bind({});
+Error.args = {
+    label: 'Label Text',
+    state: 'error',
 };
