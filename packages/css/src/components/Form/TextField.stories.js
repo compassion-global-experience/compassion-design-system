@@ -11,10 +11,8 @@ export default {
       options: ['default', 'disabled', 'active', 'error', 'success'],
     },
     hint: { control: 'text' },
-    iconPosition: {
-      control: { type: 'select' },
-      options: ['left', 'right'],
-    },
+    iconLeft: { control: 'text' },
+    iconRight: { control: 'text' },
   },
   decorators: [(Story) => `<div style="width: 360px;">${Story()}</div>`],
 };
