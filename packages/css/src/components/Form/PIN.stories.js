@@ -46,14 +46,13 @@ const PinField = ({
     <script>
       var inputs = document.querySelectorAll("input");
       inputs.forEach((input, key) => {
-        if (key !== 0) {
-          input.addEventListener("click", function () {
-            inputs[0].focus();
-          });
-        }
-        input.addEventListener("keyup", function () {
-          if (input.value) {
-            inputs[key + 1].focus();
+        input.autocomplete = 'off';
+        input.addEventListener("keyup", function (event) {
+          if (event.key === 'Backspace') {
+            inputs[key - 1]?.focus();
+          }
+          else if (event.key?.length === 1 && /\\w/.test(event.key)) {
+            inputs[key + 1]?.focus();
           }
         });
       });
