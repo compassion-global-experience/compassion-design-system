@@ -3,6 +3,8 @@
 }
 
 .form-label {
+  display: block;
+  max-width: fit-content;
   color: var(--form-label-color);
   font: var(--form-input-text-label);
 }
@@ -31,7 +33,7 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  margin: 4px 0;
+  margin: var(--form-input-gap) 0;
   padding: var(--form-input-medium-padding-y) var(--form-input-medium-padding-x);
   width: 100%;
   border-width: var(--form-input-border-width);
@@ -42,7 +44,7 @@
   color: var(--form-input-color);
   font: var(--form-input-text-medium);
   align-items: center;
-  gap: 10px;
+  gap: var(--form-input-text-gap);
 }
 
 .form-field:focus-visible,
@@ -94,6 +96,7 @@
 
 /* HINT */
 .form-hint {
+  display: block;
   color: var(--form-hint-text-color);
   font: var(--form-hint-text);
 }
@@ -131,7 +134,7 @@ textarea.form-input + .form-icon {
 .form-control {
   display: flex;
   align-items: center;
-  gap: var(--margin-1);
+  gap: var(--form-check-radio-gap);
 }
 
 .form-control .form-label {
@@ -252,4 +255,48 @@ textarea.form-input + .form-icon {
 .pin-field.large .form-field {
   width: var(--form-pin-size-large);
   height: var(--form-pin-size-large);
+}
+
+/* INPUT GROUP */
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: var(--form-input-gap) 0;
+}
+
+.input-group-adornment {
+  display: flex;
+  padding: 0 var(--form-input-medium-padding-x);
+  border-top-left-radius: var(--form-input-border-radius);
+  border-bottom-left-radius: var(--form-input-border-radius);
+  background: var(--form-border-color);
+  color: var(--form-icon-color);
+  font: var(--form-input-group-text-medium);
+  align-items: center;
+  justify-content: center;
+  gap: var(--form-input-gap);
+}
+
+.input-group-adornment.small {
+  padding-right: var(--form-input-small-padding-x);
+  padding-left: var(--form-input-small-padding-x);
+  font: var(--form-input-group-text-small);
+}
+
+.input-group-adornment.large {
+  padding-right: var(--form-input-large-padding-x);
+  padding-left: var(--form-input-large-padding-x);
+  font: var(--form-input-group-text-large);
+}
+
+.input-group .form-field {
+  margin: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-field + .input-group-adornment,
+.input-group-adornment + .form-field {
+  border-radius: 0 var(--form-input-border-radius) var(--form-input-border-radius) 0;
 }
