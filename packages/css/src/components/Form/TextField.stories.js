@@ -30,11 +30,9 @@ const TextField = ({
 
   return `
     <div class="form-field-row">
-        <div class="form-label-wrap">
-          <label class="form-label ${disabled}" for="test-field">
-            ${label}
-          </label>
-        </div>
+        <label class="form-label ${disabled}" for="test-field">
+          ${label}
+        </label>
         <div class="form-field ${state} ${size}">
         ${iconLeft.length ? `<span class="form-icon">${iconLeft}</span>` : ''}
           <input

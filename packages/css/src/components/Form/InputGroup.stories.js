@@ -36,11 +36,9 @@ const InputGroup = ({
 
   return `
     <div class="form-field-row">
-        <div class="form-label-wrap">
-          <label class="form-label ${disabled}" for="test-field">
-            ${label}
-          </label>
-        </div>
+        <label class="form-label ${disabled}" for="test-field">
+          ${label}
+        </label>
         <div class="input-group">
           ${startPosition ? `
             <div class="input-group-adornment ${size}">

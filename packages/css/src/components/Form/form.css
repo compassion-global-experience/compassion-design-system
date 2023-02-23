@@ -3,6 +3,8 @@
 }
 
 .form-label {
+  display: block;
+  max-width: fit-content;
   color: var(--form-label-color);
   font: var(--form-input-text-label);
 }
