@@ -35,7 +35,7 @@ const InputGroup = ({
   const startPosition = adornmentPosition === 'start';
 
   return `
-    <div class="form-field-container">
+    <div class="form-field-row">
         <div class="form-label-wrap">
           <label class="form-label ${disabled}" for="test-field">
             ${label}

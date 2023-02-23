@@ -1,4 +1,4 @@
-.form-field-container {
+.form-field-row {
   margin-bottom: var(--margin-2);
 }
 
@@ -222,6 +222,37 @@ textarea.form-input + .form-icon {
 .form-control input:focus-within,
 .form-control input:active  {
   border-color: var(--form-focus-border-color);
+}
+
+/* PIN */
+/* TODO: remove once grid styles are implemented */
+.pin-field {
+  display: flex;
+  gap: var(--margin-3);
+}
+
+.pin-field .form-input {
+  flex: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.pin-field .form-field {
+  padding: var(--form-input-small-padding-y);
+  width: var(--form-pin-size-default);
+  height: var(--form-pin-size-default);
+  text-align: center;
+}
+
+.pin-field.small .form-field {
+  width: var(--form-pin-size-small);
+  height: var(--form-pin-size-small);
+}
+
+.pin-field.large .form-field {
+  width: var(--form-pin-size-large);
+  height: var(--form-pin-size-large);
 }
 
 /* INPUT GROUP */
