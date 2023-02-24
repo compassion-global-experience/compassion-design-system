@@ -21,7 +21,7 @@ const Table = ({
 
   return `
     <div class="table-container" style="${containerHeight ? `max-height: ${containerHeight}` : ''}">
-      <table class="table ${sticky} ${state}" style="width: ${tableWidth}">
+      <table class="table ${sticky} ${state}" style="${tableWidth ? `width: ${tableWidth}` : ''}">
       <thead class="table-head">
         <tr class="table-row">
           <th class="table-cell ${state}">Heading</th>
