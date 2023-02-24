@@ -16,6 +16,8 @@ const Table = ({
   state = 'default',
   tableWidth = null,
   containerHeight = null,
+  disabledRow = false,
+  disabledCell = false,
 }) => {
   const sticky = stickyHeader ? 'sticky-header' : '';
 
@@ -30,25 +32,25 @@ const Table = ({
         </tr>
       </thead>
       <tbody class="table-body">
-        <tr class="table-row">
-          <td class="table-cell ${state}">Cell 1</td>
-          <td class="table-cell ${state}">Cell 2</td>
-          <td class="table-cell ${state}">Cell 3</td>
+        <tr class="table-row ${disabledRow ? 'disabled' : ''}">
+          <td class="table-cell ${disabledCell ? 'disabled' : ''}">Cell 1</td>
+          <td class="table-cell">Cell 2</td>
+          <td class="table-cell">Cell 3</td>
         </tr>
         <tr class="table-row">
-          <td class="table-cell ${state}"><a href="https://google.com">Link 1</a></td>
-          <td class="table-cell ${state}"><a href="https://google.com">Link 2</a></td>
-          <td class="table-cell ${state}"><a href="https://google.com">Link 3</a></td>
+          <td class="table-cell"><a href="https://google.com">Link 1</a></td>
+          <td class="table-cell"><a href="https://google.com">Link 2</a></td>
+          <td class="table-cell"><a href="https://google.com">Link 3</a></td>
         </tr>
         <tr class="table-row">
-          <td class="table-cell ${state}">Cell 1</td>
-          <td class="table-cell ${state}">Cell 2</td>
-          <td class="table-cell ${state}">Cell 3</td>
+          <td class="table-cell">Cell 1</td>
+          <td class="table-cell">Cell 2</td>
+          <td class="table-cell">Cell 3</td>
         </tr>
         <tr class="table-row">
-          <td class="table-cell ${state}"><a href="https://google.com">Link 1</a></td>
-          <td class="table-cell ${state}"><a href="https://google.com">Link 2</a></td>
-          <td class="table-cell ${state}"><a href="https://google.com">Link 3</a></td>
+          <td class="table-cell"><a href="https://google.com">Link 1</a></td>
+          <td class="table-cell"><a href="https://google.com">Link 2</a></td>
+          <td class="table-cell"><a href="https://google.com">Link 3</a></td>
         </tr>
       </tbody>
     </table>
@@ -66,6 +68,20 @@ export const Disabled = Table.bind({});
 Disabled.args = {
   state: 'disabled',
   stickyHeader: false,
+};
+
+export const DisabledFirstRow = Table.bind({});
+DisabledFirstRow.args = {
+  state: 'default',
+  stickyHeader: false,
+  disabledRow: true,
+};
+
+export const DisabledFirstCell = Table.bind({});
+DisabledFirstCell.args = {
+  state: 'default',
+  stickyHeader: false,
+  disabledCell: true,
 };
 
 export const HorizontalScroll = Table.bind({});

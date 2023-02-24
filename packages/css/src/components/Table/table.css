@@ -64,17 +64,21 @@
   color: var(--table-active-action-color);
 }
 
+/* DISABLED */
+.disabled .table-cell,
 .table-cell:disabled,
 .table-cell.disabled {
   background: var(--table-disabled-background-color);
   color: var(--table-disabled-text-color);
 }
 
+.disabled .table-head .table-cell,
 .table-head .table-cell:disabled,
 .table-head .table-cell.disabled {
   color: var(--table-disabled-header-color);
 }
 
+.disabled .table-cell a,
 .table-cell:disabled a,
 .table-cell.disabled a {
   color: var(--table-disabled-action-color);
