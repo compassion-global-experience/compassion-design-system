@@ -45,7 +45,7 @@
   background: var(--table-hover-background-color);
 }
 
-th.table-cell {
+.table-head .table-cell {
   color: var(--table-header-color);
 }
 
@@ -70,8 +70,8 @@ th.table-cell {
   color: var(--table-disabled-text-color);
 }
 
-th.table-cell:disabled,
-th.table-cell.disabled {
+.table-head .table-cell:disabled,
+.table-head .table-cell.disabled {
   color: var(--table-disabled-header-color);
 }
 
@@ -85,7 +85,7 @@ th.table-cell.disabled {
   border-collapse: separate;
 }
 
-.sticky-header th.table-cell {
+.sticky-header .table-head .table-cell {
   position: sticky;
   top: 0;
   z-index: 2;
