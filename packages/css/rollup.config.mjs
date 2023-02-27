@@ -11,8 +11,9 @@ const plugins = [
   }),
 ];
 
+// Read all CSS file names in the themes folder
+// Create `dist/{theme}.css` for each theme
 const themes = fs.readdirSync('src/theme');
-
 export default themes.map(name => ({
   input: `src/theme/${name}`,
   output: {
