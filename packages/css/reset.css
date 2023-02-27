@@ -84,7 +84,7 @@ html {
 
 @font-face {
     font-weight: bold;
-    font-family: Gotham Bold;
+    font-family: 'Gotham Bold';
     src: url('assets/fonts/Gotham-Bold.woff2') format('woff2'),
     url('assets/fonts/Gotham-Bold.woff') format('woff');
 }
