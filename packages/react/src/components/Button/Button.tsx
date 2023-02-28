@@ -8,7 +8,7 @@ export interface ButtonProps {
   onClick: () => void,
 }
 
-const Button = ({ mode = 'secondary', size = 'medium', disabled = false, label = '', onClick }: ButtonProps) => {
+const Button = ({ mode = 'primary', size = 'medium', disabled = false, label = '', onClick }: ButtonProps) => {
   const className = ['button-main', mode, size].join(' ');
 
   return (
