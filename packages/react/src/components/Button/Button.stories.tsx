@@ -14,14 +14,51 @@ const meta: Meta<typeof Button> = {
 export default meta;
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const HelloWorld = {
+export const Primary = {
   args: {
-    label: 'Hello world!',
+    mode: 'primary',
+    label: 'Button',
   },
 };
 
-export const ClickMe = {
+export const Secondary = {
   args: {
-    label: 'Click me!',
+    mode: 'secondary',
+    label: 'Button',
+  },
+};
+
+export const Tertiary = {
+  args: {
+    mode: 'tertiary',
+    label: 'Button',
+  },
+};
+
+export const Small = {
+  args: {
+    size: 'small',
+    label: 'Button',
+  },
+};
+
+export const Medium = {
+  args: {
+    size: 'medium',
+    label: 'Button',
+  },
+};
+
+export const Large = {
+  args: {
+    size: 'large',
+    label: 'Button',
+  },
+};
+
+export const Disabled = {
+  args: {
+    disabled: true,
+    label: 'Button',
   },
 };
