@@ -15,20 +15,6 @@ This is a monorepo for the many projects that make up Compassion International�
 - [Reusable React components](packages/react)
 - [Examples](examples) of practical usage of the CDS
 
-## Installing Tools
-
-The Digital Design toolkit is available both as a set of React components as
-well as composable css class names.
-
-### React Components
-
-To install the React components to your project, run either `npm i -s @compassion-gds/react` or `yarn add @compassion-gds/react`.
-
-### Stylesheet
-
-A set of css class names is provided for non-React projects, such as those built
-with “vanilla” HTML, Wordpress, .NET, Rails, or other server-side technologies.
-
 ## Explore!
 
 You can explore the CDS by browsing
