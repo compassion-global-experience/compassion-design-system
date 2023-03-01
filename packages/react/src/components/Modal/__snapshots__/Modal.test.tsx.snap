@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`] = `
+<div>
+  <div
+    class="modal default "
+  >
+    <button
+      class="modal-button-close"
+      type="button"
+    >
+      <svg
+        fill="currentColor"
+        height="24"
+        viewBox="0 0 256 256"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="56"
+          y2="200"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="200"
+          y2="56"
+        />
+      </svg>
+    </button>
+    <div
+      class="modal-header"
+    >
+      Title
+    </div>
+    <div
+      class="modal-body"
+    >
+      <div>
+        Slot
+      </div>
+    </div>
+    <div
+      class="modal-footer"
+    >
+      <button
+        class="button-main secondary medium "
+      >
+        Button 2
+      </button>
+      <button
+        class="button-main primary medium "
+      >
+        Button 1
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal should render \`Default\` size without \`Header\` and \`Footer\` 1`] = `
+<div>
+  <div
+    class="modal small "
+  >
+    <button
+      class="modal-button-close"
+      type="button"
+    >
+      <svg
+        fill="currentColor"
+        height="24"
+        viewBox="0 0 256 256"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="56"
+          y2="200"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="200"
+          y2="56"
+        />
+      </svg>
+    </button>
+    <div
+      class="modal-header"
+    >
+      Title
+    </div>
+    <div
+      class="modal-body"
+    >
+      <div>
+        Slot
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal should render \`Small\` size without \`Footer\` 1`] = `
+<div>
+  <div
+    class="modal small "
+  >
+    <button
+      class="modal-button-close"
+      type="button"
+    >
+      <svg
+        fill="currentColor"
+        height="24"
+        viewBox="0 0 256 256"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="56"
+          y2="200"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="200"
+          y2="56"
+        />
+      </svg>
+    </button>
+    <div
+      class="modal-header"
+    >
+      Title
+    </div>
+    <div
+      class="modal-body"
+    >
+      <div>
+        Slot
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal should render \`Wide\` size without \`Header\` 1`] = `
+<div>
+  <div
+    class="modal wide "
+  >
+    <button
+      class="modal-button-close"
+      type="button"
+    >
+      <svg
+        fill="currentColor"
+        height="24"
+        viewBox="0 0 256 256"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="56"
+          y2="200"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="200"
+          y2="56"
+        />
+      </svg>
+    </button>
+    <div
+      class="modal-body"
+    >
+      <div>
+        Slot
+      </div>
+    </div>
+    <div
+      class="modal-footer"
+    >
+      <button
+        class="button-main secondary medium "
+      >
+        Button 2
+      </button>
+      <button
+        class="button-main primary medium "
+      >
+        Button 1
+      </button>
+    </div>
+  </div>
+</div>
+`;
