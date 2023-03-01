@@ -1,0 +1,57 @@
+@import "@compassion-gds/css/reset.css";
+@import "@compassion-gds/css/src/theme/light.css";
+
+html, body {
+    height: calc(100vh - 32px);
+    min-height: revert;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+main {
+    flex: 9;
+}
+
+header {
+    flex: 1;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+nav > * {
+    width: max-content;
+}
+
+.subscribe-from {
+    margin-left: auto;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.subscribe-from .form-field {
+    margin-bottom: 0;
+}
+
+.gds-logo {
+    display: block;
+    margin: auto;
+    color: var(--header-default-logo-color);
+}

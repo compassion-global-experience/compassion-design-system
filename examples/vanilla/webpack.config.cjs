@@ -8,7 +8,7 @@ module.exports = (env) =>
     entry: './src/index.js',
     devtool: env.WEBPACK_SERVE ? 'inline-source-map' : 'source-map',
     devServer: {
-      static: './dist',
+      static: ['./dist', './assets'],
     },
     output: {
       filename: 'bundle.js',

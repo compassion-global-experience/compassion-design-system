@@ -1,70 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
+  <meta charset='UTF-8'>
   <title>Example GDS Vanilla Project</title>
-  <style>
-    html, body, main {
-        height: calc(100vh - 32px);
-    }
-
-    body {
-        display: flex;
-        flex-direction: column;
-        margin: 16px;
-    }
-
-    footer {
-        display: flex;
-        justify-content: flex-end;
-        flex: 1;
-    }
-
-    main {
-        flex: 9;
-    }
-
-    header {
-        flex: 1;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        gap: 8px;
-    }
-
-    nav > * {
-        width: max-content;
-    }
-
-    .subscribe-from {
-        margin-left: auto;
-        display: inline-flex;
-        flex-direction: row;
-        gap: 8px;
-        align-items: flex-end;
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <button class="button-main" onclick="console.log('GDS')">GDS Button</button>
-      <button class="button-main primary" onclick="console.log('GDS Primary')">GDS Primary</button>
-      <button onclick="console.log('regular')">
-        Regular Native Button
-      </button>
-    </nav>
-  </header>
-  <main>
-    <gds-logo color="brand" width="100%" type="full"></gds-logo>
-  </main>
-  <footer>
-    <form onsubmit="console.log('form submit')" class="subscribe-from">
-        <gds-input label="Subscribe"></gds-input>
-        <gds-button label="Submit" size="small" onclick="this.parentNode.submit()"></gds-button>
-    </form>
-  </footer>
+<header>
+  <nav>
+    <button class='button-main' onclick="console.log('GDS')">GDS Button</button>
+    <button class='button-main primary' onclick="console.log('GDS Primary')">GDS Primary</button>
+    <button onclick="console.log('regular')">
+      Regular Native Button
+    </button>
+  </nav>
+</header>
+<main>
+  <svg width='80%' height='80%' class='gds-logo'>
+    <use xlink:href='sprite.svg#logo'></use>
+  </svg>
+</main>
+<footer>
+  <form onsubmit="console.log('form submit')" class='subscribe-from'>
+    <div>
+      <label class="form-label" for="subscribe">
+        Subscribe
+      </label>
+      <div class="form-field default medium">
+        <input
+          id="subscribe"
+          type="email"
+          class="form-input"
+          placeholder="username@domain.com"
+        />
+      </div>
+    </div>
+
+    <button type="submit" class="button-main medium">Submit</button>
+  </form>
+</footer>
 </body>
 </html>
