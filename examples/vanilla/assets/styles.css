@@ -46,10 +46,6 @@ nav > * {
     align-items: flex-end;
 }
 
-.subscribe-from .form-field {
-    margin-bottom: 0;
-}
-
 .gds-logo {
     display: block;
     margin: auto;

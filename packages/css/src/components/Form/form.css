@@ -4,6 +4,7 @@
 
 .form-label {
   display: block;
+  margin-bottom: var(--form-input-gap);
   max-width: fit-content;
   color: var(--form-label-color);
   font: var(--form-input-text-label);
@@ -34,7 +35,7 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  margin: var(--form-input-gap) 0;
+  margin: 0;
   padding: var(--form-input-medium-padding-y) var(--form-input-medium-padding-x);
   width: 100%;
   border-width: var(--form-input-border-width);
@@ -102,6 +103,7 @@
 /* HINT */
 .form-hint {
   display: block;
+  margin-top: var(--form-input-gap);
   color: var(--form-hint-text-color);
   font: var(--form-hint-text);
 }
@@ -117,9 +119,14 @@
 /* TEXTAREA */
 .form-label-wrap {
   display: flex;
+  margin-bottom: var(--form-input-gap);
+  line-height: 1.5;
   justify-content: space-between;
   align-items: baseline;
-  line-height: 1.5;
+}
+
+.form-label-wrap .form-label {
+  margin: 0;
 }
 
 .error textarea.form-input,
@@ -143,6 +150,7 @@ textarea.form-input + .form-icon {
 }
 
 .form-control .form-label {
+  margin: 0;
   font: var(--form-check-radio-label);
 }
 
@@ -296,7 +304,6 @@ textarea.form-input + .form-icon {
 }
 
 .input-group .form-field {
-  margin: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
