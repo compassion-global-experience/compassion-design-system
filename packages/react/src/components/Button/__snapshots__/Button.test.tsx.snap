@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render \`Disabled\` variant 1`] = `
+<div>
+  <button
+    class="button-main primary medium "
+    disabled=""
+  >
+    Disabled
+  </button>
+</div>
+`;
+
+exports[`Button should render \`Primary\` mode with \`Medium\` size 1`] = `
+<div>
+  <button
+    class="button-main primary medium "
+  >
+    Click Me!
+  </button>
+</div>
+`;
+
+exports[`Button should render \`Secondary\` mode with \`Small\` size 1`] = `
+<div>
+  <button
+    class="button-main secondary small "
+  >
+    Click Me!
+  </button>
+</div>
+`;
+
+exports[`Button should render \`Tertiary\` mode with \`Large\` size 1`] = `
+<div>
+  <button
+    class="button-main tertiary large "
+  >
+    Click Me!
+  </button>
+</div>
+`;

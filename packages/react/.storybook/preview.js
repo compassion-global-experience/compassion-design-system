@@ -51,10 +51,10 @@ const Theme = ({ name = 'light' }) => {
   useEffect(() => {
     switch (name) {
       case 'light':
-        import('@compassion-gds/css/src/theme/light.css');
+        import('@compassion-gds/css/src/vars/_cds-light.css');
         break;
       case 'dark':
-        import('@compassion-gds/css/src/theme/dark.css');
+        import('@compassion-gds/css/src/vars/_cds-dark.css');
         break;
       default:
         console.error(`Unknown theme name: "${name}"`);
