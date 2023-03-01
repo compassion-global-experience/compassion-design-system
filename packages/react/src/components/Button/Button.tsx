@@ -1,3 +1,4 @@
+import { MouseEvent } from 'react';
 import '@compassion-gds/css/src/components/Button/button.css';
 
 export interface ButtonProps {
@@ -5,10 +6,10 @@ export interface ButtonProps {
   mode?: 'primary' | 'secondary' | 'tertiary',
   size?: 'small' | 'medium' | 'large',
   disabled?: boolean,
-  onClick?: () => void,
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void,
 }
 
-const Button = ({ label = '', mode = 'primary', size = 'medium', disabled = false, onClick }: ButtonProps) => {
+const Button = ({ label, mode = 'primary', size = 'medium', disabled = false, onClick }: ButtonProps) => {
   const className = ['button-main', mode, size].join(' ');
 
   return (
