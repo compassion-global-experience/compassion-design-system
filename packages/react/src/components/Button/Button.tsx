@@ -2,13 +2,13 @@ import '@compassion-gds/css/src/components/Button/button.css';
 
 export interface ButtonProps {
   label: string;
-  mode: 'primary' | 'secondary' | 'tertiary',
-  size: 'small' | 'medium' | 'large',
-  disabled: boolean,
-  onClick: () => void,
+  mode?: 'primary' | 'secondary' | 'tertiary',
+  size?: 'small' | 'medium' | 'large',
+  disabled?: boolean,
+  onClick?: () => void,
 }
 
-const Button = ({ mode = 'primary', size = 'medium', disabled = false, label = '', onClick }: ButtonProps) => {
+const Button = ({ label = '', mode = 'primary', size = 'medium', disabled = false, onClick }: ButtonProps) => {
   const className = ['button-main', mode, size].join(' ');
 
   return (
