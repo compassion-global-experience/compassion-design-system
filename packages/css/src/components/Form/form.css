@@ -95,6 +95,10 @@
   color: var(--form-disabled-input-color);
 }
 
+.form-field.disabled .form-icon {
+  color: var(--form-disabled-icon-color);
+}
+
 /* HINT */
 .form-hint {
   display: block;
@@ -300,9 +304,4 @@ textarea.form-input + .form-icon {
 .form-field + .input-group-adornment,
 .input-group-adornment + .form-field {
   border-radius: 0 var(--form-input-border-radius) var(--form-input-border-radius) 0;
-}
-
-/* SELECT */
-.form-field.disabled .select-icon {
-  color: var(--form-disabled-icon-color);
 }
