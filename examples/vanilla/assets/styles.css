@@ -2,8 +2,8 @@
 @import "@compassion-gds/css/src/theme/light.css";
 
 html, body {
-    height: calc(100vh - 32px);
     min-height: revert;
+    height: calc(100vh - 32px);
 }
 
 body {
@@ -38,10 +38,10 @@ nav > * {
     width: max-content;
 }
 
-.subscribe-from {
-    margin-left: auto;
+.subscribe-form {
     display: inline-flex;
     flex-direction: row;
+    margin-left: auto;
     gap: 8px;
     align-items: flex-end;
 }
