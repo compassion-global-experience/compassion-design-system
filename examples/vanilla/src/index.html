@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Web components Webpack App</title>
-  <script src="main.js"></script>
+  <title>Example GDS Vanilla Project</title>
   <style>
     html, body, main {
         height: calc(100vh - 32px);
@@ -51,8 +50,8 @@
 <body>
   <header>
     <nav>
-      <gds-button label="GDS Button" onclick="console.log('GDS')"></gds-button>
-      <gds-button primary="true" label="GDS Primary" onclick="console.log('GDS Primary')"></gds-button>
+      <button class="button-main" onclick="console.log('GDS')">GDS Button</button>
+      <button class="button-main primary" onclick="console.log('GDS Primary')">GDS Primary</button>
       <button onclick="console.log('regular')">
         Regular Native Button
       </button>

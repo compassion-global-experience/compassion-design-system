@@ -1,0 +1,35 @@
+{
+  "name": "@compassion-gds/examples-vanilla-webpack",
+  "version": "0.2.0-alpha.0",
+  "description": "An example of @compassion-gds/css bundled with webpack",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "webpack serve --open",
+    "bundle": "webpack --mode=production"
+  },
+  "private": true,
+  "dependencies": {
+    "@compassion-gds/css": "file:../../packages/css"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
