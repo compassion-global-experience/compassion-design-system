@@ -1,5 +1,9 @@
 @import "../vars/_cds-dark.css";
 @import "../components/Button/button.css";
 @import "../components/Modal/modal.css";
-@import "../components/Form/form.css";
 @import "../components/Table/table.css";
+@import "../components/Form/common.css";
+@import "../components/Form/textarea.css";
+@import "../components/Form/pin.css";
+@import "../components/Form/radio-checkbox.css";
+@import "../components/Form/input-group.css";

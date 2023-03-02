@@ -1,0 +1,95 @@
+.form-control {
+  display: flex;
+  align-items: center;
+  gap: var(--form-check-radio-gap);
+}
+
+.form-control .form-label {
+  margin: 0;
+  font: var(--form-check-radio-label);
+}
+
+.form-control input[type="radio"],
+.form-control input[type="checkbox"] {
+  margin: 0;
+  width: var(--form-check-radio-size-default);
+  height: var(--form-check-radio-size-default);
+  outline: none;
+  border: 1px solid var(--form-border-color);
+  background: var(--form-background-color);
+  font: inherit;
+  appearance: none;
+}
+
+.form-control input[type="radio"] {
+  border-radius: 50%;
+  transition: 120ms border ease-in-out;
+}
+
+.form-control input[type="radio"]:checked {
+  border-width: var(--form-check-radio-size-inside);
+  border-color: var(--form-check-radio-default);
+}
+
+.form-control input[type="radio"]:checked:hover {
+  border-color: var(--form-check-radio-hover);
+}
+
+.form-control input[type="radio"]:checked:disabled {
+  border-color: var(--form-disabled-border-color);
+  background: var(--form-disabled-input-color);
+}
+
+.form-control input[type="radio"]:not(:checked).error,
+.form-control input[type="checkbox"]:not(:checked).error {
+  border-color: var(--form-error-border-color);
+  background: var(--form-background-color);
+}
+
+.form-control input[type="checkbox"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--form-input-border-radius);
+  transition: 120ms background-color ease-in-out;
+}
+
+.form-control input[type="checkbox"]:checked {
+  border-color: var(--form-check-radio-default);
+  background: var(--form-check-radio-default);
+  font-size: var(--form-check-radio-size-default);
+}
+
+.form-control input[type="checkbox"]:checked::before {
+  color: var(--form-background-color);
+  content: "\f33e";
+  text-align: center;
+  text-decoration: inherit;
+  text-transform: none;
+  font: normal normal normal 1em/1 Phosphor;
+  flex-shrink: 0;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form-control input[type="checkbox"]:checked:hover {
+  border-color: var(--form-check-radio-hover);
+  background: var(--form-check-radio-hover);
+}
+
+.form-control input[type="checkbox"]:checked:disabled {
+  border-color: var(--form-disabled-border-color);
+  background: var(--form-disabled-border-color);
+}
+
+.form-control input[type="checkbox"]:disabled::before {
+  color: var(--form-disabled-input-color);
+}
+
+.form-control input:focus-visible,
+.form-control input:focus,
+.form-control input:focus-within,
+.form-control input:active  {
+  border-color: var(--form-focus-border-color);
+}

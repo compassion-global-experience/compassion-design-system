@@ -1,0 +1,41 @@
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: var(--form-input-gap) 0;
+}
+
+.input-group-adornment {
+  display: flex;
+  padding: 0 var(--form-input-medium-padding-x);
+  border-top-left-radius: var(--form-input-border-radius);
+  border-bottom-left-radius: var(--form-input-border-radius);
+  background: var(--form-border-color);
+  color: var(--form-icon-color);
+  font: var(--form-input-group-text-medium);
+  align-items: center;
+  justify-content: center;
+  gap: var(--form-input-gap);
+}
+
+.input-group-adornment.small {
+  padding-right: var(--form-input-small-padding-x);
+  padding-left: var(--form-input-small-padding-x);
+  font: var(--form-input-group-text-small);
+}
+
+.input-group-adornment.large {
+  padding-right: var(--form-input-large-padding-x);
+  padding-left: var(--form-input-large-padding-x);
+  font: var(--form-input-group-text-large);
+}
+
+.input-group .form-field {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-field + .input-group-adornment,
+.input-group-adornment + .form-field {
+  border-radius: 0 var(--form-input-border-radius) var(--form-input-border-radius) 0;
+}
