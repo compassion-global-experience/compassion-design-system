@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Meta } from '@storybook/react';
 import Modal from './Modal';
+import Backdrop from './Backdrop';
 import Button from '../Button';
 
 const meta: Meta<typeof Modal> = {
@@ -15,10 +16,7 @@ const Template = props => {
 
   return (
     <>
-      {
-        open &&
-          <span style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0, background: 'black', opacity: 0.7 }} />
-      }
+      {open && <Backdrop />}
       <button type="button" className="button-main secondary medium" onClick={() => setOpen(true)}>
         Open Modal
       </button>
