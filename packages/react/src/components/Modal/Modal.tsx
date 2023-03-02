@@ -1,13 +1,13 @@
 import { CSSProperties, MouseEvent, ReactNode } from 'react';
-import { X } from "phosphor-react";
 import '@compassion-gds/css/src/components/Modal/modal.css';
+import { X } from '../icons';
 
 export interface ModalProps {
-  title?: string,
+  title?: ReactNode,
   size?: 'default' | 'small' | 'wide',
   footerSlot?: ReactNode,
   children: ReactNode,
-  onClose: () => void,
+  onClose?: () => void,
   className?: string,
   style?: CSSProperties,
 }
@@ -18,7 +18,7 @@ const Modal = ({ title = '', size = 'default', onClose, footerSlot, className, s
     return (
       <div className={classNames} style={style}>
         {onClose && <ModalClose onClick={onClose} />}
-        {title.length > 0 && <div className="modal-header">{title}</div>}
+        {title && <div className="modal-header">{title}</div>}
         <div className="modal-body">{children}</div>
         {Boolean(footerSlot) && <div className="modal-footer">{footerSlot}</div>}
       </div>
