@@ -12,7 +12,7 @@ const meta: Meta<typeof Modal> = {
 export default meta;
 
 const Template = props => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <>
