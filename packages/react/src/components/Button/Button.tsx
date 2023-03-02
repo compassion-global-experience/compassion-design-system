@@ -1,4 +1,4 @@
-import { MouseEvent, CSSProperties } from 'react';
+import { MouseEvent, CSSProperties, forwardRef } from 'react';
 import '@compassion-gds/css/src/components/Button/button.css';
 
 export interface ButtonProps {
@@ -11,14 +11,19 @@ export interface ButtonProps {
   style?: CSSProperties,
 }
 
-const Button = ({ label, mode = 'primary', size = 'medium', disabled = false, className, style, onClick }: ButtonProps) => {
+export type Ref = HTMLButtonElement;
+
+const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
+  const { label, mode = 'primary', size = 'medium', disabled = false, className, style, onClick, ...rest } = props;
   const classNames = ['button-main', mode, size, className].join(' ');
 
   return (
-    <button onClick={onClick} className={classNames} disabled={disabled} style={style}>
+    <button onClick={onClick} className={classNames} disabled={disabled} style={style} ref={ref} {...rest}>
       {label}
     </button>
   );
-};
+});
+
+Button.displayName = 'Button';
 
 export default Button;
