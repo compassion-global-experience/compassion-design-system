@@ -1,4 +1,4 @@
-import { CSSProperties, MouseEvent, ReactNode } from 'react';
+import { CSSProperties, forwardRef, MouseEvent, ReactNode } from 'react';
 import '@compassion-gds/css/src/components/Modal/modal.css';
 import { X } from '../icons';
 
@@ -12,18 +12,23 @@ export interface ModalProps {
   style?: CSSProperties,
 }
 
-const Modal = ({ title = '', size = 'default', onClose, footerSlot, className, style, children }: ModalProps) => {
+export type Ref = HTMLDivElement;
+
+const Modal = forwardRef<Ref, ModalProps>((props, ref) => {
+    const { title = '', size = 'default', onClose, footerSlot, className, style, children, ...rest } = props;
     const classNames = ['modal', size, className].join(' ');
 
     return (
-      <div className={classNames} style={style}>
+      <div className={classNames} style={style} ref={ref} {...rest}>
         {onClose && <ModalClose onClick={onClose} />}
         {title && <div className="modal-header">{title}</div>}
         <div className="modal-body">{children}</div>
         {Boolean(footerSlot) && <div className="modal-footer">{footerSlot}</div>}
       </div>
   );
-};
+});
+
+Modal.displayName = 'Modal';
 
 export interface ButtonProps {
   onClick: (event: MouseEvent<HTMLButtonElement>) => void,
