@@ -19,7 +19,6 @@
 }
 
 .modal-body {
-    border-bottom: 1px solid var(--modal-border-color);
     color: var(--modal-body-color);
     font: var(--modal-body-font);
 }
@@ -31,13 +30,22 @@
     align-items: center;
     padding: var(--padding-3) var(--padding-5);
     gap: var(--margin-3);
+    border-top: 1px solid var(--modal-border-color);
 }
 
 .modal-button-close {
     position: absolute;
     top: calc(var(--padding-3) + 4px);
     right: var(--padding-5);
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
     cursor: pointer;
+    appearance: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal.small {
