@@ -1,27 +1,23 @@
-import { CSSProperties } from 'react';
+import { ReactElement, CSSProperties } from 'react';
 import '@compassion-gds/css/src/components/Table/table.css';
 
+export interface ColumnCell {
+  title: string;
+  key: string;
+  headerRenderFn?: (key: string | number, title: string) => ReactElement;
+  cellRenderFn?: (key: string, data: string | number | object) => ReactElement;
+}
+
 export interface TableProps {
-  columns: {
-    value: string,
-    link?: string,
-    disabled?: boolean,
-  }[],
-  rows: {
-    data: {
-      value: string,
-      link?: string,
-      disabled?: boolean,
-    }[],
-    disabled?: boolean,
-  }[],
+  columns: ColumnCell[],
+  rows: object[],
   disabled?: boolean,
   stickyHeader?: boolean,
   containerStyle?: CSSProperties,
   tableStyle?: CSSProperties,
 }
 
-const Table = ({ columns= [], rows = [], disabled = false, stickyHeader = false, containerStyle, tableStyle }: TableProps) => {
+const Table = ({ columns = [], rows = [], disabled = false, stickyHeader = false, containerStyle, tableStyle }: TableProps) => {
   const sticky = stickyHeader ? 'sticky-header' : '';
   const disabledTable = disabled ? 'disabled' : '';
   const classNames = ['table', sticky, disabledTable].join(' ');
@@ -31,23 +27,25 @@ const Table = ({ columns= [], rows = [], disabled = false, stickyHeader = false,
       <table className={classNames} style={tableStyle}>
         <thead className="table-head">
           <tr className="table-row">
-            {columns.map((col, i) => (
-              <th key={`table-head-${i}`} className={`table-cell ${col.disabled ? 'disabled' : ''}`}>
-                {col.link ? <a href={col.link}>{col.value}</a> : col.value}
-              </th>
-            ))}
+            {
+              columns.map((col, index) => (
+                col.headerRenderFn
+                  ? col.headerRenderFn(index, col.title)
+                  : <th key={index} className="table-cell">{col.title}</th>
+              ))
+            }
           </tr>
         </thead>
         <tbody className="table-body">
           {rows.map((row, rowIndex) => (
-            <tr key={`table-row-${rowIndex}`} className={`table-row ${row.disabled ? 'disabled' : ''}`}>
+            <tr key={rowIndex} className="table-row">
               {
-                  row.data.map((cell, cellIndex) => (
-                    <td key={`table-cell-${rowIndex}-${cellIndex}`} className={`table-cell ${cell.disabled ? 'disabled' : ''}`}>
-                      {cell.link ? <a href={cell.link}>{cell.value}</a> : cell.value}
-                    </td>
-                  ))
-                }
+                Object.keys(row).map((key, cellIndex) => (
+                  columns[cellIndex].cellRenderFn
+                    ? columns[cellIndex].cellRenderFn(key, row[key])
+                    : <td className="table-cell" key={cellIndex}>{row[key]}</td>
+                ))
+              }
             </tr>
           ))}
         </tbody>

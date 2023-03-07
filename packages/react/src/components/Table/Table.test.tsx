@@ -1,25 +1,33 @@
 import { render } from '@testing-library/react';
-
 import Table from './Table';
 
-describe('Button', () => {
-  it('should render `Primary` mode with `Medium` size', () => {
-    const { container } = render(<Table label="Click Me!" mode="primary" />);
+describe('Table', () => {
+  it('should render 3 columns and 3 rows', () => {
+    const { container } = render(<Table {...TABLE_DEFAULT} />);
     expect(container).toMatchSnapshot();
   });
 
-  it('should render `Secondary` mode with `Small` size', () => {
-    const { container } = render(<Table label="Click Me!" mode="secondary" size="small" />);
+  it('should render disabled version', () => {
+    const { container } = render(<Table {...TABLE_DEFAULT} disabled />);
     expect(container).toMatchSnapshot();
   });
 
-  it('should render `Tertiary` mode with `Large` size', () => {
-    const { container } = render(<Table label="Click Me!" mode="tertiary" size="large" />);
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should render `Disabled` variant', () => {
-    const { container } = render(<Table label="Disabled" mode="primary" disabled />);
+  it('should render sticky header version', () => {
+    const { container } = render(<Table {...TABLE_DEFAULT} stickyHeader />);
     expect(container).toMatchSnapshot();
   });
 });
+
+const TABLE_DEFAULT = {
+  columns: [
+    { title: 'Heading 1', key: 'column1' },
+    { title: 'Heading 2', key: 'column2' },
+    { title: 'Heading 3', key: 'column3' },
+  ],
+  rows: [
+    { column1: 'Cell 1', column2: 'Cell 2', column3: 'Cell 3' },
+    { column1: 'Cell 1', column2: 'Cell 2', column3: 'Cell 3' },
+    { column1: 'Cell 1', column2: 'Cell 2', column3: 'Cell 3' },
+  ],
+  stickyHeader: false,
+};
