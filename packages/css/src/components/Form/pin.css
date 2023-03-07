@@ -1,3 +1,5 @@
+@import "common.css";
+
 .pin-field {
   display: flex;
   gap: var(--margin-3);

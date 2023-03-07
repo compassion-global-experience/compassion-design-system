@@ -1,3 +1,5 @@
+@import "common.css";
+
 .form-control {
   display: flex;
   align-items: center;
