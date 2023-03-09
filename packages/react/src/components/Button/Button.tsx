@@ -1,14 +1,12 @@
-import { MouseEvent, CSSProperties, forwardRef } from 'react';
+import { MouseEvent, ButtonHTMLAttributes, forwardRef } from 'react';
 import '@compassion-gds/css/src/components/Button/button.css';
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   mode?: 'primary' | 'secondary' | 'tertiary',
   size?: 'small' | 'medium' | 'large',
   disabled?: boolean,
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void,
-  className?: string,
-  style?: CSSProperties,
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {

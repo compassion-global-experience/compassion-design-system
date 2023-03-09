@@ -1,15 +1,15 @@
-import { CSSProperties, forwardRef, MouseEvent, ReactNode } from 'react';
+import { forwardRef, MouseEvent, ReactNode, HTMLProps } from 'react';
 import '@compassion-gds/css/src/components/Modal/modal.css';
 import { X } from '../icons';
 
-export interface ModalProps {
+type HtmlAttrWithoutOverriddenKeys = Omit<HTMLProps<HTMLDivElement>, 'title' | 'size'>
+
+export interface ModalProps extends HtmlAttrWithoutOverriddenKeys {
   title?: ReactNode,
   size?: 'default' | 'small' | 'wide',
   footerSlot?: ReactNode,
   children: ReactNode,
   onClose?: () => void,
-  className?: string,
-  style?: CSSProperties,
 }
 
 const Modal = forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
