@@ -11,9 +11,7 @@ export interface ButtonProps {
   style?: CSSProperties,
 }
 
-export type Ref = HTMLButtonElement;
-
-const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const { label, mode = 'primary', size = 'medium', disabled = false, className, style, onClick, ...rest } = props;
   const classNames = ['button-main', mode, size, className].join(' ');
 

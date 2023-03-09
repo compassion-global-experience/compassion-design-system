@@ -12,9 +12,7 @@ export interface ModalProps {
   style?: CSSProperties,
 }
 
-export type Ref = HTMLDivElement;
-
-const Modal = forwardRef<Ref, ModalProps>((props, ref) => {
+const Modal = forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
     const { title = '', size = 'default', onClose, footerSlot, className, style, children, ...rest } = props;
     const classNames = ['modal', size, className].join(' ');
 
