@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should render 3 columns and 3 rows 1`] = `
+<div>
+  <div
+    class="table-container"
+  >
+    <table
+      class="table"
+    >
+      <thead
+        class="table-head"
+      >
+        <tr
+          class="table-row"
+        >
+          <th
+            class="table-cell"
+          >
+            Heading 1
+          </th>
+          <th
+            class="table-cell"
+          >
+            Heading 2
+          </th>
+          <th
+            class="table-cell"
+          >
+            Heading 3
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="table-body"
+      >
+        <tr
+          class="table-row"
+        >
+          <td
+            class="table-cell"
+          >
+            Cell 1
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 2
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 3
+          </td>
+        </tr>
+        <tr
+          class="table-row"
+        >
+          <td
+            class="table-cell"
+          >
+            Cell 1
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 2
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 3
+          </td>
+        </tr>
+        <tr
+          class="table-row"
+        >
+          <td
+            class="table-cell"
+          >
+            Cell 1
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 2
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Table should render disabled version 1`] = `
+<div>
+  <div
+    class="table-container"
+  >
+    <table
+      class="table disabled"
+    >
+      <thead
+        class="table-head"
+      >
+        <tr
+          class="table-row"
+        >
+          <th
+            class="table-cell"
+          >
+            Heading 1
+          </th>
+          <th
+            class="table-cell"
+          >
+            Heading 2
+          </th>
+          <th
+            class="table-cell"
+          >
+            Heading 3
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="table-body"
+      >
+        <tr
+          class="table-row"
+        >
+          <td
+            class="table-cell"
+          >
+            Cell 1
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 2
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 3
+          </td>
+        </tr>
+        <tr
+          class="table-row"
+        >
+          <td
+            class="table-cell"
+          >
+            Cell 1
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 2
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 3
+          </td>
+        </tr>
+        <tr
+          class="table-row"
+        >
+          <td
+            class="table-cell"
+          >
+            Cell 1
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 2
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Table should render sticky header version 1`] = `
+<div>
+  <div
+    class="table-container"
+  >
+    <table
+      class="table sticky-header"
+    >
+      <thead
+        class="table-head"
+      >
+        <tr
+          class="table-row"
+        >
+          <th
+            class="table-cell"
+          >
+            Heading 1
+          </th>
+          <th
+            class="table-cell"
+          >
+            Heading 2
+          </th>
+          <th
+            class="table-cell"
+          >
+            Heading 3
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="table-body"
+      >
+        <tr
+          class="table-row"
+        >
+          <td
+            class="table-cell"
+          >
+            Cell 1
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 2
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 3
+          </td>
+        </tr>
+        <tr
+          class="table-row"
+        >
+          <td
+            class="table-cell"
+          >
+            Cell 1
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 2
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 3
+          </td>
+        </tr>
+        <tr
+          class="table-row"
+        >
+          <td
+            class="table-cell"
+          >
+            Cell 1
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 2
+          </td>
+          <td
+            class="table-cell"
+          >
+            Cell 3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
