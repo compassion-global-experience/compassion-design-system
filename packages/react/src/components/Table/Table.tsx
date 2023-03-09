@@ -15,15 +15,17 @@ export interface TableProps {
   stickyHeader?: boolean,
   containerStyle?: CSSProperties,
   tableStyle?: CSSProperties,
+  className?: string,
 }
 
-const Table = ({ columns = [], rows = [], disabled = false, stickyHeader = false, containerStyle, tableStyle }: TableProps) => {
+const Table = ({ columns = [], rows = [], disabled = false, stickyHeader = false, containerStyle, tableStyle, className }: TableProps) => {
   const sticky = stickyHeader ? 'sticky-header' : '';
   const disabledTable = disabled ? 'disabled' : '';
   const classNames = ['table', sticky, disabledTable].join(' ');
+  const containerClassNames = ['table-container', className].join(' ');
 
   return (
-    <div className="table-container" style={containerStyle}>
+    <div className={containerClassNames} style={containerStyle}>
       <table className={classNames} style={tableStyle}>
         <thead className="table-head">
           <tr className="table-row">
