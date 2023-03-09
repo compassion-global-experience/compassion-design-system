@@ -1,51 +1,52 @@
-import { HTMLAttributes, ReactElement } from 'react';
+import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
 import '@compassion-gds/css/src/components/Form/common.css';
 import { Check, X } from '../icons';
 
 type FieldState = 'disabled' | 'error' | 'success';
 type FieldSize = 'small' | 'medium' | 'large';
 
-export interface InputProps extends HTMLAttributes<HTMLInputElement> {
-  id: string,
+export interface InputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
   type?:
-      | 'text'
-      | 'email'
-      | 'search'
-      | 'password'
-      | 'tel'
-      | 'number'
-      | 'url'
-      | 'month'
-      | 'time'
-      | 'week'
-      | 'date'
-      | 'datetime-local'
-      | 'color';
-  size?: FieldSize,
-  iconLeft?: ReactElement,
-  iconRight?: ReactElement,
-  state?: FieldState,
-  className?: string,
+    | 'text'
+    | 'email'
+    | 'search'
+    | 'password'
+    | 'tel'
+    | 'number'
+    | 'url'
+    | 'month'
+    | 'time'
+    | 'week'
+    | 'date'
+    | 'datetime-local'
+    | 'color';
+  size?: FieldSize;
+  iconLeft?: ReactElement;
+  iconRight?: ReactElement;
+  state?: FieldState;
 }
 
-const Input = ({
-   id,
-   state,
-   type = 'text',
-   placeholder = '',
-   defaultValue = '',
-   size = 'medium',
-   iconRight,
-   iconLeft,
-   className,
+const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const {
+    id,
+    state,
+    type = 'text',
+    placeholder = '',
+    defaultValue = '',
+    size = 'medium',
+    iconRight,
+    iconLeft,
+    className,
     ...rest
-}: InputProps) => {
+  } = props;
   const fieldClassNames = ['form-field', state, size, className].join(' ');
 
   return (
     <div className={fieldClassNames}>
       <FieldIcon size={size} icon={iconLeft} />
       <input
+        ref={ref}
         id={id}
         type={type}
         defaultValue={defaultValue}
@@ -57,7 +58,9 @@ const Input = ({
       <FieldIcon size={size} state={state} icon={iconRight} />
     </div>
   );
-};
+});
+
+Input.displayName = 'Input';
 
 const FieldIcon = ({ state, size = 'medium', icon }: { state?: FieldState, size?: FieldSize, icon?: ReactElement }) => {
   let defaultIcon = icon;
