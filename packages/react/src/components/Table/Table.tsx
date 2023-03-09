@@ -1,15 +1,15 @@
 import { ReactElement, CSSProperties } from 'react';
 import '@compassion-gds/css/src/components/Table/table.css';
 
-export interface ColumnCell {
+export interface Column {
   title: string;
   key: string;
-  headerRenderFn?: (key: string | number, title: string) => ReactElement;
-  cellRenderFn?: (key: string, data: string | number | object) => ReactElement;
+  headerRender?: (col: Column) => ReactElement;
+  cellRender?: (col: Column, data: object) => ReactElement;
 }
 
 export interface TableProps {
-  columns: ColumnCell[],
+  columns: Column[],
   rows: object[],
   disabled?: boolean,
   stickyHeader?: boolean,
@@ -30,10 +30,10 @@ const Table = ({ columns = [], rows = [], disabled = false, stickyHeader = false
         <thead className="table-head">
           <tr className="table-row">
             {
-              columns.map((col, index) => (
-                col.headerRenderFn
-                  ? col.headerRenderFn(index, col.title)
-                  : <th key={index} className="table-cell">{col.title}</th>
+              columns.map(col => (
+                col.headerRender
+                  ? col.headerRender(col)
+                  : <th key={col.key} className="table-cell">{col.title}</th>
               ))
             }
           </tr>
@@ -42,10 +42,10 @@ const Table = ({ columns = [], rows = [], disabled = false, stickyHeader = false
           {rows.map((row, rowIndex) => (
             <tr key={rowIndex} className="table-row">
               {
-                Object.keys(row).map((key, cellIndex) => (
-                  columns[cellIndex].cellRenderFn
-                    ? columns[cellIndex].cellRenderFn(key, row[key])
-                    : <td className="table-cell" key={cellIndex}>{row[key]}</td>
+                columns.map((col) => (
+                  col.cellRender
+                    ? col.cellRender(col, row)
+                    : <td className="table-cell" key={`${rowIndex}-${col.key}`}>{row[col.key]}</td>
                 ))
               }
             </tr>

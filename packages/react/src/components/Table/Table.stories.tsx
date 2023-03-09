@@ -32,8 +32,8 @@ export const WithLinks = {
       {
         title: 'Heading 2',
         key: 'column2',
-        headerRenderFn: (key, title) => <th key={key} className="table-cell"><a href="https://title-link.com">{title}</a></th>,
-        cellRenderFn: (key, value) => <td key={key} className="table-cell"><a href="https://cell-link.com">{value}</a></td>,
+        headerRender: ({ key, title }) => <th key={key} className="table-cell"><a href="https://title-link.com">{title}</a></th>,
+        cellRender: ({ key }, row) => <td key={key} className="table-cell"><a href="https://cell-link.com">{row[key]}</a></td>,
       },
       { title: 'Heading 3', key: 'column3' },
     ],
@@ -53,11 +53,15 @@ export const CustomCells = {
       {
         title: 'Heading 2',
         key: 'column2',
-        cellRenderFn: (key, { label, link, disabled }) => (
-          <td key={key} className={`table-cell ${disabled ? 'disabled' : ''}`}>
-            {link ? <a href={link}>{label}</a> : label}
-          </td>
-        ),
+        cellRender: (col, row) => {
+          const { label, disabled, link } = row[col.key];
+
+          return (
+            <td key={col.key} className={`table-cell ${disabled ? 'disabled' : ''}`}>
+              {link ? <a href={link}>{label}</a> : label}
+            </td>
+          );
+        },
       },
       { title: 'Heading 3', key: 'column3' },
     ],
