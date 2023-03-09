@@ -1,4 +1,9 @@
-import { ReactElement, CSSProperties } from 'react';
+import {
+  ReactElement,
+  CSSProperties,
+  forwardRef,
+  ForwardedRef, Ref,
+} from 'react';
 import '@compassion-gds/css/src/components/Table/table.css';
 
 export interface Column<Row> {
@@ -18,15 +23,17 @@ export interface TableProps<Row> {
   className?: string;
 }
 
-const Table = <Row,>({
-  columns = [],
-  rows = [],
-  disabled = false,
-  stickyHeader = false,
-  containerStyle,
-  tableStyle,
-  className,
-}: TableProps<Row>) => {
+function TableInner<Row>(props: TableProps<Row>, ref: ForwardedRef<HTMLTableElement>) {
+  const {
+    columns = [],
+    rows = [],
+    disabled = false,
+    stickyHeader = false,
+    containerStyle,
+    tableStyle,
+    className,
+    } = props;
+
   const sticky = stickyHeader ? 'sticky-header' : '';
   const disabledTable = disabled ? 'disabled' : '';
   const classNames = ['table', sticky, disabledTable].join(' ');
@@ -34,7 +41,7 @@ const Table = <Row,>({
 
   return (
     <div className={containerClassNames} style={containerStyle}>
-      <table className={classNames} style={tableStyle}>
+      <table ref={ref} className={classNames} style={tableStyle}>
         <thead className="table-head">
           <tr className="table-row">
             {columns.map((col) =>
@@ -66,6 +73,19 @@ const Table = <Row,>({
       </table>
     </div>
   );
+}
+
+const TableWithRef = forwardRef(TableInner);
+
+type TableWithRefProps<T> = TableProps<T> & {
+  mRef?: Ref<HTMLTableElement>;
 };
+
+function Table<RowData>({
+  mRef,
+  ...props
+}: TableWithRefProps<RowData>) {
+  return <TableWithRef ref={mRef} {...props} />;
+}
 
 export default Table;
