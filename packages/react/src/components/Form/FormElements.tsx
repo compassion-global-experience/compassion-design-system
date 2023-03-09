@@ -5,6 +5,15 @@ import { Check, X } from '../icons';
 type FieldState = 'disabled' | 'error' | 'success';
 type FieldSize = 'small' | 'medium' | 'large';
 
+interface FieldContainerProps {
+    id: string,
+    label?: string,
+    state?: FieldState,
+    hint?: string,
+    className?: string,
+    children: ReactElement,
+}
+
 export interface InputProps extends HTMLAttributes<HTMLInputElement> {
   id: string,
   type?:
@@ -28,7 +37,7 @@ export interface InputProps extends HTMLAttributes<HTMLInputElement> {
   className?: string,
 }
 
-const Input = ({
+export const Input = ({
    id,
    state,
    type = 'text',
@@ -59,6 +68,27 @@ const Input = ({
   );
 };
 
+export const FieldContainer = ({
+  id,
+  label = '',
+  state,
+  hint = '',
+  className,
+  children,
+}: FieldContainerProps) => {
+  const containerClassNames =  ['form-field-row', className].join(' ');
+  const labelClassNames = ['form-label', state].join(' ');
+  const helperClassNames = ['form-hint', state].join(' ');
+
+  return (
+    <div className={containerClassNames}>
+      {label && <label className={labelClassNames} htmlFor={id}>{label}</label>}
+      {children}
+      {hint && <span className={helperClassNames}>{hint}</span>}
+    </div>
+  );
+};
+
 const FieldIcon = ({ state, size = 'medium', icon }: { state?: FieldState, size?: FieldSize, icon?: ReactElement }) => {
   let defaultIcon = icon;
   const iconSize = size === 'small' ? 16 : 20;
@@ -77,5 +107,3 @@ const FIELD_STATE = {
   ERROR: 'error',
   DISABLED: 'disabled',
 };
-
-export default Input;

@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 import '@compassion-gds/css/src/components/Form/input-group.css';
 
-import Input from './Input';
-import { TextFieldProps, TextFieldContainer } from './TextField';
+import { TextFieldProps } from './TextField';
+import { FieldContainer, Input } from './FormElements';
 import { Info } from '../icons';
 
 export interface InputGroupProps extends TextFieldProps {
@@ -27,13 +27,13 @@ const InputGroup = ({
   const startPosition = adornmentPosition === 'start';
 
   return (
-    <TextFieldContainer id={id} label={label} state={state} hint={hint} className={className}>
+    <FieldContainer id={id} label={label} state={state} hint={hint} className={className}>
       <div className="input-group">
         {startPosition && <Adornment icon={adornmentIcon} text={adornmentText} size={size} />}
         <Input id={id} state={state} className={fieldClassName} size={size} {...rest} />
         {!startPosition && <Adornment icon={adornmentIcon} text={adornmentText} size={size} />}
       </div>
-    </TextFieldContainer>
+    </FieldContainer>
   );
 };
 
