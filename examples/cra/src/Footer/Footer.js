@@ -1,4 +1,4 @@
-import { Button } from '@compassion-gds/react';
+import { Button, TextField } from '@compassion-gds/react';
 import './styles.css';
 
 export function Footer() {
@@ -10,20 +10,7 @@ export function Footer() {
           e.preventDefault();
         }} className='subscribe-form'
       >
-        <div>
-          <label className='form-label' htmlFor='subscribe'>
-            Subscribe
-          </label>
-          <div className='form-field default medium'>
-            <input
-              id='subscribe'
-              type='email'
-              className='form-input'
-              placeholder='username@domain.com'
-            />
-          </div>
-        </div>
-
+        <TextField label="Subscribe" id="subscribe" placeholder="username@domain.com" type="email" />
         <Button size='medium' type='submit' label='Submit' />
       </form>
     </footer>
