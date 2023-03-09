@@ -3,18 +3,34 @@ import '@compassion-gds/css/src/components/Button/button.css';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
-  mode?: 'primary' | 'secondary' | 'tertiary',
-  size?: 'small' | 'medium' | 'large',
-  disabled?: boolean,
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void,
+  mode?: 'primary' | 'secondary' | 'tertiary';
+  size?: 'small' | 'medium' | 'large';
+  disabled?: boolean;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { label, mode = 'primary', size = 'medium', disabled = false, className, style, onClick, ...rest } = props;
+  const {
+    label,
+    mode = 'primary',
+    size = 'medium',
+    disabled = false,
+    className,
+    style,
+    onClick,
+    ...rest
+  } = props;
   const classNames = ['button-main', mode, size, className].join(' ');
 
   return (
-    <button onClick={onClick} className={classNames} disabled={disabled} style={style} ref={ref} {...rest}>
+    <button
+      onClick={onClick}
+      className={classNames}
+      disabled={disabled}
+      style={style}
+      ref={ref}
+      {...rest}
+    >
       {label}
     </button>
   );
