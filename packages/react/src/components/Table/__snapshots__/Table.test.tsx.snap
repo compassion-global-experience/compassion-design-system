@@ -6,7 +6,7 @@ exports[`Table should render 3 columns and 3 rows 1`] = `
     class="table-container"
   >
     <table
-      class="table  "
+      class="table"
     >
       <thead
         class="table-head"
@@ -103,7 +103,7 @@ exports[`Table should render disabled version 1`] = `
     class="table-container"
   >
     <table
-      class="table  disabled"
+      class="table disabled"
     >
       <thead
         class="table-head"
@@ -200,7 +200,7 @@ exports[`Table should render sticky header version 1`] = `
     class="table-container"
   >
     <table
-      class="table sticky-header "
+      class="table sticky-header"
     >
       <thead
         class="table-head"

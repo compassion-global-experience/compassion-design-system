@@ -2,7 +2,8 @@ import {
   ReactElement,
   CSSProperties,
   forwardRef,
-  ForwardedRef, Ref,
+  ForwardedRef,
+  Ref,
 } from 'react';
 import '@compassion-gds/css/src/components/Table/table.css';
 
@@ -23,7 +24,10 @@ export interface TableProps<Row> {
   className?: string;
 }
 
-function TableInner<Row>(props: TableProps<Row>, ref: ForwardedRef<HTMLTableElement>) {
+function TableInner<Row>(
+  props: TableProps<Row>,
+  ref: ForwardedRef<HTMLTableElement>,
+) {
   const {
     columns = [],
     rows = [],
@@ -32,12 +36,14 @@ function TableInner<Row>(props: TableProps<Row>, ref: ForwardedRef<HTMLTableElem
     containerStyle,
     tableStyle,
     className,
-    } = props;
+  } = props;
 
   const sticky = stickyHeader ? 'sticky-header' : '';
   const disabledTable = disabled ? 'disabled' : '';
-  const classNames = ['table', sticky, disabledTable].join(' ');
-  const containerClassNames = ['table-container', className].join(' ');
+  const classNames = ['table', sticky, disabledTable].filter(Boolean).join(' ');
+  const containerClassNames = ['table-container', className]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <div className={containerClassNames} style={containerStyle}>
@@ -81,10 +87,7 @@ type TableWithRefProps<T> = TableProps<T> & {
   mRef?: Ref<HTMLTableElement>;
 };
 
-function Table<RowData>({
-  mRef,
-  ...props
-}: TableWithRefProps<RowData>) {
+function Table<RowData>({ mRef, ...props }: TableWithRefProps<RowData>) {
   return <TableWithRef ref={mRef} {...props} />;
 }
 
