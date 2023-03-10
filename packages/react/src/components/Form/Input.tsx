@@ -1,9 +1,7 @@
 import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
 import '@compassion-gds/css/src/components/Form/common.css';
 import { Check, X } from '../icons';
-
-type FieldState = 'disabled' | 'error' | 'success';
-type FieldSize = 'small' | 'medium' | 'large';
+import { FieldSize, FieldState } from './Helpers';
 
 export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
