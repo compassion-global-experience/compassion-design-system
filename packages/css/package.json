@@ -24,6 +24,8 @@
     "./reset.css": "./reset.css",
     "./light.css": "./dist/light.css",
     "./dark.css": "./dist/dark.css",
+    "./vars/light.css": "./src/vars/_cds-light.css",
+    "./vars/dark.css": "./src/vars/_cds-dark.css",
     "./src/": "./src/",
     "./assets/": "./assets/"
   },

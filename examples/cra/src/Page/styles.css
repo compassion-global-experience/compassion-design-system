@@ -1,0 +1,12 @@
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.App-logo {
+    pointer-events: none;
+    width: 80%;
+    height: 80%;
+}

@@ -1,0 +1,11 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem;
+
+}
+
+html, body, #root,.App {
+  height: 100%;
+}

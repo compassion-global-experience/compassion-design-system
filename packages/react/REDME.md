@@ -11,22 +11,16 @@ To install the GDS React package use
 npm install @compassion-gds/react
 ```
 
-Or `yarn add @compassion-gds/react` if you're using yarn
+Or `yarn add @compassion-gds/react` if you're using yarn  
+(`@compassion-gds/css` is automatically installed as peer dependency)
 
-Import the css files from the entry point of your application
+Import the following css files from the entry point of your application
 
 #### index.js
 ```js
 // Replace {theme} with any of the available themes (e.g. light, dark)
-import '@compassion-gds/react/css/{theme}.css';
-import '@compassion-gds/react/css/base.css';
-```
-
-Alternatively these can be declared as stylesheets in a html file like so:
-```html
-<!--Replace {theme} with any of the available themes (e.g. light, dark)-->
-<link rel="stylesheet" type="text/css" href="@compassion-gds/react/css/{theme}.css" />
-<link rel="stylesheet" type="text/css" href="@compassion-gds/react/css/base.css" />
+import '@compassion-gds/css/reset.css';
+import '@compassion-gds/css/vars/{theme}.css';
 ```
 
 GDS React components would follow the imported theme.
@@ -45,5 +39,5 @@ export const PrimaryButton = (props) => (
 ## Themes
 
 Available options:
-- light: `@compassion-gds/react/css/light.css`
-- dark: `@compassion-gds/react/css/dark.css`
+- light: `@compassion-gds/css/vars/light.css`
+- dark: `@compassion-gds/css/vars/dark.css`
