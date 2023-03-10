@@ -1,7 +1,8 @@
+import { forwardRef } from 'react';
 import '@compassion-gds/css/src/components/Form/common.css';
 
 import Input, { InputProps } from './Input';
-import { forwardRef } from 'react';
+import { FieldContainer } from './Helpers';
 
 export interface TextFieldProps extends InputProps {
   label?: string;
@@ -19,17 +20,9 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
     fieldClassName,
     ...rest
   } = props;
-  const containerClassNames = ['form-field-row', className].join(' ');
-  const labelClassNames = ['form-label', state].join(' ');
-  const helperClassNames = ['form-hint', state].join(' ');
 
   return (
-    <div className={containerClassNames}>
-      {label && (
-        <label className={labelClassNames} htmlFor={id}>
-          {label}
-        </label>
-      )}
+    <FieldContainer id={id} label={label} state={state} hint={hint} className={className}>
       <Input
         ref={ref}
         id={id}
@@ -37,8 +30,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
         className={fieldClassName}
         {...rest}
       />
-      {hint && <span className={helperClassNames}>{hint}</span>}
-    </div>
+    </FieldContainer>
   );
 });
 
