@@ -27,6 +27,7 @@ const InputGroup =  forwardRef<HTMLInputElement, InputGroupProps>((props, ref) =
       id={id}
       label={label}
       state={state}
+      size={size}
       hint={hint}
       className={className}
       adornmentPosition={adornmentPosition}
