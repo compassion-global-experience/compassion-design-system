@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea should render \`Disabled\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <div
+      class="form-label-wrap"
+    >
+      <label
+        class="form-label disabled"
+        for="disabled-field"
+      >
+        Disabled
+      </label>
+    </div>
+    <div
+      class="form-field disabled  "
+    >
+      <textarea
+        class="form-input"
+        disabled=""
+        id="disabled-field"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextArea should render \`Error\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <div
+      class="form-label-wrap"
+    >
+      <label
+        class="form-label error"
+        for="error-field"
+      >
+        Error
+      </label>
+    </div>
+    <div
+      class="form-field error  "
+    >
+      <textarea
+        class="form-input"
+        id="error-field"
+      />
+      <span
+        class="form-icon"
+      >
+        <svg
+          fill="currentColor"
+          height="20"
+          viewBox="0 0 256 256"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <line
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+            x1="200"
+            x2="56"
+            y1="56"
+            y2="200"
+          />
+          <line
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+            x1="200"
+            x2="56"
+            y1="200"
+            y2="56"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextArea should render \`Small\` size 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <div
+      class="form-label-wrap"
+    >
+      <label
+        class="form-label "
+        for="small-field"
+      >
+        Small
+      </label>
+    </div>
+    <div
+      class="form-field  small "
+    >
+      <textarea
+        class="form-input"
+        id="small-field"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextArea should render \`Success\` state with \`Large\` size 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <div
+      class="form-label-wrap"
+    >
+      <label
+        class="form-label success"
+        for="success-field"
+      >
+        Success
+      </label>
+    </div>
+    <div
+      class="form-field success  "
+    >
+      <textarea
+        class="form-input"
+        id="success-field"
+      />
+      <span
+        class="form-icon"
+      >
+        <svg
+          fill="currentColor"
+          height="20"
+          viewBox="0 0 256 256"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <polyline
+            fill="none"
+            points="216 72 104 184 48 128"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextArea should render counter with \`maxLength: 100\` 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <div
+      class="form-label-wrap"
+    >
+      <label
+        class="form-label "
+        for="with-counter"
+      >
+        With Counter
+      </label>
+      <span
+        class="form-hint "
+      >
+        0
+         / 
+        100
+      </span>
+    </div>
+    <div
+      class="form-field   "
+    >
+      <textarea
+        class="form-input"
+        id="with-counter"
+        maxlength="100"
+      />
+    </div>
+  </div>
+</div>
+`;
