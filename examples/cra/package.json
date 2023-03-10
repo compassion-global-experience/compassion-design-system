@@ -1,22 +1,22 @@
 {
-  "name": "@compassion-gds/examples-cra",
-  "description": "An example of @compassion-gds/react-web with Create React App",
-  "version": "0.1.1-alpha.0",
+  "name": "compassion-cra-template",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@compassion-gds/react-web": "^0.6.0-alpha.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "@compassion-gds/react": "file:../../packages/react",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "bundle": "react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "analyze:source-maps": "npx source-map-explorer 'build/static/js/*.js'",
-    "analyze:bundle": "npx cra-bundle-analyzer"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
