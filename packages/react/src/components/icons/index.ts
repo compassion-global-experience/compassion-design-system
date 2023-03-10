@@ -1,1 +1,1 @@
-export { Check, Info, X, Plus, Minus } from 'phosphor-react';
+export { Check, Info, X } from "phosphor-react";
