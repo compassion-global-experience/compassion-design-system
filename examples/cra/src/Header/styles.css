@@ -1,0 +1,6 @@
+.app-header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+}
