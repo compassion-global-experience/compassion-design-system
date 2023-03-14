@@ -27,10 +27,6 @@
   --type-body-p-desktop-bold: 16px/20px Gotham Bold;
   --type-body-p-mobile-regular: 16px/20px Gotham Book;
   --type-body-p-mobile-bold: 16px/20px Gotham Bold;
-  --type-body-p-small-desktop-regular: 13px/16px Gotham Book;
-  --type-body-p-small-desktop-bold: 13px/16px Gotham Bold;
-  --type-body-p-small-mobile-regular: 13px/16px Gotham Book;
-  --type-body-p-small-mobile-bold: 13px/16px Gotham Bold;
   --type-color: #FFFFFF;
   --type-color-white: #FFFFFF;
   --type-color-accent: #FFB500;
@@ -52,6 +48,7 @@
   --table-background-color: #2e2f2a;
   --table-border-color: #4b4c45;
   --table-no-background: #00000000;
+  --table-underline-color: #4b4c45;
   --table-header-color: #FFFFFF;
   --table-text-color: #FFFFFF;
   --table-action-color: #61B3FF;
@@ -60,13 +57,11 @@
   --table-active-action-color: #ecedec;
   --table-disabled-background-color: #2e2f2a;
   --table-disabled-action-color: #919389;
-  --table-disabled-header-color: #acaea7;
-  --table-disabled-text-color: #acaea7;
   --table-border-radius: 0px;
   --table-border-width: 1px;
   --table-no-border: 0px;
   --table-header-font: 16px/20px Gotham Medium;
-  --table-cell-font: 16px/20px Gotham Book;
+  --table-cell-font: 16px/20px Gotham Regular;
   --tab-background-color: #2e2f2a;
   --tab-border-color: #4b4c45;
   --tab-no-background: #00000000;
@@ -184,7 +179,7 @@
   --form-check-radio-size-default: 22px;
   --form-check-radio-size-inside: 8px;
   --form-check-radio-gap: 8px;
-  --form-pin-size-default: 44px;
+  --form-pin-size-default: 48px;
   --form-pin-size-small: 32px;
   --form-pin-size-large: 52px;
   --form-input-border-radius: 4px;

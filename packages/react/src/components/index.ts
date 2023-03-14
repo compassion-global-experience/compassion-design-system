@@ -1,3 +1,3 @@
 export { default as Button } from './Button';
 export { default as Modal } from './Modal';
-export { Input, TextField } from './Form';
+export { Input, InputGroup, TextField } from './Form';

@@ -1,0 +1,419 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputGroup should render \`Disabled\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <label
+      class="form-label disabled"
+      for="disabled-field"
+    >
+      Disabled
+    </label>
+    <div
+      class="input-group"
+    >
+      <div
+        class="form-field disabled medium "
+      >
+        <input
+          class="form-input"
+          disabled=""
+          id="disabled-field"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="input-group-adornment "
+      >
+        <svg
+          fill="currentColor"
+          height="22"
+          viewBox="0 0 256 256"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <circle
+            cx="128"
+            cy="128"
+            fill="none"
+            r="96"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <polyline
+            fill="none"
+            points="120 120 128 120 128 176 136 176"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <circle
+            cx="126"
+            cy="84"
+            r="12"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputGroup should render \`Error\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <label
+      class="form-label error"
+      for="error-field"
+    >
+      Error
+    </label>
+    <div
+      class="input-group"
+    >
+      <div
+        class="form-field error medium "
+      >
+        <input
+          class="form-input"
+          id="error-field"
+          placeholder=""
+          type="text"
+          value=""
+        />
+        <span
+          class="form-icon"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="none"
+              height="256"
+              width="256"
+            />
+            <line
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="16"
+              x1="200"
+              x2="56"
+              y1="56"
+              y2="200"
+            />
+            <line
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="16"
+              x1="200"
+              x2="56"
+              y1="200"
+              y2="56"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="input-group-adornment "
+      >
+        <svg
+          fill="currentColor"
+          height="22"
+          viewBox="0 0 256 256"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <circle
+            cx="128"
+            cy="128"
+            fill="none"
+            r="96"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <polyline
+            fill="none"
+            points="120 120 128 120 128 176 136 176"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <circle
+            cx="126"
+            cy="84"
+            r="12"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputGroup should render \`Small\` size 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <label
+      class="form-label "
+      for="small-field"
+    >
+      Small
+    </label>
+    <div
+      class="input-group"
+    >
+      <div
+        class="form-field  small "
+      >
+        <input
+          class="form-input"
+          id="small-field"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="input-group-adornment small"
+      >
+        <svg
+          fill="currentColor"
+          height="22"
+          viewBox="0 0 256 256"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <circle
+            cx="128"
+            cy="128"
+            fill="none"
+            r="96"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <polyline
+            fill="none"
+            points="120 120 128 120 128 176 136 176"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <circle
+            cx="126"
+            cy="84"
+            r="12"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputGroup should render \`Success\` state with \`Large\` size 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <label
+      class="form-label success"
+      for="success-field"
+    >
+      Success
+    </label>
+    <div
+      class="input-group"
+    >
+      <div
+        class="form-field success medium "
+      >
+        <input
+          class="form-input"
+          id="success-field"
+          placeholder=""
+          type="text"
+          value=""
+        />
+        <span
+          class="form-icon"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="none"
+              height="256"
+              width="256"
+            />
+            <polyline
+              fill="none"
+              points="216 72 104 184 48 128"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="16"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="input-group-adornment "
+      >
+        <svg
+          fill="currentColor"
+          height="22"
+          viewBox="0 0 256 256"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <circle
+            cx="128"
+            cy="128"
+            fill="none"
+            r="96"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <polyline
+            fill="none"
+            points="120 120 128 120 128 176 136 176"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <circle
+            cx="126"
+            cy="84"
+            r="12"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputGroup should render left aligned adornment with text 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <label
+      class="form-label "
+      for="adorned-field"
+    >
+      Adorned
+    </label>
+    <div
+      class="input-group"
+    >
+      <div
+        class="input-group-adornment "
+      >
+        <svg
+          fill="currentColor"
+          height="22"
+          viewBox="0 0 256 256"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <circle
+            cx="128"
+            cy="128"
+            fill="none"
+            r="96"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <polyline
+            fill="none"
+            points="120 120 128 120 128 176 136 176"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+          <circle
+            cx="126"
+            cy="84"
+            r="12"
+          />
+        </svg>
+        <span
+          class="input-group-adornment-text"
+        >
+          Text
+        </span>
+      </div>
+      <div
+        class="form-field  medium "
+      >
+        <input
+          class="form-input"
+          id="adorned-field"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
