@@ -12,13 +12,12 @@ interface SelectOptions {
 export interface SelectProps extends Omit<InputHTMLAttributes<HTMLSelectElement>, 'size'> {
   id: string;
   options: SelectOptions[];
-  label?: string;
   defaultOption?: string;
+  label?: string;
   size?: FieldSize;
   state?: FieldState;
   hint?: string;
   icon?: ReactElement;
-  fieldClassName?: string;
 }
 
 const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {

@@ -4,7 +4,11 @@ import '@compassion-gds/css/src/components/Form/common.css';
 import { FieldContainer } from './Helpers';
 import Select, { SelectProps } from './Select';
 
-const SelectField = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
+export interface SelectFieldProps extends SelectProps {
+  fieldClassName?: string;
+}
+
+const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>((props, ref) => {
   const {
     id,
     label = '',
