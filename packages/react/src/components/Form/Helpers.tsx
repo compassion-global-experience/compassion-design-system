@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Info } from '../icons';
+import { Check, Info, X } from '../icons';
 
 export type FieldState = 'disabled' | 'error' | 'success';
 export type FieldSize = 'small' | 'medium' | 'large';
@@ -66,6 +66,18 @@ export const InputGroupContainer = ({
         </div>
       </FieldContainer>
     );
+};
+
+export const StateIcon = (props: { state?: FieldState; size?: FieldSize }) => {
+    const iconSize = props.size === 'small' ? 16 : 20;
+    let icon;
+
+    if (props.state === 'success') icon = <Check size={iconSize} />;
+    if (props.state === 'error') icon = <X size={iconSize} />;
+
+    if (!icon) return null;
+
+    return <span className="form-icon">{icon}</span>;
 };
 
 const Adornment = ({ icon, text, size }: { icon: ReactElement, text: string, size: FieldSize }) => (

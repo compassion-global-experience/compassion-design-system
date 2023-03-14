@@ -1,7 +1,6 @@
 import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
 import '@compassion-gds/css/src/components/Form/common.css';
-import { Check, X } from '../icons';
-import { FieldSize, FieldState } from './Helpers';
+import { FieldSize, FieldState, StateIcon } from './Helpers';
 
 export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
@@ -60,18 +59,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 });
 
 Input.displayName = 'Input';
-
-const StateIcon = (props: { state?: FieldState; size?: FieldSize }) => {
-  const iconSize = props.size === 'small' ? 16 : 20;
-  let icon;
-
-  if (props.state === 'success') icon = <Check size={iconSize} />;
-  if (props.state === 'error') icon = <X size={iconSize} />;
-
-  if (!icon) return null;
-
-  return <span className="form-icon">{icon}</span>;
-};
 
 const FieldIcon = (props: { icon?: ReactElement }) => (
   <span className="form-icon">{props.icon}</span>
