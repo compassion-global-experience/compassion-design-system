@@ -1,0 +1,360 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectField should render \`Disabled\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <label
+      class="form-label disabled"
+      for="disabled-field"
+    >
+      Disabled
+    </label>
+    <div
+      class="form-field disabled medium "
+    >
+      <select
+        class="form-input"
+        disabled=""
+        id="disabled-field"
+      >
+        <option
+          value="option_1"
+        >
+          Option 1
+        </option>
+        <option
+          value="option_2"
+        >
+          Option 2
+        </option>
+        <option
+          value="option_3"
+        >
+          Option 3
+        </option>
+        <option
+          value="option_4"
+        >
+          Option 4
+        </option>
+        <option
+          value="option_5"
+        >
+          Option 5
+        </option>
+      </select>
+      <span
+        class="form-icon select-icon"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 256 256"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <polyline
+            fill="none"
+            points="208 96 128 176 48 96"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectField should render \`Error\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <label
+      class="form-label error"
+      for="error-field"
+    >
+      Error
+    </label>
+    <div
+      class="form-field error medium "
+    >
+      <select
+        class="form-input"
+        id="error-field"
+      >
+        <option
+          value="option_1"
+        >
+          Option 1
+        </option>
+        <option
+          value="option_2"
+        >
+          Option 2
+        </option>
+        <option
+          value="option_3"
+        >
+          Option 3
+        </option>
+        <option
+          value="option_4"
+        >
+          Option 4
+        </option>
+        <option
+          value="option_5"
+        >
+          Option 5
+        </option>
+      </select>
+      <span
+        class="form-icon"
+      >
+        <svg
+          fill="currentColor"
+          height="20"
+          viewBox="0 0 256 256"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <line
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+            x1="200"
+            x2="56"
+            y1="56"
+            y2="200"
+          />
+          <line
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+            x1="200"
+            x2="56"
+            y1="200"
+            y2="56"
+          />
+        </svg>
+      </span>
+      <span
+        class="form-icon select-icon"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 256 256"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <polyline
+            fill="none"
+            points="208 96 128 176 48 96"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectField should render \`Small\` size 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <label
+      class="form-label "
+      for="small-field"
+    >
+      Small
+    </label>
+    <div
+      class="form-field  small "
+    >
+      <select
+        class="form-input"
+        id="small-field"
+      >
+        <option
+          value="option_1"
+        >
+          Option 1
+        </option>
+        <option
+          value="option_2"
+        >
+          Option 2
+        </option>
+        <option
+          value="option_3"
+        >
+          Option 3
+        </option>
+        <option
+          value="option_4"
+        >
+          Option 4
+        </option>
+        <option
+          value="option_5"
+        >
+          Option 5
+        </option>
+      </select>
+      <span
+        class="form-icon select-icon"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 256 256"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <polyline
+            fill="none"
+            points="208 96 128 176 48 96"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectField should render \`Success\` state with \`Large\` size 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <label
+      class="form-label success"
+      for="success-field"
+    >
+      Success
+    </label>
+    <div
+      class="form-field success medium "
+    >
+      <select
+        class="form-input"
+        id="success-field"
+      >
+        <option
+          value="option_1"
+        >
+          Option 1
+        </option>
+        <option
+          value="option_2"
+        >
+          Option 2
+        </option>
+        <option
+          value="option_3"
+        >
+          Option 3
+        </option>
+        <option
+          value="option_4"
+        >
+          Option 4
+        </option>
+        <option
+          value="option_5"
+        >
+          Option 5
+        </option>
+      </select>
+      <span
+        class="form-icon"
+      >
+        <svg
+          fill="currentColor"
+          height="20"
+          viewBox="0 0 256 256"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <polyline
+            fill="none"
+            points="216 72 104 184 48 128"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+        </svg>
+      </span>
+      <span
+        class="form-icon select-icon"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 256 256"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="none"
+            height="256"
+            width="256"
+          />
+          <polyline
+            fill="none"
+            points="208 96 128 176 48 96"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
