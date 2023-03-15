@@ -22,7 +22,8 @@ const Checkbox = ({
 
   return `
     <div class="form-field-row">
-        <div class="form-control">
+      <div class="form-control">
+        <div class="form-control-inner">
           <input
             id="test-checkbox"
             type="checkbox"
@@ -31,11 +32,13 @@ const Checkbox = ({
             ${checkedAttr}
             ${disabled}
           />
-          <label for="test-checkbox" class="form-label ${disabled}">
-            ${label}
-          </label>
+          <span class="form-control-icon"><i class="ph-check"></i></span>
         </div>
-        ${hasError ? `<span class="form-hint error">Error</span>` : ''}
+        <label for="test-checkbox" class="form-label ${disabled}">
+          ${label}
+        </label>
+      </div>
+      ${hasError ? `<span class="form-hint error">Error</span>` : ''}
     </div>
 `;
 };
