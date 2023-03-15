@@ -5,3 +5,4 @@ export { default as TextArea } from './TextArea';
 export { default as Select } from './Select';
 export { default as SelectField } from './SelectField';
 export { default as SelectGroup } from './SelectGroup';
+export { default as ChoiceInput } from './ChoiceInput';
