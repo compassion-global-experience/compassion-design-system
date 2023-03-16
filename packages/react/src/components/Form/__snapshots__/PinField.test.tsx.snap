@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PinField should render \`Disabled\` state 1`] = `
+<div>
+  <div
+    class="form-field-row"
+  >
+    <label
+      class="form-label disabled"
+    >
+      Disabled
+    </label>
+    <div
+      class="pin-field  "
+    >
+      <div
+        class="form-field disabled"
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          disabled=""
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field disabled"
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          disabled=""
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field disabled"
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          disabled=""
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field disabled"
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          disabled=""
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PinField should render \`Error\` state 1`] = `
+<div>
+  <div
+    class="form-field-row"
+  >
+    <label
+      class="form-label error"
+    >
+      Error
+    </label>
+    <div
+      class="pin-field  "
+    >
+      <div
+        class="form-field error"
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field error"
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field error"
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field error"
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PinField should render \`Secret\` mode (hidden values) 1`] = `
+<div>
+  <div
+    class="form-field-row"
+  >
+    <label
+      class="form-label "
+    >
+      Secret
+    </label>
+    <div
+      class="pin-field  "
+    >
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="password"
+          value="1"
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="password"
+          value="2"
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="password"
+          value="3"
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="password"
+          value="4"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PinField should render \`Small\` size 1`] = `
+<div>
+  <div
+    class="form-field-row"
+  >
+    <label
+      class="form-label "
+    >
+      Small
+    </label>
+    <div
+      class="pin-field small "
+    >
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PinField should render 8 inputs 1`] = `
+<div>
+  <div
+    class="form-field-row"
+  >
+    <label
+      class="form-label "
+    >
+      Longer
+    </label>
+    <div
+      class="pin-field  "
+    >
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field "
+      >
+        <input
+          autocomplete="off"
+          class="form-input"
+          maxlength="1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
