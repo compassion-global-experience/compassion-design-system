@@ -41,3 +41,13 @@ export const PrimaryButton = (props) => (
 Available options:
 - light: `@compassion-gds/css/vars/light.css`
 - dark: `@compassion-gds/css/vars/dark.css`
+
+## Contributing to the `react` Package
+
+The `react` package is structured with a component-per-directory convention
+inside the `src` directory. Each component directory generally contains 3 items:
+
+- A **TSX file** that describes the component’s structure and behavior
+- A **.stories.ts file** that illustrates most of the ways the component can
+  be configured
+- An **index.ts** file that exports the TSX component’s contents
