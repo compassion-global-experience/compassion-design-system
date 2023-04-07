@@ -1,4 +1,4 @@
-import {ChangeEvent, KeyboardEvent, useCallback, useEffect, useRef, useState} from 'react';
+import { ChangeEvent, KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
 import '@compassion-gds/css/src/components/Form/pin.css';
 
 import { FieldSize, FieldState } from './Helpers';
@@ -20,7 +20,7 @@ interface PinHookProps extends PinProps {
 
 export interface PinFieldProps extends PinProps {
   label?: string;
-  value?: string | number;
+  value?: string;
   length?: number;
   size?: FieldSize;
   className?: string;
@@ -42,8 +42,10 @@ const PinField = ({
   const fieldClassNames = ['form-field', state].join(' ');
   const labelClassNames = ['form-label', state].join(' ');
 
-  const defaultValues = Array.from({ length }).map((_, i) => value?.toString()[i] || '');
-  const [values, setValues] = useState(defaultValues);
+  const [values, setValues] = useState(
+      () => Array.from({ length }).map((_, i) => value?.toString()[i] || ''),
+  );
+
   const fields = usePinHook({
     values,
     autoFocus,
@@ -152,6 +154,6 @@ const usePinHook = ({
   return fields;
 };
 
-const DEFAULT_PATTERN = /^[a-zd]*$/i;
+const DEFAULT_PATTERN = /.*/;
 
 export default PinField;
