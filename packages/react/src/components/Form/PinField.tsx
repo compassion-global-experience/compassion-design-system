@@ -86,7 +86,6 @@ const usePinHook = ({
   onComplete,
 }: PinHookProps = {}) => {
   const disabled = state === 'disabled';
-  const error = state === 'error';
 
   const fieldRefs = useRef<HTMLInputElement[]>(Array(values.length).fill(null));
 
@@ -105,7 +104,7 @@ const usePinHook = ({
   const onChange = useCallback((index: number) => (event: ChangeEvent<HTMLInputElement>) => {
     let { value } = event.target;
 
-    value = value.trim().toUpperCase();
+    value = value.trim();
 
     if (!pattern.test(value)) return;
 
@@ -119,18 +118,10 @@ const usePinHook = ({
       }
 
       if (index !== values.length - 1) {
-        if (error) {
-          const emptyFieldIndex = nextValues.findIndex((v) => !v);
-
-          if (emptyFieldIndex !== -1) {
-            setFocus(emptyFieldIndex);
-          }
-        } else {
-          setFocus(index + 1);
-        }
+        setFocus(index + 1);
       }
     }
-  }, [pattern, values, onChangeProp, onComplete, error, setFocus]);
+  }, [pattern, values, onChangeProp, onComplete, setFocus]);
 
   const onKeyDown = useCallback((index: number) => (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Backspace' && !values[index] && index) {
