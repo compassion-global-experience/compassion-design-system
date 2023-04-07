@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChoiceInput should render \`checkbox\` in \`Disabled\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <div
+      class="form-control"
+    >
+      <div
+        class="form-control-inner"
+      >
+        <input
+          class="disabled"
+          disabled=""
+          id="disabled-field"
+          type="checkbox"
+        />
+        <span
+          class="form-control-icon"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 256 256"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="none"
+              height="256"
+              width="256"
+            />
+            <polyline
+              fill="none"
+              points="216 72 104 184 48 128"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="16"
+            />
+          </svg>
+        </span>
+      </div>
+      <label
+        class="form-label disabled"
+        for="disabled-field"
+      >
+        Disabled
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChoiceInput should render \`checkbox\` in \`Error\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <div
+      class="form-control"
+    >
+      <div
+        class="form-control-inner"
+      >
+        <input
+          class="error"
+          id="error-field"
+          type="checkbox"
+        />
+        <span
+          class="form-control-icon"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 256 256"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="none"
+              height="256"
+              width="256"
+            />
+            <polyline
+              fill="none"
+              points="216 72 104 184 48 128"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="16"
+            />
+          </svg>
+        </span>
+      </div>
+      <label
+        class="form-label error"
+        for="error-field"
+      >
+        Error
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChoiceInput should render \`radio\` in \`Disabled\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <div
+      class="form-control"
+    >
+      <div
+        class="form-control-inner"
+      >
+        <input
+          class="disabled"
+          disabled=""
+          id="disabled-field"
+          type="radio"
+        />
+      </div>
+      <label
+        class="form-label disabled"
+        for="disabled-field"
+      >
+        Disabled
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChoiceInput should render \`radio\` in \`Error\` state 1`] = `
+<div>
+  <div
+    class="form-field-row "
+  >
+    <div
+      class="form-control"
+    >
+      <div
+        class="form-control-inner"
+      >
+        <input
+          class="error"
+          id="error-field"
+          type="radio"
+        />
+      </div>
+      <label
+        class="form-label error"
+        for="error-field"
+      >
+        Error
+      </label>
+    </div>
+  </div>
+</div>
+`;

@@ -20,3 +20,7 @@ This is a monorepo for the many projects that make up Compassion Internationalâ€
 You can explore the CDS by browsing
 [designwithcompassion.com](https://designwithcompassion.com) or by building one
 of this repositoryâ€™s Storybook instances locally.
+
+## Contributing
+
+Our general [contributing guidelines](CONTRIBUTING.md) are in the root of this repository.
