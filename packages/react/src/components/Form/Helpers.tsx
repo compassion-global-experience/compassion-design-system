@@ -87,7 +87,11 @@ export const InputGroupContainer = ({
   );
 };
 
-export const StateIcon = (props: { state?: FieldState; size?: FieldSize }) => {
+export const StateIcon = (props: {
+  state?: FieldState;
+  size?: FieldSize;
+  classes?: Record<string, string>;
+}) => {
   const iconSize = props.size === 'small' ? 16 : 20;
   let icon;
 
@@ -96,7 +100,11 @@ export const StateIcon = (props: { state?: FieldState; size?: FieldSize }) => {
 
   if (!icon) return null;
 
-  return <span className={getClasses(common, 'form-icon')}>{icon}</span>;
+  return (
+    <span className={getClasses(props.classes || common, 'form-icon')}>
+      {icon}
+    </span>
+  );
 };
 
 const Adornment = ({
@@ -110,10 +118,6 @@ const Adornment = ({
 }) => (
   <div className={getClasses(inputGroup, ['input-group-adornment', size])}>
     {icon || <Info size={22} />}
-    {text && (
-      <span className={getClasses(inputGroup, 'input-group-adornment-text')}>
-        {text}
-      </span>
-    )}
+    {text && <span>{text}</span>}
   </div>
 );

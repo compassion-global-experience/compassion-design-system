@@ -1,5 +1,21 @@
 @import "common.module.css";
 
+.form-field {
+    composes: form-field from "common.module.css";
+}
+
+.error {
+    composes: error from "common.module.css";
+}
+
+.success {
+    composes: success from "common.module.css";
+}
+
+.disabled {
+    composes: disabled from "common.module.css";
+}
+
 .input-group {
   display: flex;
   flex-direction: row;

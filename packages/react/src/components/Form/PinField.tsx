@@ -7,6 +7,7 @@ import {
   useState,
 } from 'react';
 import styles from '@compassion-gds/css/src/components/Form/pin.module.css';
+import common from '@compassion-gds/css/src/components/Form/common.module.css';
 
 import { FieldSize, FieldState } from './Helpers';
 import { getClasses } from '../../utils/classes';
@@ -52,7 +53,7 @@ const PinField = ({
     className,
   );
   const fieldClassNames = getClasses(styles, ['form-field', state]);
-  const labelClassNames = getClasses(styles, ['form-label', state]);
+  const labelClassNames = getClasses(common, ['form-label', state]);
 
   const [values, setValues] = useState(() =>
     Array.from({ length }).map((_, i) => value?.toString()[i] || ''),
@@ -69,7 +70,7 @@ const PinField = ({
   });
 
   return (
-    <div className={getClasses(styles, 'form-field-row')}>
+    <div className={getClasses(common, 'form-field-row')}>
       {label && <label className={labelClassNames}>{label}</label>}
       <div className={containerClassNames}>
         {fields.map((fieldProps, index) => (

@@ -6,6 +6,10 @@
   gap: var(--form-check-radio-gap);
 }
 
+.form-label {
+    composes: form-label from "common.module.css";
+}
+
 .form-control .form-label {
   margin: 0;
   font: var(--form-check-radio-label);

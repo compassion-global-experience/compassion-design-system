@@ -1,5 +1,6 @@
 import { forwardRef, InputHTMLAttributes } from 'react';
 import styles from '@compassion-gds/css/src/components/Form/radio-checkbox.module.css';
+import common from '@compassion-gds/css/src/components/Form/common.module.css';
 
 import { FieldState } from './Helpers';
 import { Check } from '../icons';
@@ -17,9 +18,9 @@ export interface ChoiceInputProps
 const ChoiceInput = forwardRef<HTMLInputElement, ChoiceInputProps>(
   (props, ref) => {
     const { id, state, type, hint, label, className, ...rest } = props;
-    const containerClassNames = getClasses(styles, 'form-field-row', className);
+    const containerClassNames = getClasses(common, 'form-field-row', className);
     const labelClassNames = getClasses(styles, 'form-label', state);
-    const helperClassNames = getClasses(styles, 'form-hint', state);
+    const helperClassNames = getClasses(common, 'form-hint', state);
 
     return (
       <div className={containerClassNames}>

@@ -1,5 +1,6 @@
 import { forwardRef, InputHTMLAttributes, useCallback, useState } from 'react';
 import styles from '@compassion-gds/css/src/components/Form/textarea.module.css';
+import common from '@compassion-gds/css/src/components/Form/common.module.css';
 
 import { FieldSize, FieldState, StateIcon } from './Helpers';
 import { getClasses } from '../../utils/classes';
@@ -31,11 +32,11 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
       ...rest
     } = props;
     const [count, setCount] = useState(0);
-    const containerClassNames = getClasses(styles, 'form-field-row', className);
-    const labelClassNames = getClasses(styles, ['form-label', state]);
-    const helperClassNames = getClasses(styles, ['form-hint', state]);
+    const containerClassNames = getClasses(common, 'form-field-row', className);
+    const labelClassNames = getClasses(common, ['form-label', state]);
+    const helperClassNames = getClasses(common, ['form-hint', state]);
     const fieldClassNames = getClasses(
-      styles,
+      common,
       ['form-field', state, size],
       fieldClassName,
     );
@@ -50,7 +51,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
 
     return (
       <div className={containerClassNames}>
-        <div className={getClasses(styles, 'form-label-wrap')}>
+        <div className={getClasses(common, 'form-label-wrap')}>
           {label && (
             <label className={labelClassNames} htmlFor={id}>
               {label}
@@ -73,7 +74,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
             maxLength={maxLength}
             {...rest}
           />
-          <StateIcon state={state} size={size} />
+          <StateIcon state={state} size={size} classes={styles} />
         </div>
       </div>
     );

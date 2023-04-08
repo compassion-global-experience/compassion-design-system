@@ -5,6 +5,22 @@
   gap: var(--margin-3);
 }
 
+.form-input {
+  composes: form-input from "common.module.css";
+}
+
+.form-field {
+  composes: form-field from "common.module.css";
+}
+
+.error {
+    composes: error from "common.module.css";
+}
+
+.disabled {
+    composes: disabled from "common.module.css";
+}
+
 .pin-field .form-input {
   flex: none;
   width: 100%;

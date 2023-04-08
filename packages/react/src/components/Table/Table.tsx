@@ -61,29 +61,21 @@ function TableInner<Row>(
       <table ref={ref} className={classNames} style={tableStyle}>
         <thead className={headClass}>
           <tr className={rowClass}>
-            {columns.map((col) =>
-              col.headerRender ? (
-                col.headerRender(col)
-              ) : (
-                <th key={col.key} className={cellClass}>
-                  {col.title}
-                </th>
-              ),
-            )}
+            {columns.map((col) => (
+              <th key={col.key} className={cellClass}>
+                {col.headerRender ? col.headerRender(col) : col.title}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody className={bodyClass}>
           {rows.map((row, rowIndex) => (
             <tr key={rowIndex} className={rowClass}>
-              {columns.map((col) =>
-                col.cellRender ? (
-                  col.cellRender(col, row)
-                ) : (
-                  <td className={cellClass} key={`${rowIndex}-${col.key}`}>
-                    {row[col.key]}
-                  </td>
-                ),
-              )}
+              {columns.map((col) => (
+                <td className={cellClass} key={`${rowIndex}-${col.key}`}>
+                  {col.cellRender ? col.cellRender(col, row) : row[col.key]}
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
