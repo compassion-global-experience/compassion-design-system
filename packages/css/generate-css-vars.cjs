@@ -105,12 +105,12 @@ function getStyleDictionaryConfig(theme) {
 
 console.log('Building tokens...');
 
-['_cds-light', '_cds-dark'].map((theme) => {
+['cds-light', 'cds-dark'].map((theme) => {
   console.log('\n==============================================');
   console.log(`\nProcessing: [${theme}]`);
 
   const StyleDictionary = StyleDictionaryPackage.extend(
-    getStyleDictionaryConfig(theme)
+    getStyleDictionaryConfig(theme),
   );
 
   const platforms = ['css'];
