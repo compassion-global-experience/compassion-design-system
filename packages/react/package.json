@@ -16,10 +16,16 @@
       },
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
-    }
+    },
+    "./css/base.css": "./dist/css/reset.css",
+    "./css/light.css": "./dist/css/cds-light.css",
+    "./css/dark.css": "./dist/css/cds-dark.css",
+    "./css/*": "./dist/css/*"
   },
   "scripts": {
     "build": "rollup -c",
+    "copy-css": "bash ./scripts/copy-css.sh",
+    "prepare": "npm run build && npm run copy-css",
     "test": "jest",
     "storybook": "storybook dev -p 6007",
     "build:storybook": "storybook build --quiet"
