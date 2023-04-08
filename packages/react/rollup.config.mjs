@@ -26,7 +26,12 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
-      postcss(),
+      postcss({
+        minimize: true,
+        modules: {
+          generateScopedName: "gds__[local]___[hash:base64:5]",
+          },
+      }),
     ],
   },
   {

@@ -1,4 +1,4 @@
-@import "common.css";
+@import "common.module.css";
 
 .error textarea.form-input,
 .success textarea.form-input {

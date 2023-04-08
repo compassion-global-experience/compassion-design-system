@@ -1,5 +1,5 @@
 import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
-import '@compassion-gds/css/src/components/Form/input-group.css';
+import '@compassion-gds/css/src/components/Form/input-group.module.css';
 
 import { FieldSize, FieldState, StateIcon } from './Helpers';
 import { CaretDown } from '../icons';
@@ -9,7 +9,8 @@ interface SelectOptions {
   label: string;
 }
 
-export interface SelectProps extends Omit<InputHTMLAttributes<HTMLSelectElement>, 'size'> {
+export interface SelectProps
+  extends Omit<InputHTMLAttributes<HTMLSelectElement>, 'size'> {
   id: string;
   options: SelectOptions[];
   defaultOption?: string;
@@ -28,7 +29,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
     size = 'medium',
     icon,
     className,
-      options,
+    options,
     ...rest
   } = props;
 
@@ -36,7 +37,13 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
 
   return (
     <div className={fieldClassNames}>
-      <select ref={ref} id={id} className="form-input" disabled={state === 'disabled'} {...rest}>
+      <select
+        ref={ref}
+        id={id}
+        className="form-input"
+        disabled={state === 'disabled'}
+        {...rest}
+      >
         {defaultOption && (
           <option value="select-option" disabled>
             {defaultOption}
@@ -50,7 +57,9 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
       </select>
       {icon && <span className="form-icon">{icon}</span>}
       <StateIcon state={state} size={size} />
-      <span className="form-icon select-icon"><CaretDown /></span>
+      <span className="form-icon select-icon">
+        <CaretDown />
+      </span>
     </div>
   );
 });

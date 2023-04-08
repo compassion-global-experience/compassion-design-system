@@ -1,4 +1,4 @@
-@import "common.css";
+@import "common.module.css";
 
 .input-group {
   display: flex;

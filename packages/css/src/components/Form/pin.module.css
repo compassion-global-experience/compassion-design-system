@@ -1,4 +1,4 @@
-@import "common.css";
+@import "common.module.css";
 
 .pin-field {
   display: flex;
