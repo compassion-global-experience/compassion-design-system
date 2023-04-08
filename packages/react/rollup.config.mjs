@@ -5,6 +5,7 @@ import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
 import strip from '@rollup/plugin-strip';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import replace from '@rollup/plugin-replace';
 
 import packageJson from './package.json' assert { type: 'json' };
 
@@ -25,8 +26,9 @@ export default [
     ],
     plugins: [
       peerDepsExternal(),
-      strip({
-        include: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+      replace({
+        preventAssignment: true,
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
       }),
       resolve(),
       commonjs(),

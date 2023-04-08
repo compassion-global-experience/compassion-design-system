@@ -9,11 +9,13 @@ export const getClasses = (
   input: string | string[],
   className?: string,
 ): string => {
-  const mappings = Array.isArray(input) ? input : [input];
+  const mappings = (Array.isArray(input) ? input : [input]).filter(Boolean);
   const mapped = mappings.map((key) => map[key]).filter(Boolean);
-  if (mapped.length !== mappings.length) {
-    const missing = mappings.filter((key) => !map[key]);
-    console.warn(`Failed to map classes for: ${missing.join(', ')}`);
+  if (process.env.NODE_ENV !== 'production') {
+    if (mapped.length !== mappings.length) {
+      const missing = mappings.filter((key) => !map[key]);
+      console.warn(`Failed to map classes for: ${missing.join(', ')}`);
+    }
   }
 
   if (className) {
