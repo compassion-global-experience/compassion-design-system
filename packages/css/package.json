@@ -3,15 +3,15 @@
   "version": "0.0.1",
   "description": "Compassion International's Global Design System",
   "scripts": {
-    "start": "npm run build && npm run storybook",
-    "build": "npm run make-css-vars && npm run bundle-css",
+    "start": "npm run prepare && npm run storybook",
+    "prepare": "npm run make-css-vars && npm run bundle-css",
     "bundle-css": "rollup -c",
     "make-css-vars": "npm run get-figma-tokens && npm run convert-figma-tokens && npm run generate-css-vars",
     "get-figma-tokens": "bash scripts/get-figma-tokens.sh",
     "convert-figma-tokens": "bash scripts/convert-figma-tokens.sh",
     "generate-css-vars": "node scripts/generate-css-vars.cjs",
     "storybook": "storybook dev -p 6006",
-    "build:storybook": "npm run build && storybook build --quiet"
+    "build:storybook": "storybook build --quiet"
   },
   "files": [
     "dist",
