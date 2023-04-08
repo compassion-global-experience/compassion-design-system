@@ -4,13 +4,12 @@
   "description": "Compassion International's Global Design System",
   "scripts": {
     "start": "npm run build && npm run storybook",
-    "clone:themes": "git clone --filter=blob:none https://github.com/compassion-global-experience/cds-tokens.git && cp -r cds-tokens/themes/ ./themes/ && rm -rf cds-tokens",
-    "build": "npm run clone:themes && npm run transform && npm run generate-css-vars && npm run bundle-css",
+    "build": "npm run make-css-vars && npm run bundle-css",
     "bundle-css": "rollup -c",
-    "transform": "npm run transform-light && npm run transform-dark",
-    "transform-light": "token-transformer themes tokens/cds-light/tokens.json core/cds-core,cds-light/theme-cds-light,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-light/theme-cds-light",
-    "transform-dark": "token-transformer themes tokens/cds-dark/tokens.json core/cds-core,cds-dark/theme-cds-dark,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-dark/theme-cds-dark",
-    "generate-css-vars": "node generate-css-vars.cjs",
+    "make-css-vars": "npm run get-figma-tokens && npm run convert-figma-tokens && npm run generate-css-vars",
+    "get-figma-tokens": "bash scripts/get-figma-tokens.sh",
+    "convert-figma-tokens": "bash scripts/convert-figma-tokens.sh",
+    "generate-css-vars": "node scripts/generate-css-vars.cjs",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "npm run build && storybook build --quiet"
   },
