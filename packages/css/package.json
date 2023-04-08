@@ -8,8 +8,8 @@
     "build": "npm run clone:themes && npm run transform && npm run generate-css-vars && npm run bundle-css",
     "bundle-css": "rollup -c",
     "transform": "npm run transform-light && npm run transform-dark",
-    "transform-light": "npx token-transformer themes tokens/_cds-light/tokens.json core/cds-core,cds-light/theme-cds-light,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-light/theme-cds-light",
-    "transform-dark": "npx token-transformer themes tokens/_cds-dark/tokens.json core/cds-core,cds-dark/theme-cds-dark,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-dark/theme-cds-dark",
+    "transform-light": "token-transformer themes tokens/_cds-light/tokens.json core/cds-core,cds-light/theme-cds-light,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-light/theme-cds-light",
+    "transform-dark": "token-transformer themes tokens/_cds-dark/tokens.json core/cds-core,cds-dark/theme-cds-dark,components/accordion,components/alert,components/background,components/badge,components/breadcrumb,components/button,components/card,components/dropdown,components/form,components/grid,components/header,components/modal,components/pagination,components/spacing,components/tab,components/table,components/toast,components/tooltip,components/type core/cds-core,cds-dark/theme-cds-dark",
     "generate-css-vars": "node ./generate-css-vars.js",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "npm run build && storybook build --quiet"
@@ -63,6 +63,7 @@
     "rollup": "^3.13.0",
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.0.0-beta.43",
-    "style-dictionary": "^2.10.2"
+    "style-dictionary": "^3.7.2",
+    "token-transformer": "0.0.32"
   }
 }
