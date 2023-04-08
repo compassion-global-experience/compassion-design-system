@@ -3,7 +3,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
-import strip from '@rollup/plugin-strip';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import replace from '@rollup/plugin-replace';
 
@@ -32,7 +31,10 @@ export default [
       }),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        exclude: ["**/__tests__", "**/*.test.ts", "**/stories", "**/*.stories.tsx"],
+      }),
       postcss({
         minimize: true,
         modules: {
