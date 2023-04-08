@@ -1,26 +1,31 @@
 import { ReactElement } from 'react';
+import common from '@compassion-gds/css/src/components/Form/common.module.css';
+import inputGroup from '@compassion-gds/css/src/components/Form/input-group.module.css';
 import { Check, Info, X } from '../icons';
+import { getClasses } from '../../utils/classes';
 
 export type FieldState = 'disabled' | 'error' | 'success';
 export type FieldSize = 'small' | 'medium' | 'large';
 
 interface FieldContainerProps {
-    id: string;
-    label?: string;
-    state?: FieldState;
-    hint?: string;
-    className?: string;
-    children: ReactElement,
+  id: string;
+  label?: string;
+  state?: FieldState;
+  hint?: string;
+  className?: string;
+  children: ReactElement;
 }
 
 export interface AdornmentProps {
-    adornmentIcon?: ReactElement;
-    adornmentPosition?: 'start' | 'end';
-    adornmentText?: string;
+  adornmentIcon?: ReactElement;
+  adornmentPosition?: 'start' | 'end';
+  adornmentText?: string;
 }
 
-export interface InputGroupContainerProps extends FieldContainerProps, AdornmentProps {
-    size?: FieldSize;
+export interface InputGroupContainerProps
+  extends FieldContainerProps,
+    AdornmentProps {
+  size?: FieldSize;
 }
 
 export const FieldContainer = ({
@@ -31,13 +36,17 @@ export const FieldContainer = ({
   className,
   children,
 }: FieldContainerProps) => {
-  const containerClassNames =  ['form-field-row', className].join(' ');
-  const labelClassNames = ['form-label', state].join(' ');
-  const helperClassNames = ['form-hint', state].join(' ');
+  const containerClassNames = getClasses(common, 'form-field-row', className);
+  const labelClassNames = getClasses(common, ['form-label', state]);
+  const helperClassNames = getClasses(common, ['form-hint', state]);
 
   return (
     <div className={containerClassNames}>
-      {label && <label className={labelClassNames} htmlFor={id}>{label}</label>}
+      {label && (
+        <label className={labelClassNames} htmlFor={id}>
+          {label}
+        </label>
+      )}
       {children}
       {hint && <span className={helperClassNames}>{hint}</span>}
     </div>
@@ -55,34 +64,56 @@ export const InputGroupContainer = ({
   size,
   children,
 }: InputGroupContainerProps) => {
-    const startPosition = adornmentPosition === 'start';
+  const startPosition = adornmentPosition === 'start';
 
-    return (
-      <FieldContainer id={id} label={label} state={state} hint={hint} className={className}>
-        <div className="input-group">
-          {startPosition && <Adornment icon={adornmentIcon} text={adornmentText} size={size} />}
-          {children}
-          {!startPosition && <Adornment icon={adornmentIcon} text={adornmentText} size={size} />}
-        </div>
-      </FieldContainer>
-    );
+  return (
+    <FieldContainer
+      id={id}
+      label={label}
+      state={state}
+      hint={hint}
+      className={className}
+    >
+      <div className={getClasses(inputGroup, 'input-group')}>
+        {startPosition && (
+          <Adornment icon={adornmentIcon} text={adornmentText} size={size} />
+        )}
+        {children}
+        {!startPosition && (
+          <Adornment icon={adornmentIcon} text={adornmentText} size={size} />
+        )}
+      </div>
+    </FieldContainer>
+  );
 };
 
 export const StateIcon = (props: { state?: FieldState; size?: FieldSize }) => {
-    const iconSize = props.size === 'small' ? 16 : 20;
-    let icon;
+  const iconSize = props.size === 'small' ? 16 : 20;
+  let icon;
 
-    if (props.state === 'success') icon = <Check size={iconSize} />;
-    if (props.state === 'error') icon = <X size={iconSize} />;
+  if (props.state === 'success') icon = <Check size={iconSize} />;
+  if (props.state === 'error') icon = <X size={iconSize} />;
 
-    if (!icon) return null;
+  if (!icon) return null;
 
-    return <span className="form-icon">{icon}</span>;
+  return <span className={getClasses(common, 'form-icon')}>{icon}</span>;
 };
 
-const Adornment = ({ icon, text, size }: { icon: ReactElement, text: string, size: FieldSize }) => (
-  <div className={['input-group-adornment', size].join(' ')}>
+const Adornment = ({
+  icon,
+  text,
+  size,
+}: {
+  icon: ReactElement;
+  text: string;
+  size: FieldSize;
+}) => (
+  <div className={getClasses(inputGroup, ['input-group-adornment', size])}>
     {icon || <Info size={22} />}
-    {text && <span className="input-group-adornment-text">{text}</span>}
+    {text && (
+      <span className={getClasses(inputGroup, 'input-group-adornment-text')}>
+        {text}
+      </span>
+    )}
   </div>
 );

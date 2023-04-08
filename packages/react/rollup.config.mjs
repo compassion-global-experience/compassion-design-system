@@ -3,7 +3,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
+import strip from '@rollup/plugin-strip';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+
 import packageJson from './package.json' assert { type: 'json' };
 
 export default [
@@ -23,6 +25,9 @@ export default [
     ],
     plugins: [
       peerDepsExternal(),
+      strip({
+        include: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+      }),
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),

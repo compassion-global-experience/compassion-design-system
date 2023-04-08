@@ -5,7 +5,8 @@ import {
   ForwardedRef,
   Ref,
 } from 'react';
-import '@compassion-gds/css/src/components/Table/table.module.css';
+import styles from '@compassion-gds/css/src/components/Table/table.module.css';
+import { getClasses } from '../../utils/classes';
 
 export interface Column<Row> {
   title: string;
@@ -40,35 +41,45 @@ function TableInner<Row>(
 
   const sticky = stickyHeader ? 'sticky-header' : '';
   const disabledTable = disabled ? 'disabled' : '';
-  const classNames = ['table', sticky, disabledTable].filter(Boolean).join(' ');
-  const containerClassNames = ['table-container', className]
-    .filter(Boolean)
-    .join(' ');
+  const classNames = getClasses(
+    styles,
+    ['table', sticky, disabledTable],
+    className,
+  );
+  const containerClassNames = getClasses(
+    styles,
+    ['table-container'],
+    className,
+  );
+  const headClass = getClasses(styles, 'table-head');
+  const rowClass = getClasses(styles, 'table-row');
+  const cellClass = getClasses(styles, 'table-cell');
+  const bodyClass = getClasses(styles, 'table-body');
 
   return (
     <div className={containerClassNames} style={containerStyle}>
       <table ref={ref} className={classNames} style={tableStyle}>
-        <thead className="table-head">
-          <tr className="table-row">
+        <thead className={headClass}>
+          <tr className={rowClass}>
             {columns.map((col) =>
               col.headerRender ? (
                 col.headerRender(col)
               ) : (
-                <th key={col.key} className="table-cell">
+                <th key={col.key} className={cellClass}>
                   {col.title}
                 </th>
               ),
             )}
           </tr>
         </thead>
-        <tbody className="table-body">
+        <tbody className={bodyClass}>
           {rows.map((row, rowIndex) => (
-            <tr key={rowIndex} className="table-row">
+            <tr key={rowIndex} className={rowClass}>
               {columns.map((col) =>
                 col.cellRender ? (
                   col.cellRender(col, row)
                 ) : (
-                  <td className="table-cell" key={`${rowIndex}-${col.key}`}>
+                  <td className={cellClass} key={`${rowIndex}-${col.key}`}>
                     {row[col.key]}
                   </td>
                 ),

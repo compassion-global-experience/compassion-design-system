@@ -1,5 +1,6 @@
 import { MouseEvent, ButtonHTMLAttributes, forwardRef } from 'react';
 import styles from '@compassion-gds/css/src/components/Button/button.module.css';
+import { getClasses } from '../../utils/classes';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
@@ -20,7 +21,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     onClick,
     ...rest
   } = props;
-  const classNames = [styles.buttonMain, mode, size, className].join(' ');
+  const classNames = getClasses(styles, ['button-main', mode, size], className);
 
   return (
     <button

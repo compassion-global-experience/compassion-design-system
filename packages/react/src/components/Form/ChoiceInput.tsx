@@ -1,8 +1,9 @@
 import { forwardRef, InputHTMLAttributes } from 'react';
-import '@compassion-gds/css/src/components/Form/radio-checkbox.module.css';
+import styles from '@compassion-gds/css/src/components/Form/radio-checkbox.module.css';
 
 import { FieldState } from './Helpers';
 import { Check } from '../icons';
+import { getClasses } from '../../utils/classes';
 
 export interface ChoiceInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
@@ -16,24 +17,24 @@ export interface ChoiceInputProps
 const ChoiceInput = forwardRef<HTMLInputElement, ChoiceInputProps>(
   (props, ref) => {
     const { id, state, type, hint, label, className, ...rest } = props;
-    const containerClassNames = ['form-field-row', className].join(' ');
-    const labelClassNames = ['form-label', state].join(' ');
-    const helperClassNames = ['form-hint', state].join(' ');
+    const containerClassNames = getClasses(styles, 'form-field-row', className);
+    const labelClassNames = getClasses(styles, 'form-label', state);
+    const helperClassNames = getClasses(styles, 'form-hint', state);
 
     return (
       <div className={containerClassNames}>
-        <div className="form-control">
-          <div className="form-control-inner">
+        <div className={getClasses(styles, 'form-control')}>
+          <div className={getClasses(styles, 'form-control-inner')}>
             <input
               ref={ref}
               id={id}
               type={type}
               disabled={state === 'disabled'}
-              className={state}
+              className={getClasses(styles, state)}
               {...rest}
             />
             {type === 'checkbox' && (
-              <span className="form-control-icon">
+              <span className={getClasses(styles, 'form-control-icon')}>
                 <Check />
               </span>
             )}

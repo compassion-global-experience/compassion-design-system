@@ -1,5 +1,4 @@
 import { forwardRef } from 'react';
-import '@compassion-gds/css/src/components/Form/common.module.css';
 
 import { FieldContainer } from './Helpers';
 import Select, { SelectProps } from './Select';

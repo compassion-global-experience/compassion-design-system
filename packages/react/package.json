@@ -49,6 +49,7 @@
     "@compassion-gds/css": "^0.0.1",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-strip": "^3.0.2",
     "@rollup/plugin-typescript": "^11.0.0",
     "@storybook/addon-actions": "7.0.0-beta.43",
     "@storybook/addon-essentials": "7.0.0-beta.43",

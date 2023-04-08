@@ -1,8 +1,9 @@
 import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
-import '@compassion-gds/css/src/components/Form/input-group.module.css';
+import styles from '@compassion-gds/css/src/components/Form/input-group.module.css';
 
 import { FieldSize, FieldState, StateIcon } from './Helpers';
 import { CaretDown } from '../icons';
+import { getClasses } from '../../utils/classes';
 
 interface SelectOptions {
   value: string;
@@ -32,15 +33,18 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
     options,
     ...rest
   } = props;
-
-  const fieldClassNames = ['form-field', state, size, className].join(' ');
+  const fieldClassNames = getClasses(
+    styles,
+    ['form-field', state, size],
+    className,
+  );
 
   return (
     <div className={fieldClassNames}>
       <select
         ref={ref}
         id={id}
-        className="form-input"
+        className={getClasses(styles, 'form-input')}
         disabled={state === 'disabled'}
         {...rest}
       >
@@ -55,9 +59,9 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
           </option>
         ))}
       </select>
-      {icon && <span className="form-icon">{icon}</span>}
+      {icon && <span className={getClasses(styles, 'form-icon')}>{icon}</span>}
       <StateIcon state={state} size={size} />
-      <span className="form-icon select-icon">
+      <span className={getClasses(styles, ['form-icon', 'select-icon'])}>
         <CaretDown />
       </span>
     </div>

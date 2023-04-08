@@ -1,5 +1,4 @@
 import { forwardRef } from 'react';
-import '@compassion-gds/css/src/components/Form/input-group.module.css';
 
 import { SelectFieldProps } from './SelectField';
 import { InputGroupContainer, AdornmentProps } from './Helpers';

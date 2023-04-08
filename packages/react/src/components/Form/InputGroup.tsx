@@ -1,5 +1,4 @@
 import { forwardRef } from 'react';
-import '@compassion-gds/css/src/components/Form/input-group.module.css';
 
 import Input from './Input';
 import { TextFieldProps } from './TextField';

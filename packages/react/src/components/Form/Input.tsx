@@ -1,6 +1,7 @@
 import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
-import '@compassion-gds/css/src/components/Form/common.module.css';
+import styles from '@compassion-gds/css/src/components/Form/common.module.css';
 import { FieldSize, FieldState, StateIcon } from './Helpers';
+import { getClasses } from '../../utils/classes';
 
 export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
@@ -37,7 +38,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     className,
     ...rest
   } = props;
-  const fieldClassNames = ['form-field', state, size, className].join(' ');
+  const fieldClassNames = getClasses(
+    styles,
+    ['form-field', state, size],
+    className,
+  );
 
   return (
     <div className={fieldClassNames}>
@@ -49,7 +54,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         defaultValue={defaultValue}
         placeholder={placeholder}
         disabled={state === 'disabled'}
-        className="form-input"
+        className={getClasses(styles, 'form-input')}
         {...rest}
       />
       {iconRight && <FieldIcon icon={iconRight} />}
@@ -61,7 +66,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 Input.displayName = 'Input';
 
 const FieldIcon = (props: { icon?: ReactElement }) => (
-  <span className="form-icon">{props.icon}</span>
+  <span className={getClasses(styles, 'form-icon')}>{props.icon}</span>
 );
 
 export default Input;

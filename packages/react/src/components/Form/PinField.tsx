@@ -6,9 +6,10 @@ import {
   useRef,
   useState,
 } from 'react';
-import '@compassion-gds/css/src/components/Form/pin.module.css';
+import styles from '@compassion-gds/css/src/components/Form/pin.module.css';
 
 import { FieldSize, FieldState } from './Helpers';
+import { getClasses } from '../../utils/classes';
 
 type Values = string[];
 
@@ -45,9 +46,13 @@ const PinField = ({
   className,
   onComplete,
 }: PinFieldProps) => {
-  const containerClassNames = ['pin-field', size, className].join(' ');
-  const fieldClassNames = ['form-field', state].join(' ');
-  const labelClassNames = ['form-label', state].join(' ');
+  const containerClassNames = getClasses(
+    styles,
+    ['pin-field', size],
+    className,
+  );
+  const fieldClassNames = getClasses(styles, ['form-field', state]);
+  const labelClassNames = getClasses(styles, ['form-label', state]);
 
   const [values, setValues] = useState(() =>
     Array.from({ length }).map((_, i) => value?.toString()[i] || ''),
@@ -64,12 +69,15 @@ const PinField = ({
   });
 
   return (
-    <div className="form-field-row">
+    <div className={getClasses(styles, 'form-field-row')}>
       {label && <label className={labelClassNames}>{label}</label>}
       <div className={containerClassNames}>
         {fields.map((fieldProps, index) => (
           <div key={index} className={fieldClassNames}>
-            <input className="form-input" {...fieldProps} />
+            <input
+              className={getClasses(styles, 'form-input')}
+              {...fieldProps}
+            />
           </div>
         ))}
       </div>
