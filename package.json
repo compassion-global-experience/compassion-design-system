@@ -21,6 +21,14 @@
     "build:storybooks": "lerna run build:storybook",
     "lint": "npx eslint . --ignore-path=.gitignore"
   },
+  "percy": {
+    "version": 2,
+    "snapshot": {
+      "widths": [375, 1280],
+        "min-height": 1024,
+        "enable-javascript": true
+    }
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",

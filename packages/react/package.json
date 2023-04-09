@@ -24,6 +24,7 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "dev": "rollup -c -w",
     "copy-css": "bash ./scripts/copy-css.sh",
     "prepare": "npm run build && npm run copy-css",
     "test": "jest",
