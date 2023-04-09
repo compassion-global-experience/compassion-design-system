@@ -59,11 +59,12 @@ jobs:
         run: | 
           tee .percy.yml <<EOF
           version: 2
+          storybook:
+            waitForTimeout: 750
+          discovery:
+            network-idle-timeout: 750
           snapshot:
-            enableJavascript: true
-            widths:
-              - 375
-              - 1280
+            widths: [375, 1280]
           EOF
       - name: Capture snapshots
         env:
