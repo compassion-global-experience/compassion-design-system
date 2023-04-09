@@ -54,6 +54,17 @@ jobs:
       # We don't need to install all of our dependencies but percy
       - name: Install dependencies
         run: npm i --silent @percy/cli @percy/storybook
+      # We do this because we've not checked out the repo, but only took the artifacts
+      - name: Create Config
+        run: | 
+          tee .percy.yml <<EOF
+          version: 2
+          snapshot:
+            enableJavascript: true
+            widths:
+              - 375
+              - 1280
+          EOF
       - name: Capture snapshots
         env:
           PERCY_TOKEN: ${{ secrets[matrix.token] }}
