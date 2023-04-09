@@ -1,4 +1,4 @@
-import '../reset.css';
+import '@compassion-gds/css/reset.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -49,10 +49,10 @@ export const globalTypes = {
 const loadTheme = async (name) => {
   switch (name) {
     case 'light':
-      import('@compassion-gds/css/src/theme/light.css');
+      import('@compassion-gds/css/light.css');
       break;
     case 'dark':
-      import('@compassion-gds/css/src/theme/dark.css');
+      import('@compassion-gds/css/dark.css');
       break;
     default:
       console.error(`Unknown theme name: "${name}"`);

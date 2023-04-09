@@ -1,6 +1,7 @@
 import { forwardRef, MouseEvent, ReactNode, HTMLProps } from 'react';
-import '@compassion-gds/css/src/components/Modal/modal.css';
+import styles from '@compassion-gds/css/src/components/Modal/modal.module.css';
 import { X } from '../icons';
+import { getClasses } from '../../utils/classes';
 
 type HtmlAttrWithoutOverriddenKeys = Omit<
   HTMLProps<HTMLDivElement>,
@@ -26,14 +27,19 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
     children,
     ...rest
   } = props;
-  const classNames = ['modal', size, className].join(' ');
+  const wrapperClass = getClasses(styles, ['modal', size], className);
+  const bodyClass = getClasses(styles, 'modal-body');
 
   return (
-    <div className={classNames} style={style} ref={ref} {...rest}>
+    <div className={wrapperClass} style={style} ref={ref} {...rest}>
       {onClose && <ModalClose onClick={onClose} />}
-      {title && <div className="modal-header">{title}</div>}
-      <div className="modal-body">{children}</div>
-      {Boolean(footerSlot) && <div className="modal-footer">{footerSlot}</div>}
+      {title && (
+        <div className={getClasses(styles, 'modal-header')}>{title}</div>
+      )}
+      <div className={bodyClass}>{children}</div>
+      {Boolean(footerSlot) && (
+        <div className={getClasses(styles, 'modal-footer')}>{footerSlot}</div>
+      )}
     </div>
   );
 });
@@ -45,7 +51,11 @@ export interface ButtonProps {
 }
 
 const ModalClose = ({ onClick }: ButtonProps) => (
-  <button type="button" className="modal-button-close" onClick={onClick}>
+  <button
+    type="button"
+    className={getClasses(styles, 'modal-button-close')}
+    onClick={onClick}
+  >
     <X size={24} />
   </button>
 );

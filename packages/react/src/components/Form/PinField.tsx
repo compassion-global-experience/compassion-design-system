@@ -1,12 +1,21 @@
-import { ChangeEvent, KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
-import '@compassion-gds/css/src/components/Form/pin.css';
+import {
+  ChangeEvent,
+  KeyboardEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import styles from '@compassion-gds/css/src/components/Form/pin.module.css';
+import common from '@compassion-gds/css/src/components/Form/common.module.css';
 
 import { FieldSize, FieldState } from './Helpers';
+import { getClasses } from '../../utils/classes';
 
 type Values = string[];
 
 interface PinProps {
-  pattern?: RegExp,
+  pattern?: RegExp;
   autoFocus?: boolean;
   secret?: boolean;
   state?: FieldState;
@@ -38,12 +47,16 @@ const PinField = ({
   className,
   onComplete,
 }: PinFieldProps) => {
-  const containerClassNames = ['pin-field', size, className].join(' ');
-  const fieldClassNames = ['form-field', state].join(' ');
-  const labelClassNames = ['form-label', state].join(' ');
+  const containerClassNames = getClasses(
+    styles,
+    ['pin-field', size],
+    className,
+  );
+  const fieldClassNames = getClasses(styles, ['form-field', state]);
+  const labelClassNames = getClasses(common, ['form-label', state]);
 
-  const [values, setValues] = useState(
-      () => Array.from({ length }).map((_, i) => value?.toString()[i] || ''),
+  const [values, setValues] = useState(() =>
+    Array.from({ length }).map((_, i) => value?.toString()[i] || ''),
   );
 
   const fields = usePinHook({
@@ -52,21 +65,20 @@ const PinField = ({
     secret,
     pattern,
     state,
-    onChange: v => setValues(v),
+    onChange: (v) => setValues(v),
     onComplete,
   });
 
   return (
-    <div className="form-field-row">
-      {label && (
-        <label className={labelClassNames}>
-          {label}
-        </label>
-      )}
+    <div className={getClasses(common, 'form-field-row')}>
+      {label && <label className={labelClassNames}>{label}</label>}
       <div className={containerClassNames}>
         {fields.map((fieldProps, index) => (
           <div key={index} className={fieldClassNames}>
-            <input className="form-input" {...fieldProps} />
+            <input
+              className={getClasses(styles, 'form-input')}
+              {...fieldProps}
+            />
           </div>
         ))}
       </div>
@@ -97,37 +109,46 @@ const usePinHook = ({
     if (autoFocus) setFocus();
   }, [autoFocus, setFocus]);
 
-  const setFieldRef = useCallback((index: number) => (ref: HTMLInputElement) => {
-    fieldRefs.current[index] = ref;
-  }, []);
+  const setFieldRef = useCallback(
+    (index: number) => (ref: HTMLInputElement) => {
+      fieldRefs.current[index] = ref;
+    },
+    [],
+  );
 
-  const onChange = useCallback((index: number) => (event: ChangeEvent<HTMLInputElement>) => {
-    let { value } = event.target;
+  const onChange = useCallback(
+    (index: number) => (event: ChangeEvent<HTMLInputElement>) => {
+      let { value } = event.target;
 
-    value = value.trim();
+      value = value.trim();
 
-    if (!pattern.test(value)) return;
+      if (!pattern.test(value)) return;
 
-    const nextValues = values.slice();
-    nextValues[index] = value;
-    onChangeProp(nextValues);
+      const nextValues = values.slice();
+      nextValues[index] = value;
+      onChangeProp(nextValues);
 
-    if (value) {
-      if (!nextValues.includes('')) {
-        onComplete?.(nextValues.join(''));
+      if (value) {
+        if (!nextValues.includes('')) {
+          onComplete?.(nextValues.join(''));
+        }
+
+        if (index !== values.length - 1) {
+          setFocus(index + 1);
+        }
       }
+    },
+    [pattern, values, onChangeProp, onComplete, setFocus],
+  );
 
-      if (index !== values.length - 1) {
-        setFocus(index + 1);
+  const onKeyDown = useCallback(
+    (index: number) => (event: KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === 'Backspace' && !values[index] && index) {
+        setFocus(index - 1);
       }
-    }
-  }, [pattern, values, onChangeProp, onComplete, setFocus]);
-
-  const onKeyDown = useCallback((index: number) => (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Backspace' && !values[index] && index) {
-      setFocus(index - 1);
-    }
-  },[values, setFocus]);
+    },
+    [values, setFocus],
+  );
 
   const fields = values.map((value: string, index: number) => ({
     ref: setFieldRef(index),

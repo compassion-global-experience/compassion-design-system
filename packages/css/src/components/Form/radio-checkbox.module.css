@@ -1,9 +1,13 @@
-@import "common.css";
+@import "common.module.css";
 
 .form-control {
   display: flex;
   align-items: center;
   gap: var(--form-check-radio-gap);
+}
+
+.form-label {
+    composes: form-label from "common.module.css";
 }
 
 .form-control .form-label {

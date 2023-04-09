@@ -1,8 +1,10 @@
 import { forwardRef, InputHTMLAttributes } from 'react';
-import '@compassion-gds/css/src/components/Form/radio-checkbox.css';
+import styles from '@compassion-gds/css/src/components/Form/radio-checkbox.module.css';
+import common from '@compassion-gds/css/src/components/Form/common.module.css';
 
 import { FieldState } from './Helpers';
 import { Check } from '../icons';
+import { getClasses } from '../../utils/classes';
 
 export interface ChoiceInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
@@ -13,44 +15,41 @@ export interface ChoiceInputProps
   hint?: string;
 }
 
-const ChoiceInput = forwardRef<HTMLInputElement, ChoiceInputProps>((props, ref) => {
-  const {
-    id,
-    state,
-    type,
-    hint,
-    label,
-    className,
-    ...rest
-  } = props;
-  const containerClassNames =  ['form-field-row', className].join(' ');
-  const labelClassNames = ['form-label', state].join(' ');
-  const helperClassNames = ['form-hint', state].join(' ');
+const ChoiceInput = forwardRef<HTMLInputElement, ChoiceInputProps>(
+  (props, ref) => {
+    const { id, state, type, hint, label, className, ...rest } = props;
+    const containerClassNames = getClasses(common, 'form-field-row', className);
+    const labelClassNames = getClasses(styles, 'form-label', state);
+    const helperClassNames = getClasses(common, 'form-hint', state);
 
-  return (
-    <div className={containerClassNames}>
-      <div className="form-control">
-        <div className="form-control-inner">
-          <input
-            ref={ref}
-            id={id}
-            type={type}
-            disabled={state === 'disabled'}
-            className={state}
-            {...rest}
-          />
-          {type === 'checkbox' && <span className="form-control-icon"><Check /></span>}
+    return (
+      <div className={containerClassNames}>
+        <div className={getClasses(styles, 'form-control')}>
+          <div className={getClasses(styles, 'form-control-inner')}>
+            <input
+              ref={ref}
+              id={id}
+              type={type}
+              disabled={state === 'disabled'}
+              className={getClasses(styles, state)}
+              {...rest}
+            />
+            {type === 'checkbox' && (
+              <span className={getClasses(styles, 'form-control-icon')}>
+                <Check />
+              </span>
+            )}
+          </div>
+          <label htmlFor={id} className={labelClassNames}>
+            {label}
+          </label>
         </div>
-        <label htmlFor={id} className={labelClassNames}>
-          {label}
-        </label>
+        {hint && <span className={helperClassNames}>{hint}</span>}
       </div>
-      {hint && <span className={helperClassNames}>{hint}</span>}
-    </div>
-  );
-});
+    );
+  },
+);
 
 ChoiceInput.displayName = 'ChoiceInput';
-
 
 export default ChoiceInput;

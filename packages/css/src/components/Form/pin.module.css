@@ -1,8 +1,24 @@
-@import "common.css";
+@import "common.module.css";
 
 .pin-field {
   display: flex;
   gap: var(--margin-3);
+}
+
+.form-input {
+  composes: form-input from "common.module.css";
+}
+
+.form-field {
+  composes: form-field from "common.module.css";
+}
+
+.error {
+    composes: error from "common.module.css";
+}
+
+.disabled {
+    composes: disabled from "common.module.css";
 }
 
 .pin-field .form-input {

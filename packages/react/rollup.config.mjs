@@ -4,6 +4,8 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import replace from '@rollup/plugin-replace';
+
 import packageJson from './package.json' assert { type: 'json' };
 
 export default [
@@ -23,10 +25,22 @@ export default [
     ],
     plugins: [
       peerDepsExternal(),
+      replace({
+        preventAssignment: true,
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+      }),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
-      postcss(),
+      typescript({
+        tsconfig: './tsconfig.json',
+        exclude: ["**/__tests__", "**/*.test.ts", "**/stories", "**/*.stories.tsx"],
+      }),
+      postcss({
+        minimize: true,
+        modules: {
+          generateScopedName: "gds__[local]___[hash:base64:5]",
+          },
+      }),
     ],
   },
   {

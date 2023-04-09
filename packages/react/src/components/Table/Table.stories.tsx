@@ -32,8 +32,12 @@ export const WithLinks = {
       {
         title: 'Heading 2',
         key: 'column2',
-        headerRender: ({ key, title }) => <th key={key} className="table-cell"><a href="https://title-link.com">{title}</a></th>,
-        cellRender: ({ key }, row) => <td key={key} className="table-cell"><a href="https://cell-link.com">{row[key]}</a></td>,
+        headerRender: ({ title }) => (
+          <a href="https://title-link.com">{title}</a>
+        ),
+        cellRender: ({ key }, row) => (
+          <a href="https://cell-link.com">{row[key]}</a>
+        ),
       },
       { title: 'Heading 3', key: 'column3' },
     ],
@@ -56,11 +60,7 @@ export const CustomCells = {
         cellRender: (col, row) => {
           const { label, disabled, link } = row[col.key];
 
-          return (
-            <td key={col.key} className={`table-cell ${disabled ? 'disabled' : ''}`}>
-              {link ? <a href={link}>{label}</a> : label}
-            </td>
-          );
+          return link && !disabled ? <a href={link}>{label}</a> : label;
         },
       },
       { title: 'Heading 3', key: 'column3' },
@@ -92,7 +92,7 @@ export const WithStickyHeaderAndScroll = {
     tableStyle: { width: 500 },
     columns: [
       { title: 'Heading 1', key: 'column1' },
-      { title: 'Heading 2', key: 'column2'},
+      { title: 'Heading 2', key: 'column2' },
       { title: 'Heading 3', key: 'column3' },
     ],
     rows: [

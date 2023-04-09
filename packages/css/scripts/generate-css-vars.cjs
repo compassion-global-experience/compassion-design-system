@@ -1,5 +1,9 @@
 const StyleDictionaryPackage = require('style-dictionary');
-const { transformShadow } = require('./utils');
+
+function transformShadow(shadow) {
+  const { x, y, blur, spread, color } = shadow;
+  return `${x}px ${y}px ${blur}px ${spread}px ${color}`;
+}
 
 /**
  * format for css variables
@@ -78,7 +82,7 @@ StyleDictionaryPackage.registerTransform({
 
 function getStyleDictionaryConfig(theme) {
   return {
-    source: [`tokens/${theme}/*.json`],
+    source: [`tokens/${theme}.json`],
     platforms: {
       css: {
         buildPath: `src/vars/`,
@@ -105,12 +109,12 @@ function getStyleDictionaryConfig(theme) {
 
 console.log('Building tokens...');
 
-['_cds-light', '_cds-dark'].map((theme) => {
+['cds-light', 'cds-dark'].map((theme) => {
   console.log('\n==============================================');
   console.log(`\nProcessing: [${theme}]`);
 
   const StyleDictionary = StyleDictionaryPackage.extend(
-    getStyleDictionaryConfig(theme)
+    getStyleDictionaryConfig(theme),
   );
 
   const platforms = ['css'];

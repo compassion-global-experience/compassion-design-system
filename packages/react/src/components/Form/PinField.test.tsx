@@ -19,12 +19,16 @@ describe('PinField', () => {
   });
 
   it('should render `Disabled` state', () => {
-    const { container } = render(<PinField label="Disabled" state="disabled" />);
+    const { container } = render(
+      <PinField label="Disabled" state="disabled" />,
+    );
     expect(container).toMatchSnapshot();
   });
 
   it('should render `Secret` mode (hidden values)', () => {
-    const { container } = render(<PinField label="Secret" value={1234} secret />);
+    const { container } = render(
+      <PinField label="Secret" value="1234" secret />,
+    );
     expect(container).toMatchSnapshot();
   });
 });

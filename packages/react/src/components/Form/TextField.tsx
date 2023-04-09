@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import '@compassion-gds/css/src/components/Form/common.css';
+import '@compassion-gds/css/src/components/Form/common.module.css';
 
 import Input, { InputProps } from './Input';
 import { FieldContainer } from './Helpers';
@@ -22,7 +22,13 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
   } = props;
 
   return (
-    <FieldContainer id={id} label={label} state={state} hint={hint} className={className}>
+    <FieldContainer
+      id={id}
+      label={label}
+      state={state}
+      hint={hint}
+      className={className}
+    >
       <Input
         ref={ref}
         id={id}

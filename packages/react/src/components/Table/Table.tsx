@@ -5,11 +5,13 @@ import {
   ForwardedRef,
   Ref,
 } from 'react';
-import '@compassion-gds/css/src/components/Table/table.css';
+import styles from '@compassion-gds/css/src/components/Table/table.module.css';
+import { getClasses } from '../../utils/classes';
 
 export interface Column<Row> {
   title: string;
   key: string;
+  disabled?: boolean;
   headerRender?: (col: Column<Row>) => ReactElement;
   cellRender?: (col: Column<Row>, data: Row) => ReactElement;
 }
@@ -40,39 +42,52 @@ function TableInner<Row>(
 
   const sticky = stickyHeader ? 'sticky-header' : '';
   const disabledTable = disabled ? 'disabled' : '';
-  const classNames = ['table', sticky, disabledTable].filter(Boolean).join(' ');
-  const containerClassNames = ['table-container', className]
-    .filter(Boolean)
-    .join(' ');
+  const classNames = getClasses(
+    styles,
+    ['table', sticky, disabledTable],
+    className,
+  );
+  const containerClassNames = getClasses(
+    styles,
+    ['table-container'],
+    className,
+  );
+  const headClass = getClasses(styles, 'table-head');
+  const rowClass = getClasses(styles, 'table-row');
+  const bodyClass = getClasses(styles, 'table-body');
 
   return (
     <div className={containerClassNames} style={containerStyle}>
       <table ref={ref} className={classNames} style={tableStyle}>
-        <thead className="table-head">
-          <tr className="table-row">
-            {columns.map((col) =>
-              col.headerRender ? (
-                col.headerRender(col)
-              ) : (
-                <th key={col.key} className="table-cell">
-                  {col.title}
-                </th>
-              ),
-            )}
+        <thead className={headClass}>
+          <tr className={rowClass}>
+            {columns.map((col) => (
+              <th
+                key={col.key}
+                className={getClasses(styles, [
+                  'table-cell',
+                  col.disabled && 'disabled',
+                ])}
+              >
+                {col.headerRender ? col.headerRender(col) : col.title}
+              </th>
+            ))}
           </tr>
         </thead>
-        <tbody className="table-body">
+        <tbody className={bodyClass}>
           {rows.map((row, rowIndex) => (
-            <tr key={rowIndex} className="table-row">
-              {columns.map((col) =>
-                col.cellRender ? (
-                  col.cellRender(col, row)
-                ) : (
-                  <td className="table-cell" key={`${rowIndex}-${col.key}`}>
-                    {row[col.key]}
-                  </td>
-                ),
-              )}
+            <tr key={rowIndex} className={rowClass}>
+              {columns.map((col) => (
+                <td
+                  className={getClasses(styles, [
+                    'table-cell',
+                    (row[col.key]?.disabled || col.disabled) && 'disabled',
+                  ])}
+                  key={`${rowIndex}-${col.key}`}
+                >
+                  {col.cellRender ? col.cellRender(col, row) : row[col.key]}
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
