@@ -17,9 +17,9 @@ jobs:
   build_storybooks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16.x'
           cache: 'npm'
@@ -28,7 +28,7 @@ jobs:
       - name: Build storybook for each package
         run: npm run build:storybooks
       - name: Upload Storybook Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: storybook bundles
           path: packages/*/storybook-static/**
@@ -44,11 +44,11 @@ jobs:
             token: PERCY_TOKEN_WEB_COMPONENTS
     steps:
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16.x'
       - name: Download Storybook Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: storybook bundles
       # We don't need to install all of our dependencies but percy
