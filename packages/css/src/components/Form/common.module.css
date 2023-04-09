@@ -10,7 +10,7 @@
   font: var(--form-input-text-label);
 }
 
-.form-label.form-label.disabled {
+.form-label.disabled {
   color: var(--form-disabled-label-color);
 }
 
