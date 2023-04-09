@@ -60,9 +60,9 @@ jobs:
           tee .percy.yml <<EOF
           version: 2
           storybook:
-            waitForTimeout: 750
+            waitForTimeout: 1000
           discovery:
-            network-idle-timeout: 750
+            network-idle-timeout: 1000
           snapshot:
             widths: [375, 1280]
           EOF
