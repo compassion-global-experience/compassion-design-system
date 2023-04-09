@@ -11,6 +11,7 @@ import { getClasses } from '../../utils/classes';
 export interface Column<Row> {
   title: string;
   key: string;
+  disabled?: boolean;
   headerRender?: (col: Column<Row>) => ReactElement;
   cellRender?: (col: Column<Row>, data: Row) => ReactElement;
 }
@@ -53,7 +54,6 @@ function TableInner<Row>(
   );
   const headClass = getClasses(styles, 'table-head');
   const rowClass = getClasses(styles, 'table-row');
-  const cellClass = getClasses(styles, 'table-cell');
   const bodyClass = getClasses(styles, 'table-body');
 
   return (
@@ -62,7 +62,13 @@ function TableInner<Row>(
         <thead className={headClass}>
           <tr className={rowClass}>
             {columns.map((col) => (
-              <th key={col.key} className={cellClass}>
+              <th
+                key={col.key}
+                className={getClasses(styles, [
+                  'table-cell',
+                  col.disabled && 'disabled',
+                ])}
+              >
                 {col.headerRender ? col.headerRender(col) : col.title}
               </th>
             ))}
@@ -72,7 +78,13 @@ function TableInner<Row>(
           {rows.map((row, rowIndex) => (
             <tr key={rowIndex} className={rowClass}>
               {columns.map((col) => (
-                <td className={cellClass} key={`${rowIndex}-${col.key}`}>
+                <td
+                  className={getClasses(styles, [
+                    'table-cell',
+                    (row[col.key]?.disabled || col.disabled) && 'disabled',
+                  ])}
+                  key={`${rowIndex}-${col.key}`}
+                >
                   {col.cellRender ? col.cellRender(col, row) : row[col.key]}
                 </td>
               ))}
