@@ -37,9 +37,10 @@ export default [
       }),
       postcss({
         minimize: true,
+        config: false,
         modules: {
           generateScopedName: "gds__[local]___[hash:base64:5]",
-          },
+        },
       }),
     ],
   },
