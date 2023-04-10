@@ -29,6 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
@@ -51,10 +52,13 @@
       "waitForTimeout": 1000
     },
     "discovery": {
-      "networkIdleTimeout": 1000
+      "networkIdleTimeout": 700
     },
     "snapshot": {
-      "widths": [375, 1280]
+      "widths": [
+        375,
+        1280
+      ]
     }
   }
 }

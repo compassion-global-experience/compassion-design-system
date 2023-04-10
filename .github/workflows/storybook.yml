@@ -14,7 +14,7 @@ on:
 
 # Snapshot capturing related work
 jobs:
-  build_storybooks:
+  percy-snapshots:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -25,51 +25,8 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Build storybook for each package
-        run: npm run build:storybooks
-      - name: Upload Storybook Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: storybook bundles
-          path: packages/*/storybook-static/**
-  capture_snapshots:
-    runs-on: ubuntu-latest
-    needs: build_storybooks
-    strategy:
-      matrix:
-        include:
-          - package: react
-            token: PERCY_TOKEN_REACT_WEB
-          - package: core
-            token: PERCY_TOKEN_WEB_COMPONENTS
-    steps:
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
-      - name: Download Storybook Artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: storybook bundles
-      # We don't need to install all of our dependencies but percy
-      - name: Install dependencies
-        run: npm i --silent @percy/cli @percy/storybook
-      # We do this because we've not checked out the repo, but only took the artifacts
-      - name: Create Config
-        run: | 
-          tee .percy.yml <<EOF
-          version: 2
-          storybook:
-            waitForTimeout: 1000
-          discovery:
-            network-idle-timeout: 1000
-          snapshot:
-            widths: [375, 1280]
-          EOF
-      - name: Capture snapshots
+      - name: Capture storybook snapshots each package
+        run: npm run percy-snapshots:packages
         env:
-          PERCY_TOKEN: ${{ secrets[matrix.token] }}
-          BUNDLE_PATH: ${{ format('{0}/storybook-static', matrix.package) }}
-        run: npx percy storybook $BUNDLE_PATH
-
-  # todo: a job for GH pages: https://github.com/compassion-gds/compassion-gds/issues/89
+          PERCY_TOKEN_REACT: ${{ secrets.PERCY_TOKEN_REACT_WEB }}
+          PERCY_TOKEN_CORE: ${{ secrets.PERCY_TOKEN_WEB_COMPONENTS }}

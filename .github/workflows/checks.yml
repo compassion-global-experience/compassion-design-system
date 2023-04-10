@@ -7,7 +7,7 @@ on:
     branches: [ development, main ]
 
 jobs:
-  checks:
+  test-and-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -29,7 +29,8 @@
     "test": "jest",
     "storybook": "storybook dev -p 6007",
     "build:storybook": "storybook build --quiet",
-    "percy-snapshots": "npm run build:storybook && npx percy storybook ./storybook_static"
+    "percy": "cross-env PERCY_TOKEN=$PERCY_TOKEN_REACT percy storybook ./storybook-static",
+    "percy-snapshots": "npm run build:storybook && npm run percy"
   },
   "repository": {
     "type": "git",
