@@ -3,7 +3,7 @@
 exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`] = `
 <div>
   <div
-    class="modal default "
+    class="modal default"
   >
     <button
       class="modal-button-close"
@@ -59,12 +59,12 @@ exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`]
       class="modal-footer"
     >
       <button
-        class="button-main secondary medium "
+        class="button-main secondary medium"
       >
         Button 2
       </button>
       <button
-        class="button-main primary medium "
+        class="button-main primary medium"
       >
         Button 1
       </button>
@@ -76,7 +76,7 @@ exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`]
 exports[`Modal should render \`Default\` size without \`Header\` and \`Footer\` 1`] = `
 <div>
   <div
-    class="modal small "
+    class="modal small"
   >
     <button
       class="modal-button-close"
@@ -135,7 +135,7 @@ exports[`Modal should render \`Default\` size without \`Header\` and \`Footer\` 
 exports[`Modal should render \`Small\` size without \`Footer\` 1`] = `
 <div>
   <div
-    class="modal small "
+    class="modal small"
   >
     <button
       class="modal-button-close"
@@ -194,7 +194,7 @@ exports[`Modal should render \`Small\` size without \`Footer\` 1`] = `
 exports[`Modal should render \`Wide\` size without \`Header\` 1`] = `
 <div>
   <div
-    class="modal wide "
+    class="modal wide"
   >
     <button
       class="modal-button-close"
@@ -245,12 +245,12 @@ exports[`Modal should render \`Wide\` size without \`Header\` 1`] = `
       class="modal-footer"
     >
       <button
-        class="button-main secondary medium "
+        class="button-main secondary medium"
       >
         Button 2
       </button>
       <button
-        class="button-main primary medium "
+        class="button-main primary medium"
       >
         Button 1
       </button>

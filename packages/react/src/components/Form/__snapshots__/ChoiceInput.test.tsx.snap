@@ -3,7 +3,7 @@
 exports[`ChoiceInput should render \`checkbox\` in \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <div
       class="form-control"
@@ -57,7 +57,7 @@ exports[`ChoiceInput should render \`checkbox\` in \`Disabled\` state 1`] = `
 exports[`ChoiceInput should render \`checkbox\` in \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <div
       class="form-control"
@@ -110,7 +110,7 @@ exports[`ChoiceInput should render \`checkbox\` in \`Error\` state 1`] = `
 exports[`ChoiceInput should render \`radio\` in \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <div
       class="form-control"
@@ -139,7 +139,7 @@ exports[`ChoiceInput should render \`radio\` in \`Disabled\` state 1`] = `
 exports[`ChoiceInput should render \`radio\` in \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <div
       class="form-control"

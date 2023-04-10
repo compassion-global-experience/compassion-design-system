@@ -11,7 +11,7 @@ exports[`PinField should render \`Disabled\` state 1`] = `
       Disabled
     </label>
     <div
-      class="pin-field  "
+      class="pin-field"
     >
       <div
         class="form-field disabled"
@@ -77,7 +77,7 @@ exports[`PinField should render \`Error\` state 1`] = `
       Error
     </label>
     <div
-      class="pin-field  "
+      class="pin-field"
     >
       <div
         class="form-field error"
@@ -134,15 +134,15 @@ exports[`PinField should render \`Secret\` mode (hidden values) 1`] = `
     class="form-field-row"
   >
     <label
-      class="form-label "
+      class="form-label"
     >
       Secret
     </label>
     <div
-      class="pin-field  "
+      class="pin-field"
     >
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -153,7 +153,7 @@ exports[`PinField should render \`Secret\` mode (hidden values) 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -164,7 +164,7 @@ exports[`PinField should render \`Secret\` mode (hidden values) 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -175,7 +175,7 @@ exports[`PinField should render \`Secret\` mode (hidden values) 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -196,15 +196,15 @@ exports[`PinField should render \`Small\` size 1`] = `
     class="form-field-row"
   >
     <label
-      class="form-label "
+      class="form-label"
     >
       Small
     </label>
     <div
-      class="pin-field small "
+      class="pin-field small"
     >
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -215,7 +215,7 @@ exports[`PinField should render \`Small\` size 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -226,7 +226,7 @@ exports[`PinField should render \`Small\` size 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -237,7 +237,7 @@ exports[`PinField should render \`Small\` size 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -258,15 +258,15 @@ exports[`PinField should render 8 inputs 1`] = `
     class="form-field-row"
   >
     <label
-      class="form-label "
+      class="form-label"
     >
       Longer
     </label>
     <div
-      class="pin-field  "
+      class="pin-field"
     >
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -277,7 +277,7 @@ exports[`PinField should render 8 inputs 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -288,7 +288,7 @@ exports[`PinField should render 8 inputs 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -299,7 +299,7 @@ exports[`PinField should render 8 inputs 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -310,7 +310,7 @@ exports[`PinField should render 8 inputs 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -321,7 +321,7 @@ exports[`PinField should render 8 inputs 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -332,7 +332,7 @@ exports[`PinField should render 8 inputs 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
@@ -343,7 +343,7 @@ exports[`PinField should render 8 inputs 1`] = `
         />
       </div>
       <div
-        class="form-field "
+        class="form-field"
       >
         <input
           autocomplete="off"
