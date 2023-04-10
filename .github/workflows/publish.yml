@@ -35,16 +35,13 @@ jobs:
         with:
           node-version: '18.x'
           cache: 'npm'
-          # Setup .npmrc file to publish to GitHub Packages
-          registry-url: 'https://npm.pkg.github.com'
 
       - name: Install and link dependencies
         run: npm ci
 
+      # todo: add publish configuration so we can publish to npm
+      # we need an NPM token and to set the registry information (might need to be done in each package.json)
       - name: "Version & Publish"
-        env:
-          # Reassign the variable from the workflow runner to the one used by Lerna
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Set commit author to the GitHub Actions bot
         # Trigger a canary release if the branch is 221-targeted-response or development (released on a separate dist channel)
         # Otherwise (main branch) trigger a normal release (promoting any pre-releases to regular versions)
@@ -52,8 +49,10 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor}}@users.noreply.github.com"
 
-          if [ ${{ github.base_ref }} == main ]; then
-            npx lerna publish from-package --conventional-commits --create-release github --yes
+          if [ ${{ github.base_ref }} = main ]; then
+            npx lerna version --conventional-commits --conventional-graduate --create-release github --yes
           else
-            npx lerna publish from-package --conventional-commits --dist-tag=${{ github.base_ref }} --yes
+            npx lerna version --conventional-commits --conventional-prerelease --preid=alpha --yes
           fi
+          
+          echo "Skipping publish because it's not configured yet"
