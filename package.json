@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "test": "lerna run test",
-    "prep-release": "lerna version --conventional-commits --yes",
+    "prep-release": "lerna version --conventional-commits",
+    "release": "lerna publish from-package",
     "bootstrap": "npx lerna bootstrap",
     "build:packages": "lerna run prepare",
     "build:storybooks": "lerna run build:storybook",
