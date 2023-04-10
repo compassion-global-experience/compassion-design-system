@@ -26,6 +26,9 @@ jobs:
         with:
           # We need to fetch all commits so Lerna is able to properly determine the changed packages
           fetch-depth: 0
+      # pulls all tags (needed for lerna / semantic release to correctly version)
+      - name: Fetch all tags
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Use Node and set it up for publishing
         uses: actions/setup-node@v3
@@ -34,7 +37,7 @@ jobs:
           cache: 'npm'
           # Setup .npmrc file to publish to GitHub Packages
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@compassion-gds'
+          scope: '@compassion-global-experience'
 
       - name: Install and link dependencies
         run: npm ci
@@ -50,11 +53,8 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor}}@users.noreply.github.com"
 
-          DIST_TAG=${{ github.base_ref }}
-          CREATE_RELEASE=""
-
           if [ ${{ github.base_ref }} == main ]; then
-            npx lerna publish from-git --conventional-commits --create-release github --yes
+            npx lerna publish from-package --conventional-commits --create-release github --yes
           else
-            npx lerna publish from-git --conventional-commits --dist-tag=${{ github.base_ref }} --yes
+            npx lerna publish from-package --conventional-commits --dist-tag=${{ github.base_ref }} --yes
           fi
