@@ -19,7 +19,8 @@
     "bootstrap": "npx lerna bootstrap",
     "build:packages": "lerna run build",
     "build:storybooks": "lerna run build:storybook",
-    "lint": "npx eslint . --ignore-path=.gitignore"
+    "lint": "npx eslint packages/* --ignore-path=.gitignore",
+    "test:packages": "lerna run test"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",

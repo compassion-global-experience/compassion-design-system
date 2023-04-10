@@ -1,0 +1,28 @@
+# Name of the visible action in the workflow overview
+name: Checks
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+    branches: [ development, main ]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # We need to fetch all commits so Lerna is able to properly determine the changed packages
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+      - name: Install and link dependencies
+        run: npm ci
+      - name: Lint code
+        run: npm run lint
+      - name: Test changed packages
+        run: npm run test:packages
