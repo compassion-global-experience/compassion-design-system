@@ -51,9 +51,11 @@ jobs:
           git config user.email "${{ github.actor}}@users.noreply.github.com"
 
           DIST_TAG=${{ github.base_ref }}
+          CREATE_RELEASE=""
 
           if [ ${{ github.base_ref }} == main ]; then
             DIST_TAG=latest
+            CREATE_RELEASE="--create-release github"
           fi
 
-          npx lerna publish from-git --conventional-commits --dist-tag="$DIST_TAG" --yes
+          npx lerna publish from-git --conventional-commits --dist-tag="$DIST_TAG" "$CREATE_RELEASE" --yes
