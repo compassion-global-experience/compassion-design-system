@@ -1,7 +1,7 @@
 {
   "name": "@compassion-gds/examples-vanilla-webpack",
   "version": "0.2.0-alpha.0",
-  "description": "An example of @compassion-gds/css bundled with webpack",
+  "description": "An example of @compassion-gds/core bundled with webpack",
   "source": "src/index.html",
   "scripts": {
     "start": "webpack serve --open",
@@ -9,7 +9,7 @@
   },
   "private": true,
   "dependencies": {
-    "@compassion-gds/css": "file:../../packages/css"
+    "@compassion-gds/core": "file:../../packages/core"
   },
   "devDependencies": {
     "css-loader": "^6.7.3",

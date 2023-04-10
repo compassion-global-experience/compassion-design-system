@@ -1,5 +1,5 @@
 {
-  "name": "@compassion-gds/css",
+  "name": "@compassion-gds/core",
   "version": "0.0.2",
   "description": "Compassion International's Global Design System",
   "scripts": {
@@ -31,13 +31,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/compassion-global-experience/compassion-design-system",
-    "directory": "packages/css"
+    "directory": "packages/core"
   },
   "keywords": [
     "compassion",
     "compassion-gds",
     "gds",
-    "css"
+    "css",
+    "core"
   ],
   "author": "Compassion XD",
   "license": "MIT",

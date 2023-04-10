@@ -19,7 +19,7 @@ Import the following css files from the entry point of your application
 ```js
 // Replace {theme} with any of the available themes (e.g. light, dark)
 import '@compassion-gds/react/css/base.css';
-import '@compassion-gds/react/css/vars/{theme}.css';
+import '@compassion-gds/react/css/{theme}.css';
 ```
 
 GDS React components would follow the imported theme.

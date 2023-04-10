@@ -40,7 +40,7 @@ jobs:
         include:
           - package: react
             token: PERCY_TOKEN_REACT_WEB
-          - package: css
+          - package: core
             token: PERCY_TOKEN_WEB_COMPONENTS
     steps:
       - name: Use Node.js

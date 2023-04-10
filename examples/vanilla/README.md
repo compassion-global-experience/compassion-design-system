@@ -4,8 +4,8 @@ This is an example free of any UI framework
 It uses Webpack to bundle the project
 
 You can use this example as a startup template for your project  
-The package is linked to `@compassion-gds/css` in the parent directory for development purposes.  
+The package is linked to `@compassion-gds/core` in the parent directory for development purposes.  
 When you use this example as a starting template update `package.json` `dependencies`
-to use the latest version of `@compassion-gds/css`
+to use the latest version of `@compassion-gds/core`
 
 You can run `npm install` and then `npm start` to test your package.

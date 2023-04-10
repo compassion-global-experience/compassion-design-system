@@ -6,8 +6,8 @@ import {
   useRef,
   useState,
 } from 'react';
-import styles from '@compassion-gds/css/src/components/Form/pin.module.css';
-import common from '@compassion-gds/css/src/components/Form/common.module.css';
+import styles from '@compassion-gds/core/src/components/Form/pin.module.css';
+import common from '@compassion-gds/core/src/components/Form/common.module.css';
 
 import { FieldSize, FieldState } from './Helpers';
 import { getClasses } from '../../utils/classes';

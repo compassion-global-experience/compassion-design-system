@@ -6,6 +6,6 @@
     gap: 1rem;
 }
 
-.app-footer form .form-field-row {
+.app-footer form > div {
     margin-bottom: 0;
 }
