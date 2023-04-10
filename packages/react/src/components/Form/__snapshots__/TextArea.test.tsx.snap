@@ -3,7 +3,7 @@
 exports[`TextArea should render \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <div
       class="form-label-wrap"
@@ -16,7 +16,7 @@ exports[`TextArea should render \`Disabled\` state 1`] = `
       </label>
     </div>
     <div
-      class="form-field disabled  "
+      class="form-field disabled"
     >
       <textarea
         class="form-input"
@@ -31,7 +31,7 @@ exports[`TextArea should render \`Disabled\` state 1`] = `
 exports[`TextArea should render \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <div
       class="form-label-wrap"
@@ -44,7 +44,7 @@ exports[`TextArea should render \`Error\` state 1`] = `
       </label>
     </div>
     <div
-      class="form-field error  "
+      class="form-field error"
     >
       <textarea
         class="form-input"
@@ -95,20 +95,20 @@ exports[`TextArea should render \`Error\` state 1`] = `
 exports[`TextArea should render \`Small\` size 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <div
       class="form-label-wrap"
     >
       <label
-        class="form-label "
+        class="form-label"
         for="small-field"
       >
         Small
       </label>
     </div>
     <div
-      class="form-field  small "
+      class="form-field small"
     >
       <textarea
         class="form-input"
@@ -122,7 +122,7 @@ exports[`TextArea should render \`Small\` size 1`] = `
 exports[`TextArea should render \`Success\` state with \`Large\` size 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <div
       class="form-label-wrap"
@@ -135,7 +135,7 @@ exports[`TextArea should render \`Success\` state with \`Large\` size 1`] = `
       </label>
     </div>
     <div
-      class="form-field success  "
+      class="form-field success"
     >
       <textarea
         class="form-input"
@@ -174,19 +174,19 @@ exports[`TextArea should render \`Success\` state with \`Large\` size 1`] = `
 exports[`TextArea should render counter with \`maxLength: 100\` 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <div
       class="form-label-wrap"
     >
       <label
-        class="form-label "
+        class="form-label"
         for="with-counter"
       >
         With Counter
       </label>
       <span
-        class="form-hint "
+        class="form-hint"
       >
         0
          / 
@@ -194,7 +194,7 @@ exports[`TextArea should render counter with \`maxLength: 100\` 1`] = `
       </span>
     </div>
     <div
-      class="form-field   "
+      class="form-field"
     >
       <textarea
         class="form-input"

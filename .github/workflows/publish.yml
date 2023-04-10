@@ -1,0 +1,61 @@
+# Name of the visible action in the workflow overview
+name: Publish
+
+on:
+  # Pushes to canary or next branches
+  push:
+    branches: [ 221-targeted-response ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  pull_request:
+    types: [ closed ]
+    branches:
+      - main
+      - development
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    # run the job if the PR was merged or the branch is 221-targeted-response
+    if: github.event.pull_request.merged == true || github.ref == 'refs/heads/221-targeted-response'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # We need to fetch all commits so Lerna is able to properly determine the changed packages
+          fetch-depth: 0
+
+      - name: Use Node and set it up for publishing
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+          # Setup .npmrc file to publish to GitHub Packages
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@compassion-gds'
+
+      - name: Install and link dependencies
+        run: npm ci
+
+      - name: "Version & Publish"
+        env:
+          # Reassign the variable from the workflow runner to the one used by Lerna
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Set commit author to the GitHub Actions bot
+        # Trigger a canary release if the branch is 221-targeted-response or development
+        # Otherwise (main branch) trigger a normal release (promoting any pre-releases to regular versions)
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor}}@users.noreply.github.com"
+
+          DIST_TAG=${{ github.base_ref }}
+          CREATE_RELEASE=""
+
+          if [ ${{ github.base_ref }} == main ]; then
+            DIST_TAG=latest
+            CREATE_RELEASE="--create-release github"
+          fi
+
+          npx lerna publish from-git --conventional-commits --dist-tag="$DIST_TAG" "$CREATE_RELEASE" --yes

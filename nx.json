@@ -1,0 +1,73 @@
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "test",
+          "prepare",
+          "bundle-css",
+          "make-css-vars",
+          "get-figma-tokens",
+          "convert-figma-tokens",
+          "generate-css-vars",
+          "build:storybook",
+          "build",
+          "copy-css"
+        ]
+      }
+    }
+  },
+  "targetDefaults": {
+    "prepare": {
+      "dependsOn": [
+        "^prepare"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    },
+    "bundle-css": {
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    },
+    "make-css-vars": {
+      "outputs": [
+        "{projectRoot}/src/vars",
+        "{projectRoot}/themes",
+        "{projectRoot}/tokens"
+      ]
+    },
+    "get-figma-tokens": {
+      "outputs": [
+        "{projectRoot}/themes"
+      ]
+    },
+    "convert-figma-tokens": {
+      "outputs": [
+        "{projectRoot}/tokens"
+      ]
+    },
+    "generate-css-vars": {
+      "outputs": [
+        "{projectRoot}/src/vars"
+      ]
+    },
+    "build:storybook": {
+      "outputs": [
+        "{projectRoot}/storybook_static"
+      ]
+    },
+    "build": {
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    },
+    "copy-css": {
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    }
+  }
+}

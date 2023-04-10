@@ -15,11 +15,13 @@
   ],
   "scripts": {
     "test": "lerna run test",
-    "prep-release": "lerna version --conventional-commits --yes",
+    "prep-release": "lerna version --conventional-commits",
+    "release": "lerna publish from-package",
     "bootstrap": "npx lerna bootstrap",
-    "build:packages": "lerna run build",
+    "build:packages": "lerna run prepare",
     "build:storybooks": "lerna run build:storybook",
-    "lint": "npx eslint . --ignore-path=.gitignore"
+    "lint": "npx eslint packages/* --ignore-path=.gitignore",
+    "test:packages": "lerna run test"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",

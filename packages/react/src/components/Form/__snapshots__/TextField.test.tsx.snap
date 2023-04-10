@@ -3,7 +3,7 @@
 exports[`TextField should render \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <label
       class="form-label disabled"
@@ -12,7 +12,7 @@ exports[`TextField should render \`Disabled\` state 1`] = `
       Disabled
     </label>
     <div
-      class="form-field disabled medium "
+      class="form-field disabled medium"
     >
       <input
         class="form-input"
@@ -30,7 +30,7 @@ exports[`TextField should render \`Disabled\` state 1`] = `
 exports[`TextField should render \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <label
       class="form-label error"
@@ -39,7 +39,7 @@ exports[`TextField should render \`Error\` state 1`] = `
       Error
     </label>
     <div
-      class="form-field error medium "
+      class="form-field error medium"
     >
       <input
         class="form-input"
@@ -93,16 +93,16 @@ exports[`TextField should render \`Error\` state 1`] = `
 exports[`TextField should render \`Small\` size 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <label
-      class="form-label "
+      class="form-label"
       for="small-field"
     >
       Small
     </label>
     <div
-      class="form-field  small "
+      class="form-field small"
     >
       <input
         class="form-input"
@@ -119,7 +119,7 @@ exports[`TextField should render \`Small\` size 1`] = `
 exports[`TextField should render \`Success\` state with \`Large\` size 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <label
       class="form-label success"
@@ -128,7 +128,7 @@ exports[`TextField should render \`Success\` state with \`Large\` size 1`] = `
       Success
     </label>
     <div
-      class="form-field success medium "
+      class="form-field success medium"
     >
       <input
         class="form-input"

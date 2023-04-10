@@ -3,7 +3,7 @@
 exports[`SelectGroup should render \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <label
       class="form-label disabled"
@@ -15,7 +15,7 @@ exports[`SelectGroup should render \`Disabled\` state 1`] = `
       class="input-group"
     >
       <div
-        class="form-field disabled medium "
+        class="form-field disabled medium"
       >
         <select
           class="form-input"
@@ -75,7 +75,7 @@ exports[`SelectGroup should render \`Disabled\` state 1`] = `
         </span>
       </div>
       <div
-        class="input-group-adornment "
+        class="input-group-adornment"
       >
         <svg
           fill="currentColor"
@@ -122,7 +122,7 @@ exports[`SelectGroup should render \`Disabled\` state 1`] = `
 exports[`SelectGroup should render \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <label
       class="form-label error"
@@ -134,7 +134,7 @@ exports[`SelectGroup should render \`Error\` state 1`] = `
       class="input-group"
     >
       <div
-        class="form-field error medium "
+        class="form-field error medium"
       >
         <select
           class="form-input"
@@ -230,7 +230,7 @@ exports[`SelectGroup should render \`Error\` state 1`] = `
         </span>
       </div>
       <div
-        class="input-group-adornment "
+        class="input-group-adornment"
       >
         <svg
           fill="currentColor"
@@ -277,10 +277,10 @@ exports[`SelectGroup should render \`Error\` state 1`] = `
 exports[`SelectGroup should render \`Small\` size 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <label
-      class="form-label "
+      class="form-label"
       for="small-field"
     >
       Small
@@ -289,7 +289,7 @@ exports[`SelectGroup should render \`Small\` size 1`] = `
       class="input-group"
     >
       <div
-        class="form-field  small "
+        class="form-field small"
       >
         <select
           class="form-input"
@@ -395,7 +395,7 @@ exports[`SelectGroup should render \`Small\` size 1`] = `
 exports[`SelectGroup should render \`Success\` state with \`Large\` size 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <label
       class="form-label success"
@@ -407,7 +407,7 @@ exports[`SelectGroup should render \`Success\` state with \`Large\` size 1`] = `
       class="input-group"
     >
       <div
-        class="form-field success medium "
+        class="form-field success medium"
       >
         <select
           class="form-input"
@@ -491,7 +491,7 @@ exports[`SelectGroup should render \`Success\` state with \`Large\` size 1`] = `
         </span>
       </div>
       <div
-        class="input-group-adornment "
+        class="input-group-adornment"
       >
         <svg
           fill="currentColor"
@@ -538,10 +538,10 @@ exports[`SelectGroup should render \`Success\` state with \`Large\` size 1`] = `
 exports[`SelectGroup should render left aligned adornment with text 1`] = `
 <div>
   <div
-    class="form-field-row "
+    class="form-field-row"
   >
     <label
-      class="form-label "
+      class="form-label"
       for="adorned-field"
     >
       Adorned
@@ -550,7 +550,7 @@ exports[`SelectGroup should render left aligned adornment with text 1`] = `
       class="input-group"
     >
       <div
-        class="input-group-adornment "
+        class="input-group-adornment"
       >
         <svg
           fill="currentColor"
@@ -588,14 +588,12 @@ exports[`SelectGroup should render left aligned adornment with text 1`] = `
             r="12"
           />
         </svg>
-        <span
-          class="input-group-adornment-text"
-        >
+        <span>
           Text
         </span>
       </div>
       <div
-        class="form-field  medium "
+        class="form-field medium"
       >
         <select
           class="form-input"
