@@ -17,7 +17,7 @@
     "test": "lerna run test",
     "prep-release": "lerna version --conventional-commits --yes",
     "bootstrap": "npx lerna bootstrap",
-    "build:packages": "lerna run build",
+    "build:packages": "lerna run prepare",
     "build:storybooks": "lerna run build:storybook",
     "lint": "npx eslint packages/* --ignore-path=.gitignore",
     "test:packages": "lerna run test"
