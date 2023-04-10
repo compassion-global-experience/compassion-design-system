@@ -23,13 +23,14 @@
     "./css/*": "./dist/css/*"
   },
   "scripts": {
-    "build": "rollup -c",
     "dev": "rollup -c -w",
     "copy-css": "bash ./scripts/copy-css.sh",
-    "prepare": "npm run build && npm run copy-css",
+    "prepare": "rollup -c && npm run copy-css",
     "test": "jest",
     "storybook": "storybook dev -p 6007",
-    "build:storybook": "storybook build --quiet"
+    "build:storybook": "storybook build --quiet",
+    "percy": "cross-env PERCY_TOKEN=$PERCY_TOKEN_REACT percy storybook ./storybook-static",
+    "percy-snapshots": "npm run build:storybook && npm run percy"
   },
   "repository": {
     "type": "git",

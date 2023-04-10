@@ -44,7 +44,7 @@ jobs:
           # Reassign the variable from the workflow runner to the one used by Lerna
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Set commit author to the GitHub Actions bot
-        # Trigger a canary release if the branch is 221-targeted-response or development
+        # Trigger a canary release if the branch is 221-targeted-response or development (released on a separate dist channel)
         # Otherwise (main branch) trigger a normal release (promoting any pre-releases to regular versions)
         run: |
           git config user.name "${{ github.actor }}"
@@ -54,8 +54,7 @@ jobs:
           CREATE_RELEASE=""
 
           if [ ${{ github.base_ref }} == main ]; then
-            DIST_TAG=latest
-            CREATE_RELEASE="--create-release github"
+            npx lerna publish from-git --conventional-commits --create-release github --yes
+          else
+            npx lerna publish from-git --conventional-commits --dist-tag=${{ github.base_ref }} --yes
           fi
-
-          npx lerna publish from-git --conventional-commits --dist-tag="$DIST_TAG" "$CREATE_RELEASE" --yes

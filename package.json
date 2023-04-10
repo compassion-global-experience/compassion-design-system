@@ -19,14 +19,17 @@
     "release": "lerna publish from-package",
     "bootstrap": "npx lerna bootstrap",
     "build:packages": "lerna run prepare",
-    "build:storybooks": "lerna run build:storybook",
+    "percy-snapshots:packages": "lerna run percy-snapshots",
     "lint": "npx eslint packages/* --ignore-path=.gitignore",
     "test:packages": "lerna run test"
   },
   "devDependencies": {
+    "@percy/cli": "^1.23.0",
+    "@percy/storybook": "^4.3.5",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
@@ -42,5 +45,20 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.2.0",
     "typescript": "^4.9.5"
+  },
+  "percy": {
+    "version": "2",
+    "storybook": {
+      "waitForTimeout": 1000
+    },
+    "discovery": {
+      "networkIdleTimeout": 700
+    },
+    "snapshot": {
+      "widths": [
+        375,
+        1280
+      ]
+    }
   }
 }

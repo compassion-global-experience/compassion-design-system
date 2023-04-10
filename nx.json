@@ -4,7 +4,6 @@
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
-          "test",
           "prepare",
           "bundle-css",
           "make-css-vars",
@@ -12,8 +11,9 @@
           "convert-figma-tokens",
           "generate-css-vars",
           "build:storybook",
-          "build",
-          "copy-css"
+          "percy-snapshots",
+          "copy-css",
+          "test"
         ]
       }
     }
@@ -24,7 +24,10 @@
         "^prepare"
       ],
       "outputs": [
-        "{projectRoot}/dist"
+        "{projectRoot}/dist",
+        "{projectRoot}/src/vars",
+        "{projectRoot}/themes",
+        "{projectRoot}/tokens"
       ]
     },
     "bundle-css": {
@@ -57,17 +60,16 @@
     "build:storybook": {
       "outputs": [
         "{projectRoot}/storybook_static"
-      ]
-    },
-    "build": {
-      "outputs": [
-        "{projectRoot}/dist"
-      ]
+      ],
+      "dependsOn": ["prepare"]
     },
     "copy-css": {
       "outputs": [
         "{projectRoot}/dist"
       ]
+    },
+    "percy-snapshots": {
+      "dependsOn": ["build:storybook"]
     }
   }
 }
