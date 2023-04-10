@@ -54,7 +54,7 @@ jobs:
           CREATE_RELEASE=""
 
           if [ ${{ github.base_ref }} == main ]; then
-            npx lerna publish from-git --conventional-commits --create-release github --yes
+            npx lerna publish from-package --conventional-commits --create-release github --yes
           else
-            npx lerna publish from-git --conventional-commits --dist-tag=${{ github.base_ref }} --yes
+            npx lerna publish from-package --conventional-commits --dist-tag=${{ github.base_ref }} --yes
           fi
