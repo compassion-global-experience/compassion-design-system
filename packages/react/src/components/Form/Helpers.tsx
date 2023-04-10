@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
-import common from '@compassion-gds/css/src/components/Form/common.module.css';
-import inputGroup from '@compassion-gds/css/src/components/Form/input-group.module.css';
+import common from '@compassion-gds/core/src/components/Form/common.module.css';
+import inputGroup from '@compassion-gds/core/src/components/Form/input-group.module.css';
 import { Check, Info, X } from '../icons';
 import { getClasses } from '../../utils/classes';
 

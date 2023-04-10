@@ -7,6 +7,6 @@ set -ex
 
 rm -rf dist/css
 mkdir dist/css
-cp -r ../css/src/vars/*.css dist/css
-cp ../css/reset.css dist/css/reset.css
-cp -r ../css/assets dist/css/assets
+cp -r ../core/src/vars/*.css dist/css
+cp ../core/reset.css dist/css/reset.css
+cp -r ../core/assets dist/css/assets

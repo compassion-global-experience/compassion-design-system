@@ -1,5 +1,5 @@
 {
-  "name": "@compassion-gds/css",
+  "name": "@compassion-gds/core",
   "version": "0.0.2",
   "description": "Compassion International's Global Design System",
   "scripts": {
@@ -31,13 +31,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/compassion-global-experience/compassion-design-system",
-    "directory": "packages/css"
+    "directory": "packages/core"
   },
   "keywords": [
     "compassion",
     "compassion-gds",
     "gds",
-    "css"
+    "css",
+    "core"
   ],
   "author": "Compassion XD",
   "license": "MIT",
@@ -48,12 +49,13 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
-    "@storybook/addon-actions": "^7.0.0-beta.43",
-    "@storybook/addon-essentials": "^7.0.0-beta.43",
-    "@storybook/addon-interactions": "^7.0.0-beta.43",
-    "@storybook/addon-links": "^7.0.0-beta.43",
-    "@storybook/html": "^7.0.0-beta.43",
-    "@storybook/html-webpack5": "^7.0.0-beta.43",
+    "@storybook/addon-docs": "^7.0.2",
+    "@storybook/addon-actions": "^7.0.2",
+    "@storybook/addon-essentials": "^7.0.2",
+    "@storybook/addon-interactions": "^7.0.2",
+    "@storybook/addon-links": "^7.0.2",
+    "@storybook/html": "^7.0.2",
+    "@storybook/html-webpack5": "^7.0.2",
     "@storybook/testing-library": "^0.0.14-next.1",
     "babel-loader": "^8.3.0",
     "postcss-import": "^15.1.0",
@@ -61,7 +63,7 @@
     "react-dom": "^18.2.0",
     "rollup": "^3.13.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "storybook": "^7.0.0-beta.43",
+    "storybook": "^7.0.2",
     "style-dictionary": "^3.7.2",
     "token-transformer": "0.0.32"
   }

@@ -1,5 +1,5 @@
-@import "@compassion-gds/css/reset.css";
-@import "@compassion-gds/css/src/theme/light.css";
+@import "@compassion-gds/core/reset.css";
+@import "@compassion-gds/core/light.css";
 
 html, body {
     min-height: revert;

@@ -1,5 +1,5 @@
 import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
-import styles from '@compassion-gds/css/src/components/Form/common.module.css';
+import styles from '@compassion-gds/core/src/components/Form/common.module.css';
 import { FieldSize, FieldState, StateIcon } from './Helpers';
 import { getClasses } from '../../utils/classes';
 
