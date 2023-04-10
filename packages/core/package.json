@@ -11,7 +11,8 @@
     "convert-figma-tokens": "bash scripts/convert-figma-tokens.sh",
     "generate-css-vars": "node scripts/generate-css-vars.cjs",
     "storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build --quiet"
+    "build:storybook": "storybook build --quiet",
+    "percy-snapshots": "npm run build:storybook && npx percy storybook ./storybook_static"
   },
   "files": [
     "dist",
@@ -49,8 +50,8 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
-    "@storybook/addon-docs": "^7.0.2",
     "@storybook/addon-actions": "^7.0.2",
+    "@storybook/addon-docs": "^7.0.2",
     "@storybook/addon-essentials": "^7.0.2",
     "@storybook/addon-interactions": "^7.0.2",
     "@storybook/addon-links": "^7.0.2",
