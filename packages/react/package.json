@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/compassion-global-experience/compassion-design-system.git",
+    "url": "https://github.com/compassion-global-experience/compassion-design-system.git",
     "directory": "packages/react"
   },
   "keywords": [
