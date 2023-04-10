@@ -11,7 +11,7 @@ Compassion's _Known, Loved, and Connected_ brand promise at heart.
 
 This is a monorepo for the many projects that make up Compassion International’s design system:
 
-- [vanilla/css classes](packages/css)
+- [vanilla/css classes](packages/core)
 - [Reusable React components](packages/react)
 - [Examples](examples) of practical usage of the CDS
 
