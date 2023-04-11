@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/core",
-  "version": "0.0.2",
+  "version": "0.0.3-alpha.0",
   "description": "Compassion International's Global Design System",
   "scripts": {
     "start": "npm run prepare && npm run storybook",
