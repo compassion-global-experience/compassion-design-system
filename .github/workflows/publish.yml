@@ -40,7 +40,10 @@ jobs:
         run: npm ci
 
       # todo: add publish configuration so we can publish to npm
-      # we need an NPM token and to set the registry information (might need to be done in each package.json)
+      # we need to add an NPM token and to set the registry information (might need to be done in each package.json)
+      # todo: remove `granularPathSpec` from lerna.json and ignore `dist` folders in .gitignore
+      # right now we include `dist` because we're building and bumping versions but not publishing to a registry
+      # when we start publishing to a registry we no longer need to commit the `dist` folders
       - name: "Version & Publish"
         # Set commit author to the GitHub Actions bot
         # Trigger a canary release if the branch is 221-targeted-response or development (released on a separate dist channel)
@@ -48,6 +51,8 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor}}@users.noreply.github.com"
+          
+          npm run build:packages
 
           if [ ${{ github.base_ref }} = main ]; then
             npx lerna version --conventional-commits --conventional-graduate --create-release github --yes
