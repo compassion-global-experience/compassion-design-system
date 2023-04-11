@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 import Button from './Button';
-import { ArrowRight, ArrowLeft, Info } from '../icons';
+import { Icon } from '../index';
 
 const meta: Meta<typeof Button> = {
   /* 👇 The title prop is optional.
@@ -69,7 +69,7 @@ export const WithIconRight = {
   },
   render: (args) => (
     <Button {...args}>
-      Log in <ArrowRight />
+      Log in <Icon.ArrowRight />
     </Button>
   ),
 };
@@ -80,7 +80,7 @@ export const WithIconLeft = {
   },
   render: (args) => (
     <Button {...args}>
-      <ArrowLeft /> Go back
+      <Icon.ArrowLeft /> Go back
     </Button>
   ),
 };
@@ -91,7 +91,7 @@ export const WithIconOnBothSides = {
   },
   render: (args) => (
     <Button {...args}>
-      <ArrowLeft /> Options <ArrowRight />
+      <Icon.ArrowLeft /> Options <Icon.ArrowRight />
     </Button>
   ),
 };
@@ -100,6 +100,6 @@ export const IconOnly = {
   args: {
     mode: 'primary',
     size: 'small',
-    label: <Info size={24} />,
+    label: <Icon.Info size={24} />,
   },
 };
