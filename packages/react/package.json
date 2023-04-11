@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/react",
-  "version": "0.1.0",
+  "version": "0.2.0-alpha.0",
   "description": "",
   "type": "module",
   "main": "dist/cjs/index.js",
@@ -54,7 +54,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@compassion-gds/core": "^0.0.2",
+    "@compassion-gds/core": "^0.0.3-alpha.0",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0-alpha.0 (2023-04-11)
+
+### Features
+
+- Importing in Next.js project and scoping CSS ([#166](https://github.com/compassion-global-experience/compassion-design-system/issues/166)) ([b1b0859](https://github.com/compassion-global-experience/compassion-design-system/commit/b1b085970e0b921b9850380d98095e0eb337d9ef)), closes [/github.com/percy/percy-storybook/issues/715#issuecomment-1496288650](https://github.com//github.com/percy/percy-storybook/issues/715/issues/issuecomment-1496288650)
+- **react:** css usage and documentation ([11e317c](https://github.com/compassion-global-experience/compassion-design-system/commit/11e317cca4ecdaa385e86d3a5571d7dca554685d))
+- **react:** switch between themes in storybook ([79119ba](https://github.com/compassion-global-experience/compassion-design-system/commit/79119ba48ed3410eaebe9a91ccd076b05c2580c1))
+
 # 0.1.0 (2023-04-08)
 
 ### Features
