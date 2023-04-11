@@ -41,7 +41,7 @@ jobs:
 
       # todo: add publish configuration so we can publish to npm
       # we need to add an NPM token and to set the registry information (might need to be done in each package.json)
-      # todo: remove `granularPathSpec` from lerna.json and ignore `dist` folders in .gitignore
+      # todo: ignore `dist` folders in .gitignore
       # right now we include `dist` because we're building and bumping versions but not publishing to a registry
       # when we start publishing to a registry we no longer need to commit the `dist` folders
       - name: "Version & Publish"
@@ -53,6 +53,15 @@ jobs:
           git config user.email "${{ github.actor}}@users.noreply.github.com"
           
           npm run build:packages
+          
+          # todo: remove this logic when we're ready to publish
+          git add packages/*/dist
+          # check if anything was staged for commit and if so commit it
+          if git diff --cached --quiet; then
+              echo "No changes to commit"
+          else
+              git commit -m "chore: build packages"
+          fi
 
           if [ ${{ github.base_ref }} = main ]; then
             npx lerna version --conventional-commits --conventional-graduate --create-release github --yes

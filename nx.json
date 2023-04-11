@@ -7,7 +7,6 @@
           "prepare",
           "bundle-css",
           "make-css-vars",
-          "get-figma-tokens",
           "convert-figma-tokens",
           "generate-css-vars",
           "build:storybook",

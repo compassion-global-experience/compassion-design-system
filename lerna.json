@@ -12,6 +12,5 @@
     "**/.prettierrc",
     "**/.eslint*",
     "nx.json"
-  ],
-  "granularPathspec": false
+  ]
 }
