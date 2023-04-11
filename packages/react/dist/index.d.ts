@@ -1,4 +1,6 @@
 /// <reference types="react" />
+import * as phosphorReact from 'phosphor-react';
+export { phosphorReact as Icon };
 import * as react from 'react';
 import { ReactNode, ButtonHTMLAttributes, MouseEvent, HTMLProps, ReactElement, InputHTMLAttributes } from 'react';
 
