@@ -33,13 +33,13 @@ export default [
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
-        exclude: ["**/__tests__", "**/*.test.ts", "**/stories", "**/*.stories.tsx"],
+        exclude: ['**/__tests__', '**/*.test.ts', '**/stories', '**/*.stories.tsx'],
       }),
       postcss({
         minimize: true,
         config: false,
         modules: {
-          generateScopedName: "gds__[local]___[hash:base64:5]",
+          generateScopedName: 'gds__[local]___[hash:base64:5]',
         },
       }),
     ],

@@ -24,14 +24,27 @@ import '@compassion-gds/react/css/{theme}.css';
 
 GDS React components would follow the imported theme.
 
-Sample component usage:
+### Component usage:
 
 ```jsx
 import React from 'react';
 import { Button } from '@compassion-gds/react';
 
 export const PrimaryButton = (props) => (
-  <Button primary size="small" {...props} />
+  <Button primary size="small" label="Go!" {...props} />
+);
+```
+
+### Using icons:
+
+To use icons import the `Icon` module and then use the available keys as icon components
+
+```jsx
+import React from 'react';
+import { Button, Icon } from '@compassion-gds/react';
+
+export const ButtonWithIcon = (props) => (
+  <Button primary {...props}>{props.label} <Icon.ArrowRight size={20} /></Button>
 );
 ```
 
