@@ -1,5 +1,163 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button Should render a variant with a left and right icon 1`] = `
+<div>
+  <button
+    class="button-main primary medium"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      viewBox="0 0 256 256"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="none"
+        height="256"
+        width="256"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="216"
+        x2="40"
+        y1="128"
+        y2="128"
+      />
+      <polyline
+        fill="none"
+        points="112 56 40 128 112 200"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+    </svg>
+     Click Me! 
+    <svg
+      fill="currentColor"
+      height="1em"
+      viewBox="0 0 256 256"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="none"
+        height="256"
+        width="256"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="40"
+        x2="216"
+        y1="128"
+        y2="128"
+      />
+      <polyline
+        fill="none"
+        points="144 56 216 128 144 200"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Button Should render a variant with a left icon 1`] = `
+<div>
+  <button
+    class="button-main primary medium"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      viewBox="0 0 256 256"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="none"
+        height="256"
+        width="256"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="216"
+        x2="40"
+        y1="128"
+        y2="128"
+      />
+      <polyline
+        fill="none"
+        points="112 56 40 128 112 200"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+    </svg>
+     Click Me!
+  </button>
+</div>
+`;
+
+exports[`Button Should render a variant with a right icon 1`] = `
+<div>
+  <button
+    class="button-main primary medium"
+  >
+    Click Me! 
+    <svg
+      fill="currentColor"
+      height="1em"
+      viewBox="0 0 256 256"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="none"
+        height="256"
+        width="256"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="40"
+        x2="216"
+        y1="128"
+        y2="128"
+      />
+      <polyline
+        fill="none"
+        points="144 56 216 128 144 200"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
 exports[`Button should render \`Disabled\` variant 1`] = `
 <div>
   <button
