@@ -8,6 +8,7 @@ import replace from '@rollup/plugin-replace';
 
 import packageJson from './package.json' assert { type: 'json' };
 
+/** @type {import('rollup').RollupOptions[]} */
 export default [
   {
     input: 'src/index.ts',
@@ -18,9 +19,12 @@ export default [
         sourcemap: true,
       },
       {
-        file: packageJson.module,
+        dir: 'dist',
         format: 'esm',
         sourcemap: true,
+        preserveModules: true,
+        preserveModulesRoot: 'src',
+        entryFileNames: 'esm/[name].js',
       },
     ],
     plugins: [
@@ -31,10 +35,7 @@ export default [
       }),
       resolve(),
       commonjs(),
-      typescript({
-        tsconfig: './tsconfig.json',
-        exclude: ['**/__tests__', '**/*.test.ts', '**/stories', '**/*.stories.tsx'],
-      }),
+      typescript({ tsconfig: './tsconfig.json' }),
       postcss({
         minimize: true,
         config: false,
@@ -45,7 +46,7 @@ export default [
     ],
   },
   {
-    input: 'dist/esm/types/index.d.ts',
+    input: 'dist/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [
       dts(),
