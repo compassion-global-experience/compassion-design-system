@@ -4,7 +4,7 @@
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
-          "prepare",
+          "build",
           "bundle-css",
           "make-css-vars",
           "convert-figma-tokens",
@@ -18,9 +18,9 @@
     }
   },
   "targetDefaults": {
-    "prepare": {
+    "build": {
       "dependsOn": [
-        "^prepare"
+        "^build"
       ],
       "outputs": [
         "{projectRoot}/dist",
@@ -60,7 +60,7 @@
       "outputs": [
         "{projectRoot}/storybook_static"
       ],
-      "dependsOn": ["prepare"]
+      "dependsOn": ["build"]
     },
     "copy-css": {
       "outputs": [

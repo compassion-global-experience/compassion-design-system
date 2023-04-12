@@ -24,6 +24,7 @@
   },
   "scripts": {
     "dev": "rollup -c -w",
+    "build": "rm -rf dist && rollup -c && npm run copy-css",
     "copy-css": "bash ./scripts/copy-css.sh",
     "prepare": "rollup -c && npm run copy-css",
     "test": "jest",
@@ -89,8 +90,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "7.0.2",
-    "ts-jest": "^29.0.5",
-    "webpack": "^5.75.0"
+    "ts-jest": "^29.0.5"
   },
   "peerDependencies": {
     "react": "16.8.x || 17.x || 18.x",

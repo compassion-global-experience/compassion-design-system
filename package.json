@@ -18,7 +18,7 @@
     "prep-release": "lerna version --conventional-commits",
     "release": "lerna publish from-package",
     "bootstrap": "npx lerna bootstrap",
-    "build:packages": "lerna run prepare",
+    "build:packages": "lerna run build",
     "percy-snapshots:packages": "lerna run percy-snapshots",
     "lint": "npx eslint packages/* --ignore-path=.gitignore",
     "test:packages": "lerna run test"
