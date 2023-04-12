@@ -9,7 +9,7 @@ export interface InputGroupProps extends TextFieldProps, AdornmentProps {}
 const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(
   (props, ref) => {
     const {
-      id,
+      id = '',
       label = '',
       state,
       size,

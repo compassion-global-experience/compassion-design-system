@@ -112,9 +112,9 @@ const Adornment = ({
   text,
   size,
 }: {
-  icon: ReactElement;
+  icon?: ReactElement;
   text: string;
-  size: FieldSize;
+  size?: FieldSize;
 }) => (
   <div className={getClasses(inputGroup, ['input-group-adornment', size])}>
     {icon || <Info size={22} />}

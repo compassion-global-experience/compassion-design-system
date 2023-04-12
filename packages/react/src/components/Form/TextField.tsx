@@ -12,7 +12,7 @@ export interface TextFieldProps extends InputProps {
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
   const {
-    id,
+    id = '',
     label = '',
     state,
     hint = '',

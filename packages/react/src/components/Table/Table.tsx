@@ -4,19 +4,24 @@ import {
   forwardRef,
   ForwardedRef,
   Ref,
+  ReactNode,
 } from 'react';
 import styles from '@compassion-gds/core/src/components/Table/table.module.css';
 import { getClasses } from '../../utils/classes';
 
-export interface Column<Row> {
+interface BasicRow {
+  [key: string]: ReactNode | BasicRow;
+  disabled?: boolean;
+}
+export interface Column<Row extends BasicRow> {
   title: string;
   key: string;
   disabled?: boolean;
   headerRender?: (col: Column<Row>) => ReactElement;
-  cellRender?: (col: Column<Row>, data: Row) => ReactElement;
+  cellRender?: (col: Column<Row>, data: Row) => ReactNode;
 }
 
-export interface TableProps<Row> {
+export interface TableProps<Row extends BasicRow> {
   columns: Column<Row>[];
   rows: Row[];
   disabled?: boolean;
@@ -24,12 +29,10 @@ export interface TableProps<Row> {
   containerStyle?: CSSProperties;
   tableStyle?: CSSProperties;
   className?: string;
+  forwardedRef?: Ref<HTMLTableElement>;
 }
 
-function TableInner<Row>(
-  props: TableProps<Row>,
-  ref: ForwardedRef<HTMLTableElement>,
-) {
+export function Table<Row extends BasicRow>(props: TableProps<Row>) {
   const {
     columns = [],
     rows = [],
@@ -38,6 +41,7 @@ function TableInner<Row>(
     containerStyle,
     tableStyle,
     className,
+    forwardedRef,
   } = props;
 
   const sticky = stickyHeader ? 'sticky-header' : '';
@@ -58,7 +62,7 @@ function TableInner<Row>(
 
   return (
     <div className={containerClassNames} style={containerStyle}>
-      <table ref={ref} className={classNames} style={tableStyle}>
+      <table ref={forwardedRef} className={classNames} style={tableStyle}>
         <thead className={headClass}>
           <tr className={rowClass}>
             {columns.map((col) => (
@@ -66,9 +70,8 @@ function TableInner<Row>(
                 key={col.key}
                 className={getClasses(styles, [
                   'table-cell',
-                  col.disabled && 'disabled',
-                ])}
-              >
+                  col.disabled ? 'disabled' : undefined,
+                ])}>
                 {col.headerRender ? col.headerRender(col) : col.title}
               </th>
             ))}
@@ -76,16 +79,22 @@ function TableInner<Row>(
         </thead>
         <tbody className={bodyClass}>
           {rows.map((row, rowIndex) => (
-            <tr key={rowIndex} className={rowClass}>
+            <tr
+              key={rowIndex}
+              className={getClasses(styles, [
+                'table-row',
+                row.disabled && 'disabled',
+              ])}>
               {columns.map((col) => (
                 <td
                   className={getClasses(styles, [
                     'table-cell',
-                    (row[col.key]?.disabled || col.disabled) && 'disabled',
+                    col.disabled && 'disabled',
                   ])}
-                  key={`${rowIndex}-${col.key}`}
-                >
-                  {col.cellRender ? col.cellRender(col, row) : row[col.key]}
+                  key={`${rowIndex}-${col.key}`}>
+                  {col.cellRender
+                    ? col.cellRender(col, row)
+                    : (row[col.key] as string)}
                 </td>
               ))}
             </tr>
@@ -96,14 +105,11 @@ function TableInner<Row>(
   );
 }
 
-const TableWithRef = forwardRef(TableInner);
+const TableWithRef = <Row extends BasicRow>(
+  props: TableProps<Row>,
+  ref: ForwardedRef<HTMLTableElement>,
+) => <Table<Row> {...props} forwardedRef={ref} />;
 
-type TableWithRefProps<T> = TableProps<T> & {
-  mRef?: Ref<HTMLTableElement>;
-};
+TableWithRef.displayName = 'Table';
 
-function Table<RowData>({ mRef, ...props }: TableWithRefProps<RowData>) {
-  return <TableWithRef ref={mRef} {...props} />;
-}
-
-export default Table;
+export default forwardRef(TableWithRef);

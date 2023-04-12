@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "dist/types"
   },
-  "files": ["src/index.ts", "src/declaration.d.ts"],
+  "files": ["src/index.ts", "src/declaration.d.ts"]
 }

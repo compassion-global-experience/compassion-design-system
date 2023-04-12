@@ -22,9 +22,13 @@ export default [
         dir: 'dist',
         format: 'esm',
         sourcemap: true,
+        // This configuration promotes better tree shaking, at least in the next.js project we tested it in.
+        // It's mainly about exports like these: `export * as Icon from './icon'`
         preserveModules: true,
         preserveModulesRoot: 'src',
-        entryFileNames: 'esm/[name].js',
+        entryFileNames: (info) => {
+            return `esm/${info.name.replace('node_modules/', 'packages/')}.js`;
+        }
       },
     ],
     plugins: [
@@ -35,7 +39,7 @@ export default [
       }),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({ tsconfig: './tsconfig.declarations.json' }),
       postcss({
         minimize: true,
         config: false,

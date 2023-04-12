@@ -1,3 +1,5 @@
+type GetClassInput = string | null | undefined | false;
+
 /**
  * Get classes from a map of classes and a list of mappings
  * @param map - typically a styles import object from a css module
@@ -6,10 +8,19 @@
  */
 export const getClasses = (
   map: Record<string, string>,
-  input: string | string[],
+  input?: GetClassInput | GetClassInput[],
   className?: string,
 ): string => {
-  const mappings = (Array.isArray(input) ? input : [input]).filter(Boolean);
+  const mappings: string[] = [];
+  if (Array.isArray(input)) {
+    input.forEach((it) => {
+      if (typeof it === 'string') {
+        mappings.push(it);
+      }
+    });
+  } else if (input) {
+    mappings.push(input);
+  }
   const mapped = mappings.map((key) => map[key]).filter(Boolean);
   if (process.env.NODE_ENV !== 'production') {
     if (mapped.length !== mappings.length) {
