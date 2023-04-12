@@ -1,4 +1,10 @@
-import { forwardRef, InputHTMLAttributes, useCallback, useState } from 'react';
+import {
+  ChangeEvent,
+  forwardRef,
+  InputHTMLAttributes,
+  useCallback,
+  useState,
+} from 'react';
 import styles from '@compassion-gds/core/src/components/Form/textarea.module.css';
 import common from '@compassion-gds/core/src/components/Form/common.module.css';
 
@@ -42,7 +48,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
     );
 
     const onChangeCallback = useCallback(
-      (e) => {
+      (e: ChangeEvent<HTMLTextAreaElement>) => {
         setCount(e.target.value.length);
         onChange && onChange(e);
       },
@@ -57,7 +63,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
               {label}
             </label>
           )}
-          {showCounter && maxLength > 0 && (
+          {showCounter && maxLength && (
             <span className={helperClassNames}>
               {count} / {maxLength}
             </span>

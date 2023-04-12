@@ -63,7 +63,7 @@ export const Disabled = {
   },
 };
 
-export const WithIconRight = {
+export const WithIconRight: typeof meta = {
   args: {
     mode: 'primary',
   },
@@ -74,7 +74,7 @@ export const WithIconRight = {
   ),
 };
 
-export const WithIconLeft = {
+export const WithIconLeft: typeof meta = {
   args: {
     mode: 'primary',
   },
@@ -85,7 +85,7 @@ export const WithIconLeft = {
   ),
 };
 
-export const WithIconOnBothSides = {
+export const WithIconOnBothSides: typeof meta = {
   args: {
     mode: 'primary',
   },

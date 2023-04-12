@@ -19,12 +19,13 @@ interface PinProps {
   autoFocus?: boolean;
   secret?: boolean;
   state?: FieldState;
-  onComplete?: (value) => void;
+  onComplete?: (value: string) => void;
 }
 
 interface PinHookProps extends PinProps {
-  values?: Values;
-  onChange?: (values: Values) => void;
+  values: Values;
+  pattern: RegExp;
+  onChange: (values: Values) => void;
 }
 
 export interface PinFieldProps extends PinProps {
@@ -96,7 +97,7 @@ const usePinHook = ({
   pattern,
   onChange: onChangeProp,
   onComplete,
-}: PinHookProps = {}) => {
+}: PinHookProps) => {
   const disabled = state === 'disabled';
 
   const fieldRefs = useRef<HTMLInputElement[]>(Array(values.length).fill(null));

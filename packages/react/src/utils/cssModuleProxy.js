@@ -5,20 +5,7 @@ const moduleProxy = new Proxy(
       if (key === '__esModule') {
         return false;
       }
-      // Support mocking stuff coming from the default export
-      if (key === 'default') {
-        return defaultExportProxy;
-      }
 
-      return key;
-    },
-  },
-);
-
-const defaultExportProxy = new Proxy(
-  {},
-  {
-    get: function getter(target, key) {
       return key;
     },
   },

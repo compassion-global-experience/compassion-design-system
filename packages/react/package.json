@@ -24,7 +24,7 @@
   },
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "rm -rf dist && npm run typings && rollup -c && npm run copy-css",
+    "build": "rm -rf dist && rollup -c && npm run copy-css",
     "copy-css": "bash ./scripts/copy-css.sh",
     "typings:generate": "tsc --project tsconfig.declarations.json",
     "typings:check": "tsc --project tsconfig.json --noEmit",
@@ -85,7 +85,6 @@
     "eslint-plugin-storybook": "^0.6.10",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
-    "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.20.2",
@@ -96,6 +95,7 @@
     "ts-jest": "^29.1.0"
   },
   "peerDependencies": {
+    "phosphor-react": "^1.4.1",
     "react": "16.8.x || 17.x || 18.x",
     "react-dom": "16.8.x || 17.x || 18.x"
   },

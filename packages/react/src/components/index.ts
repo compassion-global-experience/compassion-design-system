@@ -12,3 +12,4 @@ export {
   ChoiceInput,
   PinField,
 } from './Form';
+export { default as Table } from './Table';
