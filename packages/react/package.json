@@ -24,9 +24,12 @@
   },
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "rm -rf dist && rollup -c && npm run copy-css",
+    "build": "rm -rf dist && npm run typings && rollup -c && npm run copy-css",
     "copy-css": "bash ./scripts/copy-css.sh",
-    "prepare": "rollup -c && npm run copy-css",
+    "typings:generate": "tsc --project tsconfig.declarations.json",
+    "typings:check": "tsc --project tsconfig.json --noEmit",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx . --ignore-path ../../.gitignore",
+    "lint": "npm run typings:check && npm run eslint",
     "test": "jest",
     "storybook": "storybook dev -p 6007",
     "build:storybook": "storybook build --quiet",
@@ -90,10 +93,11 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "7.0.2",
-    "ts-jest": "^29.0.5"
+    "ts-jest": "^29.1.0"
   },
   "peerDependencies": {
     "react": "16.8.x || 17.x || 18.x",
     "react-dom": "16.8.x || 17.x || 18.x"
-  }
+  },
+  "sideEffects": false
 }

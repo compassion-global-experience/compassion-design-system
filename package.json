@@ -20,7 +20,7 @@
     "bootstrap": "npx lerna bootstrap",
     "build:packages": "lerna run build",
     "percy-snapshots:packages": "lerna run percy-snapshots",
-    "lint": "npx eslint packages/* --ignore-path=.gitignore",
+    "lint:packages": "lerna run lint",
     "test:packages": "lerna run test"
   },
   "devDependencies": {
@@ -31,11 +31,10 @@
     "commitizen": "^4.2.4",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.32.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "lerna": "^6.6.1",
     "prettier": "^2.8.3",

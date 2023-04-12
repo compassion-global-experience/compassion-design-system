@@ -12,7 +12,9 @@
           "build:storybook",
           "percy-snapshots",
           "copy-css",
-          "test"
+          "test",
+          "lint",
+          "typings:generate"
         ]
       }
     }
@@ -69,6 +71,11 @@
     },
     "percy-snapshots": {
       "dependsOn": ["build:storybook"]
+    },
+    "typings:generate": {
+      "outputs": [
+        "{projectRoot}/dist/types"
+      ]
     }
   }
 }

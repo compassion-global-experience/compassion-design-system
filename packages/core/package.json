@@ -5,6 +5,7 @@
   "scripts": {
     "start": "npm run build && npm run storybook",
     "build": "npm run make-css-vars && npm run bundle-css",
+    "lint": "npx eslint . --ext .js,.ts,.tsx --ignore-path ../../.gitignore",
     "bundle-css": "rollup -c",
     "make-css-vars": "npm run get-figma-tokens && npm run convert-figma-tokens && npm run generate-css-vars",
     "get-figma-tokens": "bash scripts/get-figma-tokens.sh",
