@@ -19,16 +19,9 @@ export default [
         sourcemap: true,
       },
       {
-        dir: 'dist',
+        file: packageJson.module,
         format: 'esm',
         sourcemap: true,
-        // This configuration promotes better tree shaking, at least in the next.js project we tested it in.
-        // It's mainly about exports like these: `export * as Icon from './icon'`
-        preserveModules: true,
-        preserveModulesRoot: 'src',
-        entryFileNames: (info) => {
-            return `esm/${info.name.replace('node_modules/', 'packages/')}.js`;
-        }
       },
     ],
     plugins: [
@@ -45,6 +38,7 @@ export default [
         config: false,
         modules: {
           generateScopedName: 'gds__[local]___[hash:base64:5]',
+          localsConvention: 'camelCase',
         },
       }),
     ],

@@ -1,6 +1,6 @@
 import { forwardRef, MouseEvent, ReactNode, HTMLProps } from 'react';
 import styles from '@compassion-gds/core/src/components/Modal/modal.module.css';
-import { X } from '../icons';
+import { X } from '../Icon';
 import { getClasses } from '../../utils/classes';
 
 type HtmlAttrWithoutOverriddenKeys = Omit<

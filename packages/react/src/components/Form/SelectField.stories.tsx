@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 import SelectField from './SelectField';
-import { Info } from '../icons';
+import { Info } from '../Icon';
 
 const meta: Meta<typeof SelectField> = {
   title: 'Components/Form/SelectField',
@@ -68,7 +68,7 @@ export const Success = {
 export const SuccessWithIcon = {
   args: {
     state: 'success',
-    icon:  <Info color="black" />,
+    icon: <Info color="black" />,
   },
 };
 
