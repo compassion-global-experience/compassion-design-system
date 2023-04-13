@@ -33,7 +33,7 @@
   --type-body-p-small-mobile-bold: 13px/16px Gotham Bold;
   --type-color: #FFFFFF;
   --type-color-white: #FFFFFF;
-  --type-color-accent: #FFB500;
+  --type-color-accent: #FFD05C;
   --type-color-primary: #61B3FF;
   --type-case-uppercase: uppercase;
   --tooltip-padding-x: 8px;
@@ -1136,4 +1136,17 @@ textarea.form-input + .form-icon {
 .form-field + .input-group-adornment,
 .input-group-adornment + .form-field {
   border-radius: 0 var(--form-input-border-radius) var(--form-input-border-radius) 0;
+}
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color-default);
+    font-size: 2em;
+}
+.icon.primary {
+    color: var(--icon-color-primary);
+}
+.icon.muted {
+    color: var(--icon-color-muted);
 }
