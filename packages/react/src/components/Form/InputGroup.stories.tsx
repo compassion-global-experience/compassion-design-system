@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 import InputGroup from './InputGroup';
-import { Info, Plus } from '../icons';
+import { Info, Plus } from '../Icon';
 
 const meta: Meta<typeof InputGroup> = {
   title: 'Components/Form/InputGroup',

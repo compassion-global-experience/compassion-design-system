@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import common from '@compassion-gds/core/src/components/Form/common.module.css';
 import inputGroup from '@compassion-gds/core/src/components/Form/input-group.module.css';
-import { Check, Info, X } from '../icons';
+import { Check, Info, X } from '../Icon';
 import { getClasses } from '../../utils/classes';
 
 export type FieldState = 'disabled' | 'error' | 'success';

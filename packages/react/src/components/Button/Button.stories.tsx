@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 import Button from './Button';
-import { Icon } from '../index';
+import { ArrowLeft, ArrowRight, Info } from 'phosphor-react';
 
 const meta: Meta<typeof Button> = {
   /* 👇 The title prop is optional.
@@ -69,7 +69,7 @@ export const WithIconRight: typeof meta = {
   },
   render: (args) => (
     <Button {...args}>
-      Log in <Icon.ArrowRight />
+      Log in <ArrowRight />
     </Button>
   ),
 };
@@ -80,7 +80,7 @@ export const WithIconLeft: typeof meta = {
   },
   render: (args) => (
     <Button {...args}>
-      <Icon.ArrowLeft /> Go back
+      <ArrowLeft /> Go back
     </Button>
   ),
 };
@@ -91,7 +91,7 @@ export const WithIconOnBothSides: typeof meta = {
   },
   render: (args) => (
     <Button {...args}>
-      <Icon.ArrowLeft /> Options <Icon.ArrowRight />
+      <ArrowLeft /> Options <ArrowRight />
     </Button>
   ),
 };
@@ -100,6 +100,6 @@ export const IconOnly = {
   args: {
     mode: 'primary',
     size: 'small',
-    label: <Icon.Info size={24} />,
+    label: <Info size={24} />,
   },
 };
