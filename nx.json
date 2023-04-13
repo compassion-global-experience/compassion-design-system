@@ -7,14 +7,11 @@
           "build",
           "bundle-css",
           "make-css-vars",
-          "convert-figma-tokens",
-          "generate-css-vars",
           "build:storybook",
           "percy-snapshots",
           "copy-css",
           "test",
-          "lint",
-          "typings:generate"
+          "lint"
         ]
       }
     }
@@ -43,21 +40,6 @@
         "{projectRoot}/tokens"
       ]
     },
-    "get-figma-tokens": {
-      "outputs": [
-        "{projectRoot}/themes"
-      ]
-    },
-    "convert-figma-tokens": {
-      "outputs": [
-        "{projectRoot}/tokens"
-      ]
-    },
-    "generate-css-vars": {
-      "outputs": [
-        "{projectRoot}/src/vars"
-      ]
-    },
     "build:storybook": {
       "outputs": [
         "{projectRoot}/storybook_static"
@@ -71,11 +53,6 @@
     },
     "percy-snapshots": {
       "dependsOn": ["build:storybook"]
-    },
-    "typings:generate": {
-      "outputs": [
-        "{projectRoot}/dist/types"
-      ]
     }
   }
 }
