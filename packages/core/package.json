@@ -1,6 +1,6 @@
 {
   "name": "@compassion-gds/core",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "Compassion International's Global Design System",
   "scripts": {
     "prepare": "bash scripts/make-css-vars.sh",

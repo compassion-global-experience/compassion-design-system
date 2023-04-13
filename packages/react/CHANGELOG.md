@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-alpha.3](https://github.com/compassion-global-experience/compassion-design-system/compare/@compassion-gds/react@0.2.0-alpha.2...@compassion-gds/react@0.2.0-alpha.3) (2023-04-13)
+
+### Features
+
+- **react:** Generic Icon component working with externally provided icons ([cfa065e](https://github.com/compassion-global-experience/compassion-design-system/commit/cfa065ea998893a28e24a96615dacecc2697e588))
+
 # [0.2.0-alpha.2](https://github.com/compassion-global-experience/compassion-design-system/compare/@compassion-gds/react@0.2.0-alpha.1...@compassion-gds/react@0.2.0-alpha.2) (2023-04-11)
 
 ### Features
