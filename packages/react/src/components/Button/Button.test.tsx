@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
-
+import { ArrowLeft, ArrowRight } from 'phosphor-react';
 import Button from './Button';
-import { Icon } from '../';
 
 describe('Button', () => {
   it('should render `Primary` mode with `Medium` size', () => {
@@ -33,7 +32,7 @@ describe('Button', () => {
   it('Should render a variant with a left icon', () => {
     const { container } = render(
       <Button>
-        <Icon.ArrowLeft /> Click Me!
+        <ArrowLeft /> Click Me!
       </Button>,
     );
     expect(container).toMatchSnapshot();
@@ -42,7 +41,7 @@ describe('Button', () => {
   it('Should render a variant with a right icon', () => {
     const { container } = render(
       <Button>
-        Click Me! <Icon.ArrowRight />
+        Click Me! <ArrowRight />
       </Button>,
     );
     expect(container).toMatchSnapshot();
@@ -51,7 +50,7 @@ describe('Button', () => {
   it('Should render a variant with a left and right icon', () => {
     const { container } = render(
       <Button>
-        <Icon.ArrowLeft /> Click Me! <Icon.ArrowRight />
+        <ArrowLeft /> Click Me! <ArrowRight />
       </Button>,
     );
     expect(container).toMatchSnapshot();

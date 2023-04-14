@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
-import Button from './Button';
 import { ArrowLeft, ArrowRight, Info } from 'phosphor-react';
+import Button from './Button';
 
 const meta: Meta<typeof Button> = {
   /* 👇 The title prop is optional.
