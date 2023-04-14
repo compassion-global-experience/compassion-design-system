@@ -20,7 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     # run the job if the PR was merged or the branch is 221-targeted-response
     if: github.event.pull_request.merged == true || github.ref == 'refs/heads/221-targeted-response'
-    needs: call-workflow-checks
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -40,6 +39,11 @@ jobs:
       - name: Install and link dependencies
         run: npm ci
 
+      - name: Lint code
+        run: npm run lint:packages
+      - name: Test changed packages
+        run: npm run test:packages
+
       # todo: add publish configuration so we can publish to npm
       # we need to add an NPM token and to set the registry information (might need to be done in each package.json)
       # todo: ignore `dist` folders in .gitignore
@@ -51,10 +55,10 @@ jobs:
         # Otherwise (main branch) trigger a normal release (promoting any pre-releases to regular versions)
         run: |
           git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor}}@users.noreply.github.com"
-          
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
           npm run build:packages
-          
+
           # todo: remove this logic when we're ready to publish
           git add packages/*/dist
           # check if anything was staged for commit and if so commit it
@@ -69,5 +73,5 @@ jobs:
           else
             npx lerna version --conventional-commits --conventional-prerelease --preid=alpha --yes
           fi
-          
+
           echo "Skipping publish because it's not configured yet"
