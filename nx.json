@@ -44,7 +44,9 @@
       "outputs": [
         "{projectRoot}/storybook_static"
       ],
-      "dependsOn": ["build"]
+      "dependsOn": [
+        "build"
+      ]
     },
     "copy-css": {
       "outputs": [
@@ -52,7 +54,28 @@
       ]
     },
     "percy-snapshots": {
-      "dependsOn": ["build:storybook"]
+      "dependsOn": [
+        "build:storybook"
+      ],
+      "outputs": [
+        "{projectRoot}/storybook_static"
+      ]
+    },
+    "test": {
+      "inputs": [
+        "!{workspaceRoot}/**/*.md",
+        "!{workspaceRoot}/.eslint*",
+        "!{workspaceRoot}/.prettier*",
+        "!{workspaceRoot}/**/LICENSE",
+        "!{projectRoot}/**/*.stories.*"
+      ]
+    },
+    "lint": {
+      "inputs": [
+        "!{workspaceRoot}/**/*.md",
+        "!{workspaceRoot}/.prettier*",
+        "!{workspaceRoot}/**/LICENSE"
+      ]
     }
   }
 }

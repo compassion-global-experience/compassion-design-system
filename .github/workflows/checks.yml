@@ -5,6 +5,7 @@ on:
   pull_request:
     types: [ opened, synchronize, reopened ]
     branches: [ development, main ]
+  workflow_call:
 
 jobs:
   test-and-lint:
@@ -22,6 +23,11 @@ jobs:
           cache: 'npm'
       - name: Install and link dependencies
         run: npm ci
+      - name: Nx Cache
+        uses: actions/cache@v3
+        with:
+          path: ./node_modules/.cache/nx
+          key: ${{ runner.os }}-nx-cache
       - name: Lint code
         run: npm run lint:packages
       - name: Test changed packages
