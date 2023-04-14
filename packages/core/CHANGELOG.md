@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.2 (2023-04-14)
+
+### Features
+
+- **react:** Button with icons ([7a2ebe8](https://github.com/compassion-global-experience/compassion-design-system/commit/7a2ebe84f52ed77ba9567ef7001e9da4aa1fea70))
+- **react:** Generic Icon component working with externally provided icons ([0696f7b](https://github.com/compassion-global-experience/compassion-design-system/commit/0696f7bdb342f50a0aa9f5da6cfe79a178299db0))
+
 # 0.1.0-alpha.1 (2023-04-13)
 
 ### Features
