@@ -16,8 +16,6 @@ on:
       - development
 
 jobs:
-  call-workflow-checks:
-    uses: ./.github/workflows/checks.yml
   publish:
     runs-on: ubuntu-latest
     # run the job if the PR was merged or the branch is 221-targeted-response
@@ -41,12 +39,6 @@ jobs:
 
       - name: Install and link dependencies
         run: npm ci
-
-      - name: Nx Cache
-        uses: actions/cache@v3
-        with:
-          path: ./node_modules/.cache/nx
-          key: ${{ runner.os }}-nx-cache
 
       # todo: add publish configuration so we can publish to npm
       # we need to add an NPM token and to set the registry information (might need to be done in each package.json)
