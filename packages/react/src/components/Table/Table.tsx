@@ -71,7 +71,8 @@ export function Table<Row extends BasicRow>(props: TableProps<Row>) {
                 className={getClasses(styles, [
                   'table-cell',
                   col.disabled ? 'disabled' : undefined,
-                ])}>
+                ])}
+              >
                 {col.headerRender ? col.headerRender(col) : col.title}
               </th>
             ))}
@@ -84,14 +85,17 @@ export function Table<Row extends BasicRow>(props: TableProps<Row>) {
               className={getClasses(styles, [
                 'table-row',
                 row.disabled && 'disabled',
-              ])}>
+              ])}
+            >
               {columns.map((col) => (
                 <td
                   className={getClasses(styles, [
                     'table-cell',
-                    col.disabled && 'disabled',
+                    (col.disabled || (row[col.key] as BasicRow)?.disabled) &&
+                      'disabled',
                   ])}
-                  key={`${rowIndex}-${col.key}`}>
+                  key={`${rowIndex}-${col.key}`}
+                >
                   {col.cellRender
                     ? col.cellRender(col, row)
                     : (row[col.key] as string)}

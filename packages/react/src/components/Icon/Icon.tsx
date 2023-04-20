@@ -16,7 +16,6 @@ interface IconProps extends HTMLAttributes<HTMLSpanElement> {
 const Icon = memo(
   ({ icon: IconComponent, size, color, className, mode, style }: IconProps) => {
     const flavorClass = getClasses(styles, mode, className);
-    console.log('flavorClass: ', flavorClass);
 
     return (
       <span

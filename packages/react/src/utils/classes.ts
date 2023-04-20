@@ -14,7 +14,7 @@ export const getClasses = (
   const mappings: string[] = [];
   if (Array.isArray(input)) {
     input.forEach((it) => {
-      if (typeof it === 'string') {
+      if (typeof it === 'string' && it.length > 0) {
         mappings.push(it);
       }
     });

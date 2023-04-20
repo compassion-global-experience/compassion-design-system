@@ -16,17 +16,10 @@ const meta: Meta<typeof Modal> = {
       </>
     ),
   },
-  parameters: {
-    percy: {
-      args: {
-        open: true,
-      },
-    },
-  },
   decorators: [
     (Story, context) => (
       <div style={{ height: '25vh', width: '100%' }}>
-        <OpenModalButton initialOpen={context.args.open}>
+        <OpenModalButton initialOpen={context.viewMode !== 'docs'}>
           {(isOpen, update) =>
             isOpen && (
               <Story args={{ onClose: () => update(false), ...context.args }} />
@@ -45,7 +38,8 @@ const meta: Meta<typeof Modal> = {
           borderRadius: 4,
           margin: 10,
           padding: 10,
-        }}>
+        }}
+      >
         Slot
       </div>
     </Modal>
