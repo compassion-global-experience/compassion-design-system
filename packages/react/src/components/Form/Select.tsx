@@ -3,7 +3,7 @@ import styles from '@compassion-gds/core/src/components/Form/input-group.module.
 import common from '@compassion-gds/core/src/components/Form/common.module.css';
 
 import { FieldSize, FieldState, StateIcon } from './Helpers';
-import { CaretDown } from '../icons';
+import { CaretDown } from 'phosphor-react';
 import { getClasses } from '../../utils/classes';
 
 interface SelectOptions {

@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 import TextField from './TextField';
-import { Info } from '../icons';
+import { Info } from 'phosphor-react';
 
 const meta: Meta<typeof TextField> = {
   title: 'Components/Form/TextField',
@@ -62,7 +62,7 @@ export const SuccessWithLeftIcon = {
     label: 'Label',
     state: 'success',
     placeholder: 'Success',
-    iconLeft:  <Info color="black" />,
+    iconLeft: <Info color="black" />,
   },
 };
 

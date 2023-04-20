@@ -3,7 +3,7 @@ import styles from '@compassion-gds/core/src/components/Form/radio-checkbox.modu
 import common from '@compassion-gds/core/src/components/Form/common.module.css';
 
 import { FieldState } from './Helpers';
-import { Check } from '../icons';
+import { Check } from 'phosphor-react';
 import { getClasses } from '../../utils/classes';
 
 export interface ChoiceInputProps

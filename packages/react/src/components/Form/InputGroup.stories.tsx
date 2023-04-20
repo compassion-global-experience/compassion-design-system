@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
+import { Info, Plus } from 'phosphor-react';
 import InputGroup from './InputGroup';
-import { Info, Plus } from '../icons';
 
 const meta: Meta<typeof InputGroup> = {
   title: 'Components/Form/InputGroup',

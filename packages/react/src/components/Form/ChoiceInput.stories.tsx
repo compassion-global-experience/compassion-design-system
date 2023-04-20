@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react';
-import ChoiceInput from './ChoiceInput';
+import ChoiceInput, { ChoiceInputProps } from './ChoiceInput';
 
 const meta: Meta<typeof ChoiceInput> = {
   title: 'Components/Form/ChoiceInput',
@@ -55,20 +55,36 @@ export const CheckboxError = {
   },
 };
 
-export const
-  MultipleRadios = (props) => (
-    <>
-      <ChoiceInput type="radio" id="option-1" name="option" label="Opiton 1" {...props} />
-      <ChoiceInput type="radio" id="option-2" name="option" label="Opiton 2" {...props} />
-      <ChoiceInput type="radio" id="option-3" name="option" label="Opiton 3" {...props} />
-    </>
+export const MultipleRadios = (props: ChoiceInputProps) => (
+  <>
+    <ChoiceInput
+      {...props}
+      type="radio"
+      id="option-1"
+      name="option"
+      label="Opiton 1"
+    />
+    <ChoiceInput
+      {...props}
+      type="radio"
+      id="option-2"
+      name="option"
+      label="Opiton 2"
+    />
+    <ChoiceInput
+      {...props}
+      type="radio"
+      id="option-3"
+      name="option"
+      label="Opiton 3"
+    />
+  </>
 );
 
-export const
-  MultipleCheckboxes = (props) => (
-    <>
-      <ChoiceInput type="checkbox" id="option-1" label="Opiton 1" {...props} />
-      <ChoiceInput type="checkbox" id="option-2" label="Opiton 2" {...props} />
-      <ChoiceInput type="checkbox" id="option-3" label="Opiton 3" {...props} />
-    </>
+export const MultipleCheckboxes = (props: ChoiceInputProps) => (
+  <>
+    <ChoiceInput {...props} type="checkbox" id="option-1" label="Opiton 1" />
+    <ChoiceInput {...props} type="checkbox" id="option-2" label="Opiton 2" />
+    <ChoiceInput {...props} type="checkbox" id="option-3" label="Opiton 3" />
+  </>
 );

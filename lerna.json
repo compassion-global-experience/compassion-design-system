@@ -1,5 +1,16 @@
 {
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "npmClient": "npm",
   "useWorkspaces": true,
-  "version": "independent"
+  "version": "independent",
+  "ignoreChanges": [
+    "**/*.md",
+    "**/*.test.*",
+    "**/*.stories.*",
+    "**/*.jest.config.*",
+    "**/.cz.json",
+    "**/.prettierrc",
+    "**/.eslint*",
+    "nx.json"
+  ]
 }

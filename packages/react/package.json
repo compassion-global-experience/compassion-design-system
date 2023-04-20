@@ -1,10 +1,10 @@
 {
   "name": "@compassion-gds/react",
-  "version": "0.1.0",
+  "version": "0.2.0-alpha.5",
   "description": "",
   "type": "module",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/common.js",
+  "module": "dist/module.js",
   "files": [
     "dist"
   ],
@@ -12,10 +12,10 @@
   "exports": {
     ".": {
       "browser": {
-        "default": "./dist/esm/index.js"
+        "default": "./dist/module.js"
       },
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./dist/module.js",
+      "require": "./dist/common.js"
     },
     "./css/base.css": "./dist/css/reset.css",
     "./css/light.css": "./dist/css/cds-light.css",
@@ -24,8 +24,12 @@
   },
   "scripts": {
     "dev": "rollup -c -w",
+    "build": "rm -rf dist && rollup -c && npm run copy-css",
     "copy-css": "bash ./scripts/copy-css.sh",
-    "prepare": "rollup -c && npm run copy-css",
+    "typings:generate": "tsc --project tsconfig.declarations.json",
+    "typings:check": "tsc --project tsconfig.json --noEmit",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx . --ignore-path ../../.gitignore",
+    "lint": "npm run typings:check && npm run eslint",
     "test": "jest",
     "storybook": "storybook dev -p 6007",
     "build:storybook": "storybook build --quiet",
@@ -34,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/compassion-global-experience/compassion-design-system.git",
+    "url": "https://github.com/compassion-global-experience/compassion-design-system.git",
     "directory": "packages/react"
   },
   "keywords": [
@@ -54,11 +58,11 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@compassion-gds/core": "^0.0.2",
+    "@compassion-gds/core": "^0.1.0-alpha.2",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",
-    "@rollup/plugin-typescript": "^11.0.0",
+    "@rollup/plugin-typescript": "^11.1.0",
     "@storybook/addon-actions": "^7.0.2",
     "@storybook/addon-docs": "^7.0.2",
     "@storybook/addon-essentials": "^7.0.2",
@@ -84,16 +88,16 @@
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^3.13.0",
+    "rollup": "^3.20.2",
     "rollup-plugin-dts": "^5.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "7.0.2",
-    "ts-jest": "^29.0.5",
-    "webpack": "^5.75.0"
+    "ts-jest": "^29.1.0"
   },
   "peerDependencies": {
     "react": "16.8.x || 17.x || 18.x",
     "react-dom": "16.8.x || 17.x || 18.x"
-  }
+  },
+  "sideEffects": false
 }

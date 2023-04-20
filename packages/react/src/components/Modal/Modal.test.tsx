@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
-import Modal from './Modal';
-import Button from "../Button";
+import Modal, { ModalProps } from './Modal';
+import Button from '../Button';
 
 describe('Modal', () => {
   it('should render `Default` size with `Header` and `Footer`', () => {
@@ -15,20 +15,32 @@ describe('Modal', () => {
   });
 
   it('should render `Small` size without `Footer`', () => {
-    const { container } = renderComponent({ size: 'small', footerSlot: undefined });
+    const { container } = renderComponent({
+      size: 'small',
+      footerSlot: undefined,
+    });
     expect(container).toMatchSnapshot();
   });
 
   it('should render `Default` size without `Header` and `Footer`', () => {
-    const { container } = renderComponent({ size: 'small', footerSlot: undefined });
+    const { container } = renderComponent({
+      size: 'small',
+      footerSlot: undefined,
+    });
     expect(container).toMatchSnapshot();
   });
 
-  const renderComponent = props => render(
-    <Modal title="Title" footerSlot={<ModalFooter />} onClose={() => undefined} {...props}>
-      <div>Slot</div>
-    </Modal>,
-  );
+  const renderComponent = (props: Omit<ModalProps, 'children' | 'ref'>) =>
+    render(
+      <Modal
+        title="Title"
+        footerSlot={<ModalFooter />}
+        onClose={() => undefined}
+        {...props}
+      >
+        <div>Slot</div>
+      </Modal>,
+    );
 });
 
 const ModalFooter = () => (

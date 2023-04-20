@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/react';
+import { ArrowLeft, ArrowRight, Info } from 'phosphor-react';
 import Button from './Button';
 
 const meta: Meta<typeof Button> = {
@@ -59,5 +60,46 @@ export const Disabled = {
   args: {
     disabled: true,
     label: 'Button',
+  },
+};
+
+export const WithIconRight: typeof meta = {
+  args: {
+    mode: 'primary',
+  },
+  render: (args) => (
+    <Button {...args}>
+      Log in <ArrowRight />
+    </Button>
+  ),
+};
+
+export const WithIconLeft: typeof meta = {
+  args: {
+    mode: 'primary',
+  },
+  render: (args) => (
+    <Button {...args}>
+      <ArrowLeft /> Go back
+    </Button>
+  ),
+};
+
+export const WithIconOnBothSides: typeof meta = {
+  args: {
+    mode: 'primary',
+  },
+  render: (args) => (
+    <Button {...args}>
+      <ArrowLeft /> Options <ArrowRight />
+    </Button>
+  ),
+};
+
+export const IconOnly = {
+  args: {
+    mode: 'primary',
+    size: 'small',
+    label: <Info size={24} />,
   },
 };

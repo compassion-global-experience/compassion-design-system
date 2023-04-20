@@ -4,24 +4,22 @@
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
-          "prepare",
+          "build",
           "bundle-css",
           "make-css-vars",
-          "get-figma-tokens",
-          "convert-figma-tokens",
-          "generate-css-vars",
           "build:storybook",
           "percy-snapshots",
           "copy-css",
-          "test"
+          "test",
+          "lint"
         ]
       }
     }
   },
   "targetDefaults": {
-    "prepare": {
+    "build": {
       "dependsOn": [
-        "^prepare"
+        "^build"
       ],
       "outputs": [
         "{projectRoot}/dist",
@@ -42,26 +40,13 @@
         "{projectRoot}/tokens"
       ]
     },
-    "get-figma-tokens": {
-      "outputs": [
-        "{projectRoot}/themes"
-      ]
-    },
-    "convert-figma-tokens": {
-      "outputs": [
-        "{projectRoot}/tokens"
-      ]
-    },
-    "generate-css-vars": {
-      "outputs": [
-        "{projectRoot}/src/vars"
-      ]
-    },
     "build:storybook": {
       "outputs": [
         "{projectRoot}/storybook_static"
       ],
-      "dependsOn": ["prepare"]
+      "dependsOn": [
+        "build"
+      ]
     },
     "copy-css": {
       "outputs": [
@@ -69,7 +54,28 @@
       ]
     },
     "percy-snapshots": {
-      "dependsOn": ["build:storybook"]
+      "dependsOn": [
+        "build:storybook"
+      ],
+      "outputs": [
+        "{projectRoot}/storybook_static"
+      ]
+    },
+    "test": {
+      "inputs": [
+        "!{workspaceRoot}/**/*.md",
+        "!{workspaceRoot}/.eslint*",
+        "!{workspaceRoot}/.prettier*",
+        "!{workspaceRoot}/**/LICENSE",
+        "!{projectRoot}/**/*.stories.*"
+      ]
+    },
+    "lint": {
+      "inputs": [
+        "!{workspaceRoot}/**/*.md",
+        "!{workspaceRoot}/.prettier*",
+        "!{workspaceRoot}/**/LICENSE"
+      ]
     }
   }
 }

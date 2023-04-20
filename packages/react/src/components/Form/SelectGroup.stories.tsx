@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 import SelectGroup from './SelectGroup';
-import { Info, Plus } from '../icons';
+import { Info, Plus } from 'phosphor-react';
 
 const meta: Meta<typeof SelectGroup> = {
   title: 'Components/Form/SelectGroup',

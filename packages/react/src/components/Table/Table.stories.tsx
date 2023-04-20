@@ -1,7 +1,17 @@
 import { Meta } from '@storybook/react';
-import Table from './Table';
+import { Table } from './Table';
+import { ReactNode } from 'react';
 
-const meta: Meta<typeof Table> = {
+type RowItem = { label: string; disabled: boolean; link: string };
+
+type RowData = {
+  disabled?: boolean;
+  [key: string]: ReactNode | RowItem;
+};
+
+type TableWithRowData = typeof Table<RowData>;
+
+const meta: Meta<TableWithRowData> = {
   title: 'Components/Table',
   component: Table,
 };
@@ -24,7 +34,7 @@ export const Default = {
   },
 };
 
-export const WithLinks = {
+export const WithLinks: Meta<typeof Table<{ [key: string]: string }>> = {
   args: {
     columns: [
       { title: 'Heading 1', key: 'column1' },
@@ -49,7 +59,7 @@ export const WithLinks = {
   },
 };
 
-export const CustomCells = {
+export const CustomCells: typeof meta = {
   args: {
     columns: [
       { title: 'Heading 1', key: 'column1' },
@@ -57,7 +67,7 @@ export const CustomCells = {
         title: 'Heading 2',
         key: 'column2',
         cellRender: (col, row) => {
-          const { label, disabled, link } = row[col.key];
+          const { label, disabled, link } = row[col.key] as RowItem;
 
           return link && !disabled ? <a href={link}>{label}</a> : label;
         },

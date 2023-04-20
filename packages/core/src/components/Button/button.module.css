@@ -1,5 +1,7 @@
 .button-main {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--margin-2);
   padding: var(--button-secondary-small-padding-y) var(--button-secondary-small-padding-x);
   border-width: var(--button-secondary-border-width);
   border-style: solid;
