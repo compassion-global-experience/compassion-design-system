@@ -71,7 +71,7 @@ const getClasses = (map, input, className) => {
     const mappings = [];
     if (Array.isArray(input)) {
         input.forEach((it) => {
-            if (typeof it === 'string') {
+            if (typeof it === 'string' && it.length > 0) {
                 mappings.push(it);
             }
         });
@@ -111,7 +111,6 @@ styleInject(css_248z$4);
 
 const Icon = React.memo(({ icon: IconComponent, size, color, className, mode, style }) => {
     const flavorClass = getClasses(styles$4, mode, className);
-    console.log('flavorClass: ', flavorClass);
     return (jsxRuntime.jsx("span", Object.assign({ className: `${styles$4.icon} ${buttonStyles.icon} ${common.formIcon} ${styles$5.formControlIcon} ${flavorClass}`, style: Object.assign(Object.assign({}, style), { fontSize: size, color }) }, { children: jsxRuntime.jsx(IconComponent, {}) })));
 });
 Icon.displayName = 'Icon';
@@ -796,12 +795,16 @@ function Table(props) {
                             ]) }, { children: col.headerRender ? col.headerRender(col) : col.title }), col.key))) })) })), jsxRuntime.jsx("tbody", Object.assign({ className: bodyClass }, { children: rows.map((row, rowIndex) => (jsxRuntime.jsx("tr", Object.assign({ className: getClasses(styles, [
                             'table-row',
                             row.disabled && 'disabled',
-                        ]) }, { children: columns.map((col) => (jsxRuntime.jsx("td", Object.assign({ className: getClasses(styles, [
-                                'table-cell',
-                                col.disabled && 'disabled',
-                            ]) }, { children: col.cellRender
-                                ? col.cellRender(col, row)
-                                : row[col.key] }), `${rowIndex}-${col.key}`))) }), rowIndex))) }))] })) })));
+                        ]) }, { children: columns.map((col) => {
+                            var _a;
+                            return (jsxRuntime.jsx("td", Object.assign({ className: getClasses(styles, [
+                                    'table-cell',
+                                    (col.disabled || ((_a = row[col.key]) === null || _a === void 0 ? void 0 : _a.disabled)) &&
+                                        'disabled',
+                                ]) }, { children: col.cellRender
+                                    ? col.cellRender(col, row)
+                                    : row[col.key] }), `${rowIndex}-${col.key}`));
+                        }) }), rowIndex))) }))] })) })));
 }
 const TableWithRef = (props, ref) => jsxRuntime.jsx(Table, Object.assign({}, props, { forwardedRef: ref }));
 TableWithRef.displayName = 'Table';
