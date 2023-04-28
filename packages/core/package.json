@@ -1,5 +1,5 @@
 {
-  "name": "@compassion-gds/core",
+  "name": "@compassion-global-experience/core",
   "version": "0.0.2",
   "description": "Compassion International's Global Design System",
   "scripts": {
@@ -37,10 +37,10 @@
   },
   "keywords": [
     "compassion",
-    "compassion-gds",
-    "gds",
-    "css",
-    "core"
+    "compassion-design-system",
+    "design-system",
+    "ui-components",
+    "css"
   ],
   "author": "Compassion XD",
   "license": "MIT",

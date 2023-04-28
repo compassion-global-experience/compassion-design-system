@@ -5,7 +5,7 @@ import {
   ForwardedRef,
   Ref,
 } from 'react';
-import styles from '@compassion-gds/core/src/components/Table/table.module.css';
+import styles from '@compassion-global-experience/core/src/components/Table/table.module.css';
 import { getClasses } from '../../utils/classes';
 
 export interface Column<Row> {

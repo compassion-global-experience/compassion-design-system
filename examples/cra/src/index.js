@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '@compassion-gds/react/css/reset.css';
-import '@compassion-gds/react/css/light.css';
+import '@compassion-global-experience/react/css/reset.css';
+import '@compassion-global-experience/react/css/light.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
