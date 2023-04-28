@@ -1,6 +1,6 @@
 import { forwardRef, InputHTMLAttributes, useCallback, useState } from 'react';
-import styles from '@compassion-gds/core/src/components/Form/textarea.module.css';
-import common from '@compassion-gds/core/src/components/Form/common.module.css';
+import styles from '@compassion-global-experience/core/src/components/Form/textarea.module.css';
+import common from '@compassion-global-experience/core/src/components/Form/common.module.css';
 
 import { FieldSize, FieldState, StateIcon } from './Helpers';
 import { getClasses } from '../../utils/classes';

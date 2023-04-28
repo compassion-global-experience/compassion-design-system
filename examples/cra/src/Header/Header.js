@@ -1,4 +1,4 @@
-import { Button } from '@compassion-gds/react';
+import { Button } from '@compassion-global-experience/react';
 import './styles.css';
 
 export function Header() {
@@ -6,7 +6,11 @@ export function Header() {
     <header className="app-header">
       <nav>
         <Button onClick={() => console.log('GDS')} label="GDS Button" />
-        <Button mode="primary" onClick={() => console.log('GDS Primary')} label="GDS Primary" />
+        <Button
+          mode="primary"
+          onClick={() => console.log('GDS Primary')}
+          label="GDS Primary"
+        />
         <button onClick={() => console.log('regular')}>
           Regular Native Button
         </button>

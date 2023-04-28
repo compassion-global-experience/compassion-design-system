@@ -1,53 +1,54 @@
-@import "@compassion-gds/core/reset.css";
-@import "@compassion-gds/core/light.css";
+@import '@compassion-global-experience/core/reset.css';
+@import '@compassion-global-experience/core/light.css';
 
-html, body {
-    min-height: revert;
-    height: calc(100vh - 32px);
+html,
+body {
+  min-height: revert;
+  height: calc(100vh - 32px);
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    margin: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
 }
 
 footer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
 }
 
 main {
-    flex: 9;
+  flex: 9;
 }
 
 header {
-    flex: 1;
-    align-items: center;
+  flex: 1;
+  align-items: center;
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 
 nav > * {
-    width: max-content;
+  width: max-content;
 }
 
 .subscribe-form {
-    display: inline-flex;
-    flex-direction: row;
-    margin-left: auto;
-    gap: 8px;
-    align-items: flex-end;
+  display: inline-flex;
+  flex-direction: row;
+  margin-left: auto;
+  gap: 8px;
+  align-items: flex-end;
 }
 
 .gds-logo {
-    display: block;
-    margin: auto;
-    color: var(--header-default-logo-color);
+  display: block;
+  margin: auto;
+  color: var(--header-default-logo-color);
 }

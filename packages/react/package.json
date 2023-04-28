@@ -1,6 +1,11 @@
 {
-  "name": "@compassion-gds/react",
-  "version": "0.1.0",
+  "name": "@compassion-global-experience/react",
+  "version": "0.1.1-alpha.2",
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "description": "",
   "type": "module",
   "main": "dist/cjs/index.js",
@@ -39,8 +44,9 @@
   },
   "keywords": [
     "compassion",
-    "compassion-gds",
-    "gds",
+    "compassion-design-system",
+    "design-system",
+    "ui-components",
     "react"
   ],
   "author": "Compassion XD",
@@ -54,7 +60,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@compassion-gds/core": "^0.0.2",
+    "@compassion-global-experience/core": "^0.1.0-alpha.2",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",
@@ -95,5 +101,6 @@
   "peerDependencies": {
     "react": "16.8.x || 17.x || 18.x",
     "react-dom": "16.8.x || 17.x || 18.x"
-  }
+  },
+  "gitHead": "b6bde2710dac0160e4df9e77ccd0ca0ca67d18e9"
 }

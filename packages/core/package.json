@@ -1,6 +1,11 @@
 {
-  "name": "@compassion-gds/core",
-  "version": "0.0.2",
+  "name": "@compassion-global-experience/core",
+  "version": "0.1.0-alpha.2",
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "description": "Compassion International's Global Design System",
   "scripts": {
     "start": "npm run prepare && npm run storybook",
@@ -37,10 +42,10 @@
   },
   "keywords": [
     "compassion",
-    "compassion-gds",
-    "gds",
-    "css",
-    "core"
+    "compassion-design-system",
+    "design-system",
+    "ui-components",
+    "css"
   ],
   "author": "Compassion XD",
   "license": "MIT",
@@ -68,5 +73,6 @@
     "storybook": "^7.0.2",
     "style-dictionary": "^3.7.2",
     "token-transformer": "0.0.32"
-  }
+  },
+  "gitHead": "b6bde2710dac0160e4df9e77ccd0ca0ca67d18e9"
 }

@@ -1,6 +1,6 @@
 import { forwardRef, InputHTMLAttributes } from 'react';
-import styles from '@compassion-gds/core/src/components/Form/radio-checkbox.module.css';
-import common from '@compassion-gds/core/src/components/Form/common.module.css';
+import styles from '@compassion-global-experience/core/src/components/Form/radio-checkbox.module.css';
+import common from '@compassion-global-experience/core/src/components/Form/common.module.css';
 
 import { FieldState } from './Helpers';
 import { Check } from '../icons';
