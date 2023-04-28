@@ -1,6 +1,6 @@
 {
   "name": "@compassion-global-experience/react",
-  "version": "0.1.1-alpha.0",
+  "version": "0.1.1-alpha.1",
   "private": false,
   "description": "",
   "type": "module",
@@ -56,7 +56,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@compassion-global-experience/core": "^0.1.0-alpha.0",
+    "@compassion-global-experience/core": "^0.1.0-alpha.1",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",
