@@ -1,6 +1,7 @@
 {
   "name": "@compassion-global-experience/react",
   "version": "0.1.1-alpha.0",
+  "private": false,
   "description": "",
   "type": "module",
   "main": "dist/cjs/index.js",
@@ -96,5 +97,6 @@
   "peerDependencies": {
     "react": "16.8.x || 17.x || 18.x",
     "react-dom": "16.8.x || 17.x || 18.x"
-  }
+  },
+  "gitHead": "aade3c7a3d9cd1be124c92e007a96d8c5ba4e313"
 }
