@@ -59,12 +59,12 @@ exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`]
       class="modal-footer"
     >
       <button
-        class="button-main secondary medium"
+        class="button-secondary medium"
       >
         Button 2
       </button>
       <button
-        class="button-main primary medium"
+        class="button-primary medium"
       >
         Button 1
       </button>
@@ -245,12 +245,12 @@ exports[`Modal should render \`Wide\` size without \`Header\` 1`] = `
       class="modal-footer"
     >
       <button
-        class="button-main secondary medium"
+        class="button-secondary medium"
       >
         Button 2
       </button>
       <button
-        class="button-main primary medium"
+        class="button-primary medium"
       >
         Button 1
       </button>

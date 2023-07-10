@@ -1,10 +1,13 @@
+'use client';
+
 import { MouseEvent, ButtonHTMLAttributes, forwardRef } from 'react';
 import styles from '@compassion-design-system/core/src/components/Button/button.module.css';
 import { getClasses } from '../../utils/classes';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
-  mode?: 'primary' | 'secondary' | 'tertiary';
+  kind?: 'cta' | 'white' | 'inverted' | 'destructive';
+  emphasis?: 'primary' | 'secondary' | 'tertiary';
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
@@ -13,7 +16,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     label,
-    mode = 'primary',
+    kind,
+    emphasis = 'primary',
     size = 'medium',
     disabled = false,
     className,
@@ -21,7 +25,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     onClick,
     ...rest
   } = props;
-  const classNames = getClasses(styles, ['button-main', mode, size], className);
+
+  const classNames = getClasses(
+    styles,
+    [`button-${emphasis}`, size, kind],
+    className,
+  );
 
   return (
     <button
