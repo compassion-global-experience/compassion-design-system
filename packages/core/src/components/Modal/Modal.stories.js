@@ -18,7 +18,7 @@ const Template = ({
   size = 'default',
 }) => {
   return `
-    <button type="button" class="button-main secondary medium" onclick='openModal()'>Open Modal</button>
+    <button type="button" class="button-secondary medium" onclick='openModal()'>Open Modal</button>
     <span id="example-backdrop" style="position: fixed; inset: 0; background: black; opacity: 0.7; "></span>
     <div id="example-modal" class="modal ${size}">
         <span id="example-modal-close" class="modal-button-close" onclick='closeModal()'>
@@ -56,8 +56,8 @@ const renderFooter = ({ footer }) => {
 
   return `
     <div class="modal-footer">
-      <button type="button" class="button-main secondary medium">Button 2</button>
-      <button type="button" class="button-main primary medium">Button 1</button>
+      <button type="button" class="button-secondary medium">Button 2</button>
+      <button type="button" class="button-primary medium">Button 1</button>
     </div>
     `;
 };

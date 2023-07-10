@@ -19,7 +19,7 @@ const Template = (props) => {
       {open && <Backdrop />}
       <Button
         size="medium"
-        mode="secondary"
+        emphasis="secondary"
         label="Open Modal"
         onClick={() => setOpen(true)}
       />
@@ -44,8 +44,8 @@ const Template = (props) => {
 
 const ModalFooter = () => (
   <>
-    <Button label="Button 2" mode="secondary" />
-    <Button label="Button 1" mode="primary" />
+    <Button label="Button 2" emphasis="secondary" />
+    <Button label="Button 1" emphasis="primary" />
   </>
 );
 
