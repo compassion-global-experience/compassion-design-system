@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import '@compassion-gds/core/src/components/Form/common.module.css';
+import '@compassion-design-system/core/src/components/Form/common.module.css';
 
 import Input, { InputProps } from './Input';
 import { FieldContainer } from './Helpers';

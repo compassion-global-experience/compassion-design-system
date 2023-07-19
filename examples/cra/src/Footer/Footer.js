@@ -1,4 +1,4 @@
-import { Button, TextField } from '@compassion-gds/react';
+import { Button, TextField } from '@compassion-design-system/react';
 import './styles.css';
 
 export function Footer() {

@@ -33,7 +33,7 @@
   --type-body-p-small-mobile-bold: 13px/16px Gotham Bold;
   --type-color: #FFFFFF;
   --type-color-white: #FFFFFF;
-  --type-color-accent: #FFB500;
+  --type-color-accent: #FFD05C;
   --type-color-primary: #61B3FF;
   --type-case-uppercase: uppercase;
   --tooltip-padding-x: 8px;
@@ -50,6 +50,7 @@
   --toast-action-color: #61B3FF;
   --toast-border-radius: 8px;
   --toast-shadow: 0px 0.95px 1.55px -2.5px #00000012, 0px 7.5px 12.5px -2.5px #00000024;
+  --toast-button-font: 16px/20px Gotham Bold;
   --table-background-color: #2e2f2a;
   --table-border-color: #4b4c45;
   --table-no-background: #00000000;
@@ -97,7 +98,7 @@
   --padding-4: 24px;
   --padding-5: 32px;
   --progress-label: 13px/16px Gotham Book;
-  --progress-progress-color: #004180;
+  --progress-progress-color: #61B3FF;
   --progress-background-color: #4b4c45;
   --progress-label-color: #FFFFFF;
   --progress-default-height: 8px;
@@ -150,15 +151,18 @@
   --list-group-background-color: #2e2f2a;
   --list-group-border-color: #4b4c45;
   --list-group-underline-color: #4b4c45;
-  --list-group-action-color: #61B3FF;
   --list-group-icon-color: #61B3FF;
   --list-group-body-color: #FFFFFF;
   --list-group-heading-color: #FFFFFF;
   --list-group-hover-background-color: #004180;
   --list-group-active-background-color: #4b4c45;
-  --list-group-active-action-color: #ecedec;
+  --list-group-active-icon-color: #ecedec;
+  --list-group-active-heading-color: #ecedec;
+  --list-group-active-body-color: #ecedec;
   --list-group-disabled-background-color: #2e2f2a;
-  --list-group-disabled-action-color: #919389;
+  --list-group-disabled-heading-color: #919389;
+  --list-group-disabled-body-color: #919389;
+  --list-group-disabled-icon-color: #919389;
   --list-group-border-radius: 8px;
   --list-group-border-width: 1px;
   --list-group-no-border: 0px;
@@ -175,6 +179,9 @@
   --link-text-decoration-underline: underline;
   --link-font-default: 16px/20px Gotham Book;
   --link-font-bold: 16px/20px Gotham Bold;
+  --image-background-color: #4b4c45;
+  --image-icon-color: #919389;
+  --image-icon-color-inverse: #FFFFFF;
   --icon-color-default: #FFFFFF;
   --icon-color-muted: #ecedec;
   --icon-color-primary: #61B3FF;
@@ -281,7 +288,6 @@
   --dropdown-underline-color: #4b4c45;
   --dropdown-action-color: #FFFFFF;
   --dropdown-text-color: #FFFFFF;
-  --dropdown-icon-color: #ecedec;
   --dropdown-hover-background-color: #004180;
   --dropdown-hover-action-color: #61B3FF;
   --dropdown-active-background-color: #4b4c45;

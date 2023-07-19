@@ -1,5 +1,5 @@
 import { MouseEvent, ButtonHTMLAttributes, forwardRef } from 'react';
-import styles from '@compassion-gds/core/src/components/Button/button.module.css';
+import styles from '@compassion-design-system/core/src/components/Button/button.module.css';
 import { getClasses } from '../../utils/classes';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

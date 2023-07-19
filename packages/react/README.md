@@ -8,18 +8,18 @@ fast, accessible development of apps and static sites.
 To install the GDS React package use
 
 ```shell
-npm install @compassion-gds/react
+npm install @compassion-design-system/react
 ```
 
-Or `yarn add @compassion-gds/react` if you're using yarn
+Or `yarn add @compassion-design-system/react` if you're using yarn
 
 Import the following css files from the entry point of your application
 
 #### index.js
 ```js
 // Replace {theme} with any of the available themes (e.g. light, dark)
-import '@compassion-gds/react/css/base.css';
-import '@compassion-gds/react/css/{theme}.css';
+import '@compassion-design-system/react/css/base.css';
+import '@compassion-design-system/react/css/{theme}.css';
 ```
 
 GDS React components would follow the imported theme.
@@ -28,7 +28,7 @@ Sample component usage:
 
 ```jsx
 import React from 'react';
-import { Button } from '@compassion-gds/react';
+import { Button } from '@compassion-design-system/react';
 
 export const PrimaryButton = (props) => (
   <Button primary size="small" {...props} />
@@ -38,8 +38,8 @@ export const PrimaryButton = (props) => (
 ## Themes
 
 Available options:
-- light: `@compassion-gds/react/css/light.css`
-- dark: `@compassion-gds/react/css/dark.css`
+- light: `@compassion-design-system/react/css/light.css`
+- dark: `@compassion-design-system/react/css/dark.css`
 
 ## Contributing to the `react` Package
 
