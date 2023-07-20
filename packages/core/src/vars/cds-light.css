@@ -137,6 +137,7 @@
   --nav-padding-x: 16px;
   --nav-padding-y: 12px;
   --nav-link-font: 16px/20px Gotham Medium;
+  --nav-subnav-link-font: 13px/16px Gotham Medium;
   --modal-border-radius: 8px;
   --modal-shadow: 0px 0.95px 1.55px -2.5px #00000012, 0px 7.5px 12.5px -2.5px #00000024;
   --modal-background-color: #FFFFFF;
