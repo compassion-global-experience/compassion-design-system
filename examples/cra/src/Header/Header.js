@@ -1,4 +1,4 @@
-import { Button } from '@compassion-gds/react';
+import { Button } from '@compassion-design-system/react';
 import './styles.css';
 
 export function Header() {

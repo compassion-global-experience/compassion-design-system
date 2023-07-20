@@ -50,6 +50,7 @@
   --toast-action-color: #005EB8;
   --toast-border-radius: 8px;
   --toast-shadow: 0px 0.95px 1.55px -2.5px #00000012, 0px 7.5px 12.5px -2.5px #00000024;
+  --toast-button-font: 16px/20px Gotham Bold;
   --table-background-color: #FFFFFF;
   --table-border-color: #e3e4e2;
   --table-no-background: #00000000;
@@ -136,6 +137,7 @@
   --nav-padding-x: 16px;
   --nav-padding-y: 12px;
   --nav-link-font: 16px/20px Gotham Medium;
+  --nav-subnav-link-font: 13px/16px Gotham Medium;
   --modal-border-radius: 8px;
   --modal-shadow: 0px 0.95px 1.55px -2.5px #00000012, 0px 7.5px 12.5px -2.5px #00000024;
   --modal-background-color: #FFFFFF;
@@ -150,15 +152,18 @@
   --list-group-background-color: #FFFFFF;
   --list-group-border-color: #e3e4e2;
   --list-group-underline-color: #c8c9c4;
-  --list-group-action-color: #005EB8;
   --list-group-icon-color: #005EB8;
   --list-group-body-color: #2e2f2a;
   --list-group-heading-color: #2e2f2a;
   --list-group-hover-background-color: #D2E9FF;
   --list-group-active-background-color: #e3e4e2;
-  --list-group-active-action-color: #4b4c45;
+  --list-group-active-icon-color: #4b4c45;
+  --list-group-active-heading-color: #4b4c45;
+  --list-group-active-body-color: #4b4c45;
   --list-group-disabled-background-color: #f6f6f5;
-  --list-group-disabled-action-color: #acaea7;
+  --list-group-disabled-heading-color: #acaea7;
+  --list-group-disabled-body-color: #acaea7;
+  --list-group-disabled-icon-color: #acaea7;
   --list-group-border-radius: 8px;
   --list-group-border-width: 1px;
   --list-group-no-border: 0px;
@@ -175,6 +180,9 @@
   --link-text-decoration-underline: underline;
   --link-font-default: 16px/20px Gotham Book;
   --link-font-bold: 16px/20px Gotham Bold;
+  --image-background-color: #e3e4e2;
+  --image-icon-color: #acaea7;
+  --image-icon-color-inverse: #FFFFFF;
   --icon-color-default: #000000;
   --icon-color-muted: #4b4c45;
   --icon-color-primary: #005EB8;
@@ -281,7 +289,6 @@
   --dropdown-underline-color: #c8c9c4;
   --dropdown-action-color: #2e2f2a;
   --dropdown-text-color: #2e2f2a;
-  --dropdown-icon-color: #4b4c45;
   --dropdown-hover-background-color: #D2E9FF;
   --dropdown-hover-action-color: #005EB8;
   --dropdown-active-background-color: #e3e4e2;

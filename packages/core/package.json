@@ -1,7 +1,11 @@
 {
-  "name": "@compassion-gds/core",
-  "version": "0.0.2",
-  "description": "Compassion International's Global Design System",
+  "name": "@compassion-design-system/core",
+  "version": "1.0.0",
+  "description": "Core CSS for Compassion Design System patterns and components.",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "start": "npm run prepare && npm run storybook",
     "prepare": "npm run make-css-vars && npm run bundle-css",
@@ -37,12 +41,12 @@
   },
   "keywords": [
     "compassion",
-    "compassion-gds",
-    "gds",
+    "compassion-design-system",
+    "cds",
     "css",
     "core"
   ],
-  "author": "Compassion XD",
+  "author": "Compassion Global UX <globalux@us.ci.org>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/compassion-global-experience/compassion-design-system/issues"
@@ -68,5 +72,6 @@
     "storybook": "^7.0.2",
     "style-dictionary": "^3.7.2",
     "token-transformer": "0.0.32"
-  }
+  },
+  "gitHead": "39ccc9bdf01681914f8a82ff5875bea8f6b72179"
 }

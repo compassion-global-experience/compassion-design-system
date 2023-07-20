@@ -34,7 +34,7 @@ jobs:
           cache: 'npm'
           # Setup .npmrc file to publish to GitHub Packages
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@compassion-gds'
+          scope: '@compassion-design-system'
 
       - name: Install and link dependencies
         run: npm ci

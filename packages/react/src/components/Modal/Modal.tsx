@@ -1,5 +1,5 @@
 import { forwardRef, MouseEvent, ReactNode, HTMLProps } from 'react';
-import styles from '@compassion-gds/core/src/components/Modal/modal.module.css';
+import styles from '@compassion-design-system/core/src/components/Modal/modal.module.css';
 import { X } from '../icons';
 import { getClasses } from '../../utils/classes';
 
