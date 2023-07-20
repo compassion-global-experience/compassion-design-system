@@ -1,7 +1,11 @@
 {
   "name": "@compassion-design-system/react",
   "version": "1.0.0",
-  "description": "",
+  "description": "React components and patterns of the Compassion Design System.",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -95,5 +99,6 @@
   "peerDependencies": {
     "react": "16.8.x || 17.x || 18.x",
     "react-dom": "16.8.x || 17.x || 18.x"
-  }
+  },
+  "gitHead": "39ccc9bdf01681914f8a82ff5875bea8f6b72179"
 }
