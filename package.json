@@ -2,7 +2,7 @@
   "name": "compassion-design-system",
   "version": "0.0.0",
   "engines": {
-    "node": ">=14.8.1"
+    "node": "^16.20.1"
   },
   "description": "Compassion International's Global Design System",
   "main": "index.js",
