@@ -1,5 +1,5 @@
 {
   "npmClient": "npm",
   "useWorkspaces": true,
-  "version": "fixed"
+  "version": "1.0.0"
 }
