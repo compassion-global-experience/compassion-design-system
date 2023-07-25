@@ -1,0 +1,44 @@
+.c-icon__container {
+  display: inline;
+}
+
+/* Visually hide the icon description from the screen, while being accessible to screen reader users. */
+.c-icon__description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.c-icon__svg--default {
+  color: var(--icon-color-default);
+}
+
+.c-icon__svg--primary {
+  color: var(--icon-color-primary);
+}
+
+.c-icon__svg--muted {
+  color: var(--icon-color-muted);
+}
+
+.c-icon__svg--xs {
+  font-size: 12px;
+}
+
+.c-icon__svg--sm {
+  font-size: 16px;
+}
+
+.c-icon__svg--md {
+  font-size: 24px;
+}
+
+.c-icon__svg--lg {
+  font-size: 32px;
+}
