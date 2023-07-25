@@ -1,7 +1,8 @@
-@import "./Button/button.module.css";
-@import "./Modal/modal.module.css";
-@import "./Table/table.module.css";
-@import "./Form/textarea.module.css";
-@import "./Form/pin.module.css";
-@import "./Form/radio-checkbox.module.css";
-@import "./Form/input-group.module.css";
+@import './Button/button.module.css';
+@import './Modal/modal.module.css';
+@import './Table/table.module.css';
+@import './Form/textarea.module.css';
+@import './Form/pin.module.css';
+@import './Form/radio-checkbox.module.css';
+@import './Form/input-group.module.css';
+@import './Icon/icon.module.css';

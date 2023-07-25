@@ -60,30 +60,8 @@ exports[`TextArea should render \`Error\` state 1`] = `
           width="20"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect
-            fill="none"
-            height="256"
-            width="256"
-          />
-          <line
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
-            x1="200"
-            x2="56"
-            y1="56"
-            y2="200"
-          />
-          <line
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
-            x1="200"
-            x2="56"
-            y1="200"
-            y2="56"
+          <path
+            d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
           />
         </svg>
       </span>
@@ -151,18 +129,8 @@ exports[`TextArea should render \`Success\` state with \`Large\` size 1`] = `
           width="20"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect
-            fill="none"
-            height="256"
-            width="256"
-          />
-          <polyline
-            fill="none"
-            points="216 72 104 184 48 128"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
+          <path
+            d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
           />
         </svg>
       </span>
