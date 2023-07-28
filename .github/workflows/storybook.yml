@@ -5,9 +5,9 @@ name: Storybook
 on:
   # Triggers the workflow on push or pull request events for the following branches
   push:
-    branches: [ development, main ]
+    branches: [development, main]
   pull_request:
-    branches: [ development, main ]
+    branches: [development, main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

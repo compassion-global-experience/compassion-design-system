@@ -3,8 +3,8 @@ name: Checks
 
 on:
   pull_request:
-    types: [ opened, synchronize, reopened ]
-    branches: [ development, main ]
+    types: [opened, synchronize, reopened]
+    branches: [development, main]
 
 jobs:
   test-and-lint:
@@ -18,7 +18,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '16.20.x'
           cache: 'npm'
       - name: Install and link dependencies
         run: npm ci
