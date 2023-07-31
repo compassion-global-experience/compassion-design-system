@@ -99,6 +99,5 @@
   "peerDependencies": {
     "react": "16.8.x || 17.x || 18.x",
     "react-dom": "16.8.x || 17.x || 18.x"
-  },
-  "gitHead": "39ccc9bdf01681914f8a82ff5875bea8f6b72179"
+  }
 }

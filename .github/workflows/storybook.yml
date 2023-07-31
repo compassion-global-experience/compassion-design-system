@@ -5,9 +5,9 @@ name: Storybook
 on:
   # Triggers the workflow on push or pull request events for the following branches
   push:
-    branches: [ development, main ]
+    branches: [development, main]
   pull_request:
-    branches: [ development, main ]
+    branches: [development, main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '16.20.1'
           cache: 'npm'
       - name: Install dependencies
         run: npm ci

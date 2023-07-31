@@ -72,6 +72,5 @@
     "storybook": "^7.0.2",
     "style-dictionary": "^3.7.2",
     "token-transformer": "0.0.32"
-  },
-  "gitHead": "39ccc9bdf01681914f8a82ff5875bea8f6b72179"
+  }
 }
