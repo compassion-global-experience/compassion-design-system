@@ -4,13 +4,13 @@ name: Publish
 on:
   # Pushes to canary or next branches
   push:
-    branches: [ 221-targeted-response ]
+    branches: [221-targeted-response]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
   pull_request:
-    types: [ closed ]
+    types: [closed]
     branches:
       - main
       - development
@@ -30,7 +30,7 @@ jobs:
       - name: Use Node and set it up for publishing
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '16.20.1'
           cache: 'npm'
           # Setup .npmrc file to publish to GitHub Packages
           registry-url: 'https://npm.pkg.github.com'
@@ -39,7 +39,7 @@ jobs:
       - name: Install and link dependencies
         run: npm ci
 
-      - name: "Version & Publish"
+      - name: 'Version & Publish'
         env:
           # Reassign the variable from the workflow runner to the one used by Lerna
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
