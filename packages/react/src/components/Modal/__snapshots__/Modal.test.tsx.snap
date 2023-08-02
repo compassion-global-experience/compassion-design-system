@@ -16,30 +16,8 @@ exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`]
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          fill="none"
-          height="256"
-          width="256"
-        />
-        <line
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-          x1="200"
-          x2="56"
-          y1="56"
-          y2="200"
-        />
-        <line
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-          x1="200"
-          x2="56"
-          y1="200"
-          y2="56"
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
         />
       </svg>
     </button>
@@ -89,30 +67,8 @@ exports[`Modal should render \`Default\` size without \`Header\` and \`Footer\` 
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          fill="none"
-          height="256"
-          width="256"
-        />
-        <line
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-          x1="200"
-          x2="56"
-          y1="56"
-          y2="200"
-        />
-        <line
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-          x1="200"
-          x2="56"
-          y1="200"
-          y2="56"
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
         />
       </svg>
     </button>
@@ -148,30 +104,8 @@ exports[`Modal should render \`Small\` size without \`Footer\` 1`] = `
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          fill="none"
-          height="256"
-          width="256"
-        />
-        <line
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-          x1="200"
-          x2="56"
-          y1="56"
-          y2="200"
-        />
-        <line
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-          x1="200"
-          x2="56"
-          y1="200"
-          y2="56"
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
         />
       </svg>
     </button>
@@ -207,30 +141,8 @@ exports[`Modal should render \`Wide\` size without \`Header\` 1`] = `
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          fill="none"
-          height="256"
-          width="256"
-        />
-        <line
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-          x1="200"
-          x2="56"
-          y1="56"
-          y2="200"
-        />
-        <line
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
-          x1="200"
-          x2="56"
-          y1="200"
-          y2="56"
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
         />
       </svg>
     </button>
