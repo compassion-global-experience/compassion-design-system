@@ -1,17 +1,17 @@
 .form-field-row {
-  margin-bottom: var(--margin-2);
+  margin-bottom: var(--cds-margin-2);
 }
 
 .form-label {
   display: block;
-  margin-bottom: var(--form-input-gap);
+  margin-bottom: var(--cds-form-input-gap);
   max-width: fit-content;
-  color: var(--form-label-color);
-  font: var(--form-input-text-label);
+  color: var(--cds-form-label-color);
+  font: var(--cds-form-input-text-label);
 }
 
 .form-label.disabled {
-  color: var(--form-disabled-label-color);
+  color: var(--cds-form-disabled-label-color);
 }
 
 .form-input {
@@ -27,7 +27,7 @@
 }
 
 .form-input::placeholder {
-  color: var(--form-placeholder-color);
+  color: var(--cds-form-placeholder-color);
 }
 
 .form-field {
@@ -36,40 +36,43 @@
   flex-direction: row;
   overflow: hidden;
   margin: 0;
-  padding: var(--form-input-medium-padding-y) var(--form-input-medium-padding-x);
+  padding: var(--cds-form-input-medium-padding-y)
+    var(--cds-form-input-medium-padding-x);
   width: 100%;
-  border-width: var(--form-input-border-width);
+  border-width: var(--cds-form-input-border-width);
   border-style: solid;
-  border-color: var(--form-border-color);
-  border-radius: var(--form-input-border-radius);
-  background: var(--form-background-color);
-  color: var(--form-input-color);
-  font: var(--form-input-text-medium);
+  border-color: var(--cds-form-border-color);
+  border-radius: var(--cds-form-input-border-radius);
+  background: var(--cds-form-background-color);
+  color: var(--cds-form-input-color);
+  font: var(--cds-form-input-text-medium);
   align-items: center;
-  gap: var(--form-input-text-gap);
+  gap: var(--cds-form-input-text-gap);
 }
 
 .form-field:focus-visible,
 .form-field:focus,
 .form-field:focus-within,
-.form-field:active  {
-  border-color: var(--form-focus-border-color);
+.form-field:active {
+  border-color: var(--cds-form-focus-border-color);
 }
 
 .form-field.small {
-  padding: var(--form-input-small-padding-y) var(--form-input-small-padding-x);
-  font: var(--form-input-text-small);
+  padding: var(--cds-form-input-small-padding-y)
+    var(--cds-form-input-small-padding-x);
+  font: var(--cds-form-input-text-small);
 }
 
 .form-field.large {
-  padding: var(--form-input-large-padding-y) var(--form-input-large-padding-x);
-  font: var(--form-input-text-large);
+  padding: var(--cds-form-input-large-padding-y)
+    var(--cds-form-input-large-padding-x);
+  font: var(--cds-form-input-text-large);
 }
 
 .form-field .form-icon {
   display: flex;
   background: inherit;
-  color: var(--form-icon-color);
+  color: var(--cds-form-icon-color);
   align-items: center;
   justify-content: center;
   align-self: center;
@@ -77,48 +80,48 @@
 
 /* ERROR */
 .form-field.error {
-  border-color: var(--form-error-border-color);
+  border-color: var(--cds-form-error-border-color);
 }
 
 .form-field.error .form-icon:not(.select-icon) {
-  color: var(--form-error-icon-color);
+  color: var(--cds-form-error-icon-color);
 }
 
 /* SUCCESS */
 .form-field.success .form-icon:not(.select-icon) {
-  color: var(--form-success-icon-color);
+  color: var(--cds-form-success-icon-color);
 }
 
 /* DISABLED */
 .form-field.disabled {
-  border-color: var(--form-disabled-border-color);
-  background: var(--form-disabled-background-color);
-  color: var(--form-disabled-input-color);
+  border-color: var(--cds-form-disabled-border-color);
+  background: var(--cds-form-disabled-background-color);
+  color: var(--cds-form-disabled-input-color);
 }
 
 .form-field.disabled .form-icon {
-  color: var(--form-disabled-icon-color);
+  color: var(--cds-form-disabled-icon-color);
 }
 
 /* HINT */
 .form-hint {
   display: block;
-  margin-top: var(--form-input-gap);
-  color: var(--form-hint-text-color);
-  font: var(--form-hint-text);
+  margin-top: var(--cds-form-input-gap);
+  color: var(--cds-form-hint-text-color);
+  font: var(--cds-form-hint-text);
 }
 
 .form-hint.disabled {
-  color: var(--form-disabled-hint-color);
+  color: var(--cds-form-disabled-hint-color);
 }
 
 .form-hint.error {
-  color: var(--form-error-hint-text);
+  color: var(--cds-form-error-hint-text);
 }
 
 .form-label-wrap {
   display: flex;
-  margin-bottom: var(--form-input-gap);
+  margin-bottom: var(--cds-form-input-gap);
   line-height: 1.5;
   justify-content: space-between;
   align-items: baseline;

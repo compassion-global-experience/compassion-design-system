@@ -16,15 +16,15 @@
 }
 
 .c-icon__svg--default {
-  color: var(--icon-color-default);
+  color: var(--cds-icon-color-default);
 }
 
 .c-icon__svg--primary {
-  color: var(--icon-color-primary);
+  color: var(--cds-icon-color-primary);
 }
 
 .c-icon__svg--muted {
-  color: var(--icon-color-muted);
+  color: var(--cds-icon-color-muted);
 }
 
 .c-icon__svg--xs {

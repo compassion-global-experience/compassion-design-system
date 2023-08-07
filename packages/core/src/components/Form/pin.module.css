@@ -1,24 +1,24 @@
-@import "common.module.css";
+@import 'common.module.css';
 
 .pin-field {
   display: flex;
-  gap: var(--margin-3);
+  gap: var(--cds-margin-3);
 }
 
 .form-input {
-  composes: form-input from "common.module.css";
+  composes: form-input from 'common.module.css';
 }
 
 .form-field {
-  composes: form-field from "common.module.css";
+  composes: form-field from 'common.module.css';
 }
 
 .error {
-    composes: error from "common.module.css";
+  composes: error from 'common.module.css';
 }
 
 .disabled {
-    composes: disabled from "common.module.css";
+  composes: disabled from 'common.module.css';
 }
 
 .pin-field .form-input {
@@ -29,18 +29,18 @@
 }
 
 .pin-field .form-field {
-  padding: var(--form-input-small-padding-y);
-  width: var(--form-pin-size-default);
-  height: var(--form-pin-size-default);
+  padding: var(--cds-form-input-small-padding-y);
+  width: var(--cds-form-pin-size-default);
+  height: var(--cds-form-pin-size-default);
   text-align: center;
 }
 
 .pin-field.small .form-field {
-  width: var(--form-pin-size-small);
-  height: var(--form-pin-size-small);
+  width: var(--cds-form-pin-size-small);
+  height: var(--cds-form-pin-size-small);
 }
 
 .pin-field.large .form-field {
-  width: var(--form-pin-size-large);
-  height: var(--form-pin-size-large);
+  width: var(--cds-form-pin-size-large);
+  height: var(--cds-form-pin-size-large);
 }

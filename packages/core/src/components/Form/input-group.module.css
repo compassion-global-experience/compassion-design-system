@@ -1,51 +1,51 @@
-@import "common.module.css";
+@import 'common.module.css';
 
 .form-field {
-    composes: form-field from "common.module.css";
+  composes: form-field from 'common.module.css';
 }
 
 .error {
-    composes: error from "common.module.css";
+  composes: error from 'common.module.css';
 }
 
 .success {
-    composes: success from "common.module.css";
+  composes: success from 'common.module.css';
 }
 
 .disabled {
-    composes: disabled from "common.module.css";
+  composes: disabled from 'common.module.css';
 }
 
 .input-group {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  margin: var(--form-input-gap) 0;
+  margin: var(--cds-form-input-gap) 0;
 }
 
 .input-group-adornment {
   display: flex;
-  padding: 0 var(--form-input-medium-padding-x);
-  border-top-left-radius: var(--form-input-border-radius);
-  border-bottom-left-radius: var(--form-input-border-radius);
-  background: var(--form-border-color);
-  color: var(--form-icon-color);
-  font: var(--form-input-group-text-medium);
+  padding: 0 var(--cds-form-input-medium-padding-x);
+  border-top-left-radius: var(--cds-form-input-border-radius);
+  border-bottom-left-radius: var(--cds-form-input-border-radius);
+  background: var(--cds-form-border-color);
+  color: var(--cds-form-icon-color);
+  font: var(--cds-form-input-group-text-medium);
   align-items: center;
   justify-content: center;
-  gap: var(--form-input-gap);
+  gap: var(--cds-form-input-gap);
 }
 
 .input-group-adornment.small {
-  padding-right: var(--form-input-small-padding-x);
-  padding-left: var(--form-input-small-padding-x);
-  font: var(--form-input-group-text-small);
+  padding-right: var(--cds-form-input-small-padding-x);
+  padding-left: var(--cds-form-input-small-padding-x);
+  font: var(--cds-form-input-group-text-small);
 }
 
 .input-group-adornment.large {
-  padding-right: var(--form-input-large-padding-x);
-  padding-left: var(--form-input-large-padding-x);
-  font: var(--form-input-group-text-large);
+  padding-right: var(--cds-form-input-large-padding-x);
+  padding-left: var(--cds-form-input-large-padding-x);
+  font: var(--cds-form-input-group-text-large);
 }
 
 .input-group .form-field {
@@ -55,5 +55,6 @@
 
 .form-field + .input-group-adornment,
 .input-group-adornment + .form-field {
-  border-radius: 0 var(--form-input-border-radius) var(--form-input-border-radius) 0;
+  border-radius: 0 var(--cds-form-input-border-radius)
+    var(--cds-form-input-border-radius) 0;
 }

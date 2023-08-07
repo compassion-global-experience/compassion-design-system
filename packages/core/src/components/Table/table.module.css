@@ -8,18 +8,18 @@
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-  border-radius: var(--table-border-radius);
+  border-radius: var(--cds-table-border-radius);
   text-align: left;
 }
 
 .table-head {
   display: table-header-group;
-  font: var(--table-header-font);
+  font: var(--cds-table-header-font);
 }
 
 .table-body {
   display: table-row-group;
-  font: var(--table-cell-font);
+  font: var(--cds-table-cell-font);
 }
 
 .table-row {
@@ -32,56 +32,56 @@
 
 .table-cell {
   display: table-cell;
-  padding: var(--padding-2) var(--padding-3);
-  border-bottom-width: var(--table-border-width);
+  padding: var(--cds-padding-2) var(--cds-padding-3);
+  border-bottom-width: var(--cds-table-border-width);
   border-bottom-style: solid;
-  border-bottom-color: var(--table-border-color);
-  background: var(--table-background-color);
-  color: var(--table-text-color);
+  border-bottom-color: var(--cds-table-border-color);
+  background: var(--cds-table-background-color);
+  color: var(--cds-table-text-color);
   font: inherit;
 }
 
 .table-cell:hover {
-  background: var(--table-hover-background-color);
+  background: var(--cds-table-hover-background-color);
 }
 
 .table-head .table-cell {
-  color: var(--table-header-color);
+  color: var(--cds-table-header-color);
 }
 
 .table-cell a {
-  color: var(--table-action-color);
+  color: var(--cds-table-action-color);
   text-decoration: none;
 }
 
 .table-cell:active,
 .table-cell.active {
-  background: var(--table-active-background-color);
+  background: var(--cds-table-active-background-color);
 }
 
 .table-cell:active a,
 .table-cell.active a {
-  color: var(--table-active-action-color);
+  color: var(--cds-table-active-action-color);
 }
 
 /* DISABLED */
 .disabled .table-cell,
 .table-cell:disabled,
 .table-cell.disabled {
-  background: var(--table-disabled-background-color);
-  color: var(--table-disabled-text-color);
+  background: var(--cds-table-disabled-background-color);
+  color: var(--cds-table-disabled-text-color);
 }
 
 .disabled .table-head .table-cell,
 .table-head .table-cell:disabled,
 .table-head .table-cell.disabled {
-  color: var(--table-disabled-header-color);
+  color: var(--cds-table-disabled-header-color);
 }
 
 .disabled .table-cell a,
 .table-cell:disabled a,
 .table-cell.disabled a {
-  color: var(--table-disabled-action-color);
+  color: var(--cds-table-disabled-action-color);
 }
 
 /* STICKY HEADER */

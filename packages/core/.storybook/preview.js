@@ -55,7 +55,8 @@ const loadTheme = async (name) => {
       import('@compassion-design-system/core/dark.css');
       break;
     default:
-      console.error(`Unknown theme name: "${name}"`);
+      // console.error(`Unknown theme name: "${name}"`);
+      import('@compassion-design-system/core/light.css');
   }
 };
 

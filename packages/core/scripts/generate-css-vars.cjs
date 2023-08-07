@@ -13,7 +13,7 @@ StyleDictionaryPackage.registerFormat({
   formatter(dictionary, config) {
     return `${this.selector} {
         ${dictionary.allProperties
-          .map((prop) => `  --${prop.name}: ${prop.value};`)
+          .map((prop) => `  --cds-${prop.name}: ${prop.value};`)
           .join('\n')}
       }`;
   },

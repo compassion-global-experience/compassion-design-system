@@ -1,5 +1,4 @@
-/* SHARED BUTTON STYLES */
-
+/*
 .button-primary,
 .button-secondary,
 .button-tertiary {
@@ -27,7 +26,7 @@
   box-shadow: none;
 }
 
-/* PRIMARY BUTTON STYLES */
+
 
 .button-primary {
   border-width: var(--button-primary-border-width);
@@ -65,7 +64,7 @@
   border-color: var(--button-primary-disabled-border-color);
 }
 
-/* SECONDARY BUTTON STYLES */
+
 
 .button-secondary {
   display: inline-block;
@@ -107,7 +106,7 @@
   border-color: var(--button-secondary-disabled-border-color);
 }
 
-/* TERTIARY BUTTON STYLES */
+
 
 .button-tertiary {
   display: inline-block;
@@ -162,7 +161,7 @@
   font: var(--button-large-font);
 }
 
-/* CTA BUTTON */
+
 
 .cta,
 .cta:disabled {
@@ -196,7 +195,7 @@
   color: var(--button-cta-primary-hover-text-color);
 }
 
-/* WHITE BUTTON */
+
 
 .white {
   border-color: var(--button-white-primary-default-border-color);
@@ -252,7 +251,7 @@
   border-color: var(--button-white-tertiary-disabled-border-color);
 }
 
-/* INVERTED BUTTON */
+
 
 .inverted {
   border-color: var(--button-inverse-primary-default-border-color);
@@ -308,7 +307,7 @@
   border-color: var(--button-inverse-tertiary-disabled-border-color);
 }
 
-/* DESTRUCTIVE BUTTON */
+
 
 .destructive,
 .destructive:disabled {
@@ -351,3 +350,5 @@
   border-color: var(--button-destructive-tertiary-hover-border-colo);
   color: var(--button-destructive-tertiary-hover-text-color);
 }
+
+*/
