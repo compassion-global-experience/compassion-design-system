@@ -1,0 +1,106 @@
+.cds-navItemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cds-navItemContainer.cds-navItemContainer--contained {
+  background-color: var(--nav-background-color);
+  border: var(--nav-border-width) var(--nav-border-color) solid;
+}
+
+.cds-navItemContainer--contained .cds-navItem {
+  padding: var(--nav-padding-y) var(--nav-padding-x) 6px var(--nav-padding-x);
+  border-bottom: var(--nav-border-width) var(--nav-border-color) solid;
+}
+
+.cds-navItemContainer--contained .cds-navItem:hover {
+  background-color: var(--nav-hover-background-color);
+}
+
+.cds-navItemContainer--contained .cds-subNavContainer .cds-navItem:hover {
+  background-color: inherit;
+}
+
+.cds-navItemContainer--contained .cds-subNavContainer {
+  border-left: var(--nav-no-border);
+  padding-right: var(--nav-padding-x);
+}
+
+.cds-navItemContainer--contained .cds-subNavContainer .cds-navItem {
+  padding: 0px;
+  border-bottom: var(--nav-no-border);
+}
+
+.cds-navItemContainer--contained .cds-navItem--active,
+.cds-navItemContainer--contained .cds-navItem--active:hover {
+  background-color: var(--nav-active-background-color);
+}
+
+.cds-navItemContainer--contained .cds-navItem--disabled,
+.cds-navItemContainer--contained .cds-navItem--disabled:hover {
+  background-color: var(--nav-disabled-background-color);
+}
+
+.cds-navItem {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: var(--nav-action-color);
+  font: var(--nav-link-font);
+  min-height: 25px;
+  border-bottom: var(--nav-no-border);
+}
+
+.cds-navItem button {
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  display: flex;
+}
+
+.cds-navItem i {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.cds-navItem a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cds-navItem a:active {
+  color: var(--nav-active-action-color);
+}
+
+.cds-navItemText {
+  flex-grow: 2;
+}
+
+.cds-navItem--active {
+  color: var(--nav-active-action-color);
+}
+
+.cds-navItem--disabled {
+  color: var(--nav-disabled-action-color);
+}
+
+.cds-subNavContainer {
+  padding-left: var(--nav-padding-x);
+  padding-bottom: 10px;
+  border-left: var(--nav-border-width) solid var(--nav-border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cds-subNavContainer .cds-navItem {
+  font: var(--nav-subnav-link-font);
+  min-height: 20px;
+}
+
+.cds-subNavContainer i {
+  font-size: 16px;
+  line-height: 16px;
+}
