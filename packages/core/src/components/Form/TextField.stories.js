@@ -1,3 +1,5 @@
+import './_form-shared.scss';
+
 export default {
   title: 'Components/Forms/TextField',
   argTypes: {
@@ -29,23 +31,41 @@ const TextField = ({
   const disabled = state === 'disabled' ? 'disabled' : '';
 
   return `
-    <div class="form-field-row">
-        <label class="form-label ${disabled}" for="test-field">
+    <div class="cds-form__field-row">
+        <label class="cds-form__label ${
+          disabled.length ? 'cds-form--disabled' : ''
+        }" for="test-field">
           ${label}
         </label>
-        <div class="form-field ${state} ${size}">
-        ${iconLeft.length ? `<span class="form-icon">${iconLeft}</span>` : ''}
+        <div class="cds-form__field ${
+          state !== 'default' ? `cds-form--${state}` : ''
+        } ${size}">
+        ${
+          iconLeft.length
+            ? `<span class="cds-form__icon">${iconLeft}</span>`
+            : ''
+        }
           <input
             id="test-field"
             type="text"
             value="${value}"
-            class="form-input"
+            class="cds-form__input"
             placeholder="Input Value"
             ${disabled}
           />
-          ${iconRight.length ? `<span class="form-icon">${iconRight}</span>` : ''}
+          ${
+            iconRight.length
+              ? `<span class="cds-form__icon">${iconRight}</span>`
+              : ''
+          }
         </div>
-        ${hint.length ? `<span class="form-hint ${state}">${hint}</span>` : ''}
+        ${
+          hint.length
+            ? `<span class="cds-form__hint ${
+                state !== 'default' ? `cds-form--${state}` : ''
+              }">${hint}</span>`
+            : ''
+        }
     </div>
 `;
 };

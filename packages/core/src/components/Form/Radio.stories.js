@@ -1,3 +1,5 @@
+import './_radio-checkbox.scss';
+
 export default {
   title: 'Components/Forms/Radio',
   argTypes: {
@@ -10,16 +12,13 @@ export default {
   },
 };
 
-const Radio = ({
-  label = 'Label Text',
-  state = 'default',
-}) => {
+const Radio = ({ label = 'Label Text', state = 'default' }) => {
   const disabled = state === 'disabled' ? 'disabled' : '';
   const hasError = state === 'error';
 
   return `
-    <div class="form-field-row">
-        <div class="form-control">
+    <div class="cds-form__field-row">
+        <div class="cds-form__control">
           <input
             id="test-radio"
             type="radio"
@@ -27,25 +26,33 @@ const Radio = ({
             checked
             ${disabled}
           />
-          <label for="test-radio" class="form-label ${disabled}">
+          <label for="test-radio" class="cds-form__label ${
+            disabled.length ? 'cds-form--disabled' : ''
+          }">
             ${label} 1
           </label>
         </div>
     </div>
-    <div class="form-field-row">
-        <div class="form-control">
+    <div class="cds-form__field-row">
+        <div class="cds-form__control">
           <input
             id="test-radio-2"
             type="radio"
             name="radio"
-            class="${hasError ? 'error' : ''}"
+            class="${hasError ? 'cds-form--error' : ''}"
             ${disabled}
           />
-          <label for="test-radio-2" class="form-label ${disabled}">
+          <label for="test-radio-2" class="cds-form__label ${
+            disabled.length ? 'cds-form--disabled' : ''
+          }">
             ${label} 2
           </label>
         </div>
-        ${hasError ? `<span class="form-hint error">Error 2</span>` : ''}
+        ${
+          hasError
+            ? `<span class="cds-form__hint cds-form--error">Error 2</span>`
+            : ''
+        }
     </div>
 `;
 };
@@ -58,12 +65,12 @@ Default.args = {
 
 export const Disabled = Radio.bind({});
 Disabled.args = {
-    label: 'Label Text',
-    state: 'disabled',
+  label: 'Label Text',
+  state: 'disabled',
 };
 
 export const Error = Radio.bind({});
 Error.args = {
-    label: 'Label Text',
-    state: 'error',
+  label: 'Label Text',
+  state: 'error',
 };

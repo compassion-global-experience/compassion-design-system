@@ -1,3 +1,6 @@
+// import './_form-shared.scss';
+import './_radio-checkbox.scss';
+
 export default {
   title: 'Components/Forms/Checkbox',
   argTypes: {
@@ -20,25 +23,36 @@ const Checkbox = ({
   const hasError = state === 'error';
   const checkedAttr = checked ? 'checked' : '';
 
+  const storyId = `use-a-more-meaningful-id__d:${
+    disabled.length > 0 ? 'true' : 'false'
+  }__e:${hasError}__c:${checked.toString()}`;
+  console.dir(storyId);
+
   return `
-    <div class="form-field-row">
-      <div class="form-control">
-        <div class="form-control-inner">
+    <div class="cds-form__field-row">
+      <div class="cds-form__control">
+        <div class="cds-form__control__inner">
           <input
-            id="test-checkbox"
+            id="${storyId}"
             type="checkbox"
             name="checkbox"
-            class="${hasError ? 'error' : ''}"
+            class="${hasError ? 'cds-form--error' : ''} ${
+    disabled ? 'cds-form--disabled' : ''
+  }"
             ${checkedAttr}
             ${disabled}
           />
-          <span class="form-control-icon"><i class="ph-check"></i></span>
+          <span class="cds-form__control__icon"><i class="ph-check"></i></span>
         </div>
-        <label for="test-checkbox" class="form-label ${disabled}">
+        <label for="${storyId}" class="cds-form__label ${disabled}">
           ${label}
         </label>
       </div>
-      ${hasError ? `<span class="form-hint error">Error</span>` : ''}
+      ${
+        hasError
+          ? `<span class="cds-form__hint cds-form--error">Error</span>`
+          : ''
+      }
     </div>
 `;
 };
@@ -51,12 +65,12 @@ Default.args = {
 
 export const Disabled = Checkbox.bind({});
 Disabled.args = {
-    label: 'Label Text',
-    state: 'disabled',
+  label: 'Label Text',
+  state: 'disabled',
 };
 
 export const Error = Checkbox.bind({});
 Error.args = {
-    label: 'Label Text',
-    state: 'error',
+  label: 'Label Text',
+  state: 'error',
 };

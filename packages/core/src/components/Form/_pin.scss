@@ -1,0 +1,48 @@
+@import './_form-shared.scss';
+
+.cds-form__pin-field {
+  display: flex;
+  gap: var(--cds-margin-3);
+
+  .cds-form__input {
+    flex: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .cds-form__field {
+    padding: var(--cds-form-input-small-padding-y);
+    width: var(--cds-form-pin-size-default);
+    height: var(--cds-form-pin-size-default);
+    text-align: center;
+  }
+
+  &.cds-form--small .cds-form__field {
+    width: var(--cds-form-pin-size-small);
+    height: var(--cds-form-pin-size-small);
+  }
+
+  &.cds-form--large .cds-form__field {
+    width: var(--cds-form-pin-size-large);
+    height: var(--cds-form-pin-size-large);
+  }
+}
+
+.cds-form__input {
+  @include cds-form__input();
+}
+
+.cds-form__field {
+  @include cds-form__field();
+}
+
+.cds-form--error {
+  border-color: var(--cds-form-error-border-color);
+}
+
+.cds-form__field.cds-form--disabled {
+  border-color: var(--cds-form-disabled-border-color);
+  background: var(--cds-form-disabled-background-color);
+  color: var(--cds-form-disabled-input-color);
+}
