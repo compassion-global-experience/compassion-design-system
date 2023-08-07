@@ -28,7 +28,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 
   const classNames = getClasses(
     styles,
-    [`button-${emphasis}`, size, kind],
+    [`cds-button--${emphasis}`, `cds-button--${size}`, `cds-button--${kind}`],
     className,
   );
 
