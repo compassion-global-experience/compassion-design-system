@@ -1,7 +1,6 @@
 .cds-navItemContainer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .cds-navItemContainer.cds-navItemContainer--contained {
@@ -70,6 +69,18 @@
   color: inherit;
 }
 
+.cds-navItemSvg {
+  color: inherit;
+}
+
+.cds-navItemExpander svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+.cds-navItemExpander--opened svg {
+  transform: rotate(180deg);
+}
+
 .cds-navItem a:active {
   color: var(--nav-active-action-color);
 }
@@ -86,9 +97,16 @@
   color: var(--nav-disabled-action-color);
 }
 
+.cds-subNavWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
 .cds-subNavContainer {
   padding-left: var(--nav-padding-x);
-  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   border-left: var(--nav-border-width) solid var(--nav-border-color);
   display: flex;
   flex-direction: column;
@@ -98,6 +116,8 @@
 .cds-subNavContainer .cds-navItem {
   font: var(--nav-subnav-link-font);
   min-height: 20px;
+  /* transition-duration: 0.2s;
+  transition-property: display; */
 }
 
 .cds-subNavContainer i {

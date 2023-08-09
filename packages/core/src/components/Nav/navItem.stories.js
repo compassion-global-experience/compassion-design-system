@@ -32,7 +32,7 @@ export default {
   ],
 };
 
-// Story Template - Includes the component code that receives args
+// TODO: Add subnav events/animations
 
 const createNavItem = ({
   text,
@@ -42,7 +42,7 @@ const createNavItem = ({
   target = '_self',
   isDisabled = false,
   isActive = false,
-  subitems = [],
+  subItems = [],
   isSubNav = false,
   isContained = false,
 }) => {
@@ -92,7 +92,7 @@ const createNavItem = ({
   navItem.appendChild(navTextContainer);
   navItemContainer.appendChild(navItem);
 
-  if (!isSubNav && subitems.length > 0) {
+  if (!isSubNav && subItems.length > 0) {
     const subNavButton = document.createElement('button');
     subNavButton.classList.add('c-icon__container');
     const subNavIcon = document.createElement('i');
@@ -105,7 +105,7 @@ const createNavItem = ({
     const subNavContainer = document.createElement('div');
     subNavContainer.className = 'cds-subNavContainer';
     navItemContainer.appendChild(subNavContainer);
-    subitems.forEach((subitem) => {
+    subItems.forEach((subitem) => {
       subNavContainer.appendChild(
         createNavItem({ ...subitem, isSubNav: true }),
       );
@@ -120,7 +120,6 @@ const Template = (args) => {
 };
 
 // Stories to caputure different UI states based on args
-
 export const SingleNavItem = Template.bind({});
 SingleNavItem.args = {
   text: 'Hello World',
@@ -135,7 +134,7 @@ NavItemWithSubnav.args = {
   href: '#',
   icon: 'ph-house',
   iconDescription: 'Website home',
-  subitems: [
+  subItems: [
     {
       text: 'Sub Nav Item 1',
       href: '#',
@@ -154,7 +153,7 @@ ContainedNavItem.args = {
   icon: 'ph-house',
   iconDescription: 'Website home',
   isContained: true,
-  subitems: [
+  subItems: [
     {
       text: 'Sub Nav Item 1',
       href: '#',
