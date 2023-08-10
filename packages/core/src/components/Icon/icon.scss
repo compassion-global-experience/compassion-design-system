@@ -1,0 +1,46 @@
+.cds-icon {
+  &__container {
+    display: inline;
+  }
+
+  /* Visually hide the icon description from the screen, while being accessible to screen reader users. */
+  &__description {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  &__svg--default {
+    color: var(--cds-icon-color-default);
+  }
+
+  &__svg--primary {
+    color: var(--cds-icon-color-primary);
+  }
+
+  &__svg--muted {
+    color: var(--cds-icon-color-muted);
+  }
+
+  &__svg--xs {
+    font-size: 12px;
+  }
+
+  &__svg--sm {
+    font-size: 16px;
+  }
+
+  &__svg--md {
+    font-size: 24px;
+  }
+
+  &__svg--lg {
+    font-size: 32px;
+  }
+}

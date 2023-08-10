@@ -1,5 +1,4 @@
-// import './_form-shared.scss';
-import './_radio-checkbox.scss';
+import './radio-checkbox.scss';
 
 export default {
   title: 'Components/Forms/Checkbox',

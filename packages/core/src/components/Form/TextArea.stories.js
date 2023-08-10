@@ -1,4 +1,4 @@
-import './_textarea.scss';
+import './textarea.scss';
 
 export default {
   title: 'Components/Forms/TextArea',

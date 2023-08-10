@@ -20,8 +20,10 @@ const createButton = ({
   btn.className = [
     `cds-button--${emphasis}`,
     `cds-button--${size}`,
-    `cds-button--${kind}`,
-  ].join(' ');
+    kind ? `cds-button--${kind}` : '',
+  ]
+    .join(' ')
+    .trim();
   btn.disabled = disabled;
 
   return btn;

@@ -1,19 +1,19 @@
-@import 'common.module.css';
+@import './form-common.scss';
 
 .form-input {
-  composes: form-input from 'common.module.css';
+  // composes: form-input from 'common.module.css';
 }
 
 .form-icon {
-  composes: form-icon from 'common.module.css';
+  // composes: form-icon from 'common.module.css';
 }
 
 .error {
-  composes: error from 'common.module.css';
+  // composes: error from 'common.module.css';
 }
 
 .success {
-  composes: success from 'common.module.css';
+  // composes: success from 'common.module.css';
 }
 
 .cds-form--error textarea.cds-form__input,

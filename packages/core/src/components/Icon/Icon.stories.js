@@ -1,3 +1,5 @@
+import './icon.scss';
+
 export default {
   title: 'Components/Icon',
   decorators: [],
@@ -16,7 +18,7 @@ const colorArgType = {
 
 // Story Template - Includes the component code that receives args
 
-const iconClassPrefix = 'c-icon-';
+const iconClassPrefix = 'cds-icon-';
 
 const Template = ({
   phosphorIconClasses = 'ph-church',
@@ -27,15 +29,15 @@ const Template = ({
   // Create CSS classes in the .module.css file and add them as needed
   const classNames = [
     phosphorIconClasses,
-    `c-icon__svg--${size}`,
-    `c-icon__svg--${color}`,
+    `cds-icon__svg--${size}`,
+    `cds-icon__svg--${color}`,
   ].join(' ');
 
   // Add component html to the return statement below
   return `
-  <div class=".c-icon__container ">
+  <div class=".cds-icon__container ">
     <i class="${classNames}" aria-hidden="true"></i>
-    <span class="c-icon__description">${iconDescription}</span>
+    <span class="cds-icon__description">${iconDescription}</span>
   </div>
   `;
 };

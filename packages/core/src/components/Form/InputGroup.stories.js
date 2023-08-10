@@ -1,5 +1,4 @@
-import './_form-shared.scss';
-import './_input-group.scss';
+import './input-group.scss';
 
 export default {
   title: 'Components/Forms/InputGroup',

@@ -1,4 +1,4 @@
-import './_radio-checkbox.scss';
+import './radio-checkbox.scss';
 
 export default {
   title: 'Components/Forms/Radio',

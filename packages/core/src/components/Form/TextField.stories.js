@@ -1,4 +1,4 @@
-import './_form-shared.scss';
+import './form-common.scss';
 
 export default {
   title: 'Components/Forms/TextField',

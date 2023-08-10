@@ -1,4 +1,4 @@
-import './_pin.scss';
+import './pin.scss';
 
 export default {
   title: 'Components/Forms/PIN',

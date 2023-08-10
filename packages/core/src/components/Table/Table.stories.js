@@ -1,3 +1,5 @@
+import './table.scss';
+
 export default {
   title: 'Components/Table',
   argTypes: {
@@ -19,38 +21,45 @@ const Table = ({
   disabledRow = false,
   disabledCell = false,
 }) => {
-  const sticky = stickyHeader ? 'sticky-header' : '';
+  const sticky = stickyHeader ? 'cds-table__sticky-header' : '';
+  const stateClass = state !== 'default' ? `cds-table--${state}` : '';
 
   return `
-    <div class="table-container" style="${containerHeight ? `max-height: ${containerHeight}` : ''}">
-      <table class="table ${sticky} ${state}" style="${tableWidth ? `width: ${tableWidth}` : ''}">
-      <thead class="table-head">
-        <tr class="table-row">
-          <th class="table-cell ${state}">Heading</th>
-          <th class="table-cell ${state}"><a href="https://google.com">Link</a></th>
-          <th class="table-cell ${state}">Heading</th>
+    <div class="cds-table__container" style="${
+      containerHeight ? `max-height: ${containerHeight}` : ''
+    }">
+      <table class="cds-table ${sticky} ${stateClass}" style="${
+    tableWidth ? `width: ${tableWidth}` : ''
+  }">
+      <thead class="cds-table__head">
+        <tr class="cds-table__row">
+          <th class="cds-table__cell ${stateClass}">Heading</th>
+          <th class="cds-table__cell ${stateClass}"><a href="https://google.com">Link</a></th>
+          <th class="cds-table__cell ${stateClass}">Heading</th>
         </tr>
       </thead>
-      <tbody class="table-body">
-        <tr class="table-row ${disabledRow ? 'disabled' : ''}">
-          <td class="table-cell ${disabledCell ? 'disabled' : ''}">Cell 1</td>
-          <td class="table-cell">Cell 2</td>
-          <td class="table-cell">Cell 3</td>
+      <tbody class="cds-table__body">
+        <tr class="cds-table__row ${disabledRow ? 'disabled' : ''}">
+          <td class="cds-table__cell ${
+            disabledCell ? 'disabled' : ''
+          }">Cell 1</td>
+          <td class="cds-table__cell">Cell 2</td>
+          <td class="cds-table__cell">Cell 3</td>
         </tr>
-        <tr class="table-row">
-          <td class="table-cell"><a href="https://google.com">Link 1</a></td>
-          <td class="table-cell"><a href="https://google.com">Link 2</a></td>
-          <td class="table-cell"><a href="https://google.com">Link 3</a></td>
+        <tr class="cds-table__row">
+          <td class="cds-table__cell"><a href="https://google.com">Link 1</a></td>
+          <td class="cds-table__cell"><a href="https://google.com">Link 2</a></td>
+          <td class="cds-table__cell"><a href="https://google.com">Link 3</a></td>
         </tr>
-        <tr class="table-row">
-          <td class="table-cell">Cell 1</td>
-          <td class="table-cell">Cell 2</td>
-          <td class="table-cell">Cell 3</td>
+        <tr class="cds-table__row">
+          <td class="cds-table__cell">Cell 1</td>
+          <td class="cds-table__cell">Cell 2</td>
+          <td class="cds-table__cell">Cell 3</td>
         </tr>
-        <tr class="table-row">
-          <td class="table-cell"><a href="https://google.com">Link 1</a></td>
-          <td class="table-cell"><a href="https://google.com">Link 2</a></td>
-          <td class="table-cell"><a href="https://google.com">Link 3</a></td>
+        <tr class="cds-table__row">
+          <td class="cds-table__cell"><a href="https://google.com">Link 1</a></td>
+          <td class="cds-table__cell"><a href="https://google.com">Link 2</a></td>
+          <td class="cds-table__cell"><a href="https://google.com">Link 3</a></td>
         </tr>
       </tbody>
     </table>

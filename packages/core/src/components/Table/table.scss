@@ -1,0 +1,94 @@
+.cds-table {
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-radius: var(--cds-table-border-radius);
+  text-align: left;
+
+  &__container {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  &__head {
+    display: table-header-group;
+    font: var(--cds-table-header-font);
+
+    .table__cell {
+      color: var(--cds-table-header-color);
+    }
+  }
+
+  &__body {
+    display: table-row-group;
+    font: var(--cds-table-cell-font);
+  }
+
+  &__row {
+    display: table-row;
+    outline: 0;
+    color: inherit;
+    vertical-align: middle;
+    font: inherit;
+  }
+
+  &__cell {
+    display: table-cell;
+    padding: var(--cds-padding-2) var(--cds-padding-3);
+    border-bottom-width: var(--cds-table-border-width);
+    border-bottom-style: solid;
+    border-bottom-color: var(--cds-table-border-color);
+    background: var(--cds-table-background-color);
+    color: var(--cds-table-text-color);
+    font: inherit;
+
+    &:hover {
+      background: var(--cds-table-hover-background-color);
+    }
+
+    &:active,
+    &.active {
+      background: var(--cds-table-active-background-color);
+    }
+
+    &:active a,
+    &.active a {
+      color: var(--cds-table-active-action-color);
+    }
+
+    a {
+      color: var(--cds-table-action-color);
+      text-decoration: none;
+    }
+  }
+
+  &.cds-table__sticky-header {
+    border-collapse: separate;
+  }
+
+  &.cds-table__sticky-header .cds-table__head .cds-table__cell {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+.cds-table--disabled .cds-table__cell,
+.cds-table__cell:disabled,
+.cds-table__cell.cds-table--disabled {
+  background: var(--cds-table-disabled-background-color);
+  color: var(--cds-table-disabled-text-color);
+}
+
+.cds-table--disabled .cds-table__head .cds-table__cell,
+.cds-table__head .cds-table__cell:disabled,
+.cds-table__head .cds-table__cell.cds-table--disabled {
+  color: var(--cds-table-disabled-header-color);
+}
+
+.cds-table--disabled .cds-table__cell a,
+.cds-table__cell:disabled a,
+.cds-table__cell.cds-table--disabled a {
+  color: var(--cds-table-disabled-action-color);
+}
