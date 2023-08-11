@@ -1,3 +1,7 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 .cds-icon {
   /* Visually hide the icon description from the screen, while being accessible to screen reader users. */
 }
@@ -36,5 +40,3 @@
 .cds-icon__svg--lg {
   font-size: 32px;
 }
-
-/*# sourceMappingURL=icon.module.css.map */

@@ -1,4 +1,6 @@
-/* Foooooo */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 .cds-button--primary, .cds-button--secondary, .cds-button--tertiary {
   display: inline-block;
   line-height: 1;
@@ -261,5 +263,3 @@
   border-color: var(--cds-button-destructive-tertiary-hover-border-colo);
   color: var(--cds-button-destructive-tertiary-hover-text-color);
 }
-
-/*# sourceMappingURL=button.module.css.map */

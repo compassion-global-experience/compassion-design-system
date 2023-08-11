@@ -1,3 +1,7 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 .cds-form__label {
   display: block;
   margin-bottom: var(--cds-form-input-gap);
@@ -118,5 +122,3 @@ textarea.cds-form__input + .cds-form__icon {
   padding-top: inherit;
   padding-right: inherit;
 }
-
-/*# sourceMappingURL=textarea.module.css.map */

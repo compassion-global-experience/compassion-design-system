@@ -1,3 +1,7 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 .cds-table {
   display: table;
   width: 100%;
@@ -78,5 +82,3 @@
 .cds-table__cell.cds-table--disabled a {
   color: var(--cds-table-disabled-action-color);
 }
-
-/*# sourceMappingURL=table.module.css.map */

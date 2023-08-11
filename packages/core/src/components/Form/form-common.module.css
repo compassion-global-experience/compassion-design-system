@@ -1,3 +1,7 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 .cds-form__label {
   display: block;
   margin-bottom: var(--cds-form-input-gap);
@@ -105,5 +109,3 @@
 .cds-form__label-wrap .cds-form__label {
   margin: 0;
 }
-
-/*# sourceMappingURL=form-common.module.css.map */
