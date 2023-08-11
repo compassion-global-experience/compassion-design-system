@@ -9,17 +9,19 @@
   "scripts": {
     "start": "npm run prepare && npm run storybook",
     "prepare": "npm run make-css-vars && npm run bundle-css",
-    "bundle-css": "rollup -c",
-    "bundle-css-new": "npm run build:css && sass src/theme/light.scss dist/light-new.css && sass src/theme/dark.scss dist/dark-new.css",
+    "bundle-css": "npm run build:css && sass src/theme/light.scss dist/light-new.css && sass src/theme/dark.scss dist/dark-new.css",
+    "build:sass": "sh scripts/build-sass.sh",
     "build:css": "sass src/components/components.scss src/components/components.css",
     "make-css-vars": "npm run get-figma-tokens && npm run convert-figma-tokens && npm run generate-css-vars",
     "get-figma-tokens": "bash scripts/get-figma-tokens.sh",
     "convert-figma-tokens": "bash scripts/convert-figma-tokens.sh",
     "generate-css-vars": "node scripts/generate-css-vars.cjs",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "run-p watch-sass storybook:dev",
+    "storybook:dev": "storybook dev -p 6006",
     "build:storybook": "storybook build --quiet",
     "percy": "cross-env PERCY_TOKEN=$PERCY_TOKEN_CORE percy storybook ./storybook-static",
-    "percy-snapshots": "npm run build:storybook && npm run percy"
+    "percy-snapshots": "npm run build:storybook && npm run percy",
+    "watch-sass": "scripts/watch-sass.js"
   },
   "files": [
     "dist",
@@ -67,6 +69,7 @@
     "@storybook/html-webpack5": "^7.0.2",
     "@storybook/testing-library": "^0.0.14-next.1",
     "babel-loader": "^8.3.0",
+    "npm-run-all": "^4.1.5",
     "postcss-import": "^15.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -78,5 +81,8 @@
     "token-transformer": "0.0.32",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3"
   }
 }

@@ -55,20 +55,36 @@ export const CheckboxError = {
   },
 };
 
-export const
-  MultipleRadios = (props) => (
-    <>
-      <ChoiceInput type="radio" id="option-1" name="option" label="Opiton 1" {...props} />
-      <ChoiceInput type="radio" id="option-2" name="option" label="Opiton 2" {...props} />
-      <ChoiceInput type="radio" id="option-3" name="option" label="Opiton 3" {...props} />
-    </>
+export const MultipleRadios = (props) => (
+  <>
+    <ChoiceInput
+      type="radio"
+      id="option-1"
+      name="option"
+      label="Option 1"
+      {...props}
+    />
+    <ChoiceInput
+      type="radio"
+      id="option-2"
+      name="option"
+      label="Option 2"
+      {...props}
+    />
+    <ChoiceInput
+      type="radio"
+      id="option-3"
+      name="option"
+      label="Option 3"
+      {...props}
+    />
+  </>
 );
 
-export const
-  MultipleCheckboxes = (props) => (
-    <>
-      <ChoiceInput type="checkbox" id="option-1" label="Opiton 1" {...props} />
-      <ChoiceInput type="checkbox" id="option-2" label="Opiton 2" {...props} />
-      <ChoiceInput type="checkbox" id="option-3" label="Opiton 3" {...props} />
-    </>
+export const MultipleCheckboxes = (props) => (
+  <>
+    <ChoiceInput type="checkbox" id="option-1" label="Option 1" {...props} />
+    <ChoiceInput type="checkbox" id="option-2" label="Option 2" {...props} />
+    <ChoiceInput type="checkbox" id="option-3" label="Option 3" {...props} />
+  </>
 );

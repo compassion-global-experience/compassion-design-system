@@ -1,4 +1,5 @@
 import './textarea.scss';
+import prefixStateWithClass from '../../utils/prefixStateWithClass';
 
 export default {
   title: 'Components/Forms/TextArea',
@@ -24,6 +25,7 @@ const TextArea = ({
   icon = '',
 }) => {
   const disabled = state === 'disabled' ? 'disabled' : '';
+  const stateClass = prefixStateWithClass(state, `cds-form--`, `default`);
 
   return `
     <div class="cds-form__field-row">
@@ -33,13 +35,9 @@ const TextArea = ({
           }" for="test-field">
             ${label}
           </label>
-          <span class="cds-form__hint ${
-            state !== 'default' ? `cds-form--${state}` : ''
-          }">0 / 1200</span>
+          <span class="cds-form__hint ${stateClass}">0 / 1200</span>
         </div>
-        <div class="cds-form__field ${
-          state !== 'default' ? `cds-form--${state}` : ''
-        } cds-form--${size}">
+        <div class="cds-form__field ${stateClass} cds-form--${size}">
           <textarea
             id="test-field"
             rows="6"

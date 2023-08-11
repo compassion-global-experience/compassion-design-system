@@ -1,4 +1,5 @@
 import './input-group.scss';
+import prefixStateWithClass from '../../utils/prefixStateWithClass';
 
 export default {
   title: 'Components/Forms/SelectGroup',
@@ -32,6 +33,7 @@ const SelectGroup = ({
   adornmentPosition = 'end',
 }) => {
   const disabled = state === 'disabled' ? 'disabled' : '';
+  const stateClass = prefixStateWithClass(state, `cds-form--`, `default`);
   const startPosition = adornmentPosition === 'start';
 
   return `
@@ -54,9 +56,7 @@ const SelectGroup = ({
           `
               : ''
           }
-          <div class="cds-form__field ${
-            state !== 'default' ? `cds-form--${state}` : ''
-          } cds-form--${size}">
+          <div class="cds-form__field ${stateClass} cds-form--${size}">
           <select id="test-field" class="cds-form__input" ${disabled}>
             <option value="Option 1">Option 1</option>
             <option value="Option 2">Option 2</option>
@@ -84,9 +84,7 @@ const SelectGroup = ({
         </div>
         ${
           hint.length
-            ? `<span class="cds-form__hint ${
-                state !== 'default' ? `cds-form--${state}` : ''
-              }">${hint}</span>`
+            ? `<span class="cds-form__hint ${stateClass}">${hint}</span>`
             : ''
         }
     </div>

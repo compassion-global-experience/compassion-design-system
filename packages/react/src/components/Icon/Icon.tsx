@@ -80,7 +80,7 @@ const Icon = (props: IconProps) => {
   const { description, color = 'default', size = 'md', icon } = props;
   const SelectedIcon = cdsIconMap[icon];
 
-  const iconColorClassPrefix = 'c-icon__svg--';
+  const iconColorClassPrefix = 'cds-icon__svg--';
   const colorClassName = getClasses(styles, [
     `${iconColorClassPrefix}${color}`,
   ]);

@@ -1,4 +1,5 @@
 import './table.scss';
+import prefixStateWithClass from '../../utils/prefixStateWithClass';
 
 export default {
   title: 'Components/Table',
@@ -22,7 +23,7 @@ const Table = ({
   disabledCell = false,
 }) => {
   const sticky = stickyHeader ? 'cds-table__sticky-header' : '';
-  const stateClass = state !== 'default' ? `cds-table--${state}` : '';
+  const stateClass = prefixStateWithClass(state, `cds-table--`, `default`);
 
   return `
     <div class="cds-table__container" style="${

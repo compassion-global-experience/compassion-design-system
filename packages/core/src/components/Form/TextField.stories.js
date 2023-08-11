@@ -1,4 +1,5 @@
 import './form-common.scss';
+import prefixStateWithClass from '../../utils/prefixStateWithClass';
 
 export default {
   title: 'Components/Forms/TextField',
@@ -29,6 +30,7 @@ const TextField = ({
   iconLeft = '',
 }) => {
   const disabled = state === 'disabled' ? 'disabled' : '';
+  const stateClass = prefixStateWithClass(state, `cds-form--`, `default`);
 
   return `
     <div class="cds-form__field-row">
@@ -37,9 +39,7 @@ const TextField = ({
         }" for="test-field">
           ${label}
         </label>
-        <div class="cds-form__field ${
-          state !== 'default' ? `cds-form--${state}` : ''
-        } ${size}">
+        <div class="cds-form__field ${stateClass} ${size}">
         ${
           iconLeft.length
             ? `<span class="cds-form__icon">${iconLeft}</span>`
@@ -61,9 +61,7 @@ const TextField = ({
         </div>
         ${
           hint.length
-            ? `<span class="cds-form__hint ${
-                state !== 'default' ? `cds-form--${state}` : ''
-              }">${hint}</span>`
+            ? `<span class="cds-form__hint ${stateClass}">${hint}</span>`
             : ''
         }
     </div>

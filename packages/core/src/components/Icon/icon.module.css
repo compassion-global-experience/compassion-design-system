@@ -1,0 +1,40 @@
+.cds-icon {
+  /* Visually hide the icon description from the screen, while being accessible to screen reader users. */
+}
+.cds-icon__container {
+  display: inline;
+}
+.cds-icon__description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.cds-icon__svg--default {
+  color: var(--cds-icon-color-default);
+}
+.cds-icon__svg--primary {
+  color: var(--cds-icon-color-primary);
+}
+.cds-icon__svg--muted {
+  color: var(--cds-icon-color-muted);
+}
+.cds-icon__svg--xs {
+  font-size: 12px;
+}
+.cds-icon__svg--sm {
+  font-size: 16px;
+}
+.cds-icon__svg--md {
+  font-size: 24px;
+}
+.cds-icon__svg--lg {
+  font-size: 32px;
+}
+
+/*# sourceMappingURL=icon.module.css.map */

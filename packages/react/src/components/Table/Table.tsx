@@ -40,21 +40,21 @@ function TableInner<Row>(
     className,
   } = props;
 
-  const sticky = stickyHeader ? 'sticky-header' : '';
-  const disabledTable = disabled ? 'disabled' : '';
+  const sticky = stickyHeader ? 'cds-table__sticky-header' : '';
+  const disabledTable = disabled ? 'cds-table--disabled' : '';
   const classNames = getClasses(
     styles,
-    ['table', sticky, disabledTable],
+    ['cds-table', sticky, disabledTable],
     className,
   );
   const containerClassNames = getClasses(
     styles,
-    ['table-container'],
+    ['cds-table__container'],
     className,
   );
-  const headClass = getClasses(styles, 'table-head');
-  const rowClass = getClasses(styles, 'table-row');
-  const bodyClass = getClasses(styles, 'table-body');
+  const headClass = getClasses(styles, 'cds-table__head');
+  const rowClass = getClasses(styles, 'cds-table__row');
+  const bodyClass = getClasses(styles, 'cds-table__body');
 
   return (
     <div className={containerClassNames} style={containerStyle}>
@@ -65,8 +65,8 @@ function TableInner<Row>(
               <th
                 key={col.key}
                 className={getClasses(styles, [
-                  'table-cell',
-                  col.disabled && 'disabled',
+                  'cds-table__cell',
+                  col.disabled && 'cds-table--disabled',
                 ])}
               >
                 {col.headerRender ? col.headerRender(col) : col.title}
@@ -80,8 +80,9 @@ function TableInner<Row>(
               {columns.map((col) => (
                 <td
                   className={getClasses(styles, [
-                    'table-cell',
-                    (row[col.key]?.disabled || col.disabled) && 'disabled',
+                    'cds-table__cell',
+                    (row[col.key]?.disabled || col.disabled) &&
+                      'cds-table--disabled',
                   ])}
                   key={`${rowIndex}-${col.key}`}
                 >

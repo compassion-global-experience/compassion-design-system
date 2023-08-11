@@ -1,4 +1,4 @@
-import './button.module.scss';
+import './button.scss';
 
 export default {
   title: 'Components/Button',

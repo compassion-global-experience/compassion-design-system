@@ -1,4 +1,5 @@
 import './pin.scss';
+import prefixStateWithClass from '../../utils/prefixStateWithClass.js';
 
 export default {
   title: 'Components/Forms/PIN',
@@ -22,7 +23,7 @@ const PinField = ({
 }) => {
   const disabled = state === 'disabled' ? 'disabled' : '';
   const disabledClass = disabled.length ? ' cds-form--disabled' : '';
-  const stateClass = state !== 'default' ? ` cds-form--${state}` : '';
+  const stateClass = prefixStateWithClass(state, `cds-form--`, 'default');
 
   return `
     <div class="cds-form__field-row">
@@ -32,16 +33,16 @@ const PinField = ({
         </label>
       </div>
       <div class="cds-form__pin-field cds-form--${size}">
-        <div class="cds-form__field${stateClass}">
+        <div class="cds-form__field ${stateClass}">
           <input class="cds-form__input" type="password" maxlength=1 ${disabled} />
         </div>
-        <div class="cds-form__field${stateClass}">
+        <div class="cds-form__field ${stateClass}">
           <input class="cds-form__input" type="password" maxlength=1 ${disabled} />
         </div>
-        <div class="cds-form__field${stateClass}">
+        <div class="cds-form__field ${stateClass}">
           <input class="cds-form__input" type="password" maxlength=1 ${disabled} />
         </div>
-        <div class="cds-form__field${stateClass}">
+        <div class="cds-form__field ${stateClass}">
           <input class="cds-form__input" type="password" maxlength=1 ${disabled} />
         </div>
       </div>
