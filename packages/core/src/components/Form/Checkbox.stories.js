@@ -25,7 +25,6 @@ const Checkbox = ({
   const storyId = `use-a-more-meaningful-id__d:${
     disabled.length > 0 ? 'true' : 'false'
   }__e:${hasError}__c:${checked.toString()}`;
-  console.dir(storyId);
 
   return `
     <div class="cds-form__field-row">
