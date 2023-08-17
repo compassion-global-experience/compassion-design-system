@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Transform the Figma tokens into a format that can be used with style-dictionary
 
+# TODO: Consider replacing this logic with a dependency on the tokens npm package instead.
+
 set -e
 
 rm -rf tokens
