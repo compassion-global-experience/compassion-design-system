@@ -9,7 +9,7 @@
   "scripts": {
     "start": "npm run prepare && npm run storybook",
     "prepare": "npm run make-css-vars && npm run bundle-css",
-    "bundle-css": "npm run build:css && sass src/theme/light.scss dist/light-new.css && sass src/theme/dark.scss dist/dark-new.css",
+    "bundle-css": "npm run build:css && sass src/theme/light.scss dist/light.css && sass src/theme/dark.scss dist/dark.css",
     "build:sass": "sh scripts/build-sass.sh",
     "build:css": "sass src/components/components.scss src/components/components.css",
     "make-css-vars": "npm run get-figma-tokens && npm run convert-figma-tokens && npm run generate-css-vars",
