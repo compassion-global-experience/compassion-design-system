@@ -1,3 +1,6 @@
+import './navItem.scss';
+import '../Icon/icon.scss';
+
 export default {
   title: 'Components/Nav/NavItem',
   argTypes: {
@@ -77,12 +80,12 @@ const createNavItem = ({
 
   if (icon) {
     const iconContainer = document.createElement('div');
-    iconContainer.classList.add('c-icon__container');
+    iconContainer.classList.add('cds-icon__container');
     const iconElement = document.createElement('i');
     iconElement.classList.add(icon);
     iconElement.setAttribute('aria-hidden', 'true');
     const iconDescriptionElement = document.createElement('span');
-    iconDescriptionElement.classList.add('c-icon__description');
+    iconDescriptionElement.classList.add('cds-icon__description');
     iconDescriptionElement.textContent = iconDescription;
     iconContainer.appendChild(iconElement);
     iconContainer.appendChild(iconDescriptionElement);
@@ -94,7 +97,7 @@ const createNavItem = ({
 
   if (!isSubNav && subItems.length > 0) {
     const subNavButton = document.createElement('button');
-    subNavButton.classList.add('c-icon__container');
+    subNavButton.classList.add('cds-icon__container');
     const subNavIcon = document.createElement('i');
     subNavIcon.classList.add('ph-caret-down');
     subNavIcon.setAttribute('aria-hidden', 'true');

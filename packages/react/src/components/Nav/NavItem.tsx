@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '@compassion-design-system/core/src/components/Nav/NavItem.module.css';
+import styles from '@compassion-design-system/core/src/components/Nav/navItem.module.css';
 import { getClasses } from '../../utils/classes';
 import { cdsIconMap } from '../Icon/Icon';
 import { useState, useEffect, useRef, MouseEvent, forwardRef } from 'react';
