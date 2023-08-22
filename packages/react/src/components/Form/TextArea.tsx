@@ -1,6 +1,6 @@
 import { forwardRef, InputHTMLAttributes, useCallback, useState } from 'react';
 import styles from '@compassion-design-system/core/src/components/Form/textarea.module.css';
-import common from '@compassion-design-system/core/src/components/Form/common.module.css';
+import common from '@compassion-design-system/core/src/components/Form/form-common.module.css';
 
 import { FieldSize, FieldState, StateIcon } from './Helpers';
 import { getClasses } from '../../utils/classes';
@@ -31,13 +31,27 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
       showCounter,
       ...rest
     } = props;
+
     const [count, setCount] = useState(0);
-    const containerClassNames = getClasses(common, 'form-field-row', className);
-    const labelClassNames = getClasses(common, ['form-label', state]);
-    const helperClassNames = getClasses(common, ['form-hint', state]);
+    const containerClassNames = getClasses(
+      common,
+      'cds-form__field-row',
+      className,
+    );
+
+    const labelClassNames = getClasses(common, [
+      'cds-form__label',
+      `cds-form--${state}`,
+    ]);
+
+    const helperClassNames = getClasses(common, [
+      'cds-form__hint',
+      `cds-form--${state}`,
+    ]);
+
     const fieldClassNames = getClasses(
       common,
-      ['form-field', state, size],
+      ['cds-form__field', `cds-form--${state}`, `cds-form--${size}`],
       fieldClassName,
     );
 
@@ -51,7 +65,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
 
     return (
       <div className={containerClassNames}>
-        <div className={getClasses(common, 'form-label-wrap')}>
+        <div className={getClasses(common, 'cds-form__label-wrap')}>
           {label && (
             <label className={labelClassNames} htmlFor={id}>
               {label}
@@ -69,7 +83,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
             id={id}
             ref={ref}
             disabled={state === 'disabled'}
-            className={getClasses(styles, 'form-input')}
+            className={getClasses(styles, 'cds-form__input')}
             onChange={onChangeCallback}
             maxLength={maxLength}
             {...rest}

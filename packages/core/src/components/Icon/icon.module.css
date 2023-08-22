@@ -1,9 +1,14 @@
-.c-icon__container {
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.cds-icon {
+  /* Visually hide the icon description from the screen, while being accessible to screen reader users. */
+}
+.cds-icon__container {
   display: inline;
 }
-
-/* Visually hide the icon description from the screen, while being accessible to screen reader users. */
-.c-icon__description {
+.cds-icon__description {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -14,31 +19,24 @@
   white-space: nowrap;
   border-width: 0;
 }
-
-.c-icon__svg--default {
-  color: var(--icon-color-default);
+.cds-icon__svg--default {
+  color: var(--cds-icon-color-default);
 }
-
-.c-icon__svg--primary {
-  color: var(--icon-color-primary);
+.cds-icon__svg--primary {
+  color: var(--cds-icon-color-primary);
 }
-
-.c-icon__svg--muted {
-  color: var(--icon-color-muted);
+.cds-icon__svg--muted {
+  color: var(--cds-icon-color-muted);
 }
-
-.c-icon__svg--xs {
+.cds-icon__svg--xs {
   font-size: 12px;
 }
-
-.c-icon__svg--sm {
+.cds-icon__svg--sm {
   font-size: 16px;
 }
-
-.c-icon__svg--md {
+.cds-icon__svg--md {
   font-size: 24px;
 }
-
-.c-icon__svg--lg {
+.cds-icon__svg--lg {
   font-size: 32px;
 }

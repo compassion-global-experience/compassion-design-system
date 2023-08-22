@@ -1,3 +1,6 @@
+import './form-common.scss';
+import prefixStateWithClass from '../../utils/prefixStateWithClass';
+
 export default {
   title: 'Components/Forms/Select',
   argTypes: {
@@ -23,24 +26,31 @@ const Select = ({
   icon = '',
 }) => {
   const disabled = state === 'disabled' ? 'disabled' : '';
+  const stateClass = prefixStateWithClass(state, `cds-form--`, `default`);
 
   return `
-    <div class="form-field-row">
-        <label class="form-label ${disabled}" for="test-field">
+    <div class="cds-form__field-row">
+        <label class="cds-form__label ${
+          disabled.length ? 'cds-form--disabled' : ''
+        }" for="test-field">
           ${label}
         </label>
-        <div class="form-field ${state} ${size}">
-          <select id="test-field" class="form-input" ${disabled}>
+        <div class="cds-form__field ${stateClass} cds-form--${size}">
+          <select id="test-field" class="cds-form__input" ${disabled}>
             <option value="Option 1">Option 1</option>
             <option value="Option 2">Option 2</option>
             <option value="Option 3">Option 3</option>
             <option value="Option 4">Option 4</option>
             <option value="Option 5">Option 5</option>
           </select>
-          ${icon.length ? `<span class="form-icon">${icon}</span>` : ''}
-          <span class="form-icon select-icon"><i class="ph-caret-down"></i></span>
+          ${icon.length ? `<span class="cds-form__icon">${icon}</span>` : ''}
+          <span class="cds-form__icon select-icon"><i class="ph-caret-down"></i></span>
         </div>
-        ${hint.length ? `<span class="form-hint ${state}">${hint}</span>` : ''}
+        ${
+          hint.length
+            ? `<span class="cds-form__hint ${stateClass}">${hint}</span>`
+            : ''
+        }
     </div>
 `;
 };

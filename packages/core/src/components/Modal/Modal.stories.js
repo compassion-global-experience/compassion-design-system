@@ -1,3 +1,5 @@
+import './modal.scss';
+
 export default {
   title: 'Components/Modal',
   argTypes: {
@@ -18,14 +20,14 @@ const Template = ({
   size = 'default',
 }) => {
   return `
-    <button type="button" class="button-secondary medium" onclick='openModal()'>Open Modal</button>
+    <button type="button" class="cds-button--secondary cds-button--medium" onclick='openModal()'>Open Modal</button>
     <span id="example-backdrop" style="position: fixed; inset: 0; background: black; opacity: 0.7; "></span>
-    <div id="example-modal" class="modal ${size}">
-        <span id="example-modal-close" class="modal-button-close" onclick='closeModal()'>
+    <div id="example-modal" class="cds-modal cds-modal--${size}">
+        <span id="example-modal-close" class="cds-modal__button--close" onclick='closeModal()'>
           <i class="ph-x ph-xl"></i>
         </span>
         ${renderHeader({ header, title })}
-        <div class="modal-body">
+        <div class="cds-modal__body">
           <div style="border: 3px dashed; text-align: center; border-radius: 4px; margin: 10px; padding: 10px;">Slot</div>
         </div>
         ${renderFooter({ footer })}
@@ -34,12 +36,12 @@ const Template = ({
     <script>
       var modal = document.getElementById('example-modal');
       var backdrop = document.getElementById('example-backdrop');
-      
+
       function openModal() {
         modal.style.display = 'block';
         backdrop.style.display = 'block';
       }
-      
+
       function closeModal() {
         modal.style.display = 'none';
         backdrop.style.display = 'none';
@@ -49,15 +51,15 @@ const Template = ({
 };
 
 const renderHeader = ({ header, title }) =>
-  header ? `<div class="modal-header">${title}</div>` : '';
+  header ? `<div class="cds-modal__header">${title}</div>` : '';
 
 const renderFooter = ({ footer }) => {
   if (!footer) return '';
 
   return `
-    <div class="modal-footer">
-      <button type="button" class="button-secondary medium">Button 2</button>
-      <button type="button" class="button-primary medium">Button 1</button>
+    <div class="cds-modal__footer">
+      <button type="button" class="cds-button--secondary cds-button--medium">Button 2</button>
+      <button type="button" class="cds-button--primary cds-button--medium">Button 1</button>
     </div>
     `;
 };

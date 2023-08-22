@@ -68,7 +68,7 @@ export const Success = {
 export const SuccessWithIcon = {
   args: {
     state: 'success',
-    icon:  <Info color="black" />,
+    icon: <Info color="black" />,
   },
 };
 

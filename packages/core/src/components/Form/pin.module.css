@@ -1,46 +1,216 @@
-@import "common.module.css";
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-.pin-field {
+.cds-form__label {
+  display: block;
+  margin-bottom: var(--cds-form-input-gap);
+  max-width: fit-content;
+  color: var(--cds-form-label-color);
+  font: var(--cds-form-input-text-label);
+}
+.cds-form__label.cds-form--disabled {
+  color: var(--cds-form-disabled-label-color);
+}
+
+.cds-form {
+  /* HINT */
+}
+.cds-form__field-row {
+  margin-bottom: var(--cds-margin-2);
+}
+.cds-form__input {
+  display: block;
+  flex: 1;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: inherit;
+  color: inherit;
+  font: inherit;
+  appearance: none;
+}
+.cds-form__input__input::placeholder {
+  color: var(--cds-form-placeholder-color);
+}
+.cds-form__field {
+  position: relative;
   display: flex;
-  gap: var(--margin-3);
+  flex-direction: row;
+  overflow: hidden;
+  margin: 0;
+  padding: var(--cds-form-input-medium-padding-y) var(--cds-form-input-medium-padding-x);
+  width: 100%;
+  border-width: var(--cds-form-input-border-width);
+  border-style: solid;
+  border-color: var(--cds-form-border-color);
+  border-radius: var(--cds-form-input-border-radius);
+  background: var(--cds-form-background-color);
+  color: var(--cds-form-input-color);
+  font: var(--cds-form-input-text-medium);
+  align-items: center;
+  gap: var(--cds-form-input-text-gap);
+}
+.cds-form__field:focus-visible, .cds-form__field:focus, .cds-form__field:focus-within, .cds-form__field:active {
+  border-color: var(--cds-form-focus-border-color);
+}
+.cds-form__field.cds-form--small {
+  padding: var(--cds-form-input-small-padding-y) var(--cds-form-input-small-padding-x);
+  font: var(--cds-form-input-text-small);
+}
+.cds-form__field.cds-form--large {
+  padding: var(--cds-form-input-large-padding-y) var(--cds-form-input-large-padding-x);
+  font: var(--cds-form-input-text-large);
+}
+.cds-form__field .cds-form__icon {
+  display: flex;
+  background: inherit;
+  color: var(--cds-form-icon-color);
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+.cds-form__field.cds-form--error {
+  border-color: var(--cds-form-error-border-color);
+}
+.cds-form__field.cds-form--error .cds-form__icon:not(.select-icon) {
+  color: var(--cds-form-error-icon-color);
+}
+.cds-form__field.cds-form--success .cds-form__icon:not(.select-icon) {
+  color: var(--cds-form-success-icon-color);
+}
+.cds-form__field.cds-form--disabled {
+  border-color: var(--cds-form-disabled-border-color);
+  background: var(--cds-form-disabled-background-color);
+  color: var(--cds-form-disabled-input-color);
+}
+.cds-form__field.cds-form--disabled .cds-form__icon {
+  color: var(--cds-form-disabled-icon-color);
+}
+.cds-form__hint {
+  display: block;
+  margin-top: var(--cds-form-input-gap);
+  color: var(--cds-form-hint-text-color);
+  font: var(--cds-form-hint-text);
+}
+.cds-form__hint.cds-form--disabled {
+  color: var(--cds-form-disabled-hint-color);
+}
+.cds-form__hint.cds-form--error {
+  color: var(--cds-form-error-hint-text);
+}
+.cds-form__label-wrap {
+  display: flex;
+  margin-bottom: var(--cds-form-input-gap);
+  line-height: 1.5;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.cds-form__label-wrap .cds-form__label {
+  margin: 0;
 }
 
-.form-input {
-  composes: form-input from "common.module.css";
+.cds-form__pin-field {
+  display: flex;
+  gap: var(--cds-margin-3);
 }
-
-.form-field {
-  composes: form-field from "common.module.css";
-}
-
-.error {
-    composes: error from "common.module.css";
-}
-
-.disabled {
-    composes: disabled from "common.module.css";
-}
-
-.pin-field .form-input {
+.cds-form__pin-field .cds-form__input {
   flex: none;
   width: 100%;
   height: 100%;
   text-align: center;
 }
-
-.pin-field .form-field {
-  padding: var(--form-input-small-padding-y);
-  width: var(--form-pin-size-default);
-  height: var(--form-pin-size-default);
+.cds-form__pin-field .cds-form__field {
+  padding: var(--cds-form-input-small-padding-y);
+  width: var(--cds-form-pin-size-default);
+  height: var(--cds-form-pin-size-default);
   text-align: center;
 }
-
-.pin-field.small .form-field {
-  width: var(--form-pin-size-small);
-  height: var(--form-pin-size-small);
+.cds-form__pin-field.cds-form--small .cds-form__field {
+  width: var(--cds-form-pin-size-small);
+  height: var(--cds-form-pin-size-small);
+}
+.cds-form__pin-field.cds-form--large .cds-form__field {
+  width: var(--cds-form-pin-size-large);
+  height: var(--cds-form-pin-size-large);
 }
 
-.pin-field.large .form-field {
-  width: var(--form-pin-size-large);
-  height: var(--form-pin-size-large);
+.cds-form__input {
+  display: block;
+  flex: 1;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: inherit;
+  color: inherit;
+  font: inherit;
+  appearance: none;
+}
+.cds-form__input__input::placeholder {
+  color: var(--cds-form-placeholder-color);
+}
+
+.cds-form__field {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin: 0;
+  padding: var(--cds-form-input-medium-padding-y) var(--cds-form-input-medium-padding-x);
+  width: 100%;
+  border-width: var(--cds-form-input-border-width);
+  border-style: solid;
+  border-color: var(--cds-form-border-color);
+  border-radius: var(--cds-form-input-border-radius);
+  background: var(--cds-form-background-color);
+  color: var(--cds-form-input-color);
+  font: var(--cds-form-input-text-medium);
+  align-items: center;
+  gap: var(--cds-form-input-text-gap);
+}
+.cds-form__field:focus-visible, .cds-form__field:focus, .cds-form__field:focus-within, .cds-form__field:active {
+  border-color: var(--cds-form-focus-border-color);
+}
+.cds-form__field.cds-form--small {
+  padding: var(--cds-form-input-small-padding-y) var(--cds-form-input-small-padding-x);
+  font: var(--cds-form-input-text-small);
+}
+.cds-form__field.cds-form--large {
+  padding: var(--cds-form-input-large-padding-y) var(--cds-form-input-large-padding-x);
+  font: var(--cds-form-input-text-large);
+}
+.cds-form__field .cds-form__icon {
+  display: flex;
+  background: inherit;
+  color: var(--cds-form-icon-color);
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+.cds-form__field.cds-form--error {
+  border-color: var(--cds-form-error-border-color);
+}
+.cds-form__field.cds-form--error .cds-form__icon:not(.select-icon) {
+  color: var(--cds-form-error-icon-color);
+}
+.cds-form__field.cds-form--success .cds-form__icon:not(.select-icon) {
+  color: var(--cds-form-success-icon-color);
+}
+.cds-form__field.cds-form--disabled {
+  border-color: var(--cds-form-disabled-border-color);
+  background: var(--cds-form-disabled-background-color);
+  color: var(--cds-form-disabled-input-color);
+}
+.cds-form__field.cds-form--disabled .cds-form__icon {
+  color: var(--cds-form-disabled-icon-color);
+}
+
+.cds-form--error {
+  border-color: var(--cds-form-error-border-color);
+}
+
+.cds-form__field.cds-form--disabled {
+  border-color: var(--cds-form-disabled-border-color);
+  background: var(--cds-form-disabled-background-color);
+  color: var(--cds-form-disabled-input-color);
 }

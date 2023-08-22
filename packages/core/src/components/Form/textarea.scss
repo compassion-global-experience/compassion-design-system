@@ -1,0 +1,30 @@
+@import './form-common.scss';
+
+.form-input {
+  // composes: form-input from 'common.module.css';
+}
+
+.form-icon {
+  // composes: form-icon from 'common.module.css';
+}
+
+.error {
+  // composes: error from 'common.module.css';
+}
+
+.success {
+  // composes: success from 'common.module.css';
+}
+
+.cds-form--error textarea.cds-form__input,
+.cds-form--success textarea.cds-form__input {
+  padding-right: inherit;
+}
+
+textarea.cds-form__input + .cds-form__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: inherit;
+  padding-right: inherit;
+}

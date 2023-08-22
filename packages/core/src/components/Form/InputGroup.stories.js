@@ -1,3 +1,5 @@
+import './input-group.scss';
+
 export default {
   title: 'Components/Forms/InputGroup',
   argTypes: {
@@ -35,37 +37,67 @@ const InputGroup = ({
   const startPosition = adornmentPosition === 'start';
 
   return `
-    <div class="form-field-row">
-        <label class="form-label ${disabled}" for="test-field">
+    <div class="cds-form__field-row">
+        <label class="cds-form__label${
+          disabled ? ` cds-form--${disabled}` : ''
+        }" for="test-field">
           ${label}
         </label>
-        <div class="input-group">
-          ${startPosition ? `
-            <div class="input-group-adornment ${size}">
+        <div class="cds-form__input-group">
+          ${
+            startPosition
+              ? `
+            <div class="cds-form__input-group__adornment ${size}">
               <i class="ph-info ph-lg"></i>
-              ${adornmentText.length ? `<span class="input-group-adornment-text">${adornmentText}</span>` : ''}
+              ${
+                adornmentText.length
+                  ? `<span class="cds-form__input-group__adornment__text">${adornmentText}</span>`
+                  : ''
+              }
             </div>
-          ` : ''}
-          <div class="form-field ${state} ${size}">
-            ${iconLeft.length ? `<span class="form-icon">${iconLeft}</span>` : ''}
+          `
+              : ''
+          }
+          <div class="cds-form__field cds-form--${state} cds-form--${size}">
+            ${
+              iconLeft.length
+                ? `<span class="cds-form__icon">${iconLeft}</span>`
+                : ''
+            }
             <input
               id="test-field"
               type="text"
               value="${value}"
-              class="form-input"
+              class="cds-form__input"
               placeholder="Input Value"
               ${disabled}
             />
-            ${iconRight.length ? `<span class="form-icon">${iconRight}</span>` : ''}
+            ${
+              iconRight.length
+                ? `<span class="cds-form__icon">${iconRight}</span>`
+                : ''
+            }
           </div>
-          ${!startPosition ? `
-            <div class="input-group-adornment ${size}">
+          ${
+            !startPosition
+              ? `
+            <div class="cds-form__input-group__adornment ${size}">
               <i class="ph-info ph-lg"></i>
-              ${adornmentText.length ? `<span class="input-group-adornment-text">${adornmentText}</span>` : ''}
+              ${
+                adornmentText.length
+                  ? `<span class="cds-form__input-group__adornment__text">${adornmentText}</span>`
+                  : ''
+              }
             </div>
-          ` : ''}
+          `
+              : ''
+          }
         </div>
-        ${hint.length ? `<span class="form-hint ${state}">${hint}</span>` : ''}
+        ${
+          hint.length
+            ? `<span class="cds-form__hint cds-form--${state}">${hint}</span>`
+            : ''
+        }
     </div>
 `;
 };

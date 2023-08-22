@@ -1,3 +1,5 @@
+import './button.scss';
+
 export default {
   title: 'Components/Button',
 };
@@ -15,7 +17,13 @@ const createButton = ({
   btn.innerText = label;
   btn.addEventListener('click', onClick);
 
-  btn.className = [`button-${emphasis}`, size, kind].join(' ');
+  btn.className = [
+    `cds-button--${emphasis}`,
+    `cds-button--${size}`,
+    kind ? `cds-button--${kind}` : '',
+  ]
+    .join(' ')
+    .trim();
   btn.disabled = disabled;
 
   return btn;

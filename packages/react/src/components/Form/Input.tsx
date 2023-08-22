@@ -1,5 +1,6 @@
 import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
-import styles from '@compassion-design-system/core/src/components/Form/common.module.css';
+
+import styles from '@compassion-design-system/core/src/components/Form/form-common.module.css';
 import { FieldSize, FieldState, StateIcon } from './Helpers';
 import { getClasses } from '../../utils/classes';
 
@@ -40,7 +41,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   } = props;
   const fieldClassNames = getClasses(
     styles,
-    ['form-field', state, size],
+    ['cds-form__field', `cds-form--${state}`, `cds-form--${size}`],
     className,
   );
 
@@ -54,7 +55,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         defaultValue={defaultValue}
         placeholder={placeholder}
         disabled={state === 'disabled'}
-        className={getClasses(styles, 'form-input')}
+        className={getClasses(styles, 'cds-form__input')}
         {...rest}
       />
       {iconRight && <FieldIcon icon={iconRight} />}
@@ -66,7 +67,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 Input.displayName = 'Input';
 
 const FieldIcon = (props: { icon?: ReactElement }) => (
-  <span className={getClasses(styles, 'form-icon')}>{props.icon}</span>
+  <span className={getClasses(styles, 'cds-form__icon')}>{props.icon}</span>
 );
 
 export default Input;

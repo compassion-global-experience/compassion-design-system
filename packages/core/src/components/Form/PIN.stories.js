@@ -1,16 +1,19 @@
+import './pin.scss';
+import prefixStateWithClass from '../../utils/prefixStateWithClass.js';
+
 export default {
-    title: 'Components/Forms/PIN',
-    argTypes: {
-        label: { control: 'text' },
-        size: {
-            control: { type: 'select' },
-            options: ['small', 'medium', 'large'],
-        },
-        state: {
-            control: { type: 'select' },
-            options: ['default', 'disabled', 'error'],
-        },
+  title: 'Components/Forms/PIN',
+  argTypes: {
+    label: { control: 'text' },
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large'],
     },
+    state: {
+      control: { type: 'select' },
+      options: ['default', 'disabled', 'error'],
+    },
+  },
 };
 
 const PinField = ({
@@ -18,31 +21,33 @@ const PinField = ({
   size = 'medium',
   state = 'default',
 }) => {
-    const disabled = state === 'disabled' ? 'disabled' : '';
+  const disabled = state === 'disabled' ? 'disabled' : '';
+  const disabledClass = disabled.length ? ' cds-form--disabled' : '';
+  const stateClass = prefixStateWithClass(state, `cds-form--`, 'default');
 
-    return `
-    <div class="form-field-row">
-      <div class="form-label-wrap">
-        <label class="form-label ${disabled}" for="test-field">
+  return `
+    <div class="cds-form__field-row">
+      <div class="cds-form__label-wrap">
+        <label class="cds-form__label${disabledClass}" for="test-field">
           ${label}
         </label>
       </div>
-      <div class="pin-field ${size}">
-        <div class="form-field ${state} ${disabled}">
-          <input class="form-input" type="password" maxlength=1 ${disabled} />
+      <div class="cds-form__pin-field cds-form--${size}">
+        <div class="cds-form__field ${stateClass}">
+          <input class="cds-form__input" type="password" maxlength=1 ${disabled} />
         </div>
-        <div class="form-field ${state} ${disabled}">
-          <input class="form-input" type="password" maxlength=1 ${disabled} />
+        <div class="cds-form__field ${stateClass}">
+          <input class="cds-form__input" type="password" maxlength=1 ${disabled} />
         </div>
-        <div class="form-field ${state} ${disabled}">
-          <input class="form-input" type="password" maxlength=1 ${disabled} />
+        <div class="cds-form__field ${stateClass}">
+          <input class="cds-form__input" type="password" maxlength=1 ${disabled} />
         </div>
-        <div class="form-field ${state} ${disabled}">
-          <input class="form-input" type="password" maxlength=1 ${disabled} />
+        <div class="cds-form__field ${stateClass}">
+          <input class="cds-form__input" type="password" maxlength=1 ${disabled} />
         </div>
       </div>
     </div>
-    
+
     <script>
       var inputs = document.querySelectorAll("input");
       inputs.forEach((input, key) => {
@@ -62,17 +67,17 @@ const PinField = ({
 
 export const Default = PinField.bind({});
 Default.args = {
-    label: 'Label Text',
+  label: 'Label Text',
 };
 
 export const Disabled = PinField.bind({});
 Disabled.args = {
-    label: 'Label Text',
-    state: 'disabled',
+  label: 'Label Text',
+  state: 'disabled',
 };
 
 export const Error = PinField.bind({});
 Error.args = {
-    label: 'Label Text',
-    state: 'error',
+  label: 'Label Text',
+  state: 'error',
 };

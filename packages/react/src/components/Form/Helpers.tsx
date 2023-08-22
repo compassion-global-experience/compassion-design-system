@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import common from '@compassion-design-system/core/src/components/Form/common.module.css';
+import common from '@compassion-design-system/core/src/components/Form/form-common.module.css';
 import inputGroup from '@compassion-design-system/core/src/components/Form/input-group.module.css';
 import { Check, Info, X } from '../icons';
 import { getClasses } from '../../utils/classes';
@@ -36,9 +36,19 @@ export const FieldContainer = ({
   className,
   children,
 }: FieldContainerProps) => {
-  const containerClassNames = getClasses(common, 'form-field-row', className);
-  const labelClassNames = getClasses(common, ['form-label', state]);
-  const helperClassNames = getClasses(common, ['form-hint', state]);
+  const containerClassNames = getClasses(
+    common,
+    'cds-form__field-row',
+    className,
+  );
+  const labelClassNames = getClasses(common, [
+    'cds-form__label',
+    `cds-form--${state}`,
+  ]);
+  const helperClassNames = getClasses(common, [
+    'cds-form__hint',
+    `cds-form--${state}`,
+  ]);
 
   return (
     <div className={containerClassNames}>
@@ -74,7 +84,7 @@ export const InputGroupContainer = ({
       hint={hint}
       className={className}
     >
-      <div className={getClasses(inputGroup, 'input-group')}>
+      <div className={getClasses(inputGroup, 'cds-form__input-group')}>
         {startPosition && (
           <Adornment icon={adornmentIcon} text={adornmentText} size={size} />
         )}
@@ -101,7 +111,7 @@ export const StateIcon = (props: {
   if (!icon) return null;
 
   return (
-    <span className={getClasses(props.classes || common, 'form-icon')}>
+    <span className={getClasses(props.classes || common, 'cds-form__icon')}>
       {icon}
     </span>
   );
@@ -116,7 +126,12 @@ const Adornment = ({
   text: string;
   size: FieldSize;
 }) => (
-  <div className={getClasses(inputGroup, ['input-group-adornment', size])}>
+  <div
+    className={getClasses(inputGroup, [
+      'cds-form__input-group__adornment',
+      `cds-form--${size}`,
+    ])}
+  >
     {icon || <Info size={22} />}
     {text && <span>{text}</span>}
   </div>

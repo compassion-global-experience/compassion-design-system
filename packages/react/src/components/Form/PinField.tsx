@@ -7,7 +7,7 @@ import {
   useState,
 } from 'react';
 import styles from '@compassion-design-system/core/src/components/Form/pin.module.css';
-import common from '@compassion-design-system/core/src/components/Form/common.module.css';
+import common from '@compassion-design-system/core/src/components/Form/form-common.module.css';
 
 import { FieldSize, FieldState } from './Helpers';
 import { getClasses } from '../../utils/classes';
@@ -49,11 +49,17 @@ const PinField = ({
 }: PinFieldProps) => {
   const containerClassNames = getClasses(
     styles,
-    ['pin-field', size],
+    ['cds-form__pin-field', `cds-form--${size}`],
     className,
   );
-  const fieldClassNames = getClasses(styles, ['form-field', state]);
-  const labelClassNames = getClasses(common, ['form-label', state]);
+  const fieldClassNames = getClasses(styles, [
+    'cds-form__field',
+    `cds-form--${state}`,
+  ]);
+  const labelClassNames = getClasses(common, [
+    'cds-form__label',
+    `cds-form--${state}`,
+  ]);
 
   const [values, setValues] = useState(() =>
     Array.from({ length }).map((_, i) => value?.toString()[i] || ''),
@@ -70,13 +76,13 @@ const PinField = ({
   });
 
   return (
-    <div className={getClasses(common, 'form-field-row')}>
+    <div className={getClasses(common, 'cds-form__field-row')}>
       {label && <label className={labelClassNames}>{label}</label>}
       <div className={containerClassNames}>
         {fields.map((fieldProps, index) => (
           <div key={index} className={fieldClassNames}>
             <input
-              className={getClasses(styles, 'form-input')}
+              className={getClasses(styles, 'cds-form__input')}
               {...fieldProps}
             />
           </div>

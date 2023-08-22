@@ -27,18 +27,24 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
     children,
     ...rest
   } = props;
-  const wrapperClass = getClasses(styles, ['modal', size], className);
-  const bodyClass = getClasses(styles, 'modal-body');
+  const wrapperClass = getClasses(
+    styles,
+    ['cds-modal', `cds-modal--${size}`],
+    className,
+  );
+  const bodyClass = getClasses(styles, 'cds-modal__body');
 
   return (
     <div className={wrapperClass} style={style} ref={ref} {...rest}>
       {onClose && <ModalClose onClick={onClose} />}
       {title && (
-        <div className={getClasses(styles, 'modal-header')}>{title}</div>
+        <div className={getClasses(styles, 'cds-modal__header')}>{title}</div>
       )}
       <div className={bodyClass}>{children}</div>
       {Boolean(footerSlot) && (
-        <div className={getClasses(styles, 'modal-footer')}>{footerSlot}</div>
+        <div className={getClasses(styles, 'cds-modal__footer')}>
+          {footerSlot}
+        </div>
       )}
     </div>
   );
@@ -53,7 +59,7 @@ export interface ButtonProps {
 const ModalClose = ({ onClick }: ButtonProps) => (
   <button
     type="button"
-    className={getClasses(styles, 'modal-button-close')}
+    className={getClasses(styles, 'cds-modal__button--close')}
     onClick={onClick}
   >
     <X size={24} />

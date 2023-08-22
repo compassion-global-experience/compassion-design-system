@@ -1,6 +1,6 @@
 import { forwardRef, InputHTMLAttributes } from 'react';
 import styles from '@compassion-design-system/core/src/components/Form/radio-checkbox.module.css';
-import common from '@compassion-design-system/core/src/components/Form/common.module.css';
+import common from '@compassion-design-system/core/src/components/Form/form-common.module.css';
 
 import { FieldState } from './Helpers';
 import { Check } from '../icons';
@@ -18,24 +18,34 @@ export interface ChoiceInputProps
 const ChoiceInput = forwardRef<HTMLInputElement, ChoiceInputProps>(
   (props, ref) => {
     const { id, state, type, hint, label, className, ...rest } = props;
-    const containerClassNames = getClasses(common, 'form-field-row', className);
-    const labelClassNames = getClasses(styles, 'form-label', state);
-    const helperClassNames = getClasses(common, 'form-hint', state);
+    const containerClassNames = getClasses(
+      common,
+      'cds-form__field-row',
+      className,
+    );
+    const labelClassNames = getClasses(styles, [
+      'cds-form__label',
+      `cds-form--${state}`,
+    ]);
+    const helperClassNames = getClasses(common, [
+      'cds-form__hint',
+      `cds-form--${state}`,
+    ]);
 
     return (
       <div className={containerClassNames}>
-        <div className={getClasses(styles, 'form-control')}>
-          <div className={getClasses(styles, 'form-control-inner')}>
+        <div className={getClasses(styles, 'cds-form__control')}>
+          <div className={getClasses(styles, 'cds-form__control__inner')}>
             <input
               ref={ref}
               id={id}
               type={type}
               disabled={state === 'disabled'}
-              className={getClasses(styles, state)}
+              className={getClasses(styles, `cds-form--${state}`)}
               {...rest}
             />
             {type === 'checkbox' && (
-              <span className={getClasses(styles, 'form-control-icon')}>
+              <span className={getClasses(styles, 'cds-form__control__icon')}>
                 <Check />
               </span>
             )}
