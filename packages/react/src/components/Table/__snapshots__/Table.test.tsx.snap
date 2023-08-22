@@ -3,90 +3,90 @@
 exports[`Table should render 3 columns and 3 rows 1`] = `
 <div>
   <div
-    class="table-container"
+    class="cds-table__container"
   >
     <table
-      class="table"
+      class="cds-table"
     >
       <thead
-        class="table-head"
+        class="cds-table__head"
       >
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <th
-            class="table-cell"
+            class="cds-table__cell"
           >
             Heading 1
           </th>
           <th
-            class="table-cell"
+            class="cds-table__cell"
           >
             Heading 2
           </th>
           <th
-            class="table-cell"
+            class="cds-table__cell"
           >
             Heading 3
           </th>
         </tr>
       </thead>
       <tbody
-        class="table-body"
+        class="cds-table__body"
       >
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 1
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 2
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 3
           </td>
         </tr>
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 1
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 2
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 3
           </td>
         </tr>
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 1
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 2
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 3
           </td>
@@ -100,90 +100,90 @@ exports[`Table should render 3 columns and 3 rows 1`] = `
 exports[`Table should render disabled version 1`] = `
 <div>
   <div
-    class="table-container"
+    class="cds-table__container"
   >
     <table
-      class="table disabled"
+      class="cds-table cds-table--disabled"
     >
       <thead
-        class="table-head"
+        class="cds-table__head"
       >
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <th
-            class="table-cell"
+            class="cds-table__cell"
           >
             Heading 1
           </th>
           <th
-            class="table-cell"
+            class="cds-table__cell"
           >
             Heading 2
           </th>
           <th
-            class="table-cell"
+            class="cds-table__cell"
           >
             Heading 3
           </th>
         </tr>
       </thead>
       <tbody
-        class="table-body"
+        class="cds-table__body"
       >
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 1
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 2
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 3
           </td>
         </tr>
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 1
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 2
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 3
           </td>
         </tr>
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 1
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 2
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 3
           </td>
@@ -197,90 +197,90 @@ exports[`Table should render disabled version 1`] = `
 exports[`Table should render sticky header version 1`] = `
 <div>
   <div
-    class="table-container"
+    class="cds-table__container"
   >
     <table
-      class="table sticky-header"
+      class="cds-table cds-table__sticky-header"
     >
       <thead
-        class="table-head"
+        class="cds-table__head"
       >
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <th
-            class="table-cell"
+            class="cds-table__cell"
           >
             Heading 1
           </th>
           <th
-            class="table-cell"
+            class="cds-table__cell"
           >
             Heading 2
           </th>
           <th
-            class="table-cell"
+            class="cds-table__cell"
           >
             Heading 3
           </th>
         </tr>
       </thead>
       <tbody
-        class="table-body"
+        class="cds-table__body"
       >
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 1
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 2
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 3
           </td>
         </tr>
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 1
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 2
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 3
           </td>
         </tr>
         <tr
-          class="table-row"
+          class="cds-table__row"
         >
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 1
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 2
           </td>
           <td
-            class="table-cell"
+            class="cds-table__cell"
           >
             Cell 3
           </td>

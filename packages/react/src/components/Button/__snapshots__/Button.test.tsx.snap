@@ -3,7 +3,7 @@
 exports[`Button should render \`Disabled\` variant 1`] = `
 <div>
   <button
-    class="button-primary medium"
+    class="cds-button--primary cds-button--medium cds-button--undefined"
     disabled=""
   >
     Disabled
@@ -14,7 +14,7 @@ exports[`Button should render \`Disabled\` variant 1`] = `
 exports[`Button should render \`Primary\` mode with \`Medium\` size 1`] = `
 <div>
   <button
-    class="button-primary medium"
+    class="cds-button--primary cds-button--medium cds-button--undefined"
   >
     Click Me!
   </button>
@@ -24,7 +24,7 @@ exports[`Button should render \`Primary\` mode with \`Medium\` size 1`] = `
 exports[`Button should render \`Secondary\` mode with \`Small\` size 1`] = `
 <div>
   <button
-    class="button-secondary small"
+    class="cds-button--secondary cds-button--small cds-button--undefined"
   >
     Click Me!
   </button>
@@ -34,7 +34,7 @@ exports[`Button should render \`Secondary\` mode with \`Small\` size 1`] = `
 exports[`Button should render \`Tertiary\` mode with \`Large\` size 1`] = `
 <div>
   <button
-    class="button-tertiary large"
+    class="cds-button--tertiary cds-button--large cds-button--undefined"
   >
     Click Me!
   </button>

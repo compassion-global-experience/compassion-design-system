@@ -3,22 +3,22 @@
 exports[`PinField should render \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <label
-      class="form-label disabled"
+      class="cds-form__label cds-form--disabled"
     >
       Disabled
     </label>
     <div
-      class="pin-field"
+      class="cds-form__pin-field cds-form--undefined"
     >
       <div
-        class="form-field disabled"
+        class="cds-form__field cds-form--disabled"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           disabled=""
           maxlength="1"
           type="text"
@@ -26,11 +26,11 @@ exports[`PinField should render \`Disabled\` state 1`] = `
         />
       </div>
       <div
-        class="form-field disabled"
+        class="cds-form__field cds-form--disabled"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           disabled=""
           maxlength="1"
           type="text"
@@ -38,11 +38,11 @@ exports[`PinField should render \`Disabled\` state 1`] = `
         />
       </div>
       <div
-        class="form-field disabled"
+        class="cds-form__field cds-form--disabled"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           disabled=""
           maxlength="1"
           type="text"
@@ -50,11 +50,11 @@ exports[`PinField should render \`Disabled\` state 1`] = `
         />
       </div>
       <div
-        class="form-field disabled"
+        class="cds-form__field cds-form--disabled"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           disabled=""
           maxlength="1"
           type="text"
@@ -69,55 +69,55 @@ exports[`PinField should render \`Disabled\` state 1`] = `
 exports[`PinField should render \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <label
-      class="form-label error"
+      class="cds-form__label cds-form--error"
     >
       Error
     </label>
     <div
-      class="pin-field"
+      class="cds-form__pin-field cds-form--undefined"
     >
       <div
-        class="form-field error"
+        class="cds-form__field cds-form--error"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field error"
+        class="cds-form__field cds-form--error"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field error"
+        class="cds-form__field cds-form--error"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field error"
+        class="cds-form__field cds-form--error"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
@@ -131,55 +131,55 @@ exports[`PinField should render \`Error\` state 1`] = `
 exports[`PinField should render \`Secret\` mode (hidden values) 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <label
-      class="form-label"
+      class="cds-form__label cds-form--undefined"
     >
       Secret
     </label>
     <div
-      class="pin-field"
+      class="cds-form__pin-field cds-form--undefined"
     >
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="password"
           value="1"
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="password"
           value="2"
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="password"
           value="3"
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="password"
           value="4"
@@ -193,55 +193,55 @@ exports[`PinField should render \`Secret\` mode (hidden values) 1`] = `
 exports[`PinField should render \`Small\` size 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <label
-      class="form-label"
+      class="cds-form__label cds-form--undefined"
     >
       Small
     </label>
     <div
-      class="pin-field small"
+      class="cds-form__pin-field cds-form--small"
     >
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
@@ -255,99 +255,99 @@ exports[`PinField should render \`Small\` size 1`] = `
 exports[`PinField should render 8 inputs 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <label
-      class="form-label"
+      class="cds-form__label cds-form--undefined"
     >
       Longer
     </label>
     <div
-      class="pin-field"
+      class="cds-form__pin-field cds-form--undefined"
     >
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
         />
       </div>
       <div
-        class="form-field"
+        class="cds-form__field cds-form--undefined"
       >
         <input
           autocomplete="off"
-          class="form-input"
+          class="cds-form__input"
           maxlength="1"
           type="text"
           value=""
