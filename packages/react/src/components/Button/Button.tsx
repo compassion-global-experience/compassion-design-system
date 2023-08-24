@@ -65,7 +65,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 
   if (IconComponent && showLabel) {
     if (iconPosition && iconPosition === 'end') {
-      buttonClassList.push('cds-button--reverseTextIcon');
+      buttonClassList.push('cds-button--reverse-text-icon');
       buttonIconClassList.push('cds-button__icon--end');
     } else {
       buttonIconClassList.push('cds-button__icon--start');

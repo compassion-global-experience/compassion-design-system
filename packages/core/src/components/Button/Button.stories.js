@@ -46,10 +46,10 @@ const createButton = ({
     if (label) {
       if (iconPosition === 'end') {
         iconContainer.classList.add('cds-button__icon--end');
-        btn.classList.add('cds-button--reverseTextIcon');
+        btn.classList.add('cds-button--reverse-text-icon');
       } else {
         iconContainer.classList.add('cds-button__icon--start');
-        btn.classList.remove('cds-button--reverseTextIcon');
+        btn.classList.remove('cds-button--reverse-text-icon');
       }
     } else {
       btn.appendChild(iconContainer);

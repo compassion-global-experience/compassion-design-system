@@ -1,6 +1,6 @@
 .cds-icon {
   &__container {
-    display: inline-flex;
+    display: inline-flex !important;
   }
 
   /* Visually hide the icon description from the screen, while being accessible to screen reader users. */
@@ -18,7 +18,6 @@
 
   &__svg--default {
     color: var(--cds-icon-color-default);
-    // color: blue;
   }
 
   &__svg--primary {
