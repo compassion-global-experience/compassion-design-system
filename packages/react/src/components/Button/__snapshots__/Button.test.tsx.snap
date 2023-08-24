@@ -70,7 +70,7 @@ exports[`Button should render with an icon at the beginning 1`] = `
 exports[`Button should render with an icon at the end 1`] = `
 <div>
   <button
-    class="cds-button--primary cds-button--medium cds-button--reverseTextIcon"
+    class="cds-button--primary cds-button--medium cds-button--reverse-text-icon"
   >
     <div
       class="cds-button__icon cds-button__icon--end"
