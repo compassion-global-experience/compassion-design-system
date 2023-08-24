@@ -3,22 +3,22 @@
 exports[`ChoiceInput should render \`checkbox\` in \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <div
-      class="form-control"
+      class="cds-form__control"
     >
       <div
-        class="form-control-inner"
+        class="cds-form__control__inner"
       >
         <input
-          class="disabled"
+          class="cds-form--disabled"
           disabled=""
           id="disabled-field"
           type="checkbox"
         />
         <span
-          class="form-control-icon"
+          class="cds-form__control__icon"
         >
           <svg
             fill="currentColor"
@@ -34,7 +34,7 @@ exports[`ChoiceInput should render \`checkbox\` in \`Disabled\` state 1`] = `
         </span>
       </div>
       <label
-        class="form-label disabled"
+        class="cds-form__label cds-form--disabled"
         for="disabled-field"
       >
         Disabled
@@ -47,21 +47,21 @@ exports[`ChoiceInput should render \`checkbox\` in \`Disabled\` state 1`] = `
 exports[`ChoiceInput should render \`checkbox\` in \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <div
-      class="form-control"
+      class="cds-form__control"
     >
       <div
-        class="form-control-inner"
+        class="cds-form__control__inner"
       >
         <input
-          class="error"
+          class="cds-form--error"
           id="error-field"
           type="checkbox"
         />
         <span
-          class="form-control-icon"
+          class="cds-form__control__icon"
         >
           <svg
             fill="currentColor"
@@ -77,7 +77,7 @@ exports[`ChoiceInput should render \`checkbox\` in \`Error\` state 1`] = `
         </span>
       </div>
       <label
-        class="form-label error"
+        class="cds-form__label cds-form--error"
         for="error-field"
       >
         Error
@@ -90,23 +90,23 @@ exports[`ChoiceInput should render \`checkbox\` in \`Error\` state 1`] = `
 exports[`ChoiceInput should render \`radio\` in \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <div
-      class="form-control"
+      class="cds-form__control"
     >
       <div
-        class="form-control-inner"
+        class="cds-form__control__inner"
       >
         <input
-          class="disabled"
+          class="cds-form--disabled"
           disabled=""
           id="disabled-field"
           type="radio"
         />
       </div>
       <label
-        class="form-label disabled"
+        class="cds-form__label cds-form--disabled"
         for="disabled-field"
       >
         Disabled
@@ -119,22 +119,22 @@ exports[`ChoiceInput should render \`radio\` in \`Disabled\` state 1`] = `
 exports[`ChoiceInput should render \`radio\` in \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <div
-      class="form-control"
+      class="cds-form__control"
     >
       <div
-        class="form-control-inner"
+        class="cds-form__control__inner"
       >
         <input
-          class="error"
+          class="cds-form--error"
           id="error-field"
           type="radio"
         />
       </div>
       <label
-        class="form-label error"
+        class="cds-form__label cds-form--error"
         for="error-field"
       >
         Error

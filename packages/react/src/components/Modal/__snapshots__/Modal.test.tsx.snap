@@ -3,10 +3,10 @@
 exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`] = `
 <div>
   <div
-    class="modal default"
+    class="cds-modal cds-modal--default"
   >
     <button
-      class="modal-button-close"
+      class="cds-modal__button--close"
       type="button"
     >
       <svg
@@ -22,27 +22,27 @@ exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`]
       </svg>
     </button>
     <div
-      class="modal-header"
+      class="cds-modal__header"
     >
       Title
     </div>
     <div
-      class="modal-body"
+      class="cds-modal__body"
     >
       <div>
         Slot
       </div>
     </div>
     <div
-      class="modal-footer"
+      class="cds-modal__footer"
     >
       <button
-        class="button-secondary medium"
+        class="cds-button--secondary cds-button--medium cds-button--undefined"
       >
         Button 2
       </button>
       <button
-        class="button-primary medium"
+        class="cds-button--primary cds-button--medium cds-button--undefined"
       >
         Button 1
       </button>
@@ -54,10 +54,10 @@ exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`]
 exports[`Modal should render \`Default\` size without \`Header\` and \`Footer\` 1`] = `
 <div>
   <div
-    class="modal small"
+    class="cds-modal cds-modal--small"
   >
     <button
-      class="modal-button-close"
+      class="cds-modal__button--close"
       type="button"
     >
       <svg
@@ -73,12 +73,12 @@ exports[`Modal should render \`Default\` size without \`Header\` and \`Footer\` 
       </svg>
     </button>
     <div
-      class="modal-header"
+      class="cds-modal__header"
     >
       Title
     </div>
     <div
-      class="modal-body"
+      class="cds-modal__body"
     >
       <div>
         Slot
@@ -91,10 +91,10 @@ exports[`Modal should render \`Default\` size without \`Header\` and \`Footer\` 
 exports[`Modal should render \`Small\` size without \`Footer\` 1`] = `
 <div>
   <div
-    class="modal small"
+    class="cds-modal cds-modal--small"
   >
     <button
-      class="modal-button-close"
+      class="cds-modal__button--close"
       type="button"
     >
       <svg
@@ -110,12 +110,12 @@ exports[`Modal should render \`Small\` size without \`Footer\` 1`] = `
       </svg>
     </button>
     <div
-      class="modal-header"
+      class="cds-modal__header"
     >
       Title
     </div>
     <div
-      class="modal-body"
+      class="cds-modal__body"
     >
       <div>
         Slot
@@ -128,10 +128,10 @@ exports[`Modal should render \`Small\` size without \`Footer\` 1`] = `
 exports[`Modal should render \`Wide\` size without \`Header\` 1`] = `
 <div>
   <div
-    class="modal wide"
+    class="cds-modal cds-modal--wide"
   >
     <button
-      class="modal-button-close"
+      class="cds-modal__button--close"
       type="button"
     >
       <svg
@@ -147,22 +147,22 @@ exports[`Modal should render \`Wide\` size without \`Header\` 1`] = `
       </svg>
     </button>
     <div
-      class="modal-body"
+      class="cds-modal__body"
     >
       <div>
         Slot
       </div>
     </div>
     <div
-      class="modal-footer"
+      class="cds-modal__footer"
     >
       <button
-        class="button-secondary medium"
+        class="cds-button--secondary cds-button--medium cds-button--undefined"
       >
         Button 2
       </button>
       <button
-        class="button-primary medium"
+        class="cds-button--primary cds-button--medium cds-button--undefined"
       >
         Button 1
       </button>

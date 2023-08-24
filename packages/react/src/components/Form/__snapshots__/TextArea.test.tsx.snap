@@ -3,23 +3,23 @@
 exports[`TextArea should render \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <div
-      class="form-label-wrap"
+      class="cds-form__label-wrap"
     >
       <label
-        class="form-label disabled"
+        class="cds-form__label cds-form--disabled"
         for="disabled-field"
       >
         Disabled
       </label>
     </div>
     <div
-      class="form-field disabled"
+      class="cds-form__field cds-form--disabled cds-form--undefined"
     >
       <textarea
-        class="form-input"
+        class="cds-form__input"
         disabled=""
         id="disabled-field"
       />
@@ -31,27 +31,27 @@ exports[`TextArea should render \`Disabled\` state 1`] = `
 exports[`TextArea should render \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <div
-      class="form-label-wrap"
+      class="cds-form__label-wrap"
     >
       <label
-        class="form-label error"
+        class="cds-form__label cds-form--error"
         for="error-field"
       >
         Error
       </label>
     </div>
     <div
-      class="form-field error"
+      class="cds-form__field cds-form--error cds-form--undefined"
     >
       <textarea
-        class="form-input"
+        class="cds-form__input"
         id="error-field"
       />
       <span
-        class="form-icon"
+        class="cds-form__icon"
       >
         <svg
           fill="currentColor"
@@ -73,23 +73,23 @@ exports[`TextArea should render \`Error\` state 1`] = `
 exports[`TextArea should render \`Small\` size 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <div
-      class="form-label-wrap"
+      class="cds-form__label-wrap"
     >
       <label
-        class="form-label"
+        class="cds-form__label cds-form--undefined"
         for="small-field"
       >
         Small
       </label>
     </div>
     <div
-      class="form-field small"
+      class="cds-form__field cds-form--undefined cds-form--small"
     >
       <textarea
-        class="form-input"
+        class="cds-form__input"
         id="small-field"
       />
     </div>
@@ -100,27 +100,27 @@ exports[`TextArea should render \`Small\` size 1`] = `
 exports[`TextArea should render \`Success\` state with \`Large\` size 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <div
-      class="form-label-wrap"
+      class="cds-form__label-wrap"
     >
       <label
-        class="form-label success"
+        class="cds-form__label cds-form--success"
         for="success-field"
       >
         Success
       </label>
     </div>
     <div
-      class="form-field success"
+      class="cds-form__field cds-form--success cds-form--undefined"
     >
       <textarea
-        class="form-input"
+        class="cds-form__input"
         id="success-field"
       />
       <span
-        class="form-icon"
+        class="cds-form__icon"
       >
         <svg
           fill="currentColor"
@@ -142,19 +142,19 @@ exports[`TextArea should render \`Success\` state with \`Large\` size 1`] = `
 exports[`TextArea should render counter with \`maxLength: 100\` 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <div
-      class="form-label-wrap"
+      class="cds-form__label-wrap"
     >
       <label
-        class="form-label"
+        class="cds-form__label cds-form--undefined"
         for="with-counter"
       >
         With Counter
       </label>
       <span
-        class="form-hint"
+        class="cds-form__hint cds-form--undefined"
       >
         0
          / 
@@ -162,10 +162,10 @@ exports[`TextArea should render counter with \`maxLength: 100\` 1`] = `
       </span>
     </div>
     <div
-      class="form-field"
+      class="cds-form__field cds-form--undefined cds-form--undefined"
     >
       <textarea
-        class="form-input"
+        class="cds-form__input"
         id="with-counter"
         maxlength="100"
       />

@@ -3,7 +3,7 @@
 exports[`Icon should render a large icon 1`] = `
 <div>
   <div
-    class="c-icon__svg--default"
+    class="cds-icon__svg--default"
     style="width: 32px;"
   >
     <svg
@@ -28,7 +28,7 @@ exports[`Icon should render a large icon 1`] = `
 exports[`Icon should render a muted icon 1`] = `
 <div>
   <div
-    class="c-icon__svg--muted"
+    class="cds-icon__svg--muted"
     style="width: 24px;"
   >
     <svg
@@ -53,7 +53,7 @@ exports[`Icon should render a muted icon 1`] = `
 exports[`Icon should render with default props 1`] = `
 <div>
   <div
-    class="c-icon__svg--default"
+    class="cds-icon__svg--default"
     style="width: 24px;"
   >
     <svg

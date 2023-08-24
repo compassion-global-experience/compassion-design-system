@@ -3,19 +3,19 @@
 exports[`SelectField should render \`Disabled\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <label
-      class="form-label disabled"
+      class="cds-form__label cds-form--disabled"
       for="disabled-field"
     >
       Disabled
     </label>
     <div
-      class="form-field disabled medium"
+      class="cds-form__field cds-form--disabled cds-form--medium"
     >
       <select
-        class="form-input"
+        class="cds-form__input"
         disabled=""
         id="disabled-field"
       >
@@ -46,7 +46,7 @@ exports[`SelectField should render \`Disabled\` state 1`] = `
         </option>
       </select>
       <span
-        class="form-icon select-icon"
+        class="cds-form__icon cds-form__icon"
       >
         <svg
           fill="currentColor"
@@ -68,19 +68,19 @@ exports[`SelectField should render \`Disabled\` state 1`] = `
 exports[`SelectField should render \`Error\` state 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <label
-      class="form-label error"
+      class="cds-form__label cds-form--error"
       for="error-field"
     >
       Error
     </label>
     <div
-      class="form-field error medium"
+      class="cds-form__field cds-form--error cds-form--medium"
     >
       <select
-        class="form-input"
+        class="cds-form__input"
         id="error-field"
       >
         <option
@@ -110,7 +110,7 @@ exports[`SelectField should render \`Error\` state 1`] = `
         </option>
       </select>
       <span
-        class="form-icon"
+        class="cds-form__icon"
       >
         <svg
           fill="currentColor"
@@ -125,7 +125,7 @@ exports[`SelectField should render \`Error\` state 1`] = `
         </svg>
       </span>
       <span
-        class="form-icon select-icon"
+        class="cds-form__icon cds-form__icon"
       >
         <svg
           fill="currentColor"
@@ -147,19 +147,19 @@ exports[`SelectField should render \`Error\` state 1`] = `
 exports[`SelectField should render \`Small\` size 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <label
-      class="form-label"
+      class="cds-form__label cds-form--undefined"
       for="small-field"
     >
       Small
     </label>
     <div
-      class="form-field small"
+      class="cds-form__field cds-form--undefined cds-form--small"
     >
       <select
-        class="form-input"
+        class="cds-form__input"
         id="small-field"
       >
         <option
@@ -189,7 +189,7 @@ exports[`SelectField should render \`Small\` size 1`] = `
         </option>
       </select>
       <span
-        class="form-icon select-icon"
+        class="cds-form__icon cds-form__icon"
       >
         <svg
           fill="currentColor"
@@ -211,19 +211,19 @@ exports[`SelectField should render \`Small\` size 1`] = `
 exports[`SelectField should render \`Success\` state with \`Large\` size 1`] = `
 <div>
   <div
-    class="form-field-row"
+    class="cds-form__field-row"
   >
     <label
-      class="form-label success"
+      class="cds-form__label cds-form--success"
       for="success-field"
     >
       Success
     </label>
     <div
-      class="form-field success medium"
+      class="cds-form__field cds-form--success cds-form--medium"
     >
       <select
-        class="form-input"
+        class="cds-form__input"
         id="success-field"
       >
         <option
@@ -253,7 +253,7 @@ exports[`SelectField should render \`Success\` state with \`Large\` size 1`] = `
         </option>
       </select>
       <span
-        class="form-icon"
+        class="cds-form__icon"
       >
         <svg
           fill="currentColor"
@@ -268,7 +268,7 @@ exports[`SelectField should render \`Success\` state with \`Large\` size 1`] = `
         </svg>
       </span>
       <span
-        class="form-icon select-icon"
+        class="cds-form__icon cds-form__icon"
       >
         <svg
           fill="currentColor"
