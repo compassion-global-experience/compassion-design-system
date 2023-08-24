@@ -5,12 +5,6 @@ import styles from '@compassion-design-system/core/src/components/Button/button.
 import { getClasses } from '../../utils/classes';
 import { cdsIconMap } from '../Icon/Icon';
 
-export interface ButtonIcon {
-  icon: keyof typeof cdsIconMap;
-  iconDescription: string;
-  iconPosition?: 'start' | 'end';
-}
-
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   showLabel?: boolean;

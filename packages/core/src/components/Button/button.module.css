@@ -38,7 +38,6 @@
   border-radius: var(--cds-button-primary-border-radius);
   background: var(--cds-button-primary-default-background-color);
   color: var(--cds-button-primary-default-text-color);
-  svg-color: var(--cds-button-primary-default-text-color) !important;
 }
 .cds-button--primary.cds-button--small {
   padding: var(--cds-button-primary-small-padding-y) var(--cds-button-primary-small-padding-x);

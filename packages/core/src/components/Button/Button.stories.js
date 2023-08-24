@@ -29,11 +29,6 @@ const createButton = ({
   btn.disabled = disabled;
 
   if (icon) {
-    //   <div class="cds-icon__container ">
-    //   <i class="${classNames}" aria-hidden="true"></i>
-    //   <span class="cds-icon__description">${iconDescription}</span>
-    // </div>
-
     const iconContainer = document.createElement('div');
     iconContainer.classList.add('cds-icon__container');
 
