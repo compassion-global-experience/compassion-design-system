@@ -37,12 +37,12 @@ exports[`Modal should render \`Default\` size with \`Header\` and \`Footer\` 1`]
       class="cds-modal__footer"
     >
       <button
-        class="cds-button--secondary cds-button--medium cds-button--undefined"
+        class="cds-button--secondary cds-button--medium"
       >
         Button 2
       </button>
       <button
-        class="cds-button--primary cds-button--medium cds-button--undefined"
+        class="cds-button--primary cds-button--medium"
       >
         Button 1
       </button>
@@ -157,12 +157,12 @@ exports[`Modal should render \`Wide\` size without \`Header\` 1`] = `
       class="cds-modal__footer"
     >
       <button
-        class="cds-button--secondary cds-button--medium cds-button--undefined"
+        class="cds-button--secondary cds-button--medium"
       >
         Button 2
       </button>
       <button
-        class="cds-button--primary cds-button--medium cds-button--undefined"
+        class="cds-button--primary cds-button--medium"
       >
         Button 1
       </button>

@@ -30,4 +30,18 @@ describe('Button', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
+  it('should render with an icon at the beginning', () => {
+    const { container } = render(
+      <Button label="With icon" icon="compass" iconPosition="start" />,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render with an icon at the end', () => {
+    const { container } = render(
+      <Button label="With icon" icon="compass" iconPosition="end" />,
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

@@ -3,7 +3,7 @@
 exports[`Button should render \`Disabled\` variant 1`] = `
 <div>
   <button
-    class="cds-button--primary cds-button--medium cds-button--undefined"
+    class="cds-button--primary cds-button--medium"
     disabled=""
   >
     Disabled
@@ -14,7 +14,7 @@ exports[`Button should render \`Disabled\` variant 1`] = `
 exports[`Button should render \`Primary\` mode with \`Medium\` size 1`] = `
 <div>
   <button
-    class="cds-button--primary cds-button--medium cds-button--undefined"
+    class="cds-button--primary cds-button--medium"
   >
     Click Me!
   </button>
@@ -24,7 +24,7 @@ exports[`Button should render \`Primary\` mode with \`Medium\` size 1`] = `
 exports[`Button should render \`Secondary\` mode with \`Small\` size 1`] = `
 <div>
   <button
-    class="cds-button--secondary cds-button--small cds-button--undefined"
+    class="cds-button--secondary cds-button--small"
   >
     Click Me!
   </button>
@@ -34,9 +34,61 @@ exports[`Button should render \`Secondary\` mode with \`Small\` size 1`] = `
 exports[`Button should render \`Tertiary\` mode with \`Large\` size 1`] = `
 <div>
   <button
-    class="cds-button--tertiary cds-button--large cds-button--undefined"
+    class="cds-button--tertiary cds-button--large"
   >
     Click Me!
+  </button>
+</div>
+`;
+
+exports[`Button should render with an icon at the beginning 1`] = `
+<div>
+  <button
+    class="cds-button--primary cds-button--medium"
+  >
+    <div
+      class="cds-button__icon cds-button__icon--start"
+    >
+      <svg
+        class=""
+        fill="currentColor"
+        height="16"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z"
+        />
+      </svg>
+    </div>
+    With icon
+  </button>
+</div>
+`;
+
+exports[`Button should render with an icon at the end 1`] = `
+<div>
+  <button
+    class="cds-button--primary cds-button--medium cds-button--reverseTextIcon"
+  >
+    <div
+      class="cds-button__icon cds-button__icon--end"
+    >
+      <svg
+        class=""
+        fill="currentColor"
+        height="16"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z"
+        />
+      </svg>
+    </div>
+    With icon
   </button>
 </div>
 `;

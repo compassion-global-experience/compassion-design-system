@@ -35,7 +35,7 @@ const Template = ({
 
   // Add component html to the return statement below
   return `
-  <div class=".cds-icon__container ">
+  <div class="cds-icon__container ">
     <i class="${classNames}" aria-hidden="true"></i>
     <span class="cds-icon__description">${iconDescription}</span>
   </div>

@@ -3,7 +3,9 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .cds-button--primary, .cds-button--secondary, .cds-button--tertiary {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  text-align: left;
   line-height: 1;
   cursor: pointer;
   appearance: none;
@@ -17,6 +19,18 @@
 .cds-button--tertiary:not([disabled]):active {
   box-shadow: none;
 }
+.cds-button--reverseTextIcon {
+  flex-direction: row-reverse;
+}
+.cds-button__icon {
+  display: inline-flex;
+}
+.cds-button__icon--start {
+  margin-right: 10px;
+}
+.cds-button__icon--end {
+  margin-left: 10px;
+}
 .cds-button--primary {
   border-width: var(--cds-button-primary-border-width);
   border-style: solid;
@@ -24,6 +38,7 @@
   border-radius: var(--cds-button-primary-border-radius);
   background: var(--cds-button-primary-default-background-color);
   color: var(--cds-button-primary-default-text-color);
+  svg-color: var(--cds-button-primary-default-text-color) !important;
 }
 .cds-button--primary.cds-button--small {
   padding: var(--cds-button-primary-small-padding-y) var(--cds-button-primary-small-padding-x);
