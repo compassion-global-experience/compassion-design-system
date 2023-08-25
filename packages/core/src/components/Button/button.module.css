@@ -3,7 +3,9 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .cds-button--primary, .cds-button--secondary, .cds-button--tertiary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  text-align: left;
   line-height: 1;
   cursor: pointer;
   appearance: none;
@@ -16,6 +18,18 @@
 }
 .cds-button--tertiary:not([disabled]):active {
   box-shadow: none;
+}
+.cds-button--reverse-text-icon {
+  flex-direction: row-reverse;
+}
+.cds-button__icon {
+  display: inline-flex;
+}
+.cds-button__icon--start {
+  margin-right: var(--cds-button-gap);
+}
+.cds-button__icon--end {
+  margin-left: var(--cds-button-gap);
 }
 .cds-button--primary {
   border-width: var(--cds-button-primary-border-width);

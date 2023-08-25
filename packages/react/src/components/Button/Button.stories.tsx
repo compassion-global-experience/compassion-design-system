@@ -1,5 +1,6 @@
 import { Meta } from '@storybook/react';
 import Button from './Button';
+import { cdsIconMap } from '../Icon/Icon';
 
 const buttonKindsDecorator = (Story) => (
   <div style={{ display: 'flex', flexDirection: 'column', rowGap: '24px' }}>
@@ -74,6 +75,23 @@ const disabledArgTypes = {
   options: [true, false],
 };
 
+const iconPositionArgTypes = {
+  control: { type: 'select' },
+  options: ['start', 'end'],
+};
+
+const iconDescriptionArgType = { control: 'text' };
+
+const iconArgTypes = {
+  control: { type: 'select' },
+  options: Object.keys(cdsIconMap).sort(),
+};
+
+const showLabelArgTypes = {
+  control: { type: 'select' },
+  options: [true, false],
+};
+
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 export const Playground = {
   args: {
@@ -84,6 +102,10 @@ export const Playground = {
     kind: kindArgTypes,
     size: sizeArgTypes,
     disabled: disabledArgTypes,
+    icon: iconArgTypes,
+    iconDescription: iconDescriptionArgType,
+    iconPosition: iconPositionArgTypes,
+    showLabel: showLabelArgTypes,
   },
 };
 
@@ -122,5 +144,20 @@ export const Disabled = {
   },
   argTypes: {
     disabled: disabledArgTypes,
+  },
+};
+
+export const WithIcon = {
+  args: {
+    label: 'Button with icon',
+    icon: 'compass',
+    iconPosition: 'start',
+    showLabel: true,
+  },
+  argTypes: {
+    icon: iconArgTypes,
+    iconDescription: iconDescriptionArgType,
+    iconPosition: iconPositionArgTypes,
+    showLabel: showLabelArgTypes,
   },
 };

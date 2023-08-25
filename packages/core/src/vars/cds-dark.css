@@ -485,6 +485,7 @@
   --cds-button-destructive-tertiary-hover-text-color: #D75B5B;
   --cds-button-destructive-tertiary-hover-icon-color: #D75B5B;
   --cds-button-destructive-tertiary-hover-border-color: #D75B5B;
+  --cds-button-gap: 10px;
   --cds-breadcrumb-divider-color: #919389;
   --cds-breadcrumb-action-color: #61B3FF;
   --cds-breadcrumb-active-action-color: #ecedec;

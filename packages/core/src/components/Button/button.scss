@@ -2,7 +2,9 @@
   &--primary,
   &--secondary,
   &--tertiary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
     line-height: 1;
     cursor: pointer;
     appearance: none;
@@ -18,6 +20,20 @@
 
   &--tertiary:not([disabled]):active {
     box-shadow: none;
+  }
+
+  &--reverse-text-icon {
+    flex-direction: row-reverse;
+  }
+
+  &__icon {
+    display: inline-flex;
+    &--start {
+      margin-right: var(--cds-button-gap);
+    }
+    &--end {
+      margin-left: var(--cds-button-gap);
+    }
   }
 
   &--primary {

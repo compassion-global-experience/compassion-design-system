@@ -6,7 +6,7 @@
   /* Visually hide the icon description from the screen, while being accessible to screen reader users. */
 }
 .cds-icon__container {
-  display: inline;
+  display: inline-flex !important;
 }
 .cds-icon__description {
   position: absolute;

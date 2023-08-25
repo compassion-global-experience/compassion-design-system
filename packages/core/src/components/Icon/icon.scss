@@ -1,6 +1,6 @@
 .cds-icon {
   &__container {
-    display: inline;
+    display: inline-flex !important;
   }
 
   /* Visually hide the icon description from the screen, while being accessible to screen reader users. */

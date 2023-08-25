@@ -11,6 +11,8 @@ const createButton = ({
   kind,
   label,
   onClick,
+  icon,
+  iconPosition = 'start',
 }) => {
   const btn = document.createElement('button');
   btn.type = 'button';
@@ -25,6 +27,34 @@ const createButton = ({
     .join(' ')
     .trim();
   btn.disabled = disabled;
+
+  if (icon) {
+    const iconContainer = document.createElement('div');
+    iconContainer.classList.add('cds-icon__container');
+
+    const iconElement = document.createElement('i');
+    iconElement.classList.add(icon);
+    iconElement.setAttribute('aria-hidden', 'true');
+
+    const iconDescriptionElement = document.createElement('span');
+    iconDescriptionElement.classList.add('cds-icon__description');
+
+    iconContainer.appendChild(iconElement);
+    iconContainer.appendChild(iconDescriptionElement);
+    btn.insertAdjacentElement('afterBegin', iconContainer);
+
+    if (label) {
+      if (iconPosition === 'end') {
+        iconContainer.classList.add('cds-button__icon--end');
+        btn.classList.add('cds-button--reverse-text-icon');
+      } else {
+        iconContainer.classList.add('cds-button__icon--start');
+        btn.classList.remove('cds-button--reverse-text-icon');
+      }
+    } else {
+      btn.appendChild(iconContainer);
+    }
+  }
 
   return btn;
 };
@@ -131,6 +161,11 @@ const disabledArgTypes = {
   options: [true, false],
 };
 
+const iconPositionArgTypes = {
+  control: { type: 'select' },
+  options: ['start', 'end'],
+};
+
 // STORIES - https://storybook.js.org/docs/react/writing-stories/introduction
 
 export const Playground = Template.bind({});
@@ -144,6 +179,8 @@ Playground.argTypes = {
   kind: kindArgTypes,
   size: sizeArgTypes,
   disabled: disabledArgTypes,
+  icon: { control: 'text' },
+  iconPosition: iconPositionArgTypes,
 };
 
 export const Kinds = Template.bind({});
@@ -172,3 +209,13 @@ Disabled.args = {
   label: 'Conrolled button',
 };
 Disabled.argTypes = { disabled: disabledArgTypes };
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  label: 'Button with icon',
+  icon: 'ph-compass',
+  iconPosition: 'start',
+};
+WithIcon.argTypes = {
+  iconPosition: iconPositionArgTypes,
+};
