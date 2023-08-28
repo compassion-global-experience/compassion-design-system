@@ -13,7 +13,7 @@ const sizeArgType = {
 };
 const colorArgType = {
   control: { type: 'select' },
-  options: ['default', 'primary', 'muted'],
+  options: ['default', 'primary', 'muted', 'white'],
 };
 
 // Story Template - Includes the component code that receives args
