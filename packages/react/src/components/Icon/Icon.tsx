@@ -71,7 +71,7 @@ export const iconSizeMap = {
 
 export interface IconProps {
   description: string;
-  color?: 'default' | 'primary' | 'muted';
+  color?: 'default' | 'primary' | 'muted' | 'white';
   size?: keyof typeof iconSizeMap;
   icon: keyof typeof cdsIconMap;
 }

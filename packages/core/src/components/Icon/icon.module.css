@@ -28,6 +28,9 @@
 .cds-icon__svg--muted {
   color: var(--cds-icon-color-muted);
 }
+.cds-icon__svg--white {
+  color: var(--cds-icon-color-white);
+}
 .cds-icon__svg--xs {
   font-size: 12px;
 }
