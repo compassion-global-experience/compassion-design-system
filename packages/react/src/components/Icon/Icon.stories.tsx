@@ -19,7 +19,7 @@ const sizeArgType = {
 };
 const colorArgType = {
   control: { type: 'select' },
-  options: ['default', 'primary', 'muted'],
+  options: ['default', 'primary', 'muted', 'white'],
 };
 
 export const Default = {
