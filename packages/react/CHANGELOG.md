@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.2](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2023-08-29)
+
+### Features
+
+- **icon:** Add a white color option for Icons ([6d3b124](https://github.com/compassion-global-experience/compassion-design-system/commit/6d3b1241fe8f4e38c38f8e029efd29dc1a7e7dbe))
+
 # [2.0.0-alpha.1](https://github.com/compassion-global-experience/compassion-design-system/compare/v0.2.2-beta.0...v2.0.0-alpha.1) (2023-08-25)
 
 ### Code Refactoring
