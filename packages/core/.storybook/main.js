@@ -1,12 +1,13 @@
 export default {
   stories: [
-    '../src/components/**/*.stories.mdx',
+    '../src/stories/*.stories.mdx',
     '../src/components/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-docs',
     {
       name: '@storybook/addon-styling',
       options: {
@@ -28,8 +29,5 @@ export default {
   ],
   features: {
     postcss: false,
-  },
-  docs: {
-    autodocs: true,
   },
 };

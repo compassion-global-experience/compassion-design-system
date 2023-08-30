@@ -1,4 +1,5 @@
 import '@compassion-design-system/core/reset.css';
+import DocumenationTemplate from './DocumentationTemplate.mdx';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -7,6 +8,10 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  docs: {
+    inlineStories: true,
+    page: DocumenationTemplate,
   },
   backgrounds: {
     default: 'grey',
