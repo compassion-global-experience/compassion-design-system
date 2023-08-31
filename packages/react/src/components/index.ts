@@ -1,6 +1,6 @@
-export { default as Button } from './Button';
+export { default as Button, ButtonProps } from './Button';
 export { default as Modal } from './Modal';
-export { default as Icon } from './Icon';
+export { default as Icon, IconProps } from './Icon';
 export { default as Table } from './Table';
 export { NavItem, NavItemProps } from './Nav';
 export {
