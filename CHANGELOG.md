@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.3](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2023-09-01)
+
+### Features
+
+- **icons:** Add icons and export component props ([749ae72](https://github.com/compassion-global-experience/compassion-design-system/commit/749ae727408360b6b5221bc8cb64f6da9b27ad1b))
+
 # [2.0.0-alpha.2](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2023-08-29)
 
 ### Features
