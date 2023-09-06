@@ -29,7 +29,7 @@ describe('NavItem', () => {
 
   it('should render a nav item with subnav open', () => {
     const { container } = render(
-      <NavItem {...testProps} subItems={testSubItems} isSubNavInitiallyOpen />,
+      <NavItem {...testProps} subItems={testSubItems} openSubNav />,
     );
     expect(container).toMatchSnapshot();
   });

@@ -16,8 +16,9 @@ export interface NavItemProps {
   isContained?: boolean;
   subItems?: NavItemProps[];
   isSubNav?: boolean;
-  isSubNavInitiallyOpen?: boolean;
+  openSubNav?: boolean;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  disableAutoCloseOnClick?: boolean;
 }
 
 const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>((props, ref) => {
@@ -32,11 +33,12 @@ const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>((props, ref) => {
     isContained = false,
     subItems = [],
     isSubNav = false,
-    isSubNavInitiallyOpen = false,
+    openSubNav = false,
     onClick,
+    disableAutoCloseOnClick = false,
   } = props;
 
-  const [isSubNavOpen, setIsSubNavOpen] = useState(isSubNavInitiallyOpen);
+  const [isSubNavOpen, setIsSubNavOpen] = useState<boolean>(openSubNav);
   const subNavRef = useRef(null);
 
   const subNavItems = subItems.map((item) => {
@@ -54,11 +56,17 @@ const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>((props, ref) => {
     }
   }, [isSubNavOpen]);
 
+  useEffect(() => {
+    setIsSubNavOpen(openSubNav);
+  }, [openSubNav]);
+
   const handleOnClick = (e) => {
     if (onClick) {
       onClick(e);
     }
-    setIsSubNavOpen(!isSubNavOpen);
+    if (!disableAutoCloseOnClick) {
+      setIsSubNavOpen(!isSubNavOpen);
+    }
   };
 
   const navItemContainerClasses = ['cds-navItemContainer'];

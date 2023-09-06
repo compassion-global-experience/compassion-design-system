@@ -25,6 +25,14 @@ const meta: Meta<typeof NavItem> = {
       control: { type: 'select' },
       options: [true, false],
     },
+    openSubNav: {
+      control: { type: 'select' },
+      options: [true, false],
+    },
+    disableAutoCloseOnClick: {
+      control: { type: 'select' },
+      options: [true, false],
+    },
   },
   decorators: [
     (Story) => (
