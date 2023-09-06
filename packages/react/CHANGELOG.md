@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.4](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2023-09-06)
+
+### Bug Fixes
+
+- **navitem:** Allow prop to open and close subnav ([ee11fc4](https://github.com/compassion-global-experience/compassion-design-system/commit/ee11fc469e48d8a02b01b4ad5f42c84d30a58036))
+
 # [2.0.0-alpha.3](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2023-09-01)
 
 ### Features
