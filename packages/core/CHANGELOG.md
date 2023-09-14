@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.5](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2023-09-14)
+
+### Features
+
+- **icon:** Prevent icons in nav from shrinking, add new icons ([246e0dd](https://github.com/compassion-global-experience/compassion-design-system/commit/246e0dd14412ffda35722b763bd521e4c47579ca))
+
 # [2.0.0-alpha.3](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2023-09-01)
 
 **Note:** Version bump only for package @compassion-design-system/core
