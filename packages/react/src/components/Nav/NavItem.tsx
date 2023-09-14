@@ -90,11 +90,13 @@ const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>((props, ref) => {
     <div className={getClasses(styles, navItemContainerClasses)}>
       <div className={getClasses(styles, navItemClasses)}>
         {icon && NavIcon && (
-          <NavIcon
-            className={getClasses(styles, ['cds-navItemSvg'])}
-            size={isSubNav ? 16 : 20}
-            alt={iconDescription}
-          />
+          <div className={getClasses(styles, ['cds-navItem-icon'])}>
+            <NavIcon
+              className={getClasses(styles, ['cds-navItemSvg'])}
+              size={isSubNav ? 16 : 20}
+              alt={iconDescription}
+            />
+          </div>
         )}
         <div className={getClasses(styles, ['cds-navItemText'])}>
           {isDisabled && (
