@@ -81,6 +81,7 @@ const createNavItem = ({
   if (icon) {
     const iconContainer = document.createElement('div');
     iconContainer.classList.add('cds-icon__container');
+    iconContainer.classList.add('cds-navItem-icon');
     const iconElement = document.createElement('i');
     iconElement.classList.add(icon);
     iconElement.setAttribute('aria-hidden', 'true');

@@ -47,6 +47,9 @@
   min-height: 25px;
   border-bottom: var(--cds-nav-no-border);
 }
+.cds-navItem-icon {
+  flex-shrink: 0;
+}
 .cds-navItem button {
   color: inherit;
   cursor: pointer;

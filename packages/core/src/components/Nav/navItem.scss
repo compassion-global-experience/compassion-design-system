@@ -55,6 +55,10 @@
   min-height: 25px;
   border-bottom: var(--cds-nav-no-border);
 
+  &-icon {
+    flex-shrink: 0;
+  }
+
   button {
     color: inherit;
     cursor: pointer;
