@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.6](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2023-09-15)
+
+### Bug Fixes
+
+- **button (tertiary):** Fixes border around tertiary buttons ([d6801ed](https://github.com/compassion-global-experience/compassion-design-system/commit/d6801ed2b00f4c3a9e28ca822c2c2724158e87ba))
+- **button (tertiary):** Fixes border around tertiary buttons ([1f2f040](https://github.com/compassion-global-experience/compassion-design-system/commit/1f2f04043ed210c64795bf34a1a7b9a2c9363554))
+
 # [2.0.0-alpha.5](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2023-09-14)
 
 ### Features
