@@ -73,7 +73,6 @@
   }
 
   &--secondary {
-    display: inline-block;
     border-width: var(--cds-button-secondary-border-width);
     border-style: solid;
     border-color: var(--cds-button-secondary-default-border-color);
@@ -113,9 +112,10 @@
   }
 
   &--tertiary {
-    display: inline-block;
-    border-width: var(--cds-button-tertiary-border-width);
     border-style: solid;
+    border-top-width: var(--cds-button-tertiary-border-width);
+    border-left-width: var(--cds-button-tertiary-border-width);
+    border-right-width: var(--cds-button-tertiary-border-width);
     border-bottom-width: var(--cds-button-tertiary-underline);
     border-color: var(--cds-button-tertiary-default-border-color);
     border-radius: var(--cds-button-tertiary-border-radius);
