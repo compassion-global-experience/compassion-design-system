@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should center content 1`] = `
+<div
+  class="cds-card"
+>
+  <div
+    class="cds-card__content centered"
+  >
+    <p
+      class="cds-card__description"
+    >
+      Cards can be used to showcase different types of content, including text, images, and videos. They provide a clear and concise way to present information, while also allowing users to easily interact with the content by clicking or tapping on the card to view more details.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card should render custom content 1`] = `
+<div
+  class="cds-card"
+>
+  <div
+    class="cds-card__content"
+  >
+    <div
+      class="cds-text-box cds-text-box--default cds-text-box--desktop"
+    >
+      <div>
+        Custom content
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card should render small text for title and description 1`] = `
+<div
+  class="cds-card"
+>
+  <div
+    class="cds-card__content"
+  >
+    <h3
+      class="cds-card__title small"
+    >
+      Card Title
+    </h3>
+    <p
+      class="cds-card__description small"
+    >
+      Cards can be used to showcase different types of content, including text, images, and videos. They provide a clear and concise way to present information, while also allowing users to easily interact with the content by clicking or tapping on the card to view more details.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card should renders props correctly 1`] = `
+<div
+  class="cds-card"
+>
+  <img
+    alt="Children laughing"
+    class="cds-card__image testImageClassName"
+    src="imagePath/image.jpg"
+  />
+  <div
+    class="cds-card__content"
+  >
+    <a
+      class="cds-card__title"
+      href="#"
+    >
+      Card Title
+    </a>
+    <h4
+      class="cds-card__subtitle"
+    >
+      Card Subtitle
+    </h4>
+    <p
+      class="cds-card__description"
+    >
+      Cards can be used to showcase different types of content, including text, images, and videos. They provide a clear and concise way to present information, while also allowing users to easily interact with the content by clicking or tapping on the card to view more details.
+    </p>
+    <div>
+      <button
+        class="cds-button--primary cds-button--medium"
+      >
+        Learn more
+      </button>
+    </div>
+  </div>
+</div>
+`;

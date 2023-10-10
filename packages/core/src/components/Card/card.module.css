@@ -1,0 +1,55 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.cds-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cds-card-background-color);
+  color: var(--cds-card-body-color);
+  border: var(--cds-card-border-color) var(--cds-card-border-width);
+  border-radius: var(--cds-card-border-radius);
+  box-shadow: var(--cds-card-shadow);
+}
+.cds-card__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: var(--cds-card-border-radius);
+  border-top-right-radius: var(--cds-card-border-radius);
+}
+.cds-card__image--only {
+  border-radius: var(--cds-card-border-radius);
+}
+.cds-card__content {
+  padding: var(--cds-card-padding-y) var(--cds-card-padding-x);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cds-card__content.centered {
+  align-items: center;
+  text-align: center;
+}
+.cds-card__title {
+  color: var(--cds-card-header-color);
+  font: var(--cds-card-header-default);
+}
+.cds-card__title.small {
+  font: var(--cds-card-header-small);
+}
+.cds-card a.cds-card__title {
+  color: var(--cds-card-header-color-link);
+  text-decoration: none;
+}
+.cds-card__subtitle {
+  color: var(--cds-card-subhead-color);
+  font: var(--cds-card-subhead);
+}
+.cds-card__description {
+  font: var(--cds-card-body-default);
+  color: var(--cds-card-body-color);
+}
+.cds-card__description.small {
+  font: var(--cds-card-body-small);
+}

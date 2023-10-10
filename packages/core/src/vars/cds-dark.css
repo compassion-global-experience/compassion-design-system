@@ -23,6 +23,9 @@
   --cds-type-heading-h6-desktop-bold: 16px/20px Gotham Bold;
   --cds-type-heading-h6-mobile-regular: 16px/20px Gotham Book;
   --cds-type-heading-h6-mobile-bold: 16px/20px Gotham Bold;
+  --cds-type-heading-regular: undefinedpx/undefinedpx Gotham Book;
+  --cds-type-heading-semibold: undefinedpx/undefinedpx Gotham Medium;
+  --cds-type-heading-bold: undefinedpx/undefinedpx Gotham Bold;
   --cds-type-body-p-desktop-regular: 16px/20px Gotham Book;
   --cds-type-body-p-desktop-bold: 16px/20px Gotham Bold;
   --cds-type-body-p-mobile-regular: 16px/20px Gotham Book;
@@ -31,6 +34,9 @@
   --cds-type-body-p-small-desktop-bold: 13px/16px Gotham Bold;
   --cds-type-body-p-small-mobile-regular: 13px/16px Gotham Book;
   --cds-type-body-p-small-mobile-bold: 13px/16px Gotham Bold;
+  --cds-type-body-regular: undefinedpx/undefinedpx Gotham Book;
+  --cds-type-body-semibold: undefinedpx/undefinedpx Gotham Medium;
+  --cds-type-body-bold: undefinedpx/undefinedpx Gotham Bold;
   --cds-type-color: #FFFFFF;
   --cds-type-color-white: #FFFFFF;
   --cds-type-color-accent: #FFD05C;

@@ -7,3 +7,5 @@
 @import './Form/input-group.module.css';
 @import './Icon/icon.module.css';
 @import './Nav/navItem.module.css';
+@import './TextArea/textArea.module.css';
+@import './Card/card.module.css';
