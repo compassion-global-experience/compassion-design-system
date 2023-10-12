@@ -15,7 +15,7 @@
 .cds-text-box p,
 .cds-text-box ul,
 .cds-text-box ol {
-  margin-bottom: 16px;
+  margin-bottom: var(--cds-type-margin-bottom-mobile);
 }
 .cds-text-box li {
   margin-bottom: 8px;
@@ -102,6 +102,17 @@
 }
 .cds-text-box--desktop {
   font: var(--cds-type-body-p-desktop-regular);
+}
+.cds-text-box--desktop h1,
+.cds-text-box--desktop h2,
+.cds-text-box--desktop h3,
+.cds-text-box--desktop h4,
+.cds-text-box--desktop h5,
+.cds-text-box--desktop h6,
+.cds-text-box--desktop p,
+.cds-text-box--desktop ul,
+.cds-text-box--desktop ol {
+  margin-bottom: var(--cds-type-margin-bottom-desktop);
 }
 .cds-text-box--desktop p,
 .cds-text-box--desktop ul,

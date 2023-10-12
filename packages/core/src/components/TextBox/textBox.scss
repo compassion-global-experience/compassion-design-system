@@ -8,7 +8,7 @@
   p,
   ul,
   ol {
-    margin-bottom: 16px;
+    margin-bottom: var(--cds-type-margin-bottom-mobile);
   }
 
   li {
@@ -99,6 +99,18 @@
   }
 
   &--desktop {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol {
+      margin-bottom: var(--cds-type-margin-bottom-desktop);
+    }
+
     font: var(--cds-type-body-p-desktop-regular);
     p,
     ul,
