@@ -42,13 +42,11 @@ const Card = ({
     descriptionClasses.push('small');
   }
   const contentClasses = ['cds-card__content'];
-  if (centerContent) {
-    contentClasses.push('centered');
-  }
+  centerContent && contentClasses.push('centered');
+
   const imageClasses = ['cds-card__image'];
-  if (imageClassName) {
-    imageClasses.push(imageClassName);
-  }
+  isImageOnlyCard && imageClasses.push('cds-card__image--only');
+  imageClassName && imageClasses.push(imageClassName);
 
   const CardTitle = () => {
     if (titleHref) {

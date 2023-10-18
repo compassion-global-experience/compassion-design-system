@@ -45,4 +45,9 @@ describe('Card', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('should render an image only card', () => {
+    const { container } = render(<Card imagePath="imagePath/image.jpg" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

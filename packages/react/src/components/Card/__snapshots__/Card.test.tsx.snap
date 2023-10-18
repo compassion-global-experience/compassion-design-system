@@ -16,6 +16,18 @@ exports[`Card should center content 1`] = `
 </div>
 `;
 
+exports[`Card should render an image only card 1`] = `
+<div
+  class="cds-card"
+>
+  <img
+    alt="Card image"
+    class="cds-card__image cds-card__image--only"
+    src="imagePath/image.jpg"
+  />
+</div>
+`;
+
 exports[`Card should render custom content 1`] = `
 <div
   class="cds-card"
