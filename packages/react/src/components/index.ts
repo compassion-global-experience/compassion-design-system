@@ -5,6 +5,7 @@ export { default as Table } from './Table';
 export { NavItem, NavItemProps } from './Nav';
 export { default as Card } from './Card';
 export { default as TextBox } from './TextBox';
+export { default as Box } from './Box';
 export {
   Input,
   InputGroup,
