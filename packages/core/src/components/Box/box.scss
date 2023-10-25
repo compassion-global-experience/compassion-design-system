@@ -1,0 +1,77 @@
+.cds-box {
+  // BACKGROUND COLORS
+
+  &--primary {
+    &-default {
+      background-color: var(--cds-background-primary-default);
+    }
+    &-subtle {
+      background-color: var(--cds-background-primary-subtle);
+    }
+    &-amplified {
+      background-color: var(--cds-background-primary-amplified);
+    }
+  }
+
+  &--accent {
+    &-default {
+      background-color: var(--cds-background-accent-default);
+    }
+    &-subtle {
+      background-color: var(--cds-background-accent-subtle);
+    }
+    &-amplified {
+      background-color: var(--cds-background-accent-amplified);
+    }
+  }
+
+  &--secondary {
+    &-default {
+      background-color: var(--cds-background-secondary-default);
+    }
+    &-subtle {
+      background-color: var(--cds-background-secondary-subtle);
+    }
+    &-amplified {
+      background-color: var(--cds-background-secondary-amplified);
+    }
+  }
+
+  &--neutral {
+    &-default {
+      background-color: var(--cds-background-neutral-default);
+    }
+    &-subtle {
+      background-color: var(--cds-background-neutral-subtle);
+    }
+    &-amplified {
+      background-color: var(--cds-background-neutral-amplified);
+    }
+  }
+
+  // BORDERS
+
+  border-width: var(--cds-border-width-none);
+
+  &--border {
+    border-color: var(--cds-border-color-neutral);
+    border-width: var(--cds-badge-border-width);
+    border-style: solid;
+
+    &-square {
+      border-radius: var(--cds-border-width-none);
+    }
+
+    &-rounded {
+      border-radius: var(--cds-border-radius-rounded);
+    }
+
+    &-circle {
+      border-radius: var(--cds-border-radius-circle);
+    }
+
+    &-primary {
+      border-color: var(--cds-border-color-primary);
+    }
+  }
+}

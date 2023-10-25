@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box should add the correct background color classes 1`] = `
+<div
+  class="cds-text-box cds-text-box--default cds-box cds-box--primary-subtle cds-text-box--desktop "
+>
+  <div>
+    Default Box
+  </div>
+</div>
+`;
+
+exports[`Box should add the correct border classes 1`] = `
+<div
+  class="cds-text-box cds-text-box--default cds-box cds-box--neutral-default cds-box--border cds-box--border-rounded cds-box--border-primary cds-text-box--desktop "
+>
+  <div>
+    Default Box
+  </div>
+</div>
+`;
+
+exports[`Box should add the correct text color class 1`] = `
+<div
+  class="cds-text-box cds-text-box--accent cds-box cds-box--neutral-default cds-text-box--desktop "
+>
+  <div>
+    Default Box
+  </div>
+</div>
+`;
+
+exports[`Box should add the given classname 1`] = `
+<div
+  class="cds-text-box cds-text-box--default cds-box cds-box--neutral-default cds-text-box--desktop testClassName"
+>
+  <div>
+    Default Box
+  </div>
+</div>
+`;
+
+exports[`Box should render default props correctly 1`] = `
+<div
+  class="cds-text-box cds-text-box--default cds-box cds-box--neutral-default cds-text-box--desktop "
+>
+  <div>
+    Default Box
+  </div>
+</div>
+`;

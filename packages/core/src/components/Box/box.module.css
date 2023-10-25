@@ -1,0 +1,60 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.cds-box {
+  border-width: var(--cds-border-width-none);
+}
+.cds-box--primary-default {
+  background-color: var(--cds-background-primary-default);
+}
+.cds-box--primary-subtle {
+  background-color: var(--cds-background-primary-subtle);
+}
+.cds-box--primary-amplified {
+  background-color: var(--cds-background-primary-amplified);
+}
+.cds-box--accent-default {
+  background-color: var(--cds-background-accent-default);
+}
+.cds-box--accent-subtle {
+  background-color: var(--cds-background-accent-subtle);
+}
+.cds-box--accent-amplified {
+  background-color: var(--cds-background-accent-amplified);
+}
+.cds-box--secondary-default {
+  background-color: var(--cds-background-secondary-default);
+}
+.cds-box--secondary-subtle {
+  background-color: var(--cds-background-secondary-subtle);
+}
+.cds-box--secondary-amplified {
+  background-color: var(--cds-background-secondary-amplified);
+}
+.cds-box--neutral-default {
+  background-color: var(--cds-background-neutral-default);
+}
+.cds-box--neutral-subtle {
+  background-color: var(--cds-background-neutral-subtle);
+}
+.cds-box--neutral-amplified {
+  background-color: var(--cds-background-neutral-amplified);
+}
+.cds-box--border {
+  border-color: var(--cds-border-color-neutral);
+  border-width: var(--cds-badge-border-width);
+  border-style: solid;
+}
+.cds-box--border-square {
+  border-radius: var(--cds-border-width-none);
+}
+.cds-box--border-rounded {
+  border-radius: var(--cds-border-radius-rounded);
+}
+.cds-box--border-circle {
+  border-radius: var(--cds-border-radius-circle);
+}
+.cds-box--border-primary {
+  border-color: var(--cds-border-color-primary);
+}
