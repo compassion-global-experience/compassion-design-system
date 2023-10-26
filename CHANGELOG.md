@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.7](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2023-10-26)
+
+**Note:** Version bump only for package compassion-design-system
+
 # [2.0.0-alpha.6](https://github.com/compassion-global-experience/compassion-design-system/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2023-09-15)
 
 ### Bug Fixes
