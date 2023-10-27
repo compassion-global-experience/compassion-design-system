@@ -1,0 +1,71 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* THIS IS GENERATED CODE. Any changes you make will be overwritten! */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.cds-badge {
+  display: inline-flex;
+  gap: var(--cds-badge-padding-x);
+  align-items: center;
+  font: var(--cds-badge-font);
+  border-radius: var(--cds-badge-border-radius);
+  border-width: var(--cds-badge-border-width);
+  border-style: solid;
+  padding: var(--cds-badge-padding-x) var(--cds-badge-padding-y);
+  min-height: 23px;
+}
+.cds-badge__primary {
+  color: var(--cds-badge-primary-text-color);
+  background-color: var(--cds-badge-primary-background-color);
+  border-color: var(--cds-badge-primary-border-color);
+}
+.cds-badge__primary svg path {
+  fill: var(--cds-badge-primary-icon-color);
+}
+.cds-badge__warning {
+  color: var(--cds-badge-warning-text-color);
+  background-color: var(--cds-badge-warning-background-color);
+  border-color: var(--cds-badge-warning-border-color);
+}
+.cds-badge__warning svg path {
+  fill: var(--cds-badge-warning-icon-color);
+}
+.cds-badge__danger {
+  color: var(--cds-badge-danger-text-color);
+  background-color: var(--cds-badge-danger-background-color);
+  border-color: var(--cds-badge-danger-border-color);
+}
+.cds-badge__danger svg {
+  fill: var(--cds-badge-danger-icon-color);
+}
+.cds-badge__success {
+  color: var(--cds-badge-success-text-color);
+  background-color: var(--cds-badge-success-background-color);
+  border-color: var(--cds-badge-success-border-color);
+}
+.cds-badge__success svg path {
+  fill: var(--cds-badge-success-icon-color);
+}
+.cds-badge__info {
+  color: var(--cds-badge-info-text-color);
+  background-color: var(--cds-badge-info-background-color);
+  border-color: var(--cds-badge-info-border-color);
+}
+.cds-badge__info svg path {
+  fill: var(--cds-badge-info-icon-color);
+}
+.cds-badge__neutral {
+  color: var(--cds-badge-neutral-text-color);
+  background-color: var(--cds-badge-neutral-background-color);
+}
+.cds-badge__neutral svg path {
+  fill: var(--cds-badge-neutral-icon-color);
+}
+.cds-badge__icon-start {
+  flex-direction: row-reverse;
+}
+.cds-badge__icon-end {
+  flex-direction: row;
+}
+.cds-badge__pill {
+  border-radius: var(--cds-badge-border-radius-pill);
+}
