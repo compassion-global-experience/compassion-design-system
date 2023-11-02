@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
 import styles from '@compassion-design-system/core/src/components/Form/input-group.module.css';
 import common from '@compassion-design-system/core/src/components/Form/form-common.module.css';
