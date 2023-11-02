@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef, MouseEvent, ReactNode, HTMLProps } from 'react';
 import styles from '@compassion-design-system/core/src/components/Modal/modal.module.css';
 import { X } from '../icons';

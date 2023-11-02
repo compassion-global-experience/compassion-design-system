@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef, InputHTMLAttributes, useCallback, useState } from 'react';
 import styles from '@compassion-design-system/core/src/components/Form/textarea.module.css';
 import common from '@compassion-design-system/core/src/components/Form/form-common.module.css';
