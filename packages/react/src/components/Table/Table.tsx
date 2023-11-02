@@ -99,7 +99,7 @@ function TableInner<Row>(
 
 const TableWithRef = forwardRef(TableInner);
 
-type TableWithRefProps<T> = TableProps<T> & {
+export type TableWithRefProps<T> = TableProps<T> & {
   mRef?: Ref<HTMLTableElement>;
 };
 
