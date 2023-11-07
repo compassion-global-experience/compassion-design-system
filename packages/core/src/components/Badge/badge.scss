@@ -1,0 +1,70 @@
+.cds-badge {
+  display: inline-flex;
+  gap: var(--cds-badge-padding-x);
+  align-items: center;
+  font: var(--cds-badge-font);
+  border-radius: var(--cds-badge-border-radius);
+  border-width: var(--cds-badge-border-width);
+  border-style: solid;
+  padding: var(--cds-badge-padding-x) var(--cds-badge-padding-y);
+  min-height: 23px;
+
+  &__primary {
+    color: var(--cds-badge-primary-text-color);
+    background-color: var(--cds-badge-primary-background-color);
+    border-color: var(--cds-badge-primary-border-color);
+    svg path {
+      fill: var(--cds-badge-primary-icon-color);
+    }
+  }
+  &__warning {
+    color: var(--cds-badge-warning-text-color);
+    background-color: var(--cds-badge-warning-background-color);
+    border-color: var(--cds-badge-warning-border-color);
+    svg path {
+      fill: var(--cds-badge-warning-icon-color);
+    }
+  }
+  &__danger {
+    color: var(--cds-badge-danger-text-color);
+    background-color: var(--cds-badge-danger-background-color);
+    border-color: var(--cds-badge-danger-border-color);
+    svg {
+      fill: var(--cds-badge-danger-icon-color);
+    }
+  }
+  &__success {
+    color: var(--cds-badge-success-text-color);
+    background-color: var(--cds-badge-success-background-color);
+    border-color: var(--cds-badge-success-border-color);
+    svg path {
+      fill: var(--cds-badge-success-icon-color);
+    }
+  }
+  &__info {
+    color: var(--cds-badge-info-text-color);
+    background-color: var(--cds-badge-info-background-color);
+    border-color: var(--cds-badge-info-border-color);
+    svg path {
+      fill: var(--cds-badge-info-icon-color);
+    }
+  }
+  &__neutral {
+    color: var(--cds-badge-neutral-text-color);
+    background-color: var(--cds-badge-neutral-background-color);
+    svg path {
+      fill: var(--cds-badge-neutral-icon-color);
+    }
+  }
+
+  &__icon-start {
+    flex-direction: row-reverse;
+  }
+  &__icon-end {
+    flex-direction: row;
+  }
+
+  &__pill {
+    border-radius: var(--cds-badge-border-radius-pill);
+  }
+}
