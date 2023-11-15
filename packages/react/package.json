@@ -1,6 +1,6 @@
 {
   "name": "@compassion-design-system/react",
-  "version": "2.0.0-alpha.7",
+  "version": "2.0.0-alpha.8",
   "description": "React components and patterns of the Compassion Design System.",
   "publishConfig": {
     "access": "public",
@@ -58,7 +58,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@compassion-design-system/core": "^2.0.0-alpha.7",
+    "@compassion-design-system/core": "^2.0.0-alpha.8",
     "@phosphor-icons/react": "^2.0.10",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
