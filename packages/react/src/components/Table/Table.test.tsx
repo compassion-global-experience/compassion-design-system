@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Table from './Table';
+import Table, { Column } from './Table';
 
 describe('Table', () => {
   it('should render 3 columns and 3 rows', () => {
