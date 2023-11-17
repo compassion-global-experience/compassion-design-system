@@ -1,9 +1,20 @@
 import '@compassion-design-system/core/reset.css';
 
+import prettier from 'prettier/standalone';
+import htmlParser from 'prettier/parser-html';
+
 export default {
   parameters: {
     docs: {
       toc: { title: 'Contents', headingSelector: 'h2, h3, h4' },
+      transformSource: (input) => {
+        return prettier.format(input, {
+          parser: 'html',
+          plugins: [htmlParser],
+          tabWidth: 2,
+          htmlWhitespaceSensitivity: 'ignore',
+        });
+      },
     },
   },
   actions: { argTypesRegex: '^on[A-Z].*' },

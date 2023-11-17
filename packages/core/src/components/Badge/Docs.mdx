@@ -1,5 +1,13 @@
 import { Markdown } from '@storybook/blocks';
-import { Canvas, Controls, Meta, Stories, Title } from '@storybook/addon-docs';
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Source,
+  Stories,
+  Story,
+  Title,
+} from '@storybook/addon-docs';
 
 import * as BadgeStories from './badge.stories.js';
 
@@ -16,7 +24,7 @@ import _06_BestPractices from './docs/06_BestPractices.md';
 
 <Markdown>{_01_Overview}</Markdown>
 
-<Canvas />
+<Canvas sourceState="shown" withToolbar="true" />
 <Controls />
 
 <Markdown>{_02_Usage}</Markdown>
@@ -25,61 +33,19 @@ import _06_BestPractices from './docs/06_BestPractices.md';
 
 <Markdown>{_03_Status}</Markdown>
 <Canvas>
-  <div style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-    <div class="cds-badge cds-badge__primary">
-      <span>Primary</span>
-    </div>
-    <div class="cds-badge cds-badge__warning">
-      <span>Warning</span>
-    </div>
-    <div class="cds-badge cds-badge__danger">
-      <span>Danger</span>
-    </div>
-    <div class="cds-badge cds-badge__success">
-      <span>Success</span>
-    </div>
-    <div class="cds-badge cds-badge__info">
-      <span>Info</span>
-    </div>
-    <div class="cds-badge cds-badge__neutral">
-      <span>Neutral</span>
-    </div>
-  </div>
+  <Story of={BadgeStories.Status} />
 </Canvas>
 
 <Markdown>{_04_BorderRadius}</Markdown>
 
 <Canvas>
-  <div style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-    <div class="cds-badge cds-badge__neutral">
-      <span>Rounded Badge</span>
-    </div>
-    <div class="cds-badge cds-badge__neutral cds-badge__pill">
-      <span>Pill Badge</span>
-    </div>
-  </div>
+  <Story of={BadgeStories.BorderRadius} />
 </Canvas>
 
 <Markdown>{_05_OtherProperties}</Markdown>
 
 <Canvas>
-  <div style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-    <div class="cds-badge cds-badge__neutral cds-badge__rounded cds-badge__icon-end">
-      <span>With iconPosition: end</span>
-      <div class="cds-icon__container">
-        <i class="ph-arrow-right" aria-hidden="true"></i>
-        <span class="cds-icon__description">Icon for badge: Badge with Icon</span>
-      </div>
-    </div>
-    <div class="cds-badge cds-badge__neutral cds-badge__rounded cds-badge__icon-start">
-      <span>With iconPosition: start</span>
-      <div class="cds-icon__container">
-        <i class="ph-warning" aria-hidden="true"></i>
-        <span class="cds-icon__description">Icon for badge: Badge with Icon</span>
-      </div>
-    </div>
-
-  </div>
+  <Story of={BadgeStories.WithIcon} />
 </Canvas>
 
 <Markdown>{_06_BestPractices}</Markdown>

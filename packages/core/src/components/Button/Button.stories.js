@@ -1,7 +1,58 @@
 import './button.scss';
 
+import decorateComponents from '../../utils/decorateComponents';
+
 export default {
   title: 'Components/Button',
+  argTypes: {
+    label: {
+      control: { type: 'text' },
+      description: 'The button’s text. Short and action-oriented.',
+      table: { type: { summary: 'string' } },
+    },
+    kind: {
+      control: { type: 'select' },
+      options: ['default', 'cta', 'white', 'inverted', 'destructive'],
+      description: 'Purpose or intent the button represents.',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    emphasis: {
+      control: { type: 'radio' },
+      options: ['primary', 'secondary', 'tertiary'],
+      description: 'Visual weight the button should carry.',
+      table: { defaultValue: { summary: 'primary' } },
+    },
+    size: {
+      control: 'radio',
+      options: ['small', 'medium', 'large'],
+      description: 'Size of the rendered button.',
+      table: { defaultValue: { summary: 'medium' } },
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'Whether the button should be disabled.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+    icon: {
+      control: { type: 'text' },
+      description:
+        'Icon name; see the list of [available Phosphor Icons](https://phosphoricons.com/).',
+      table: { type: { summary: 'string' } },
+    },
+    iconPosition: {
+      control: { type: 'radio' },
+      options: ['start', 'end'],
+      description: 'Where to position the button’s icon, if applicable.',
+      table: {
+        defaultValue: {
+          summary: 'start',
+        },
+      },
+    },
+  },
 };
 
 const createButton = ({
@@ -66,74 +117,6 @@ const Template = ({ label, ...args }) => {
   return createButton({ label, ...args });
 };
 
-// STORY DECORATORS - https://storybook.js.org/docs/html/writing-stories/decorators#decorator-parameters
-
-const wrapperDiv = (story, decoratorDiv) => {
-  const wrapper = document.createElement('div');
-  wrapper.setAttribute('style', 'display:grid; gap: 1rem');
-
-  const componentDiv = document.createElement('div');
-  componentDiv.appendChild(story());
-
-  wrapper.appendChild(decoratorDiv);
-  wrapper.appendChild(componentDiv);
-
-  return wrapper;
-};
-
-const buttonKindsDecorator = (story) => {
-  const decoratorDiv = document.createElement('div');
-  decoratorDiv.setAttribute(
-    'style',
-    'display:flex; gap: 1rem; align-items: start',
-  );
-
-  decoratorDiv.appendChild(createButton({ label: 'Default' }));
-  decoratorDiv.appendChild(createButton({ label: 'CTA', kind: 'cta' }));
-  decoratorDiv.appendChild(createButton({ label: 'White', kind: 'white' }));
-  decoratorDiv.appendChild(
-    createButton({ label: 'Inverted', kind: 'inverted' }),
-  );
-  decoratorDiv.appendChild(
-    createButton({
-      label: 'Destructive',
-      emphasis: 'primary',
-      kind: 'destructive',
-    }),
-  );
-
-  return decoratorDiv;
-};
-
-const buttonEmphasisDecorator = (story) => {
-  const decoratorDiv = document.createElement('div');
-  decoratorDiv.setAttribute('style', 'display:flex; gap: 16px');
-
-  decoratorDiv.appendChild(createButton({ label: 'Primary' }));
-  decoratorDiv.appendChild(
-    createButton({ label: 'Secondary', emphasis: 'secondary' }),
-  );
-  decoratorDiv.appendChild(
-    createButton({ label: 'Tertiary', emphasis: 'tertiary' }),
-  );
-
-  return decoratorDiv;
-};
-
-const buttonSizeDecorator = (story) => {
-  const decoratorDiv = document.createElement('div');
-  decoratorDiv.setAttribute(
-    'style',
-    'display:flex; gap: 16px; align-items: start',
-  );
-
-  decoratorDiv.appendChild(createButton({ label: 'Small', size: 'small' }));
-  decoratorDiv.appendChild(createButton({ label: 'Medium', size: 'medium' }));
-  decoratorDiv.appendChild(createButton({ label: 'Large', size: 'large' }));
-
-  return decoratorDiv;
-};
-
 // STORY ARGTYPES - https://storybook.js.org/docs/html/api/argtypes
 
 const emphasisArgTypes = {
@@ -186,21 +169,48 @@ Kinds.args = {
   label: 'Conrolled button',
 };
 Kinds.argTypes = { kind: kindArgTypes };
-Kinds.decorators = [buttonKindsDecorator];
+Kinds.decorators = [
+  () =>
+    decorateComponents([
+      createButton({ label: 'Default' }),
+      createButton({ label: 'CTA', kind: 'cta' }),
+      createButton({ label: 'White', kind: 'white' }),
+      createButton({ label: 'Inverted', kind: 'inverted' }),
+      createButton({
+        label: 'Destructive',
+        emphasis: 'primary',
+        kind: 'destructive',
+      }),
+    ]),
+];
 
 export const Emphasis = Template.bind({});
 Emphasis.args = {
   label: 'Conrolled button',
 };
 Emphasis.argTypes = { emphasis: emphasisArgTypes };
-Emphasis.decorators = [buttonEmphasisDecorator];
+Emphasis.decorators = [
+  () =>
+    decorateComponents([
+      createButton({ label: 'Primary' }),
+      createButton({ label: 'Secondary', emphasis: 'secondary' }),
+      createButton({ label: 'Tertiary', emphasis: 'tertiary' }),
+    ]),
+];
 
 export const Size = Template.bind({});
 Size.args = {
   label: 'Conrolled button',
 };
 Size.argTypes = { size: sizeArgTypes };
-Size.decorators = [buttonSizeDecorator];
+Size.decorators = [
+  () =>
+    decorateComponents([
+      createButton({ label: 'Small', size: 'small' }),
+      createButton({ label: 'Medium', size: 'medium' }),
+      createButton({ label: 'Large', size: 'large' }),
+    ]),
+];
 
 export const Disabled = Template.bind({});
 Disabled.args = {
