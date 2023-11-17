@@ -1,5 +1,5 @@
 import { Markdown } from '@storybook/blocks';
-import { Canvas, Controls, Meta, Stories, Title } from '@storybook/addon-docs';
+import { Canvas, Controls, Meta, Story, Title } from '@storybook/addon-docs';
 
 import * as CardStories from './card.stories.js';
 
@@ -28,4 +28,16 @@ import _05_BestPractices from './docs/05_BestPractices.md';
 
 <Markdown>{_05_BestPractices}</Markdown>
 
-<Stories />
+## Examples
+
+### Image Only
+
+<Canvas>
+  <Story of={CardStories.ImageOnly} />
+</Canvas>
+
+### Content Only
+
+<Canvas>
+  <Story of={CardStories.ContentOnly} />
+</Canvas>
