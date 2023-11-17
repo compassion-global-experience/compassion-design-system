@@ -6,7 +6,12 @@ import htmlParser from 'prettier/parser-html';
 export default {
   parameters: {
     docs: {
-      toc: { title: 'Contents', headingSelector: 'h2, h3, h4' },
+      toc: {
+        title: 'Contents',
+        headingSelector: 'h2, h3, h4',
+        ignoreSelector:
+          '.sbdocs-preview h1, .sbdocs-preview h2, .sbdocs-preview h3, .sbdocs-preview h4, .sbdocs-preview h5',
+      },
       transformSource: (input) => {
         return prettier.format(input, {
           parser: 'html',
