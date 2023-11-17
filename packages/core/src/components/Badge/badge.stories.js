@@ -182,5 +182,10 @@ WithIcon.decorators = [
         icon: 'ph-warning',
         iconPosition: 'start',
       }),
+      createBadge({
+        label: '',
+        status: 'neutral',
+        icon: 'ph-flag',
+      }),
     ]),
 ];
