@@ -2,8 +2,72 @@ import './card.scss';
 import '../Icon/icon.scss';
 import '../TextBox/textBox.scss';
 
+const argTypes = {
+  imagePath: {
+    description: 'Path or address to the card’s main image.',
+    control: { type: 'text' },
+    table: { type: { summary: 'string' } },
+  },
+  imageDescription: {
+    description: '`alt` text for the card’s main image.',
+    control: { type: 'text' },
+    table: { type: { summary: 'string' } },
+  },
+  title: {
+    description: 'The card’s title.',
+    control: { type: 'text' },
+    table: { type: { summary: 'string' } },
+  },
+  titleHref: {
+    description: 'Anchor `href` for the card’s title.',
+    control: { type: 'text' },
+    table: { type: { summary: 'string' } },
+  },
+  subtitle: {
+    description: 'Card’s subtitle text.',
+    control: { type: 'text' },
+    table: { type: { summary: 'string' } },
+  },
+  description: {
+    description: 'The card’s body text.',
+    control: { type: 'text' },
+    table: { type: { summary: 'string' } },
+  },
+  buttonText: {
+    description: 'Action text for the card’s primary button.',
+    control: { type: 'text' },
+    table: { type: { summary: 'string' } },
+  },
+  buttonHref: {
+    description: 'Anchor `href` for the card’s primary action button.',
+    control: { type: 'text' },
+    table: { type: { summary: 'string' } },
+  },
+  centerContent: {
+    description: 'Whether the card’s comments should be centered or not.',
+    control: { type: 'boolean' },
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: {
+        summary: 'false',
+      },
+    },
+  },
+};
+
 export default {
   title: 'Components/Card',
+  argTypes: {
+    imagePath: argTypes.imagePath,
+    imageDescription: argTypes.imageDescription,
+    title: argTypes.title,
+    titleHref: argTypes.titleHref,
+    subtitle: argTypes.subtitle,
+    description: argTypes.description,
+    buttonText: argTypes.buttonText,
+    buttonHref: argTypes.buttonHref,
+    centerContent: argTypes.centerContent,
+  },
 };
 
 const createCard = ({
