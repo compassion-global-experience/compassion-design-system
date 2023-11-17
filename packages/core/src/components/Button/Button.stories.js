@@ -2,56 +2,70 @@ import './button.scss';
 
 import decorateComponents from '../../utils/decorateComponents';
 
+const labelArgTypes = {
+  control: { type: 'text' },
+  description: 'The button’s text. Short and action-oriented.',
+  table: { type: { summary: 'string' } },
+};
+
+const emphasisArgTypes = {
+  control: { type: 'radio' },
+  options: ['primary', 'secondary', 'tertiary'],
+  description: 'Visual weight the button should carry.',
+  table: { defaultValue: { summary: 'primary' } },
+};
+
+const kindArgTypes = {
+  control: { type: 'select' },
+  options: ['default', 'cta', 'white', 'inverted', 'destructive'],
+  description: 'Purpose or intent the button represents.',
+  table: { defaultValue: { summary: 'default' } },
+};
+
+const sizeArgTypes = {
+  control: 'radio',
+  options: ['small', 'medium', 'large'],
+  description: 'Size of the rendered button.',
+  table: { defaultValue: { summary: 'medium' } },
+};
+
+const disabledArgTypes = {
+  control: { type: 'boolean' },
+  description: 'Whether the button should be disabled.',
+  table: {
+    type: { summary: 'boolean' },
+    defaultValue: { summary: 'false' },
+  },
+};
+
+const iconArgTypes = {
+  control: { type: 'text' },
+  description:
+    'Icon name; see the list of [available Phosphor Icons](https://phosphoricons.com/).',
+  table: { type: { summary: 'string' } },
+};
+
+const iconPositionArgTypes = {
+  control: { type: 'radio' },
+  options: ['start', 'end'],
+  description: 'Where to position the button’s icon, if applicable.',
+  table: {
+    defaultValue: {
+      summary: 'start',
+    },
+  },
+};
+
 export default {
   title: 'Components/Button',
   argTypes: {
-    label: {
-      control: { type: 'text' },
-      description: 'The button’s text. Short and action-oriented.',
-      table: { type: { summary: 'string' } },
-    },
-    kind: {
-      control: { type: 'select' },
-      options: ['default', 'cta', 'white', 'inverted', 'destructive'],
-      description: 'Purpose or intent the button represents.',
-      table: { defaultValue: { summary: 'default' } },
-    },
-    emphasis: {
-      control: { type: 'radio' },
-      options: ['primary', 'secondary', 'tertiary'],
-      description: 'Visual weight the button should carry.',
-      table: { defaultValue: { summary: 'primary' } },
-    },
-    size: {
-      control: 'radio',
-      options: ['small', 'medium', 'large'],
-      description: 'Size of the rendered button.',
-      table: { defaultValue: { summary: 'medium' } },
-    },
-    disabled: {
-      control: { type: 'boolean' },
-      description: 'Whether the button should be disabled.',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
-    icon: {
-      control: { type: 'text' },
-      description:
-        'Icon name; see the list of [available Phosphor Icons](https://phosphoricons.com/).',
-      table: { type: { summary: 'string' } },
-    },
-    iconPosition: {
-      control: { type: 'radio' },
-      options: ['start', 'end'],
-      description: 'Where to position the button’s icon, if applicable.',
-      table: {
-        defaultValue: {
-          summary: 'start',
-        },
-      },
-    },
+    label: labelArgTypes,
+    kind: kindArgTypes,
+    emphasis: emphasisArgTypes,
+    size: sizeArgTypes,
+    disabled: disabledArgTypes,
+    icon: iconArgTypes,
+    iconPosition: iconPositionArgTypes,
   },
 };
 
@@ -116,35 +130,6 @@ const Template = ({ label, ...args }) => {
   // return `<div>${label}</div>`;
   return createButton({ label, ...args });
 };
-
-// STORY ARGTYPES - https://storybook.js.org/docs/html/api/argtypes
-
-const emphasisArgTypes = {
-  control: { type: 'select' },
-  options: ['primary', 'secondary', 'tertiary'],
-};
-
-const kindArgTypes = {
-  control: { type: 'select' },
-  options: ['default', 'cta', 'white', 'inverted', 'destructive'],
-};
-
-const sizeArgTypes = {
-  control: { type: 'select' },
-  options: ['small', 'medium', 'large'],
-};
-
-const disabledArgTypes = {
-  control: { type: 'select' },
-  options: [true, false],
-};
-
-const iconPositionArgTypes = {
-  control: { type: 'select' },
-  options: ['start', 'end'],
-};
-
-// STORIES - https://storybook.js.org/docs/react/writing-stories/introduction
 
 export const Default = Template.bind({});
 Default.args = { label: 'Button Label' };
