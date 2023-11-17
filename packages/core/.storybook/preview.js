@@ -1,4 +1,13 @@
 import '@compassion-design-system/core/reset.css';
+import { Preview } from '@storybook/html-webpack5';
+
+export default Preview = {
+  parameters: {
+    docs: {
+      toc: { title: 'Contents', headingSelector: 'h2, h3, h4' },
+    },
+  },
+};
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

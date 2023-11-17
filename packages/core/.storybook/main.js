@@ -1,6 +1,6 @@
 export default {
   stories: [
-    '../src/components/**/*.stories.mdx',
+    '../src/components/**/*.mdx',
     '../src/components/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
@@ -30,6 +30,6 @@ export default {
     postcss: false,
   },
   docs: {
-    autodocs: true,
+    autodocs: false,
   },
 };

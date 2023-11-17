@@ -70,10 +70,7 @@ const Template = ({ label, ...args }) => {
 
 const wrapperDiv = (story, decoratorDiv) => {
   const wrapper = document.createElement('div');
-  wrapper.setAttribute(
-    'style',
-    'display:flex; flex-direction: column; row-gap: 24px',
-  );
+  wrapper.setAttribute('style', 'display:grid; gap: 1rem');
 
   const componentDiv = document.createElement('div');
   componentDiv.appendChild(story());
@@ -88,7 +85,7 @@ const buttonKindsDecorator = (story) => {
   const decoratorDiv = document.createElement('div');
   decoratorDiv.setAttribute(
     'style',
-    'display:flex; gap: 16px; align-items: start',
+    'display:flex; gap: 1rem; align-items: start',
   );
 
   decoratorDiv.appendChild(createButton({ label: 'Default' }));
@@ -104,8 +101,8 @@ const buttonKindsDecorator = (story) => {
       kind: 'destructive',
     }),
   );
-  const wrapper = wrapperDiv(story, decoratorDiv);
-  return wrapper;
+
+  return decoratorDiv;
 };
 
 const buttonEmphasisDecorator = (story) => {
@@ -120,8 +117,7 @@ const buttonEmphasisDecorator = (story) => {
     createButton({ label: 'Tertiary', emphasis: 'tertiary' }),
   );
 
-  const wrapper = wrapperDiv(story, decoratorDiv);
-  return wrapper;
+  return decoratorDiv;
 };
 
 const buttonSizeDecorator = (story) => {
@@ -135,8 +131,7 @@ const buttonSizeDecorator = (story) => {
   decoratorDiv.appendChild(createButton({ label: 'Medium', size: 'medium' }));
   decoratorDiv.appendChild(createButton({ label: 'Large', size: 'large' }));
 
-  const wrapper = wrapperDiv(story, decoratorDiv);
-  return wrapper;
+  return decoratorDiv;
 };
 
 // STORY ARGTYPES - https://storybook.js.org/docs/html/api/argtypes
@@ -167,6 +162,9 @@ const iconPositionArgTypes = {
 };
 
 // STORIES - https://storybook.js.org/docs/react/writing-stories/introduction
+
+export const Default = Template.bind({});
+Default.args = { label: 'Button Label' };
 
 export const Playground = Template.bind({});
 Playground.args = {
@@ -206,7 +204,8 @@ Size.decorators = [buttonSizeDecorator];
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  label: 'Conrolled button',
+  label: 'Disabled Button',
+  disabled: true,
 };
 Disabled.argTypes = { disabled: disabledArgTypes };
 
