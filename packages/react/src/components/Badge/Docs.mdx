@@ -1,0 +1,43 @@
+import { Markdown } from '@storybook/blocks';
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Source,
+  Stories,
+  Story,
+  Title,
+} from '@storybook/addon-docs';
+
+import * as BadgeStories from './Badge.stories.tsx';
+
+import _01_Overview from '@compassion-design-system/core/src/components/Badge/docs/01_Overview.md';
+import _02_Usage from '@compassion-design-system/core/src/components/Badge/docs/02_Usage.md';
+import _03_Status from '@compassion-design-system/core/src/components/Badge/docs/03_Status.md';
+import _04_BorderRadius from '@compassion-design-system/core/src/components/Badge/docs/04_BorderRadius.md';
+import _05_OtherProperties from '@compassion-design-system/core/src/components/Badge/docs/05_OtherProperties.md';
+import _06_BestPractices from '@compassion-design-system/core/src/components/Badge/docs/06_BestPractices.md';
+
+<Meta of={BadgeStories} />
+
+<Title />
+
+<Markdown>{_01_Overview}</Markdown>
+
+<Canvas sourceState="shown" withToolbar="true" />
+<Controls />
+
+<Markdown>{_02_Usage}</Markdown>
+
+## Component Properties
+
+<Markdown>{_03_Status}</Markdown>
+<Canvas of={BadgeStories.Status} />
+
+<Markdown>{_04_BorderRadius}</Markdown>
+<Canvas of={BadgeStories.BorderRadius} />
+
+<Markdown>{_05_OtherProperties}</Markdown>
+<Canvas of={BadgeStories.WithIcon} />
+
+<Markdown>{_06_BestPractices}</Markdown>

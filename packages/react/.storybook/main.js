@@ -1,13 +1,18 @@
-import { dirname, join } from "path";
+import { dirname, join } from 'path';
 export default {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: [getAbsolutePath("@storybook/addon-links"), getAbsolutePath("@storybook/addon-essentials"), getAbsolutePath("@storybook/addon-interactions"), getAbsolutePath("@storybook/addon-mdx-gfm")],
+  addons: [
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-interactions'),
+    getAbsolutePath('@storybook/addon-mdx-gfm'),
+  ],
   framework: {
-    name: getAbsolutePath("@storybook/react-webpack5"),
-    options: {}
+    name: getAbsolutePath('@storybook/react-webpack5'),
+    options: {},
   },
   docs: {
-    autodocs: true
+    autodocs: false,
   },
   typescript: {
     check: false,
@@ -15,7 +20,7 @@ export default {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: prop => {
+      propFilter: (prop) => {
         const commonForwardedPropsWeWantToDocument = /className|style/;
         if (commonForwardedPropsWeWantToDocument.test(prop.name)) {
           return true;
@@ -30,15 +35,15 @@ export default {
       },
       compilerOptions: {
         allowSyntheticDefaultImports: false,
-        esModuleInterop: false
-      }
-    }
-  }
+        esModuleInterop: false,
+      },
+    },
+  },
 };
 /**
  * This function is used to resolve the absolute path of a package.
  * It is needed in projects that use Yarn PnP or are set up within a monorepo.
-*/
+ */
 function getAbsolutePath(value) {
-  return dirname(require.resolve(join(value, "package.json")));
+  return dirname(require.resolve(join(value, 'package.json')));
 }
