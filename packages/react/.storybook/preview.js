@@ -3,6 +3,14 @@ import '@compassion-design-system/core/reset.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
+  docs: {
+    toc: {
+      title: 'Contents',
+      headingSelector: 'h2, h3, h4',
+      ignoreSelector:
+        '.sbdocs-preview h1, .sbdocs-preview h2, .sbdocs-preview h3, .sbdocs-preview h4, .sbdocs-preview h5',
+    },
+  },
   controls: {
     expanded: true,
     matchers: {
