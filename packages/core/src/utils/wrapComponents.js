@@ -1,12 +1,11 @@
-const wrappingElementClass = 'cds-storybook__story__wrap';
-const wrappingElementComment = document.createComment(
-  ' The wrapping element is only used for Storybook layout and can be removed from your code. ',
-);
+export const wrappingElementClass = 'cds-storybook__story__wrap';
+export const wrappingElementComment =
+  'The wrapping element is only used for Storybook layout and can be removed from your code.';
 
 export default (
   componentArray,
   decoratorClass = wrappingElementClass,
-  decoratorComment = wrappingElementComment,
+  decoratorComment = document.createComment(` ${wrappingElementComment} `),
 ) => {
   const decoratorDiv = document.createElement('div');
   decoratorDiv.classList.add(decoratorClass);

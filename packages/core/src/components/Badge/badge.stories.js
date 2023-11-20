@@ -1,7 +1,7 @@
 import './badge.scss';
 import '../Icon/icon.scss';
 
-import decorateComponents from '../../utils/decorateComponents';
+import decorateComponents from '../../utils/wrapComponents';
 
 const labelArgTypes = {
   control: { type: 'text' },

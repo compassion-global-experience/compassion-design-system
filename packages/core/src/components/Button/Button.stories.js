@@ -1,6 +1,6 @@
 import './button.scss';
 
-import decorateComponents from '../../utils/decorateComponents';
+import decorateComponents from '../../utils/wrapComponents';
 
 const labelArgTypes = {
   control: { type: 'text' },
@@ -205,11 +205,18 @@ Disabled.args = {
 Disabled.argTypes = { disabled: disabledArgTypes };
 
 export const WithIcon = Template.bind({});
-WithIcon.args = {
-  label: 'Button with icon',
-  icon: 'ph-compass',
-  iconPosition: 'start',
-};
 WithIcon.argTypes = {
   iconPosition: iconPositionArgTypes,
 };
+WithIcon.decorators = [
+  () =>
+    decorateComponents([
+      createButton({ label: 'Icon Start', icon: 'ph-compass' }),
+      createButton({ label: 'Icon End', icon: 'ph-arrow-right' }),
+      createButton({
+        label: 'Confirm choices',
+        icon: 'ph-check',
+        showLabel: false,
+      }),
+    ]),
+];
