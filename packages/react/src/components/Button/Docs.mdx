@@ -1,0 +1,50 @@
+import { Markdown } from '@storybook/blocks';
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Stories,
+  Story,
+  Title,
+} from '@storybook/addon-docs';
+
+import * as ButtonStories from './Button.stories.tsx';
+
+import _01_Overview from '@compassion-design-system/core/src/components/Button/docs/01_Overview.md';
+import _02_Usage from '@compassion-design-system/core/src/components/Button/docs/02_Usage.md';
+import _03_Kind from '@compassion-design-system/core/src/components/Button/docs/03_Kind.md';
+import _04_Emphasis from '@compassion-design-system/core/src/components/Button/docs/04_Emphasis.md';
+import _05_Size from '@compassion-design-system/core/src/components/Button/docs/05_Size.md';
+import _06_State from '@compassion-design-system/core/src/components/Button/docs/06_State.md';
+import _07_OtherProperties from '@compassion-design-system/core/src/components/Button/docs/07_OtherProperties.md';
+import _08_BestPractices from '@compassion-design-system/core/src/components/Button/docs/08_BestPractices.md';
+
+<Meta of={ButtonStories} />
+
+<Title />
+
+<Markdown>{_01_Overview}</Markdown>
+
+<Canvas of={ButtonStories.Default} sourceState="shown" withToolbar="true" />
+<Controls of={ButtonStories.Default} />
+
+<Markdown>{_02_Usage}</Markdown>
+
+## Component Properties
+
+<Markdown>{_03_Kind}</Markdown>
+<Canvas of={ButtonStories.Kinds} />
+
+<Markdown>{_04_Emphasis}</Markdown>
+<Canvas of={ButtonStories.Emphasis} />
+
+<Markdown>{_05_Size}</Markdown>
+<Canvas of={ButtonStories.Size} />
+
+<Markdown>{_06_State}</Markdown>
+<Canvas of={ButtonStories.State} />
+
+<Markdown>{_07_OtherProperties}</Markdown>
+<Canvas of={ButtonStories.WithIcon} />
+
+<Markdown>{_08_BestPractices}</Markdown>

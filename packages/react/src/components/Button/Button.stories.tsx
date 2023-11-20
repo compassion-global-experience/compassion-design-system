@@ -2,6 +2,9 @@ import { Meta } from '@storybook/react';
 import Button from './Button';
 import { cdsIconMap } from '../Icon/Icon';
 
+import { wrappingElementClass } from '@compassion-design-system/core/src/utils/wrapComponents';
+import { wrappingElementComment } from '@compassion-design-system/core/src/utils/wrapComponents';
+
 const buttonKindsDecorator = (Story) => (
   <div style={{ display: 'flex', flexDirection: 'column', rowGap: '24px' }}>
     <div style={{ display: 'flex', gap: '16px' }}>
@@ -92,6 +95,8 @@ const showLabelArgTypes = {
   options: [true, false],
 };
 
+export const Default = { args: { label: 'Button Label' } };
+
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 export const Playground = {
   args: {
@@ -109,55 +114,42 @@ export const Playground = {
   },
 };
 
-export const Kinds = {
-  decorators: [buttonKindsDecorator],
-  args: { label: 'Controlled button' },
-  argTypes: {
-    kind: kindArgTypes,
-  },
-};
+export const Kinds = (args) => (
+  <div className={wrappingElementClass} data-comment={wrappingElementComment}>
+    <Button label="Default" />
+    <Button label="CTA" kind="cta" />
+    <Button label="White" kind="white" />
+    <Button label="Inverted" kind="inverted" />
+    <Button label="Destructive" kind="destructive" />
+  </div>
+);
 
-export const Emphasis = {
-  decorators: [buttonEmphasisDecorator],
-  args: {
-    label: 'Controlled Button',
-  },
-  argTypes: {
-    emphasis: emphasisArgTypes,
-  },
-};
+export const Emphasis = (args) => (
+  <div className={wrappingElementClass} data-comment={wrappingElementComment}>
+    <Button label="Primary" emphasis="primary" />
+    <Button label="Secondary" emphasis="secondary" />
+    <Button label="Tertiary" emphasis="tertiary" />
+  </div>
+);
 
-export const Size = {
-  decorators: [buttonSizeDecorator],
-  args: {
-    label: 'Controlled Button',
-  },
-  argTypes: {
-    size: sizeArgTypes,
-  },
-};
+export const Size = (args) => (
+  <div className={wrappingElementClass} data-comment={wrappingElementComment}>
+    <Button label="Small" size="small" />
+    <Button label="Medium" size="medium" />
+    <Button label="Large" size="large" />
+  </div>
+);
 
-export const Disabled = {
-  args: {
-    label: 'Controlled Button',
-    disabled: true,
-  },
-  argTypes: {
-    disabled: disabledArgTypes,
-  },
-};
+export const State = (args) => (
+  <div className={wrappingElementClass} data-comment={wrappingElementComment}>
+    <Button label="Disabled" disabled />
+  </div>
+);
 
-export const WithIcon = {
-  args: {
-    label: 'Button with icon',
-    icon: 'compass',
-    iconPosition: 'start',
-    showLabel: true,
-  },
-  argTypes: {
-    icon: iconArgTypes,
-    iconDescription: iconDescriptionArgType,
-    iconPosition: iconPositionArgTypes,
-    showLabel: showLabelArgTypes,
-  },
-};
+export const WithIcon = (args) => (
+  <div className={wrappingElementClass} data-comment={wrappingElementComment}>
+    <Button label="Icon Start" icon="compass" />
+    <Button label="Icon End" icon="arrowRight" iconPosition="end" />
+    <Button label="Confirm choices" icon="check" showLabel={false} />
+  </div>
+);

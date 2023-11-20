@@ -62,11 +62,11 @@ export const WithIcon = (args) => (
   <>
     <Badge
       label="With iconPosition: end"
-      icon="ph-arrow-right"
+      icon="arrowRight"
       iconPosition="end"
       {...args}
     />
-    <Badge label="With iconPosition: start" icon="ph-warning" {...args} />
-    <Badge label="" icon="ph-flag" {...args} />
+    <Badge label="With iconPosition: start" icon="warningOctagon" {...args} />
+    <Badge label="" icon="eye" {...args} />
   </>
 );
