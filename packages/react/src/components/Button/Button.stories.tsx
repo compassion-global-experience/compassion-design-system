@@ -2,8 +2,10 @@ import { Meta } from '@storybook/react';
 import Button from './Button';
 import { cdsIconMap } from '../Icon/Icon';
 
-import { wrappingElementClass } from '@compassion-design-system/core/src/utils/wrapComponents';
-import { wrappingElementComment } from '@compassion-design-system/core/src/utils/wrapComponents';
+import {
+  wrappingElementClass,
+  wrappingElementComment,
+} from '@compassion-design-system/core/src/utils/wrapComponents';
 
 const buttonKindsDecorator = (Story) => (
   <div style={{ display: 'flex', flexDirection: 'column', rowGap: '24px' }}>
