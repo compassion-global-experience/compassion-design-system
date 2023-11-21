@@ -59,15 +59,16 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
-    "@storybook/addon-actions": "^7.0.2",
-    "@storybook/addon-docs": "^7.0.2",
-    "@storybook/addon-essentials": "^7.0.2",
-    "@storybook/addon-interactions": "^7.0.2",
-    "@storybook/addon-links": "^7.0.2",
-    "@storybook/addon-styling": "^1.3.5",
-    "@storybook/html": "^7.0.2",
-    "@storybook/html-webpack5": "^7.0.2",
-    "@storybook/testing-library": "^0.0.14-next.1",
+    "@storybook/addon-actions": "^7.5.3",
+    "@storybook/addon-docs": "^7.5.3",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-mdx-gfm": "^7.5.3",
+    "@storybook/addon-styling": "^1.3.7",
+    "@storybook/html": "^7.5.3",
+    "@storybook/html-webpack5": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
     "babel-loader": "^8.3.0",
     "npm-run-all": "^4.1.5",
     "postcss-import": "^15.1.0",
@@ -76,14 +77,14 @@
     "rollup": "^3.13.0",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.64.2",
-    "storybook": "^7.0.2",
+    "storybook": "^7.5.3",
     "style-dictionary": "^3.8.0",
     "token-transformer": "0.0.32",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "chokidar": "^3.5.3"
-  },
-  "gitHead": "71f0776edce863e00419847aca78a7bc724e0f1a"
+    "chokidar": "^3.5.3",
+    "prettier": "2.8.8"
+  }
 }

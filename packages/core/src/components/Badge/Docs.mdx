@@ -1,0 +1,51 @@
+import { Markdown } from '@storybook/blocks';
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Source,
+  Stories,
+  Story,
+  Title,
+} from '@storybook/addon-docs';
+
+import * as BadgeStories from './badge.stories.js';
+
+import _01_Overview from './docs/01_Overview.md';
+import _02_Usage from './docs/02_Usage.md';
+import _03_Status from './docs/03_Status.md';
+import _04_BorderRadius from './docs/04_BorderRadius.md';
+import _05_OtherProperties from './docs/05_OtherProperties.md';
+import _06_BestPractices from './docs/06_BestPractices.md';
+
+<Meta of={BadgeStories} />
+
+<Title />
+
+<Markdown>{_01_Overview}</Markdown>
+
+<Canvas sourceState="shown" withToolbar="true" />
+<Controls />
+
+<Markdown>{_02_Usage}</Markdown>
+
+## Component Properties
+
+<Markdown>{_03_Status}</Markdown>
+<Canvas>
+  <Story of={BadgeStories.Status} />
+</Canvas>
+
+<Markdown>{_04_BorderRadius}</Markdown>
+
+<Canvas>
+  <Story of={BadgeStories.BorderRadius} />
+</Canvas>
+
+<Markdown>{_05_OtherProperties}</Markdown>
+
+<Canvas>
+  <Story of={BadgeStories.WithIcon} />
+</Canvas>
+
+<Markdown>{_06_BestPractices}</Markdown>

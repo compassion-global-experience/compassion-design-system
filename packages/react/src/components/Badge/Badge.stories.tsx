@@ -35,3 +35,38 @@ export const Default = {
     label: 'Badge',
   },
 };
+
+const Template = (args) => {
+  return <Badge {...args} />;
+};
+
+export const Status = (args) => (
+  <>
+    <Badge label="Primary" status="primary" {...args} />
+    <Badge label="Info" status="info" {...args} />
+    <Badge label="Success" status="success" {...args} />
+    <Badge label="Warning" status="warning" {...args} />
+    <Badge label="Danger" status="danger" {...args} />
+    <Badge label="Neutral" {...args} />
+  </>
+);
+
+export const BorderRadius = (args) => (
+  <>
+    <Badge label="Rounded Badge" {...args} />
+    <Badge label="Pill Badge" borderRadius="pill" {...args} />
+  </>
+);
+
+export const WithIcon = (args) => (
+  <>
+    <Badge
+      label="With iconPosition: end"
+      icon="arrowRight"
+      iconPosition="end"
+      {...args}
+    />
+    <Badge label="With iconPosition: start" icon="warningOctagon" {...args} />
+    <Badge label="" icon="eye" {...args} />
+  </>
+);

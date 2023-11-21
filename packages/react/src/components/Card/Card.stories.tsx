@@ -62,21 +62,14 @@ CustomContent.args = {
   centerContent: true,
 };
 
-export const ImageOnly = {
-  args: {
-    imagePath: imageFile,
-  },
-};
+export const ImageOnly = (args) => (
+  <Card imagePath={imageFile} imageDescription="Children laughing" />
+);
 
-export const ContentOnly = {
-  args: {
-    title: 'Card Title',
-    titleHref: '#',
-    subtitle: 'Card Subtitle',
-    description:
-      'Cards can be used to showcase different types of content, including text, images, and videos. They provide a clear and concise way to present information, while also allowing users to easily interact with the content by clicking or tapping on the card to view more details.',
-    buttonText: 'Learn more',
-    buttonHref: '#',
-    centerContent: false,
-  },
-};
+export const ContentOnly = (args) => (
+  <Card
+    title="Card Title"
+    subtitle="Card Subtitle"
+    description="Cards can be used to showcase different types of content, including text, images, and videos. They provide a clear and concise way to present information, while also allowing users to easily interact with the content by clicking or tapping on the card to view more details."
+  />
+);

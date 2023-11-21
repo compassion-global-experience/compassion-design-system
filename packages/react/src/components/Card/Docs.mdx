@@ -1,0 +1,45 @@
+import { Markdown } from '@storybook/blocks';
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Stories,
+  Story,
+  Title,
+} from '@storybook/addon-docs';
+
+import * as CardStories from './Card.stories.tsx';
+
+import _01_Overview from '@compassion-design-system/core/src/components/Card/docs/01_Overview.md';
+import _02_Usage from '@compassion-design-system/core/src/components/Card/docs/02_Usage.md';
+import _03_Image from '@compassion-design-system/core/src/components/Card/docs/03_Image.md';
+import _04_Slot from '@compassion-design-system/core/src/components/Card/docs/04_Slot.md';
+import _05_BestPractices from '@compassion-design-system/core/src/components/Card/docs/05_BestPractices.md';
+
+<Meta of={CardStories} />
+
+<Title />
+
+<Markdown>{_01_Overview}</Markdown>
+<Canvas of={CardStories.Default} sourceState="shown" withToolbar="true" />
+<Controls of={CardStories.Default} />
+
+<Markdown>{_02_Usage}</Markdown>
+
+## Component Properties
+
+<Markdown>{_03_Image}</Markdown>
+
+<Markdown>{_04_Slot}</Markdown>
+
+<Markdown>{_05_BestPractices}</Markdown>
+
+## Examples
+
+### Image Only
+
+<Canvas of={CardStories.ImageOnly} />
+
+### Content Only
+
+<Canvas of={CardStories.ContentOnly} />
