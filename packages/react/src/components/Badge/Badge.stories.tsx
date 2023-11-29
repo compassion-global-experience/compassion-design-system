@@ -41,25 +41,34 @@ const Template = (args) => {
 };
 
 export const Status = (args) => (
-  <>
+  <div
+    className="cds-storybook__story__wrap"
+    data-comment="The wrapping element is only used for Storybook layout and can be removed from your code."
+  >
     <Badge label="Primary" status="primary" {...args} />
     <Badge label="Info" status="info" {...args} />
     <Badge label="Success" status="success" {...args} />
     <Badge label="Warning" status="warning" {...args} />
     <Badge label="Danger" status="danger" {...args} />
     <Badge label="Neutral" {...args} />
-  </>
+  </div>
 );
 
 export const BorderRadius = (args) => (
-  <>
+  <div
+    className="cds-storybook__story__wrap"
+    data-comment="The wrapping element is only used for Storybook layout and can be removed from your code."
+  >
     <Badge label="Rounded Badge" {...args} />
     <Badge label="Pill Badge" borderRadius="pill" {...args} />
-  </>
+  </div>
 );
 
 export const WithIcon = (args) => (
-  <>
+  <div
+    className="cds-storybook__story__wrap"
+    data-comment="The wrapping element is only used for Storybook layout and can be removed from your code."
+  >
     <Badge
       label="With iconPosition: end"
       icon="arrowRight"
@@ -68,5 +77,5 @@ export const WithIcon = (args) => (
     />
     <Badge label="With iconPosition: start" icon="warningOctagon" {...args} />
     <Badge label="" icon="eye" {...args} />
-  </>
+  </div>
 );
