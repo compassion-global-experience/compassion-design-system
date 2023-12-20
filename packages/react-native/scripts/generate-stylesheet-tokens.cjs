@@ -36,7 +36,11 @@ StyleDictionary.registerTransform({
     const keyValueArray = Object.entries(token.value).map(([key, value]) => {
       if (!value) return `${key}: ""`;
       else {
-        return `${key}: ${isNaN(value) ? `"${value}"` : value}`;
+        return `${key}: ${
+          isNaN(value)
+            ? `"${key === 'fontWeight' ? value.toLowerCase() : value}"`
+            : value
+        }`;
       }
     });
 

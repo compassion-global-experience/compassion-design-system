@@ -4,11 +4,12 @@
     "paths": {
       "@compassion-design-system/react-native": ["./src/index"]
     },
+    "typeRoots": ["./node_modules/@types"], // https://stackoverflow.com/a/73896674
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["esnext"],
     "module": "esnext",
     "moduleResolution": "node",
@@ -23,6 +24,6 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": false
   }
 }

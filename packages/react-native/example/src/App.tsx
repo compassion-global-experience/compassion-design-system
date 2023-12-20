@@ -1,8 +1,7 @@
-//@ts-nocheck
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from '@compassion-design-system/react-native';
+import { multiply, Badge } from '@compassion-design-system/react-native';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -12,8 +11,14 @@ export default function App() {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Text>Results: {result}</Text>
+    <View style={[styles.container]}>
+      <Text>CDS Badges: </Text>
+      <Badge label="Primary" status="primary" />
+      <Badge label="Warning" status="warning" />
+      <Badge label="Danger" status="danger" />
+      <Badge label="Success" status="success" />
+      <Badge label="Info" status="info" />
+      <Badge label="Neutral" status="neutral" />
     </View>
   );
 }
@@ -21,12 +26,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    gap: 20,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });
