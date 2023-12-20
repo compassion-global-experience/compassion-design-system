@@ -10,17 +10,57 @@ npm install @compassion-design-system/react-native
 
 ## Usage
 
+Components:
+
 ```js
-import { multiply } from '@compassion-design-system/react-native';
+import { Badge } from '@compassion-design-system/react-native';
 
 // ...
 
-const result = await multiply(3, 7);
+<Badge label="Primary" status="primary" />
+<Badge label="Primary Pill" status="primary" borderRadius="pill" />
+<Badge label="Warning" status="warning" />
+<Badge label="Danger" status="danger" />
+<Badge label="Success" status="success" />
+<Badge label="Info" status="info" />
+<Badge label="Neutral" status="neutral" />
 ```
 
-## Contributing
+Stylesheet values:
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+```js
+import { StyleSheet } from 'react-native';
+import { cdsLightTokens } from '@compassion-design-system/react-native';
+
+// ...
+
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: cdsLightTokens.cardBackgroundColor,
+    borderColor: cdsLightTokens.cardBorderColor,
+    borderWidth: cdsLightTokens.cardBorderWidth,
+    borderRadius: cdsLightTokens.cardBorderRadius,
+  },
+  cardHeader: {
+    ...cdsLightTokens.cardHeaderDefault,
+    color: cdsLightTokens.cardHeaderColor,
+  },
+});
+```
+
+## Development
+
+This project uses a monorepo using `yarn`. To setup the project, run `yarn` in the root directory to install the required dependencies.
+
+```sh
+yarn
+```
+
+The monorepo includes an example app that consumes `@compassion-design-system/react-native`. Run the app to test out components and exported modules from the library. You will need to install an emulator (https://developer.android.com/studio) to view the app locally.
+
+```sh
+yarn example android
+```
 
 ## License
 

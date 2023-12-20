@@ -3,3 +3,4 @@ export function multiply(a: number, b: number): Promise<number> {
 }
 
 export * from './components';
+export * from './cds-tokens';

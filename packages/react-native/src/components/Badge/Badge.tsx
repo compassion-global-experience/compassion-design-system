@@ -1,3 +1,4 @@
+import React from 'react';
 import { View, Text } from 'react-native';
 import { cdsBadgeStyles, cdsBadgeTextStyles } from './BadgeStyles';
 
@@ -22,18 +23,17 @@ const Badge = ({
   borderRadius = 'rounded',
 }: BadgeProps) => {
   const badgeViewStyles = [
-    cdsBadgeStyles['cdsBadge'],
+    cdsBadgeStyles.cdsBadge,
     cdsBadgeStyles[statusToStyleMap[status] as keyof typeof cdsBadgeStyles],
     cdsBadgeStyles[
       borderRadius === 'pill' ? 'cdsBadgePill' : 'cdsBadgeRounded'
     ],
   ];
   const badgeTextStyles = [
-    cdsBadgeTextStyles['cdsBadge'],
+    cdsBadgeTextStyles.cdsBadge,
     cdsBadgeTextStyles[
       statusToStyleMap[status] as keyof typeof cdsBadgeTextStyles
     ],
-    ,
   ];
 
   return (

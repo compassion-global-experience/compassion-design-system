@@ -11,7 +11,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH1DesktopBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 52,
     fontSize: 49,
   },
@@ -23,7 +23,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH1MobileBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 32,
     fontSize: 31,
   },
@@ -35,7 +35,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH2DesktopBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 40,
     fontSize: 39,
   },
@@ -47,7 +47,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH2MobileBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 32,
     fontSize: 31,
   },
@@ -59,7 +59,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH3DesktopBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 32,
     fontSize: 31,
   },
@@ -71,7 +71,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH3MobileBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 28,
     fontSize: 25,
   },
@@ -83,7 +83,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH4DesktopBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 28,
     fontSize: 25,
   },
@@ -95,7 +95,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH4MobileBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 20,
   },
@@ -107,7 +107,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH5DesktopBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 20,
   },
@@ -119,7 +119,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH5MobileBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 16,
   },
@@ -131,7 +131,7 @@ export const cdsLightTokens = {
   },
   typeHeadingH6DesktopBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 16,
   },
@@ -143,13 +143,13 @@ export const cdsLightTokens = {
   },
   typeHeadingH6MobileBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 16,
   },
   typeHeadingRegular: { fontFamily: 'Gotham-Book', fontWeight: 'normal' },
   typeHeadingSemibold: { fontFamily: 'Gotham-Medium', fontWeight: 'normal' },
-  typeHeadingBold: { fontFamily: 'Gotham-Bold', fontWeight: 'bold' },
+  typeHeadingBold: { fontFamily: 'Gotham-Bold', fontWeight: 'normal' },
   typeBodyPDesktopRegular: {
     fontFamily: 'Gotham-Book',
     fontWeight: 'normal',
@@ -158,7 +158,7 @@ export const cdsLightTokens = {
   },
   typeBodyPDesktopBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 16,
   },
@@ -170,7 +170,7 @@ export const cdsLightTokens = {
   },
   typeBodyPMobileBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 16,
   },
@@ -182,7 +182,7 @@ export const cdsLightTokens = {
   },
   typeBodyPSmallDesktopBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 16,
     fontSize: 13,
   },
@@ -194,13 +194,13 @@ export const cdsLightTokens = {
   },
   typeBodyPSmallMobileBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 16,
     fontSize: 13,
   },
   typeBodyRegular: { fontFamily: 'Gotham-Book', fontWeight: 'normal' },
   typeBodySemibold: { fontFamily: 'Gotham-Medium', fontWeight: 'normal' },
-  typeBodyBold: { fontFamily: 'Gotham-Bold', fontWeight: 'bold' },
+  typeBodyBold: { fontFamily: 'Gotham-Bold', fontWeight: 'normal' },
   typeColor: '#2e2f2a',
   typeColorWhite: '#FFFFFF',
   typeColorAccent: '#FFB500',
@@ -231,7 +231,7 @@ export const cdsLightTokens = {
     fontSize: 16,
     letterSpacing: '',
     lineHeight: 20,
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontFamily: 'Gotham-Bold',
   },
   tableBackgroundColor: '#FFFFFF',
@@ -409,7 +409,7 @@ export const cdsLightTokens = {
   listGroupPaddingY: 12,
   listGroupHeadingFont: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 16,
   },
@@ -439,7 +439,7 @@ export const cdsLightTokens = {
   },
   linkFontBold: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 16,
   },
@@ -644,19 +644,19 @@ export const cdsLightTokens = {
   cardBorderWidth: 1,
   cardHeaderDefault: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 28,
     fontSize: 25,
   },
   cardHeaderSmall: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 20,
   },
   cardSubhead: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 20,
   },
@@ -739,19 +739,19 @@ export const cdsLightTokens = {
   buttonTertiaryUnderline: 1,
   buttonSmallFont: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 16,
     fontSize: 13,
   },
   buttonMediumFont: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 16,
   },
   buttonLargeFont: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 20,
   },
@@ -910,7 +910,7 @@ export const cdsLightTokens = {
   badgeNeutralBorderColor: '#e3e4e2',
   badgeFont: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 13,
     fontSize: 10,
   },
@@ -955,7 +955,7 @@ export const cdsLightTokens = {
   alertNeutralIconColor: '#2e2f2a',
   alertHeaderFont: {
     fontFamily: 'Gotham-Bold',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: 20,
     fontSize: 20,
   },
