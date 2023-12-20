@@ -34,18 +34,34 @@ StyleDictionary.registerTransform({
   matcher: (token) => token.type === 'typography',
   transformer: (token) => {
     const keyValueArray = Object.entries(token.value).map(([key, value]) => {
-      if (!value) return `${key}: ""`;
-      if (key === 'fontFamily' && token.value.fontWeight)
-        return `${key}: "${value}-${token.value.fontWeight}"`;
-      else if (key === 'fontWeight')
-        return `${key}: "normal"`; // TODO: remove fontWeight from tokens
-      else {
-        return `${key}: ${isNaN(value) ? `"${value}"` : value}`;
+      if (!value) {
+        return `${key}: ""`;
       }
+      // if (key === 'fontFamily' && token.value.fontWeight)
+      //   return `${key}: "${value}-${token.value.fontWeight}"`;
+      // else {
+      else return `${key}: ${isNaN(value) ? `"${value}"` : value}`;
+      //}
     });
 
     // Get errors if curly braces are in the string, so we use a placeholder
     return `${openingBrace}${keyValueArray.join(', ')}${closingBrace}`;
+  },
+});
+
+// Appends font weight to font family
+StyleDictionary.registerTransform({
+  name: 'stylesheet/tokens/fontWeight',
+  type: 'value',
+  matcher: (token) => token.type === 'typography',
+  transformer: (token) => {
+    if (token.value.fontWeight) {
+      if (token.value.fontFamily) {
+        token.value.fontFamily = `${token.value.fontFamily}-${token.value.fontWeight}`;
+      }
+      token.value.fontWeight = 'normal';
+    }
+    return token.value;
   },
 });
 
@@ -111,6 +127,7 @@ const sd = StyleDictionary.extend({
         'size/object',
         'color/css',
         'stylesheet/tokens/shadow',
+        'stylesheet/tokens/fontWeight',
         'stylesheet/tokens/typography',
         'stylesheet/tokens/other',
         'stylesheet/tokens/NaNValues',

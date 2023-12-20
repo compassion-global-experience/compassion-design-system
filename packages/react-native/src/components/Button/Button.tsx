@@ -1,4 +1,4 @@
-import { Button as RNButton, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { cdsButtonStyles } from './ButtonStyles';
 
 export interface ButtonProps {
@@ -9,13 +9,12 @@ export interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  const { label, kind, size = 'medium', onClick } = props;
   const buttonStyles = [
     cdsButtonStyles['cdsButton'],
     cdsButtonStyles['cdsButtonSmall'],
   ];
 
-  if (size === 'small') {
+  if (props.size === 'small') {
     buttonStyles.push(cdsButtonStyles['cdsButtonSmall']);
   }
 
