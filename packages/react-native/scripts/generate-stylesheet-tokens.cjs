@@ -35,12 +35,12 @@ StyleDictionary.registerTransform({
   transformer: (token) => {
     const keyValueArray = Object.entries(token.value).map(([key, value]) => {
       if (!value) return `${key}: ""`;
+      if (key === 'fontFamily' && token.value.fontWeight)
+        return `${key}: "${value}-${token.value.fontWeight}"`;
+      else if (key === 'fontWeight')
+        return `${key}: "normal"`; // TODO: remove fontWeight from tokens
       else {
-        return `${key}: ${
-          isNaN(value)
-            ? `"${key === 'fontWeight' ? value.toLowerCase() : value}"`
-            : value
-        }`;
+        return `${key}: ${isNaN(value) ? `"${value}"` : value}`;
       }
     });
 
