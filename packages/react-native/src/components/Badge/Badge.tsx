@@ -1,3 +1,4 @@
+//@ts-ignore
 import React from 'react';
 import { View, Text } from 'react-native';
 import { cdsBadgeStyles, cdsBadgeTextStyles } from './BadgeStyles';
