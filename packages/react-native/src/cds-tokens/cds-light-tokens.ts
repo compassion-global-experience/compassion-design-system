@@ -808,7 +808,7 @@ export const cdsLightTokens = {
   buttonInversePrimaryDefaultTextColor: '#FFFFFF',
   buttonInversePrimaryDefaultIconColor: '#FFFFFF',
   buttonInversePrimaryDefaultBorderColor: '#000000',
-  buttonInversePrimaryHoverBackgroundColor: '#a742f5',
+  buttonInversePrimaryHoverBackgroundColor: '#1c1c1c',
   buttonInversePrimaryHoverTextColor: '#FFFFFF',
   buttonInversePrimaryHoverIconColor: '#FFFFFF',
   buttonInversePrimaryHoverBorderColor: '#1c1c1c',
