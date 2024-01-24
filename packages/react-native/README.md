@@ -13,6 +13,25 @@ npm install @compassion-design-system/react-native
 Components:
 
 ```js
+import { Button } from '@compassion-design-system/react-native';
+
+// export interface ButtonProps {
+//  label: string;
+//  kind?: 'default' | 'cta' | 'white' | 'inverted' | 'destructive';
+//  emphasis?: 'primary' | 'secondary' | 'tertiary';
+//  disabled?: boolean;
+//  size?: 'small' | 'medium' | 'large';
+//  onPress?: (event: GestureResponderEvent) => void;
+// }
+
+// React button documentation -  https://designwithcompassion.com/storybook/react/?path=/docs/components-button--docs
+
+<Button label="Default" />
+<Button label="CTA" kind="cta" />
+<Button label="White" kind="white" emphasis="secondary" />
+```
+
+```js
 import { Badge } from '@compassion-design-system/react-native';
 
 // ...

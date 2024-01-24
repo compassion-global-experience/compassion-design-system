@@ -36,8 +36,7 @@ export default function App() {
         <Text>CDS Buttons: </Text>
         <Button label="Default" />
         <Button label="CTA" kind="cta" />
-        {/* <Button label="CTA tertiary" kind="cta" emphasis="tertiary" /> */}
-        <Button label="White" kind="white" />
+        <Button label="White" kind="white" emphasis="secondary" />
         <Button label="Inverted" kind="inverted" />
         <Button label="Destructive" kind="destructive" />
         <Button label="Disabled" disabled={true} />
