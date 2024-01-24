@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { Badge } from '@compassion-design-system/react-native';
+import { Badge, Button } from '@compassion-design-system/react-native';
 import * as Font from 'expo-font';
 
 export default function App() {
@@ -24,14 +24,25 @@ export default function App() {
   return (
     fontLoaded && (
       <View style={[styles.container]}>
-        <Text>CDS Badges: </Text>
+        {/* <Text>CDS Badges: </Text>
         <Badge label="Primary" status="primary" />
         <Badge label="Primary Pill" status="primary" borderRadius="pill" />
         <Badge label="Warning" status="warning" />
         <Badge label="Danger" status="danger" />
         <Badge label="Success" status="success" />
         <Badge label="Info" status="info" />
-        <Badge label="Neutral" status="neutral" />
+        <Badge label="Neutral" status="neutral" /> */}
+
+        <Text>CDS Buttons: </Text>
+        <Button label="Default" />
+        <Button label="CTA" kind="cta" />
+        {/* <Button label="CTA tertiary" kind="cta" emphasis="tertiary" /> */}
+        <Button label="White" kind="white" />
+        <Button label="Inverted" kind="inverted" />
+        <Button label="Destructive" kind="destructive" />
+        <Button label="Disabled" disabled={true} />
+        <Button label="White disabled" kind="white" disabled={true} />
+        <Button label="Inverted disabled" kind="inverted" disabled={true} />
       </View>
     )
   );
@@ -43,5 +54,6 @@ const styles = StyleSheet.create({
     gap: 20,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#E3E4E2',
   },
 });
