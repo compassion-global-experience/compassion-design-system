@@ -21,7 +21,7 @@ const Button = (props: ButtonProps) => {
   const {
     label,
     kind = 'default',
-    emphasis = 'tertiary',
+    emphasis = 'primary',
     size = 'medium',
     disabled = false,
     onPress,
