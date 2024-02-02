@@ -86,55 +86,107 @@ StyleDictionary.registerTransform({
 const { formattedVariables } = StyleDictionary.formatHelpers;
 
 // Tokens as an object
-StyleDictionary.registerFormat({
-  name: 'stylesheetTokens',
-  formatter: function ({ dictionary }) {
-    const tokens = formattedVariables({
-      dictionary,
-      // ${indentation}${prefix}${prop.name}${separator} ${prop.value}${suffix}
-      formatting: { separator: ': ', suffix: ',' },
-    });
+function getStyleDictionaryFormatConfig(theme) {
+  return {
+    name: 'stylesheetTokens',
+    formatter: function ({ dictionary }) {
+      const tokens = formattedVariables({
+        dictionary,
+        // ${indentation}${prefix}${prop.name}${separator} ${prop.value}${suffix}
+        formatting: { indentation: '\t', separator: ': ', suffix: ',' },
+      });
 
-    // Replace placeholder with curly braces
-    const tokensWithOpeningBraces = tokens.replaceAll(openingBrace, '{');
-    const tokensWithCurlyBraces = tokensWithOpeningBraces.replaceAll(
-      closingBrace,
-      '}'
-    );
-    return `
-    export interface CdsTokens {
-      [key: string]: number | string | CdsTokens;
-    }
-    
-    export const cdsLightTokens = {
-      ${tokensWithCurlyBraces}
-    };`;
-  },
-});
+      // Replace placeholder with curly braces
+      const tokensWithOpeningBraces = tokens.replaceAll(openingBrace, '{');
+      const tokensWithCurlyBraces = tokensWithOpeningBraces.replaceAll(
+        closingBrace,
+        '}'
+      );
+      return `import { CdsTokens } from '../components';
 
-const sd = StyleDictionary.extend({
-  source: [`tokens/cds-light.json`],
-  platforms: {
-    'tokens-object': {
-      buildPath: `src/cds-tokens/`,
-      transforms: [
-        'name/cti/camel',
-        'size/object',
-        'color/css',
-        'stylesheet/tokens/shadow',
-        'stylesheet/tokens/fontWeight',
-        'stylesheet/tokens/typography',
-        'stylesheet/tokens/other',
-        'stylesheet/tokens/NaNValues',
-      ],
-      files: [
-        {
-          destination: 'cds-light-tokens.ts',
-          format: 'stylesheetTokens',
-        },
-      ],
+export const ${theme}Tokens: CdsTokens = {
+${tokensWithCurlyBraces}
+};`;
     },
-  },
+  };
+}
+
+function getStyleDictionaryConfig(theme) {
+  return {
+    source: [`tokens/${theme}.json`],
+    platforms: {
+      'tokens-object': {
+        buildPath: `src/cds-tokens/`,
+        transforms: [
+          'name/cti/camel',
+          'size/object',
+          'color/css',
+          'stylesheet/tokens/shadow',
+          'stylesheet/tokens/fontWeight',
+          'stylesheet/tokens/typography',
+          'stylesheet/tokens/other',
+          'stylesheet/tokens/NaNValues',
+        ],
+        files: [
+          {
+            destination: `${theme}-tokens.ts`,
+            format: 'stylesheetTokens',
+          },
+        ],
+      },
+    },
+  };
+}
+
+// const sd = StyleDictionary.extend({
+//   source: [`tokens/cds-light.json`],
+//   platforms: {
+//     'tokens-object': {
+//       buildPath: `src/cds-tokens/`,
+//       transforms: [
+//         'name/cti/camel',
+//         'size/object',
+//         'color/css',
+//         'stylesheet/tokens/shadow',
+//         'stylesheet/tokens/fontWeight',
+//         'stylesheet/tokens/typography',
+//         'stylesheet/tokens/other',
+//         'stylesheet/tokens/NaNValues',
+//       ],
+//       files: [
+//         {
+//           destination: 'cds-light-tokens.ts',
+//           format: 'stylesheetTokens',
+//         },
+//       ],
+//     },
+//   },
+// });
+// sd.cleanAllPlatforms(); // optionally, cleanup files first..
+// sd.buildAllPlatforms();
+
+console.log('Building styles...');
+
+const themeMap = {
+  'cds-light': 'cdsLight',
+  'cds-dark': 'cdsDark',
+};
+
+['cds-light', 'cds-dark'].map((theme) => {
+  console.log('\n==============================================');
+  console.log(`\nProcessing: [${theme}]`);
+
+  StyleDictionary.registerFormat(
+    getStyleDictionaryFormatConfig(themeMap[theme])
+  );
+  const sd = StyleDictionary.extend(getStyleDictionaryConfig(theme));
+
+  sd.cleanPlatform('tokens-object');
+  sd.buildPlatform('tokens-object');
+
+  console.log('\nEnd processing');
+  return theme;
 });
-sd.cleanAllPlatforms(); // optionally, cleanup files first..
-sd.buildAllPlatforms();
+
+console.log('\n==============================================');
+console.log('\nBuild completed!');

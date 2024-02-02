@@ -11,7 +11,7 @@ import { capitalizeFirstLetter } from '../utils';
 export interface ButtonProps {
   label: string;
   kind?: 'default' | 'cta' | 'white' | 'inverted' | 'destructive';
-  emphasis?: 'primary' | 'secondary' | 'tertiary';
+  emphasis?: 'primary' | 'secondary' | 'tertiary' | 'quaternary';
   disabled?: boolean;
   size?: 'small' | 'medium' | 'large';
   onPress?: (event: GestureResponderEvent) => void;
