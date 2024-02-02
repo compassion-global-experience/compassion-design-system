@@ -81,6 +81,14 @@ The monorepo includes an example app that consumes `@compassion-design-system/re
 yarn example android
 ```
 
+## Syncing tokens
+
+Run the command below to update and transform CDS tokens into a format that can be used in React Native stylesheets. Transformed themes will be written to the `/src/cds-tokens` directory.
+
+```node
+npm run make-stylesheet
+```
+
 ## License
 
 MIT
