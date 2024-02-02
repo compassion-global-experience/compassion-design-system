@@ -102,9 +102,7 @@ function getStyleDictionaryFormatConfig(theme) {
         closingBrace,
         '}'
       );
-      return `import { CdsTokens } from '../components';
-
-export const ${theme}Tokens: CdsTokens = {
+      return `export const ${theme}Tokens  = {
 ${tokensWithCurlyBraces}
 };`;
     },
@@ -137,33 +135,6 @@ function getStyleDictionaryConfig(theme) {
     },
   };
 }
-
-// const sd = StyleDictionary.extend({
-//   source: [`tokens/cds-light.json`],
-//   platforms: {
-//     'tokens-object': {
-//       buildPath: `src/cds-tokens/`,
-//       transforms: [
-//         'name/cti/camel',
-//         'size/object',
-//         'color/css',
-//         'stylesheet/tokens/shadow',
-//         'stylesheet/tokens/fontWeight',
-//         'stylesheet/tokens/typography',
-//         'stylesheet/tokens/other',
-//         'stylesheet/tokens/NaNValues',
-//       ],
-//       files: [
-//         {
-//           destination: 'cds-light-tokens.ts',
-//           format: 'stylesheetTokens',
-//         },
-//       ],
-//     },
-//   },
-// });
-// sd.cleanAllPlatforms(); // optionally, cleanup files first..
-// sd.buildAllPlatforms();
 
 console.log('Building styles...');
 

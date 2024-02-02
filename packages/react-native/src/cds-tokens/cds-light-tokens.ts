@@ -1,6 +1,4 @@
-import { CdsTokens } from '../components';
-
-export const cdsLightTokens: CdsTokens = {
+export const cdsLightTokens = {
   typeHeadingH1DesktopRegular: {
     fontFamily: 'Gotham-Book',
     fontWeight: 'normal',
