@@ -24,14 +24,14 @@ export default function App() {
   return (
     fontLoaded && (
       <View style={[styles.container]}>
-        {/* <Text>CDS Badges: </Text>
+        <Text>CDS Badges: </Text>
         <Badge label="Primary" status="primary" />
         <Badge label="Primary Pill" status="primary" borderRadius="pill" />
         <Badge label="Warning" status="warning" />
         <Badge label="Danger" status="danger" />
         <Badge label="Success" status="success" />
         <Badge label="Info" status="info" />
-        <Badge label="Neutral" status="neutral" /> */}
+        <Badge label="Neutral" status="neutral" />
 
         <Text>CDS Buttons: </Text>
         <Button label="Default" />

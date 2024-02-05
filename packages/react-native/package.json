@@ -30,6 +30,7 @@
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint-fix": "eslint --fix \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build",
     "release": "release-it",
@@ -60,6 +61,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.5.0",
+    "@react-native/babel-preset": "^0.73.20",
     "@react-native/eslint-config": "^0.72.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
@@ -169,6 +171,10 @@
     ]
   },
   "dependencies": {
+    "@react-native/babel-plugin-codegen": "^0.73.3",
+    "@react-native/codegen": "^0.73.2",
+    "mkdirp": "^0.5.6",
+    "react-refresh": "^0.14.0",
     "react-scripts": "latest"
   }
 }
