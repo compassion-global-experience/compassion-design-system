@@ -60,5 +60,8 @@
         1280
       ]
     }
+  },
+  "dependencies": {
+    "@types/react-native": "^0.72.6"
   }
 }
