@@ -20,12 +20,16 @@
     "bootstrap": "npx lerna bootstrap",
     "build:packages": "lerna run prepare",
     "percy-snapshots:packages": "lerna run percy-snapshots",
-    "lint": "npx eslint packages/* --ignore-path=.gitignore",
+    "lint": "npx eslint packages/* --ignore-path=.gitignore --ignore-pattern '**/react-native/lib/*' --ignore-pattern '**/react-native/example/*' --ignore-pattern '**/react-native/babel.config.js'",
     "test:packages": "lerna run test"
   },
   "devDependencies": {
     "@percy/cli": "^1.26.0",
     "@percy/storybook": "^4.3.5",
+    "@react-native/babel-plugin-codegen": "^0.73.4",
+    "@react-native/babel-preset": "^0.73.21",
+    "@react-native/codegen": "^0.73.3",
+    "@types/react-native": "^0.72.6",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "commitizen": "^4.2.4",
@@ -38,7 +42,9 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "lerna": "^6.4.1",
+    "mkdirp": "^3.0.1",
     "prettier": "^2.8.3",
+    "react-refresh": "^0.14.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^22.0.0",
@@ -60,5 +66,8 @@
         1280
       ]
     }
+  },
+  "dependencies": {
+    "@types/jest": "^29.5.12"
   }
 }
