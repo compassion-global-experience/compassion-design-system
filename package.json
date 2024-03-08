@@ -24,6 +24,7 @@
     "test:packages": "lerna run test"
   },
   "devDependencies": {
+    "@compassion-global-experience/cds-tokens": "github:compassion-global-experience/cds-tokens#89e6d3db1c5b5d82ddc57a1c2b2ca5632b5c17c8",
     "@percy/cli": "^1.26.0",
     "@percy/storybook": "^4.3.5",
     "@react-native/babel-plugin-codegen": "^0.73.4",

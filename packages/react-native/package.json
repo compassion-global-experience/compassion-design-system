@@ -33,12 +33,7 @@
     "lint-fix": "eslint --fix \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build",
-    "release": "release-it",
-    "get-figma-tokens": "bash scripts/get-figma-tokens.sh",
-    "convert-figma-tokens": "bash scripts/convert-figma-tokens.sh",
-    "generate-stylesheet": "node scripts/generate-stylesheet-tokens.cjs",
-    "format-stylesheet": "prettier src/cds-tokens/*.ts --write",
-    "make-stylesheet": "npm run get-figma-tokens && npm run convert-figma-tokens && npm run generate-stylesheet && npm run format-stylesheet"
+    "release": "release-it"
   },
   "keywords": [
     "react-native",
